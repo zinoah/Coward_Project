@@ -25,7 +25,6 @@
 
     <!-- 내부 접근 절대 경로 -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
-    
     <main>
 
 
