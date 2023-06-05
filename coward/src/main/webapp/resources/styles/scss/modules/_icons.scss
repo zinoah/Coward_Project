@@ -1,76 +1,51 @@
-// TODO: coward에 맞게 수정 필요
 i {
-  font-family: "tomorrow" !important;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "coward" !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
-  line-height: 1;
-  text-transform: none;
   font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.ic-bell::before {
+.ic-chevron:before {
   content: "\e900";
 }
-
-.ic-bookmark::before {
+.ic-bookmark:before {
   content: "\e901";
 }
-
-.ic-bookmark-filled::before {
+.ic-bookmark-filled:before {
   content: "\e902";
 }
-
-.ic-caret::before {
+.ic-camera:before {
   content: "\e903";
 }
-
-.ic-cart::before {
+.ic-cancle:before {
   content: "\e904";
 }
-
-.ic-check::before {
+.ic-check:before {
   content: "\e905";
 }
-
-.ic-chevron::before {
+.ic-check-cercle:before {
   content: "\e906";
 }
-
-.ic-close::before {
+.ic-hamburger:before {
   content: "\e907";
 }
-
-.ic-community::before {
+.ic-like:before {
   content: "\e908";
 }
-
-.ic-expert::before {
+.ic-like-filled:before {
   content: "\e909";
 }
-
-.ic-lock::before {
+.ic-password:before {
   content: "\e90a";
 }
-
-.ic-menu::before {
+.ic-search:before {
   content: "\e90b";
-}
-
-.ic-new::before {
-  color: $red;
-  content: "\e90c";
-}
-
-.ic-search::before {
-  content: "\e90d";
-}
-
-.ic-star::before {
-  content: "\e90e";
-}
-
-.ic-store::before {
-  content: "\e90f";
 }
