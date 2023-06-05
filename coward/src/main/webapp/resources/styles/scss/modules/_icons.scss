@@ -1,0 +1,76 @@
+// TODO: coward에 맞게 수정 필요
+i {
+  font-family: "tomorrow" !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+  font-variant: normal;
+}
+
+.ic-bell::before {
+  content: "\e900";
+}
+
+.ic-bookmark::before {
+  content: "\e901";
+}
+
+.ic-bookmark-filled::before {
+  content: "\e902";
+}
+
+.ic-caret::before {
+  content: "\e903";
+}
+
+.ic-cart::before {
+  content: "\e904";
+}
+
+.ic-check::before {
+  content: "\e905";
+}
+
+.ic-chevron::before {
+  content: "\e906";
+}
+
+.ic-close::before {
+  content: "\e907";
+}
+
+.ic-community::before {
+  content: "\e908";
+}
+
+.ic-expert::before {
+  content: "\e909";
+}
+
+.ic-lock::before {
+  content: "\e90a";
+}
+
+.ic-menu::before {
+  content: "\e90b";
+}
+
+.ic-new::before {
+  color: $red;
+  content: "\e90c";
+}
+
+.ic-search::before {
+  content: "\e90d";
+}
+
+.ic-star::before {
+  content: "\e90e";
+}
+
+.ic-store::before {
+  content: "\e90f";
+}
