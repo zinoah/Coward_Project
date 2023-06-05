@@ -169,3 +169,12 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
+# Sass
+
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+
+
