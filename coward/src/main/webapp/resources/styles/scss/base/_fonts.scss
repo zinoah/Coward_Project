@@ -1,0 +1,12 @@
+// TODO: icon-font 맞는걸로로 교체
+@font-face {
+  font-family: "tomorrow";
+  src: url("./assets/fonts/tomorrow.eot");
+  src: url("./assets/fonts/tomorrow.eot#iefix") format("embedded-opentype"),
+    url("./assets/fonts/tomorrow.ttf") format("truetype"),
+    url("./assets/fonts/tomorrow.woff") format("woff"),
+    url("./assets/fonts/tomorrow.svg#tomorrow") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
