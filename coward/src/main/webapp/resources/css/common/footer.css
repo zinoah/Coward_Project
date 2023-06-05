@@ -1,0 +1,122 @@
+footer {
+  height: 350px;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-area {
+  width: 1140px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo-area {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#footer-logo {
+  height: 40px;
+}
+
+.footer-info-area {
+  flex-basis: 50%;
+  border-bottom: 1px solid #e0e2e7;
+  display: flex;
+}
+
+.footer-info-text:nth-of-type(1) {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+#address {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+#copyright {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.footer-empty-area {
+  flex-basis: 35%;
+}
+.footer-info-text:last-child {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+#service-center {
+  flex-basis: 25%;
+}
+#service-center > a {
+  font-size: 18px;
+}
+
+#service-info {
+  display: flex;
+  flex-basis: 75%;
+}
+
+#service-time {
+  flex-basis: 50%;
+}
+
+#service-time p:nth-child(1) {
+  margin-bottom: 10px;
+}
+#service-time p:nth-child(2) {
+  font-size: 13px;
+  color: #8c8d96;
+}
+
+#tel-number {
+  flex-basis: 50%;
+}
+
+#tel-number p:nth-child(1) {
+  margin-bottom: 10px;
+}
+#tel-number p:nth-child(2) {
+  font-size: 13px;
+  color: #8c8d96;
+}
+
+.footer-nav-bar {
+  display: flex;
+  flex-basis: 20%;
+}
+.footer-nav-area {
+  flex-basis: 30%;
+  margin: auto;
+}
+
+.footer-nav-area > b {
+  margin: 0 5px 0 5px;
+}
+
+.footer-nav-empty-area {
+  flex-basis: 50%;
+}
+.footer-link-area {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.footer-link-area > div {
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  margin-left: 30px;
+}

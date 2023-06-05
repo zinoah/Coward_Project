@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coward</title>
 
-    <link rel="stylesheet" href="resources/css/main-style.css">
+    <link rel="stylesheet" href="resources/css/common/main.css">
+    <link rel="stylesheet" href="resources/css/common/header.css">
+    <link rel="stylesheet" href="resources/css/common/footer.css">
 
     <script src="https://kit.fontawesome.com/a2e8ca0ae3.js" crossorigin="anonymous"></script>
 
@@ -27,9 +29,8 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     <main>
 
-
         
-	<h1> 공부안하냐 ? 조형신? </h1>
+	
     </main>
 
     <!-- footer include -->

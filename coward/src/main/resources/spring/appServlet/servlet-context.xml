@@ -3,9 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd
+		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
@@ -23,6 +31,31 @@
 	
 	<context:component-scan base-package="kr.co.coward" />
 	
+	
+		<!-- 트랜잭션 처리 시 @Transactional 어노테이션 사용할 예정
+	
+		@Transactional : 클래스 또는 메서드 수행 후 트랜잭션 처리를 하라고 알려주는 어노테이션 
+		-> 해당 어노테이션을 인식하라는 설정이 필요함 
+		-> annotation-driven
+	
+	 -->
+	 <!-- <tx:annotation-driven proxy-target-class="true"/> -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	<!-- aop auto proxy -->
+	<aop:aspectj-autoproxy proxy-target-class="false"/>
+	
+	<!-- 
+		proxy-target-class : 프록시가 적용될 클래스가 
+		
+		인터페이스면 false ->  Spring AOP는 기본적으로 인터페이스를 상속 받은 프록시가 생성되어 코드를 수행함 
+		
+		일반 클래스면 true -> cglib 라이브러리를 이용해서 일반 클래스를 상속받아 프록시 생성 
+		
+	 -->
+	
+	<!-- @Scheduled 어노테이션 인식을 위한 태그 -->
+	<task:annotation-driven/>
 	
 	
 </beans:beans>
