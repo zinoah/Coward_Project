@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
@@ -446,12 +447,12 @@ address {
 
 .tag-red {
   color: #fff;
-  background-color: #f86d7d;
+  background-color: #ffc1c9;
 }
 
 .tag-green {
   color: #fff;
-  background-color: #22c58b;
+  background-color: #ffc200;
 }
 
 .tag-gray {
@@ -462,10 +463,6 @@ address {
 .avatar-32, .avatar-24 {
   display: block;
   overflow: hidden;
-  background-image: url("./assets/images/img-user-default.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
   border-radius: 50%;
 }
 .avatar-32 img, .avatar-24 img {
@@ -500,11 +497,11 @@ address {
 
 .btn-primary {
   color: #fff;
-  background-color: #3da5f5;
+  background-color: #3aacf8;
   transition: background-color 200ms ease-in-out;
 }
 .btn-primary:not(:disabled):hover {
-  background-color: #3186c4;
+  background-color: #028ae2;
 }
 
 .btn-secondary {
@@ -517,13 +514,13 @@ address {
 }
 
 .btn-outlined {
-  color: #3da5f5;
+  color: #3aacf8;
   background-color: #fff;
-  border: 1px solid #3da5f5;
+  border: 1px solid #3aacf8;
   transition: background-color 200ms ease-in-out;
 }
 .btn-outlined:not(:disabled):hover {
-  background-color: #ecf6fe;
+  background-color: #abdeff;
 }
 
 .btn-ghost {
@@ -585,7 +582,7 @@ address {
 }
 .form-select:not(:disabled):hover,
 .form-input:not(:disabled):hover {
-  background-color: #f7f8fa;
+  background-color: #f8f8f8;
 }
 .form-select:disabled,
 .form-input:disabled {
@@ -597,10 +594,10 @@ address {
   position: relative;
 }
 .select-group.is-active .form-select {
-  border-color: #3da5f5;
+  border-color: #3aacf8;
 }
 .select-group.is-active .ic-caret {
-  color: #3da5f5;
+  color: #3aacf8;
 }
 .select-group .form-select {
   padding-right: 40px;
@@ -691,4 +688,223 @@ i {
 
 .ic-search:before {
   content: "\e90b";
+}
+
+footer {
+  height: 350px;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-area {
+  width: 1140px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.footer-logo-area {
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.footer-info-area {
+  flex-basis: 50%;
+  border-bottom: 1px solid #e0e2e7;
+  display: flex;
+}
+.footer-info-text:nth-of-type(1) {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.footer-info-text:last-child {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-empty-area {
+  flex-basis: 35%;
+}
+
+#footer-logo {
+  height: 40px;
+}
+
+#address {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#copyright {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+#service-center {
+  flex-basis: 25%;
+}
+#service-center a {
+  font-size: 18px;
+}
+#service-info {
+  display: flex;
+  flex-basis: 75%;
+}
+#service-time {
+  flex-basis: 50%;
+}
+#service-time p:nth-child(1) {
+  margin-bottom: 10px;
+}
+#service-time p:nth-child(2) {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #8c8d96;
+}
+
+#tel-number {
+  flex-basis: 50%;
+}
+#tel-number p:nth-child(1) {
+  margin-bottom: 10px;
+}
+#tel-number p:nth-child(2) {
+  font-size: 13px;
+  color: #8c8d96;
+}
+
+.footer-nav-bar {
+  display: flex;
+  flex-basis: 20%;
+}
+.footer-nav-area {
+  flex-basis: 30%;
+  margin: auto;
+}
+.footer-nav-area b {
+  margin: 0 5px 0 5px;
+}
+.footer-nav-empty-area {
+  flex-basis: 50%;
+}
+
+.footer-link-area {
+  flex-basis: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.footer-link-area div {
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+}
+
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bar {
+  width: 1140px;
+  height: 60px;
+  display: flex;
+}
+
+.logo-area {
+  flex-basis: 20%;
+  line-height: 70px;
+}
+
+.header-empty-area {
+  flex-basis: 60%;
+}
+
+.login-area {
+  flex-basis: 20%;
+  line-height: 60px;
+  text-align: end;
+}
+
+/* 로그인 안했을시 상태 css*/
+.login-text {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.login-text:hover {
+  color: #3aacf8;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+/* 로그인 상태 css*/
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 60px;
+  border-bottom: 1px solid #e0e2e7;
+}
+
+.nav-bar {
+  width: 1140px;
+  height: 60px;
+  display: flex;
+}
+.nav-area {
+  flex-basis: 25%;
+}
+.nav-text {
+  margin-right: 20px;
+  font-size: 16px;
+}
+.nav-text:hover {
+  color: #3aacf8;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.nav-empty-area {
+  flex-basis: 30%;
+}
+
+.search-area {
+  flex-basis: 45%;
+}
+.search-form fieldset {
+  padding: 0px;
+  margin: 0;
+  border: 2px solid #e0e2e7;
+  border-radius: 10px;
+  height: 30px;
+  display: flex;
+  height: 35px;
+  margin-top: 11px;
+}
+
+#query {
+  flex-basis: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-indent: 16px;
+}
+
+#search-btn {
+  flex-basis: 10%;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #3f4150;
+  background-color: #fff;
+  border: 0;
+  border-radius: 10px;
 }/*# sourceMappingURL=main.css.map */
