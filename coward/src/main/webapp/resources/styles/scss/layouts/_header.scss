@@ -1,105 +1,46 @@
-header {
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.header {
+  &-wrapper {
+    @include flexbox(between);
+    position: relative;
+    height: 50px;
+  }
 
-.header-bar {
-  width: 1140px;
-  height: 60px;
-  display: flex;
-}
+  .logo {
+    @include pos-center;
 
-.logo-area {
-  flex-basis: 20%;
-  line-height: 70px;
-}
+    a {
+      display: block;
+    }
 
-.header-empty-area {
-  flex-basis: 60%;
-}
-.login-area {
-  flex-basis: 20%;
-  line-height: 60px;
-  text-align: end;
-}
+    img {
+      display: block;
+      width: auto;
+      height: 20px;
+    }
+  }
 
-.login-text {
-  font-size: 18px;
-  margin-left: 5px;
-}
+  @include responsive(T) {
+    &-wrapper {
+      height: 60px;
+    }
 
-.login-text:hover {
-  color: #028ae2;
-  font-weight: bold;
-  transition: 0.2s;
-}
+    .logo {
+      position: static;
+      transform: none;
 
-nav {
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 60px;
-  border-bottom: 1px solid #e0e2e7;
-}
+      img {
+        height: 24px;
+      }
+    }
 
-.nav-bar {
-  width: 1140px;
-  height: 60px;
-  display: flex;
-}
+    &-right {
+      button {
+        color: $primary;
+      }
 
-.nav-area {
-  flex-basis: 25%;
-}
-.nav-text {
-  margin-right: 20px;
-  font-size: 16px;
-}
-
-.nav-text:hover {
-  color: #028ae2;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-.nav-empty-area {
-  flex-basis: 30%;
-}
-
-.search-area {
-  flex-basis: 45%;
-}
-
-.search-form > fieldset {
-  padding: 0px;
-  margin: 0;
-  border: 2px solid #e0e2e7;
-  border-radius: 10px;
-  height: 30px;
-  display: flex;
-  height: 35px;
-  margin-top: 11px;
-}
-
-#query {
-  flex-basis: 90%;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  text-indent: 16px;
-}
-
-#search-btn {
-  flex-basis: 10%;
-  cursor: pointer;
-  font-size: 1.2em;
-  color: #2e3039;
-  background-color: white;
-  border: 0;
-  border-radius: 10px;
+      [class^="header-button"]:not(:last-child) {
+        padding-right: 13px;
+      }
+    }
+  }
 }
