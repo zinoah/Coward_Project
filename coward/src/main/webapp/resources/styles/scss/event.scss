@@ -1,0 +1,75 @@
+@import "./main.scss";
+
+.event {
+  &-banner {
+    @include column-flexbox;
+    background-color: $red-light;
+    width: 100%;
+    height: 280px;
+
+    &-title {
+      @include text-style(24);
+    }
+
+    &-image {
+      @include flexbox;
+      width: 290px;
+      height: 180px;
+      border-radius: 10px;
+      background-color: $red;
+      margin-top: 24px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 140px;
+      }
+    }
+  }
+
+  &-title {
+    @include text-style(18);
+    margin-top: 24px;
+  }
+
+  &-card {
+    margin-top: 16px;
+    &-list {
+      @include column-flexbox;
+    }
+
+    &-item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &-item {
+      &.is-active {
+        .event-card-item-image {
+          img {
+            filter: brightness(100%);
+          }
+        }
+
+        .event-card-info-status {
+          color: $blue;
+          font-weight: 700;
+        }
+      }
+
+      img {
+        display: block;
+        width: auto;
+        height: 180px;
+        border-radius: 10px;
+        filter: brightness(70%);
+      }
+    }
+
+    &-info {
+      @include flexbox(between);
+      @include text-style(14);
+
+      margin-top: 16px;
+    }
+  }
+}
