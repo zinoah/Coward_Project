@@ -18,7 +18,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       src="https://kit.fontawesome.com/a2e8ca0ae3.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../../../resources/styles/css/main.css" />
+    <link rel="stylesheet" href="resources/styles/css/main.css" />
   </head>
   <body>
     <!--  jsp:include 태그

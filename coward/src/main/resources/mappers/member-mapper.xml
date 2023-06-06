@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="memberMapper">
-  
-</mapper>
+  <resultMap type="member" id="member_rm">
+		<id property="memberNo" 		column="MEM_NO"/>
+		<result property="memberType" 		column="MEM_TYPE"/>
+		<result property="memberName" 	column="MEM_NAME"/>
+		<result property="memberId" 		column="MEM_ID"/>
+		<result property="memberPw" 	column="MEM_PW"/>
+		<result property="memberPhone" 	column="MEM_PHONE"/>
+		<result property="enrollDate" 		column="MEM_ENROLL_DATE"/>
+		<result property="secessionFlag" 	column="MEM_SECESSION_FL"/>
+		<result property="profileImg" 	column="MEM_PROFILE"/>
+		<result property="slogan" 	column="MEM_SLOGAN"/>
+		<result property="introduce" 	column="MEM_INTRODUCE"/>
+		<result property="reward" 	column="MEM_REWARD"/>
+		<result property="termsFlag" 	column="MEM_TERMS_FL"/>
+		<result property="sns" 	column="MEM_SNS"/>
+		<result property="subType" 	column="MEM_SUB_TYPE"/>
+		<result property="regionNo" 	column="REGION_NO"/>
+		<result property="skillNo" 	column="SKILL_NO"/>
+	 </resultMap>
+	 
+	 
+	 <select id="login" parameterType="member" resultMap="member_rm">
+	 	SELECT *
+		FROM MEMBER
+		WHERE MEM_ID = #{memberId}
+		AND MEM_PW= #{memberPw}
+		AND MEM_SECESSION_FL = 'N'
+	 </select>
+</mapper> 
