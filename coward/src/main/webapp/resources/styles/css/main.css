@@ -432,34 +432,6 @@ address {
   }
 }
 
-.tag-gray, .tag-green, .tag-red {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
-  padding: 0 6px;
-  font-weight: 700;
-  border-radius: 4px;
-}
-
-.tag-red {
-  color: #fff;
-  background-color: #ffc1c9;
-}
-
-.tag-green {
-  color: #fff;
-  background-color: #ffc200;
-}
-
-.tag-gray {
-  color: #8c8d96;
-  background-color: #e0e2e7;
-}
-
 .avatar-32, .avatar-24 {
   display: block;
   overflow: hidden;
@@ -690,6 +662,249 @@ i {
   content: "\e90b";
 }
 
+.container {
+  width: 100%;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container [class^=col-] {
+  padding: 0 10px;
+}
+.container .col-sm-1 {
+  width: 25%;
+}
+.container .col-sm-2 {
+  width: 50%;
+}
+.container .col-sm-3 {
+  width: 75%;
+}
+.container .col-sm-4 {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1020px;
+    padding: 0 30px;
+  }
+  .container .col-md-1 {
+    width: 8.3333333333%;
+  }
+  .container .col-md-2 {
+    width: 16.6666666667%;
+  }
+  .container .col-md-3 {
+    width: 25%;
+  }
+  .container .col-md-4 {
+    width: 33.3333333333%;
+  }
+  .container .col-md-5 {
+    width: 41.6666666667%;
+  }
+  .container .col-md-6 {
+    width: 50%;
+  }
+  .container .col-md-7 {
+    width: 58.3333333333%;
+  }
+  .container .col-md-8 {
+    width: 66.6666666667%;
+  }
+  .container .col-md-9 {
+    width: 75%;
+  }
+  .container .col-md-10 {
+    width: 83.3333333333%;
+  }
+  .container .col-md-11 {
+    width: 91.6666666667%;
+  }
+  .container .col-md-12 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    padding: 0;
+  }
+  .container .col-lg-1 {
+    width: 95px;
+  }
+  .container .col-lg-2 {
+    width: 190px;
+  }
+  .container .col-lg-3 {
+    width: 285px;
+  }
+  .container .col-lg-4 {
+    width: 380px;
+  }
+  .container .col-lg-5 {
+    width: 475px;
+  }
+  .container .col-lg-6 {
+    width: 570px;
+  }
+  .container .col-lg-7 {
+    width: 665px;
+  }
+  .container .col-lg-8 {
+    width: 760px;
+  }
+  .container .col-lg-9 {
+    width: 855px;
+  }
+  .container .col-lg-10 {
+    width: 950px;
+  }
+  .container .col-lg-11 {
+    width: 1045px;
+  }
+  .container .col-lg-12 {
+    width: 1140px;
+  }
+}
+
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bar {
+  width: 1140px;
+  height: 60px;
+  display: flex;
+}
+
+.logo-area {
+  flex-basis: 20%;
+  line-height: 70px;
+}
+
+.header-empty-area {
+  flex-basis: 60%;
+}
+
+.login-area {
+  flex-basis: 20%;
+  line-height: 60px;
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 로그인 안했을시 상태 css*/
+.login-text {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+/* 로그인 상태 css*/
+.login-header-logo {
+  margin-left: 15px;
+}
+.login-header-logo:nth-child(1) {
+  width: 32px;
+  height: 60px;
+  position: relative;
+}
+.login-header-logo:nth-child(1) img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.login-header-logo:nth-child(2) {
+  width: 32px;
+  height: 60px;
+  position: relative;
+}
+.login-header-logo:nth-child(2) img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-text:hover {
+  color: #3aacf8;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 60px;
+  border-bottom: 1px solid #e0e2e7;
+}
+
+.nav-bar {
+  width: 1140px;
+  height: 60px;
+  display: flex;
+}
+.nav-area {
+  flex-basis: 25%;
+}
+.nav-text {
+  margin-right: 20px;
+  font-size: 16px;
+}
+.nav-text:hover {
+  color: #3aacf8;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.nav-empty-area {
+  flex-basis: 30%;
+}
+
+.search-area {
+  flex-basis: 45%;
+}
+.search-form fieldset {
+  padding: 0px;
+  margin: 0;
+  border: 2px solid #e0e2e7;
+  border-radius: 10px;
+  height: 30px;
+  display: flex;
+  height: 35px;
+  margin-top: 11px;
+}
+
+#query {
+  flex-basis: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-indent: 16px;
+}
+
+#search-btn {
+  flex-basis: 10%;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #3f4150;
+  background-color: #fff;
+  border: 0;
+  border-radius: 10px;
+}
+
 footer {
   height: 350px;
   background-color: #f8f8f8;
@@ -802,109 +1017,4 @@ footer {
   width: 30px;
   height: 30px;
   margin-left: 30px;
-}
-
-header {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-bar {
-  width: 1140px;
-  height: 60px;
-  display: flex;
-}
-
-.logo-area {
-  flex-basis: 20%;
-  line-height: 70px;
-}
-
-.header-empty-area {
-  flex-basis: 60%;
-}
-
-.login-area {
-  flex-basis: 20%;
-  line-height: 60px;
-  text-align: end;
-}
-
-/* 로그인 안했을시 상태 css*/
-.login-text {
-  font-size: 18px;
-  margin-left: 5px;
-}
-
-.login-text:hover {
-  color: #3aacf8;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-/* 로그인 상태 css*/
-nav {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 60px;
-  border-bottom: 1px solid #e0e2e7;
-}
-
-.nav-bar {
-  width: 1140px;
-  height: 60px;
-  display: flex;
-}
-.nav-area {
-  flex-basis: 25%;
-}
-.nav-text {
-  margin-right: 20px;
-  font-size: 16px;
-}
-.nav-text:hover {
-  color: #3aacf8;
-  font-weight: bold;
-  transition: 0.2s;
-}
-.nav-empty-area {
-  flex-basis: 30%;
-}
-
-.search-area {
-  flex-basis: 45%;
-}
-.search-form fieldset {
-  padding: 0px;
-  margin: 0;
-  border: 2px solid #e0e2e7;
-  border-radius: 10px;
-  height: 30px;
-  display: flex;
-  height: 35px;
-  margin-top: 11px;
-}
-
-#query {
-  flex-basis: 90%;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  text-indent: 16px;
-}
-
-#search-btn {
-  flex-basis: 10%;
-  cursor: pointer;
-  font-size: 1.2em;
-  color: #3f4150;
-  background-color: #fff;
-  border: 0;
-  border-radius: 10px;
 }/*# sourceMappingURL=main.css.map */

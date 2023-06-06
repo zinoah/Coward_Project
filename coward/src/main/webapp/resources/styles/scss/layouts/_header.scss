@@ -22,11 +22,32 @@ header {
   flex-basis: 20%;
   line-height: 60px;
   text-align: end;
+  @include flexbox(end, center);
 }
 /* 로그인 안했을시 상태 css*/
 .login-text {
   font-size: $font-size-18;
   margin-left: 5px;
+}
+/* 로그인 상태 css*/
+.login-header-logo {
+  margin-left: 15px;
+  &:nth-child(1) {
+    width: 32px;
+    height: 60px;
+    position: relative;
+    img {
+      @include pos-center;
+    }
+  }
+  &:nth-child(2) {
+    width: 32px;
+    height: 60px;
+    position: relative;
+    img {
+      @include pos-center;
+    }
+  }
 }
 
 .login-text:hover {
@@ -34,7 +55,6 @@ header {
   font-weight: bold;
   transition: 0.2s;
 }
-/* 로그인 상태 css*/
 
 nav {
   height: $lnb-height-md;

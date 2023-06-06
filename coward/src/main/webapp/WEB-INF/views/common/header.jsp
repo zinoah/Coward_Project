@@ -21,12 +21,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <a href="#" class="login-text">회원가입</a>
         </c:when>
         <c:otherwise>
-          <img src="${contextPath}/resources/assets/images/bell-icon.svg" />
-
-          <img src="${contextPath}/resources/assets/images/chat-icon.svg" />
-
-          <div class="avatar-32">
-            <img src="${contextPath}/${sessionScope.loginMember.profileImg}" alt="">
+          <div class="login-header-logo">
+            <img src="${contextPath}/resources/assets/images/bell-icon.svg" />
+          </div>
+          <div class="login-header-logo">
+            <img src="${contextPath}/resources/assets/images/chat-icon.svg" />
+          </div>
+          <div class="avatar-32 login-header-logo">
+            <img src="${contextPath}/${sessionScope.loginMember.profileImg}" />
           </div>
         </c:otherwise>
       </c:choose>
