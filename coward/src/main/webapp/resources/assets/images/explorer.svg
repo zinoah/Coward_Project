@@ -1,7 +1,7 @@
-<svg width="13620" height="2821" viewBox="0 0 13620 2821" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="13498" height="2821" viewBox="0 0 13498 2821" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <path d="M0 0H13497.8V2821H0V0Z" fill="#8AC8D5"/>
-<mask id="mask0_527_12926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="9649" y="0" width="3971" height="2821">
-<path d="M9649.31 20C9649.31 8.95428 9658.27 0 9669.31 0H13599.3C13610.3 0 13619.3 8.9543 13619.3 20V2801C13619.3 2812.05 13610.3 2821 13599.3 2821H9669.31C9658.27 2821 9649.31 2812.05 9649.31 2801V20Z" fill="white"/>
+<mask id="mask0_527_12926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="9649" y="0" width="3849" height="2821">
+<path d="M9649 20C9649 8.95428 9657.95 0 9669 0H13478C13489 0 13498 8.9543 13498 20V2801C13498 2812.05 13489 2821 13478 2821H9669C9657.95 2821 9649 2812.05 9649 2801V20Z" fill="white"/>
 </mask>
 <g mask="url(#mask0_527_12926)">
 <rect x="9624.27" y="-51.9219" width="3875.76" height="3736.42" fill="url(#pattern0)"/>
