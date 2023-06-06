@@ -1,0 +1,67 @@
+.nav {
+  background-color: $white;
+
+  &-wrapper {
+    @include flexbox(between);
+    @include no-scrollbar;
+    overflow-x: auto;
+  }
+
+  &-left {
+    .nav-list {
+      @include inline-flexbox(start);
+      height: 40px;
+      white-space: nowrap;
+    }
+
+    .nav-item {
+      &.is-active {
+        a {
+          color: $blue-dark;
+          font-weight: 700;
+        }
+      }
+
+      a {
+        @include text-style(14);
+        // font-weight: 700;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-left {
+      .nav-item {
+        a {
+          @include text-style(16);
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    .nav-search {
+      position: relative;
+      @include text-style(12);
+
+      &-input {
+        width: 360px;
+        border: 1px solid $border;
+        border-radius: 8px;
+        padding: 10px 16px;
+
+        &::placeholder {
+          @include text-style(12);
+        }
+      }
+
+      .ic-search {
+        @include pos-center-y;
+        @include text-style(17, $border);
+        right: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "./main.scss";
+
+.event {
+  &-wrapper {
+    @include text-style(14);
+    @include column-flexbox;
+  }
+
+  &-info {
+    @include column-flexbox;
+
+    width: 100%;
+    margin: 8px 0;
+    padding: 16px 0;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+
+    &-title {
+      @include text-style(18);
+    }
+
+    &-status {
+      color: $blue;
+      font-weight: 700;
+
+      margin-top: 16px;
+    }
+
+    &-date {
+      margin-top: 8px;
+    }
+  }
+
+  &-img {
+    @include flexbox;
+    margin-top: 16px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include responsive(T) {
+    &-wrapper {
+      @include text-style(16);
+    }
+
+    &-info {
+      &-title {
+        @include text-style(24);
+      }
+    }
+  }
+}
