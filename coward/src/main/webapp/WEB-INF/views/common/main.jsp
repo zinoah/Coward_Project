@@ -9,16 +9,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>coward</title>
-
-    <link rel="stylesheet" href="resources/css/common/main.css" />
-    <link rel="stylesheet" href="resources/css/common/header.css" />
-    <link rel="stylesheet" href="resources/css/common/footer.css" />
-
     <script
       src="https://kit.fontawesome.com/a2e8ca0ae3.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="resources/styles/css/main.css" />
+    <link rel="stylesheet" href="resources/styles/css/index.css" />
   </head>
   <body>
     <!--  jsp:include 태그
@@ -30,7 +25,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <!-- 내부 접근 절대 경로 -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
-
+	<jsp:include page="/WEB-INF/views/common/nav.jsp" />
     <main></main>
 
     <!-- footer include -->
