@@ -5,21 +5,79 @@
     width: 100%;
     height: 490px;
     background-color: $yellow-light;
+
+    &-text {
+      font-size: 40px;
+      color: $primary;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    &-text:first-of-type {
+      padding-top: 105px;
+    }
+
+    .search-area {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    .search-area fieldset {
+      width: 600px;
+      height: 40px;
+      padding: 2px;
+      border: 1px solid $border;
+      background-color: $white;
+      border-radius: 10px;
+      display: flex;
+    }
+
+    #query {
+      @include text-style(14, $primary);
+      padding: 10px;
+      border: none;
+      outline: 0;
+      width: 92%;
+    }
+
+    #search-btn {
+      width: 8%;
+      cursor: pointer;
+      font-size: 1.2em;
+      color: $tertiary;
+      background-color: transparent;
+      border: 0;
+    }
   }
 
   .img {
-    width: 570px;
-    height: 570px;
+    width: 550px;
+    height: 550px;
     margin-top: 40px;
-    margin-left: 940px;
+    margin-left: 960px;
     position: absolute;
   }
 
   &-card {
+    @include text-style(16, $primary);
     width: 380px;
     height: 190px;
     border-radius: 15px;
     box-shadow: $card-shadow;
     display: inline-block;
+    margin-left: 110px;
+    margin-top: 160px;
+    padding-left: 30px;
+    padding-top: 30px;
+
+    &-maintext {
+      @include text-style(24, $primary);
+    }
+
+    &-subtext {
+      padding-top: 30px;
+    }
   }
 }
