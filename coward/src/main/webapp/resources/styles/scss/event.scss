@@ -2,10 +2,14 @@
 
 .event {
   &-banner {
-    @include column-flexbox;
+    @include flexbox;
     background-color: $red-light;
     width: 100%;
     height: 280px;
+
+    &-wrapper {
+      @include column-flexbox;
+    }
 
     &-title {
       @include text-style(24);
@@ -13,7 +17,8 @@
 
     &-image {
       @include flexbox;
-      width: 290px;
+      max-width: 280px;
+      min-width: 240px;
       height: 180px;
       border-radius: 10px;
       background-color: $red;
@@ -21,7 +26,7 @@
 
       img {
         display: block;
-        width: 100%;
+        max-width: 100%;
         height: 140px;
       }
     }
@@ -58,8 +63,8 @@
 
       img {
         display: block;
-        width: auto;
-        height: 180px;
+        width: 100%;
+        height: auto;
         border-radius: 10px;
         filter: brightness(70%);
       }
@@ -70,6 +75,79 @@
       @include text-style(14);
 
       margin-top: 16px;
+    }
+  }
+
+  @include responsive(T) {
+    &-banner {
+      @include flexbox(between);
+      flex-direction: row;
+      height: 160px;
+      margin-top: 10px;
+
+      &-wrapper {
+        @include flexbox(between);
+        flex-direction: row;
+      }
+
+      &-info {
+        &-title {
+          @include text-style(24);
+        }
+
+        &-description {
+          margin-top: 8px;
+
+          p {
+            @include text-style(14);
+          }
+
+          p:last-child {
+            @include text-style(13, $secondary);
+          }
+        }
+      }
+
+      &-image {
+        width: 200px;
+        height: 130px;
+        margin: 0;
+
+        img {
+          width: 100%;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-banner {
+      height: 240px;
+
+      &-info {
+        &-description {
+          margin-top: 8px;
+
+          p {
+            @include text-style(16);
+          }
+
+          p:last-child {
+            @include text-style(14, $secondary);
+          }
+        }
+      }
+
+      &-image {
+        width: 320px;
+        height: 200px;
+
+        img {
+          width: 200px;
+          height: auto;
+        }
+      }
     }
   }
 }
