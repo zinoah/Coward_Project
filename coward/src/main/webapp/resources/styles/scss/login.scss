@@ -1,0 +1,53 @@
+@import "./main.scss";
+
+.login-bg-img {
+  width: 744px;
+  height: 668px;
+}
+
+.logo-img {
+  width: 174.55px;
+  height: 40px;
+}
+
+.login-btn {
+  width: 320px;
+  height: 50px;
+  border: 1px solid none;
+  border-radius: 10px;
+  color: $white;
+  background-color: $blue;
+}
+
+.input {
+  &-email {
+    width: 320px;
+    height: 42px;
+    border: 1px solid $border;
+    border-radius: 10px;
+  }
+
+  &-pw {
+    width: 320px;
+    height: 42px;
+    border: 1px solid $border;
+    border-radius: 10px;
+  }
+}
+
+.line {
+  &1 {
+    color: $tertiary;
+    width: 140px;
+  }
+
+  &2 {
+    color: $tertiary;
+    width: 140px;
+  }
+}
+
+.shape-img {
+  width: 20px;
+  height: 20px;
+}
