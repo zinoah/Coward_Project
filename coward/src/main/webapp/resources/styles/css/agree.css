@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+#agree-box {
+  width: 420px;
+  height: 618px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+#agree-btn {
+  width: 160px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: skyblue;
+  color: white;
+  position: relative;
+  left: 130px;
+  right: 130px;
+}
+
+#agree-content-box {
+  width: 90%;
+  height: 70%;
+  border: 1px solid none;
+  overflow-y: scroll;
+}
+
+strong {
+  font-size: larger;
+}
+
+span {
+  border-bottom: 4px solid gold;
+  padding-bottom: 3px;
+}
+
+#close {
+  width: 24px;
+  height: 24px;
+
+  position: relative;
+  left: 420px;
+}

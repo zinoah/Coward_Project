@@ -1007,4 +1007,50 @@ i {
     border-top: none;
     border-bottom: 1px solid #e0e2e7;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+.login-bg-img {
+  width: 744px;
+  height: 668px;
+}
+
+.logo-img {
+  width: 174.55px;
+  height: 40px;
+}
+
+.login-btn {
+  width: 320px;
+  height: 50px;
+  border: 1px solid none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #3aacf8;
+}
+
+.input-email {
+  width: 320px;
+  height: 42px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+}
+.input-pw {
+  width: 320px;
+  height: 42px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+}
+
+.line1 {
+  color: #b2b3b9;
+  width: 140px;
+}
+.line2 {
+  color: #b2b3b9;
+  width: 140px;
+}
+
+.shape-img {
+  width: 20px;
+  height: 20px;
+}/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,42 @@
+#join-box {
+  width: 550px;
+  height: 360px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+#check {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  top: 50px;
+  left: 240px;
+}
+
+#add-information-btn {
+  width: 160px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: skyblue;
+  color: white;
+  position: relative;
+  top: 70px;
+  left: 200px;
+}
+
+#pre-first {
+  font-size: 28px;
+  position: relative;
+  top: 40px;
+  left: 155px;
+}
+
+#pre-second {
+  font-size: 14px;
+  position: relative;
+  top: 80px;
+  left: 200px;
+}
