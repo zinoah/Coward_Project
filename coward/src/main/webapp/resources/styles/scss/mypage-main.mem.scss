@@ -7,10 +7,10 @@
 
   &-bar {
     @include text-style(12);
-    padding: 15px;
+    padding: 15px 0;
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style-type: none;
   }
 }
@@ -26,7 +26,6 @@
     width: 85px;
     height: 85px;
     margin: 30px 0 10px;
-    border: 1px solid black;
     border-radius: 50%;
   }
 
@@ -81,14 +80,27 @@
 }
 
 .award {
-  &-table {
-    width: 100%;
+  &-box {
+    display: flex;
 
-    padding: 10px;
-    margin-bottom: 16px;
+    width: 100%;
     border: 1px solid $border;
     border-radius: 10px;
+    margin-bottom: 16px;
+  }
+
+  &-table {
+    table-layout: auto;
+    table-layout: fixed;
+    width: 100%;
+    padding: 10px;
+
+    border-radius: 10px;
     text-align: center;
+  }
+
+  &-table td {
+    padding: 5px;
   }
 
   &-table tr:first-child {
@@ -101,26 +113,47 @@
 }
 
 .skill-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   width: 100%;
-  padding: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
   border: 1px solid $border;
   border-radius: 10px;
 }
 
-section {
-  padding: 0 20px;
-  position: relative;
+.my-skill {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 8px 8px;
+  margin: 4px 4px;
+  background-color: $blue;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: white;
+  text-align: center;
 }
 
 .watchlist {
   &-box {
-    width: 100%;
-    height: auto;
-    padding: 25px 25px 20px;
-    margin-bottom: 20px;
     position: relative;
     border: 1px solid $border;
     border-radius: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  &-info {
+    width: 100%;
+    height: auto;
+    padding: 25px 25px 20px;
+
+    position: relative;
+    border: none;
   }
 
   &-title {
@@ -130,11 +163,12 @@ section {
   }
 }
 
-.ic-bookmark-filled:before {
+.ic-bookmark-filled {
   position: absolute;
   right: 20px;
   top: -5px;
   font-size: 23px;
+  color: $secondary;
 }
 
 /* 일정 글자 수 넘어가면 애니메이션 */
@@ -145,7 +179,8 @@ section {
 
 .new-box {
   width: 26px;
-  height: 16px;
+  height: 14px;
+
   padding: 0 2px;
   background-color: $yellow;
   border: none;
@@ -156,7 +191,7 @@ section {
 }
 
 .condition {
-  border-spacing: 6px;
+  border-spacing: 8px;
 
   &-title td {
     font-size: 8px;
@@ -172,8 +207,8 @@ section {
 .goods {
   display: inline-block;
   width: auto;
-  height: 16px;
-  padding: 2px 4px;
+  height: auto;
+  padding: 4px 4px;
   background-color: #eae2ff;
   border-radius: 3px;
   font-size: 7px;
@@ -184,8 +219,8 @@ section {
 .skills {
   display: inline-block;
   width: auto;
-  height: 16px;
-  padding: 2px 4px;
+  height: auto;
+  padding: 4px 4px;
   background-color: #ffeffb;
   border-radius: 3px;
   font-size: 7px;
@@ -196,9 +231,9 @@ section {
 .company {
   display: flex;
   align-items: center;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid $secondary;
+
+  padding: 15px 25px;
+  border-top: 1px solid $border;
 
   font-size: 10px;
   color: $primary;
@@ -206,6 +241,88 @@ section {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 8px;
+  }
+}
+
+/* 태블릿 */
+@media screen and (min-width: 768px) {
+  nav,
+  .profile {
+    display: none;
+  }
+
+  .banner {
+    width: 100%;
+    height: 115px;
+    background-image: url("/coward/src/main/webapp/resources/assets/images/mypage-banner.png");
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+  }
+
+  .introduce {
+    margin-bottom: 16px;
+    &-title {
+      @include text-style(16);
+      margin: 0 10px 12px;
+    }
+
+    textarea {
+      @include text-style(14);
+      width: 100%;
+      height: 150px;
+      padding: 15px 25px;
+    }
+  }
+
+  .progress {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    margin: 15px 0 15px 65px;
+    background: $background;
+  }
+
+  /*
+.progress div {
+  position: absolute;
+  left: 100px;
+  top: 0px;
+  display: none;
+  width: 2px;
+  height: 100px;
+  background: $blue;
+  transform-origin: 0px 100px;
+  -webkit-transform-origin: 0px 100px;
+  -moz-transform-origin: 0px 100px;
+  -ms-transform-origin: 0px 100px;
+}
+*/
+  .award {
+    &-box {
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &-table {
+      table-layout: auto;
+      table-layout: fixed;
+      width: 70%;
+      height: 80%;
+      padding: 10px;
+
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    &-table tr:first-child {
+      @include text-style(18);
+      font-weight: 600;
+    }
+
+    &-table tr:last-child {
+      @include text-style(12);
+    }
   }
 }
