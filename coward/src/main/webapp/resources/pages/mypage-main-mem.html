@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/mypage-main.mem.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      alt="Coward"
+                    />
+                  </a>
+                </h1>
+
+                <button
+                  class="header-button sm-only"
+                  type="button"
+                  aria-label="메뉴 버튼"
+                >
+                  <i class="ic-hamburger"></i>
+                </button>
+              </div>
+
+              <div class="header-right sm-hidden">
+                <!-- Note: 로그인을 하지 않은 경우 -->
+                <div class="header-buttons">
+                  <button
+                    class="header-button md-only"
+                    type="button"
+                    aria-label="통합 검색 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">로그인</a>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">회원가입</a>
+                  </button>
+                </div>
+                <!-- Note: 로그인을 한 경우 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 본문 시작 -->
+
+    <!-- 네비게이션 바 -->
+    <nav class="nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <ul class="nav-bar">
+              <li>내 정보</li>
+              <li>공모전 관리</li>
+              <li>크레딧 인출</li>
+              <li>프로필 수정</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 본문 -->
+    <main class="profile-mem">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner"></div>
+            <div class="profile-wrapper">
+              <!-- 프로필 박스 -->
+              <div class="profile">
+                <img
+                  class="profile-img"
+                  src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                />
+                <div class="profile-info">
+                  <div class="profile-type">Back</div>
+                  <p class="profile-nick">빡과장</p>
+                </div>
+              </div>
+
+              <!-- 베너 -->
+
+              <div class="content">
+                <!-- 한줄 소개 -->
+                <div class="introduce">
+                  <p class="introduce-title">소개</p>
+                  <textarea maxlength="50" disabled>
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non delectus odit quidem. Molestias ipsam pariatur accusamus dolores deserunt consequuntur natus ex obcaecati minima totam debitis aperiam minus asperiores optio doloremque nesciunt nostrum iusto, ipsa, delectus voluptatibus deleniti praesentium dignissimos! Vitae provident soluta sequi ipsam fugiat obcaecati autem amet eveniet reiciendis.</textarea
+                  >
+                </div>
+
+                <!-- 수상 이력 -->
+                <div class="award">
+                  <p class="introduce-title">어워드</p>
+                  <div class="award-box">
+                    <div class="progress" data-percent="${rate}">
+                      <span class="progress-result"></span>
+                    </div>
+                    <table class="award-table">
+                      <tr class="award-table-num">
+                        <td>10</td>
+                        <td>5</td>
+                        <td>50%</td>
+                      </tr>
+                      <tr class="award-table-title">
+                        <td>참여 횟수</td>
+                        <td>당선작</td>
+                        <td>당선률</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- 내 기술 -->
+                <div class="skill">
+                  <p class="introduce-title">나의 기술</p>
+                  <div class="skill-box">
+                    <div class="my-skill">Java Script</div>
+                    <div class="my-skill">CSS</div>
+                    <div class="my-skill">Java</div>
+                    <div class="my-skill">Spring</div>
+                    <div class="my-skill">Java Script</div>
+                    <div class="my-skill">CSS</div>
+                    <div class="my-skill">Java</div>
+                    <div class="my-skill">Spring</div>
+                    <div class="my-skill">Java Script</div>
+                    <div class="my-skill">CSS</div>
+                    <div class="my-skill">Java</div>
+                    <div class="my-skill">Spring</div>
+                  </div>
+                </div>
+
+                <!-- 관심 공모전 -->
+                <div class="watchlist">
+                  <p class="introduce-title">관심 공모전</p>
+
+                  <!-- section 단위로 카드 분리 -->
+                  <!-- 카드를 누르면 해당 공모전으로 이동해야 할텐데 a태그? -->
+                  <section class="watchlist-box-group">
+                    <div class="watchlist-box">
+                      <div class="watchlist-info">
+                        <div class="watchlist-title">
+                          <i class="ic-bookmark-filled"></i>
+                          <p class="contest-title">금융상품몰 공모전</p>
+                          <div class="new-box">new</div>
+                        </div>
+                        <table class="condition">
+                          <tr class="condition-title">
+                            <td>남은 기간</td>
+                            <td>상금</td>
+                          </tr>
+                          <tr class="condition-content">
+                            <td>17일</td>
+                            <td>400만원</td>
+                          </tr>
+                        </table>
+                        <div class="goods">프리미엄</div>
+                        <div class="skills">HTML</div>
+                        <div class="skills">Java Script</div>
+                      </div>
+                      <div class="company">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />신한은행
+                      </div>
+                    </div>
+
+                    <div class="watchlist-box">
+                      <div class="watchlist-info">
+                        <div class="watchlist-title">
+                          <i class="ic-bookmark-filled"></i>
+                          <p class="contest-title">금융상품몰 공모전</p>
+                          <div class="new-box">new</div>
+                        </div>
+                        <table class="condition">
+                          <tr class="condition-title">
+                            <td>남은 기간</td>
+                            <td>상금</td>
+                          </tr>
+                          <tr class="condition-content">
+                            <td>17일</td>
+                            <td>400만원</td>
+                          </tr>
+                        </table>
+                        <div class="goods">프리미엄</div>
+                        <div class="skills">HTML</div>
+                        <div class="skills">Java Script</div>
+                      </div>
+                      <div class="company">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />신한은행
+                      </div>
+                    </div>
+
+                    <div class="watchlist-box">
+                      <div class="watchlist-info">
+                        <div class="watchlist-title">
+                          <i class="ic-bookmark-filled"></i>
+                          <p class="contest-title">금융상품몰 공모전</p>
+                          <div class="new-box">new</div>
+                        </div>
+                        <table class="condition">
+                          <tr class="condition-title">
+                            <td>남은 기간</td>
+                            <td>상금</td>
+                          </tr>
+                          <tr class="condition-content">
+                            <td>17일</td>
+                            <td>400만원</td>
+                          </tr>
+                        </table>
+                        <div class="goods">프리미엄</div>
+                        <div class="skills">HTML</div>
+                        <div class="skills">Java Script</div>
+                      </div>
+                      <div class="company">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />신한은행
+                      </div>
+                    </div>
+
+                    <div class="watchlist-box">
+                      <div class="watchlist-info">
+                        <div class="watchlist-title">
+                          <i class="ic-bookmark-filled"></i>
+                          <p class="contest-title">금융상품몰 공모전</p>
+                          <div class="new-box">new</div>
+                        </div>
+                        <table class="condition">
+                          <tr class="condition-title">
+                            <td>남은 기간</td>
+                            <td>상금</td>
+                          </tr>
+                          <tr class="condition-content">
+                            <td>17일</td>
+                            <td>400만원</td>
+                          </tr>
+                        </table>
+                        <div class="goods">프리미엄</div>
+                        <div class="skills">HTML</div>
+                        <div class="skills">Java Script</div>
+                      </div>
+                      <div class="company">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />신한은행
+                      </div>
+                    </div>
+
+                    <div class="watchlist-box">
+                      <div class="watchlist-info">
+                        <div class="watchlist-title">
+                          <i class="ic-bookmark-filled"></i>
+                          <p class="contest-title">금융상품몰 공모전</p>
+                          <div class="new-box">new</div>
+                        </div>
+                        <table class="condition">
+                          <tr class="condition-title">
+                            <td>남은 기간</td>
+                            <td>상금</td>
+                          </tr>
+                          <tr class="condition-content">
+                            <td>17일</td>
+                            <td>400만원</td>
+                          </tr>
+                        </table>
+                        <div class="goods">프리미엄</div>
+                        <div class="skills">HTML</div>
+                        <div class="skills">Java Script</div>
+                      </div>
+                      <div class="company">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />신한은행
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-2 col-lg-3">
+            <h1 class="logo">
+              <a href="#">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  alt="Coward"
+                />
+              </a>
+            </h1>
+          </div>
+
+          <div class="col-sm-4 col-md-5 col-lg-3">
+            <div class="service-center">
+              <a href="#">
+                <h3>고객센터</h3>
+                <i class="ic-chevron"></i>
+              </a>
+            </div>
+            <div class="service-info">
+              <div class="row">
+                <div class="service-info-wrapper">
+                  <div class="service-info-time">
+                    <div class="service-info-title">상담시간</div>
+                    <p>
+                      평일 11:00 ~ 17:00 <br />
+                      점심 12:30 ~ 13:30 <br />
+                      (주말, 공휴일 제외)
+                    </p>
+                  </div>
+
+                  <div class="service-info-tel">
+                    <div class="service-info-title">연락처</div>
+                    <a class="footer-tel" href="tel:02-1234-5678"
+                      >02-1234-5678</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <address class="footer-info sm-hidden">
+            <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+            <p>Copyright © 2023 Coawrd All Right Reserved</p>
+          </address>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="footer-links">
+            <div class="row">
+              <div class="footer-links-wrapper">
+                <div class="icon-link">
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/github.png"
+                      alt="Github 바로가기"
+                  /></a>
+                  <a class="icon-link-item" href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/notion.png"
+                      alt="Notion 바로가기"
+                    />
+                  </a>
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/figma.png"
+                      alt="Figma 바로가기"
+                  /></a>
+                </div>
+
+                <div class="text-link">
+                  <ul class="text-link-list">
+                    <li class="text-link-item"><a href="#">이용가이드</a></li>
+                    <li class="text-link-item">
+                      <a href="#">개인정보처리방침</a>
+                    </li>
+                    <li class="text-link-item"><a href="#">이용약관</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <address class="footer-info sm-only">
+          <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+          <p>Copyright © 2023 Coawrd All Right Reserved</p>
+        </address>
+      </div>
+    </footer>
+  </body>
+</html>
