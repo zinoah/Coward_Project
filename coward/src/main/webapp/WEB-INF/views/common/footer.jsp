@@ -94,3 +94,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     </address>
   </div>
 </footer>
+
+<c:if test="${ !empty message }">
+    <script>
+        alert("${message}");
+    </script>
+</c:if> 

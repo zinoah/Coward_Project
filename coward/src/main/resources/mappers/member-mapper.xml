@@ -15,7 +15,7 @@
 		<result property="introduce" 	column="MEM_INTRODUCE"/>
 		<result property="reward" 	column="MEM_REWARD"/>
 		<result property="termsFlag" 	column="MEM_TERMS_FL"/>
-		<result property="sns" 	column="MEM_SNS"/>
+		<result property="sns" 	column="MEM__FL"/>
 		<result property="subType" 	column="MEM_SUB_TYPE"/>
 		<result property="regionNo" 	column="REGION_NO"/>
 		<result property="skillNo" 	column="SKILL_NO"/>
