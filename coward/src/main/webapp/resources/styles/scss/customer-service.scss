@@ -1,0 +1,25 @@
+@import "./main.scss";
+
+.customerService {
+  .bg {
+    width: 100%;
+    height: 490px;
+    background-color: $yellow-light;
+  }
+
+  .img {
+    width: 570px;
+    height: 570px;
+    margin-top: 40px;
+    margin-left: 940px;
+    position: absolute;
+  }
+
+  &-card {
+    width: 380px;
+    height: 190px;
+    border-radius: 15px;
+    box-shadow: $card-shadow;
+    display: inline-block;
+  }
+}

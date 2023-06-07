@@ -1004,4 +1004,24 @@ i {
     border-top: none;
     border-bottom: 1px solid #e0e2e7;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+.customerService .bg {
+  width: 100%;
+  height: 490px;
+  background-color: #ffe9a4;
+}
+.customerService .img {
+  width: 570px;
+  height: 570px;
+  margin-top: 40px;
+  margin-left: 940px;
+  position: absolute;
+}
+.customerService-card {
+  width: 380px;
+  height: 190px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}/*# sourceMappingURL=customer-service.css.map */
