@@ -1,0 +1,84 @@
+.header {
+  &-wrapper {
+    @include flexbox(between);
+    position: relative;
+    height: 50px;
+  }
+  &-left {
+    display: flex;
+
+    .service-center-text-logo {
+      font-size: 20px;
+      padding-top: 2px;
+
+      &:before {
+        content: "";
+        border: 1px solid $border;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .logo {
+    a {
+      display: block;
+    }
+    img {
+      display: block;
+      width: auto;
+      height: 20px;
+    }
+  }
+
+  &-right {
+    button {
+      background-color: $secondary;
+      width: 80px;
+      height: 30px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $yellow;
+        transition: 0.2s;
+      }
+    }
+
+    a {
+      font-weight: bold;
+      color: $white;
+    }
+  }
+  @include responsive(T) {
+    &-wrapper {
+      height: 60px;
+    }
+    &-left {
+      .service-center-text-logo {
+        font-size: $font-size-24;
+      }
+    }
+    .logo {
+      a {
+        display: block;
+      }
+      &:nth-child(2) {
+        padding-top: 2px;
+      }
+      img {
+        display: block;
+        width: auto;
+        height: 24px;
+      }
+    }
+    &-right {
+      button {
+        width: 85px;
+        height: 35px;
+      }
+
+      a {
+        @include text-style-18;
+      }
+    }
+  }
+}
