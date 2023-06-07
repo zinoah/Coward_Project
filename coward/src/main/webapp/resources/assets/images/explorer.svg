@@ -1,10 +1,10 @@
-<svg width="13620" height="2821" viewBox="0 0 13620 2821" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M0 0H13497.8V2821H0V0Z" fill="#8AC8D5"/>
-<mask id="mask0_527_12926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="9649" y="0" width="3971" height="2821">
-<path d="M9649.31 20C9649.31 8.95428 9658.27 0 9669.31 0H13599.3C13610.3 0 13619.3 8.9543 13619.3 20V2801C13619.3 2812.05 13610.3 2821 13599.3 2821H9669.31C9658.27 2821 9649.31 2812.05 9649.31 2801V20Z" fill="white"/>
+<svg width="1445" height="250" viewBox="0 0 1445 250" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M0 0H1444.98V250H0V0Z" fill="#8AC8D5"/>
+<mask id="mask0_527_12926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1032" y="0" width="413" height="250">
+<path d="M1032.95 20C1032.95 8.9543 1041.91 0 1052.95 0H1425C1436.05 0 1445 8.9543 1445 20V230C1445 241.046 1436.05 250 1425 250H1052.95C1041.91 250 1032.95 241.046 1032.95 230V20Z" fill="white"/>
 </mask>
 <g mask="url(#mask0_527_12926)">
-<rect x="9624.27" y="-51.9219" width="3875.76" height="3736.42" fill="url(#pattern0)"/>
+<rect x="1030.31" y="-4.60156" width="414.911" height="331.126" fill="url(#pattern0)"/>
 </g>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">

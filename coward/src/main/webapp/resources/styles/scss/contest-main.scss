@@ -1,0 +1,39 @@
+@import "./main.scss";
+
+.main {
+  .container:nth-child(1) {
+    background-color: #8ac8d5;
+    height: 250px;
+    padding: 0;
+  }
+  &-banner {
+    height: 250px;
+    @include flexbox;
+    flex-direction: column;
+
+    h1 {
+      color: $white;
+      text-align: center;
+      line-height: 45px;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: $blue;
+      width: 90px;
+      height: 30px;
+      border-radius: 5px;
+
+      a {
+        color: $white;
+        font-weight: 500;
+      }
+
+      &:hover {
+        box-shadow: $card-shadow;
+        transition: 0.5s;
+        scale: 1.1;
+      }
+    }
+  }
+}
