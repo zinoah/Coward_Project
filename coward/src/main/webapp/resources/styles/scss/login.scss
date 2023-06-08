@@ -1,8 +1,10 @@
-@import "./main.scss";
+@import "./main";
 
 .login-bg-img {
-  width: 744px;
-  height: 668px;
+  width: 650px;
+  height: 590px;
+  display: inline-block;
+  padding-right: 20px;
 }
 
 .logo-img {
@@ -11,7 +13,7 @@
 }
 
 .login-btn {
-  width: 320px;
+  width: 100%;
   height: 50px;
   border: 1px solid none;
   border-radius: 10px;
@@ -21,17 +23,19 @@
 
 .input {
   &-email {
-    width: 320px;
+    width: 100%;
     height: 42px;
     border: 1px solid $border;
     border-radius: 10px;
+    padding-left: 15px;
   }
 
   &-pw {
-    width: 320px;
+    width: 100%;
     height: 42px;
     border: 1px solid $border;
     border-radius: 10px;
+    padding-left: 15px;
   }
 }
 
@@ -47,7 +51,38 @@
   }
 }
 
-.shape-img {
+.eye-img {
   width: 20px;
   height: 20px;
+}
+
+.login-box {
+  width: 300px;
+  height: 510px;
+  display: inline-block;
+  margin-right: 60px;
+  margin-top: 20px;
+}
+
+.login-wrapper {
+  @include flexbox(between);
+  padding-top: 90px;
+}
+
+.google-login {
+  width: 50%;
+  height: 40px;
+}
+
+.kakao-login {
+  width: 50%;
+  height: 40px;
+}
+
+.email-input-box {
+  padding-top: 7px;
+}
+
+.pw-input-box {
+  padding-top: 7px;
 }

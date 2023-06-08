@@ -1009,85 +1009,45 @@ i {
   }
 }
 
-.login-bg-img {
-  width: 650px;
-  height: 590px;
-  display: inline-block;
-  padding-right: 20px;
-}
-
-.logo-img {
-  width: 174.55px;
-  height: 40px;
-}
-
-.login-btn {
-  width: 100%;
-  height: 50px;
-  border: 1px solid none;
+#join-box {
+  width: 550px;
+  height: 360px;
+  border: 1px solid black;
   border-radius: 10px;
-  color: #fff;
-  background-color: #3aacf8;
+  margin: 0 auto;
 }
 
-.input-email {
-  width: 100%;
-  height: 42px;
-  border: 1px solid #e0e2e7;
-  border-radius: 10px;
-  padding-left: 15px;
-}
-.input-pw {
-  width: 100%;
-  height: 42px;
-  border: 1px solid #e0e2e7;
-  border-radius: 10px;
-  padding-left: 15px;
+#check {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  top: 50px;
+  left: 240px;
 }
 
-.line1 {
-  color: #b2b3b9;
-  width: 140px;
-}
-.line2 {
-  color: #b2b3b9;
-  width: 140px;
-}
-
-.eye-img {
-  width: 20px;
-  height: 20px;
-}
-
-.login-box {
-  width: 300px;
-  height: 510px;
-  display: inline-block;
-  margin-right: 60px;
-  margin-top: 20px;
-}
-
-.login-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 90px;
-}
-
-.google-login {
-  width: 50%;
+#add-information-btn {
+  width: 160px;
   height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: skyblue;
+  color: white;
+  position: relative;
+  top: 70px;
+  left: 200px;
 }
 
-.kakao-login {
-  width: 50%;
-  height: 40px;
+#pre-first {
+  font-size: 28px;
+  position: relative;
+  top: 40px;
+  left: 155px;
 }
 
-.email-input-box {
-  padding-top: 7px;
-}
-
-.pw-input-box {
-  padding-top: 7px;
-}/*# sourceMappingURL=login.css.map */
+#pre-second {
+  font-size: 14px;
+  position: relative;
+  top: 80px;
+  left: 200px;
+}/*# sourceMappingURL=join-modal.css.map */
