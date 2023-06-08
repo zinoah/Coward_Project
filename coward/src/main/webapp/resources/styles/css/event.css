@@ -815,6 +815,9 @@ i {
   .header-right [class^=header-button]:not(:last-child) {
     padding-right: 13px;
   }
+  .header-user-image {
+    display: inline-block;
+  }
 }
 
 .nav {
