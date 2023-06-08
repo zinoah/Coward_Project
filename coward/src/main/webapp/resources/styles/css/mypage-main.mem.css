@@ -456,15 +456,15 @@ address {
   height: 32px;
 }
 
-.btn-ghost, .btn-outlined, .btn-secondary, .btn-primary {
+.btn-ghost, .btn-yellow-outline, .btn-yellow, .btn-outlined, .btn-secondary, .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 8px;
+  padding: 0 10px;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 5px;
 }
-.btn-ghost:disabled, .btn-outlined:disabled, .btn-secondary:disabled, .btn-primary:disabled {
+.btn-ghost:disabled, .btn-yellow-outline:disabled, .btn-yellow:disabled, .btn-outlined:disabled, .btn-secondary:disabled, .btn-primary:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }
@@ -484,7 +484,8 @@ address {
   transition: background-color 200ms ease-in-out;
 }
 .btn-secondary:not(:disabled):hover {
-  background-color: #b2b3b9;
+  background-color: #3aacf8;
+  color: #fff;
 }
 
 .btn-outlined {
@@ -494,7 +495,29 @@ address {
   transition: background-color 200ms ease-in-out;
 }
 .btn-outlined:not(:disabled):hover {
-  background-color: #abdeff;
+  background-color: #3aacf8;
+  color: white;
+}
+
+.btn-yellow {
+  color: #3f4150;
+  background-color: #e0e2e7;
+  transition: background-color 200ms ease-in-out;
+}
+.btn-yellow:not(:disabled):hover {
+  background-color: #ffc200;
+  color: #fff;
+}
+
+.btn-yellow-outline {
+  color: #ffc200;
+  background-color: #fff;
+  border: 1px solid #ffc200;
+  transition: background-color 200ms ease-in-out;
+}
+.btn-yellow-outline:not(:disabled):hover {
+  background-color: #ffc200;
+  color: white;
 }
 
 .btn-ghost {
@@ -896,7 +919,6 @@ i {
   letter-spacing: -0.01em;
   width: 100%;
   background-color: #f8f8f8;
-  margin-top: 24px;
 }
 .footer .logo {
   display: flex;
