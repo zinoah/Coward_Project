@@ -1037,81 +1037,150 @@ i {
   }
 }
 
-.customerService .bg {
+.event-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe0c7;
   width: 100%;
-  height: 490px;
-  background-color: #ffe9a4;
+  height: 280px;
 }
-.customerService .bg-text {
-  font-size: 40px;
-  color: #3f4150;
+.event-banner-wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-content: center;
 }
-.customerService .bg-text:first-of-type {
-  padding-top: 105px;
-}
-.customerService .bg .search-area {
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-}
-.customerService .bg .search-area fieldset {
-  width: 600px;
-  height: 40px;
-  padding: 2px;
-  border: 1px solid #e0e2e7;
-  background-color: #fff;
-  border-radius: 10px;
-  display: flex;
-}
-.customerService .bg #query {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-  padding: 10px;
-  border: none;
-  outline: 0;
-  width: 92%;
-}
-.customerService .bg #search-btn {
-  width: 8%;
-  cursor: pointer;
-  font-size: 1.2em;
-  color: #b2b3b9;
-  background-color: transparent;
-  border: 0;
-}
-.customerService .img {
-  width: 550px;
-  height: 550px;
-  margin-top: 40px;
-  margin-left: 960px;
-  position: absolute;
-}
-.customerService-card {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-  width: 380px;
-  height: 190px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  margin-left: 110px;
-  margin-top: 160px;
-  padding-left: 30px;
-  padding-top: 30px;
-}
-.customerService-card-maintext {
+.event-banner-title {
   font-size: 24px;
   line-height: 34px;
   letter-spacing: -0.01em;
-  color: #3f4150;
 }
-.customerService-card-subtext {
-  padding-top: 30px;
-}/*# sourceMappingURL=customer-service.css.map */
+.event-banner-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 280px;
+  min-width: 240px;
+  height: 180px;
+  border-radius: 10px;
+  background-color: #ffc1c9;
+  margin-top: 24px;
+}
+.event-banner-image img {
+  display: block;
+  max-width: 100%;
+  height: 140px;
+}
+.event-title {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  margin-top: 24px;
+}
+.event-card {
+  margin-top: 16px;
+}
+.event-card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.event-card-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+.event-card-item.is-active .event-card-item-image img {
+  filter: brightness(100%);
+}
+.event-card-item.is-active .event-card-info-status {
+  color: #3aacf8;
+  font-weight: 700;
+}
+.event-card-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  filter: brightness(70%);
+}
+.event-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+  .event-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 160px;
+    margin-top: 10px;
+  }
+  .event-banner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .event-banner-info-title {
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.01em;
+  }
+  .event-banner-info-description {
+    margin-top: 8px;
+  }
+  .event-banner-info-description p {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .event-banner-info-description p:last-child {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #8c8d96;
+  }
+  .event-banner-image {
+    width: 200px;
+    height: 130px;
+    margin: 0;
+  }
+  .event-banner-image img {
+    width: 100%;
+    height: 100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .event-banner {
+    height: 240px;
+  }
+  .event-banner-info-description {
+    margin-top: 8px;
+  }
+  .event-banner-info-description p {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .event-banner-info-description p:last-child {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #8c8d96;
+  }
+  .event-banner-image {
+    width: 320px;
+    height: 200px;
+  }
+  .event-banner-image img {
+    width: 200px;
+    height: auto;
+  }
+}/*# sourceMappingURL=event.css.map */
