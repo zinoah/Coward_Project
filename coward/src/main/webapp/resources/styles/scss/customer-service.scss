@@ -15,13 +15,28 @@
     }
 
     &-text:first-of-type {
-      padding-top: 105px;
+      padding-top: 110px;
     }
 
     .search-area {
       display: flex;
       justify-content: center;
       padding-top: 30px;
+
+      &-input {
+        @include text-style(14, $primary);
+        width: 550px;
+        padding-top: 5px;
+        padding-left: 20px;
+        position: absolute;
+      }
+
+      #search-area-btn {
+        color: $tertiary;
+        margin-top: 9px;
+        margin-left: 560px;
+        position: absolute;
+      }
     }
 
     .search-area fieldset {
@@ -33,51 +48,15 @@
       border-radius: 10px;
       display: flex;
     }
-
-    #query {
-      @include text-style(14, $primary);
-      padding: 10px;
-      border: none;
-      outline: 0;
-      width: 92%;
-    }
-
-    #search-btn {
-      width: 8%;
-      cursor: pointer;
-      font-size: 1.2em;
-      color: $tertiary;
-      background-color: transparent;
-      border: 0;
-    }
   }
 
-  .img {
-    width: 550px;
-    height: 550px;
-    margin-top: 40px;
-    margin-left: 960px;
-    position: absolute;
+  .all-wrapping {
+    @include flexbox;
   }
 
   &-card {
-    @include text-style(16, $primary);
-    width: 380px;
+    box-shadow: $card-shadow;
     height: 190px;
     border-radius: 15px;
-    box-shadow: $card-shadow;
-    display: inline-block;
-    margin-left: 110px;
-    margin-top: 160px;
-    padding-left: 30px;
-    padding-top: 30px;
-
-    &-maintext {
-      @include text-style(24, $primary);
-    }
-
-    &-subtext {
-      padding-top: 30px;
-    }
   }
 }
