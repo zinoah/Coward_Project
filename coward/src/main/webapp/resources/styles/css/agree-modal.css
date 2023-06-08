@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
@@ -1010,311 +1009,61 @@ i {
   }
 }
 
-/* 네비게이션 바 */
-.nav {
-  width: 100%;
-  background-color: #f8f8f8;
-}
-.nav-bar {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  padding: 15px 0;
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  list-style-type: none;
+.background-img {
+  width: 320px;
+  height: 568px;
+  background-color: #b2b3b9;
 }
 
-/* 프로필 사진 + 백 + 닉네임 */
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.profile-img {
-  width: 85px;
-  height: 85px;
-  margin: 30px 0 10px;
-  border-radius: 50%;
-}
-.profile-info {
-  display: flex;
-  align-items: center;
-}
-.profile-type {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 28px;
-  height: 13px;
-  padding: 3px;
-  margin-right: 6px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  font-size: 6px;
-  color: #3aacf8;
-}
-.profile-nick {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-}
-
-.content {
-  width: 100%;
-}
-
-/* 한줄 소개 */
-.introduce {
-  margin-bottom: 16px;
-}
-.introduce-title {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  margin: 0 5px 8px;
-  font-weight: 700;
-}
-.introduce textarea {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  width: 100%;
-  height: 190px;
-  padding: 14px 20px;
+.agree-box {
+  width: 288px;
+  height: 420px;
   border-radius: 10px;
-  background-color: #fff;
-  border: 1px solid #e0e2e7;
-  resize: none;
-}
-
-.award-box {
-  display: flex;
-  width: 100%;
-  border: 1px solid #e0e2e7;
-  border-radius: 10px;
-  margin-bottom: 16px;
-}
-.award-table {
-  table-layout: auto;
-  table-layout: fixed;
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-}
-.award-table td {
-  padding: 5px;
-}
-.award-table tr:last-child {
-  font-size: 10px;
-}
-
-.skill-box {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 16px;
-  border: 1px solid #e0e2e7;
-  border-radius: 10px;
-}
-
-.my-skill {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 8px 8px;
-  margin: 4px 4px;
-  background-color: #3aacf8;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  color: white;
-  text-align: center;
-}
-
-.watchlist-box {
-  position: relative;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-.watchlist-info {
-  width: 100%;
-  height: auto;
-  padding: 25px 25px 20px;
-  position: relative;
-  border: none;
-}
-.watchlist-title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.ic-bookmark-filled {
+  border: 1px solid black;
   position: absolute;
-  right: 20px;
-  top: -5px;
-  font-size: 23px;
-  color: #8c8d96;
+  background-color: #fff;
 }
 
-/* 일정 글자 수 넘어가면 애니메이션 */
-.contest-title {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  margin-right: 5px;
-}
-
-.new-box {
-  width: 26px;
-  height: 14px;
-  padding: 0 2px;
-  background-color: #ffc200;
+.agree-btn {
+  width: 106px;
+  height: 36px;
   border: none;
-  border-radius: 10px;
-  font-size: 10px;
-  color: white;
-  text-align: center;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: #3aacf8;
+  color: #fff;
+  position: relative;
+  left: 91px;
+  right: 91px;
+  bottom: 25px;
 }
 
-.condition {
-  border-spacing: 8px;
-}
-.condition-title td {
-  font-size: 8px;
-  color: #8c8d96;
-}
-.condition-content {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
+.agree-content-box {
+  width: 90%;
+  height: 70%;
+  border: 1px solid none;
+  overflow-y: scroll;
+  font-size: 14pt;
 }
 
-.goods {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 4px 4px;
-  background-color: #eae2ff;
-  border-radius: 3px;
-  font-size: 7px;
-  color: #985cd3;
-  text-align: center;
+strong {
+  font-size: 10pt;
 }
 
-.skills {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 4px 4px;
-  background-color: #ffeffb;
-  border-radius: 3px;
-  font-size: 7px;
-  color: #f86d7d;
-  text-align: center;
+span {
+  border-bottom: 4px solid #ffc200;
+  padding-bottom: 3px;
 }
 
-.company {
-  display: flex;
-  align-items: center;
-  padding: 15px 25px;
-  border-top: 1px solid #e0e2e7;
-  font-size: 10px;
-  color: #3f4150;
-}
-.company img {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 8px;
+.close {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 290px;
+  top: 10px;
+  color: #e0e2e7;
 }
 
-/* 태블릿 */
-@media screen and (min-width: 768px) {
-  nav,
-  .profile {
-    display: none;
-  }
-  .banner {
-    width: 100%;
-    height: 115px;
-    background-image: url("/coward/src/main/webapp/resources/assets/images/mypage-banner.png");
-    background-repeat: no-repeat;
-    margin-bottom: 50px;
-  }
-  .introduce {
-    margin-bottom: 16px;
-  }
-  .introduce-title {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    margin: 0 10px 12px;
-  }
-  .introduce textarea {
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 100%;
-    height: 150px;
-    padding: 15px 25px;
-  }
-  .progress {
-    position: relative;
-    width: 135px;
-    height: 135px;
-    border-radius: 50%;
-    margin: 15px 0 15px 65px;
-    background: #f8f8f8;
-  }
-  /*
-  .progress div {
-    position: absolute;
-    left: 100px;
-    top: 0px;
-    display: none;
-    width: 2px;
-    height: 100px;
-    background: $blue;
-    transform-origin: 0px 100px;
-    -webkit-transform-origin: 0px 100px;
-    -moz-transform-origin: 0px 100px;
-    -ms-transform-origin: 0px 100px;
-  }
-  */
-  .award-box {
-    justify-content: space-around;
-    align-items: center;
-  }
-  .award-table {
-    table-layout: auto;
-    table-layout: fixed;
-    width: 70%;
-    height: 80%;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  .award-table tr:first-child {
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: -0.02em;
-    font-weight: 600;
-  }
-  .award-table tr:last-child {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
-  }
-}/*# sourceMappingURL=mypage-main.mem.css.map */
+.agree-content {
+  font-size: 8pt;
+}/*# sourceMappingURL=agree-modal.css.map */
