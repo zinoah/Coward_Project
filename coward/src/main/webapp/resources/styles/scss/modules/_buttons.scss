@@ -1,9 +1,8 @@
-// TODO: coward에 맞게 수정 필요
 %btn-base {
   @include inline-flexbox;
-  padding: 0 8px;
+  padding: 0 10px;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 5px;
 
   &:disabled {
     cursor: not-allowed;
@@ -30,7 +29,8 @@
   transition: background-color 200ms ease-in-out;
 
   &:not(:disabled):hover {
-    background-color: $tertiary;
+    background-color: $blue;
+    color: $white;
   }
 }
 
@@ -42,7 +42,33 @@
   transition: background-color 200ms ease-in-out;
 
   &:not(:disabled):hover {
-    background-color: $blue-light;
+    background-color: $blue;
+    color: white;
+  }
+}
+
+.btn-yellow {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $border;
+  transition: background-color 200ms ease-in-out;
+
+  &:not(:disabled):hover {
+    background-color: $yellow;
+    color: $white;
+  }
+}
+
+.btn-yellow-outline {
+  @extend %btn-base;
+  color: $yellow;
+  background-color: $white;
+  border: 1px solid $yellow;
+  transition: background-color 200ms ease-in-out;
+
+  &:not(:disabled):hover {
+    background-color: $yellow;
+    color: white;
   }
 }
 
