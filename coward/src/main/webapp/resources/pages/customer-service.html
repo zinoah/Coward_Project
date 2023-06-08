@@ -19,55 +19,79 @@
 
   <body>
     <main class="customerService">
-      <img
-        src="/coward/src/main/webapp/resources/assets/images/cloud-man.svg"
-        class="img"
-      />
       <div class="bg">
         <p class="bg-text">궁금한 내용을</p>
         <p class="bg-text">검색하시면 해결해 드릴게요!</p>
-        <!-- 검색창 -->
-        <div class="search-area">
-          <form action="#" name="search-form">
-            <fieldset>
-              <input
-                type="search"
-                id="query"
-                name="query"
-                autocomplete="off"
-                placeholder="무엇이든 검색해보세요!"
-              />
 
-              <!-- 검색버튼 -->
-              <button
-                id="search-btn"
-                class="fa-solid fa-magnifying-glass"
-              ></button>
-            </fieldset>
-          </form>
+        <!-- 개인/ 기업 이용가이드 body-->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <!-- 검색창 -->
+              <div class="search-area">
+                <form action="#" name="search-form">
+                  <fieldset>
+                    <input
+                      type="search"
+                      class="search-area-input"
+                      name="query"
+                      autocomplete="off"
+                      placeholder="무엇이든 검색해보세요!"
+                    />
+
+                    <!-- 검색버튼 -->
+                    <button
+                      id="search-area-btn"
+                      class="fa-solid fa-magnifying-glass"
+                    ></button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- 개인/ 기업 이용가이드 body-->
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
-            <a href="#" class="customerService-a-tag">
-              <div class="customerService-card">
-                <p class="customerService-card-maintext">개인 회원 ></p>
-                <p class="customerService-card-subtext">
-                  개인 회원님들을 위한 <br />이용가이드 입니다.
-                </p>
+          <div class="col-sm-4">
+            <div class="all-wrapping">
+              <div class="col-md-4">
+                <div class="developer-wrapping">
+                  <div class="customerService-card"></div>
+                  <table border="1" class="customerService-list-table">
+                    <thead>
+                      <tr>
+                        <th>개인 회원님들이 자주 묻는 질문</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>작성된 게시글이 없습니다.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </a>
-            <a href="#" class="customerService-a-tag">
-              <div class="customerService-card">
-                <p class="customerService-card-maintext">기업 회원 ></p>
-                <p class="customerService-card-subtext">
-                  회원님들을 위한 <br />이용가이드 입니다.
-                </p>
+
+              <div class="col-md-4">
+                <div class="company-wrapping">
+                  <div class="customerService-card"></div>
+                  <table border="1" class="customerService-list-table">
+                    <thead>
+                      <tr>
+                        <th>개인 회원님들이 자주 묻는 질문</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>작성된 게시글이 없습니다.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>

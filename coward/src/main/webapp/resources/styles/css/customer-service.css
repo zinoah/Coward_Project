@@ -1022,12 +1022,28 @@ i {
   align-content: center;
 }
 .customerService .bg-text:first-of-type {
-  padding-top: 105px;
+  padding-top: 110px;
 }
 .customerService .bg .search-area {
   display: flex;
   justify-content: center;
   padding-top: 30px;
+}
+.customerService .bg .search-area-input {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #3f4150;
+  width: 550px;
+  padding-top: 5px;
+  padding-left: 20px;
+  position: absolute;
+}
+.customerService .bg .search-area #search-area-btn {
+  color: #b2b3b9;
+  margin-top: 9px;
+  margin-left: 560px;
+  position: absolute;
 }
 .customerService .bg .search-area fieldset {
   width: 600px;
@@ -1038,52 +1054,13 @@ i {
   border-radius: 10px;
   display: flex;
 }
-.customerService .bg #query {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-  padding: 10px;
-  border: none;
-  outline: 0;
-  width: 92%;
-}
-.customerService .bg #search-btn {
-  width: 8%;
-  cursor: pointer;
-  font-size: 1.2em;
-  color: #b2b3b9;
-  background-color: transparent;
-  border: 0;
-}
-.customerService .img {
-  width: 550px;
-  height: 550px;
-  margin-top: 40px;
-  margin-left: 960px;
-  position: absolute;
+.customerService .all-wrapping {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .customerService-card {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-  width: 380px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   height: 190px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  margin-left: 110px;
-  margin-top: 160px;
-  padding-left: 30px;
-  padding-top: 30px;
-}
-.customerService-card-maintext {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-}
-.customerService-card-subtext {
-  padding-top: 30px;
 }/*# sourceMappingURL=customer-service.css.map */
