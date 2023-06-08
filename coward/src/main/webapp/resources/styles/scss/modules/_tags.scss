@@ -1,29 +1,26 @@
-// TODO: coward에 맞게 수정 필요
-// %tag-base {
-//   @include inline-flexbox;
-//   @include text-style(12);
-//   height: 20px;
-//   padding: 0 6px;
-//   font-weight: 700;
-//   border-radius: 4px;
-// }
+%tag-base {
+  @include inline-flexbox;
+  @include text-style(12);
+  height: 20px;
+  padding: 0 8px;
+  font-weight: 700;
+  border-radius: 4px;
+}
 
-// .tag-red {
-//   @extend %tag-base;
-//   color: $white;
-//   background-color: $red;
-// }
+.tag-blue {
+  @extend %tag-base;
+  color: $white;
+  background-color: $blue;
+}
 
+.tag-yellow {
+  @extend %tag-base;
+  color: $white;
+  background-color: $yellow;
+}
 
-// .tag-green {
-//   @extend %tag-base;
-//   color: $white;
-//   background-color: $green;
-// }
-
-
-// .tag-gray {
-//   @extend %tag-base;
-//   color: $secondary;
-//   background-color: $border;
-// }
+.tag-gray {
+  @extend %tag-base;
+  color: $secondary;
+  background-color: $border;
+}
