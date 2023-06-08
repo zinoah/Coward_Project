@@ -1162,7 +1162,9 @@ i {
 }
 
 .watchlist-box {
+  width: 100%;
   position: relative;
+  z-index: 100;
   border: 1px solid #e0e2e7;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -1187,6 +1189,15 @@ i {
   top: -5px;
   font-size: 23px;
   color: #8c8d96;
+}
+
+/* 나중에 js로 효과 주기 */
+.bookmark-btn:hover .ic-bookmark-filled {
+  color: #ffe0c7;
+}
+
+.bookmark-btn:active .ic-bookmark-filled {
+  color: #ffc1c9;
 }
 
 /* 일정 글자 수 넘어가면 애니메이션 */
@@ -1264,10 +1275,6 @@ i {
 
 /* 태블릿 */
 @media screen and (min-width: 768px) {
-  nav,
-  .profile {
-    display: none;
-  }
   .banner {
     width: 100%;
     height: 115px;
@@ -1339,4 +1346,88 @@ i {
     line-height: 16px;
     letter-spacing: -0.005em;
   }
-}/*# sourceMappingURL=mypage-main.mem.css.map */
+  .side-profile {
+    position: absolute;
+    z-index: 200;
+    width: 25%;
+    height: 100%;
+    padding-top: 25px;
+    background-color: #f8f8f8;
+  }
+  .side-profile-title {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    text-align: center;
+  }
+  .profile {
+    border-top: 1px solid #e0e2e7;
+    border-bottom: 1px solid #e0e2e7;
+    padding-bottom: 10px;
+    margin: 10px 40px 20px;
+  }
+  .profile-nick {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .nav {
+    width: 100%;
+  }
+  .nav-bar {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    text-indent: 20px;
+    margin-left: 20px;
+  }
+  .nav-bar li a {
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .web-box {
+    width: 80%;
+    padding: 5px;
+    display: flex;
+    background-color: #3aacf8;
+    border-radius: 10px;
+  }
+  .side-profile {
+    position: relative;
+  }
+  .award-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+  .award-table {
+    table-layout: auto;
+    table-layout: fixed;
+    width: 90%;
+    padding: 10px 0;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .award-table td {
+    padding: 5px 0;
+  }
+  .award-table tr:last-child {
+    font-size: 10px;
+  }
+  .progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px 0 0 0;
+    background: #f8f8f8;
+  }
+}/*# sourceMappingURL=mypage-main-mem.css.map */
