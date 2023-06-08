@@ -1,0 +1,60 @@
+@import "./main";
+
+.background-img {
+  width: 320px;
+  height: 568px;
+  background-color: $tertiary;
+}
+.agree-box {
+  width: 288px;
+  height: 420px;
+  border-radius: 10px;
+  border: 1px solid black;
+  position: absolute;
+  background-color: $white;
+}
+
+.agree-btn {
+  width: 106px;
+  height: 36px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: $blue;
+  color: $white;
+  position: relative;
+  left: 91px;
+  right: 91px;
+  bottom: 25px;
+}
+
+.agree-content-box {
+  width: 90%;
+  height: 70%;
+  border: 1px solid none;
+  overflow-y: scroll;
+  font-size: 14pt;
+}
+
+strong {
+  font-size: 10pt;
+}
+
+span {
+  border-bottom: 4px solid $yellow;
+  padding-bottom: 3px;
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+
+  position: relative;
+  left: 290px;
+  top: 10px;
+  color: $border;
+}
+
+.agree-content {
+  font-size: 8pt;
+}

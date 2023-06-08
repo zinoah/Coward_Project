@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/ranking.css"
+    />
+    <title>Coward | 랭킹</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      alt="Coward"
+                    />
+                  </a>
+                </h1>
+
+                <button
+                  class="header-button sm-only"
+                  type="button"
+                  aria-label="메뉴 버튼"
+                >
+                  <i class="ic-hamburger"></i>
+                </button>
+              </div>
+
+              <div class="header-right sm-hidden">
+                <!-- Note: 로그인을 하지 않은 경우 -->
+                <div class="header-buttons">
+                  <button
+                    class="header-button md-only"
+                    type="button"
+                    aria-label="통합 검색 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">로그인</a>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">회원가입</a>
+                  </button>
+                </div>
+                <!-- Note: 로그인을 한 경우 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <h2 class="visually-hidden">메뉴</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="nav-wrapper">
+              <div class="nav-left">
+                <ul class="nav-list">
+                  <li class="nav-item is-active">
+                    <a href="#">공모전</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">개발자 찾기</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">가격 안내</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nav-right lg-only">
+                <form class="nav-search" action="#">
+                  <input
+                    class="nav-search-input"
+                    type="text"
+                    placeholder="어떤 공모전을 찾으시나요?"
+                  />
+                  <i class="ic-search" aria-hidden></i>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="ranking">
+      <div class="ranking-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="ranking-banner-wrapper">
+                <div class="ranking-banner-info">
+                  <h1 class="ranking-banner-info-title">Montly Ranking</h1>
+                  <div class="ranking-banner-info-description">
+                    <p class="sm-hidden">
+                      이번 한 달간 Coward에서 눈에띄는 성과를 보여주신 분들을
+                      소개합니다!
+                    </p>
+                    <p class="sm-hidden">
+                      이달의 상금 왕, 우승왕, 인기왕을 살펴보세요 !
+                    </p>
+                  </div>
+                </div>
+                <div class="ranking-banner-image">
+                  <img
+                    src="/coward/src/main/webapp/resources/assets/images/trophy.svg"
+                    alt="이벤트 배너 이미지"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note: 모바일의 경우 -->
+      <div class="container sm-only">
+        <div class="row">
+          <div class="col-sm-4">
+            <h3 class="ranking-header">
+              <span class="month">5</span>월의 랭킹 보기
+            </h3>
+
+            <select class="ranking-dropdown">
+              <option class="ranking-dropdown-menu" value="moeny-king">
+                이달의 상금왕 💎
+              </option>
+              <option class="ranking-dropdown-menu" value="victory-king">
+                이달의 우승왕 🏆
+              </option>
+              <option class="ranking-dropdown-menu" value="popular-king">
+                이달의 인기왕 💗
+              </option>
+            </select>
+
+            <div class="ranking-image">
+              <img
+                src="/coward/src/main/webapp/resources/assets/images/running-doodle.svg"
+                alt="랭킹 디자인 이미지"
+              />
+            </div>
+
+            <ul class="ranking-list">
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">1</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">2</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">3</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">4</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">5</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">6</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">7</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">8</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">9</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+              <li class="ranking-item">
+                <div class="ranking-item-left">
+                  <span class="rank">10</span>
+                  <div class="user-profile">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                      alt="1위 프로필"
+                    />
+                  </div>
+                  <span class="user-name">Apple</span>
+                </div>
+
+                <div class="ranking-item-right">
+                  <span class="total-money">100,000,000</span>
+                  <span class="currency">원</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note: 태블릿, 데스크탑의 경우 -->
+      <div class="container sm-hidden">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="ranking-header">
+              <span class="month">5</span>월의 랭킹 보기
+            </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-lg-4">
+            <div class="ranking-section-1">
+              <h4 class="ranking-title">이달의 상금왕 💎</h4>
+
+              <div class="ranking-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/running-doodle.svg"
+                  alt="랭킹 디자인 이미지"
+                />
+              </div>
+
+              <ul class="ranking-list">
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">1</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">2</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">3</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">4</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">5</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">6</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">7</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">8</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">9</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">10</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <div class="ranking-section-2">
+              <h4 class="ranking-title">이달의 우승왕 🏆</h4>
+
+              <div class="ranking-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/icecream-doodle.svg"
+                  alt="랭킹 디자인 이미지"
+                />
+              </div>
+
+              <ul class="ranking-list">
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">1</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">2</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">3</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">4</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">5</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">6</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">7</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">8</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">9</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">10</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <div class="ranking-section-3">
+              <h4 class="ranking-title">이달의 인기왕 💗</h4>
+
+              <div class="ranking-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/loving-doodle.svg"
+                  alt="랭킹 디자인 이미지"
+                />
+              </div>
+
+              <ul class="ranking-list">
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">1</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">2</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">3</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">4</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">5</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">6</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">7</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">8</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">9</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+                <li class="ranking-item">
+                  <div class="ranking-item-left">
+                    <span class="rank">10</span>
+                    <div class="user-profile">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/apple-logo.svg"
+                        alt="1위 프로필"
+                      />
+                    </div>
+                    <span class="user-name">Apple</span>
+                  </div>
+
+                  <div class="ranking-item-right">
+                    <span class="total-money">100,000,000</span>
+                    <span class="currency">원</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-2 col-lg-3">
+            <h1 class="logo">
+              <a href="#">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  alt="Coward"
+                />
+              </a>
+            </h1>
+          </div>
+
+          <div class="col-sm-4 col-md-5 col-lg-3">
+            <div class="service-center">
+              <a href="#">
+                <h3>고객센터</h3>
+                <i class="ic-chevron"></i>
+              </a>
+            </div>
+            <div class="service-info">
+              <div class="row">
+                <div class="service-info-wrapper">
+                  <div class="service-info-time">
+                    <div class="service-info-title">상담시간</div>
+                    <p>
+                      평일 11:00 ~ 17:00 <br />
+                      점심 12:30 ~ 13:30 <br />
+                      (주말, 공휴일 제외)
+                    </p>
+                  </div>
+
+                  <div class="service-info-tel">
+                    <div class="service-info-title">연락처</div>
+                    <a class="footer-tel" href="tel:02-1234-5678"
+                      >02-1234-5678</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <address class="footer-info sm-hidden">
+            <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+            <p>Copyright © 2023 Coawrd All Right Reserved</p>
+          </address>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="footer-links">
+            <div class="row">
+              <div class="footer-links-wrapper">
+                <div class="icon-link">
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
+                      alt="Github 바로가기"
+                  /></a>
+                  <a class="icon-link-item" href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
+                      alt="Notion 바로가기"
+                    />
+                  </a>
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
+                      alt="Figma 바로가기"
+                  /></a>
+                </div>
+
+                <div class="text-link">
+                  <ul class="text-link-list">
+                    <li class="text-link-item"><a href="#">이용가이드</a></li>
+                    <li class="text-link-item">
+                      <a href="#">개인정보처리방침</a>
+                    </li>
+                    <li class="text-link-item"><a href="#">이용약관</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <address class="footer-info sm-only">
+          <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+          <p>Copyright © 2023 Coawrd All Right Reserved</p>
+        </address>
+      </div>
+    </footer>
+  </body>
+</html>
