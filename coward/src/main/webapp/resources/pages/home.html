@@ -96,113 +96,187 @@
       </div>
     </nav>
 
-    <div class="home">
-      <div class="home-banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="home-banner-wrapper">
-                <div class="home-banner-info">
-                  <h1 class="home-banner-info-title">Home</h1>
-                  <div class="home-banner-info-description">
-                    <p class="sm-hidden">
-                      Coward를 사랑해주시는 여러분들을 위한 이벤트!
-                    </p>
-                    <p class="sm-hidden">
-                      쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                    </p>
-                  </div>
+    <div class="banner-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-top-wrapper">
+              <div class="banner-top-info">
+                <h1 class="banner-top-info-title">Home</h1>
+                <div class="banner-top-info-description">
+                  <p class="sm-hidden">
+                    Coward를 사랑해주시는 여러분들을 위한 이벤트!
+                  </p>
+                  <p class="sm-hidden">
+                    쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                  </p>
                 </div>
-                <div class="home-banner-image">
-                  <img
-                    src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                    alt="이벤트 배너 이미지"
-                  />
-                </div>
+              </div>
+              <div class="banner-top-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
+                  alt="이벤트 배너 이미지"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="home">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <h3 class="home-title">전체 이벤트 보기</h3>
+        <!-- 공모전 둘러보기 -->
+        <section class="home-contest-preview">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="section-title">
+                <h3>공모전 둘러보기</h3>
+                <a class="more-btn" href="#">
+                  <span>더보기</span>
+                  <i class="ic-chevron" aria-hidden></i>
+                </a>
+              </div>
 
-            <div class="contest-slider">
-              <!-- TODO: 슬라이더 넣기 -->
-            </div>
+              <!-- TODO: 공모전 슬라이더 넣기 -->
+              <div class="contest-slider">
+                <div class="temp-layout"></div>
 
-            <div class="home-title">
-              <h3>이런 서비스는 어떠세요?</h3>
-            </div>
-
-            <div>
-              <a href="#">
-                <div>
-                  <div>
+                <div class="contest-card">
+                  <div class="contest-card-image">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/thumbs-up-2d.svg"
-                      alt="맞춤 공모전 바로가기"
+                      src="/coward/src/main/webapp/resources/assets/images/contest-gallery-card-img.svg"
                     />
                   </div>
-                  <span>맞춤 공모전</span>
-                </div>
-              </a>
-              <a href="#">
-                <div>
-                  <div>
-                    <img
-                      src="/coward/src/main/webapp/resources/assets/images/thumbs-up-2d.svg"
-                      alt="맞춤 공모전 바로가기"
-                    />
+                  <div class="contest-card-info">
+                    <span class="company-mem-name">기업회원명</span>
+                    <h3 class="contest-title">공모전 타이틀</h3>
+                    <span>총 상금 <span class="price">300</span> 만원</span>
                   </div>
-                  <span>개발자 찾기</span>
                 </div>
-              </a>
-              <a href="#">
-                <div>
-                  <div>
-                    <img
-                      src="/coward/src/main/webapp/resources/assets/images/thumbs-up-2d.svg"
-                      alt="맞춤 공모전 바로가기"
-                    />
-                  </div>
-                  <span>이벤트</span>
-                </div>
-              </a>
-              <a href="#">
-                <div>
-                  <div>
-                    <img
-                      src="/coward/src/main/webapp/resources/assets/images/thumbs-up-2d.svg"
-                      alt="맞춤 공모전 바로가기"
-                    />
-                  </div>
-                  <span>고객센터</span>
-                </div>
-              </a>
+              </div>
             </div>
-
-            <div class="home-title">
-              <h3><span>5</span>월의 랭킹 보기</h3>
-              <a href="#">
-                <span>더보기</span>
-                <i class="ic-chevron"></i>
-              </a>
-            </div>
-
-            <div>
-              <!-- TODO: 랭킹 이름 유의해서 작성하기 -->
-            </div>
-
-            <h3 class="home-title">신규 등록된 공모전</h3>
-            <div class="tag-yellow">New</div>
           </div>
-        </div>
+        </section>
+
+        <!-- 이런 서비스는 어떠세요? -->
+        <section class="home-services">
+          <div class="row">
+            <div class="section-title">
+              <div class="col-sm-4">
+                <h3>이런 서비스는 어떠세요?</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-1">
+              <div class="service">
+                <a href="#">
+                  <div class="service-image-1">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/thumbs-up-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                  </div>
+                  <span class="service-name">맞춤 공모전</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="service">
+                <a href="#">
+                  <div class="service-image-2">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/rocket-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                  </div>
+                  <span class="service-name">개발자 찾기</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="service">
+                <a href="#">
+                  <div class="service-image-3">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/present-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                  </div>
+                  <span class="service-name">이벤트</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <div class="service">
+                <a href="#">
+                  <div class="service-image-4">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/info-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                  </div>
+                  <span class="service-name">고객센터</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 랭킹 보기 -->
+        <section class="home-ranking">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="section-title">
+                <h3>랭킹 보기</h3>
+                <a class="more-btn" href="#">
+                  <span>더보기</span>
+                  <i class="ic-chevron" aria-hidden></i>
+                </a>
+              </div>
+
+              <!-- 랭킹 마크업 -->
+              <div class="temp-layout"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 신규 등록된 공모전 -->
+        <section class="home-contest-new">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="section-title">
+                <h3>새로 등록된 공모전</h3>
+                <a class="more-btn" href="#">
+                  <span>더보기</span>
+                  <i class="ic-chevron" aria-hidden></i>
+                </a>
+              </div>
+
+              <!-- TODO: 공모전 슬라이더 넣기 -->
+              <div class="contest-slider">
+                <div class="temp-layout"></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
+
+    <section class="banner-bottom">
+      <div class="banner-bottom-image">
+        <img
+          src="/coward/src/main/webapp/resources/assets/images/coupon.svg"
+          aria-hidden
+        />
+      </div>
+      <p class="ad-slogan">
+        Coward 신규 회원가입 하고
+        <strong class="text-emphasis">쿠폰팩</strong> 받으러가기 !
+      </p>
+    </section>
 
     <footer class="footer">
       <div class="container">
