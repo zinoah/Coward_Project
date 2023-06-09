@@ -1,51 +1,44 @@
 @import "./main.scss";
 
+/***** 모바일 *****/
 /* 네비게이션 바 */
 .nav {
   width: 100%;
   background-color: $background;
 
   &-bar {
-    @include text-style(12);
-    padding: 15px 0;
-    display: flex;
+    @include flexbox(around);
+    font-size: 10px;
+    padding: 14px 0;
     text-align: center;
-    justify-content: space-around;
     list-style-type: none;
   }
 }
-
 /* 프로필 사진 + 백 + 닉네임 */
 .profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
+  @include column-flexbox;
+  margin: 15px;
 
   &-img {
     width: 85px;
     height: 85px;
-    margin: 30px 0 10px;
-    border-radius: 50%;
+    margin: 8px;
   }
 
   &-info {
-    display: flex;
-    align-items: center;
+    @include flexbox;
   }
 
   &-type {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flexbox;
     width: 28px;
     height: 13px;
     padding: 3px;
     margin-right: 6px;
-    border: 1px solid #3aacf8;
+    border: 1px solid $blue;
     border-radius: 5px;
     font-size: 6px;
-    color: #3aacf8;
+    color: $blue;
   }
 
   &-nick {
@@ -54,20 +47,18 @@
   }
 }
 
-.content {
-  width: 100%;
+/* 소제목 스타일 */
+.introduce-title {
+  @include text-style(12);
+  margin: 0 8px 8px;
+  font-weight: 700;
 }
 
 /* 한줄 소개 */
-.introduce {
+.one-liner {
   margin-bottom: 16px;
-  &-title {
-    @include text-style(12);
-    margin: 0 5px 8px;
-    font-weight: 700;
-  }
 
-  textarea {
+  input {
     @include text-style(12);
     width: 100%;
     height: 190px;
@@ -75,14 +66,13 @@
     border-radius: 10px;
     background-color: $white;
     border: 1px solid $border;
-    resize: none;
   }
 }
 
+/* 수상 이력 */
 .award {
   &-box {
-    display: flex;
-
+    @include flexbox;
     width: 100%;
     border: 1px solid $border;
     border-radius: 10px;
@@ -112,8 +102,9 @@
   }
 }
 
+/* 내 기술 */
 .skill-box {
-  display: flex;
+  @include flexbox;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
@@ -138,33 +129,36 @@
   text-align: center;
 }
 
+/* 관심 목록 */
+.watchlist-box-group {
+  @include flexbox;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .watchlist {
   &-box {
-    width: 100%;
     position: relative;
-    z-index: 100;
+    width: 290px;
+    height: 215px;
+    margin-bottom: 20px;
     border: 1px solid $border;
     border-radius: 5px;
-    margin-bottom: 15px;
     cursor: pointer;
   }
 
   &-info {
-    width: 100%;
-    height: auto;
     padding: 25px 25px 20px;
 
-    position: relative;
     border: none;
   }
-
   &-title {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 }
 
+/* watchlist-box 기준 */
 .ic-bookmark-filled {
   position: absolute;
   right: 20px;
@@ -173,32 +167,28 @@
   color: $secondary;
 }
 
-/* 나중에 js로 효과 주기 */
-.bookmark-btn:hover .ic-bookmark-filled {
-  color: $red-light;
-}
-
-.bookmark-btn:active .ic-bookmark-filled {
+/* 북마크 눌렀을 때 */
+.is-active {
   color: $red;
 }
 
-/* 일정 글자 수 넘어가면 애니메이션 */
+/* 공모전 제목 - 길어지면 슬라이드 주고싶음 */
 .contest-title {
-  @include text-style(14);
-  margin-right: 5px;
+  @include text-style(15);
+  align-items: center;
+  margin-right: 8px;
 }
 
+/* 반짝이 효과 주고싶음 */
 .new-box {
-  width: 26px;
-  height: 14px;
-
-  padding: 0 2px;
+  @include flexbox;
+  width: 28px;
+  height: 17px;
   background-color: $yellow;
   border: none;
   border-radius: 10px;
   font-size: 10px;
   color: white;
-  text-align: center;
 }
 
 .condition {
@@ -240,71 +230,61 @@
 }
 
 .company {
-  display: flex;
-  align-items: center;
-
-  padding: 15px 25px;
+  @include flexbox;
+  justify-content: flex-start;
+  padding: 15px 20px;
   border-top: 1px solid $border;
-
   font-size: 10px;
   color: $primary;
-  img {
+
+  &-img {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
     margin-right: 8px;
   }
 }
 
-/* 태블릿 */
-@media screen and (min-width: 768px) {
+/***** 태블릿 *****/
+@include responsive(T) {
+  /* 배너 */
   .banner {
     width: 100%;
     height: 115px;
     background-image: url("/coward/src/main/webapp/resources/assets/images/mypage-banner.png");
     background-repeat: no-repeat;
-    margin-bottom: 50px;
   }
 
-  .introduce {
-    margin-bottom: 16px;
-    &-title {
-      @include text-style(16);
-      margin: 0 10px 12px;
-    }
+  /* 네비게이션 바 */
+  .nav-bar {
+    @include text-style(16);
+    padding: 20px 0;
+  }
 
-    textarea {
+  /* 프로필 사진 + 백 + 닉네임 */
+  .profile {
+    margin-bottom: 30px;
+
+    &-img {
+      width: 130px;
+      height: 130px;
+      margin: 30px 0 10px;
+    }
+  }
+
+  /* 소제목 스타일 */
+  .introduce-title {
+    @include text-style(16);
+    margin: 0 10px 12px;
+  }
+
+  /* 한줄 소개 */
+  .one-liner {
+    input {
       @include text-style(14);
       width: 100%;
-      height: 150px;
-      padding: 15px 25px;
+      height: 180px;
     }
   }
-
-  .progress {
-    position: relative;
-    width: 135px;
-    height: 135px;
-    border-radius: 50%;
-    margin: 15px 0 15px 65px;
-    background: $background;
-  }
-
-  /*
-.progress div {
-  position: absolute;
-  left: 100px;
-  top: 0px;
-  display: none;
-  width: 2px;
-  height: 100px;
-  background: $blue;
-  transform-origin: 0px 100px;
-  -webkit-transform-origin: 0px 100px;
-  -moz-transform-origin: 0px 100px;
-  -ms-transform-origin: 0px 100px;
-}
-*/
   .award {
     &-box {
       justify-content: space-around;
@@ -331,103 +311,117 @@
       @include text-style(12);
     }
   }
-
-  .side-profile {
-    position: absolute;
-    z-index: 200;
-    width: 25%;
-    height: 100%;
-    padding-top: 25px;
-    background-color: $background;
-
-    &-title {
-      @include text-style(18);
-      font-weight: 600;
-      text-align: center;
-    }
+  .progress {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    margin: 15px 0 15px 65px;
+    background: $background;
   }
+}
 
-  .profile {
-    border-top: 1px solid $border;
-    border-bottom: 1px solid $border;
-    padding-bottom: 10px;
-    margin: 10px 40px 20px;
-
-    &-nick {
-      @include text-style(16);
-    }
+/***** 웹 *****/
+@include responsive(D) {
+  .web-box {
+    @include flexbox;
+    width: 1000px;
+    height: 610px;
+    border: 1px solid black;
   }
 
   .nav {
     width: 100%;
 
+    background-color: $background;
+
     &-bar {
-      @include text-style(16);
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      text-indent: 20px;
-      margin-left: 20px;
-    }
-
-    &-bar li a {
-      line-height: 30px;
-    }
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .web-box {
-    width: 80%;
-    padding: 5px;
-    display: flex;
-    background-color: $blue;
-    border-radius: 10px;
-  }
-
-  .side-profile {
-    position: relative;
-  }
-
-  .award {
-    &-box {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border: 1px solid $border;
-      border-radius: 10px;
-      margin-bottom: 16px;
-    }
-
-    &-table {
-      table-layout: auto;
-      table-layout: fixed;
-      width: 90%;
-      padding: 10px 0;
-
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    &-table td {
-      padding: 5px 0;
-    }
-
-    &-table tr:first-child {
+      @include column-flexbox(start);
       @include text-style(20);
+      padding: 14px 0;
     }
 
-    &-table tr:last-child {
-      font-size: 10px;
+    &-web {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* 한줄 소개 */
+  .one-liner {
+    input {
+      @include text-style(12);
+      width: 550px;
+      height: 160px;
+    }
+  }
+  .award {
+    width: 220px;
+    &-box {
+      @include column-flexbox;
+      justify-content: space-around;
+      align-items: center;
     }
   }
 
   .progress {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 20px 0 0 0;
-    background: $background;
+    margin: 30px 0 10px 0;
+  }
+
+  .skill {
+    width: 260px;
+    &-box {
+      height: 100px;
+      padding: 10px;
+      margin: 0;
+    }
+  }
+  .credit {
+    width: 260px;
+    &-box {
+      @include flexbox;
+      height: 100px;
+      align-items: center;
+
+      padding: 10px;
+
+      border: 1px solid $border;
+      border-radius: 10px;
+    }
+  }
+
+  .credit-skill {
+    @include flexbox(between);
+
+    width: 550px;
+  }
+
+  .one-credit-skill {
+    @include column-flexbox;
+    width: 550px;
+  }
+
+  .web-box-header {
+    @include flexbox;
+    margin-bottom: 10px;
+  }
+
+  .watchlist {
+    &-box {
+      width: 220px;
+      height: 195px;
+    }
+
+    &-info {
+      padding: 20px 20px 15px;
+    }
+  }
+
+  .company {
+    padding: 10px 15px;
+  }
+
+  .introduce-title {
+    margin-bottom: 10px;
   }
 }

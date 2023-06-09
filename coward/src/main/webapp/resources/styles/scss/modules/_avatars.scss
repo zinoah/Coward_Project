@@ -11,6 +11,10 @@
   }
 }
 
+.avatar {
+  @extend %avatar-base;
+}
+
 .avatar-24 {
   @extend %avatar-base;
   width: 24px;
