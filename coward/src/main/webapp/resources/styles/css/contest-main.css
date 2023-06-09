@@ -431,6 +431,34 @@ address {
   }
 }
 
+.tag-gray, .tag-yellow, .tag-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  height: 20px;
+  padding: 0 8px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.tag-blue {
+  color: #fff;
+  background-color: #3aacf8;
+}
+
+.tag-yellow {
+  color: #fff;
+  background-color: #ffc200;
+}
+
+.tag-gray {
+  color: #8c8d96;
+  background-color: #e0e2e7;
+}
+
 .avatar-32, .avatar-24 {
   display: block;
   overflow: hidden;
@@ -1046,7 +1074,7 @@ i {
   margin-top: 10px;
 }
 
-.main .gallery-title-wrapper h1 {
+.main .title-wrapper h1 {
   font-size: 24px;
   line-height: 34px;
   letter-spacing: -0.01em;
@@ -1171,7 +1199,7 @@ i {
   margin-top: 20px;
 }
 .main .ad-banner-box {
-  margin-top: 50px;
+  margin-top: 30px;
   height: 150px;
   background-color: #ffc1c9;
   border-radius: 20px;
@@ -1191,4 +1219,51 @@ i {
   letter-spacing: -0.01em;
   font-weight: bold;
   color: #fff;
+}
+.main .mb-btn-box {
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e0e2e7;
+  border: 2px solid #e0e2e7;
+}
+.main .mb-btn-box button {
+  flex-basis: 25%;
+  height: 35px;
+}
+.main .mb-btn-box button:hover {
+  border-bottom: 2px solid #3aacf8;
+  transition: 0.3s;
+}
+.main .type-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  margin-top: 10px;
+}
+.main .type-button-wrapper .select {
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .type-button-wrapper .select p {
+  font-size: 14px;
+}
+.main .contest-card {
+  margin-top: 30px;
+  height: 150px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.main .contest-card:nth-child(1) {
+  margin-top: 10px;
 }/*# sourceMappingURL=contest-main.css.map */

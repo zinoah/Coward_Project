@@ -80,8 +80,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -469,8 +468,7 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .avatar-24 {
@@ -483,15 +481,15 @@ address {
   height: 32px;
 }
 
-.btn-ghost, .btn-outlined, .btn-secondary, .btn-primary {
+.btn-ghost, .btn-yellow-outline, .btn-yellow, .btn-outlined, .btn-secondary, .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 8px;
+  padding: 0 10px;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 5px;
 }
-.btn-ghost:disabled, .btn-outlined:disabled, .btn-secondary:disabled, .btn-primary:disabled {
+.btn-ghost:disabled, .btn-yellow-outline:disabled, .btn-yellow:disabled, .btn-outlined:disabled, .btn-secondary:disabled, .btn-primary:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }
@@ -511,7 +509,8 @@ address {
   transition: background-color 200ms ease-in-out;
 }
 .btn-secondary:not(:disabled):hover {
-  background-color: #b2b3b9;
+  background-color: #3aacf8;
+  color: #fff;
 }
 
 .btn-outlined {
@@ -521,7 +520,29 @@ address {
   transition: background-color 200ms ease-in-out;
 }
 .btn-outlined:not(:disabled):hover {
-  background-color: #abdeff;
+  background-color: #3aacf8;
+  color: white;
+}
+
+.btn-yellow {
+  color: #3f4150;
+  background-color: #e0e2e7;
+  transition: background-color 200ms ease-in-out;
+}
+.btn-yellow:not(:disabled):hover {
+  background-color: #ffc200;
+  color: #fff;
+}
+
+.btn-yellow-outline {
+  color: #ffc200;
+  background-color: #fff;
+  border: 1px solid #ffc200;
+  transition: background-color 200ms ease-in-out;
+}
+.btn-yellow-outline:not(:disabled):hover {
+  background-color: #ffc200;
+  color: white;
 }
 
 .btn-ghost {
@@ -575,12 +596,7 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.form-select::-moz-placeholder, .form-input::-moz-placeholder {
-  color: #b2b3b9;
+  appearance: none;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -898,11 +914,6 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
-  .nav .nav-search-input::-moz-placeholder {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
-  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -923,7 +934,6 @@ i {
   letter-spacing: -0.01em;
   width: 100%;
   background-color: #f8f8f8;
-  margin-top: 24px;
 }
 .footer .logo {
   display: flex;
