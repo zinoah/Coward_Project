@@ -1,62 +1,249 @@
 @import "./main.scss";
 
-.customerService {
-  .bg {
-    width: 100%;
-    height: 490px;
-    background-color: $yellow-light;
+.header {
+  background-color: $yellow-light;
 
-    &-text {
-      font-size: 40px;
+  &-wrapper {
+    .login-button {
+      color: $yellow;
+    }
+  }
+}
+
+.banner {
+  background-color: $yellow-light;
+  width: 100%;
+  height: 250px;
+
+  &-wrapper {
+    @include flexbox;
+    height: 250px;
+    flex-direction: column;
+
+    h2 {
+      text-align: center;
       color: $primary;
-      display: flex;
-      justify-content: center;
-      align-content: center;
+      line-height: 35px;
     }
 
-    &-text:first-of-type {
-      padding-top: 110px;
-    }
-
-    .search-area {
-      display: flex;
-      justify-content: center;
-      padding-top: 30px;
-
-      &-input {
-        @include text-style(14, $primary);
-        width: 550px;
-        padding-top: 5px;
-        padding-left: 20px;
-        position: absolute;
-      }
-
-      #search-area-btn {
-        color: $tertiary;
-        margin-top: 9px;
-        margin-left: 560px;
-        position: absolute;
-      }
-    }
-
-    .search-area fieldset {
-      width: 600px;
-      height: 40px;
-      padding: 2px;
-      border: 1px solid $border;
+    fieldset {
+      width: 330px;
+      margin-top: 30px;
+      border-radius: 15px;
       background-color: $white;
-      border-radius: 10px;
-      display: flex;
+      border: 0;
+    }
+
+    input {
+      width: 280px;
+    }
+
+    #search-btn {
+      color: $tertiary;
     }
   }
 
-  .all-wrapping {
-    @include flexbox;
+  @include responsive(T) {
+    &-wrapper {
+      h2 {
+        margin-top: -50px;
+      }
+
+      img {
+        width: 260px;
+        height: 250px;
+        position: absolute;
+        margin-left: 490px;
+        margin-top: 130px;
+      }
+    }
+    .seach-area-fieldset {
+      width: 300px;
+      position: absolute;
+      margin-left: -150px;
+      margin-top: 10px;
+
+      input {
+        width: 250px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-wrapper {
+      h2 {
+        margin-top: -100px;
+      }
+      img {
+        width: 450px;
+        height: 350px;
+        position: absolute;
+        margin-left: 800px;
+        margin-top: 40px;
+      }
+
+      .seach-area-fieldset {
+        width: 400px;
+        position: absolute;
+        margin-left: -200px;
+        margin-top: 10px;
+
+        input {
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+
+.customerService {
+  .developer-wrapping {
+    height: 190px;
+    margin-top: 20px;
+    background-image: url(../../assets/images/code.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+  }
+
+  .company-wrapping {
+    height: 190px;
+    margin-top: 20px;
+    background-image: url(../../assets/images/briefcase.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
   }
 
   &-card {
     box-shadow: $card-shadow;
     height: 190px;
     border-radius: 15px;
+
+    p {
+      color: $primary;
+      &:first-of-type {
+        @include text-style-18;
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+      &:last-of-type {
+        @include text-style-14;
+        padding-top: 20px;
+        padding-left: 20px;
+      }
+    }
   }
+
+  &-list-table {
+    margin-top: 30px;
+    margin-bottom: 300px;
+    border-spacing: 5px;
+    border: 0;
+  }
+
+  @include responsive(T) {
+    .developer-wrapping {
+      margin-top: 65px;
+      width: 320px;
+    }
+
+    .company-wrapping {
+      margin-top: 65px;
+      width: 320px;
+    }
+  }
+
+  @include responsive(D) {
+    .developer-wrapping {
+      margin-top: 65px;
+      margin-left: 120px;
+      width: 350px;
+    }
+
+    .company-wrapping {
+      margin-top: 65px;
+      margin-right: 120px;
+      width: 350px;
+    }
+
+    #table-col {
+      padding-left: 130px;
+    }
+  }
+}
+
+.bottom-banner {
+  background-color: $background;
+  width: 100%;
+  height: 270px;
+  margin-top: 30px;
+
+  &-card {
+    width: 100%;
+    height: 80px;
+    background-color: $white;
+    border-radius: 10px;
+    margin: 10px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    &-img {
+      height: 80px;
+      @include flexbox;
+      flex-direction: column;
+
+      p {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .col-sm-2 {
+    h3 {
+      padding: 15px;
+    }
+  }
+
+  @include responsive(T) {
+    height: 200px;
+
+    &-card {
+      &:nth-child(1) {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    height: 250px;
+
+    &-card {
+      width: 70.5%;
+      height: 120px;
+
+      &:nth-child(1) {
+        margin-top: 80.5px;
+      }
+
+      img {
+        width: 45px;
+        height: 45px;
+        margin-top: 35px;
+      }
+    }
+
+    .col-sm-2 {
+      h3 {
+        padding: 25px;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #3f4150;
 }

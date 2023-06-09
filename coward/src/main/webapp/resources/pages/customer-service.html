@@ -13,36 +13,65 @@
 
     <link
       rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/service_center.css"
+    />
+    <link
+      rel="stylesheet"
       href="/coward/src/main/webapp/resources/styles/css/customer-service.css"
     />
   </head>
 
   <body>
-    <main class="customerService">
-      <div class="bg">
-        <p class="bg-text">궁금한 내용을</p>
-        <p class="bg-text">검색하시면 해결해 드릴게요!</p>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="../assets/images/home_logo.svg"
+                      alt="Coward로고"
+                    />
+                  </a>
+                </h1>
+                <h1 class="service-center-text-logo">고객 센터</h1>
+              </div>
+              <div class="header-right">
+                <button class="login-button">
+                  <a href="#">로그인</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-        <!-- 개인/ 기업 이용가이드 body-->
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4">
-              <!-- 검색창 -->
+    <!--상단 검색창 배너 섹션-->
+    <section class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-wrapper">
+              <img src="../assets/images/cloud-man.svg" class="sm-hidden" />
+              <h2>궁금한 내용을 <br />검색하시면 해결해 드릴게요!</h2>
+              <!-- 검색 창-->
               <div class="search-area">
-                <form action="#" name="search-form">
-                  <fieldset>
+                <form action="#" class="search-area-form">
+                  <fieldset class="seach-area-fieldset">
                     <input
                       type="search"
                       class="search-area-input"
+                      id="query"
                       name="query"
-                      autocomplete="off"
+                      auto="off"
                       placeholder="무엇이든 검색해보세요!"
                     />
 
-                    <!-- 검색버튼 -->
                     <button
-                      id="search-area-btn"
+                      id="search-btn"
                       class="fa-solid fa-magnifying-glass"
                     ></button>
                   </fieldset>
@@ -52,49 +81,185 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!--이용가이드 / 자주묻는 질문 섹션-->
+    <main class="customerService">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-6 col-lg-6">
+            <div class="developer-wrapping">
+              <a href="#">
+                <div class="customerService-card">
+                  <p>개인 회원 ></p>
+                  <p>
+                    개인 회원님들을 위한 <br />
+                    이용 가이드입니다.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-6">
+            <div class="company-wrapping">
+              <a href="#">
+                <div class="customerService-card">
+                  <p>기업 회원 ></p>
+                  <p>
+                    기업 회원님들을 위한 <br />
+                    이용 가이드입니다.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6" id="table-col">
+            <table class="customerService-list-table sm-hidden">
+              <thead>
+                <tr>
+                  <th>개인 회원님들이 자주 묻는 질문</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>작성된 게시글이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <table class="customerService-list-table sm-hidden">
+              <thead>
+                <tr>
+                  <th>기업 회원님들이 자주 묻는 질문</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>작성된 게시글이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 상담 / 문의 섹션-->
+    <section class="bottom-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2 col-md-3 col-lg-3">
+            <h3>상담 / 문의</h3>
+            <div class="bottom-banner-card">
+              <a href="#">
+                <div class="bottom-banner-card-img">
+                  <img src="../assets/images/blue-qeustion.svg" />
+                  <p>상담시간</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-2 col-md-3 col-lg-3">
+            <h3>&nbsp;</h3>
+            <div class="bottom-banner-card">
+              <a href="#">
+                <div class="bottom-banner-card-img">
+                  <img src="../assets/images/blue-bubble.svg" />
+                  <p>채팅상담</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-2 col-md-3 col-lg-3">
+            <div class="bottom-banner-card">
+              <a href="#">
+                <div class="bottom-banner-card-img">
+                  <img src="../assets/images/blue-call.svg" />
+                  <p>전화상담</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-2 col-md-3 col-lg-3">
+            <div class="bottom-banner-card">
+              <a href="#">
+                <div class="bottom-banner-card-img">
+                  <img src="../assets/images/blue-book.svg" />
+                  <p>이용약관</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <div class="all-wrapping">
-              <div class="col-md-4">
-                <div class="developer-wrapping">
-                  <div class="customerService-card"></div>
-                  <table border="1" class="customerService-list-table">
-                    <thead>
-                      <tr>
-                        <th>개인 회원님들이 자주 묻는 질문</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>작성된 게시글이 없습니다.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+            <img src="../assets/images/withe-logo.svg" alt="" />
+          </div>
+        </div>
+        <div class="row sm-only">
+          <div class="col-sm-4">
+            <div>
+              <a href="#">
+                <img src="../assets/images/withe-github.svg" alt="" />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="../assets/images/withe-notion.svg" alt="" />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="../assets/images/withe-figma.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="footer-wrapper">
+              <div class="footer-left">
+                <p>
+                  서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F
+                </p>
+                <p>Copyright © 2023 Coawrd All Right Reserved</p>
               </div>
-
-              <div class="col-md-4">
-                <div class="company-wrapping">
-                  <div class="customerService-card"></div>
-                  <table border="1" class="customerService-list-table">
-                    <thead>
-                      <tr>
-                        <th>개인 회원님들이 자주 묻는 질문</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>작성된 게시글이 없습니다.</td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <div class="footer-right sm-hidden">
+                <div>
+                  <a href="#">
+                    <img src="../assets/images/withe-github.svg" alt="" />
+                  </a>
+                </div>
+                <div>
+                  <a href="#">
+                    <img src="../assets/images/withe-notion.svg" alt="" />
+                  </a>
+                </div>
+                <div>
+                  <a href="#">
+                    <img src="../assets/images/withe-figma.svg" alt="" />
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </footer>
   </body>
 </html>
