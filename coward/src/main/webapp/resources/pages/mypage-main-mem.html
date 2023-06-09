@@ -61,305 +61,231 @@
       </div>
     </header>
 
-    <!-- 본문 시작 -->
+    <!-- 배너 -->
+    <div class="banner"></div>
 
-    <!-- 네비게이션 바 (태블릿) -->
+    <!-- 웹 페이지 -->
+    <div class="web-box">
+      <!-- 네비게이션 바 -->
 
-    <div class="side-profile md-only">
-      <p class="side-profile-title">마이페이지</p>
-      <div class="profile">
-        <img
-          class="profile-img"
-          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-        />
-        <div class="profile-info">
-          <div class="profile-type">Back</div>
-          <p class="profile-nick">빡과장</p>
-        </div>
-      </div>
-
-      <nav class="nav">
-        <ul class="nav-bar">
-          <li><a href="#">내 정보</a></li>
-          <li><a href="#">공모전 관리</a></li>
-          <li><a href="#">크레딧 인출</a></li>
-          <li><a href="#">프로필 수정</a></li>
-          <li><a href="#">회원탈퇴</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- 네비게이션 바(모바일) -->
-    <nav class="nav sm-only">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <ul class="nav-bar">
-              <li><a href="#">내 정보</a></li>
-              <li><a href="#">공모전 관리</a></li>
-              <li><a href="#">크레딧 인출</a></li>
-              <li><a href="#">프로필 수정</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- 본문 -->
-    <main class="profile-mem">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="profile-wrapper">
-              <!-- 배너 -->
-              <div class="banner"></div>
-
-              <!-- 웹!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-              <div class="web-box lg-only">
-                <div class="side-profile sm-hidden">
-                  <p class="side-profile-title">마이페이지</p>
-                  <div class="profile">
+      <aside>
+        <nav class="nav">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4 nav-web">
+                <div class="profile lg-only">
+                  <div class="profile-img avatar">
                     <img
-                      class="profile-img"
                       src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
                     />
-                    <div class="profile-info">
-                      <div class="profile-type">Back</div>
-                      <p class="profile-nick">빡과장</p>
-                    </div>
                   </div>
-
-                  <nav class="nav">
-                    <ul class="nav-bar">
-                      <li><a href="#">내 정보</a></li>
-                      <li><a href="#">공모전 관리</a></li>
-                      <li><a href="#">크레딧 인출</a></li>
-                      <li><a href="#">프로필 수정</a></li>
-                      <li><a href="#">회원탈퇴</a></li>
-                    </ul>
-                  </nav>
+                  <div class="profile-info">
+                    <div class="profile-type">Back</div>
+                    <p class="profile-nick">빡과장</p>
+                  </div>
                 </div>
 
-                <!-- 웹 콘텐트 -->
-                <div class="web-content-box">
-                  <div class="container">
-                    <div class="row">
-                      <!-- 웹 소개-->
-                      <div class="introduce col-lg-5">
-                        <p class="introduce-title">소개</p>
-                        <textarea maxlength="50" disabled>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non delectus odit quidem. Molestias ipsam pariatur accusamus dolores deserunt consequuntur natus ex obcaecati minima totam debitis aperiam minus asperiores optio doloremque nesciunt nostrum iusto, ipsa, delectus voluptatibus deleniti praesentium dignissimos! Vitae provident soluta sequi ipsam fugiat obcaecati autem amet eveniet reiciendis.</textarea
-                        >
+                <ul class="nav-bar">
+                  <li><a href="#">내 정보</a></li>
+                  <li><a href="#">공모전 관리</a></li>
+                  <li><a href="#">크레딧 인출</a></li>
+                  <li><a href="#">프로필 수정</a></li>
+                  <li><a href="#">회원 탈퇴</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- 본문 시작 -->
+      <main class="profile-mem">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="profile-wrapper">
+                <!-- 프로필 박스 -->
+
+                <div class="profile lg-hidden">
+                  <div class="profile-img avatar">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                    />
+                  </div>
+                  <div class="profile-info">
+                    <div class="profile-type">Back</div>
+                    <p class="profile-nick">빡과장</p>
+                  </div>
+                </div>
+                <div class="web-box-header">
+                  <div class="one-credit-skill">
+                    <!-- 한줄 소개 -->
+                    <div class="one-liner">
+                      <p class="introduce-title">소개</p>
+                      <input type="text" maxlength="50" disabled />
+                    </div>
+
+                    <div class="credit-skill">
+                      <!-- 코워드 크레딧 -->
+                      <div class="credit lg-only">
+                        <p class="introduce-title">코워드 크레딧</p>
+
+                        <div class="credit-box">
+                          <div class="new-box">new</div>
+                          <p>123,456,789</p>
+                        </div>
                       </div>
 
-                      <!-- 웹 수상 이력 -->
-
-                      <div class="award col-lg-2">
-                        <p class="introduce-title">어워드</p>
-                        <div class="award-box">
-                          <div class="progress" data-percent="${rate}">
-                            <span class="progress-result"></span>
-                          </div>
-                          <table class="award-table">
-                            <tr class="award-table-num">
-                              <td>10</td>
-                              <td>5</td>
-                            </tr>
-                            <tr class="award-table-title">
-                              <td>참여 횟수</td>
-                              <td>당선작</td>
-                            </tr>
-                          </table>
+                      <!-- 내 기술 -->
+                      <div class="skill">
+                        <p class="introduce-title">나의 기술</p>
+                        <div class="skill-box">
+                          <div class="my-skill">Java Script</div>
+                          <div class="my-skill">CSS</div>
+                          <div class="my-skill">Java</div>
+                          <div class="my-skill">Spring</div>
+                          <div class="my-skill">Java Script</div>
+                          <div class="my-skill">CSS</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <!-- 프로필 박스(모바일) -->
 
-              <div class="profile sm-only">
-                <img
-                  class="profile-img"
-                  src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                />
-                <div class="profile-info">
-                  <div class="profile-type">Back</div>
-                  <p class="profile-nick">빡과장</p>
-                </div>
-              </div>
+                  <!-- 수상 이력 -->
+                  <div class="award">
+                    <p class="introduce-title">어워드</p>
 
-              <div class="content">
-                <!-- 한줄 소개 -->
-                <div class="introduce">
-                  <p class="introduce-title">소개</p>
-                  <textarea maxlength="50" disabled>
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non delectus odit quidem. Molestias ipsam pariatur accusamus dolores deserunt consequuntur natus ex obcaecati minima totam debitis aperiam minus asperiores optio doloremque nesciunt nostrum iusto, ipsa, delectus voluptatibus deleniti praesentium dignissimos! Vitae provident soluta sequi ipsam fugiat obcaecati autem amet eveniet reiciendis.</textarea
-                  >
-                </div>
-
-                <!-- 수상 이력 -->
-                <div class="award">
-                  <p class="introduce-title">어워드</p>
-                  <div class="award-box">
-                    <div class="progress" data-percent="${rate}">
-                      <span class="progress-result"></span>
+                    <div class="award-box">
+                      <div class="progress" data-percent="${rate}">
+                        <span class="progress-result"></span>
+                      </div>
+                      <table class="award-table">
+                        <tr class="award-table-num">
+                          <td>10</td>
+                          <td>5</td>
+                          <td class="lg-hidden">50%</td>
+                        </tr>
+                        <tr class="award-table-title">
+                          <td>참여 횟수</td>
+                          <td>당선작</td>
+                          <td class="lg-hidden">당선률</td>
+                        </tr>
+                      </table>
                     </div>
-                    <table class="award-table">
-                      <tr class="award-table-num">
-                        <td>10</td>
-                        <td>5</td>
-                        <td>50%</td>
-                      </tr>
-                      <tr class="award-table-title">
-                        <td>참여 횟수</td>
-                        <td>당선작</td>
-                        <td>당선률</td>
-                      </tr>
-                    </table>
                   </div>
                 </div>
 
-                <!-- 내 기술 -->
-                <div class="skill">
-                  <p class="introduce-title">나의 기술</p>
-                  <div class="skill-box">
-                    <div class="my-skill">Java Script</div>
-                    <div class="my-skill">CSS</div>
-                    <div class="my-skill">Java</div>
-                    <div class="my-skill">Spring</div>
-                    <div class="my-skill">Java Script</div>
-                    <div class="my-skill">CSS</div>
-                    <div class="my-skill">Java</div>
-                    <div class="my-skill">Spring</div>
-                    <div class="my-skill">Java Script</div>
-                    <div class="my-skill">CSS</div>
-                    <div class="my-skill">Java</div>
-                    <div class="my-skill">Spring</div>
-                  </div>
-                </div>
-
-                <!-- 관심 공모전 -->
+                <!-- 관심 목록 -->
                 <div class="watchlist">
                   <p class="introduce-title">관심 공모전</p>
-
-                  <!-- watchlist-box 단위로 카드 분리 -->
-                  <!-- 카드를 누르면 해당 공모전으로 이동해야 할텐데 a태그? -->
-                  <section class="container">
-                    <ul>
-                      <div class="row">
-                        <div class="col-sm-4 col-md-6">
-                          <li>
-                            <div class="watchlist-box">
-                              <div class="watchlist-info">
-                                <div class="watchlist-title">
-                                  <button class="bookmark-btn">
-                                    <i class="ic-bookmark-filled"></i>
-                                  </button>
-                                  <p class="contest-title">금융상품몰 공모전</p>
-                                  <div class="new-box">new</div>
-                                </div>
-                                <table class="condition">
-                                  <tr class="condition-title">
-                                    <td>남은 기간</td>
-                                    <td>상금</td>
-                                  </tr>
-                                  <tr class="condition-content">
-                                    <td>17일</td>
-                                    <td>400만원</td>
-                                  </tr>
-                                </table>
-                                <div class="goods">프리미엄</div>
-                                <div class="skills">HTML</div>
-                                <div class="skills">Java Script</div>
-                              </div>
-                              <div class="company">
-                                <img
-                                  src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                                />신한은행
-                              </div>
-                            </div>
-                          </li>
+                  <div class="watchlist-box-group">
+                    <!-- section 단위로 카드 분리 -->
+                    <section class="watchlist-box">
+                      <i class="ic-bookmark-filled"></i>
+                      <a href="#">
+                        <div class="watchlist-info">
+                          <div class="watchlist-title">
+                            <p class="contest-title">금융상품몰 공모전</p>
+                            <div class="new-box">new</div>
+                          </div>
+                          <table class="condition">
+                            <tr class="condition-title">
+                              <td>남은 기간</td>
+                              <td>상금</td>
+                            </tr>
+                            <tr class="condition-content">
+                              <td>17일</td>
+                              <td>400만원</td>
+                            </tr>
+                          </table>
+                          <div class="goods">프리미엄</div>
+                          <div class="skills">HTML</div>
+                          <div class="skills">Java Script</div>
                         </div>
+                        <div class="company">
+                          <div class="company-img avatar">
+                            <img
+                              src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                            />
+                          </div>
+                          신한은행
+                        </div></a
+                      >
+                    </section>
 
-                        <div class="col-sm-4 col-md-6">
-                          <li>
-                            <div class="watchlist-box">
-                              <div class="watchlist-info">
-                                <div class="watchlist-title">
-                                  <button class="bookmark-btn">
-                                    <i class="ic-bookmark-filled"></i>
-                                  </button>
-                                  <p class="contest-title">금융상품몰 공모전</p>
-                                  <div class="new-box">new</div>
-                                </div>
-                                <table class="condition">
-                                  <tr class="condition-title">
-                                    <td>남은 기간</td>
-                                    <td>상금</td>
-                                  </tr>
-                                  <tr class="condition-content">
-                                    <td>17일</td>
-                                    <td>400만원</td>
-                                  </tr>
-                                </table>
-                                <div class="goods">프리미엄</div>
-                                <div class="skills">HTML</div>
-                                <div class="skills">Java Script</div>
-                              </div>
-                              <div class="company">
-                                <img
-                                  src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                                />신한은행
-                              </div>
-                            </div>
-                          </li>
+                    <section class="watchlist-box">
+                      <i class="ic-bookmark-filled"></i>
+                      <a href="#">
+                        <div class="watchlist-info">
+                          <div class="watchlist-title">
+                            <p class="contest-title">금융상품몰 공모전</p>
+                            <div class="new-box">new</div>
+                          </div>
+                          <table class="condition">
+                            <tr class="condition-title">
+                              <td>남은 기간</td>
+                              <td>상금</td>
+                            </tr>
+                            <tr class="condition-content">
+                              <td>17일</td>
+                              <td>400만원</td>
+                            </tr>
+                          </table>
+                          <div class="goods">프리미엄</div>
+                          <div class="skills">HTML</div>
+                          <div class="skills">Java Script</div>
                         </div>
+                        <div class="company">
+                          <div class="company-img avatar">
+                            <img
+                              src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                            />
+                          </div>
+                          신한은행
+                        </div></a
+                      >
+                    </section>
 
-                        <div class="col-sm-4 col-md-6">
-                          <li>
-                            <div class="watchlist-box">
-                              <div class="watchlist-info">
-                                <div class="watchlist-title">
-                                  <button class="bookmark-btn">
-                                    <i class="ic-bookmark-filled"></i>
-                                  </button>
-                                  <p class="contest-title">금융상품몰 공모전</p>
-                                  <div class="new-box">new</div>
-                                </div>
-                                <table class="condition">
-                                  <tr class="condition-title">
-                                    <td>남은 기간</td>
-                                    <td>상금</td>
-                                  </tr>
-                                  <tr class="condition-content">
-                                    <td>17일</td>
-                                    <td>400만원</td>
-                                  </tr>
-                                </table>
-                                <div class="goods">프리미엄</div>
-                                <div class="skills">HTML</div>
-                                <div class="skills">Java Script</div>
-                              </div>
-                              <div class="company">
-                                <img
-                                  src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                                />신한은행
-                              </div>
-                            </div>
-                          </li>
+                    <section class="watchlist-box">
+                      <i class="ic-bookmark-filled"></i>
+                      <a href="#">
+                        <div class="watchlist-info">
+                          <div class="watchlist-title">
+                            <p class="contest-title">금융상품몰 공모전</p>
+                            <div class="new-box">new</div>
+                          </div>
+                          <table class="condition">
+                            <tr class="condition-title">
+                              <td>남은 기간</td>
+                              <td>상금</td>
+                            </tr>
+                            <tr class="condition-content">
+                              <td>17일</td>
+                              <td>400만원</td>
+                            </tr>
+                          </table>
+                          <div class="goods">프리미엄</div>
+                          <div class="skills">HTML</div>
+                          <div class="skills">Java Script</div>
                         </div>
-                      </div>
-                    </ul>
-                  </section>
+                        <div class="company">
+                          <div class="company-img avatar">
+                            <img
+                              src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                            />
+                          </div>
+                          신한은행
+                        </div></a
+                      >
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-
+      </main>
+    </div>
     <!-- 푸터 -->
     <footer class="footer">
       <div class="container">
