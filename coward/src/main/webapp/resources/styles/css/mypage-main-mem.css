@@ -81,8 +81,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -461,17 +460,18 @@ address {
   background-color: #e0e2e7;
 }
 
-.avatar-32, .avatar-24 {
+.avatar-32, .avatar-24, .avatar {
+
+
   display: block;
   overflow: hidden;
   border-radius: 50%;
 }
-.avatar-32 img, .avatar-24 img {
+.avatar-32 img, .avatar-24 img, .avatar img {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .avatar-24 {
@@ -599,12 +599,7 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.form-select::-moz-placeholder, .form-input::-moz-placeholder {
-  color: #b2b3b9;
+  appearance: none;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -922,11 +917,6 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
-  .nav .nav-search-input::-moz-placeholder {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
-  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1060,19 +1050,19 @@ i {
   }
 }
 
+/***** 모바일 *****/
 /* 네비게이션 바 */
 .nav {
   width: 100%;
   background-color: #f8f8f8;
 }
 .nav-bar {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  padding: 15px 0;
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: space-around;
+  font-size: 10px;
+  padding: 14px 0;
+  text-align: center;
   list-style-type: none;
 }
 
@@ -1081,21 +1071,22 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;
+  margin: 15px;
 }
 .profile-img {
   width: 85px;
   height: 85px;
-  margin: 30px 0 10px;
-  border-radius: 50%;
+  margin: 8px;
 }
 .profile-info {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .profile-type {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 28px;
   height: 13px;
@@ -1113,22 +1104,20 @@ i {
   color: #3f4150;
 }
 
-.content {
-  width: 100%;
-}
-
-/* 한줄 소개 */
-.introduce {
-  margin-bottom: 16px;
-}
+/* 소제목 스타일 */
 .introduce-title {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
-  margin: 0 5px 8px;
+  margin: 0 8px 8px;
   font-weight: 700;
 }
-.introduce textarea {
+
+/* 한줄 소개 */
+.one-liner {
+  margin-bottom: 16px;
+}
+.one-liner input {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
@@ -1138,11 +1127,13 @@ i {
   border-radius: 10px;
   background-color: #fff;
   border: 1px solid #e0e2e7;
-  resize: none;
 }
 
+/* 수상 이력 */
 .award-box {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   border: 1px solid #e0e2e7;
   border-radius: 10px;
@@ -1163,8 +1154,11 @@ i {
   font-size: 10px;
 }
 
+/* 내 기술 */
 .skill-box {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
@@ -1189,28 +1183,34 @@ i {
   text-align: center;
 }
 
+/* 관심 목록 */
+.watchlist-box-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .watchlist-box {
-  width: 100%;
   position: relative;
-  z-index: 100;
+  width: 290px;
+  height: 215px;
+  margin-bottom: 20px;
   border: 1px solid #e0e2e7;
   border-radius: 5px;
-  margin-bottom: 15px;
   cursor: pointer;
 }
 .watchlist-info {
-  width: 100%;
-  height: auto;
   padding: 25px 25px 20px;
-  position: relative;
   border: none;
 }
 .watchlist-title {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
+/* watchlist-box 기준 */
 .ic-bookmark-filled {
   position: absolute;
   right: 20px;
@@ -1219,33 +1219,29 @@ i {
   color: #8c8d96;
 }
 
-/* 나중에 js로 효과 주기 */
-.bookmark-btn:hover .ic-bookmark-filled {
-  color: #ffe0c7;
-}
-
-.bookmark-btn:active .ic-bookmark-filled {
+/* 북마크 눌렀을 때 */
+.is-active {
   color: #ffc1c9;
 }
 
-/* 일정 글자 수 넘어가면 애니메이션 */
+/* 공모전 제목 - 길어지면 슬라이드 주고싶음 */
 .contest-title {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  margin-right: 5px;
+  align-items: center;
+  margin-right: 8px;
 }
 
+/* 반짝이 효과 주고싶음 */
 .new-box {
-  width: 26px;
-  height: 14px;
-  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 17px;
   background-color: #ffc200;
   border: none;
   border-radius: 10px;
   font-size: 10px;
   color: white;
-  text-align: center;
 }
 
 .condition {
@@ -1289,67 +1285,59 @@ i {
 .company {
   display: flex;
   align-items: center;
-  padding: 15px 25px;
+  justify-content: center;
+  justify-content: flex-start;
+  padding: 15px 20px;
   border-top: 1px solid #e0e2e7;
   font-size: 10px;
   color: #3f4150;
 }
-.company img {
+.company-img {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
   margin-right: 8px;
 }
 
-/* 태블릿 */
+/***** 태블릿 *****/
 @media screen and (min-width: 768px) {
+  /* 배너 */
   .banner {
     width: 100%;
     height: 115px;
     background-image: url("/coward/src/main/webapp/resources/assets/images/mypage-banner.png");
     background-repeat: no-repeat;
-    margin-bottom: 50px;
   }
-  .introduce {
-    margin-bottom: 16px;
+  /* 네비게이션 바 */
+  .nav-bar {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    padding: 20px 0;
   }
+  /* 프로필 사진 + 백 + 닉네임 */
+  .profile {
+    margin-bottom: 30px;
+  }
+  .profile-img {
+    width: 130px;
+    height: 130px;
+    margin: 30px 0 10px;
+  }
+  /* 소제목 스타일 */
   .introduce-title {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
     margin: 0 10px 12px;
   }
-  .introduce textarea {
+  /* 한줄 소개 */
+  .one-liner input {
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
     width: 100%;
-    height: 150px;
-    padding: 15px 25px;
+    height: 180px;
   }
-  .progress {
-    position: relative;
-    width: 135px;
-    height: 135px;
-    border-radius: 50%;
-    margin: 15px 0 15px 65px;
-    background: #f8f8f8;
-  }
-  /*
-  .progress div {
-    position: absolute;
-    left: 100px;
-    top: 0px;
-    display: none;
-    width: 2px;
-    height: 100px;
-    background: $blue;
-    transform-origin: 0px 100px;
-    -webkit-transform-origin: 0px 100px;
-    -moz-transform-origin: 0px 100px;
-    -ms-transform-origin: 0px 100px;
-  }
-  */
   .award-box {
     justify-content: space-around;
     align-items: center;
@@ -1374,88 +1362,113 @@ i {
     line-height: 16px;
     letter-spacing: -0.005em;
   }
-  .side-profile {
-    position: absolute;
-    z-index: 200;
-    width: 25%;
-    height: 100%;
-    padding-top: 25px;
-    background-color: #f8f8f8;
+  .progress {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    margin: 15px 0 15px 65px;
+    background: #f8f8f8;
   }
-  .side-profile-title {
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: -0.02em;
-    font-weight: 600;
-    text-align: center;
-  }
-  .profile {
-    border-top: 1px solid #e0e2e7;
-    border-bottom: 1px solid #e0e2e7;
-    padding-bottom: 10px;
-    margin: 10px 40px 20px;
-  }
-  .profile-nick {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
+}
+/***** 웹 *****/
+@media screen and (min-width: 1200px) {
+  .web-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height: 610px;
+    border: 1px solid black;
   }
   .nav {
     width: 100%;
+    background-color: #f8f8f8;
   }
   .nav-bar {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    text-indent: 20px;
-    margin-left: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 14px 0;
   }
-  .nav-bar li a {
-    line-height: 30px;
+  .nav-web {
+    width: 100%;
+    height: 100%;
   }
-}
-@media screen and (min-width: 1200px) {
-  .web-box {
-    width: 80%;
-    padding: 5px;
-    display: flex;
-    background-color: #3aacf8;
-    border-radius: 10px;
+  /* 한줄 소개 */
+  .one-liner input {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+    width: 550px;
+    height: 160px;
   }
-  .side-profile {
-    position: relative;
+  .award {
+    width: 220px;
   }
   .award-box {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    border: 1px solid #e0e2e7;
-    border-radius: 10px;
-    margin-bottom: 16px;
-  }
-  .award-table {
-    table-layout: auto;
-    table-layout: fixed;
-    width: 90%;
-    padding: 10px 0;
-    border-radius: 10px;
-    text-align: center;
-  }
-  .award-table td {
-    padding: 5px 0;
-  }
-  .award-table tr:last-child {
-    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
   }
   .progress {
-    position: relative;
-    width: 100px;
+    margin: 30px 0 10px 0;
+  }
+  .skill {
+    width: 260px;
+  }
+  .skill-box {
     height: 100px;
-    border-radius: 50%;
-    margin: 20px 0 0 0;
-    background: #f8f8f8;
+    padding: 10px;
+    margin: 0;
+  }
+  .credit {
+    width: 260px;
+  }
+  .credit-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .credit-skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 550px;
+  }
+  .one-credit-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+  }
+  .web-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .watchlist-box {
+    width: 220px;
+    height: 195px;
+  }
+  .watchlist-info {
+    padding: 20px 20px 15px;
+  }
+  .company {
+    padding: 10px 15px;
+  }
+  .introduce-title {
+    margin-bottom: 10px;
   }
 }/*# sourceMappingURL=mypage-main-mem.css.map */
