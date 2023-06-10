@@ -433,6 +433,34 @@ address {
   }
 }
 
+.tag-gray, .tag-yellow, .tag-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  height: 20px;
+  padding: 0 8px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.tag-blue {
+  color: #fff;
+  background-color: #3aacf8;
+}
+
+.tag-yellow {
+  color: #fff;
+  background-color: #ffc200;
+}
+
+.tag-gray {
+  color: #8c8d96;
+  background-color: #e0e2e7;
+}
+
 .avatar-32, .avatar-24 {
   display: block;
   overflow: hidden;

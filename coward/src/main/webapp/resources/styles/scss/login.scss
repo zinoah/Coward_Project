@@ -1,24 +1,43 @@
 @import "./main";
 
-.login-bg-img {
-  width: 650px;
-  height: 590px;
-  display: inline-block;
-  padding-right: 20px;
-}
-
 .logo-img {
   width: 174.55px;
   height: 40px;
+  position: relative;
+  left: 65px;
 }
 
-.login-btn {
-  width: 100%;
-  height: 50px;
-  border: 1px solid none;
-  border-radius: 10px;
-  color: $white;
-  background-color: $blue;
+.p {
+  &-email {
+    color: $black;
+  }
+
+  &-pw {
+    color: $black;
+  }
+
+  &-first {
+    position: relative;
+    left: 40px;
+    color: black;
+  }
+}
+
+.login {
+  &-btn {
+    width: 100%;
+    height: 50px;
+    border: 1px solid none;
+    border-radius: 10px;
+    color: $white;
+    font-weight: 700;
+    background-color: $blue;
+  }
+  &-box {
+    width: 290px;
+    height: 480px;
+    border: 1px solid black;
+  }
 }
 
 .input {
@@ -31,12 +50,18 @@
   }
 
   &-pw {
-    width: 100%;
-    height: 42px;
-    border: 1px solid $border;
-    border-radius: 10px;
     padding-left: 15px;
+    position: relative;
+    right: 11px;
+    top: 5px;
   }
+}
+
+.pw-input-box fieldset {
+  border: 1px solid $border;
+  border-radius: 10px;
+  width: 100%;
+  height: 42px;
 }
 
 .line {
@@ -49,24 +74,6 @@
     color: $tertiary;
     width: 140px;
   }
-}
-
-.eye-img {
-  width: 20px;
-  height: 20px;
-}
-
-.login-box {
-  width: 300px;
-  height: 510px;
-  display: inline-block;
-  margin-right: 60px;
-  margin-top: 20px;
-}
-
-.login-wrapper {
-  @include flexbox(between);
-  padding-top: 90px;
 }
 
 .google-login {
@@ -83,6 +90,47 @@
   padding-top: 7px;
 }
 
-.pw-input-box {
-  padding-top: 7px;
+.pw {
+  &-input-box {
+    padding-top: 7px;
+  }
+
+  &-find {
+    position: relative;
+    left: 205px;
+    bottom: 18.5px;
+    color: $primary;
+    font-size: 14px;
+  }
+}
+#pw-see-btn {
+  color: $tertiary;
+  position: relative;
+  left: 55px;
+  top: 5px;
+}
+
+.check-id-save {
+  size: 5;
+}
+
+@include responsive(D) {
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
+    padding-right: 20px;
+  }
+
+  .login-wrapper {
+    @include flexbox(between);
+    padding-top: 90px;
+  }
+
+  .login-box {
+    margin-right: 60px;
+    margin-top: 20px;
+    display: inline-block;
+    width: 300px;
+    height: 510px;
+  }
 }

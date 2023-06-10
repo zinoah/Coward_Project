@@ -80,7 +80,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -468,7 +469,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -596,7 +598,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -914,6 +921,11 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
+  .nav .nav-search-input::-moz-placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1047,16 +1059,23 @@ i {
   }
 }
 
-.login-bg-img {
-  width: 650px;
-  height: 590px;
-  display: inline-block;
-  padding-right: 20px;
-}
-
 .logo-img {
   width: 174.55px;
   height: 40px;
+  position: relative;
+  left: 65px;
+}
+
+.p-email {
+  color: #000;
+}
+.p-pw {
+  color: #000;
+}
+.p-first {
+  position: relative;
+  left: 40px;
+  color: black;
 }
 
 .login-btn {
@@ -1065,7 +1084,13 @@ i {
   border: 1px solid none;
   border-radius: 10px;
   color: #fff;
+  font-weight: 700;
   background-color: #3aacf8;
+}
+.login-box {
+  width: 290px;
+  height: 480px;
+  border: 1px solid black;
 }
 
 .input-email {
@@ -1076,11 +1101,17 @@ i {
   padding-left: 15px;
 }
 .input-pw {
-  width: 100%;
-  height: 42px;
+  padding-left: 15px;
+  position: relative;
+  right: 11px;
+  top: 5px;
+}
+
+.pw-input-box fieldset {
   border: 1px solid #e0e2e7;
   border-radius: 10px;
-  padding-left: 15px;
+  width: 100%;
+  height: 42px;
 }
 
 .line1 {
@@ -1090,26 +1121,6 @@ i {
 .line2 {
   color: #b2b3b9;
   width: 140px;
-}
-
-.eye-img {
-  width: 20px;
-  height: 20px;
-}
-
-.login-box {
-  width: 300px;
-  height: 510px;
-  display: inline-block;
-  margin-right: 60px;
-  margin-top: 20px;
-}
-
-.login-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 90px;
 }
 
 .google-login {
@@ -1128,4 +1139,43 @@ i {
 
 .pw-input-box {
   padding-top: 7px;
+}
+.pw-find {
+  position: relative;
+  left: 205px;
+  bottom: 18.5px;
+  color: #3f4150;
+  font-size: 14px;
+}
+
+#pw-see-btn {
+  color: #b2b3b9;
+  position: relative;
+  left: 55px;
+  top: 5px;
+}
+
+.check-id-save {
+  size: 5;
+}
+
+@media screen and (min-width: 1200px) {
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
+    padding-right: 20px;
+  }
+  .login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 90px;
+  }
+  .login-box {
+    margin-right: 60px;
+    margin-top: 20px;
+    display: inline-block;
+    width: 300px;
+    height: 510px;
+  }
 }/*# sourceMappingURL=login.css.map */
