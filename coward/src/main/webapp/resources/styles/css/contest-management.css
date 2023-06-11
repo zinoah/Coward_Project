@@ -80,7 +80,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -431,7 +432,7 @@ address {
   }
 }
 
-.tag-purple, .tag-pink, .tag-gray, .tag-yellow, .tag-blue {
+.tag-gray, .tag-yellow, .tag-blue {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -459,18 +460,6 @@ address {
   background-color: #e0e2e7;
 }
 
-
-.tag-pink {
-  color: #f86d7d;
-  background-color: #ffeffb;
-}
-
-.tag-purple {
-  color: #985cd3;
-  background-color: #eae2ff;
-}
-
-
 .avatar-32, .avatar-24, .avatar {
   display: block;
   overflow: hidden;
@@ -480,7 +469,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -608,7 +598,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -926,6 +921,11 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
+  .nav .nav-search-input::-moz-placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1059,363 +1059,158 @@ i {
   }
 }
 
-.banner {
-  background-color: #8ac8d5;
+.banner img {
   width: 100%;
-  height: 250px;
-  margin-top: 10px;
-  background-image: url("../../assets/images/explorer.svg");
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: 400px;
-}
-.banner-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 250px;
-  flex-direction: column;
-}
-.banner-wrapper h1 {
-  text-align: center;
-  color: white;
-  line-height: 45px;
-}
-.banner-wrapper button {
-  width: 100px;
-  margin-top: 10px;
-}
-@media screen and (min-width: 768px) {
-  .banner .banner-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-  }
-  .banner .banner-wrapper h1 {
-    font-size: 35px;
-    text-align: start;
-    margin-right: 40px;
-  }
-  .banner .banner-wrapper button {
-    margin-top: 0px;
-  }
+  padding-top: 10px;
 }
 
-.main .title-wrapper h1 {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  margin-top: 30px;
+.contest-top h3 {
+  padding-top: 15px;
 }
-.main .gallery-button-relative {
-  position: relative;
+.contest-top h2 {
+  padding-top: 20px;
 }
-.main .gallery-button-relative .prev {
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 40px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5s;
-}
-.main .gallery-button-relative .prev:hover {
-  transform: translateX(-10px) translateY(-50%);
-}
-.main .gallery-button-relative .prev p {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-}
-.main .gallery-button-relative .next {
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 40px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5s;
-}
-.main .gallery-button-relative .next:hover {
-  transform: translateX(10px) translateY(-50%);
-}
-.main .gallery-button-relative .next p {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-}
-.main .gallery-wrapper {
-  height: 350px;
-  overflow: hidden;
-  overflow-x: scroll;
-  position: relative;
-}
-.main .gallery {
-  width: 2270px;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: absolute;
-}
-.main .gallery-card {
-  height: 300px;
-  width: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-left: 30px;
-  cursor: pointer;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-.main .gallery-card:first-child {
-  margin-left: 0;
-}
-.main .gallery-card-img {
-  height: 240px;
-  overflow: hidden;
-}
-.main .gallery-card-img img {
-  height: 240px;
-}
-.main .gallery-card-info {
-  background-color: #fff;
-  height: 155px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: 600ms;
-  bottom: -95px;
-}
-.main .gallery-card-info div:nth-child(1) {
-  font-weight: 600;
-}
-.main .gallery-card-info div:not(:nth-child(1)) {
-  margin-top: 7px;
-}
-.main .gallery-card-info div:not(:nth-child(1)) p {
-  display: inline-block;
-}
-.main .gallery-card-info div:not(:nth-child(1)) p:nth-child(1) {
+.contest-top h6 {
+  padding-top: 20px;
   color: #8c8d96;
-  font-weight: 500;
-  margin-right: 10px;
 }
-.main .gallery-card-info div:last-child {
-  text-align: center;
+.contest-top pre {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  padding-top: 5px;
+  font-weight: bold;
+}
+.contest-top .status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  width: 50px;
+  height: 25px;
+  border: 1px solid #b2b3b9;
+  border-radius: 5px;
   margin-top: 20px;
 }
-.main .ad-banner-box {
-  margin-top: 30px;
-  height: 150px;
-  background-color: #ffc1c9;
-  border-radius: 20px;
-  overflow: hidden;
+
+.contest #all-col {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background-image: url("../../assets/images/two-peple-mobile.svg");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: 240px;
 }
-.main .ad-banner-box p {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  font-weight: bold;
-  color: #fff;
-}
-.main .mb-btn-box {
+.contest .card {
   width: 100%;
-  height: 35px;
-  margin-top: 10px;
+  height: 160px;
+  border-radius: 10px;
+  border: 1px solid #e0e2e7;
+  margin-top: 30px;
+}
+.contest .card img {
+  width: 50px;
+  border-radius: 500px;
+  border: 1px solid #e0e2e7;
+}
+.contest .card .profile-section {
+  display: flex;
+  margin: 20px 0 30px 25px;
+}
+.contest .card .profile-section .coding-type {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #e0e2e7;
-  border: 2px solid #e0e2e7;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  color: #3aacf8;
+  width: 35px;
+  height: 20px;
+  border: 1px solid #3aacf8;
+  border-radius: 5px;
+  margin-top: 4px;
 }
-.main .mb-btn-box button {
-  flex-basis: 25%;
-  height: 35px;
-}
-.main .mb-btn-box button:hover {
-  border-bottom: 2px solid #3aacf8;
-  transition: 0.3s;
-}
-.main .type-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 40px;
-  margin-top: 10px;
-}
-.main .type-button-wrapper .select {
+.contest .card .profile-section select {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  height: 20px;
   border: 1px solid #e0e2e7;
   border-radius: 5px;
-  width: 70px;
-  height: 30px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 4px 0 0 15px;
 }
-.main .type-button-wrapper .select p {
+.contest .card .profile-section .one-line-intro {
   font-size: 14px;
+  margin: 10px 0 0 30px;
 }
-.main .contest-card {
-  margin-bottom: 20px;
-  height: 150px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 20px;
+.contest .card .profile-name {
+  padding: 5px 10px 0 30px;
+}
+.contest .card .profile-name-div {
   display: flex;
-  flex-direction: column;
-  position: relative;
 }
-.main .contest-card .bookmark {
-  position: absolute;
-  right: 7%;
-  top: -5px;
-  font-size: 25px;
-}
-.main .contest-card .bookmark i {
-  color: #b2b3b9;
-}
-.main .contest-card:nth-child(1) {
-  margin-top: 10px;
-}
-.main .contest-card-first-line {
-  width: 100%;
-  flex-basis: 30%;
+.contest .card .profile-button-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
-.main .contest-card-first-line div {
-  margin-right: 10px;
+.contest .card .profile-button-wrapper .btn-outlined {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  width: 110px;
+  height: 35px;
+  background-color: #abdeff;
+  color: #028ae2;
+  border: 0;
 }
-.main .contest-card-first-line div:nth-child(1) {
+.contest .card .profile-button-wrapper .btn-outlined:hover {
+  background-color: #028ae2;
+  color: #fff;
+}
+.contest .card .profile-button-wrapper .btn-primary {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  width: 110px;
+  height: 35px;
+  margin-left: 30px;
+}
+.contest-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.contest-button-wrapper button {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: -0.02em;
-  font-weight: 500;
-}
-.main .contest-card-second-line {
-  width: 100%;
-  flex-basis: 70%;
-}
-.main .contest-card-second-line .first-box-article div {
-  margin-right: 5px;
-}
-.main .contest-card-second-line .second-box-article {
-  display: flex;
-  align-items: center;
-}
-.main .contest-card-second-line .second-box-article div {
-  margin-left: 10px;
-}
-.main .contest-card-second-line .second-box-article p {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-}
-.main .contest-card-second-line-first-box {
-  margin-top: 10px;
-  display: flex;
-}
-.main .contest-card-second-line-first-box div {
-  margin-right: 30px;
-}
-.main .contest-card-second-line-first-box div p:nth-child(1) {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  margin-bottom: 5px;
-}
-.main .contest-card-second-line-first-box div p:nth-child(2) {
-  font-weight: 500;
-}
-.main .contest-card-second-line-second-box {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.main .contest-card-third-line {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #e0e2e7;
-}
-.main .contest-card-third-line div {
-  margin: 10px 10px 10px 0;
-}
-.main .contest-card-third-line p {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
+  color: #fff;
+  background-color: #8c8d96;
+  width: 120px;
+  height: 35px;
+  margin: 20px;
 }
 @media screen and (min-width: 768px) {
-  .main .ad-banner-box {
-    padding: 50px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  .contest-button-wrapper button {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    width: 150px;
+    height: 40px;
+    margin: 40px;
   }
-  .main .ad-banner-box p {
-    font-size: 30px;
-    line-height: 40px;
+}
+@media screen and (min-width: 1200px) {
+  .contest-button-wrapper button {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    width: 150px;
+    height: 40px;
+    margin: 40px;
   }
-  .main .contest-card {
-    height: 250px;
-  }
-  .main .contest-card-first-line {
-    flex-basis: 20%;
-  }
-  .main .contest-card-second-line {
-    flex-basis: 70%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .main .contest-card-third-line {
-    flex-basis: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .main .category-button-wrapper {
-    margin-top: 10px;
-  }
-  .main .category-button-wrapper button {
-    margin-right: 5px;
-    height: 25px;
-  }
-  .main .type-button-wrapper {
-    margin-bottom: 5px;
-  }
-}/*# sourceMappingURL=contest-main.css.map */
+}
+
+.footer {
+  margin-top: 100px;
+}/*# sourceMappingURL=contest-management.css.map */
