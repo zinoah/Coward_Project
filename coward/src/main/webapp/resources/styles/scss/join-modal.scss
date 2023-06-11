@@ -1,44 +1,97 @@
 @import "./main";
 
-#join-box {
-  width: 550px;
-  height: 360px;
-  border: 1px solid black;
+.join-all-wrapper {
+  justify-content: center;
+  align-items: center;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  background-color: $tertiary;
+  position: absolute;
+  opacity: 0.8;
+}
+
+.join-box {
+  width: 290px;
+  height: 420px;
   border-radius: 10px;
-  margin: 0 auto;
+  background-color: $white;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
 
-#check {
-  width: 64px;
-  height: 64px;
+.check {
+  width: 45px;
+  height: 45px;
   position: relative;
-  top: 50px;
-  left: 240px;
+  top: 70px;
+  left: 125px;
+  color: $blue-dark;
 }
 
-#add-information-btn {
-  width: 160px;
-  height: 40px;
+.add-information-btn {
+  width: 180px;
+  height: 50px;
   border: none;
   border-radius: 5px;
   font-size: medium;
-  background-color: skyblue;
-  color: white;
+  font-weight: 600;
+  background-color: $blue-dark;
+  color: $white;
   position: relative;
-  top: 70px;
-  left: 200px;
+  top: 160px;
+  left: 55px;
 }
 
-#pre-first {
-  font-size: 28px;
+.pre-first {
+  font-size: 18px;
+  font-weight: 700;
   position: relative;
-  top: 40px;
-  left: 155px;
+  top: 75px;
+  left: 68px;
 }
 
-#pre-second {
-  font-size: 14px;
+.pre-second {
+  font-size: 12px;
   position: relative;
-  top: 80px;
-  left: 200px;
+  top: 180px;
+  left: 72px;
+  color: $primary;
+}
+
+@include responsive(D) {
+  .join-box {
+    width: 550px;
+    height: 360px;
+  }
+  .check {
+    width: 60px;
+    height: 60px;
+    top: 50px;
+    left: 245px;
+  }
+
+  .pre-first {
+    font-size: 22px;
+    font-weight: 700;
+    top: 45px;
+    left: 180px;
+  }
+
+  .add-information-btn {
+    width: 180px;
+    height: 50px;
+    top: 100px;
+    left: 180px;
+  }
+
+  .pre-second {
+    font-size: 14px;
+    top: 100px;
+    left: 190px;
+  }
 }

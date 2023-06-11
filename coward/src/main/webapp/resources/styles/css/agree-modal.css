@@ -1059,19 +1059,29 @@ i {
   }
 }
 
+.agree-all-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .background-img {
-  width: 320px;
-  height: 568px;
+  width: 100%;
+  height: 100%;
   background-color: #b2b3b9;
+  position: absolute;
+  opacity: 0.8;
 }
 
 .agree-box {
-  width: 288px;
+  width: 290px;
   height: 420px;
   border-radius: 10px;
-  border: 1px solid black;
-  position: absolute;
   background-color: #fff;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
 
 .agree-btn {
@@ -1082,15 +1092,16 @@ i {
   font-size: medium;
   background-color: #3aacf8;
   color: #fff;
+  font-weight: 700;
   position: relative;
   left: 91px;
   right: 91px;
-  bottom: 25px;
+  bottom: 1px;
 }
 
 .agree-content-box {
   width: 90%;
-  height: 70%;
+  height: 60%;
   border: 1px solid none;
   overflow-y: scroll;
   font-size: 14pt;
@@ -1109,11 +1120,18 @@ span {
   width: 24px;
   height: 24px;
   position: relative;
-  left: 290px;
-  top: 10px;
+  left: 265px;
+  bottom: 27px;
   color: #e0e2e7;
 }
 
 .agree-content {
   font-size: 8pt;
+}
+
+@media screen and (min-width: 1200px) {
+  #agree-box {
+    width: 318px;
+    height: 450px;
+  }
 }/*# sourceMappingURL=agree-modal.css.map */
