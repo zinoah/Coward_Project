@@ -440,9 +440,9 @@ address {
   }
 }
 
-.tag-gray,
-.tag-yellow,
-.tag-blue {
+
+.tag-purple, .tag-pink, .tag-gray, .tag-yellow, .tag-blue {
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -470,9 +470,19 @@ address {
   background-color: #e0e2e7;
 }
 
-.avatar-32,
-.avatar-24,
-.avatar {
+
+.tag-pink {
+  color: #f86d7d;
+  background-color: #ffeffb;
+}
+
+.tag-purple {
+  color: #985cd3;
+  background-color: #eae2ff;
+}
+
+.avatar-32, .avatar-24, .avatar {
+
   display: block;
   overflow: hidden;
   border-radius: 50%;

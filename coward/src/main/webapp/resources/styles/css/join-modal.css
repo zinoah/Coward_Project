@@ -87,7 +87,9 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
+
   -webkit-text-decoration: underline dotted;
+
   text-decoration: underline dotted; /* 2 */
 }
 
@@ -439,9 +441,8 @@ address {
   }
 }
 
-.tag-gray,
-.tag-yellow,
-.tag-blue {
+.tag-purple, .tag-pink, .tag-gray, .tag-yellow, .tag-blue {
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -469,9 +470,18 @@ address {
   background-color: #e0e2e7;
 }
 
-.avatar-32,
-.avatar-24,
-.avatar {
+
+.tag-pink {
+  color: #f86d7d;
+  background-color: #ffeffb;
+}
+
+.tag-purple {
+  color: #985cd3;
+  background-color: #eae2ff;
+}
+
+.avatar-32, .avatar-24, .avatar {
   display: block;
   overflow: hidden;
   border-radius: 50%;
@@ -482,7 +492,7 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
+
   object-fit: cover;
 }
 
@@ -621,6 +631,7 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -628,6 +639,7 @@ address {
 .form-select::-moz-placeholder,
 .form-input::-moz-placeholder {
   color: #b2b3b9;
+
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -944,11 +956,6 @@ i {
     border: 1px solid #e0e2e7;
     border-radius: 8px;
     padding: 10px 16px;
-  }
-  .nav .nav-search-input::-moz-placeholder {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
   }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
