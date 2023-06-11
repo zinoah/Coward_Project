@@ -1,0 +1,153 @@
+@import "./main.scss";
+
+.banner {
+  img {
+    width: 100%;
+    padding-top: 10px;
+  }
+}
+
+.contest-top {
+  h3 {
+    padding-top: 15px;
+  }
+
+  h2 {
+    padding-top: 20px;
+  }
+
+  h6 {
+    padding-top: 20px;
+    color: $secondary;
+  }
+
+  pre {
+    @include text-style-14;
+    padding-top: 5px;
+    font-weight: bold;
+  }
+  .status {
+    @include flexbox;
+    font-size: 10px;
+    width: 50px;
+    height: 25px;
+    border: 1px solid $tertiary;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+}
+
+.contest {
+  #all-col {
+    @include flexbox;
+  }
+  .card {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    border: 1px solid $border;
+    margin-top: 30px;
+
+    img {
+      width: 50px;
+      border-radius: 500px;
+      border: 1px solid $border;
+    }
+
+    .profile {
+      &-section {
+        display: flex;
+        margin: 20px 0 30px 25px;
+        .coding-type {
+          @include flexbox;
+          @include text-style(12, $blue);
+          width: 35px;
+          height: 20px;
+          border: 1px solid $blue;
+          border-radius: 5px;
+          margin-top: 4px;
+        }
+
+        select {
+          @include text-style-12;
+          height: 20px;
+          border: 1px solid $border;
+          border-radius: 5px;
+          margin: 4px 0 0 15px;
+        }
+
+        .one-line-intro {
+          font-size: 14px;
+          margin: 10px 0 0 30px;
+        }
+      }
+
+      &-name {
+        padding: 5px 10px 0 30px;
+
+        &-div {
+          display: flex;
+        }
+      }
+
+      &-button-wrapper {
+        @include flexbox;
+        .btn-outlined {
+          @include text-style-14;
+          width: 110px;
+          height: 35px;
+          background-color: $blue-light;
+          color: $blue-dark;
+          border: 0;
+
+          &:hover {
+            background-color: $blue-dark;
+            color: $white;
+          }
+        }
+
+        .btn-primary {
+          @include text-style-14;
+          width: 110px;
+          height: 35px;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+
+  &-button-wrapper {
+    @include flexbox;
+    margin-top: 30px;
+    button {
+      @include text-style-18;
+      color: $white;
+      background-color: $secondary;
+      width: 120px;
+      height: 35px;
+      margin: 20px;
+    }
+
+    @include responsive(T) {
+      button {
+        @include text-style-16;
+        width: 150px;
+        height: 40px;
+        margin: 40px;
+      }
+    }
+
+    @include responsive(D) {
+      button {
+        @include text-style-16;
+        width: 150px;
+        height: 40px;
+        margin: 40px;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 100px;
+}
