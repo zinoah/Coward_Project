@@ -1,0 +1,31 @@
+@import "./main";
+
+.banner {
+  height: 200px;
+  background-color: $yellow-light;
+}
+
+.contest-briefing {
+  position: relative;
+
+  &-summary-wrapper {
+    @include pos-center-x;
+    top: -70px;
+    height: 500px;
+    width: calc(100% - 30px);
+    background-color: $white;
+    border-radius: 20px;
+    box-shadow: $card-shadow;
+  }
+
+  &-reward {
+    &-wrapper {
+      margin-top: 500px;
+    }
+    &-info-box {
+      height: 100px;
+      background-color: $border;
+      border-radius: 20px;
+    }
+  }
+}
