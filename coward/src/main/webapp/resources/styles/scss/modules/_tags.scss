@@ -24,3 +24,15 @@
   color: $secondary;
   background-color: $border;
 }
+
+.tag-pink {
+  @extend %tag-base;
+  color: #f86d7d;
+  background-color: #ffeffb;
+}
+
+.tag-purple {
+  @extend %tag-base;
+  color: #985cd3;
+  background-color: #eae2ff;
+}
