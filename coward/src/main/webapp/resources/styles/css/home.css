@@ -80,7 +80,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -468,7 +469,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -596,7 +598,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -914,6 +921,11 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
+  .nav .nav-search-input::-moz-placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1051,9 +1063,9 @@ i {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #beffee;
   width: 100%;
   height: 280px;
+  background-color: #fbeee5;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1061,28 +1073,29 @@ i {
   align-items: center;
   justify-content: center;
 }
-.banner-top-title {
+.banner-top-wrapper .banner-info .title {
   font-size: 24px;
   line-height: 34px;
   letter-spacing: -0.01em;
 }
-.banner-top-image {
+.banner-top-wrapper .banner-image {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 280px;
-  min-width: 240px;
+  width: 100%;
+  max-width: 360px;
   height: 180px;
-  border-radius: 10px;
-  background-color: #80eed1;
   margin-top: 24px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: #ffdede;
 }
-.banner-top-image img {
+.banner-top-wrapper .banner-image img {
   display: block;
   max-width: 100%;
-  height: 140px;
+  height: 100%;
 }
-.banner-bottom {
+.banner-bottom a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1114,32 +1127,82 @@ i {
   background-color: #3aacf8;
   border-radius: 10px;
 }
-.home .contest-slider .contest-card {
+.home .slider-wrapper {
+  position: relative;
+}
+.home .slider-wrapper .contest-slider .contest-card {
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   border-radius: 10px;
   padding: 6px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #e0e2e7;
 }
-.home .contest-slider .contest-card-image {
+.home .slider-wrapper .contest-slider .contest-card-image {
   width: 130px;
   height: 130px;
   border-radius: 4px;
   overflow: hidden;
 }
-.home .contest-slider .contest-card-image img {
+.home .slider-wrapper .contest-slider .contest-card-image img {
   display: block;
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.home .contest-slider .contest-card-info {
+.home .slider-wrapper .contest-slider .contest-card-info {
+  margin-top: 10px;
+}
+.home .slider-wrapper .contest-slider .contest-card-info .company-mem-name {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
+}
+.home .slider-wrapper .contest-slider .contest-card-info .contest-title {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.home .slider-wrapper .contest-slider .contest-card-info .price-wrapper {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.home .slider-wrapper .slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.home .slider-wrapper .slider-controls .control-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  color: #3f4150;
+  border-radius: 50%;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+}
+.home .slider-wrapper .slider-controls .control-button-is-prev .ic-chevron {
+  display: inline-block;
+}
+.home .slider-wrapper .slider-controls .control-button.is-next .ic-chevron {
+  display: inline-block;
+  transform: rotate(-180deg);
+}
+.home .slider-wrapper .slider-controls .control-button:hover {
+  color: #fff;
+  background-color: #3aacf8;
 }
 .home .section-title {
   font-size: 16px;
