@@ -1,0 +1,143 @@
+@import "./main.scss";
+
+.banner {
+  height: 200px;
+  background-color: $background;
+  @include flexbox;
+  padding: 20px;
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-text-box {
+    div {
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      @include text-style-24;
+    }
+    &-reward {
+      display: flex;
+      div {
+        margin-right: 15px;
+      }
+    }
+  }
+  &-button-box {
+    @include flexbox(end, center);
+  }
+
+  @include responsive(T) {
+    height: 150px;
+
+    &-text-box {
+      @include flexbox(between);
+    }
+
+    &-text-box {
+      div {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.contest-attend-agree {
+  &-title-wrapper {
+    margin: 100px 0 50px 0;
+    @include flexbox;
+    flex-direction: column;
+    p {
+      &:nth-child(1) {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 500;
+      }
+      &:nth-child(2) {
+        @include text-style-14;
+      }
+    }
+  }
+
+  &-check-wrapper {
+    @include flexbox;
+    flex-direction: column;
+  }
+  &-check-box {
+    width: 65%;
+    height: 50px;
+    border: 1px solid $border;
+    border-radius: 10px;
+    @include flexbox(start, center);
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+
+    div {
+      &:nth-child(1) {
+        width: 12px;
+        height: 12px;
+        background-color: $blue;
+
+        border-radius: 20px;
+        font-size: 8px;
+        color: $tertiary;
+        @include flexbox;
+        margin-right: 10px;
+      }
+
+      &:nth-child(2) {
+        @include text-style-14;
+      }
+    }
+  }
+
+  &-all-check {
+    @include flexbox;
+    margin-bottom: 70px;
+    div {
+      &:nth-child(1) {
+        width: 12px;
+        height: 12px;
+        background-color: $tertiary;
+
+        border-radius: 20px;
+        font-size: 8px;
+        color: $tertiary;
+        @include flexbox;
+        margin-right: 10px;
+      }
+
+      &:nth-child(2) {
+        @include text-style-14;
+      }
+    }
+  }
+  &-button-wrapper {
+    @include flexbox;
+    margin-bottom: 100px;
+    flex-direction: column;
+
+    div {
+      &:nth-child(1) {
+        margin-bottom: 15px;
+      }
+    }
+    p {
+      @include text-style-12;
+    }
+
+    button {
+      width: 100px;
+    }
+  }
+  @include responsive(T) {
+    &-check-box {
+      width: 50%;
+      margin-bottom: 40px;
+    }
+  }
+}
