@@ -1168,6 +1168,7 @@ i {
   margin-bottom: 16px;
 }
 .event-item {
+  display: inline-block;
   margin-bottom: 16px;
 }
 .event-item-image {
