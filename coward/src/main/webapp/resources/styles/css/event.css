@@ -1059,81 +1059,145 @@ i {
   }
 }
 
-.event-banner {
+.banner-top {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffe0c7;
   width: 100%;
-  height: 280px;
+  height: 260px;
+  margin-bottom: 24px;
+  background-color: #fbeee5;
 }
-.event-banner-wrapper {
+.banner-top-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.event-banner-title {
+.banner-top-wrapper .banner-info .title {
   font-size: 24px;
   line-height: 34px;
   letter-spacing: -0.01em;
 }
-.event-banner-image {
+.banner-top-wrapper .banner-image {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 280px;
-  min-width: 240px;
+  width: 290px;
   height: 180px;
+  margin-top: 8px;
+  padding: 20px 30px;
   border-radius: 10px;
-  background-color: #ffc1c9;
-  margin-top: 24px;
+  background-color: #ffdede;
 }
-.event-banner-image img {
+.banner-top-wrapper .banner-image img {
   display: block;
-  max-width: 100%;
-  height: 140px;
+  width: 100%;
+  height: 100%;
 }
-.event-title {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  margin-top: 24px;
-}
-.event-card {
-  margin-top: 16px;
-}
-.event-card-list {
+.banner-bottom a {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 160px;
+  background-color: #222121;
+  margin-top: 20px;
 }
-.event-card-item:not(:last-child) {
-  margin-bottom: 16px;
-}
-.event-card-item.is-active .event-card-item-image img {
-  filter: brightness(100%);
-}
-.event-card-item.is-active .event-card-info-status {
-  color: #3aacf8;
-  font-weight: 700;
-}
-.event-card-item img {
+.banner-bottom-image img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  filter: brightness(70%);
 }
-.event-card-info {
+.banner-bottom .ad-slogan {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 16px;
+}
+.banner-bottom .ad-slogan .text-emphasis {
+  color: #ffc200;
+}
+@media screen and (min-width: 768px) {
+  .banner-top-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .banner-top-wrapper .banner-info .title {
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.01em;
+  }
+  .banner-top-wrapper .banner-info .description {
+    margin-top: 16px;
+  }
+  .banner-top-wrapper .banner-info .description p:first-child {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .banner-top-wrapper .banner-info .description p:last-child {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #8c8d96;
+  }
+  .banner-top-wrapper .banner-image {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner-top-wrapper .banner-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 220px;
+    padding: 20px 60px;
+  }
+}
+
+.event-title {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.event-item {
+  margin-bottom: 16px;
+}
+.event-item-image {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 10px;
+  filter: brightness(80%);
+}
+.event-item-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.event-item-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  margin-top: 16px;
+}
+.event-item.is-active .event-item-image {
+  filter: brightness(100%);
+}
+.event-item.is-active .event-item-info .status {
+  color: #3aacf8;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .event-banner {
@@ -1204,5 +1268,8 @@ i {
   .event-banner-image img {
     width: 200px;
     height: auto;
+  }
+  .event-item-image {
+    height: 220px;
   }
 }/*# sourceMappingURL=event.css.map */

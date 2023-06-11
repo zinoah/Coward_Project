@@ -1,80 +1,166 @@
 @import "./main.scss";
 
-.event {
-  &-banner {
+.banner {
+  &-top {
     @include flexbox;
-    background-color: $red-light;
     width: 100%;
-    height: 280px;
+    height: 260px;
+    margin-bottom: 24px;
+
+    // Note: 동적 변경값
+    background-color: #fbeee5;
 
     &-wrapper {
       @include column-flexbox;
-    }
 
-    &-title {
-      @include text-style(24);
+      .banner-info {
+        .title {
+          @include text-style(24);
+        }
+
+        .description {
+        }
+      }
+
+      .banner-image {
+        @include flexbox;
+        width: 290px;
+        height: 180px;
+
+        margin-top: 8px;
+        padding: 20px 30px;
+
+        border-radius: 10px;
+
+        // Note: 동적 변경값
+        background-color: #ffdede;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    a {
+      @include column-flexbox;
+      width: 100%;
+      height: 160px;
+      background-color: #222121;
+      margin-top: 20px;
     }
 
     &-image {
-      @include flexbox;
-      max-width: 280px;
-      min-width: 240px;
-      height: 180px;
-      border-radius: 10px;
-      background-color: $red;
-      margin-top: 24px;
-
-      img {
-        display: block;
-        max-width: 100%;
-        height: 140px;
-      }
-    }
-  }
-
-  &-title {
-    @include text-style(18);
-    margin-top: 24px;
-  }
-
-  &-card {
-    margin-top: 16px;
-    &-list {
-      @include column-flexbox;
-    }
-
-    &-item:not(:last-child) {
-      margin-bottom: 16px;
-    }
-
-    &-item {
-      &.is-active {
-        .event-card-item-image {
-          img {
-            filter: brightness(100%);
-          }
-        }
-
-        .event-card-info-status {
-          color: $blue;
-          font-weight: 700;
-        }
-      }
-
       img {
         display: block;
         width: 100%;
         height: auto;
+      }
+    }
+
+    .ad-slogan {
+      @include text-style(16, $white);
+      margin-top: 16px;
+
+      .text-emphasis {
+        color: $yellow;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-top {
+      &-wrapper {
+        @include flexbox(between);
+        flex-direction: row;
+
+        .banner-info {
+          .title {
+            @include text-style(24);
+          }
+
+          .description {
+            margin-top: 16px;
+
+            p {
+              &:first-child {
+                @include text-style(16);
+              }
+
+              &:last-child {
+                @include text-style(14, $secondary);
+              }
+            }
+          }
+        }
+
+        .banner-image {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-top {
+      &-wrapper {
+        .banner-image {
+          @include flexbox;
+          width: 360px;
+          height: 220px;
+
+          padding: 20px 60px;
+        }
+      }
+    }
+  }
+}
+
+.event {
+  &-title {
+    @include text-style(18);
+    margin-bottom: 16px;
+  }
+
+  &-item {
+    margin-bottom: 16px;
+
+    &-image {
+      width: 100%;
+      height: 180px;
+      margin-bottom: 10px;
+
+      filter: brightness(80%);
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
-        filter: brightness(70%);
+        object-fit: cover;
       }
     }
 
     &-info {
       @include flexbox(between);
       @include text-style(14);
+    }
 
-      margin-top: 16px;
+    // Note: 진행중인 이벤트
+    &.is-active {
+      .event-item-image {
+        filter: brightness(100%);
+      }
+
+      .event-item-info {
+        .status {
+          color: $blue;
+          font-weight: 700;
+        }
+      }
     }
   }
 
@@ -147,6 +233,12 @@
           width: 200px;
           height: auto;
         }
+      }
+    }
+
+    &-item {
+      &-image {
+        height: 220px;
       }
     }
   }
