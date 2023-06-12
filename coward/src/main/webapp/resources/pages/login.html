@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-04">
+        <div class="col-sm-4">
           <div class="login-wrapper">
             <div class="lg-only">
               <img src="../assets/images/login-bg.svg" class="login-bg-img" />
@@ -26,7 +26,7 @@
               <br />
               <br />
               <p class="p-first">Coward에 오신 것을 환영합니다!</p>
-              <br />
+              <br /><br />
               <p class="p-email">이메일</p>
               <div class="email-input-box">
                 <input placeholder="example@gmail.com" class="input-email" />
@@ -47,41 +47,38 @@
               </div>
               <button class="login-btn">로그인</button>
               <br /><br />
-              <div class="id-pw-savefind-box">
-                <form action="#">
-                  <label for="id-save">
+              <div class="saveid-findpw-wrapper">
+                <div class="save-id-wrapper">
+                  <form action="#">
                     <input
                       type="checkbox"
-                      value="id-save"
-                      class="check-id-save"
-                      id="id-save"
-                    />아이디 저장
-                  </label>
-                </form>
+                      id="save-id"
+                      class="save-id-chk-box"
+                    />
+                    <label for="save-id"
+                      ><span class="span-first">아이디 저장</span></label
+                    >
+                  </form>
+                </div>
                 <a href="#" class="pw-find">비밀번호 찾기</a>
               </div>
               <div class="line-box">
                 <hr class="line1" />
                 <hr class="line2" />
-                <p>또는</p>
+                <p class="p-or">또는</p>
               </div>
               <div class="simple-login-box">
-                <a href="#">
-                  <img
-                    src="../assets/images/kakao_login_medium_narrow.png"
-                    class="google-login"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="../assets/images/kakao_login_medium_narrow.png"
-                    class="kakao-login"
-                  />
-                </a>
+                <img
+                  src="../assets/images/goolge-logo.png"
+                  class="google-logo"
+                />
+                <img src="../assets/images/kakao-logo.png" class="kakao-logo" />
+                <button class="google-btn">Google로 계속</button>
+                <button class="kakao-btn">Kakao로 계속</button>
               </div>
               <br />
-              <span>혹시 아직 회원이 아니신가요?</span>
-              <a href="#">회원가입</a>
+              <span class="span-second">혹시 아직 회원이 아니신가요?</span>
+              <a href="#" class="join">회원가입</a>
             </div>
           </div>
         </div>

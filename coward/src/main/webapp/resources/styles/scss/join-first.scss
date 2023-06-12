@@ -1,0 +1,134 @@
+@import "./main";
+
+.join-wrapper {
+  @include flexbox;
+  height: 100vh;
+}
+
+.logo-img {
+  width: 174.55px;
+  height: 40px;
+  position: relative;
+  left: 75px;
+}
+
+.line {
+  &1 {
+    color: $tertiary;
+    width: 135px;
+  }
+
+  &2 {
+    color: $tertiary;
+    width: 135px;
+    position: relative;
+    bottom: 2px;
+    left: 181.5px;
+  }
+}
+.p {
+  &-or {
+    color: $tertiary;
+    font-size: 13px;
+    position: relative;
+    bottom: 10px;
+    left: 148px;
+  }
+
+  &-first {
+    position: relative;
+    left: 53px;
+    color: $black;
+    padding-bottom: 70px;
+  }
+}
+
+.line-box {
+  padding-top: 50px;
+}
+
+.join {
+  color: $blue;
+  font-size: 13px;
+  position: relative;
+  left: 65px;
+
+  &-first-box {
+    width: 320px;
+    height: 560px;
+  }
+
+  &-email {
+    width: 100%;
+    height: 50px;
+    border: 1px solid $border;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+  &-google {
+    width: 100%;
+    height: 50px;
+    border: 1px solid $border;
+    border-radius: 10px;
+    padding-left: 80px;
+  }
+
+  &-kakao {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #fee500;
+    padding-left: 80px;
+  }
+
+  &-google-box {
+    padding-bottom: 20px;
+  }
+
+  &-kakao-box {
+    padding-top: 15px;
+    padding-bottom: 35px;
+  }
+}
+
+.google-logo {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 130px;
+  left: 63px;
+}
+
+.kakao-logo {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  top: 45px;
+  left: 25px;
+}
+
+span {
+  font-size: 13px;
+  position: relative;
+  left: 60px;
+}
+
+@include responsive(D) {
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
+  }
+
+  .join-wrapper {
+    @include flexbox(between);
+  }
+
+  .join-first-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}
