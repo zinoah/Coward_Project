@@ -29,11 +29,41 @@
   .status {
     @include flexbox;
     font-size: 10px;
-    width: 50px;
+    width: 55px;
     height: 25px;
     border: 1px solid $tertiary;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 22px;
+  }
+
+  #awards-status {
+    margin-left: -25px;
+  }
+
+  @include responsive(T) {
+    .status {
+      font-size: 12px;
+      width: 70px;
+      height: 25px;
+    }
+
+    #awards-status {
+      margin: 55px 0 0 285px;
+      position: absolute;
+    }
+  }
+
+  @include responsive(D) {
+    .status {
+      font-size: 12px;
+      width: 70px;
+      height: 25px;
+    }
+
+    #awards-status {
+      margin: 55px 0 0 480px;
+      position: absolute;
+    }
   }
 }
 

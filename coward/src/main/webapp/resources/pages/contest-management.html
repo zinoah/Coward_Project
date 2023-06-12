@@ -107,12 +107,16 @@
           <div class="col-sm-4 sm-only">
             <h3>식품 쇼핑몰 웹사이트 콘테스트</h3>
           </div>
+
           <div class="col-md-6 col-lg-4 sm-hidden">
             <h2 class>식품 쇼핑몰 웹사이트 콘테스트</h2>
           </div>
 
           <div class="col-md-6 col-lg-8 sm-hidden">
-            <div class="status">심사중</div>
+            <select class="status">
+              <option value="1">심사중</option>
+              <option value="2" selected>모집중</option>
+            </select>
           </div>
 
           <div class="col-sm-2">
@@ -120,8 +124,18 @@
             <pre>17일   15명   1/2</pre>
           </div>
 
-          <div class="col-sm-2 sm-only">
-            <div class="status">심사중</div>
+          <div class="col-sm-1 sm-only">
+            <select class="status">
+              <option value="1">심사중</option>
+              <option value="2" selected>모집중</option>
+            </select>
+          </div>
+          <div class="col-sm-1 sm only">
+            <select class="status" id="awards-status">
+              <option value="1">우승</option>
+              <option value="2" selected>후보</option>
+              <option value="1">탈락</option>
+            </select>
           </div>
         </div>
       </div>

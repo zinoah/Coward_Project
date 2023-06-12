@@ -1069,87 +1069,44 @@ i {
   }
 }
 
-.banner img {
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding-top: 10px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
-.contest-top h3 {
-  padding-top: 15px;
-}
-.contest-top h2 {
-  padding-top: 20px;
-}
-.contest-top h6 {
-  padding-top: 20px;
-  color: #8c8d96;
-}
-.contest-top pre {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.contest-top .status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  width: 55px;
-  height: 25px;
-  border: 1px solid #b2b3b9;
-  border-radius: 5px;
-  margin-top: 22px;
-}
-.contest-top #awards-status {
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 285px;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-top .status {
-    font-size: 12px;
-    width: 70px;
-    height: 25px;
-  }
-  .contest-top #awards-status {
-    margin: 55px 0 0 480px;
-    position: absolute;
-  }
+.window {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.contest #all-col {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contest .card {
-  width: 100%;
-  height: 160px;
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  border: 1px solid #e0e2e7;
-  margin-top: 30px;
 }
-.contest .card img {
-  width: 50px;
-  border-radius: 500px;
-  border: 1px solid #e0e2e7;
-}
-.contest .card .profile-section {
+.popup .profile-section {
   display: flex;
-  margin: 20px 0 30px 25px;
+  margin: 20px 0 0 10px;
 }
-.contest .card .profile-section .coding-type {
+.popup .profile-section img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+.popup .profile-section h3 {
+  margin: 15px 0 0 15px;
+}
+.popup .profile-section .coding-type {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1161,91 +1118,70 @@ i {
   height: 20px;
   border: 1px solid #3aacf8;
   border-radius: 5px;
-  margin-top: 4px;
+  margin: 15px 0 0 10px;
 }
-.contest .card .profile-section select {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  height: 20px;
+.popup .intro h4 {
+  margin: 10px;
+}
+.popup .intro-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 150px;
   border: 1px solid #e0e2e7;
   border-radius: 5px;
-  margin: 4px 0 0 15px;
+  margin: 10px;
 }
-.contest .card .profile-section .one-line-intro {
-  font-size: 14px;
-  margin: 10px 0 0 30px;
-}
-.contest .card .profile-name {
-  padding: 5px 10px 0 30px;
-}
-.contest .card .profile-name-div {
+.popup .intro .github-input {
   display: flex;
+  align-items: center;
+  width: 300px;
+  height: 40px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
 }
-.contest .card .profile-button-wrapper {
+.popup .intro .skill-box {
+  height: 80px;
+  padding-left: 10px;
+}
+.popup .intro .my-skill {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  margin: 4px;
+  background-color: #ffc200;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+.popup .intro .story-board {
+  width: 300px;
+  height: 150px;
+  background-color: #e0e2e7;
+  margin: 10px;
+}
+.popup .button-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100px;
 }
-.contest .card .profile-button-wrapper .btn-outlined {
-  font-size: 14px;
+.popup .button-wrapper .awards-status {
+  border: 1px solid #e0e2e7;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  background-color: #abdeff;
-  color: #028ae2;
-  border: 0;
 }
-.contest .card .profile-button-wrapper .btn-outlined:hover {
-  background-color: #028ae2;
-  color: #fff;
-}
-.contest .card .profile-button-wrapper .btn-primary {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  width: 110px;
-  height: 35px;
-  margin-left: 30px;
-}
-.contest-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-button-wrapper button {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background-color: #8c8d96;
-  width: 120px;
-  height: 35px;
-  margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .contest-button-wrapper button {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    width: 150px;
-    height: 40px;
-    margin: 40px;
-  }
-}
-
-.footer {
-  margin-top: 100px;
-}/*# sourceMappingURL=contest-management.css.map */
+.popup .button-wrapper .btn-primary {
+  width: 80px;
+  height: 40px;
+}/*# sourceMappingURL=contest-form-modal.css.map */
