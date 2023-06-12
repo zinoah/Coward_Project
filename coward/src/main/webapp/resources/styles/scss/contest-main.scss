@@ -25,6 +25,23 @@
       margin-top: 10px;
     }
   }
+
+  @include responsive(T) {
+    .banner-wrapper {
+      @include flexbox(start, center);
+      flex-direction: row;
+
+      h1 {
+        font-size: 35px;
+        text-align: start;
+        margin-right: 40px;
+      }
+
+      button {
+        margin-top: 0px;
+      }
+    }
+  }
 }
 
 .main {
@@ -34,86 +51,32 @@
       margin-top: 30px;
     }
   }
-
-  .gallery-button-relative {
-    position: relative;
-
-    .prev {
-      width: 40px;
-      height: 40px;
-      background-color: $white;
-      border-radius: 40px;
-      box-shadow: $card-shadow;
-      @include pos-center-y;
-      left: -10px;
-      cursor: pointer;
-      @include flexbox;
-      transition: 0.5s;
-
-      &:hover {
-        transform: translateX(-10px) translateY(-50%);
-      }
-
-      p {
-        @include text-style-24;
-        color: $primary;
-      }
-    }
-    .next {
-      width: 40px;
-      height: 40px;
-      background-color: $white;
-      border-radius: 40px;
-      box-shadow: $card-shadow;
-      @include pos-center-y;
-      right: -10px;
-      cursor: pointer;
-      @include flexbox;
-      transition: 0.5s;
-
-      &:hover {
-        transform: translateX(10px) translateY(-50%);
-      }
-
-      p {
-        @include text-style-24;
-        color: $primary;
-      }
-    }
-  }
-
   .gallery-wrapper {
-    height: 350px;
-    overflow: hidden;
-    overflow-x: scroll;
     position: relative;
+    height: 300px;
   }
 
-  .gallery {
-    width: 2270px;
+  .my-slider {
     height: 350px;
-    @include flexbox(start, center);
-    position: absolute;
-
-    &-card {
+    .gallery-card {
       height: 300px;
-      width: 200px;
       border-radius: 10px;
       overflow: hidden;
-      margin-left: 30px;
       cursor: pointer;
       box-shadow: $card-shadow;
       position: relative;
 
-      &:first-child {
-        margin-left: 0;
-      }
-
       &-img {
+        @include flexbox;
         height: 240px;
         overflow: hidden;
+
         img {
-          height: 240px;
+          display: block;
+
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
 
@@ -128,26 +91,68 @@
         transition: 600ms;
         bottom: -95px;
 
-        div {
-          &:nth-child(1) {
-            font-weight: 600;
-          }
-          &:not(:nth-child(1)) {
-            margin-top: 7px;
-            p {
-              display: inline-block;
-              &:nth-child(1) {
-                color: $secondary;
-                font-weight: 500;
-                margin-right: 10px;
-              }
-            }
-          }
-          &:last-child {
-            text-align: center;
-            margin-top: 20px;
+        &-title {
+          font-weight: 600;
+          margin-bottom: 7px;
+          p {
+            @include truncate;
           }
         }
+
+        &-button {
+          height: 50px;
+          @include flexbox;
+        }
+        &-detail {
+          margin-bottom: 7px;
+          p {
+            display: inline-block;
+            &:nth-child(1) {
+              color: $secondary;
+              font-weight: 500;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider-controls {
+    @include flexbox(between);
+    @include pos-center;
+    width: calc(100% + 40px);
+
+    .control-button {
+      @include inline-flexbox;
+
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      background-color: $white;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+      color: $primary;
+      border-radius: 50%;
+      transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+
+      &-is-prev {
+        .ic-chevron {
+          display: inline-block;
+          // margin-right: 3px;
+        }
+      }
+
+      &.is-next {
+        .ic-chevron {
+          display: inline-block;
+          transform: rotate(-180deg);
+          // margin-left: 3px;
+        }
+      }
+
+      &:hover {
+        color: $white;
+        background-color: $blue;
       }
     }
   }
@@ -210,13 +215,138 @@
 
   .contest {
     &-card {
-      &:nth-child(1) {
-        margin-top: 10px;
-      }
-      margin-top: 30px;
+      margin-bottom: 20px;
       height: 150px;
       box-shadow: $card-shadow;
       border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .bookmark {
+        position: absolute;
+        right: 7%;
+        top: -5px;
+        font-size: 25px;
+        i {
+          color: $tertiary;
+        }
+      }
+      &:nth-child(1) {
+        margin-top: 10px;
+      }
+
+      &-first-line {
+        width: 100%;
+        flex-basis: 30%;
+
+        @include flexbox(start, center);
+        div {
+          &:nth-child(1) {
+            @include text-style-18;
+            font-weight: 500;
+          }
+
+          margin-right: 10px;
+        }
+      }
+      &-second-line {
+        width: 100%;
+        flex-basis: 70%;
+
+        .first-box-article {
+          div {
+            margin-right: 5px;
+          }
+        }
+        .second-box-article {
+          display: flex;
+          align-items: center;
+          div {
+            margin-left: 10px;
+          }
+          p {
+            @include text-style-12;
+          }
+        }
+
+        &-first-box {
+          margin-top: 10px;
+          display: flex;
+          div {
+            margin-right: 30px;
+            p {
+              &:nth-child(1) {
+                @include text-style-12;
+                margin-bottom: 5px;
+              }
+
+              &:nth-child(2) {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        &-second-box {
+          margin-top: 10px;
+          @include flexbox(between);
+        }
+      }
+
+      &-third-line {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid $border;
+        div {
+          margin: 10px 10px 10px 0;
+        }
+        p {
+          @include text-style-12;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    .ad-banner-box {
+      padding: 50px;
+      @include flexbox(center, start);
+
+      p {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+    .contest-card {
+      height: 250px;
+      padding: 20px 20px 10px 20px;
+      &-first-line {
+        flex-basis: 20%;
+      }
+      &-second-line {
+        flex-basis: 70%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+      &-third-line {
+        flex-basis: 10%;
+        @include flexbox(start, center);
+      }
+    }
+
+    .category-button-wrapper {
+      margin-top: 10px;
+      button {
+        margin-right: 5px;
+        height: 25px;
+      }
+    }
+
+    .type-button-wrapper {
+      margin-bottom: 5px;
     }
   }
 }

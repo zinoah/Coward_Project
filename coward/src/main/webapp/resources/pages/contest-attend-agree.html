@@ -2,16 +2,11 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/event.css"
-    />
-    <title>Coward | 이벤트</title>
+    <link rel="stylesheet" href="../styles/css/contest-attend-agree.css" />
+    <title>Coward | 공모전 참가하기</title>
   </head>
   <body>
-    <!-- TODO:  <jsp:include page="/WEB-INF/views/common/header.jsp" /> -->
     <header class="header">
       <div class="container">
         <div class="row">
@@ -61,7 +56,6 @@
       </div>
     </header>
 
-    <!-- TODO:  <jsp:include page="/WEB-INF/views/common/nav.jsp" /> -->
     <nav class="nav">
       <h2 class="visually-hidden">메뉴</h2>
       <div class="container">
@@ -97,93 +91,101 @@
         </div>
       </div>
     </nav>
-
-    <!-- TODO:  <jsp:include page="/WEB-INF/views/common/banner-top.jsp" /> -->
-    <div class="banner-top">
+    <section class="banner">
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <div class="banner-top-wrapper">
-              <div class="banner-info">
-                <h1 class="title">Events</h1>
-                <div class="description">
-                  <p class="sm-hidden">
-                    Coward를 사랑해주시는 여러분들을 위한 이벤트!
-                  </p>
-                  <p class="sm-hidden">
-                    쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                  </p>
+            <div class="banner-wrapper">
+              <div class="banner-text-box">
+                <div class="banner-text-box-inner">
+                  <div class="banner-text-box-day">
+                    <div class="tag-blue">
+                      <p>13일</p>
+                    </div>
+                  </div>
+                  <div class="banner-text-box-title">
+                    <p>경기도청 홈페이지 제작 공모전</p>
+                  </div>
+                  <div class="banner-text-box-reward">
+                    <div>
+                      <p>총 상금</p>
+                    </div>
+                    <div>
+                      <p>300만원</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="banner-button-box sm-hidden">
+                  <button class="btn-outlined btn-40">브리핑 보러가기</button>
                 </div>
               </div>
-              <div class="banner-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                  aria-hidden
-                />
+              <div class="banner-button-box sm-only">
+                <button class="btn-outlined btn-40">브리핑 보러가기</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <main class="event">
+    <main class="contest-attend-agree">
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <h3 class="event-title">전체 이벤트 보기</h3>
+            <div class="contest-attend-agree-title-wrapper">
+              <p>콘테스트 참여 약관 동의</p>
+              <p>콘테스트 참여를 위해 아래 내용을 꼭 확인해 주세요.</p>
+            </div>
           </div>
         </div>
-
         <div class="row">
-          <!-- Note: 이벤트가 진행중인 경우 .is-active -->
-          <div class="col-sm-4 col-md-6 col-lg-6">
-            <!-- TODO: 경로 변경하기 -->
-            <a class="event-item is-active" href="./event-detail.html">
-              <div class="event-item-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/dummy/event-thumbnail.png"
-                  alt="이벤트 썸네일"
-                />
-              </div>
-
-              <div class="event-item-info">
-                <span class="status">진행중</span>
-                <div class="period">
-                  <span class="event-date">2023/05/26</span>
-                  ~
-                  <span class="event-date">2023/08/26</span>
+          <div class="col-sm-4">
+            <div class="contest-attend-agree-check-wrapper">
+              <div class="contest-attend-agree-check-box">
+                <div></div>
+                <div>
+                  <p>코워드 정책</p>
                 </div>
               </div>
-            </a>
+              <div class="contest-attend-agree-check-box">
+                <div></div>
+                <div>
+                  <p>공모전 이용약관</p>
+                </div>
+              </div>
+              <div class="contest-attend-agree-check-box">
+                <div></div>
+                <div>
+                  <p>공모전 참여 주의사항</p>
+                </div>
+              </div>
+              <div class="contest-attend-agree-all-check">
+                <div></div>
+                <div>
+                  <p>약관에 모두 동의합니다.</p>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <!-- Note: 이벤트가 종료된 경우 -->
-          <div class="col-sm-4 col-md-6 col-lg-6">
-            <!-- TODO: 경로 변경하기 -->
-            <a class="event-item" href="./event-detail.html">
-              <div class="event-item-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/dummy/event-thumbnail.png"
-                  alt="이벤트 썸네일"
-                />
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="contest-attend-agree-button-wrapper">
+              <div>
+                <p>
+                  콘테스트 참여 약관 사항을 모두 확인했으며, 해당 내용에 모두
+                  동의합니다.
+                </p>
               </div>
-
-              <div class="event-item-info">
-                <span class="status">종료</span>
-                <div class="period">
-                  <span class="event-date">2023/05/26</span>
-                  ~
-                  <span class="event-date">2023/08/26</span>
-                </div>
+              <div>
+                <button class="btn-secondary btn-32">동의함</button>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- TODO:  <jsp:include page="/WEB-INF/views/common/footer.jsp" /> -->
     <footer class="footer">
       <div class="container">
         <div class="row">

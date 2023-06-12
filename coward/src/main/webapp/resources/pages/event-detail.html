@@ -11,6 +11,7 @@
     <title>Coward | 이벤트 상세 페이지</title>
   </head>
   <body>
+    <!-- TODO:  <jsp:include page="/WEB-INF/views/common/header.jsp" /> -->
     <header class="header">
       <div class="container">
         <div class="row">
@@ -60,6 +61,7 @@
       </div>
     </header>
 
+    <!-- TODO:  <jsp:include page="/WEB-INF/views/common/nav.jsp" /> -->
     <nav class="nav">
       <h2 class="visually-hidden">메뉴</h2>
       <div class="container">
@@ -96,27 +98,26 @@
       </div>
     </nav>
 
-    <main class="event">
+    <main class="event-detail">
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <div class="event-wrapper">
+            <div class="event-detail-wrapper">
               <div class="event-info">
-                <h1 class="event-info-title">
-                  친구 추천하고 너도, 나도 적립금 받자!
-                </h1>
-                <span class="event-info-status">진행중</span>
-                <div class="event-info-date">
-                  <span class="start-date">2023/05/26</span>
-                  <span>~</span>
-                  <span class="end-date">2023/08/26</span>
+                <h1 class="title">친구 추천하고 너도, 나도 적립금 받자!</h1>
+                <span class="status">진행중</span>
+                <div class="period">
+                  <span class="event-date">2023/05/26</span>
+                  ~
+                  <span class="event-date">2023/08/26</span>
                 </div>
               </div>
 
-              <div class="event-img">
+              <div class="event-detail-image">
+                <!-- TODO: 경로 지정 주의 -->
                 <img
                   src="/coward/src/main/webapp/resources/assets/images/dummy/event-detail.jpg"
-                  alt="이벤트 상세 정보 이미지"
+                  aria-hidden
                 />
               </div>
             </div>
@@ -125,6 +126,7 @@
       </div>
     </main>
 
+    <!-- TODO:  <jsp:include page="/WEB-INF/views/common/footer.jsp" /> -->
     <footer class="footer">
       <div class="container">
         <div class="row">

@@ -80,8 +80,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -479,8 +478,7 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .avatar-24 {
@@ -608,12 +606,7 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.form-select::-moz-placeholder, .form-input::-moz-placeholder {
-  color: #b2b3b9;
+  appearance: none;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -931,11 +924,6 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
-  .nav .nav-search-input::-moz-placeholder {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
-  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1069,217 +1057,140 @@ i {
   }
 }
 
-.banner-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 260px;
-  margin-bottom: 24px;
-  background-color: #fbeee5;
+.banner {
+  height: 250px;
+  background-color: #ffe9a4;
 }
-.banner-top-wrapper {
+
+.contest-briefing {
+  position: relative;
+  margin-bottom: 100px;
+}
+.contest-briefing-summary-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  top: -100px;
+  height: 600px;
+  width: calc(100% - 30px);
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 30px;
 }
-.banner-top-wrapper .banner-info .title {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
+.contest-briefing-summary-bookmark {
+  position: absolute;
+  right: 10%;
+  top: -7px;
+  font-size: 30px;
 }
-.banner-top-wrapper .banner-image {
+.contest-briefing-summary-thumbnail {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 290px;
-  height: 180px;
-  margin-top: 8px;
-  padding: 20px 30px;
-  border-radius: 10px;
-  background-color: #ffdede;
+  height: 300px;
+  overflow: hidden;
 }
-.banner-top-wrapper .banner-image img {
-  display: block;
-  width: 100%;
+.contest-briefing-summary-thumbnail img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
-.banner-bottom a {
+.contest-briefing-summary-info-title {
+  font-size: 22px;
+}
+.contest-briefing-summary-info-name {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.contest-briefing-summary-info-detail {
+  border-top: 1px solid #e0e2e7;
+}
+.contest-briefing-reward-wrapper {
+  margin-top: -35px;
+}
+.contest-briefing-reward-info-box {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 160px;
-  background-color: #222121;
-  margin-top: 20px;
+  height: 100px;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
 }
-.banner-bottom-image img {
-  display: block;
-  width: 100%;
-  height: auto;
+.contest-briefing-reward-info-box > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  height: 80%;
+  flex-direction: column;
 }
-.banner-bottom .ad-slogan {
+.contest-briefing-reward-info-box > div:nth-child(1) {
+  border-right: 1px solid #e0e2e7;
+}
+.contest-briefing-reward-info-box-title {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: #fff;
-  margin-top: 16px;
+  font-weight: 700;
+  color: #8c8d96;
 }
-.banner-bottom .ad-slogan .text-emphasis {
-  color: #ffc200;
-}
-@media screen and (min-width: 768px) {
-  .banner-top-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  .banner-top-wrapper .banner-info .title {
-    font-size: 24px;
-    line-height: 34px;
-    letter-spacing: -0.01em;
-  }
-  .banner-top-wrapper .banner-info .description {
-    margin-top: 16px;
-  }
-  .banner-top-wrapper .banner-info .description p:first-child {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-  }
-  .banner-top-wrapper .banner-info .description p:last-child {
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    color: #8c8d96;
-  }
-  .banner-top-wrapper .banner-image {
-    margin: 0;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .banner-top-wrapper .banner-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 360px;
-    height: 220px;
-    padding: 20px 60px;
-  }
-}
-
-.event-title {
+.contest-briefing-reward-info-box-detail {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: -0.02em;
-  margin-bottom: 16px;
+  font-weight: 700;
 }
-.event-item {
-  display: inline-block;
-  margin-bottom: 16px;
-}
-.event-item-image {
-  width: 100%;
-  height: 180px;
-  margin-bottom: 10px;
-  filter: brightness(80%);
-}
-.event-item-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-.event-item-info {
+.contest-briefing-button-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 30px;
+}
+.contest-briefing-button-wrapper > div:nth-child(1) {
+  flex-basis: 80%;
+  margin-right: 3%;
+}
+.contest-briefing-button-wrapper > div:nth-child(1) button {
+  width: 100%;
+  height: 50px;
+}
+.contest-briefing-button-wrapper > div:nth-child(2) {
+  flex-basis: 17%;
+}
+.contest-briefing-button-wrapper > div:nth-child(2) button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+}
+.contest-briefing-title-wrapper {
+  height: 50px;
+  margin-top: 30px;
+  border-bottom: 1px solid #e0e2e7;
+}
+.contest-briefing-subject-wrapper {
+  margin-top: 30px;
+}
+.contest-briefing-subject-wrapper-title {
+  height: 20px;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #3aacf8;
+  font-weight: 700;
+  border-left: 2px solid #3aacf8;
+}
+.contest-briefing-subject-wrapper-detail {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-}
-.event-item.is-active .event-item-image {
-  filter: brightness(100%);
-}
-.event-item.is-active .event-item-info .status {
-  color: #3aacf8;
-  font-weight: 700;
-}
-@media screen and (min-width: 768px) {
-  .event-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    height: 160px;
-    margin-top: 10px;
-  }
-  .event-banner-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  .event-banner-info-title {
-    font-size: 24px;
-    line-height: 34px;
-    letter-spacing: -0.01em;
-  }
-  .event-banner-info-description {
-    margin-top: 8px;
-  }
-  .event-banner-info-description p {
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-  }
-  .event-banner-info-description p:last-child {
-    font-size: 13px;
-    line-height: 20px;
-    letter-spacing: -0.01em;
-    color: #8c8d96;
-  }
-  .event-banner-image {
-    width: 200px;
-    height: 130px;
-    margin: 0;
-  }
-  .event-banner-image img {
-    width: 100%;
-    height: 100px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .event-banner {
-    height: 240px;
-  }
-  .event-banner-info-description {
-    margin-top: 8px;
-  }
-  .event-banner-info-description p {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-  }
-  .event-banner-info-description p:last-child {
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    color: #8c8d96;
-  }
-  .event-banner-image {
-    width: 320px;
-    height: 200px;
-  }
-  .event-banner-image img {
-    width: 200px;
-    height: auto;
-  }
-  .event-item-image {
-    height: 220px;
-  }
-}/*# sourceMappingURL=event.css.map */
+}/*# sourceMappingURL=contest-detail.css.map */

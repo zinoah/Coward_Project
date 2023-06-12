@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coward | 공모전 관리</title>
+
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/contest-management.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      alt="Coward"
+                    />
+                  </a>
+                </h1>
+
+                <button
+                  class="header-button sm-only"
+                  type="button"
+                  aria-label="메뉴 버튼"
+                >
+                  <i class="ic-hamburger"></i>
+                </button>
+              </div>
+
+              <div class="header-right sm-hidden">
+                <!-- Note: 로그인을 하지 않은 경우 -->
+                <div class="header-buttons">
+                  <button
+                    class="header-button md-only"
+                    type="button"
+                    aria-label="통합 검색 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">로그인</a>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">회원가입</a>
+                  </button>
+                </div>
+                <!-- Note: 로그인을 한 경우 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <h2 class="visually-hidden">메뉴</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="nav-wrapper">
+              <div class="nav-left">
+                <ul class="nav-list">
+                  <li class="nav-item is-active">
+                    <a href="#">공모전</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">개발자 찾기</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">가격 안내</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nav-right lg-only">
+                <form class="nav-search" action="#">
+                  <input
+                    class="nav-search-input"
+                    type="text"
+                    placeholder="어떤 공모전을 찾으시나요?"
+                  />
+                  <i class="ic-search" aria-hidden></i>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="banner sm-hidden">
+      <img src="../assets/images/mypage-banner.png" />
+    </div>
+
+    <main class="contest-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 sm-only">
+            <h3>식품 쇼핑몰 웹사이트 콘테스트</h3>
+          </div>
+
+          <div class="col-md-6 col-lg-4 sm-hidden">
+            <h2 class>식품 쇼핑몰 웹사이트 콘테스트</h2>
+          </div>
+
+          <div class="col-md-6 col-lg-8 sm-hidden">
+            <select class="status">
+              <option value="1">심사중</option>
+              <option value="2" selected>모집중</option>
+            </select>
+          </div>
+
+          <div class="col-sm-2">
+            <h6>남은기간 &nbsp; 참가인원 &nbsp; 우승인원</h6>
+            <pre>17일   15명   1/2</pre>
+          </div>
+
+          <div class="col-sm-1 sm-only">
+            <select class="status">
+              <option value="1">심사중</option>
+              <option value="2" selected>모집중</option>
+            </select>
+          </div>
+          <div class="col-sm-1 sm only">
+            <select class="status" id="awards-status">
+              <option value="1">우승</option>
+              <option value="2" selected>후보</option>
+              <option value="1">탈락</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 결과(후보/ 우승) 구별해서 보여주는 기능 필요여부???-->
+    <main class="contest">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-4" id="all-col">
+            <div class="card">
+              <div class="profile-section">
+                <img
+                  src="../assets/images/default-user-img.png"
+                  name="profile-image"
+                />
+                <div class="profile-div">
+                  <div class="profile-name-div">
+                    <h4 class="profile-name">닉네임</h4>
+                    <div class="coding-type">back</div>
+                    <form>
+                      <select>
+                        <option value="1">우승</option>
+                        <option value="2" selected>후보</option>
+                        <option value="3">탈락</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="one-line-intro">백엔드 개발자 빡과장 입니다.</div>
+                </div>
+              </div>
+
+              <div class="profile-button-wrapper">
+                <button class="btn-40 btn-outlined">제출품 보기</button>
+                <button class="btn-40 btn-primary">채팅하기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="contest-button-wrapper">
+              <button class="btn-secondary">임시저장</button>
+              <button class="btn-secondary">심사완료</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-2 col-lg-3">
+            <h1 class="logo">
+              <a href="#">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  alt="Coward"
+                />
+              </a>
+            </h1>
+          </div>
+
+          <div class="col-sm-4 col-md-5 col-lg-3">
+            <div class="service-center">
+              <a href="#">
+                <h3>고객센터</h3>
+                <i class="ic-chevron"></i>
+              </a>
+            </div>
+            <div class="service-info">
+              <div class="row">
+                <div class="service-info-wrapper">
+                  <div class="service-info-time">
+                    <div class="service-info-title">상담시간</div>
+                    <p>
+                      평일 11:00 ~ 17:00 <br />
+                      점심 12:30 ~ 13:30 <br />
+                      (주말, 공휴일 제외)
+                    </p>
+                  </div>
+
+                  <div class="service-info-tel">
+                    <div class="service-info-title">연락처</div>
+                    <a class="footer-tel" href="tel:02-1234-5678"
+                      >02-1234-5678</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <address class="footer-info sm-hidden">
+            <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+            <p>Copyright © 2023 Coawrd All Right Reserved</p>
+          </address>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="footer-links">
+            <div class="row">
+              <div class="footer-links-wrapper">
+                <div class="icon-link">
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
+                      alt="Github 바로가기"
+                  /></a>
+                  <a class="icon-link-item" href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
+                      alt="Notion 바로가기"
+                    />
+                  </a>
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
+                      alt="Figma 바로가기"
+                  /></a>
+                </div>
+
+                <div class="text-link">
+                  <ul class="text-link-list">
+                    <li class="text-link-item"><a href="#">이용가이드</a></li>
+                    <li class="text-link-item">
+                      <a href="#">개인정보처리방침</a>
+                    </li>
+                    <li class="text-link-item"><a href="#">이용약관</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <address class="footer-info sm-only">
+          <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+          <p>Copyright © 2023 Coawrd All Right Reserved</p>
+        </address>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/contest-main.js"></script>
+  </body>
+</html>

@@ -1,55 +1,63 @@
 @import "./main.scss";
 
-.event {
+.event-detail {
+  margin-bottom: 24px;
+
   &-wrapper {
     @include text-style(14);
-    @include column-flexbox;
+
+    .event-info {
+      @include column-flexbox;
+
+      width: 100%;
+      margin-bottom: 16px;
+      padding: 16px 0;
+      border-top: 1px solid $border;
+      border-bottom: 1px solid $border;
+
+      .title {
+        @include text-style(18);
+      }
+
+      .status {
+        color: $blue;
+        font-weight: 700;
+        margin-top: 16px;
+      }
+
+      .period {
+        margin-top: 8px;
+      }
+    }
   }
 
-  &-info {
-    @include column-flexbox;
-
+  &-image {
     width: 100%;
-    margin: 8px 0;
-    padding: 16px 0;
-    border-top: 1px solid $border;
-    border-bottom: 1px solid $border;
-
-    &-title {
-      @include text-style(18);
-    }
-
-    &-status {
-      color: $blue;
-      font-weight: 700;
-
-      margin-top: 16px;
-    }
-
-    &-date {
-      margin-top: 8px;
-    }
-  }
-
-  &-img {
-    @include flexbox;
-    margin-top: 16px;
+    height: auto;
 
     img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
 
   @include responsive(T) {
     &-wrapper {
       @include text-style(16);
-    }
 
-    &-info {
-      &-title {
-        @include text-style(24);
+      .event-info {
+        .title {
+          @include text-style(24);
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-wrapper {
+      .event-info {
+        margin-bottom: 24px;
       }
     }
   }
