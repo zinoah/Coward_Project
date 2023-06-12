@@ -1,31 +1,144 @@
 @import "./main";
 
 .banner {
-  height: 200px;
+  height: 250px;
   background-color: $yellow-light;
 }
 
 .contest-briefing {
   position: relative;
+  margin-bottom: 100px;
+  &-summary {
+    &-wrapper {
+      @include pos-center-x;
+      display: flex;
+      flex-direction: column;
+      top: -100px;
+      height: 600px;
+      width: calc(100% - 30px);
+      background-color: $white;
+      border-radius: 20px;
+      box-shadow: $card-shadow;
+      position: relative;
+      padding: 30px;
+    }
 
-  &-summary-wrapper {
-    @include pos-center-x;
-    top: -70px;
-    height: 500px;
-    width: calc(100% - 30px);
-    background-color: $white;
-    border-radius: 20px;
-    box-shadow: $card-shadow;
+    &-bookmark {
+      position: absolute;
+      right: 10%;
+      top: -7px;
+      font-size: 30px;
+    }
+
+    &-thumbnail {
+      @include flexbox;
+      height: 300px;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      &-title {
+        font-size: 22px;
+      }
+      &-name {
+        @include flexbox(start, center);
+      }
+      &-tag {
+      }
+      &-detail {
+        border-top: 1px solid $border;
+      }
+    }
   }
 
   &-reward {
     &-wrapper {
-      margin-top: 500px;
+      margin-top: -35px;
     }
     &-info-box {
+      @include flexbox;
       height: 100px;
-      background-color: $border;
-      border-radius: 20px;
+      background-color: $background;
+      border: 1px solid $border;
+      border-radius: 10px;
+
+      & > div {
+        @include flexbox;
+        flex-basis: 50%;
+        height: 80%;
+        flex-direction: column;
+
+        &:nth-child(1) {
+          border-right: 1px solid $border;
+        }
+      }
+
+      &-title {
+        @include text-style-16;
+        font-weight: 700;
+        color: $secondary;
+      }
+
+      &-detail {
+        @include text-style-18;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &-button-wrapper {
+    @include flexbox;
+    margin-top: 30px;
+
+    & > div {
+      &:nth-child(1) {
+        flex-basis: 80%;
+        margin-right: 3%;
+        button {
+          width: 100%;
+          height: 50px;
+        }
+      }
+      &:nth-child(2) {
+        flex-basis: 17%;
+        button {
+          @include flexbox;
+          width: 100%;
+          height: 50px;
+          border: 1px solid $border;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  &-title-wrapper {
+    height: 50px;
+    margin-top: 30px;
+    border-bottom: 1px solid $border;
+  }
+
+  &-subject-wrapper {
+    margin-top: 30px;
+
+    &-title {
+      height: 20px;
+      padding-left: 10px;
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: $blue;
+      font-weight: 700;
+      border-left: 2px solid $blue;
+    }
+
+    &-detail {
+      @include text-style-14;
     }
   }
 }
