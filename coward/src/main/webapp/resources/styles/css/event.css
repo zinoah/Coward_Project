@@ -1251,6 +1251,7 @@ i {
   margin-bottom: 16px;
 }
 .event-item {
+  display: block;
   margin-bottom: 16px;
 }
 .event-item-image {
