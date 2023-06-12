@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
@@ -881,8 +882,171 @@ i {
   }
 }
 
+.banner-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 260px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.banner-top img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner-top-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+.banner-top-wrapper .banner-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner-top-wrapper .banner-info .main-title {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.banner-top-wrapper .banner-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 120px;
+  margin-bottom: 16px;
+}
+.banner-top-wrapper .banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner-bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  background-color: #222121;
+  margin-top: 20px;
+}
+.banner-bottom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner-bottom .ad-slogan {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 16px;
+}
+.banner-bottom .ad-slogan .text-emphasis {
+  color: #ffc200;
+}
+@media screen and (min-width: 768px) {
+  .banner-top-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .banner-top-wrapper .banner-info {
+    align-items: start;
+  }
+  .banner-top-wrapper .banner-info .main-title {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .banner-top-wrapper .banner-info .sub-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #8c8d96;
+    margin-bottom: 24px;
+  }
+  .banner-top-wrapper .banner-image {
+    height: 170px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner-top-wrapper .banner-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 220px;
+    padding-right: 60px;
+  }
+}
+
+/* banner-top html code
+
+<div class="banner-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-top-wrapper">
+              <div class="banner-info">
+                <h3 class="main-title">
+                  Coward를 사랑해주시는 <br class="sm-only" />
+                  여러분들을 위한 이벤트!
+                </h3>
+                <p class="sub-title sm-hidden">
+                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                </p>
+                <a href="#" class="banner-button btn-32 btn-primary"
+                  >더 알아보기</a
+                >
+              </div>
+              <div class="banner-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/* banner-top scss 페이지 별 색상 변경 코드
+.banner {
+  &-top {
+    background-color: #ffefc5;
+
+    &-wrapper {
+      .banner-info {
+        .banner-button {
+          background-color: $yellow;
+
+          &:hover {
+            background-color: #fcd869;
+          }
+        }
+      }
+    }
+  }
+}
+*/
 .nav {
   background-color: #fff;
+  margin-bottom: 10px;
 }
 .nav-wrapper {
   display: flex;
@@ -956,6 +1120,7 @@ i {
   letter-spacing: -0.01em;
   width: 100%;
   background-color: #f8f8f8;
+  margin-top: 24px;
 }
 .footer .logo {
   display: flex;
@@ -1070,124 +1235,127 @@ i {
 }
 
 .banner-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #beffee;
-  width: 100%;
-  height: 280px;
+
+  background-color: #fbeee5;
+
 }
-.banner-top-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.banner-top-title {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-}
-.banner-top-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 280px;
-  min-width: 240px;
-  height: 180px;
-  border-radius: 10px;
-  background-color: #80eed1;
-  margin-top: 24px;
-}
-.banner-top-image img {
-  display: block;
-  max-width: 100%;
-  height: 140px;
-}
-.banner-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 160px;
-  background-color: #222121;
-  margin-top: 20px;
-}
-.banner-bottom-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.banner-bottom .ad-slogan {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #fff;
-  margin-top: 16px;
-}
-.banner-bottom .ad-slogan .text-emphasis {
-  color: #ffc200;
+.banner-top-wrapper .banner-info .banner-button {
+  background-color: #f2999f;
 }
 
-.home .temp-layout {
-  width: 100%;
-  height: 200px;
-  background-color: #3aacf8;
-  border-radius: 10px;
+.banner-top-wrapper .banner-info .banner-button:hover {
+  background-color: #ffc1c9;
 }
-.home .contest-slider .contest-card {
-  display: inline-flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 6px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+
+.home-contest-preview {
+  margin-bottom: 24px;
 }
-.home .contest-slider .contest-card-image {
-  width: 130px;
-  height: 130px;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.home .contest-slider .contest-card-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.home .contest-slider .contest-card-info {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-}
-.home .section-title {
+.home-contest-preview-header {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.01em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 24px;
   margin-bottom: 16px;
 }
-.home .section-title .more-btn {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
+.home-contest-preview-header .more-btn {
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 200ms ease-in-out;
+  transition: color 150ms ease-in-out;
 }
-.home .section-title .more-btn:not(:disabled):hover {
+.home-contest-preview-header .more-btn:not(:disabled):hover {
   color: #b2b3b9;
 }
-.home .section-title .more-btn .ic-chevron {
+.home-contest-preview-header .more-btn span {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}
+.home-contest-preview-header .more-btn .ic-chevron {
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 4px;
+  transform: rotate(-180deg);
+}
+
+.home-contest-preview-slider {
+  position: relative;
+}
+.home-contest-preview-slider .contest-slider-item {
+  padding: 8px;
+  border: 0.5px solid #e0e2e7;
+  border-radius: 8px;
+}
+.home-contest-preview-slider .contest-slider-item .thumbnail {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.home-contest-preview-slider .contest-slider-item .thumbnail img {
+
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.home-contest-preview-slider .contest-slider-item .info {
+  margin-top: 10px;
+}
+.home-contest-preview-slider .contest-slider-item .info .company-mem-name {
+
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}
+
+.home-contest-preview-slider .contest-slider-item .info .contest-title {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.home-contest-preview-slider .contest-slider-item .info .price-wrapper {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.home-contest-preview-slider .slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.home-contest-preview-slider .slider-controls .control-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  color: #3f4150;
+  border-radius: 50%;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+}
+.home-contest-preview-slider .slider-controls .control-button-is-prev .ic-chevron {
+  display: inline-block;
+}
+.home-contest-preview-slider .slider-controls .control-button.is-next .ic-chevron {
   display: inline-block;
   transform: rotate(-180deg);
-  margin-left: 4px;
+}
+.home-contest-preview-slider .slider-controls .control-button:hover {
+  color: #fff;
+  background-color: #3aacf8;
+
 }
 .home-services .service a {
   display: flex;
@@ -1257,4 +1425,10 @@ i {
   letter-spacing: -0.005em;
   display: inline-block;
   margin-top: 8px;
+}
+.home .temp-layout {
+  width: 100%;
+  height: 200px;
+  background-color: #3aacf8;
+  border-radius: 10px;
 }/*# sourceMappingURL=home.css.map */
