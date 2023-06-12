@@ -2,14 +2,7 @@
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
-  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix")
-      format("embedded-opentype"),
-    url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf")
-      format("truetype"),
-    url("/coward/src/main/webapp/resources/assets/fonts/coward.woff")
-      format("woff"),
-    url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward")
-      format("svg");
+  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -89,7 +82,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted; /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -188,9 +181,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -198,9 +191,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -209,9 +202,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -255,8 +248,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -264,8 +257,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -273,7 +266,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -281,7 +274,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -440,9 +433,7 @@ address {
   }
 }
 
-
 .tag-purple, .tag-pink, .tag-gray, .tag-yellow, .tag-blue {
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -470,7 +461,6 @@ address {
   background-color: #e0e2e7;
 }
 
-
 .tag-pink {
   color: #f86d7d;
   background-color: #ffeffb;
@@ -482,19 +472,16 @@ address {
 }
 
 .avatar-32, .avatar-24, .avatar {
-
   display: block;
   overflow: hidden;
   border-radius: 50%;
 }
-.avatar-32 img,
-.avatar-24 img,
-.avatar img {
+.avatar-32 img, .avatar-24 img, .avatar img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -507,12 +494,7 @@ address {
   height: 32px;
 }
 
-.btn-ghost,
-.btn-yellow-outline,
-.btn-yellow,
-.btn-outlined,
-.btn-secondary,
-.btn-primary {
+.btn-ghost, .btn-yellow-outline, .btn-yellow, .btn-outlined, .btn-secondary, .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -520,12 +502,7 @@ address {
   font-weight: 700;
   border-radius: 5px;
 }
-.btn-ghost:disabled,
-.btn-yellow-outline:disabled,
-.btn-yellow:disabled,
-.btn-outlined:disabled,
-.btn-secondary:disabled,
-.btn-primary:disabled {
+.btn-ghost:disabled, .btn-yellow-outline:disabled, .btn-yellow:disabled, .btn-outlined:disabled, .btn-secondary:disabled, .btn-primary:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }
@@ -633,11 +610,10 @@ address {
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
-.form-select::-moz-placeholder,
-.form-input::-moz-placeholder {
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
   color: #b2b3b9;
 }
 .form-select::placeholder,
@@ -763,7 +739,7 @@ i {
   display: flex;
   flex-wrap: wrap;
 }
-.container [class^="col-"] {
+.container [class^=col-] {
   padding: 0 10px;
 }
 .container .col-sm-1 {
@@ -898,7 +874,7 @@ i {
   .header-right button {
     color: #3f4150;
   }
-  .header-right [class^="header-button"]:not(:last-child) {
+  .header-right [class^=header-button]:not(:last-child) {
     padding-right: 13px;
   }
   .header-user-image {
@@ -906,8 +882,171 @@ i {
   }
 }
 
+.banner-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 260px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.banner-top img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner-top-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+.banner-top-wrapper .banner-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner-top-wrapper .banner-info .main-title {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.banner-top-wrapper .banner-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 120px;
+  margin-bottom: 16px;
+}
+.banner-top-wrapper .banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner-bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  background-color: #222121;
+  margin-top: 20px;
+}
+.banner-bottom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner-bottom .ad-slogan {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 16px;
+}
+.banner-bottom .ad-slogan .text-emphasis {
+  color: #ffc200;
+}
+@media screen and (min-width: 768px) {
+  .banner-top-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .banner-top-wrapper .banner-info {
+    align-items: start;
+  }
+  .banner-top-wrapper .banner-info .main-title {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .banner-top-wrapper .banner-info .sub-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #8c8d96;
+    margin-bottom: 24px;
+  }
+  .banner-top-wrapper .banner-image {
+    height: 170px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner-top-wrapper .banner-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 220px;
+    padding-right: 60px;
+  }
+}
+
+/* banner-top html code
+
+<div class="banner-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-top-wrapper">
+              <div class="banner-info">
+                <h3 class="main-title">
+                  Coward를 사랑해주시는 <br class="sm-only" />
+                  여러분들을 위한 이벤트!
+                </h3>
+                <p class="sub-title sm-hidden">
+                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                </p>
+                <a href="#" class="banner-button btn-32 btn-primary"
+                  >더 알아보기</a
+                >
+              </div>
+              <div class="banner-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/* banner-top scss 페이지 별 색상 변경 코드
+.banner {
+  &-top {
+    background-color: #ffefc5;
+
+    &-wrapper {
+      .banner-info {
+        .banner-button {
+          background-color: $yellow;
+
+          &:hover {
+            background-color: #fcd869;
+          }
+        }
+      }
+    }
+  }
+}
+*/
 .nav {
   background-color: #fff;
+  margin-bottom: 10px;
 }
 .nav-wrapper {
   display: flex;
@@ -981,6 +1120,7 @@ i {
   letter-spacing: -0.01em;
   width: 100%;
   background-color: #f8f8f8;
+  margin-top: 24px;
 }
 .footer .logo {
   display: flex;
@@ -1515,4 +1655,4 @@ i {
   .introduce-title {
     margin-bottom: 10px;
   }
-} /*# sourceMappingURL=mypage-main-mem.css.map */
+}/*# sourceMappingURL=mypage-main-mem.css.map */
