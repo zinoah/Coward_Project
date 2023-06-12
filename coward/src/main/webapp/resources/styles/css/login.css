@@ -1057,11 +1057,18 @@ i {
   }
 }
 
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .logo-img {
   width: 174.55px;
   height: 40px;
   position: relative;
-  left: 65px;
+  left: 75px;
 }
 
 .p-email {
@@ -1072,23 +1079,21 @@ i {
 }
 .p-first {
   position: relative;
-  left: 40px;
-  color: black;
+  left: 53px;
+  color: #000;
 }
 
 .login-btn {
   width: 100%;
-  height: 50px;
-  border: 1px solid none;
+  height: 42px;
   border-radius: 10px;
   color: #fff;
   font-weight: 700;
   background-color: #3aacf8;
 }
 .login-box {
-  width: 290px;
-  height: 480px;
-  border: 1px solid black;
+  width: 320px;
+  height: 560px;
 }
 
 .input-email {
@@ -1112,23 +1117,82 @@ i {
   height: 42px;
 }
 
+#pw-see-btn {
+  color: #b2b3b9;
+  position: relative;
+  left: 80px;
+  top: 5px;
+}
+
+.save-id-wrapper {
+  position: relative;
+  bottom: 10px;
+  left: 1px;
+}
+
 .line1 {
   color: #b2b3b9;
-  width: 140px;
+  width: 135px;
 }
 .line2 {
   color: #b2b3b9;
-  width: 140px;
+  width: 135px;
+  position: relative;
+  bottom: 2px;
+  left: 181.5px;
 }
 
-.google-login {
-  width: 50%;
-  height: 40px;
+.p-or {
+  color: #b2b3b9;
+  font-size: 13px;
+  position: relative;
+  bottom: 10px;
+  left: 148px;
 }
 
-.kakao-login {
-  width: 50%;
+.line-box {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.google-logo {
+  width: 23px;
+  height: 23px;
+  position: relative;
+  top: 7px;
+  left: 15px;
+}
+
+.kakao-logo {
+  width: 30px;
+  height: 23px;
+  position: relative;
+  left: 148px;
+  top: 7px;
+  z-index: 1;
+}
+
+.google-btn {
+  width: 150px;
   height: 40px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  font-size: 14px;
+  padding-left: 30px;
+  position: relative;
+  right: 60px;
+}
+
+.kakao-btn {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fee500;
+  font-size: 14px;
+  padding-left: 30px;
+  position: relative;
+  left: 166px;
+  bottom: 40px;
 }
 
 .email-input-box {
@@ -1140,40 +1204,55 @@ i {
 }
 .pw-find {
   position: relative;
-  left: 205px;
-  bottom: 18.5px;
+  left: 240px;
+  bottom: 29px;
   color: #3f4150;
   font-size: 14px;
 }
 
-#pw-see-btn {
-  color: #b2b3b9;
-  position: relative;
-  left: 55px;
-  top: 5px;
+input[type=checkbox] {
+  width: 12px;
+  height: 12px;
 }
 
-.check-id-save {
-  size: 5;
+.span-first {
+  font-size: 14px;
+  color: #3f4150;
+}
+.span-second {
+  font-size: 13px;
+  position: relative;
+  bottom: 30px;
+  left: 50px;
+}
+
+.join {
+  color: #3aacf8;
+  font-size: 13px;
+  position: relative;
+  left: 50px;
+  bottom: 30px;
+}
+
+.p-pw {
+  padding-bottom: 7px;
 }
 
 @media screen and (min-width: 1200px) {
   .login-bg-img {
     width: 650px;
     height: 590px;
-    padding-right: 20px;
   }
   .login-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 90px;
   }
   .login-box {
-    margin-right: 60px;
-    margin-top: 20px;
+    margin-right: 70px;
+    margin-bottom: 15px;
     display: inline-block;
-    width: 300px;
-    height: 510px;
+    width: 320px;
+    height: 560px;
   }
 }/*# sourceMappingURL=login.css.map */
