@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coward | 제출폼 보기</title>
+
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/contest-form-modal.css"
+    />
+  </head>
+  <body>
+    <div class="background">
+      <div class="window">
+        <div class="popup">
+          <div class="profile-section">
+            <img src="../assets/images/default-user-img.png" />
+            <h3>닉네임</h3>
+            <div class="coding-type">back</div>
+          </div>
+
+          <div class="intro">
+            <h4>간단 설명</h4>
+            <div class="intro-input">
+              <textarea rows="6" cols="35" style="resize: none">
+전문회원으로 가입한 회원들을 전문가로 가입한 자이며 라우드소싱이 제공하는 서비스 내에서 디자인 및 아이디어를 제공하며 각 서비스별로 지칭하는 명칭이 다를 수 있습니다.
+전문가 회원은 디자인 카테고리와 관련된 활동을 하는 경우 ‘디자인 전문가’, 아이디어 카테고리와 관련된 </textarea
+              >
+            </div>
+            <h4>github 주소</h4>
+            <div class="github-input">http//github.com/zino/coward</div>
+
+            <h4>사용 기술</h4>
+            <div class="skill-box">
+              <div class="my-skill">Java Script</div>
+              <div class="my-skill">CSS</div>
+              <div class="my-skill">Java</div>
+              <div class="my-skill">Spring</div>
+              <div class="my-skill">Java Script</div>
+              <div class="my-skill">CSS</div>
+            </div>
+
+            <!--스토리 보드 알아보고 결정되면 추후 수정예정-->
+            <h4>스토리 보드</h4>
+            <div class="story-board"></div>
+          </div>
+
+          <div class="button-wrapper">
+            <select class="awards-status">
+              <option value="1">우승</option>
+              <option value="2">후보</option>
+              <option value="3">탈락</option>
+            </select>
+            <button class="btn-40 btn-primary">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
