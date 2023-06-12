@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- tiny-slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
+
     <link
       rel="stylesheet"
       href="/coward/src/main/webapp/resources/styles/css/home.css"
@@ -101,21 +108,22 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="banner-top-wrapper">
-              <div class="banner-top-info">
-                <h1 class="banner-top-info-title">Home</h1>
-                <div class="banner-top-info-description">
-                  <p class="sm-hidden">
-                    Coward를 사랑해주시는 여러분들을 위한 이벤트!
-                  </p>
-                  <p class="sm-hidden">
-                    쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                  </p>
-                </div>
+              <div class="banner-info">
+                <h3 class="main-title">
+                  Coward를 사랑해주시는 <br class="sm-only" />
+                  여러분들을 위한 이벤트!
+                </h3>
+                <p class="sub-title sm-hidden">
+                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                </p>
+                <a href="#" class="banner-button btn-32 btn-primary"
+                  >더 알아보기</a
+                >
               </div>
-              <div class="banner-top-image">
+              <div class="banner-image">
                 <img
                   src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                  alt="이벤트 배너 이미지"
+                  aria-hidden
                 />
               </div>
             </div>
@@ -124,13 +132,13 @@
       </div>
     </div>
 
-    <div class="home">
+    <main class="home">
       <div class="container">
-        <!-- 공모전 둘러보기 -->
-        <section class="home-contest-preview">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="section-title">
+        <!-- Note: 공모전 둘러보기 -->
+        <div class="row">
+          <div class="col-sm-4">
+            <section class="home-contest-preview">
+              <div class="home-contest-preview-header">
                 <h3>공모전 둘러보기</h3>
                 <a class="more-btn" href="#">
                   <span>더보기</span>
@@ -138,26 +146,36 @@
                 </a>
               </div>
 
-              <!-- TODO: 공모전 슬라이더 넣기 -->
-              <div class="contest-slider">
-                <div class="temp-layout"></div>
-
-                <div class="contest-card">
-                  <div class="contest-card-image">
-                    <img
-                      src="/coward/src/main/webapp/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-                  <div class="contest-card-info">
-                    <span class="company-mem-name">기업회원명</span>
-                    <h3 class="contest-title">공모전 타이틀</h3>
-                    <span>총 상금 <span class="price">300</span> 만원</span>
+              <div class="home-contest-preview-slider">
+                <div class="contest-slider">
+                  <div class="contest-slider-item">
+                    <div class="thumbnail">
+                      <img
+                        src="/coward/src/main/webapp/resources/assets/images/contest-gallery-card-img.svg"
+                      />
+                    </div>
+                    <div class="info">
+                      <span class="user-nick">Pizza Bay Korea</span>
+                      <h3 class="contest-title">피자 데이터베이스 구현</h3>
+                      <span class="totla-price"
+                        >총 상금 <span class="price">300</span> 만원</span
+                      >
+                    </div>
                   </div>
                 </div>
+
+                <div class="slider-controls">
+                  <button class="control-button is-prev" type="button">
+                    <i class="ic-chevron"></i>
+                  </button>
+                  <button class="control-button is-next" type="button">
+                    <i class="ic-chevron"></i>
+                  </button>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
-        </section>
+        </div>
 
         <!-- 이런 서비스는 어떠세요? -->
         <section class="home-services">
@@ -263,19 +281,21 @@
           </div>
         </section>
       </div>
-    </div>
+    </main>
 
     <section class="banner-bottom">
-      <div class="banner-bottom-image">
-        <img
-          src="/coward/src/main/webapp/resources/assets/images/coupon.svg"
-          aria-hidden
-        />
-      </div>
-      <p class="ad-slogan">
-        Coward 신규 회원가입 하고
-        <strong class="text-emphasis">쿠폰팩</strong> 받으러가기 !
-      </p>
+      <a href="#">
+        <div class="banner-bottom-image">
+          <img
+            src="/coward/src/main/webapp/resources/assets/images/coupon.svg"
+            aria-hidden
+          />
+        </div>
+        <p class="ad-slogan">
+          Coward 신규 회원가입 하고
+          <strong class="text-emphasis">쿠폰팩</strong> 받으러가기 !
+        </p>
+      </a>
     </section>
 
     <footer class="footer">
@@ -372,5 +392,9 @@
         </address>
       </div>
     </footer>
+
+    <!-- tiny-slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="/coward/src/main/webapp/resources/js/sliders.js"></script>
   </body>
 </html>

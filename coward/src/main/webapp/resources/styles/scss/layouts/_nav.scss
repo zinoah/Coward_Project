@@ -1,5 +1,6 @@
 .nav {
   background-color: $white;
+  margin-bottom: 10px;
 
   &-wrapper {
     @include flexbox(between);
