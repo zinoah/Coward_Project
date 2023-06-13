@@ -81,8 +81,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -480,8 +479,7 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .avatar-24 {
@@ -609,12 +607,7 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.form-select::-moz-placeholder, .form-input::-moz-placeholder {
-  color: #b2b3b9;
+  appearance: none;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -895,8 +888,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1095,11 +1087,6 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
-  .nav .nav-search-input::-moz-placeholder {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
-  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1247,9 +1234,9 @@ i {
   font-size: 10px;
   padding: 14px 0;
   text-align: center;
-  list-style-type: none;
 }
 
+/******** 마이페이지 공통 코드 ********/
 /* 프로필 사진 + 백 + 닉네임 */
 .profile {
   display: flex;
@@ -1370,133 +1357,118 @@ i {
 /* 관심 목록 */
 .watchlist-box-group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.watchlist-box {
-  position: relative;
-  width: 290px;
-  height: 215px;
-  margin-bottom: 20px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.watchlist-info {
-  padding: 25px 25px 20px;
-  border: none;
-}
-.watchlist-title {
-  display: flex;
-  margin-bottom: 15px;
-}
-
-/* watchlist-box 기준 */
-.ic-bookmark-filled {
-  position: absolute;
-  right: 20px;
-  top: -5px;
-  font-size: 23px;
-  color: #8c8d96;
-}
-
-/* 북마크 눌렀을 때 */
-.is-active {
-  color: #ffc1c9;
-}
-
-/* 공모전 제목 - 길어지면 슬라이드 주고싶음 */
-.contest-title {
-  align-items: center;
-  margin-right: 8px;
-}
-
-/* 반짝이 효과 주고싶음 */
-.new-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 17px;
-  background-color: #ffc200;
-  border: none;
-  border-radius: 10px;
-  font-size: 10px;
-  color: white;
-}
-
-.condition {
-  border-spacing: 8px;
-}
-.condition-title td {
-  font-size: 8px;
-  color: #8c8d96;
-}
-.condition-content {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #3f4150;
-}
-
-.goods {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 4px 4px;
-  background-color: #eae2ff;
-  border-radius: 3px;
-  font-size: 7px;
-  color: #985cd3;
-  text-align: center;
-}
-
-.skills {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 4px 4px;
-  background-color: #ffeffb;
-  border-radius: 3px;
-  font-size: 7px;
-  color: #f86d7d;
-  text-align: center;
-}
-
-.company {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  padding: 15px 20px;
-  border-top: 1px solid #e0e2e7;
-  font-size: 10px;
-  color: #3f4150;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
-.company-img {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+
+.contest-card {
+  margin-bottom: 20px;
+  height: 150px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.contest-card .bookmark {
+  position: absolute;
+  right: 7%;
+  top: -5px;
+  font-size: 25px;
+}
+.contest-card .bookmark i {
+  color: #b2b3b9;
+}
+.contest-card:nth-child(1) {
+  margin-top: 10px;
+}
+.contest-card-first-line {
+  width: 100%;
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.contest-card-first-line div {
+  margin-right: 10px;
+}
+.contest-card-first-line div:nth-child(1) {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.contest-card-second-line {
+  width: 100%;
+  flex-basis: 70%;
+}
+.contest-card-second-line .first-box-article div {
+  margin-right: 5px;
+}
+.contest-card-second-line .second-box-article {
+  display: flex;
+  align-items: center;
+}
+.contest-card-second-line .second-box-article div {
+  margin-left: 10px;
+}
+.contest-card-second-line .second-box-article p {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}
+.contest-card-second-line-first-box {
+  margin-top: 10px;
+  display: flex;
+}
+.contest-card-second-line-first-box div {
+  margin-right: 30px;
+}
+.contest-card-second-line-first-box div p:nth-child(1) {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  margin-bottom: 5px;
+}
+.contest-card-second-line-first-box div p:nth-child(2) {
+  font-weight: 500;
+}
+.contest-card-second-line-second-box {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contest-card-third-line {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #e0e2e7;
+}
+.contest-card-third-line div {
+  margin: 10px 10px 10px 0;
+}
+.contest-card-third-line p {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
 }
 
 /***** 태블릿 *****/
 @media screen and (min-width: 768px) {
   /* 배너 */
-  .banner {
+  .banner img {
     width: 100%;
-    height: 115px;
-    background-image: url("/coward/src/main/webapp/resources/assets/images/mypage-banner.png");
-    background-repeat: no-repeat;
+    padding-top: 10px;
   }
   /* 네비게이션 바 */
   .nav-bar {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    padding: 20px 0;
+    padding: 15px 0;
   }
   /* 프로필 사진 + 백 + 닉네임 */
   .profile {
@@ -1546,6 +1518,26 @@ i {
     line-height: 16px;
     letter-spacing: -0.005em;
   }
+  .contest-card {
+    width: 100%;
+    height: 250px;
+  }
+  .contest-card-first-line {
+    flex-basis: 20%;
+  }
+  .contest-card-second-line {
+    flex-basis: 70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .contest-card-third-line {
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
   .progress {
     position: relative;
     width: 135px;
@@ -1557,13 +1549,29 @@ i {
 }
 /***** 웹 *****/
 @media screen and (min-width: 1200px) {
+  .banner {
+    height: 180px;
+  }
+  .empty-box {
+    width: 100%;
+    height: 700px;
+  }
+  .full {
+    position: relative;
+  }
   .web-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1000px;
-    height: 610px;
-    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1040px;
+    height: 700px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
   }
   .nav {
     width: 100%;
@@ -1572,35 +1580,76 @@ i {
   .nav-bar {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     padding: 14px 0;
   }
+  .nav li {
+    padding: 5px 0 5px 10px;
+    text-align: left;
+  }
   .nav-web {
-    width: 100%;
-    height: 100%;
+    width: 180px;
+    height: 603px;
+  }
+  .profile {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #8c8d96;
+  }
+  .profile-wrapper {
+    padding: 15px 30px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .profile-img {
+    width: 125px;
+    height: 125px;
+  }
+  .profile-info {
+    padding-bottom: 15px;
+  }
+  .profile-mypage {
+    width: 125px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    border-bottom: 1px solid #8c8d96;
   }
   /* 한줄 소개 */
+  .one-liner {
+    margin-bottom: 10px;
+  }
   .one-liner input {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: -0.005em;
     width: 550px;
     height: 160px;
+    background-color: #f8f8f8;
   }
   .award {
     width: 220px;
+    height: 338px;
   }
   .award-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 304px;
     justify-content: space-around;
     align-items: center;
+    margin: 0;
+  }
+  .award-table {
+    height: 120px;
   }
   .progress {
     margin: 30px 0 10px 0;
+    background-color: #3aacf8;
   }
   .skill {
     width: 260px;
@@ -1623,6 +1672,24 @@ i {
     border: 1px solid #e0e2e7;
     border-radius: 10px;
   }
+  .credit-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 17px;
+    background-color: #abdeff;
+    border: none;
+    border-radius: 10px;
+    margin-right: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+  }
+  .credit p {
+    font-size: 20px;
+    font-weight: 600;
+  }
   .credit-skill {
     display: flex;
     align-items: center;
@@ -1635,16 +1702,67 @@ i {
     align-items: center;
     justify-content: center;
     width: 550px;
+    margin-right: 12px;
   }
   .web-box-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 10px;
+  }
+  .btn-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    transform: translateX(-5px) translateY(100px);
+    z-index: 5;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .btn-prev:hover {
+    transform: translateX(-15px) translateY(100px);
+  }
+  .btn-prev i {
+    font-size: 15px;
+    color: #3f4150;
+  }
+  .btn-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    transform: translateX(755px) translateY(100px);
+    z-index: 100;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .btn-next:hover {
+    transform: translateX(765px) translateY(100px);
+  }
+  .btn-next i {
+    font-size: 15px;
+    color: #3f4150;
+  }
+  .contest-card {
+    width: 255px;
+    margin-bottom: 5px;
+    padding-bottom: 0;
   }
   .watchlist-box {
     width: 220px;
     height: 195px;
+    margin-bottom: 0;
   }
   .watchlist-info {
     padding: 20px 20px 15px;

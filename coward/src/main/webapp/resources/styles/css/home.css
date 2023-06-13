@@ -81,8 +81,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -480,8 +479,7 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .avatar-24 {
@@ -609,12 +607,7 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.form-select::-moz-placeholder, .form-input::-moz-placeholder {
-  color: #b2b3b9;
+  appearance: none;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -895,8 +888,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1095,11 +1087,6 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
-  .nav .nav-search-input::-moz-placeholder {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
-  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1235,14 +1222,11 @@ i {
 }
 
 .banner-top {
-
   background-color: #fbeee5;
-
 }
 .banner-top-wrapper .banner-info .banner-button {
   background-color: #f2999f;
 }
-
 .banner-top-wrapper .banner-info .banner-button:hover {
   background-color: #ffc1c9;
 }
@@ -1260,7 +1244,6 @@ i {
   margin-bottom: 16px;
 }
 .home-contest-preview-header .more-btn {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1280,7 +1263,6 @@ i {
   margin-left: 4px;
   transform: rotate(-180deg);
 }
-
 .home-contest-preview-slider {
   position: relative;
 }
@@ -1294,24 +1276,19 @@ i {
   overflow: hidden;
 }
 .home-contest-preview-slider .contest-slider-item .thumbnail img {
-
   display: block;
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-
 .home-contest-preview-slider .contest-slider-item .info {
   margin-top: 10px;
 }
 .home-contest-preview-slider .contest-slider-item .info .company-mem-name {
-
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
 }
-
 .home-contest-preview-slider .contest-slider-item .info .contest-title {
   font-size: 14px;
   line-height: 24px;
@@ -1355,7 +1332,6 @@ i {
 .home-contest-preview-slider .slider-controls .control-button:hover {
   color: #fff;
   background-color: #3aacf8;
-
 }
 .home-services .service a {
   display: flex;
