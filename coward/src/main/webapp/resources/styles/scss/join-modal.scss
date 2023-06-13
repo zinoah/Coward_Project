@@ -61,6 +61,7 @@
   top: 180px;
   left: 72px;
   color: $primary;
+  cursor: pointer;
 }
 
 @include responsive(D) {

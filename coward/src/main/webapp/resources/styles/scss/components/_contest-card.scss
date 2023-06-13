@@ -1,0 +1,123 @@
+.contest {
+  &-card {
+    height: 150px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: $card-shadow;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &:first-of-type {
+      margin-top: 16px;
+    }
+
+    .bookmark {
+      position: absolute;
+      right: 7%;
+      top: -5px;
+      font-size: 25px;
+      i {
+        color: $tertiary;
+      }
+    }
+
+    &-title {
+      @include flexbox(start, center);
+      width: 100%;
+      flex-basis: 30%;
+
+      div {
+        &:nth-child(1) {
+          @include text-style-18;
+          font-weight: 500;
+        }
+
+        margin-right: 10px;
+      }
+    }
+    &-info {
+      width: 100%;
+      flex-basis: 70%;
+
+      &-detail {
+        margin-top: 10px;
+        display: flex;
+        div {
+          @include flexbox(center, start);
+          flex-direction: column;
+          margin-right: 30px;
+
+          span {
+            &:nth-child(1) {
+              @include text-style-12;
+              margin-bottom: 5px;
+            }
+
+            &:nth-child(2) {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      &-tag {
+        @include flexbox(between);
+        margin-top: 10px;
+
+        &-list {
+          div {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      &-profile {
+        display: flex;
+        align-items: center;
+        div {
+          margin-left: 10px;
+        }
+        span {
+          @include text-style-12;
+        }
+      }
+    }
+
+    &-third-line {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid $border;
+      div {
+        margin: 10px 10px 10px 0;
+      }
+      p {
+        @include text-style-12;
+      }
+    }
+
+    @include responsive(T) {
+      height: 250px;
+      padding: 20px 20px 5px 20px;
+      &-title {
+        flex-basis: 20%;
+      }
+      &-info {
+        flex-basis: 60%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+      &-profile {
+        border-top: 1px solid $border;
+        flex-basis: 20%;
+        @include flexbox(start, center);
+        div {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
