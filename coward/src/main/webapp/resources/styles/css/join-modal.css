@@ -81,10 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted; /* 2 */
-
 }
 
 /**
@@ -617,7 +615,6 @@ address {
 }
 .form-select::-moz-placeholder, .form-input::-moz-placeholder {
   color: #b2b3b9;
-
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -736,7 +733,6 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
-  margin-bottom: 24px;
 }
 
 .contest-slider {
@@ -1209,7 +1205,6 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
-  margin-top: 20px;
 }
 .banner-bottom-image img {
   display: block;
