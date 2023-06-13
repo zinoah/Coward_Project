@@ -1,193 +1,47 @@
 @import "./main.scss";
 
 .banner {
-  background-color: #8ac8d5;
-  width: 100%;
-  height: 250px;
-  margin-top: 10px;
-  background-image: url("../../assets/images/explorer.svg");
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: 400px;
+  &-top {
+    background-color: #ffefc5; // 배너 배경 색
 
-  &-wrapper {
-    @include flexbox;
-    height: 250px;
-    flex-direction: column;
+    &-wrapper {
+      .banner-info {
+        .banner-button {
+          background-color: $yellow; // 버튼 기본 색
 
-    h1 {
-      text-align: center;
-      color: white;
-      line-height: 45px;
-    }
-    button {
-      width: 100px;
-      margin-top: 10px;
-    }
-  }
-
-  @include responsive(T) {
-    .banner-wrapper {
-      @include flexbox(start, center);
-      flex-direction: row;
-
-      h1 {
-        font-size: 35px;
-        text-align: start;
-        margin-right: 40px;
-      }
-
-      button {
-        margin-top: 0px;
+          &:hover {
+            background-color: #fcd869; // 버튼 hover 색
+          }
+        }
       }
     }
   }
 }
 
 .main {
+  .banner-middle {
+    background-color: $red;
+    background-image: url("../../assets/images/two-peple-mobile.svg");
+  }
+
   .title-wrapper {
     h1 {
       @include text-style-24;
-      margin-top: 30px;
-    }
-  }
-  .gallery-wrapper {
-    position: relative;
-    height: 300px;
-  }
-
-  .my-slider {
-    height: 350px;
-    .gallery-card {
-      height: 300px;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: $card-shadow;
-      position: relative;
-
-      &-img {
-        @include flexbox;
-        height: 240px;
-        overflow: hidden;
-
-        img {
-          display: block;
-
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      &-info {
-        background-color: $white;
-        height: 155px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        @include pos-center-x;
-        transition: 600ms;
-        bottom: -95px;
-
-        &-title {
-          font-weight: 600;
-          margin-bottom: 7px;
-          p {
-            @include truncate;
-          }
-        }
-
-        &-button {
-          height: 50px;
-          @include flexbox;
-        }
-        &-detail {
-          margin-bottom: 7px;
-          p {
-            display: inline-block;
-            &:nth-child(1) {
-              color: $secondary;
-              font-weight: 500;
-              margin-right: 10px;
-            }
-          }
-        }
-      }
+      margin-bottom: 24px;
     }
   }
 
-  .slider-controls {
+  .category-button-box-mobile {
     @include flexbox(between);
-    @include pos-center;
-    width: calc(100% + 40px);
-
-    .control-button {
-      @include inline-flexbox;
-
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      background-color: $white;
-      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-      color: $primary;
-      border-radius: 50%;
-      transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
-
-      &-is-prev {
-        .ic-chevron {
-          display: inline-block;
-          // margin-right: 3px;
-        }
-      }
-
-      &.is-next {
-        .ic-chevron {
-          display: inline-block;
-          transform: rotate(-180deg);
-          // margin-left: 3px;
-        }
-      }
-
-      &:hover {
-        color: $white;
-        background-color: $blue;
-      }
-    }
-  }
-
-  .ad-banner-box {
-    margin-top: 30px;
-    height: 150px;
-    background-color: $red;
-    border-radius: 20px;
-    overflow: hidden;
-    @include flexbox;
-    flex-direction: column;
-    background-image: url("../../assets/images/two-peple-mobile.svg");
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 240px;
-
-    p {
-      @include text-style-24;
-      font-weight: bold;
-      color: $white;
-    }
-  }
-
-  .mb-btn-box {
     width: 100%;
-    height: 35px;
-    margin-top: 10px;
-    @include flexbox(between);
+    height: 45px;
     background-color: $border;
     border: 2px solid $border;
 
     button {
       flex-basis: 25%;
-      height: 35px;
+      height: 45px;
+
       &:hover {
         border-bottom: 2px solid $blue;
         transition: 0.3s;
@@ -200,12 +54,12 @@
     height: 40px;
     margin-top: 10px;
     .select {
+      @include flexbox(between);
       border: 1px solid $border;
       border-radius: 5px;
       width: 70px;
       height: 30px;
       padding: 10px;
-      @include flexbox(between);
 
       p {
         font-size: 14px;
@@ -213,140 +67,30 @@
     }
   }
 
-  .contest {
-    &-card {
-      margin-bottom: 20px;
-      height: 150px;
-      box-shadow: $card-shadow;
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      .bookmark {
-        position: absolute;
-        right: 7%;
-        top: -5px;
-        font-size: 25px;
-        i {
-          color: $tertiary;
-        }
-      }
-      &:nth-child(1) {
-        margin-top: 10px;
-      }
-
-      &-first-line {
-        width: 100%;
-        flex-basis: 30%;
-
-        @include flexbox(start, center);
-        div {
-          &:nth-child(1) {
-            @include text-style-18;
-            font-weight: 500;
-          }
-
-          margin-right: 10px;
-        }
-      }
-      &-second-line {
-        width: 100%;
-        flex-basis: 70%;
-
-        .first-box-article {
-          div {
-            margin-right: 5px;
-          }
-        }
-        .second-box-article {
-          display: flex;
-          align-items: center;
-          div {
-            margin-left: 10px;
-          }
-          p {
-            @include text-style-12;
-          }
-        }
-
-        &-first-box {
-          margin-top: 10px;
-          display: flex;
-          div {
-            margin-right: 30px;
-            p {
-              &:nth-child(1) {
-                @include text-style-12;
-                margin-bottom: 5px;
-              }
-
-              &:nth-child(2) {
-                font-weight: 500;
-              }
-            }
-          }
-        }
-
-        &-second-box {
-          margin-top: 10px;
-          @include flexbox(between);
-        }
-      }
-
-      &-third-line {
-        display: flex;
-        align-items: center;
-        border-top: 1px solid $border;
-        div {
-          margin: 10px 10px 10px 0;
-        }
-        p {
-          @include text-style-12;
-        }
-      }
-    }
-  }
-
   @include responsive(T) {
-    .ad-banner-box {
-      padding: 50px;
-      @include flexbox(center, start);
-
-      p {
-        font-size: 30px;
-        line-height: 40px;
-      }
-    }
-    .contest-card {
-      height: 250px;
-      padding: 20px 20px 10px 20px;
-      &-first-line {
-        flex-basis: 20%;
-      }
-      &-second-line {
-        flex-basis: 70%;
-        display: flex;
-        align-items: start;
-        flex-direction: column;
-        margin-top: 10px;
-      }
-      &-third-line {
-        flex-basis: 10%;
-        @include flexbox(start, center);
-      }
-    }
-
     .category-button-wrapper {
       margin-top: 10px;
       button {
         margin-right: 5px;
-        height: 25px;
+        height: 45px;
       }
     }
 
     .type-button-wrapper {
       margin-bottom: 5px;
+    }
+  }
+
+  @include responsive(D) {
+    .category-button-wrapper {
+      button {
+        height: 30px;
+        margin-right: 10px;
+      }
+    }
+
+    .type-button-wrapper {
+      margin-top: 0;
     }
   }
 }

@@ -1,7 +1,7 @@
 // tiny slider
 
 const contestSlider = tns({
-  container: ".my-slider",
+  container: ".contest-slider",
   items: 2,
   gutter: 20,
   rewind: true,
@@ -40,18 +40,19 @@ const contestSlider = tns({
 });
 
 // gallerycard hover시 이벤트
-const gallerycard = document.querySelectorAll(".gallery-card");
+const sliderCard = document.querySelectorAll(".contest-slider-card");
 
-const cardInfoTitle = document.querySelector(".gallery-card-info-title > p");
-gallerycard.forEach((card) =>
+const cardInfoTitle = document.querySelector(
+  ".contest-slider-card-info-title > p"
+);
+sliderCard.forEach((card) =>
   card.addEventListener("mouseenter", function () {
     console.log(card.lastElementChild);
-    cardInfoTitle.style.whithSpace;
     card.lastElementChild.style.bottom = 0;
   })
 );
 
-gallerycard.forEach((card) =>
+sliderCard.forEach((card) =>
   card.addEventListener("mouseleave", function () {
     card.lastElementChild.style.bottom = "-95px";
   })
