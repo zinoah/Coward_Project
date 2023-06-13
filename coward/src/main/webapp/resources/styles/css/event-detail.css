@@ -1214,6 +1214,7 @@ i {
 }
 .banner-bottom .ad-slogan .text-emphasis {
   color: #ffc200;
+}
 
 .banner-middle {
   display: flex;
@@ -1246,7 +1247,6 @@ i {
     font-size: 30px;
     line-height: 40px;
   }
-
 }
 
 /* banner-top html code
