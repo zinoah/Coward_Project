@@ -8,8 +8,12 @@
 .logo-img {
   width: 174.55px;
   height: 40px;
-  position: relative;
-  left: 75px;
+  margin-bottom: 15px;
+}
+
+.logo-p-box {
+  @include flexbox;
+  flex-direction: column;
 }
 
 .line {
@@ -36,19 +40,17 @@
   }
 
   &-first {
-    position: relative;
-    left: 53px;
     color: $black;
     padding-bottom: 70px;
   }
 }
 
 .line-box {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .join {
-  color: $blue;
+  color: $primary;
   font-size: 13px;
   position: relative;
   left: 65px;
@@ -96,15 +98,15 @@
   width: 30px;
   height: 30px;
   position: relative;
-  top: 130px;
-  left: 63px;
+  top: 45px;
+  left: 65px;
 }
 
 .kakao-logo {
   width: 40px;
   height: 30px;
   position: relative;
-  top: 45px;
+  top: 130px;
   left: 25px;
 }
 
