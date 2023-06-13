@@ -64,11 +64,11 @@
     }
 
     textarea {
-      @include text-style-14;
+      @include text-style(14);
     }
 
     .github-input {
-      @include text-style-14;
+      @include text-style(14);
       display: flex;
       align-items: center;
       width: 300px;
@@ -105,6 +105,7 @@
       height: 140px;
       background-color: $border;
       margin: 15px 60px 0 60px;
+      border-radius: 10px;
     }
   }
 
@@ -113,7 +114,7 @@
     height: 100px;
 
     .awards-status {
-      @include text-style-14;
+      @include text-style(14);
       border: 1px solid $border;
       width: 70px;
       height: 32px;
@@ -127,13 +128,43 @@
   }
 
   @include responsive(T) {
-    padding: 50px;
+    padding: 40px;
+
+    .profile-section {
+      margin: 0px 0 0 10px;
+    }
 
     .intro {
       @include flexbox;
       h5 {
+        margin-top: 10px;
+      }
+
+      .simple-intro-title {
         margin-top: 30px;
       }
+      .story-board-title {
+        margin-top: -30px;
+      }
+
+      .story-board {
+        width: 250px;
+        height: 270px;
+        background-color: $border;
+        margin: 15px 0 0 20px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .button-wrapper {
+    .awards-status {
+      width: 100px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      width: 100px;
     }
   }
 }

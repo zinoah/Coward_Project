@@ -1,0 +1,19 @@
+@import "./main.scss";
+
+.banner {
+  &-top {
+    background-color: #ffefc5; // 배너 배경 색
+
+    &-wrapper {
+      .banner-info {
+        .banner-button {
+          background-color: $yellow; // 버튼 기본 색
+
+          &:hover {
+            background-color: #fcd869; // 버튼 hover 색
+          }
+        }
+      }
+    }
+  }
+}

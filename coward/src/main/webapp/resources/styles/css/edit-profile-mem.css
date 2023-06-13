@@ -733,6 +733,7 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
+
 }
 
 .contest-slider {
@@ -757,8 +758,10 @@ i {
   display: block;
   width: 100%;
   height: 100%;
+
   -o-object-fit: cover;
      object-fit: cover;
+
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1205,6 +1208,7 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
+
 }
 .banner-bottom-image img {
   display: block;

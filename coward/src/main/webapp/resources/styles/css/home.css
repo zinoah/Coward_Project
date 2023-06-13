@@ -1506,37 +1506,44 @@ i {
   background-color: #ffc1c9;
 }
 
-.home .section-title {
+.home-contest-preview {
+  margin-bottom: 24px;
+}
+
+.home .section-title h3 {
+
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
 }
-.home .section-title h3 {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-}
+
 .home .section-title .more-btn {
+
+
   display: flex;
   align-items: center;
   justify-content: center;
   transition: color 150ms ease-in-out;
 }
-.home .section-title .more-btn:not(:disabled):hover {
+.home-contest-preview-header .more-btn:not(:disabled):hover {
   color: #b2b3b9;
 }
-.home .section-title .more-btn span {
+.home-contest-preview-header .more-btn span {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
 }
-.home .section-title .more-btn .ic-chevron {
+.home-contest-preview-header .more-btn .ic-chevron {
   display: inline-block;
   font-size: 12px;
   margin-left: 4px;
   transform: rotate(-180deg);
 }
+
 .home .section-title-new {
   display: flex;
   align-items: center;
@@ -1548,6 +1555,7 @@ i {
 .home-contest-preview {
   margin-bottom: 24px;
 }
+
 .home-contest-preview-slider {
   position: relative;
 }
@@ -1593,7 +1601,7 @@ i {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% + 40px);
+  width: 100%;
 }
 .home-contest-preview-slider .slider-controls .control-button {
   display: inline-flex;
@@ -1619,15 +1627,18 @@ i {
   color: #fff;
   background-color: #3aacf8;
 }
+
 .home-services {
   margin-bottom: 24px;
 }
+
 .home-services .service a {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .home-services .service-wrapper:nth-of-type(2) .service-image {
   background-color: #ffdede;
 }
@@ -1639,17 +1650,22 @@ i {
 }
 .home-services .service-wrapper:nth-of-type(5) .service-image {
   background-color: #ffe0c7;
+
 }
-.home-services .service-image {
+.home-services .service-image-4 {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 58px;
   height: 58px;
   border-radius: 50%;
+
   padding: 14px;
+
+  background-color: #eff9ff;
+
 }
-.home-services .service-image img {
+.home-services .service-image-4 img {
   display: block;
   width: auto;
   height: 100%;
@@ -1661,6 +1677,7 @@ i {
   display: inline-block;
   margin-top: 8px;
 }
+
 .home-rankings {
   margin-bottom: 24px;
 }
@@ -1735,4 +1752,11 @@ i {
 
 .footer {
   margin-top: 0;
+
+.home .temp-layout {
+  width: 100%;
+  height: 200px;
+  background-color: #3aacf8;
+  border-radius: 10px;
+
 }/*# sourceMappingURL=home.css.map */

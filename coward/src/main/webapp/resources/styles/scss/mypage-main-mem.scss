@@ -14,7 +14,7 @@
   }
 }
 
-/******** 마이페이지 공통 코드 ********/
+/******** 여기까지 마이페이지 공통 코드 ********/
 
 /* 프로필 사진 + 백 + 닉네임 */
 .profile {
@@ -27,6 +27,7 @@
     margin: 8px;
   }
 
+  /* 타입과 이름 가로 배치 */
   &-info {
     @include flexbox;
   }
@@ -105,10 +106,10 @@
 }
 
 /* 내 기술 */
+/* 스크롤 줘야 할 거 같은데 가로? 세로? */
 .skill-box {
   @include flexbox;
   flex-wrap: wrap;
-  align-items: center;
   width: 100%;
   padding: 16px;
   margin-bottom: 16px;
@@ -116,6 +117,7 @@
   border-radius: 10px;
 }
 
+/* 3의 배수로 light-blue 쓰자는 의견 */
 .my-skill {
   display: inline-block;
   width: auto;
@@ -132,227 +134,19 @@
 }
 
 /* 관심 목록 */
+/* 반응형 시 가로배치 위해*/
 .watchlist-box-group {
   @include flexbox(start, start);
   flex-wrap: wrap;
   overflow: hidden;
 }
 
-// .watchlist {
-//   &-box {
-//     @include column-flexbox(start, start);
-//     position: relative;
-//     width: 100%;
-//     height: 215px;
-//     margin-bottom: 20px;
-//     border: 1px solid $border;
-//     border-radius: 5px;
-//     box-shadow: $card-shadow;
-//     cursor: pointer;
-//   }
-
-//   &-info {
-//     width: 100%;
-//     padding: 25px 25px 20px;
-
-//     border: none;
-//   }
-//   &-title {
-//     display: flex;
-//     margin-bottom: 15px;
-//   }
-// }
-
-// /* watchlist-box 기준 */
-// .ic-bookmark-filled {
-//   position: absolute;
-//   right: 20px;
-//   top: -5px;
-//   font-size: 23px;
-//   color: $secondary;
-// }
-
-// /* 북마크 눌렀을 때 */
-// .is-active {
-//   color: $red;
-// }
-
-// /* 공모전 제목 - 길어지면 슬라이드 주고싶음 */
-// .contest-title {
-//   @include text-style(15);
-//   align-items: center;
-//   margin-right: 8px;
-// }
-
-// /* 반짝이 효과 주고싶음 */
-// .new-box {
-//   @include flexbox;
-//   width: 28px;
-//   height: 17px;
-//   background-color: $yellow;
-//   border: none;
-//   border-radius: 10px;
-//   font-size: 10px;
-//   color: white;
-// }
-
-// .condition {
-//   border-spacing: 8px;
-
-//   &-title td {
-//     font-size: 8px;
-//     color: $secondary;
-//   }
-
-//   &-content {
-//     @include text-style(14);
-//     color: $primary;
-//   }
-// }
-
-// .goods {
-//   display: inline-block;
-//   width: auto;
-//   height: auto;
-//   padding: 4px 4px;
-//   background-color: #eae2ff;
-//   border-radius: 3px;
-//   font-size: 7px;
-//   color: #985cd3;
-//   text-align: center;
-// }
-
-// .skills {
-//   display: inline-block;
-//   width: auto;
-//   height: auto;
-//   padding: 4px 4px;
-//   background-color: #ffeffb;
-//   border-radius: 3px;
-//   font-size: 7px;
-//   color: #f86d7d;
-//   text-align: center;
-// }
-
-// .company {
-//   @include flexbox(start);
-//   width: 100%;
-//   padding: 15px 20px;
-//   border-top: 1px solid $border;
-//   font-size: 10px;
-//   color: $primary;
-
-//   &-img {
-//     width: 20px;
-//     height: 20px;
-//     margin-right: 8px;
-//   }
-// }
-
-.contest {
-  &-card {
-    margin-bottom: 20px;
-    height: 150px;
-    box-shadow: $card-shadow;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    .bookmark {
-      position: absolute;
-      right: 7%;
-      top: -5px;
-      font-size: 25px;
-      i {
-        color: $tertiary;
-      }
-    }
-    &:nth-child(1) {
-      margin-top: 10px;
-    }
-
-    &-first-line {
-      width: 100%;
-      flex-basis: 30%;
-
-      @include flexbox(start, center);
-      div {
-        &:nth-child(1) {
-          @include text-style-18;
-          font-weight: 500;
-        }
-
-        margin-right: 10px;
-      }
-    }
-    &-second-line {
-      width: 100%;
-      flex-basis: 70%;
-
-      .first-box-article {
-        div {
-          margin-right: 5px;
-        }
-      }
-      .second-box-article {
-        display: flex;
-        align-items: center;
-        div {
-          margin-left: 10px;
-        }
-        p {
-          @include text-style-12;
-        }
-      }
-
-      &-first-box {
-        margin-top: 10px;
-        display: flex;
-        div {
-          margin-right: 30px;
-          p {
-            &:nth-child(1) {
-              @include text-style-12;
-              margin-bottom: 5px;
-            }
-
-            &:nth-child(2) {
-              font-weight: 500;
-            }
-          }
-        }
-      }
-
-      &-second-box {
-        margin-top: 10px;
-        @include flexbox(between);
-      }
-    }
-
-    &-third-line {
-      display: flex;
-      align-items: center;
-      border-top: 1px solid $border;
-      div {
-        margin: 10px 10px 10px 0;
-      }
-      p {
-        @include text-style-12;
-      }
-    }
-  }
-}
 /***** 태블릿 *****/
 @include responsive(T) {
-  /* 배너 */
-  .banner {
-    img {
-      width: 100%;
-      padding-top: 10px;
-    }
+  /* 마이페이지의 경우 nav바랑 떨어져서 margin 없애줌 */
+  .banner-top {
+    margin: 0;
   }
-
   /* 네비게이션 바 */
   .nav-bar {
     @include text-style(16);
@@ -410,48 +204,32 @@
       @include text-style(12);
     }
   }
-
-  .contest-card {
-    width: 100%;
-    height: 250px;
-
-    &-first-line {
-      flex-basis: 20%;
-    }
-    &-second-line {
-      flex-basis: 70%;
-      @include flexbox(center, start);
-      flex-direction: column;
-    }
-    &-third-line {
-      flex-basis: 10%;
-      @include flexbox(start, center);
-    }
-  }
+  /* 당선률 프로그래스 바 들어갈 공간 */
+  /* JS할 때 같이 진행 */
   .progress {
     position: relative;
     width: 135px;
     height: 135px;
     border-radius: 50%;
     margin: 15px 0 15px 65px;
-    background: $background;
+    background: $blue;
   }
 }
 
 /***** 웹 *****/
 @include responsive(D) {
-  .banner {
-    height: 180px;
-  }
-
+  /* 헤더와 푸터 사이의 거리*/
   .empty-box {
     width: 100%;
     height: 700px;
   }
 
+  /* body에 relative 줄 경우 배치가 이상해져서 div 하나 생성 */
   .full {
     position: relative;
   }
+
+  /* 페이지 전환 시 자연스럽기 위해 크기 고정*/
   .web-box {
     @include flexbox;
     position: absolute;
@@ -459,7 +237,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1040px;
-    height: 700px;
+    height: 715px;
     border-radius: 10px;
     box-shadow: $card-shadow;
     background-color: $background;
@@ -482,8 +260,8 @@
       text-align: left;
     }
 
+    /* 높이 안주면 가운데 배치 됨 */
     &-web {
-      width: 180px;
       height: 603px;
     }
   }
@@ -494,7 +272,7 @@
     border-bottom: 1px solid $secondary;
 
     &-wrapper {
-      padding: 15px 30px;
+      padding: 15px 30px 5px;
 
       border: 1px solid $border;
       border-radius: 10px;
@@ -529,6 +307,8 @@
       background-color: $background;
     }
   }
+
+  /* 어워드 */
   .award {
     width: 220px;
     height: 338px;
@@ -551,14 +331,6 @@
     background-color: $blue;
   }
 
-  .skill {
-    width: 260px;
-    &-box {
-      height: 100px;
-      padding: 10px;
-      margin: 0;
-    }
-  }
   .credit {
     width: 260px;
     &-box {
@@ -577,7 +349,6 @@
       width: 28px;
       height: 17px;
       background-color: $blue-light;
-      border: none;
       border-radius: 10px;
       margin-right: 8px;
       font-size: 10px;
@@ -585,24 +356,37 @@
       color: white;
     }
 
-    p {
+    &-amount {
       font-size: 20px;
       font-weight: 600;
     }
   }
 
+  /* 내 기술 */
+  .skill {
+    width: 260px;
+    &-box {
+      height: 100px;
+      padding: 10px;
+      margin: 0;
+    }
+  }
+
+  /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
     @include flexbox(between);
 
     width: 550px;
   }
 
+  /* 소개와 creadit-skill 세로 정렬 위해 */
   .one-credit-skill {
     @include column-flexbox;
     width: 550px;
     margin-right: 12px;
   }
 
+  /* 어워드와 one-credit-skill 가로 정렬 위해 */
   .web-box-header {
     @include flexbox(between);
     margin-bottom: 10px;
@@ -615,7 +399,7 @@
       width: 35px;
       height: 35px;
       position: absolute;
-      transform: translateX(-5px) translateY(100px);
+      transform: translateX(-10px) translateY(120px);
       z-index: 5;
       border-radius: 50%;
       background-color: white;
@@ -623,7 +407,7 @@
       transition: 0.5s;
 
       &:hover {
-        transform: translateX(-15px) translateY(100px);
+        transform: translateX(-20px) translateY(120px);
       }
 
       i {
@@ -638,7 +422,7 @@
       width: 35px;
       height: 35px;
       position: absolute;
-      transform: translateX(755px) translateY(100px);
+      transform: translateX(765px) translateY(120px);
       z-index: 100;
       border-radius: 50%;
       background-color: white;
@@ -646,7 +430,7 @@
       transition: 0.5s;
 
       &:hover {
-        transform: translateX(765px) translateY(100px);
+        transform: translateX(775px) translateY(120px);
       }
 
       i {
@@ -654,29 +438,5 @@
         color: $primary;
       }
     }
-  }
-  .contest-card {
-    width: 255px;
-    margin-bottom: 5px;
-    padding-bottom: 0;
-  }
-  .watchlist {
-    &-box {
-      width: 220px;
-      height: 195px;
-      margin-bottom: 0;
-    }
-
-    &-info {
-      padding: 20px 20px 15px;
-    }
-  }
-
-  .company {
-    padding: 10px 15px;
-  }
-
-  .introduce-title {
-    margin-bottom: 10px;
   }
 }
