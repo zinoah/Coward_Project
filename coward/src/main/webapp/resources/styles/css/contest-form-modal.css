@@ -1116,8 +1116,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1151,35 +1150,6 @@ i {
   width: 100%;
   height: 100%;
 }
-
-
-.banner-bottom a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 160px;
-  background-color: #222121;
-  margin-top: 20px;
-}
-.banner-bottom-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.banner-bottom .ad-slogan {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #fff;
-  margin-top: 16px;
-}
-.banner-bottom .ad-slogan .text-emphasis {
-  color: #ffc200;
-}
-
-
 @media screen and (min-width: 768px) {
   .banner-top-wrapper {
     display: flex;
@@ -1219,7 +1189,6 @@ i {
   }
 }
 
-
 .banner-bottom a {
   display: flex;
   flex-direction: column;
@@ -1246,8 +1215,6 @@ i {
 .banner-bottom .ad-slogan .text-emphasis {
   color: #ffc200;
 }
-
-
 
 .banner-middle {
   display: flex;
@@ -1281,7 +1248,6 @@ i {
     line-height: 40px;
   }
 }
-
 
 /* banner-top html code
 

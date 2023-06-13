@@ -723,6 +723,234 @@ i {
   content: "\e90b";
 }
 
+.slider-wrapper {
+  position: relative;
+  height: 320px;
+  margin-bottom: 24px;
+}
+
+.contest-slider {
+  height: 320px;
+}
+.contest-slider-card {
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.contest-slider-card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  overflow: hidden;
+}
+.contest-slider-card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contest-slider-card-info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  height: 155px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  transition: 600ms;
+  bottom: -95px;
+}
+.contest-slider-card-info-title {
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.contest-slider-card-info-title p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contest-slider-card-info-detail {
+  margin-bottom: 7px;
+}
+.contest-slider-card-info-detail p {
+  display: inline-block;
+}
+.contest-slider-card-info-detail p:nth-child(1) {
+  color: #8c8d96;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.contest-slider-card-info-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 40px);
+}
+.slider-controls .control-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  color: #3f4150;
+  border-radius: 50%;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+}
+.slider-controls .control-button-is-prev .ic-chevron {
+  display: inline-block;
+}
+.slider-controls .control-button.is-next .ic-chevron {
+  display: inline-block;
+  transform: rotate(-180deg);
+}
+.slider-controls .control-button:hover {
+  color: #fff;
+  background-color: #3aacf8;
+}
+
+.contest-card {
+  height: 150px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.contest-card:first-of-type {
+  margin-top: 16px;
+}
+.contest-card .bookmark {
+  position: absolute;
+  right: 7%;
+  top: -5px;
+  font-size: 25px;
+}
+.contest-card .bookmark i {
+  color: #b2b3b9;
+}
+.contest-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  flex-basis: 30%;
+}
+.contest-card-title div {
+  margin-right: 10px;
+}
+.contest-card-title div:nth-child(1) {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.contest-card-info {
+  width: 100%;
+  flex-basis: 70%;
+}
+.contest-card-info-detail {
+  margin-top: 10px;
+  display: flex;
+}
+.contest-card-info-detail div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 30px;
+}
+.contest-card-info-detail div span:nth-child(1) {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  margin-bottom: 5px;
+}
+.contest-card-info-detail div span:nth-child(2) {
+  font-weight: 500;
+}
+.contest-card-info-tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.contest-card-info-tag-list div {
+  margin-right: 5px;
+}
+.contest-card-info-profile {
+  display: flex;
+  align-items: center;
+}
+.contest-card-info-profile div {
+  margin-left: 10px;
+}
+.contest-card-info-profile span {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}
+.contest-card-third-line {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #e0e2e7;
+}
+.contest-card-third-line div {
+  margin: 10px 10px 10px 0;
+}
+.contest-card-third-line p {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}
+@media screen and (min-width: 768px) {
+  .contest-card {
+    height: 250px;
+    padding: 20px 20px 5px 20px;
+  }
+  .contest-card-title {
+    flex-basis: 20%;
+  }
+  .contest-card-info {
+    flex-basis: 60%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .contest-card-profile {
+    border-top: 1px solid #e0e2e7;
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .contest-card-profile div {
+    margin-right: 10px;
+  }
+}
+
 .container {
   width: 100%;
   padding: 0 5px;
@@ -922,31 +1150,6 @@ i {
   width: 100%;
   height: 100%;
 }
-.banner-bottom a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 160px;
-  background-color: #222121;
-  margin-top: 20px;
-}
-.banner-bottom-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.banner-bottom .ad-slogan {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #fff;
-  margin-top: 16px;
-}
-.banner-bottom .ad-slogan .text-emphasis {
-  color: #ffc200;
-}
 @media screen and (min-width: 768px) {
   .banner-top-wrapper {
     display: flex;
@@ -983,6 +1186,66 @@ i {
     width: 360px;
     height: 220px;
     padding-right: 60px;
+  }
+}
+
+.banner-bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  background-color: #222121;
+  margin-top: 20px;
+}
+.banner-bottom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner-bottom .ad-slogan {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 16px;
+  text-align: center;
+}
+.banner-bottom .ad-slogan .text-emphasis {
+  color: #ffc200;
+}
+
+.banner-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  margin-bottom: 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: 90% 0;
+  background-size: 240px;
+}
+.banner-middle-title {
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: -0.01em;
+  font-weight: bold;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .banner-middle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 80px;
+  }
+  .banner-middle-title {
+    font-size: 30px;
+    line-height: 40px;
   }
 }
 
@@ -1254,7 +1517,8 @@ i {
   align-items: center;
   justify-content: space-between;
   width: 45px;
-  /* 상태 표시 */
+  /* 상태표시 동그라미 */
+  /* 상태 표시 색 */
   /* 모집 중 */
   /* 심사 중 */
   /* 완료 */
@@ -1287,11 +1551,18 @@ i {
   font-size: 10px;
 }
 
+/* 공모전 이름이 길어지면 두줄이 됨
+근데 어떻게 손봐야 될지 모르겠음 */
+.contest {
+  /* 주최, 남은 기간 가로 정렬*/
+  /* 공모전 이름, content 세로 정렬 */
+}
 .contest-title {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
   font-weight: 600;
+  overflow: hidden;
 }
 .contest-content {
   display: flex;
@@ -1311,6 +1582,8 @@ i {
   font-size: 9px;
 }
 
+/*TODO: content에 between이 안먹어서 고정 마진으로 줌
+    -> 주최기업 이름 길이가 다를 경우 위치가 들쭉날쭉 */
 .deadline {
   font-size: 9px;
   margin-left: 15px;
@@ -1340,9 +1613,8 @@ i {
 /***** 태블릿 *****/
 @media screen and (min-width: 768px) {
   /* 배너 */
-  .banner img {
-    width: 100%;
-    padding-top: 10px;
+  .banner-top {
+    margin: 0;
   }
   /* 네비게이션 바 */
   .nav-bar {
@@ -1367,9 +1639,6 @@ i {
 }
 /***** 웹 *****/
 @media screen and (min-width: 1200px) {
-  .banner {
-    height: 180px;
-  }
   .empty-box {
     width: 100%;
     height: 700px;
@@ -1386,7 +1655,7 @@ i {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1040px;
-    height: 700px;
+    height: 715px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     background-color: #f8f8f8;
@@ -1402,17 +1671,15 @@ i {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 14px 0;
-    text-align: center;
-    list-style-type: none;
   }
   .nav li {
     padding: 5px 0 5px 10px;
     text-align: left;
   }
   .nav-web {
-    width: 180px;
     height: 603px;
   }
+  /* 메인과 위치 맞추기 위해 */
   aside {
     height: 613px;
   }
@@ -1468,9 +1735,10 @@ i {
     margin-left: 15px;
     border-bottom: 1px solid #8c8d96;
   }
+  /* 메인과 크기 맞추기 위해 */
   .contest-management {
     width: 843.33px;
-    height: 678.33px;
+    height: 695.33px;
     padding: 15px 30px;
     margin: 0 10px;
     border: 1px solid #e0e2e7;
