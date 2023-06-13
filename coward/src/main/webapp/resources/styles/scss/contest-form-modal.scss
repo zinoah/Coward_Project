@@ -29,40 +29,46 @@
     display: flex;
     margin: 20px 0 0 10px;
     img {
-      width: 50px;
-      height: 50px;
-      border-radius: 100px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50px;
     }
 
-    h3 {
-      margin: 15px 0 0 15px;
+    h4 {
+      margin: 8px 0 0 10px;
     }
 
     .coding-type {
       @include flexbox;
-      @include text-style(12, $blue);
-      width: 35px;
+      font-size: 8px;
+      color: $blue;
+      width: 30px;
       height: 20px;
       border: 1px solid $blue;
       border-radius: 5px;
-      margin: 15px 0 0 10px;
+      margin: 8px 0 0 10px;
     }
   }
 
   .intro {
-    h4 {
+    h5 {
       margin: 10px;
     }
     &-input {
       @include flexbox;
       width: 300px;
-      height: 150px;
+      height: 120px;
       border: 1px solid $border;
       border-radius: 5px;
       margin: 10px;
     }
 
+    textarea {
+      @include text-style-14;
+    }
+
     .github-input {
+      @include text-style-14;
       display: flex;
       align-items: center;
       width: 300px;
@@ -95,10 +101,10 @@
 
     // 스토리 보드 알아보고 결정되면 추후 수정예정
     .story-board {
-      width: 300px;
-      height: 150px;
+      width: 200px;
+      height: 140px;
       background-color: $border;
-      margin: 10px;
+      margin: 15px 60px 0 60px;
     }
   }
 
@@ -107,16 +113,27 @@
     height: 100px;
 
     .awards-status {
+      @include text-style-14;
       border: 1px solid $border;
-      width: 80px;
-      height: 40px;
+      width: 70px;
+      height: 32px;
       border-radius: 5px;
-      @include text-style-16;
     }
 
     .btn-primary {
-      width: 80px;
-      height: 40px;
+      width: 70px;
+      margin-left: 20px;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 50px;
+
+    .intro {
+      @include flexbox;
+      h5 {
+        margin-top: 30px;
+      }
     }
   }
 }
