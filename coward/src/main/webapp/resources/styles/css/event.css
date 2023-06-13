@@ -930,31 +930,6 @@ i {
   width: 100%;
   height: 100%;
 }
-.banner-bottom a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 160px;
-  background-color: #222121;
-  margin-top: 20px;
-}
-.banner-bottom-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.banner-bottom .ad-slogan {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #fff;
-  margin-top: 16px;
-}
-.banner-bottom .ad-slogan .text-emphasis {
-  color: #ffc200;
-}
 @media screen and (min-width: 768px) {
   .banner-top-wrapper {
     display: flex;
@@ -992,6 +967,33 @@ i {
     height: 220px;
     padding-right: 60px;
   }
+}
+
+.banner-bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  background-color: #222121;
+  margin-top: 20px;
+}
+.banner-bottom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner-bottom .ad-slogan {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 16px;
+  text-align: center;
+}
+.banner-bottom .ad-slogan .text-emphasis {
+  color: #ffc200;
 }
 
 /* banner-top html code
