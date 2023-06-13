@@ -81,7 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -479,7 +480,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -607,7 +609,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -751,7 +758,8 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1350,6 +1358,11 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
+  .nav .nav-search-input::-moz-placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1586,6 +1599,7 @@ i {
   height: 140px;
   background-color: #e0e2e7;
   margin: 15px 60px 0 60px;
+  border-radius: 10px;
 }
 .popup .button-wrapper {
   display: flex;
@@ -1608,7 +1622,10 @@ i {
 }
 @media screen and (min-width: 768px) {
   .popup {
-    padding: 50px;
+    padding: 40px;
+  }
+  .popup .profile-section {
+    margin: 0px 0 0 10px;
   }
   .popup .intro {
     display: flex;
@@ -1616,6 +1633,26 @@ i {
     justify-content: center;
   }
   .popup .intro h5 {
+    margin-top: 10px;
+  }
+  .popup .intro .simple-intro-title {
     margin-top: 30px;
   }
+  .popup .intro .story-board-title {
+    margin-top: -30px;
+  }
+  .popup .intro .story-board {
+    width: 250px;
+    height: 270px;
+    background-color: #e0e2e7;
+    margin: 15px 0 0 20px;
+    border-radius: 10px;
+  }
+}
+.popup .button-wrapper .awards-status {
+  width: 100px;
+  text-align: center;
+}
+.popup .button-wrapper .btn-primary {
+  width: 100px;
 }/*# sourceMappingURL=contest-form-modal.css.map */

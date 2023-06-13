@@ -81,10 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted; /* 2 */
-
 }
 
 /**
@@ -482,7 +480,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -610,14 +609,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 }
 .form-select::-moz-placeholder, .form-input::-moz-placeholder {
   color: #b2b3b9;
-
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -1501,96 +1498,12 @@ i {
   }
 }
 
-.join-all-wrapper {
-  justify-content: center;
-  align-items: center;
+.banner-top {
+  background-color: #ffefc5;
 }
-
-.background-img {
-  width: 100%;
-  height: 100%;
-  background-color: #b2b3b9;
-  position: absolute;
-  opacity: 0.8;
+.banner-top-wrapper .banner-info .banner-button {
+  background-color: #ffc200;
 }
-
-.join-box {
-  width: 290px;
-  height: 420px;
-  border-radius: 10px;
-  background-color: #fff;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-}
-
-.check {
-  width: 45px;
-  height: 45px;
-  position: relative;
-  top: 70px;
-  left: 125px;
-  color: #028ae2;
-}
-
-.add-information-btn {
-  width: 180px;
-  height: 50px;
-  border: none;
-  border-radius: 5px;
-  font-size: medium;
-  font-weight: 600;
-  background-color: #028ae2;
-  color: #fff;
-  position: relative;
-  top: 160px;
-  left: 55px;
-}
-
-.pre-first {
-  font-size: 18px;
-  font-weight: 700;
-  position: relative;
-  top: 75px;
-  left: 68px;
-}
-
-.pre-second {
-  font-size: 12px;
-  position: relative;
-  top: 180px;
-  left: 72px;
-  color: #3f4150;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 1200px) {
-  .join-box {
-    width: 550px;
-    height: 360px;
-  }
-  .check {
-    width: 60px;
-    height: 60px;
-    top: 50px;
-    left: 245px;
-  }
-  .pre-first {
-    font-size: 22px;
-    font-weight: 700;
-    top: 45px;
-    left: 180px;
-  }
-  .add-information-btn {
-    width: 180px;
-    height: 50px;
-    top: 100px;
-    left: 180px;
-  }
-  .pre-second {
-    font-size: 14px;
-    top: 100px;
-    left: 190px;
-  }
-}/*# sourceMappingURL=join-modal.css.map */
+.banner-top-wrapper .banner-info .banner-button:hover {
+  background-color: #fcd869;
+}/*# sourceMappingURL=contest-custom.css.map */

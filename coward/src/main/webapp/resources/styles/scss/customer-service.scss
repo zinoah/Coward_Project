@@ -123,12 +123,12 @@
     p {
       color: $primary;
       &:first-of-type {
-        @include text-style-18;
+        @include text-style(18);
         padding-top: 10px;
         padding-left: 20px;
       }
       &:last-of-type {
-        @include text-style-14;
+        @include text-style(14);
         padding-top: 20px;
         padding-left: 20px;
       }
