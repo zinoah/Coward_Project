@@ -81,7 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -479,7 +480,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -607,7 +609,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -751,7 +758,8 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1116,7 +1124,8 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1189,7 +1198,6 @@ i {
   }
 }
 
-
 .banner-bottom a {
   display: flex;
   flex-direction: column;
@@ -1215,6 +1223,7 @@ i {
 }
 .banner-bottom .ad-slogan .text-emphasis {
   color: #ffc200;
+}
 
 .banner-middle {
   display: flex;
@@ -1247,7 +1256,6 @@ i {
     font-size: 30px;
     line-height: 40px;
   }
-
 }
 
 /* banner-top html code
@@ -1350,6 +1358,11 @@ i {
     border: 1px solid #e0e2e7;
     border-radius: 8px;
     padding: 10px 16px;
+  }
+  .nav .nav-search-input::-moz-placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
   }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
@@ -1501,15 +1514,12 @@ i {
   justify-content: space-between;
   margin-bottom: 16px;
 }
-
 .home .section-title h3 {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.01em;
 }
 .home .section-title .more-btn {
-
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1529,7 +1539,6 @@ i {
   margin-left: 4px;
   transform: rotate(-180deg);
 }
-
 .home .section-title-new {
   display: flex;
   align-items: center;
@@ -1541,8 +1550,6 @@ i {
 .home-contest-preview {
   margin-bottom: 24px;
 }
-
-
 .home-contest-preview-slider {
   position: relative;
 }
@@ -1559,7 +1566,8 @@ i {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .home-contest-preview-slider .contest-slider-item .info {
   margin-top: 10px;
@@ -1615,7 +1623,6 @@ i {
 }
 .home-services {
   margin-bottom: 24px;
-
 }
 .home-services .service a {
   display: flex;
@@ -1624,16 +1631,16 @@ i {
   justify-content: center;
 }
 .home-services .service-wrapper:nth-of-type(2) .service-image {
-  background-color: #fcf2c4;
-}
-.home-services .service-wrapper:nth-of-type(3) .service-image {
   background-color: #ffdede;
 }
+.home-services .service-wrapper:nth-of-type(3) .service-image {
+  background-color: #fcf2c4;
+}
 .home-services .service-wrapper:nth-of-type(4) .service-image {
-  background-color: #e1deff;
+  background-color: #eff9ff;
 }
 .home-services .service-wrapper:nth-of-type(5) .service-image {
-  background-color: #eff9ff;
+  background-color: #ffe0c7;
 }
 .home-services .service-image {
   display: flex;
