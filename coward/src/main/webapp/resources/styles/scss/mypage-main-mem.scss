@@ -131,127 +131,224 @@
 
 /* 관심 목록 */
 .watchlist-box-group {
-  @include flexbox;
+  @include flexbox(start, start);
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  overflow: hidden;
 }
 
-.watchlist {
-  &-box {
-    position: relative;
-    width: 290px;
-    height: 215px;
+// .watchlist {
+//   &-box {
+//     @include column-flexbox(start, start);
+//     position: relative;
+//     width: 100%;
+//     height: 215px;
+//     margin-bottom: 20px;
+//     border: 1px solid $border;
+//     border-radius: 5px;
+//     box-shadow: $card-shadow;
+//     cursor: pointer;
+//   }
+
+//   &-info {
+//     width: 100%;
+//     padding: 25px 25px 20px;
+
+//     border: none;
+//   }
+//   &-title {
+//     display: flex;
+//     margin-bottom: 15px;
+//   }
+// }
+
+// /* watchlist-box 기준 */
+// .ic-bookmark-filled {
+//   position: absolute;
+//   right: 20px;
+//   top: -5px;
+//   font-size: 23px;
+//   color: $secondary;
+// }
+
+// /* 북마크 눌렀을 때 */
+// .is-active {
+//   color: $red;
+// }
+
+// /* 공모전 제목 - 길어지면 슬라이드 주고싶음 */
+// .contest-title {
+//   @include text-style(15);
+//   align-items: center;
+//   margin-right: 8px;
+// }
+
+// /* 반짝이 효과 주고싶음 */
+// .new-box {
+//   @include flexbox;
+//   width: 28px;
+//   height: 17px;
+//   background-color: $yellow;
+//   border: none;
+//   border-radius: 10px;
+//   font-size: 10px;
+//   color: white;
+// }
+
+// .condition {
+//   border-spacing: 8px;
+
+//   &-title td {
+//     font-size: 8px;
+//     color: $secondary;
+//   }
+
+//   &-content {
+//     @include text-style(14);
+//     color: $primary;
+//   }
+// }
+
+// .goods {
+//   display: inline-block;
+//   width: auto;
+//   height: auto;
+//   padding: 4px 4px;
+//   background-color: #eae2ff;
+//   border-radius: 3px;
+//   font-size: 7px;
+//   color: #985cd3;
+//   text-align: center;
+// }
+
+// .skills {
+//   display: inline-block;
+//   width: auto;
+//   height: auto;
+//   padding: 4px 4px;
+//   background-color: #ffeffb;
+//   border-radius: 3px;
+//   font-size: 7px;
+//   color: #f86d7d;
+//   text-align: center;
+// }
+
+// .company {
+//   @include flexbox(start);
+//   width: 100%;
+//   padding: 15px 20px;
+//   border-top: 1px solid $border;
+//   font-size: 10px;
+//   color: $primary;
+
+//   &-img {
+//     width: 20px;
+//     height: 20px;
+//     margin-right: 8px;
+//   }
+// }
+
+.contest {
+  &-card {
     margin-bottom: 20px;
-    border: 1px solid $border;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  &-info {
-    padding: 25px 25px 20px;
-
-    border: none;
-  }
-  &-title {
+    height: 150px;
+    box-shadow: $card-shadow;
+    border-radius: 10px;
+    padding: 20px;
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: column;
+    position: relative;
+    .bookmark {
+      position: absolute;
+      right: 7%;
+      top: -5px;
+      font-size: 25px;
+      i {
+        color: $tertiary;
+      }
+    }
+    &:nth-child(1) {
+      margin-top: 10px;
+    }
+
+    &-first-line {
+      width: 100%;
+      flex-basis: 30%;
+
+      @include flexbox(start, center);
+      div {
+        &:nth-child(1) {
+          @include text-style-18;
+          font-weight: 500;
+        }
+
+        margin-right: 10px;
+      }
+    }
+    &-second-line {
+      width: 100%;
+      flex-basis: 70%;
+
+      .first-box-article {
+        div {
+          margin-right: 5px;
+        }
+      }
+      .second-box-article {
+        display: flex;
+        align-items: center;
+        div {
+          margin-left: 10px;
+        }
+        p {
+          @include text-style-12;
+        }
+      }
+
+      &-first-box {
+        margin-top: 10px;
+        display: flex;
+        div {
+          margin-right: 30px;
+          p {
+            &:nth-child(1) {
+              @include text-style-12;
+              margin-bottom: 5px;
+            }
+
+            &:nth-child(2) {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      &-second-box {
+        margin-top: 10px;
+        @include flexbox(between);
+      }
+    }
+
+    &-third-line {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid $border;
+      div {
+        margin: 10px 10px 10px 0;
+      }
+      p {
+        @include text-style-12;
+      }
+    }
   }
 }
-
-/* watchlist-box 기준 */
-.ic-bookmark-filled {
-  position: absolute;
-  right: 20px;
-  top: -5px;
-  font-size: 23px;
-  color: $secondary;
-}
-
-/* 북마크 눌렀을 때 */
-.is-active {
-  color: $red;
-}
-
-/* 공모전 제목 - 길어지면 슬라이드 주고싶음 */
-.contest-title {
-  @include text-style(15);
-  align-items: center;
-  margin-right: 8px;
-}
-
-/* 반짝이 효과 주고싶음 */
-.new-box {
-  @include flexbox;
-  width: 28px;
-  height: 17px;
-  background-color: $yellow;
-  border: none;
-  border-radius: 10px;
-  font-size: 10px;
-  color: white;
-}
-
-.condition {
-  border-spacing: 8px;
-
-  &-title td {
-    font-size: 8px;
-    color: $secondary;
-  }
-
-  &-content {
-    @include text-style(14);
-    color: $primary;
-  }
-}
-
-.goods {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 4px 4px;
-  background-color: #eae2ff;
-  border-radius: 3px;
-  font-size: 7px;
-  color: #985cd3;
-  text-align: center;
-}
-
-.skills {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 4px 4px;
-  background-color: #ffeffb;
-  border-radius: 3px;
-  font-size: 7px;
-  color: #f86d7d;
-  text-align: center;
-}
-
-.company {
-  @include flexbox;
-  justify-content: flex-start;
-  padding: 15px 20px;
-  border-top: 1px solid $border;
-  font-size: 10px;
-  color: $primary;
-
-  &-img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-  }
-}
-
 /***** 태블릿 *****/
 @include responsive(T) {
   /* 배너 */
   .banner {
-    width: 100%;
-    height: 115px;
-    background-image: url("/coward/src/main/webapp/resources/assets/images/mypage-banner.png");
-    background-repeat: no-repeat;
+    img {
+      width: 100%;
+      padding-top: 10px;
+    }
   }
 
   /* 네비게이션 바 */
@@ -311,6 +408,24 @@
       @include text-style(12);
     }
   }
+
+  .contest-card {
+    width: 100%;
+    height: 250px;
+
+    &-first-line {
+      flex-basis: 20%;
+    }
+    &-second-line {
+      flex-basis: 70%;
+      @include flexbox(center, start);
+      flex-direction: column;
+    }
+    &-third-line {
+      flex-basis: 10%;
+      @include flexbox(start, center);
+    }
+  }
   .progress {
     position: relative;
     width: 135px;
@@ -323,11 +438,29 @@
 
 /***** 웹 *****/
 @include responsive(D) {
+  .banner {
+    height: 180px;
+  }
+
+  .empty-box {
+    width: 100%;
+    height: 700px;
+  }
+
+  .full {
+    position: relative;
+  }
   .web-box {
     @include flexbox;
-    width: 1000px;
-    height: 610px;
-    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1040px;
+    height: 700px;
+    border-radius: 10px;
+    box-shadow: $card-shadow;
+    background-color: $background;
   }
 
   .nav {
@@ -336,36 +469,84 @@
     background-color: $background;
 
     &-bar {
-      @include column-flexbox(start);
+      @include column-flexbox(start, start);
       @include text-style(20);
+
       padding: 14px 0;
     }
 
+    li {
+      padding: 5px 0 5px 10px;
+      text-align: left;
+    }
+
     &-web {
-      width: 100%;
-      height: 100%;
+      width: 180px;
+      height: 603px;
     }
   }
 
+  .profile {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid $secondary;
+
+    &-wrapper {
+      padding: 15px 30px;
+
+      border: 1px solid $border;
+      border-radius: 10px;
+    }
+
+    &-img {
+      width: 125px;
+      height: 125px;
+    }
+
+    &-info {
+      padding-bottom: 15px;
+    }
+
+    &-mypage {
+      width: 125px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 500;
+      padding-bottom: 10px;
+      margin-left: 15px;
+      border-bottom: 1px solid $secondary;
+    }
+  }
   /* 한줄 소개 */
   .one-liner {
+    margin-bottom: 10px;
     input {
       @include text-style(12);
       width: 550px;
       height: 160px;
+      background-color: $background;
     }
   }
   .award {
     width: 220px;
+    height: 338px;
+
     &-box {
       @include column-flexbox;
+      height: 304px;
       justify-content: space-around;
       align-items: center;
+      margin: 0;
+    }
+
+    &-table {
+      height: 120px;
     }
   }
 
   .progress {
     margin: 30px 0 10px 0;
+    background-color: $blue;
   }
 
   .skill {
@@ -388,6 +569,24 @@
       border: 1px solid $border;
       border-radius: 10px;
     }
+
+    &-c {
+      @include flexbox;
+      width: 28px;
+      height: 17px;
+      background-color: $blue-light;
+      border: none;
+      border-radius: 10px;
+      margin-right: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
 
   .credit-skill {
@@ -399,17 +598,71 @@
   .one-credit-skill {
     @include column-flexbox;
     width: 550px;
+    margin-right: 12px;
   }
 
   .web-box-header {
-    @include flexbox;
+    @include flexbox(between);
     margin-bottom: 10px;
   }
 
+  .btn {
+    &-prev {
+      @include flexbox;
+      box-shadow: $card-shadow;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      transform: translateX(-5px) translateY(100px);
+      z-index: 5;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translateX(-15px) translateY(100px);
+      }
+
+      i {
+        font-size: 15px;
+        color: $primary;
+      }
+    }
+
+    &-next {
+      @include flexbox;
+      box-shadow: $card-shadow;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      transform: translateX(755px) translateY(100px);
+      z-index: 100;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translateX(765px) translateY(100px);
+      }
+
+      i {
+        font-size: 15px;
+        color: $primary;
+      }
+    }
+  }
+  .contest-card {
+    width: 255px;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+  }
   .watchlist {
     &-box {
       width: 220px;
       height: 195px;
+      margin-bottom: 0;
     }
 
     &-info {

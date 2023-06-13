@@ -1,0 +1,83 @@
+@import "./main.scss";
+
+/***** 모바일 *****/
+/* 네비게이션 바 */
+.nav {
+  width: 100%;
+  background-color: $background;
+  margin-bottom: 20px;
+  &-bar {
+    @include flexbox(around);
+    font-size: 10px;
+    padding: 14px 0;
+    text-align: center;
+    list-style-type: none;
+  }
+}
+
+.introduce-title {
+  @include text-style(16);
+
+  margin: 0 8px 8px;
+  font-weight: 700;
+  padding: 10px 0;
+  border-bottom: 1px solid $border;
+}
+
+.progress {
+  @include flexbox;
+  &-box {
+    @include flexbox;
+    border: 1px solid $border;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  &-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $blue;
+  }
+
+  &-text {
+    font-size: 10px;
+  }
+}
+
+.contest {
+  &-title {
+    @include text-style(12);
+    font-weight: 600;
+  }
+
+  &-content {
+    @include flexbox(between);
+    @include text-style(12);
+  }
+
+  &-mid {
+    @include column-flexbox;
+  }
+
+  &-company {
+    font-size: 9px;
+  }
+}
+
+.deadline {
+  font-size: 9px;
+}
+
+.profile {
+  margin-right: 10px;
+
+  &-img {
+    width: 25px;
+    height: 25px;
+  }
+
+  &-left {
+    @include flexbox(start);
+  }
+}

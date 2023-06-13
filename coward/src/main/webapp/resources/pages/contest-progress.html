@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/contest-progress.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      alt="Coward"
+                    />
+                  </a>
+                </h1>
+
+                <button
+                  class="header-button sm-only"
+                  type="button"
+                  aria-label="메뉴 버튼"
+                >
+                  <i class="ic-hamburger"></i>
+                </button>
+              </div>
+
+              <div class="header-right sm-hidden">
+                <!-- Note: 로그인을 하지 않은 경우 -->
+                <div class="header-buttons">
+                  <button
+                    class="header-button md-only"
+                    type="button"
+                    aria-label="통합 검색 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">로그인</a>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">회원가입</a>
+                  </button>
+                </div>
+                <!-- Note: 로그인을 한 경우 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="full">
+      <div class="banner sm-hidden">
+        <img src="../assets/images/mypage-banner.png" />
+      </div>
+
+      <!-- 웹 페이지 -->
+      <div class="empty-box">
+        <div class="web-box">
+          <!-- 네비게이션 바 -->
+
+          <aside>
+            <nav class="nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4 nav-web">
+                    <p class="profile-mypage lg-only">마이페이지</p>
+                    <div class="profile lg-only">
+                      <div class="profile-img avatar">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />
+                      </div>
+                      <div class="profile-info">
+                        <div class="profile-type">Back</div>
+                        <p class="profile-nick">빡과장</p>
+                      </div>
+                    </div>
+
+                    <ul class="nav-bar">
+                      <li><a href="#">내 정보</a></li>
+                      <li><a href="#">공모전 관리</a></li>
+                      <li><a href="#">크레딧 인출</a></li>
+                      <li><a href="#">프로필 수정</a></li>
+                      <li><a href="#">회원 탈퇴</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </aside>
+
+          <!-- 본문 시작 -->
+          <main class="contest-management">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="contest-progress">
+                    <p class="introduce-title">공모전 관리</p>
+
+                    <div class="progress-box col-sm-4">
+                      <div class="profile-left">
+                        <div class="profile">
+                          <div class="profile-img avatar">
+                            <img
+                              src="../assets/images/default-user-img.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="contest-mid">
+                          <div class="contest-title">
+                            <p>스마트스토어 웹사이트 제작 공모전</p>
+                          </div>
+
+                          <div class="contest-content">
+                            <p class="contest-company">
+                              주최 : 스마트스토어 공단
+                            </p>
+                            <p class="deadline">15일 남음</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-color"></div>
+                        <p class="progress-text">모집중</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-2 col-lg-3">
+            <h1 class="logo">
+              <a href="#">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  alt="Coward"
+                />
+              </a>
+            </h1>
+          </div>
+
+          <div class="col-sm-4 col-md-5 col-lg-3">
+            <div class="service-center">
+              <a href="#">
+                <h3>고객센터</h3>
+                <i class="ic-chevron"></i>
+              </a>
+            </div>
+            <div class="service-info">
+              <div class="row">
+                <div class="service-info-wrapper">
+                  <div class="service-info-time">
+                    <div class="service-info-title">상담시간</div>
+                    <p>
+                      평일 11:00 ~ 17:00 <br />
+                      점심 12:30 ~ 13:30 <br />
+                      (주말, 공휴일 제외)
+                    </p>
+                  </div>
+
+                  <div class="service-info-tel">
+                    <div class="service-info-title">연락처</div>
+                    <a class="footer-tel" href="tel:02-1234-5678"
+                      >02-1234-5678</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <address class="footer-info sm-hidden">
+            <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+            <p>Copyright © 2023 Coawrd All Right Reserved</p>
+          </address>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="footer-links">
+            <div class="row">
+              <div class="footer-links-wrapper">
+                <div class="icon-link">
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
+                      alt="Github 바로가기"
+                  /></a>
+                  <a class="icon-link-item" href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
+                      alt="Notion 바로가기"
+                    />
+                  </a>
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
+                      alt="Figma 바로가기"
+                  /></a>
+                </div>
+
+                <div class="text-link">
+                  <ul class="text-link-list">
+                    <li class="text-link-item"><a href="#">이용가이드</a></li>
+                    <li class="text-link-item">
+                      <a href="#">개인정보처리방침</a>
+                    </li>
+                    <li class="text-link-item"><a href="#">이용약관</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <address class="footer-info sm-only">
+          <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+          <p>Copyright © 2023 Coawrd All Right Reserved</p>
+        </address>
+      </div>
+    </footer>
+  </body>
+</html>
