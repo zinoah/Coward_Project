@@ -1,8 +1,9 @@
 @import "./main";
 
 .banner {
-  height: 250px;
-  background-color: $yellow-light;
+  &-top {
+    background-color: #ffefc5;
+  }
 }
 
 .contest-briefing {
@@ -11,55 +12,95 @@
   &-summary {
     &-wrapper {
       @include pos-center-x;
-      display: flex;
+      @include flexbox;
       flex-direction: column;
-      top: -100px;
+      top: -150px;
       height: 600px;
       width: calc(100% - 30px);
       background-color: $white;
       border-radius: 20px;
       box-shadow: $card-shadow;
-      position: relative;
-      padding: 30px;
-    }
-
-    &-bookmark {
       position: absolute;
-      right: 10%;
-      top: -7px;
-      font-size: 30px;
+      padding: 30px 30px 10px 30px;
     }
 
     &-thumbnail {
       @include flexbox;
+      flex-basis: 60%;
       height: 300px;
+      width: 100%;
       overflow: hidden;
+      margin-bottom: 5px;
+      border-radius: 10px;
 
       img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
       }
     }
 
     &-info {
+      @include flexbox(center, start);
+      flex-direction: column;
+      flex-basis: 40%;
+      & > div {
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
       &-title {
+        width: 100%;
+        flex-basis: 20%;
         font-size: 22px;
+        @include flexbox(start, center);
+        font-weight: 500;
       }
       &-name {
+        width: 100%;
+        flex-basis: 20%;
         @include flexbox(start, center);
+        & > div {
+          margin-right: 10px;
+        }
       }
       &-tag {
+        width: 100%;
+        flex-basis: 20%;
+        & > div {
+          &:not(:nth-child(1)) {
+            margin-left: 10px;
+          }
+        }
       }
       &-detail {
+        width: 100%;
+        flex-basis: 40%;
+        @include flexbox;
         border-top: 1px solid $border;
+
+        &-item {
+          @include flexbox;
+          flex-direction: column;
+          flex-basis: 33%;
+
+          &-title {
+            @include text-style(16, $secondary);
+            font-weight: 500;
+          }
+
+          &-info {
+            @include text-style(18);
+            font-weight: 500;
+            margin-top: 5px;
+          }
+        }
       }
     }
   }
 
   &-reward {
     &-wrapper {
-      margin-top: -35px;
+      margin-top: 500px;
     }
     &-info-box {
       @include flexbox;
@@ -80,13 +121,13 @@
       }
 
       &-title {
-        @include text-style-16;
+        @include text-style(16);
         font-weight: 700;
         color: $secondary;
       }
 
       &-detail {
-        @include text-style-18;
+        @include text-style(18);
         font-weight: 700;
       }
     }
@@ -98,21 +139,25 @@
 
     & > div {
       &:nth-child(1) {
-        flex-basis: 80%;
-        margin-right: 3%;
+        flex-basis: 70%;
         button {
           width: 100%;
           height: 50px;
         }
       }
-      &:nth-child(2) {
-        flex-basis: 17%;
+      &:not(:nth-child(1)) {
+        flex-basis: 12%;
+        margin-left: 3%;
         button {
           @include flexbox;
           width: 100%;
           height: 50px;
           border: 1px solid $border;
           border-radius: 5px;
+
+          i {
+            color: $secondary;
+          }
         }
       }
     }
@@ -138,7 +183,88 @@
     }
 
     &-detail {
-      @include text-style-14;
+      @include text-style(14);
+      margin-bottom: 20px;
+    }
+  }
+
+  @include responsive(T) {
+    &-summary {
+      &-wrapper {
+        @include flexbox(between);
+        flex-direction: row;
+        height: 430px;
+        padding: 30px;
+      }
+
+      &-thumbnail {
+        flex-basis: 48%;
+        height: 100%;
+        width: 100%;
+        margin-bottom: 0px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &-info {
+        flex-basis: 48%;
+        height: 100%;
+        & > div {
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
+        }
+        &-title {
+          width: 100%;
+          flex-basis: 20%;
+          font-size: 22px;
+          @include flexbox(start, center);
+          font-weight: 500;
+        }
+        &-name {
+          width: 100%;
+          flex-basis: 20%;
+          @include flexbox(start, center);
+          & > div {
+            margin-right: 10px;
+          }
+        }
+        &-tag {
+          width: 100%;
+          flex-basis: 20%;
+          & > div {
+            &:not(:nth-child(1)) {
+              margin-left: 10px;
+            }
+          }
+        }
+        &-detail {
+          width: 100%;
+          flex-basis: 50%;
+          @include flexbox;
+          border-top: 1px solid $border;
+
+          &-item {
+            @include flexbox;
+            flex-direction: column;
+            flex-basis: 33%;
+
+            &-title {
+              @include text-style(16, $secondary);
+              font-weight: 500;
+            }
+
+            &-info {
+              @include text-style(18);
+              font-weight: 500;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
     }
   }
 }
