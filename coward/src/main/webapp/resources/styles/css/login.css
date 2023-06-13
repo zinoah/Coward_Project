@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
@@ -80,7 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -478,7 +480,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -606,7 +609,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -874,8 +882,171 @@ i {
   }
 }
 
+.banner-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 260px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.banner-top img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner-top-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+.banner-top-wrapper .banner-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner-top-wrapper .banner-info .main-title {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.banner-top-wrapper .banner-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 120px;
+  margin-bottom: 16px;
+}
+.banner-top-wrapper .banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner-bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  background-color: #222121;
+  margin-top: 20px;
+}
+.banner-bottom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner-bottom .ad-slogan {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 16px;
+}
+.banner-bottom .ad-slogan .text-emphasis {
+  color: #ffc200;
+}
+@media screen and (min-width: 768px) {
+  .banner-top-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .banner-top-wrapper .banner-info {
+    align-items: start;
+  }
+  .banner-top-wrapper .banner-info .main-title {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .banner-top-wrapper .banner-info .sub-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #8c8d96;
+    margin-bottom: 24px;
+  }
+  .banner-top-wrapper .banner-image {
+    height: 170px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner-top-wrapper .banner-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 220px;
+    padding-right: 60px;
+  }
+}
+
+/* banner-top html code
+
+<div class="banner-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-top-wrapper">
+              <div class="banner-info">
+                <h3 class="main-title">
+                  Coward를 사랑해주시는 <br class="sm-only" />
+                  여러분들을 위한 이벤트!
+                </h3>
+                <p class="sub-title sm-hidden">
+                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                </p>
+                <a href="#" class="banner-button btn-32 btn-primary"
+                  >더 알아보기</a
+                >
+              </div>
+              <div class="banner-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/* banner-top scss 페이지 별 색상 변경 코드
+.banner {
+  &-top {
+    background-color: #ffefc5;
+
+    &-wrapper {
+      .banner-info {
+        .banner-button {
+          background-color: $yellow;
+
+          &:hover {
+            background-color: #fcd869;
+          }
+        }
+      }
+    }
+  }
+}
+*/
 .nav {
   background-color: #fff;
+  margin-bottom: 10px;
 }
 .nav-wrapper {
   display: flex;
@@ -924,6 +1095,11 @@ i {
     border-radius: 8px;
     padding: 10px 16px;
   }
+  .nav .nav-search-input::-moz-placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+  }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -944,6 +1120,7 @@ i {
   letter-spacing: -0.01em;
   width: 100%;
   background-color: #f8f8f8;
+  margin-top: 24px;
 }
 .footer .logo {
   display: flex;
@@ -1057,11 +1234,18 @@ i {
   }
 }
 
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .logo-img {
   width: 174.55px;
   height: 40px;
   position: relative;
-  left: 65px;
+  left: 75px;
 }
 
 .p-email {
@@ -1072,23 +1256,21 @@ i {
 }
 .p-first {
   position: relative;
-  left: 40px;
-  color: black;
+  left: 53px;
+  color: #000;
 }
 
 .login-btn {
   width: 100%;
-  height: 50px;
-  border: 1px solid none;
+  height: 42px;
   border-radius: 10px;
   color: #fff;
   font-weight: 700;
   background-color: #3aacf8;
 }
 .login-box {
-  width: 290px;
-  height: 480px;
-  border: 1px solid black;
+  width: 320px;
+  height: 560px;
 }
 
 .input-email {
@@ -1112,23 +1294,82 @@ i {
   height: 42px;
 }
 
+#pw-see-btn {
+  color: #b2b3b9;
+  position: relative;
+  left: 80px;
+  top: 5px;
+}
+
+.save-id-wrapper {
+  position: relative;
+  bottom: 10px;
+  left: 1px;
+}
+
 .line1 {
   color: #b2b3b9;
-  width: 140px;
+  width: 135px;
 }
 .line2 {
   color: #b2b3b9;
-  width: 140px;
+  width: 135px;
+  position: relative;
+  bottom: 2px;
+  left: 181.5px;
 }
 
-.google-login {
-  width: 50%;
-  height: 40px;
+.p-or {
+  color: #b2b3b9;
+  font-size: 13px;
+  position: relative;
+  bottom: 10px;
+  left: 148px;
 }
 
-.kakao-login {
-  width: 50%;
+.line-box {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.google-logo {
+  width: 23px;
+  height: 23px;
+  position: relative;
+  top: 7px;
+  left: 15px;
+}
+
+.kakao-logo {
+  width: 30px;
+  height: 23px;
+  position: relative;
+  left: 148px;
+  top: 7px;
+  z-index: 1;
+}
+
+.google-btn {
+  width: 150px;
   height: 40px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  font-size: 14px;
+  padding-left: 30px;
+  position: relative;
+  right: 60px;
+}
+
+.kakao-btn {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fee500;
+  font-size: 14px;
+  padding-left: 30px;
+  position: relative;
+  left: 166px;
+  bottom: 40px;
 }
 
 .email-input-box {
@@ -1140,40 +1381,55 @@ i {
 }
 .pw-find {
   position: relative;
-  left: 205px;
-  bottom: 18.5px;
+  left: 240px;
+  bottom: 29px;
   color: #3f4150;
   font-size: 14px;
 }
 
-#pw-see-btn {
-  color: #b2b3b9;
-  position: relative;
-  left: 55px;
-  top: 5px;
+input[type=checkbox] {
+  width: 12px;
+  height: 12px;
 }
 
-.check-id-save {
-  size: 5;
+.span-first {
+  font-size: 14px;
+  color: #3f4150;
+}
+.span-second {
+  font-size: 13px;
+  position: relative;
+  bottom: 30px;
+  left: 50px;
+}
+
+.join {
+  color: #3aacf8;
+  font-size: 13px;
+  position: relative;
+  left: 50px;
+  bottom: 30px;
+}
+
+.p-pw {
+  padding-bottom: 7px;
 }
 
 @media screen and (min-width: 1200px) {
   .login-bg-img {
     width: 650px;
     height: 590px;
-    padding-right: 20px;
   }
   .login-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 90px;
   }
   .login-box {
-    margin-right: 60px;
-    margin-top: 20px;
+    margin-right: 70px;
+    margin-bottom: 15px;
     display: inline-block;
-    width: 300px;
-    height: 510px;
+    width: 320px;
+    height: 560px;
   }
 }/*# sourceMappingURL=login.css.map */

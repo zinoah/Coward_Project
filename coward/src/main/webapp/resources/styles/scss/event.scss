@@ -2,117 +2,16 @@
 
 .banner {
   &-top {
-    @include flexbox;
-    width: 100%;
-    height: 260px;
-    margin-bottom: 24px;
-
-    // Note: 동적 변경값
     background-color: #fbeee5;
 
     &-wrapper {
-      @include column-flexbox;
-
       .banner-info {
-        .title {
-          @include text-style(24);
-        }
+        .banner-button {
+          background-color: #f2999f;
 
-        .description {
-        }
-      }
-
-      .banner-image {
-        @include flexbox;
-        width: 290px;
-        height: 180px;
-
-        margin-top: 8px;
-        padding: 20px 30px;
-
-        border-radius: 10px;
-
-        // Note: 동적 변경값
-        background-color: #ffdede;
-
-        img {
-          display: block;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  &-bottom {
-    a {
-      @include column-flexbox;
-      width: 100%;
-      height: 160px;
-      background-color: #222121;
-      margin-top: 20px;
-    }
-
-    &-image {
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    .ad-slogan {
-      @include text-style(16, $white);
-      margin-top: 16px;
-
-      .text-emphasis {
-        color: $yellow;
-      }
-    }
-  }
-
-  @include responsive(T) {
-    &-top {
-      &-wrapper {
-        @include flexbox(between);
-        flex-direction: row;
-
-        .banner-info {
-          .title {
-            @include text-style(24);
+          &:hover {
+            background-color: $red;
           }
-
-          .description {
-            margin-top: 16px;
-
-            p {
-              &:first-child {
-                @include text-style(16);
-              }
-
-              &:last-child {
-                @include text-style(14, $secondary);
-              }
-            }
-          }
-        }
-
-        .banner-image {
-          margin: 0;
-        }
-      }
-    }
-  }
-
-  @include responsive(D) {
-    &-top {
-      &-wrapper {
-        .banner-image {
-          @include flexbox;
-          width: 360px;
-          height: 220px;
-
-          padding: 20px 60px;
         }
       }
     }
@@ -126,7 +25,7 @@
   }
 
   &-item {
-    display: inline-block;
+    display: block;
     margin-bottom: 16px;
 
     &-image {

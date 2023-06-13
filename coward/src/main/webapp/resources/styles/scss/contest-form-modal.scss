@@ -1,0 +1,122 @@
+@import "./main.scss";
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  box-shadow: $card-shadow;
+  border-radius: 10px;
+
+  .profile-section {
+    display: flex;
+    margin: 20px 0 0 10px;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+    }
+
+    h3 {
+      margin: 15px 0 0 15px;
+    }
+
+    .coding-type {
+      @include flexbox;
+      @include text-style(12, $blue);
+      width: 35px;
+      height: 20px;
+      border: 1px solid $blue;
+      border-radius: 5px;
+      margin: 15px 0 0 10px;
+    }
+  }
+
+  .intro {
+    h4 {
+      margin: 10px;
+    }
+    &-input {
+      @include flexbox;
+      width: 300px;
+      height: 150px;
+      border: 1px solid $border;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .github-input {
+      display: flex;
+      align-items: center;
+      width: 300px;
+      height: 40px;
+      border: 1px solid $border;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .skill {
+      &-box {
+        height: 80px;
+        padding-left: 10px;
+      }
+    }
+    .my-skill {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      padding: 8px;
+      margin: 4px;
+      background-color: $yellow;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-align: center;
+    }
+
+    // 스토리 보드 알아보고 결정되면 추후 수정예정
+    .story-board {
+      width: 300px;
+      height: 150px;
+      background-color: $border;
+      margin: 10px;
+    }
+  }
+
+  .button-wrapper {
+    @include flexbox;
+    height: 100px;
+
+    .awards-status {
+      border: 1px solid $border;
+      width: 80px;
+      height: 40px;
+      border-radius: 5px;
+      @include text-style-16;
+    }
+
+    .btn-primary {
+      width: 80px;
+      height: 40px;
+    }
+  }
+}
