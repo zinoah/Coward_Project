@@ -1509,6 +1509,7 @@ i {
 }
 .home .section-title .more-btn {
 
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1540,6 +1541,7 @@ i {
 .home-contest-preview {
   margin-bottom: 24px;
 }
+
 
 .home-contest-preview-slider {
   position: relative;
@@ -1610,7 +1612,6 @@ i {
 .home-contest-preview-slider .slider-controls .control-button:hover {
   color: #fff;
   background-color: #3aacf8;
-
 }
 .home-services {
   margin-bottom: 24px;

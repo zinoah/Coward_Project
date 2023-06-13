@@ -1,0 +1,27 @@
+@import "./main.scss";
+
+/***** 모바일 *****/
+/* 네비게이션 바 */
+.nav {
+  width: 100%;
+  background-color: $background;
+  margin-bottom: 20px;
+  &-bar {
+    @include flexbox(around);
+    font-size: 10px;
+    padding: 14px 0;
+    text-align: center;
+    list-style-type: none;
+  }
+}
+
+.introduce-title {
+  @include text-style(16);
+
+  margin-bottom: 15px;
+  font-weight: 700;
+  padding: 10px;
+  border-bottom: 1px solid $border;
+}
+
+/******* 모바일은 여기까지 복사해가면 됩니답 *******/

@@ -723,234 +723,6 @@ i {
   content: "\e90b";
 }
 
-.slider-wrapper {
-  position: relative;
-  height: 320px;
-  margin-bottom: 24px;
-}
-
-.contest-slider {
-  height: 320px;
-}
-.contest-slider-card {
-  height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-.contest-slider-card-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 240px;
-  overflow: hidden;
-}
-.contest-slider-card-img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.contest-slider-card-info {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
-  height: 155px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  transition: 600ms;
-  bottom: -95px;
-}
-.contest-slider-card-info-title {
-  font-weight: 600;
-  margin-bottom: 7px;
-}
-.contest-slider-card-info-title p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.contest-slider-card-info-detail {
-  margin-bottom: 7px;
-}
-.contest-slider-card-info-detail p {
-  display: inline-block;
-}
-.contest-slider-card-info-detail p:nth-child(1) {
-  color: #8c8d96;
-  font-weight: 500;
-  margin-right: 10px;
-}
-.contest-slider-card-info-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-}
-
-.slider-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 40px);
-}
-.slider-controls .control-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  background-color: #fff;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-  color: #3f4150;
-  border-radius: 50%;
-  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
-}
-.slider-controls .control-button-is-prev .ic-chevron {
-  display: inline-block;
-}
-.slider-controls .control-button.is-next .ic-chevron {
-  display: inline-block;
-  transform: rotate(-180deg);
-}
-.slider-controls .control-button:hover {
-  color: #fff;
-  background-color: #3aacf8;
-}
-
-.contest-card {
-  height: 150px;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-.contest-card:first-of-type {
-  margin-top: 16px;
-}
-.contest-card .bookmark {
-  position: absolute;
-  right: 7%;
-  top: -5px;
-  font-size: 25px;
-}
-.contest-card .bookmark i {
-  color: #b2b3b9;
-}
-.contest-card-title {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  flex-basis: 30%;
-}
-.contest-card-title div {
-  margin-right: 10px;
-}
-.contest-card-title div:nth-child(1) {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-}
-.contest-card-info {
-  width: 100%;
-  flex-basis: 70%;
-}
-.contest-card-info-detail {
-  margin-top: 10px;
-  display: flex;
-}
-.contest-card-info-detail div {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  margin-right: 30px;
-}
-.contest-card-info-detail div span:nth-child(1) {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  margin-bottom: 5px;
-}
-.contest-card-info-detail div span:nth-child(2) {
-  font-weight: 500;
-}
-.contest-card-info-tag {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-.contest-card-info-tag-list div {
-  margin-right: 5px;
-}
-.contest-card-info-profile {
-  display: flex;
-  align-items: center;
-}
-.contest-card-info-profile div {
-  margin-left: 10px;
-}
-.contest-card-info-profile span {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-}
-.contest-card-third-line {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #e0e2e7;
-}
-.contest-card-third-line div {
-  margin: 10px 10px 10px 0;
-}
-.contest-card-third-line p {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-}
-@media screen and (min-width: 768px) {
-  .contest-card {
-    height: 250px;
-    padding: 20px 20px 5px 20px;
-  }
-  .contest-card-title {
-    flex-basis: 20%;
-  }
-  .contest-card-info {
-    flex-basis: 60%;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  .contest-card-profile {
-    border-top: 1px solid #e0e2e7;
-    flex-basis: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .contest-card-profile div {
-    margin-right: 10px;
-  }
-}
-
 .container {
   width: 100%;
   padding: 0 5px;
@@ -1116,8 +888,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1151,7 +922,6 @@ i {
   width: 100%;
   height: 100%;
 }
-
 .banner-bottom a {
   display: flex;
   flex-direction: column;
@@ -1177,7 +947,6 @@ i {
 .banner-bottom .ad-slogan .text-emphasis {
   color: #ffc200;
 }
-
 @media screen and (min-width: 768px) {
   .banner-top-wrapper {
     display: flex;
@@ -1216,72 +985,6 @@ i {
     padding-right: 60px;
   }
 }
-
-
-.banner-bottom a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 160px;
-  background-color: #222121;
-  margin-top: 20px;
-}
-.banner-bottom-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.banner-bottom .ad-slogan {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #fff;
-  margin-top: 16px;
-  text-align: center;
-}
-.banner-bottom .ad-slogan .text-emphasis {
-  color: #ffc200;
-}
-
-
-
-.banner-middle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-  margin-bottom: 24px;
-  border-radius: 20px;
-  overflow: hidden;
-  flex-direction: column;
-  background-repeat: no-repeat;
-  background-position: 90% 0;
-  background-size: 240px;
-}
-.banner-middle-title {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  font-weight: bold;
-  color: #fff;
-}
-@media screen and (min-width: 768px) {
-  .banner-middle {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 50px 80px;
-  }
-  .banner-middle-title {
-    font-size: 30px;
-    line-height: 40px;
-  }
-}
-
-
-
 
 /* banner-top html code
 
@@ -1518,119 +1221,266 @@ i {
   }
 }
 
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
+/***** 모바일 *****/
+/* 네비게이션 바 */
+.nav {
   width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
 }
-
-.window {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-.popup .profile-section {
+.nav-bar {
   display: flex;
-  margin: 20px 0 0 10px;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  padding: 14px 0;
+  text-align: center;
+  list-style-type: none;
 }
-.popup .profile-section img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
+
+.introduce-title {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  margin-bottom: 15px;
+  font-weight: 700;
+  padding: 10px;
+  border-bottom: 1px solid #e0e2e7;
 }
-.popup .profile-section h3 {
-  margin: 15px 0 0 15px;
+
+.progress {
+  /* 목업대로 가려면 start로 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45px;
+  /* 상태 표시 */
+  /* 모집 중 */
+  /* 심사 중 */
+  /* 완료 */
 }
-.popup .profile-section .coding-type {
+.progress-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.progress-color {
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 50%;
+}
+.progress .recruiting {
+  background-color: #3aacf8;
+}
+.progress .under-review {
+  background-color: #ffc200;
+}
+.progress .complete {
+  background-color: #f86d7d;
+}
+.progress-text {
+  font-size: 10px;
+}
+
+.contest-title {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+}
+.contest-content {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
-  color: #3aacf8;
-  width: 35px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin: 15px 0 0 10px;
 }
-.popup .intro h4 {
-  margin: 10px;
+.contest-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.popup .intro-input {
+.contest-company {
+  font-size: 9px;
+}
+
+.deadline {
+  font-size: 9px;
+  margin-left: 15px;
+}
+
+.company-profile {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+}
+.company-profile-img {
+  width: 25px;
+  height: 25px;
+}
+.company-profile-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-left {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 150px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 10px;
 }
-.popup .intro .github-input {
-  display: flex;
-  align-items: center;
-  width: 300px;
-  height: 40px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
+
+/***** 태블릿 *****/
+@media screen and (min-width: 768px) {
+  /* 배너 */
+  .banner img {
+    width: 100%;
+    padding-top: 10px;
+  }
+  /* 네비게이션 바 */
+  .nav-bar {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    padding: 15px 0;
+  }
+  /* 소제목 스타일 */
+  .introduce-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .company-profile {
+    margin-right: 15px;
+  }
+  .company-img {
+    width: 30px;
+    height: 30px;
+  }
 }
-.popup .intro .skill-box {
-  height: 80px;
-  padding-left: 10px;
-}
-.popup .intro .my-skill {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 8px;
-  margin: 4px;
-  background-color: #ffc200;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  text-align: center;
-}
-.popup .intro .story-board {
-  width: 300px;
-  height: 150px;
-  background-color: #e0e2e7;
-  margin: 10px;
-}
-.popup .button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-}
-.popup .button-wrapper .awards-status {
-  border: 1px solid #e0e2e7;
-  width: 80px;
-  height: 40px;
-  border-radius: 5px;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-}
-.popup .button-wrapper .btn-primary {
-  width: 80px;
-  height: 40px;
-}/*# sourceMappingURL=contest-form-modal.css.map */
+/***** 웹 *****/
+@media screen and (min-width: 1200px) {
+  .banner {
+    height: 180px;
+  }
+  .empty-box {
+    width: 100%;
+    height: 700px;
+  }
+  .full {
+    position: relative;
+  }
+  .web-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1040px;
+    height: 700px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+  }
+  /* 네비게이션 바 */
+  .nav {
+    width: 100%;
+    background-color: #f8f8f8;
+  }
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 14px 0;
+    text-align: center;
+    list-style-type: none;
+  }
+  .nav li {
+    padding: 5px 0 5px 10px;
+    text-align: left;
+  }
+  .nav-web {
+    width: 180px;
+    height: 603px;
+  }
+  aside {
+    height: 613px;
+  }
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    border-bottom: 1px solid #8c8d96;
+  }
+  .profile-wrapper {
+    padding: 15px 30px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .profile-img {
+    width: 125px;
+    height: 125px;
+    margin: 30px 0 10px;
+  }
+  .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+  .profile-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 13px;
+    padding: 3px;
+    margin-right: 6px;
+    border: 1px solid #3aacf8;
+    border-radius: 5px;
+    font-size: 6px;
+    color: #3aacf8;
+  }
+  .profile-nick {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #3f4150;
+  }
+  .profile-mypage {
+    width: 125px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    border-bottom: 1px solid #8c8d96;
+  }
+  .contest-management {
+    width: 843.33px;
+    height: 678.33px;
+    padding: 15px 30px;
+    margin: 0 10px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .progress-box-group {
+    overflow-y: scroll;
+    height: 580px;
+  }
+  .progress-box-group::-webkit-scrollbar {
+    display: none;
+  }
+}/*# sourceMappingURL=contest-progress.css.map */
