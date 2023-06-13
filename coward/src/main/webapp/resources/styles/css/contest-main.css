@@ -1309,7 +1309,8 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main .my-slider .gallery-card-info {
   background-color: #fff;

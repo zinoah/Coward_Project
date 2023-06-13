@@ -1298,15 +1298,9 @@ span {
   left: 265px;
   bottom: 27px;
   color: #e0e2e7;
+  cursor: pointer;
 }
 
 .agree-content {
   font-size: 8pt;
-}
-
-@media screen and (min-width: 1200px) {
-  #agree-box {
-    width: 318px;
-    height: 450px;
-  }
 }/*# sourceMappingURL=agree-modal.css.map */

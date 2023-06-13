@@ -1235,14 +1235,11 @@ i {
 }
 
 .banner-top {
-
   background-color: #fbeee5;
-
 }
 .banner-top-wrapper .banner-info .banner-button {
   background-color: #f2999f;
 }
-
 .banner-top-wrapper .banner-info .banner-button:hover {
   background-color: #ffc1c9;
 }
@@ -1260,7 +1257,6 @@ i {
   margin-bottom: 16px;
 }
 .home-contest-preview-header .more-btn {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1280,7 +1276,6 @@ i {
   margin-left: 4px;
   transform: rotate(-180deg);
 }
-
 .home-contest-preview-slider {
   position: relative;
 }
@@ -1294,24 +1289,20 @@ i {
   overflow: hidden;
 }
 .home-contest-preview-slider .contest-slider-item .thumbnail img {
-
   display: block;
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .home-contest-preview-slider .contest-slider-item .info {
   margin-top: 10px;
 }
 .home-contest-preview-slider .contest-slider-item .info .company-mem-name {
-
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
 }
-
 .home-contest-preview-slider .contest-slider-item .info .contest-title {
   font-size: 14px;
   line-height: 24px;
@@ -1355,7 +1346,6 @@ i {
 .home-contest-preview-slider .slider-controls .control-button:hover {
   color: #fff;
   background-color: #3aacf8;
-
 }
 .home-services .service a {
   display: flex;
