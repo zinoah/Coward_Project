@@ -65,15 +65,10 @@ span {
   bottom: 27px;
 
   color: $border;
+
+  cursor: pointer;
 }
 
 .agree-content {
   font-size: 8pt;
-}
-
-@include responsive(D) {
-  #agree-box {
-    width: 318px;
-    height: 450px;
-  }
 }

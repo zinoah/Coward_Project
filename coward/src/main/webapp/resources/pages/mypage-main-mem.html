@@ -62,229 +62,247 @@
     </header>
 
     <!-- 배너 -->
-    <div class="banner"></div>
+    <div class="full">
+      <div class="banner sm-hidden">
+        <img src="../assets/images/mypage-banner.png" />
+      </div>
 
-    <!-- 웹 페이지 -->
-    <div class="web-box">
-      <!-- 네비게이션 바 -->
+      <!-- 웹 페이지 -->
+      <div class="empty-box">
+        <div class="web-box">
+          <!-- 네비게이션 바 -->
 
-      <aside>
-        <nav class="nav">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4 nav-web">
-                <div class="profile lg-only">
-                  <div class="profile-img avatar">
-                    <img
-                      src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                    />
-                  </div>
-                  <div class="profile-info">
-                    <div class="profile-type">Back</div>
-                    <p class="profile-nick">빡과장</p>
-                  </div>
-                </div>
-
-                <ul class="nav-bar">
-                  <li><a href="#">내 정보</a></li>
-                  <li><a href="#">공모전 관리</a></li>
-                  <li><a href="#">크레딧 인출</a></li>
-                  <li><a href="#">프로필 수정</a></li>
-                  <li><a href="#">회원 탈퇴</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </aside>
-
-      <!-- 본문 시작 -->
-      <main class="profile-mem">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="profile-wrapper">
-                <!-- 프로필 박스 -->
-
-                <div class="profile lg-hidden">
-                  <div class="profile-img avatar">
-                    <img
-                      src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                    />
-                  </div>
-                  <div class="profile-info">
-                    <div class="profile-type">Back</div>
-                    <p class="profile-nick">빡과장</p>
-                  </div>
-                </div>
-                <div class="web-box-header">
-                  <div class="one-credit-skill">
-                    <!-- 한줄 소개 -->
-                    <div class="one-liner">
-                      <p class="introduce-title">소개</p>
-                      <input type="text" maxlength="50" disabled />
-                    </div>
-
-                    <div class="credit-skill">
-                      <!-- 코워드 크레딧 -->
-                      <div class="credit lg-only">
-                        <p class="introduce-title">코워드 크레딧</p>
-
-                        <div class="credit-box">
-                          <div class="new-box">new</div>
-                          <p>123,456,789</p>
-                        </div>
+          <aside>
+            <nav class="nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4 nav-web">
+                    <p class="profile-mypage lg-only">마이페이지</p>
+                    <div class="profile lg-only">
+                      <div class="profile-img avatar">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />
                       </div>
-
-                      <!-- 내 기술 -->
-                      <div class="skill">
-                        <p class="introduce-title">나의 기술</p>
-                        <div class="skill-box">
-                          <div class="my-skill">Java Script</div>
-                          <div class="my-skill">CSS</div>
-                          <div class="my-skill">Java</div>
-                          <div class="my-skill">Spring</div>
-                          <div class="my-skill">Java Script</div>
-                          <div class="my-skill">CSS</div>
-                        </div>
+                      <div class="profile-info">
+                        <div class="profile-type">Back</div>
+                        <p class="profile-nick">빡과장</p>
                       </div>
                     </div>
-                  </div>
 
-                  <!-- 수상 이력 -->
-                  <div class="award">
-                    <p class="introduce-title">어워드</p>
-
-                    <div class="award-box">
-                      <div class="progress" data-percent="${rate}">
-                        <span class="progress-result"></span>
-                      </div>
-                      <table class="award-table">
-                        <tr class="award-table-num">
-                          <td>10</td>
-                          <td>5</td>
-                          <td class="lg-hidden">50%</td>
-                        </tr>
-                        <tr class="award-table-title">
-                          <td>참여 횟수</td>
-                          <td>당선작</td>
-                          <td class="lg-hidden">당선률</td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 관심 목록 -->
-                <div class="watchlist">
-                  <p class="introduce-title">관심 공모전</p>
-                  <div class="watchlist-box-group">
-                    <!-- section 단위로 카드 분리 -->
-                    <section class="watchlist-box">
-                      <i class="ic-bookmark-filled"></i>
-                      <a href="#">
-                        <div class="watchlist-info">
-                          <div class="watchlist-title">
-                            <p class="contest-title">금융상품몰 공모전</p>
-                            <div class="new-box">new</div>
-                          </div>
-                          <table class="condition">
-                            <tr class="condition-title">
-                              <td>남은 기간</td>
-                              <td>상금</td>
-                            </tr>
-                            <tr class="condition-content">
-                              <td>17일</td>
-                              <td>400만원</td>
-                            </tr>
-                          </table>
-                          <div class="goods">프리미엄</div>
-                          <div class="skills">HTML</div>
-                          <div class="skills">Java Script</div>
-                        </div>
-                        <div class="company">
-                          <div class="company-img avatar">
-                            <img
-                              src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                            />
-                          </div>
-                          신한은행
-                        </div></a
-                      >
-                    </section>
-
-                    <section class="watchlist-box">
-                      <i class="ic-bookmark-filled"></i>
-                      <a href="#">
-                        <div class="watchlist-info">
-                          <div class="watchlist-title">
-                            <p class="contest-title">금융상품몰 공모전</p>
-                            <div class="new-box">new</div>
-                          </div>
-                          <table class="condition">
-                            <tr class="condition-title">
-                              <td>남은 기간</td>
-                              <td>상금</td>
-                            </tr>
-                            <tr class="condition-content">
-                              <td>17일</td>
-                              <td>400만원</td>
-                            </tr>
-                          </table>
-                          <div class="goods">프리미엄</div>
-                          <div class="skills">HTML</div>
-                          <div class="skills">Java Script</div>
-                        </div>
-                        <div class="company">
-                          <div class="company-img avatar">
-                            <img
-                              src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                            />
-                          </div>
-                          신한은행
-                        </div></a
-                      >
-                    </section>
-
-                    <section class="watchlist-box">
-                      <i class="ic-bookmark-filled"></i>
-                      <a href="#">
-                        <div class="watchlist-info">
-                          <div class="watchlist-title">
-                            <p class="contest-title">금융상품몰 공모전</p>
-                            <div class="new-box">new</div>
-                          </div>
-                          <table class="condition">
-                            <tr class="condition-title">
-                              <td>남은 기간</td>
-                              <td>상금</td>
-                            </tr>
-                            <tr class="condition-content">
-                              <td>17일</td>
-                              <td>400만원</td>
-                            </tr>
-                          </table>
-                          <div class="goods">프리미엄</div>
-                          <div class="skills">HTML</div>
-                          <div class="skills">Java Script</div>
-                        </div>
-                        <div class="company">
-                          <div class="company-img avatar">
-                            <img
-                              src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                            />
-                          </div>
-                          신한은행
-                        </div></a
-                      >
-                    </section>
+                    <ul class="nav-bar">
+                      <li><a href="#">내 정보</a></li>
+                      <li><a href="#">공모전 관리</a></li>
+                      <li><a href="#">크레딧 인출</a></li>
+                      <li><a href="#">프로필 수정</a></li>
+                      <li><a href="#">회원 탈퇴</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
+            </nav>
+          </aside>
+
+          <!-- 본문 시작 -->
+          <main class="profile-mem">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="profile-wrapper">
+                    <!-- 프로필 박스 -->
+
+                    <div class="profile lg-hidden">
+                      <div class="profile-img avatar">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                        />
+                      </div>
+                      <div class="profile-info">
+                        <div class="profile-type">Back</div>
+                        <p class="profile-nick">빡과장</p>
+                      </div>
+                    </div>
+                    <div class="web-box-header">
+                      <div class="one-credit-skill">
+                        <!-- 한줄 소개 -->
+                        <div class="one-liner">
+                          <p class="introduce-title">소개</p>
+                          <input type="text" maxlength="50" disabled />
+                        </div>
+
+                        <div class="credit-skill">
+                          <!-- 코워드 크레딧 -->
+                          <div class="credit lg-only">
+                            <p class="introduce-title">코워드 크레딧</p>
+
+                            <div class="credit-box">
+                              <div class="credit-c">C</div>
+                              <p>123,456,789</p>
+                            </div>
+                          </div>
+
+                          <!-- 내 기술 -->
+                          <div class="skill">
+                            <p class="introduce-title">나의 기술</p>
+                            <div class="skill-box">
+                              <div class="my-skill">Java Script</div>
+                              <div class="my-skill">CSS</div>
+                              <div class="my-skill">Java</div>
+                              <div class="my-skill">Spring</div>
+                              <div class="my-skill">Java Script</div>
+                              <div class="my-skill">CSS</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- 수상 이력 -->
+                      <div class="award">
+                        <p class="introduce-title">어워드</p>
+
+                        <div class="award-box">
+                          <div class="progress" data-percent="${rate}">
+                            <span class="progress-result"></span>
+                          </div>
+                          <table class="award-table">
+                            <tr class="award-table-num">
+                              <td>10</td>
+                              <td>5</td>
+                              <td class="lg-hidden">50%</td>
+                            </tr>
+                            <tr class="award-table-title">
+                              <td>참여 횟수</td>
+                              <td>당선작</td>
+                              <td class="lg-hidden">당선률</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 관심 목록 -->
+                    <div class="watchlist">
+                      <p class="introduce-title">관심 공모전</p>
+                      <div class="row">
+                        <div class="watchlist-box-group col-sm-4 col-md-12">
+                          <div class="btn-prev lg-only">
+                            <i class="ic-chevron"></i>
+                          </div>
+                          <div class="btn-next lg-only">
+                            <i class="ic-chevron"></i>
+                          </div>
+
+                          <div class="col-sm-4 col-md-6 col-lg-3">
+                            <div class="contest-card">
+                              <div class="bookmark">
+                                <i class="ic-bookmark-filled"></i>
+                              </div>
+                              <div class="contest-card-first-line">
+                                <div><p>금융상품 공모전</p></div>
+                                <div class="tag-yellow">new</div>
+                              </div>
+                              <div class="contest-card-second-line">
+                                <div class="contest-card-second-line-first-box">
+                                  <div>
+                                    <p>남은기간</p>
+                                    <p>17일</p>
+                                  </div>
+                                  <div>
+                                    <p>상금</p>
+                                    <p>400만원</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="contest-card-second-line-second-box"
+                                >
+                                  <div class="first-box-article">
+                                    <div class="tag-purple">프리미엄</div>
+                                    <div class="tag-pink">css</div>
+                                    <div class="tag-pink">html</div>
+                                  </div>
+                                  <div class="sm-only second-box-article">
+                                    <div class="avatar-24">
+                                      <img
+                                        src="../assets/images/default-user-img.png"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div><p>신한은행</p></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-third-line sm-hidden">
+                                <div class="avatar-24">
+                                  <img
+                                    src="../assets/images/default-user-img.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <div><p>신한은행</p></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-4 col-md-6 col-lg-3">
+                            <div class="contest-card">
+                              <div class="bookmark">
+                                <i class="ic-bookmark-filled"></i>
+                              </div>
+                              <div class="contest-card-first-line">
+                                <div><p>금융상품 공모전</p></div>
+                                <div class="tag-yellow">new</div>
+                              </div>
+                              <div class="contest-card-second-line">
+                                <div class="contest-card-second-line-first-box">
+                                  <div>
+                                    <p>남은기간</p>
+                                    <p>17일</p>
+                                  </div>
+                                  <div>
+                                    <p>상금</p>
+                                    <p>400만원</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="contest-card-second-line-second-box"
+                                >
+                                  <div class="first-box-article">
+                                    <div class="tag-purple">프리미엄</div>
+                                    <div class="tag-pink">css</div>
+                                    <div class="tag-pink">html</div>
+                                  </div>
+                                  <div class="sm-only second-box-article">
+                                    <div class="avatar-24">
+                                      <img
+                                        src="../assets/images/default-user-img.png"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div><p>신한은행</p></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-third-line sm-hidden">
+                                <div class="avatar-24">
+                                  <img
+                                    src="../assets/images/default-user-img.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <div><p>신한은행</p></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </main>
         </div>
-      </main>
+      </div>
     </div>
     <!-- 푸터 -->
     <footer class="footer">
