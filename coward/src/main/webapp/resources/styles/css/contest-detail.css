@@ -1523,6 +1523,7 @@ i {
 .contest-briefing-summary-thumbnail img {
   height: 100%;
   width: 100%;
+
 }
 .contest-briefing-summary-info {
   display: flex;
@@ -1533,6 +1534,7 @@ i {
 }
 .contest-briefing-summary-info > div:not(:last-child) {
   margin-bottom: 5px;
+
 }
 .contest-briefing-summary-info-title {
   width: 100%;
