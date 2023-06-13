@@ -733,7 +733,6 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
-  margin-bottom: 24px;
 }
 
 .contest-slider {
@@ -1206,7 +1205,6 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
-  margin-top: 20px;
 }
 .banner-bottom-image img {
   display: block;
@@ -1649,11 +1647,12 @@ i {
   width: 58px;
   height: 58px;
   border-radius: 50%;
+  padding: 14px;
 }
 .home-services .service-image img {
   display: block;
   width: auto;
-  height: 28px;
+  height: 100%;
 }
 .home-services .service-name {
   font-size: 12px;
@@ -1665,22 +1664,22 @@ i {
 .home-rankings {
   margin-bottom: 24px;
 }
-.home-rankings .why-not-working:nth-of-type(2) .home-ranking-show .ranking-title {
+.home-rankings .home-ranking:nth-of-type(2) .home-ranking-show .ranking-title {
   background-color: #abdeff;
 }
-.home-rankings .why-not-working:not(:last-of-type) .home-ranking-show {
+.home-rankings .home-ranking:not(:last-of-type) .home-ranking-show {
   margin-bottom: 16px;
 }
-.home-rankings .why-not-working:nth-of-type(3) .home-ranking-show .ranking-title {
+.home-rankings .home-ranking:nth-of-type(3) .home-ranking-show .ranking-title {
   background-color: #ffe9a4;
 }
-.home-rankings .why-not-working:not(:last-of-type) .home-ranking-show {
+.home-rankings .home-ranking:not(:last-of-type) .home-ranking-show {
   margin-bottom: 16px;
 }
-.home-rankings .why-not-working:nth-of-type(4) .home-ranking-show .ranking-title {
+.home-rankings .home-ranking:nth-of-type(4) .home-ranking-show .ranking-title {
   background-color: #ffc1c9;
 }
-.home-rankings .why-not-working:not(:last-of-type) .home-ranking-show {
+.home-rankings .home-ranking:not(:last-of-type) .home-ranking-show {
   margin-bottom: 16px;
 }
 .home-rankings .home-ranking-show .ranking-title {
@@ -1720,4 +1719,20 @@ i {
 .home-rankings .home-ranking-show .ranking-list .ranking-item:not(:last-child) {
   padding-bottom: 10px;
   border-bottom: 1px solid #e0e2e7;
+}
+@media screen and (min-width: 768px) {
+  .home-services .service-image {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+  }
+  .home-services .service-name {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.footer {
+  margin-top: 0;
 }/*# sourceMappingURL=home.css.map */
