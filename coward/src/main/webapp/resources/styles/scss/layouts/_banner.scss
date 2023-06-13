@@ -1,115 +1,110 @@
-// .banner-top / .banner-middel / .banner-bottom
+// .banner-top / .banner-middle / .banner-bottom
 
-.banner {
-  &-top {
-    @include flexbox;
+.banner-top {
+  @include flexbox;
+  width: 100%;
+  height: 260px;
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  img {
+    display: block;
     width: 100%;
-    height: 260px;
-    margin-bottom: 24px;
-    overflow: hidden;
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    &-wrapper {
-      @include flexbox;
-      flex-direction: column-reverse;
-
-      .banner-info {
-        @include column-flexbox;
-
-        .main-title {
-          @include text-style(16);
-          text-align: center;
-          margin-bottom: 16px;
-        }
-      }
-
-      .banner-image {
-        @include flexbox;
-        width: auto;
-        height: 120px;
-        margin-bottom: 16px;
-
-        img {
-          display: block;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
+    height: 100%;
+    object-fit: cover;
   }
 
-  &-bottom {
-    a {
+  &-wrapper {
+    @include flexbox;
+    flex-direction: column-reverse;
+
+    .banner-info {
       @include column-flexbox;
-      width: 100%;
-      height: 160px;
-      background-color: #222121;
-      margin-top: 20px;
+
+      .main-title {
+        @include text-style(16);
+        text-align: center;
+        margin-bottom: 16px;
+      }
     }
 
-    &-image {
+    .banner-image {
+      @include flexbox;
+      width: auto;
+      height: 120px;
+      margin-bottom: 16px;
+
       img {
         display: block;
         width: 100%;
-        height: auto;
-      }
-    }
-
-    .ad-slogan {
-      @include text-style(16, $white);
-      margin-top: 16px;
-
-      .text-emphasis {
-        color: $yellow;
+        height: 100%;
       }
     }
   }
 
   @include responsive(T) {
-    &-top {
-      &-wrapper {
-        @include flexbox(between);
-        flex-direction: row;
+    &-wrapper {
+      @include flexbox(between);
+      flex-direction: row;
 
-        .banner-info {
-          align-items: start;
+      .banner-info {
+        align-items: start;
 
-          .main-title {
-            @include text-style(18);
-            margin-bottom: 4px;
-          }
-
-          .sub-title {
-            @include text-style(16, $secondary);
-            margin-bottom: 24px;
-          }
+        .main-title {
+          @include text-style(18);
+          margin-bottom: 4px;
         }
 
-        .banner-image {
-          height: 170px;
-          margin: 0;
+        .sub-title {
+          @include text-style(16, $secondary);
+          margin-bottom: 24px;
         }
+      }
+
+      .banner-image {
+        height: 170px;
+        margin: 0;
       }
     }
   }
 
   @include responsive(D) {
-    &-top {
-      &-wrapper {
-        .banner-image {
-          @include flexbox;
-          width: 360px;
-          height: 220px;
+    &-wrapper {
+      .banner-image {
+        @include flexbox;
+        width: 360px;
+        height: 220px;
 
-          padding-right: 60px;
-        }
+        padding-right: 60px;
       }
+    }
+  }
+}
+
+.banner-bottom {
+  a {
+    @include column-flexbox;
+    width: 100%;
+    height: 160px;
+    background-color: #222121;
+    margin-top: 20px;
+  }
+
+  &-image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .ad-slogan {
+    @include text-style(16, $white);
+    margin-top: 16px;
+    text-align: center;
+
+    .text-emphasis {
+      color: $yellow;
     }
   }
 }
