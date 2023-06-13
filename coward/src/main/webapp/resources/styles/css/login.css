@@ -1492,8 +1492,14 @@ i {
 .logo-img {
   width: 174.55px;
   height: 40px;
-  position: relative;
-  left: 75px;
+  margin-bottom: 15px;
+}
+
+.logo-p-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .p-email {
@@ -1503,8 +1509,6 @@ i {
   color: #000;
 }
 .p-first {
-  position: relative;
-  left: 53px;
   color: #000;
 }
 
@@ -1515,6 +1519,8 @@ i {
   color: #fff;
   font-weight: 700;
   background-color: #3aacf8;
+  position: relative;
+  top: 30px;
 }
 .login-box {
   width: 320px;
@@ -1652,7 +1658,7 @@ input[type=checkbox] {
 }
 
 .join {
-  color: #3aacf8;
+  color: #3f4150;
   font-size: 13px;
   position: relative;
   left: 50px;

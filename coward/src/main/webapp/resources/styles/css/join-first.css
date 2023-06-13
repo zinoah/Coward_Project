@@ -1116,7 +1116,10 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+  -o-object-fit: cover;
+     object-fit: cover;
+
 }
 .banner-top-wrapper {
   display: flex;
@@ -1214,6 +1217,7 @@ i {
   }
 }
 
+
 .banner-middle {
   display: flex;
   align-items: center;
@@ -1246,6 +1250,7 @@ i {
     line-height: 40px;
   }
 }
+
 
 /* banner-top html code
 
@@ -1492,8 +1497,14 @@ i {
 .logo-img {
   width: 174.55px;
   height: 40px;
-  position: relative;
-  left: 75px;
+  margin-bottom: 15px;
+}
+
+.logo-p-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .line1 {
@@ -1516,18 +1527,16 @@ i {
   left: 148px;
 }
 .p-first {
-  position: relative;
-  left: 53px;
   color: #000;
   padding-bottom: 70px;
 }
 
 .line-box {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .join {
-  color: #3aacf8;
+  color: #3f4150;
   font-size: 13px;
   position: relative;
   left: 65px;
@@ -1569,15 +1578,15 @@ i {
   width: 30px;
   height: 30px;
   position: relative;
-  top: 130px;
-  left: 63px;
+  top: 45px;
+  left: 65px;
 }
 
 .kakao-logo {
   width: 40px;
   height: 30px;
   position: relative;
-  top: 45px;
+  top: 130px;
   left: 25px;
 }
 

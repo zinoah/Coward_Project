@@ -81,7 +81,10 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+
 }
 
 /**
@@ -479,7 +482,10 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+  -o-object-fit: cover;
+     object-fit: cover;
+
 }
 
 .avatar-24 {
@@ -607,7 +613,14 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
+
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -1543,6 +1556,7 @@ i {
   top: 180px;
   left: 72px;
   color: #3f4150;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1200px) {

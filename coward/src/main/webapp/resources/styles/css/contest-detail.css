@@ -1522,7 +1522,8 @@ i {
 .contest-briefing-summary-thumbnail img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contest-briefing-summary-info-title {
   font-size: 22px;

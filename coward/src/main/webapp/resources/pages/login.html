@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,23 +9,24 @@
       src="https://kit.fontawesome.com/e5fede6c09.js"
       crossorigin="anonymous"
     ></script>
-    <title>Coward | 로그인창</title>
+    <title>Coward | 로그인</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
           <div class="login-wrapper">
-            <div class="lg-only">
-              <img src="../assets/images/login-bg.svg" class="login-bg-img" />
-            </div>
+            <img
+              src="../assets/images/login-bg.svg"
+              class="login-bg-img lg-only"
+            />
             <div class="login-box">
-              <a href="#">
-                <img src="../assets/images/home_logo.svg" class="logo-img" />
-              </a>
-              <br />
-              <br />
-              <p class="p-first">Coward에 오신 것을 환영합니다!</p>
+              <div class="logo-p-box">
+                <a href="#">
+                  <img src="../assets/images/home_logo.svg" class="logo-img" />
+                </a>
+                <p class="p-first">Coward에 오신 것을 환영합니다!</p>
+              </div>
               <br /><br />
               <p class="p-email">이메일</p>
               <div class="email-input-box">
@@ -42,10 +43,10 @@
                       class="fa-regular fa-eye-slash"
                     ></button>
                   </fieldset>
+                  <button class="login-btn">로그인</button>
                 </form>
                 <br />
               </div>
-              <button class="login-btn">로그인</button>
               <br /><br />
               <div class="saveid-findpw-wrapper">
                 <div class="save-id-wrapper">

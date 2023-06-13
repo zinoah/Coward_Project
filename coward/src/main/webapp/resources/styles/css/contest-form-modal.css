@@ -1116,7 +1116,10 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+  -o-object-fit: cover;
+     object-fit: cover;
+
 }
 .banner-top-wrapper {
   display: flex;
@@ -1214,6 +1217,7 @@ i {
   }
 }
 
+
 .banner-middle {
   display: flex;
   align-items: center;
@@ -1246,6 +1250,7 @@ i {
     line-height: 40px;
   }
 }
+
 
 /* banner-top html code
 
