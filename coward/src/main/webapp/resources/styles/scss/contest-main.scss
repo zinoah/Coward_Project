@@ -26,7 +26,7 @@
 
   .title-wrapper {
     h1 {
-      @include text-style-24;
+      @include text-style(24);
       margin-bottom: 24px;
     }
   }

@@ -92,22 +92,19 @@
       </div>
     </nav>
 
-    <section class="banner"></section>
+    <div class="banner-top"></div>
 
     <main class="contest-briefing">
       <div class="container">
         <div class="row lg-hidden">
           <div class="col-sm-4">
             <div class="contest-briefing-summary-wrapper">
-              <div class="contest-briefing-summary-bookmark">
-                <i class="ic-bookmark-filled"></i>
-              </div>
               <div class="contest-briefing-summary-thumbnail">
                 <img src="../assets/images/contest-thumbnail.svg" alt="" />
               </div>
               <div class="contest-briefing-summary-info">
                 <div class="contest-briefing-summary-info-title">
-                  <p>‘제주투어’ 관광브랜드 웹사이트 제작 공모전</p>
+                  <span>‘제주투어’ 관광브랜드 웹사이트 제작 공모전</span>
                 </div>
                 <div class="contest-briefing-summary-info-name">
                   <div class="avatar-24">
@@ -116,7 +113,7 @@
                     </div>
                   </div>
                   <div>
-                    <p>엔이에스티 제주투어</p>
+                    <span>엔이에스티 제주투어</span>
                   </div>
                 </div>
                 <div class="contest-briefing-summary-info-tag">
@@ -125,17 +122,35 @@
                   <div class="tag-pink">JavaScript</div>
                 </div>
                 <div class="contest-briefing-summary-info-detail">
-                  <div>
-                    <div></div>
-                    <div></div>
+                  <div class="contest-briefing-summary-info-detail-item">
+                    <div
+                      class="contest-briefing-summary-info-detail-item-title"
+                    >
+                      <span>공모 기간</span>
+                    </div>
+                    <div class="contest-briefing-summary-info-detail-item-info">
+                      <span>21일 남음</span>
+                    </div>
                   </div>
-                  <div>
-                    <div></div>
-                    <div></div>
+                  <div class="contest-briefing-summary-info-detail-item">
+                    <div
+                      class="contest-briefing-summary-info-detail-item-title"
+                    >
+                      <span>북마크 수</span>
+                    </div>
+                    <div class="contest-briefing-summary-info-detail-item-info">
+                      <span>23개</span>
+                    </div>
                   </div>
-                  <div>
-                    <div></div>
-                    <div></div>
+                  <div class="contest-briefing-summary-info-detail-item">
+                    <div
+                      class="contest-briefing-summary-info-detail-item-title"
+                    >
+                      <span>진행상태</span>
+                    </div>
+                    <div class="contest-briefing-summary-info-detail-item-info">
+                      <span>진행중</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -149,18 +164,18 @@
               <div class="contest-briefing-reward-info-box">
                 <div>
                   <div class="contest-briefing-reward-info-box-title">
-                    <p>총상금</p>
+                    <span>총상금</span>
                   </div>
                   <div class="contest-briefing-reward-info-box-detail">
-                    <p>500 만원</p>
+                    <span>500 만원</span>
                   </div>
                 </div>
                 <div>
                   <div class="contest-briefing-reward-info-box-title">
-                    <p>지원자</p>
+                    <span>지원자</span>
                   </div>
                   <div class="contest-briefing-reward-info-box-detail">
-                    <p>5,000명</p>
+                    <span>5,000명</span>
                   </div>
                 </div>
               </div>
@@ -175,6 +190,12 @@
               </div>
               <div>
                 <button>
+                  <i class="ic-bookmark-filled"></i>
+                </button>
+              </div>
+              <div>
+                <button>
+                  <!-- FIXME: 아이콘 없어서 우선 이미지 가져다씀 -->
                   <img src="../assets/images/link-icon.svg" alt="" />
                 </button>
               </div>
@@ -195,14 +216,10 @@
                 <p>공모 주제</p>
               </div>
               <div class="contest-briefing-subject-wrapper-detail">
-                <!-- FIXME: 임시적으로 pre 태그에 넣어서 화면단에서 가로스크롤 발생  -->
-                <pre>
-- 조직이해, 문서작성, 직장생활 가이드
-
-- 반도체 개념과 소자, 공정- 반도체 공정, 생산·품질, 안전·보건, 반도체 심화
-
-- 반도체 리포트, 설계 세미나, 팀 프로젝트
-                </pre>
+                - 조직이해, 문서작성, 직장생활 가이드<br /><br />
+                - 반도체 개념과 소자, 공정- 반도체 공정, 생산·품질, 안전·보건,
+                반도체 심화<br /><br />
+                - 반도체 리포트, 설계 세미나, 팀 프로젝트
               </div>
             </div>
           </div>
@@ -214,14 +231,13 @@
                 <p>지원 자격</p>
               </div>
               <div class="contest-briefing-subject-wrapper-detail">
-                <!-- FIXME: 임시적으로 pre 태그에 넣어서 화면단에서 가로스크롤 발생  -->
-                <pre>
-- 졸업까지 남은 수업연한 2년 이하인 대학생(휴학생, 졸업유예, 교육 기간 내 졸업예정자 포함)
-
-- 내일배움카드 보유 또는 신규 발급이 가능한 대학생(기존 보유자의 경우 잔액 1원 이상)
-
-- 기존의 K-Digital Training 과정 수강이력이 없는 분
-                </pre>
+                - 졸업까지 남은 수업연한 2년 이하인 대학생(휴학생, 졸업유예,
+                교육 기간 내 졸업예정자 포함)
+                <br /><br />
+                - 내일배움카드 보유 또는 신규 발급이 가능한 대학생(기존 보유자의
+                경우 잔액 1원 이상)
+                <br /><br />
+                - 기존의 K-Digital Training 과정 수강이력이 없는 분
               </div>
             </div>
           </div>
@@ -233,9 +249,7 @@
                 <p>공모 일정</p>
               </div>
               <div class="contest-briefing-subject-wrapper-detail">
-                <pre>
-5월 3일 ~ 5월 22일
-                </pre>
+                5월 3일 ~ 5월 22일
               </div>
             </div>
           </div>
@@ -247,14 +261,11 @@
                 <p>시상 내역</p>
               </div>
               <div class="contest-briefing-subject-wrapper-detail">
-                <!-- FIXME: 임시적으로 pre 태그에 넣어서 화면단에서 가로스크롤 발생  -->
-                <pre>
-- SK하이닉스 전·현직 전문 강사의 고품질 반도체 직무교육
-
-- 이력서 클리닉, 취업 컨설팅 등 단계별 취업지원 프로그램
-
-- 월 최대 316,000원의 교육훈련비 지급
-                </pre>
+                - SK하이닉스 전·현직 전문 강사의 고품질 반도체 직무교육
+                <br /><br />
+                - 이력서 클리닉, 취업 컨설팅 등 단계별 취업지원 프로그램
+                <br /><br />
+                - 월 최대 316,000원의 교육훈련비 지급
               </div>
             </div>
           </div>

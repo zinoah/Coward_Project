@@ -30,7 +30,7 @@
 
       div {
         &:nth-child(1) {
-          @include text-style-18;
+          @include text-style(18);
           font-weight: 500;
         }
 
@@ -51,7 +51,7 @@
 
           span {
             &:nth-child(1) {
-              @include text-style-12;
+              @include text-style(12);
               margin-bottom: 5px;
             }
 
@@ -80,7 +80,7 @@
           margin-left: 10px;
         }
         span {
-          @include text-style-12;
+          @include text-style(12);
         }
       }
     }
@@ -93,7 +93,7 @@
         margin: 10px 10px 10px 0;
       }
       p {
-        @include text-style-12;
+        @include text-style(12);
       }
     }
 

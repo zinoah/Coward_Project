@@ -17,7 +17,7 @@
     }
 
     &-title {
-      @include text-style-24;
+      @include text-style(24);
     }
     &-reward {
       display: flex;
@@ -57,7 +57,7 @@
         font-weight: 500;
       }
       &:nth-child(2) {
-        @include text-style-14;
+        @include text-style(14);
       }
     }
   }
@@ -90,7 +90,7 @@
       }
 
       &:nth-child(2) {
-        @include text-style-14;
+        @include text-style(14);
       }
     }
   }
@@ -112,7 +112,7 @@
       }
 
       &:nth-child(2) {
-        @include text-style-14;
+        @include text-style(14);
       }
     }
   }
@@ -127,7 +127,7 @@
       }
     }
     p {
-      @include text-style-12;
+      @include text-style(12);
     }
 
     button {
