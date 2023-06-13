@@ -1,0 +1,42 @@
+@import "./main";
+
+.join-second-wrapper {
+  @include flexbox;
+  height: 100vh;
+}
+
+.join-second-box {
+  border: 1px solid black;
+  width: 320px;
+  height: 560px;
+}
+
+.logo-img {
+  width: 174.55px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.logo-welcome-box {
+  @include flexbox;
+  flex-direction: column;
+}
+
+@include responsive(D) {
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
+  }
+
+  .join-second-wrapper {
+    @include flexbox(between);
+  }
+
+  .join-second-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}

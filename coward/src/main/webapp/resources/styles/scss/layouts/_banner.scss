@@ -81,6 +81,7 @@
   }
 }
 
+
 .banner-bottom {
   a {
     @include column-flexbox;
@@ -105,6 +106,35 @@
 
     .text-emphasis {
       color: $yellow;
+    }
+  }
+}
+
+
+.banner-middle {
+  @include flexbox;
+  height: 150px;
+  margin-bottom: 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: 90% 0;
+  background-size: 240px;
+
+  &-title {
+    @include text-style-24;
+    font-weight: bold;
+    color: $white;
+  }
+
+  @include responsive(T) {
+    @include flexbox(center, start);
+    padding: 50px 80px;
+
+    &-title {
+      font-size: 30px;
+      line-height: 40px;
     }
   }
 }

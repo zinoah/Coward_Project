@@ -8,8 +8,12 @@
 .logo-img {
   width: 174.55px;
   height: 40px;
-  position: relative;
-  left: 75px;
+  margin-bottom: 15px;
+}
+
+.logo-p-box {
+  @include flexbox;
+  flex-direction: column;
 }
 
 .p {
@@ -22,8 +26,6 @@
   }
 
   &-first {
-    position: relative;
-    left: 53px;
     color: $black;
   }
 }
@@ -36,6 +38,8 @@
     color: $white;
     font-weight: 700;
     background-color: $blue;
+    position: relative;
+    top: 30px;
   }
   &-box {
     width: 320px;
@@ -185,7 +189,7 @@ input[type="checkbox"] {
 }
 
 .join {
-  color: $blue;
+  color: $primary;
   font-size: 13px;
   position: relative;
   left: 50px;
