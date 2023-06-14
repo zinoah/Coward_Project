@@ -46,11 +46,11 @@ const contestSlider = tns({
 });
 
 // 신규 공모전 슬라이더
-const newContestSlider = tns({
-  container: ".contest-slider.is-new",
-  controlsContainer: ".slider-controls.is-new",
-  ...contestSliderBase,
-});
+// const newContestSlider = tns({
+//   container: ".contest-slider.is-new",
+//   controlsContainer: ".slider-controls.is-new",
+//   ...contestSliderBase,
+// });
 
 // gallerycard hover시 이벤트
 const sliderCard = document.querySelectorAll(".contest-slider-card");
