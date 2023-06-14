@@ -81,8 +81,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -480,8 +479,7 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .avatar-24 {
@@ -609,12 +607,7 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.form-select::-moz-placeholder, .form-input::-moz-placeholder {
-  color: #b2b3b9;
+  appearance: none;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -733,7 +726,6 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
-
 }
 
 .contest-slider {
@@ -758,10 +750,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-
-  -o-object-fit: cover;
-     object-fit: cover;
-
+  object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1126,8 +1115,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1208,7 +1196,6 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
-
 }
 .banner-bottom-image img {
   display: block;
@@ -1260,56 +1247,6 @@ i {
   }
 }
 
-/* banner-top html code
-
-<div class="banner-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="banner-top-wrapper">
-              <div class="banner-info">
-                <h3 class="main-title">
-                  Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트!
-                </h3>
-                <p class="sub-title sm-hidden">
-                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
-              </div>
-              <div class="banner-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                  aria-hidden
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
-/* banner-top scss 페이지 별 색상 변경 코드
-.banner {
-  &-top {
-    background-color: #ffefc5;
-
-    &-wrapper {
-      .banner-info {
-        .banner-button {
-          background-color: $yellow;
-
-          &:hover {
-            background-color: #fcd869;
-          }
-        }
-      }
-    }
-  }
-}
-*/
 .nav {
   background-color: #fff;
   margin-bottom: 10px;
@@ -1360,11 +1297,6 @@ i {
     border: 1px solid #e0e2e7;
     border-radius: 8px;
     padding: 10px 16px;
-  }
-  .nav .nav-search-input::-moz-placeholder {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.005em;
   }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
@@ -1517,14 +1449,368 @@ i {
   list-style-type: none;
 }
 
+/******* 모바일은 여기까지 복사해가면 됩니답 *******/
 .introduce-title {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  margin-bottom: 15px;
   font-weight: 700;
   padding: 10px;
-  border-bottom: 1px solid #e0e2e7;
 }
 
-/******* 모바일은 여기까지 복사해가면 됩니답 *******//*# sourceMappingURL=edit-profile-mem.css.map */
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  margin: 15px;
+}
+.profile-img {
+  width: 115px;
+  height: 115px;
+  margin: 8px;
+}
+.profile-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.ic-camera {
+  font-size: 13px;
+  color: #8c8d96;
+}
+
+#nickName {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+}
+
+.stack-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 30%;
+  height: 38px;
+  border-radius: 10px;
+  color: #028ae2;
+  font-weight: 600;
+  background-color: #abdeff;
+}
+.stack-btn input[type=radio] {
+  display: none;
+}
+.stack-btn label {
+  text-align: center;
+  width: 100%;
+  line-height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.stack-btn input[type=radio]:checked + label {
+  background-color: #028ae2;
+  color: white;
+}
+.stack-btn input[type=radio]:hover:not(:checked) + label {
+  background-color: #c9eaff;
+}
+.stack-btn input[type=radio]:active + label {
+  background-color: #3aacf8;
+  color: white;
+}
+.stack-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.one-liner {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 170px;
+  padding: 15px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  resize: none;
+}
+
+.skill-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: 80px;
+  margin-bottom: 40px;
+  overflow-y: scroll;
+}
+.skill-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  height: 30px;
+  margin: 0 10px 10px 0;
+  background-color: #e0e2e7;
+  color: #8c8d96;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.skill-box input[type=checkbox] {
+  display: none;
+}
+.skill-box label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  padding: 12px;
+  line-height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.skill-box input[type=checkbox]:hover + label {
+  background-color: #ffeaa7;
+  color: white;
+}
+.skill-box input[type=checkbox]:active + label {
+  background-color: #ffd963;
+  color: white;
+}
+.skill-box input[type=checkbox]:checked + label {
+  background-color: #ffcc29;
+  color: white;
+}
+
+#submit-btn {
+  width: 100px;
+}
+
+.submit-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  /* 배너 */
+  .banner-top {
+    margin: 0;
+  }
+  /* 네비게이션 바 */
+  .nav-bar {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    padding: 15px 0;
+  }
+  /* 소제목 스타일 */
+  .introduce-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+  .profile-user-img {
+    width: 115px;
+    height: 115px;
+    margin: 8px;
+  }
+  .edit-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  .ic-camera {
+    font-size: 13px;
+    color: #8c8d96;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .empty-box {
+    width: 100%;
+    height: 700px;
+  }
+  .full {
+    position: relative;
+  }
+  .web-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1040px;
+    height: 715px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+  }
+  /* 네비게이션 바 */
+  .nav {
+    width: 100%;
+    background-color: #f8f8f8;
+  }
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 14px 0;
+  }
+  .nav li {
+    padding: 5px 0 5px 10px;
+    text-align: left;
+  }
+  .nav-web {
+    height: 603px;
+  }
+  /* 메인과 위치 맞추기 위해 */
+  aside {
+    height: 613px;
+  }
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    border-bottom: 1px solid #8c8d96;
+  }
+  .profile-wrapper {
+    padding: 15px 30px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .profile-img {
+    width: 125px;
+    height: 125px;
+    margin: 30px 0 10px;
+  }
+  .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+  .profile-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 13px;
+    padding: 3px;
+    margin-right: 6px;
+    border: 1px solid #3aacf8;
+    border-radius: 5px;
+    font-size: 6px;
+    color: #3aacf8;
+  }
+  .profile-nick {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #3f4150;
+  }
+  .profile-mypage {
+    width: 125px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    border-bottom: 1px solid #8c8d96;
+  }
+  .profile-edit {
+    margin: 10px;
+  }
+  /* 메인과 크기 맞추기 위해 */
+  .edit-profile {
+    width: 843.33px;
+    height: 695.33px;
+    padding: 15px 30px;
+    margin: 0 10px;
+    border: 1px solid #e0e2e7;
+    border-radius: 10px;
+  }
+  .edit-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 22px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  .little-title {
+    border-bottom: 1px solid #e0e2e7;
+  }
+  .skill-group {
+    height: 170px;
+    margin: 0;
+  }
+  #nickName,
+  .stack-box,
+  .one-liner-box,
+  .skill-group-box {
+    width: 350px;
+  }
+  .nick-stack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  .one-skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+}/*# sourceMappingURL=edit-profile-mem.css.map */
