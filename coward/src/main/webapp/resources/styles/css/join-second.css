@@ -725,6 +725,8 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
+  margin-bottom: 24px;
+
 }
 
 .contest-slider {
@@ -749,7 +751,9 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1195,6 +1199,8 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
+  margin-top: 20px;
+
 }
 .banner-bottom-image img {
   display: block;
@@ -1245,6 +1251,58 @@ i {
     line-height: 40px;
   }
 }
+
+
+/* banner-top html code
+
+<div class="banner-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-top-wrapper">
+              <div class="banner-info">
+                <h3 class="main-title">
+                  Coward를 사랑해주시는 <br class="sm-only" />
+                  여러분들을 위한 이벤트!
+                </h3>
+                <p class="sub-title sm-hidden">
+                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                </p>
+                <a href="#" class="banner-button btn-32 btn-primary"
+                  >더 알아보기</a
+                >
+              </div>
+              <div class="banner-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/* banner-top scss 페이지 별 색상 변경 코드
+.banner {
+  &-top {
+    background-color: #ffefc5;
+
+    &-wrapper {
+      .banner-info {
+        .banner-button {
+          background-color: $yellow;
+
+          &:hover {
+            background-color: #fcd869;
+          }
+        }
+      }
+    }
+  }
+}
+*/
 
 .nav {
   background-color: #fff;
@@ -1437,9 +1495,7 @@ i {
   justify-content: center;
   height: 100vh;
 }
-
 .join-second-box {
-  border: 1px solid black;
   width: 320px;
   height: 560px;
 }
@@ -1449,12 +1505,116 @@ i {
   height: 40px;
   margin-bottom: 15px;
 }
-
-.logo-welcome-box {
+.logo-info-box {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.mem-type-box {
+  margin-bottom: 10px;
+}
+.mem-type {
+  font-size: 16.5px;
+}
+
+.star {
+  color: #f86d7d;
+  font-size: larger;
+}
+
+.type {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.type-explanation {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  color: #8c8d96;
+}
+.type-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.type-explanation-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-basis: 80%;
+}
+
+.chk-img-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 20%;
+  cursor: pointer;
+}
+.chk-img-2 {
+  flex-basis: 10%;
+  cursor: pointer;
+}
+.chk-explanation {
+  flex-basis: 80%;
+}
+
+.line {
+  border: 0.5px solid #8c8d96;
+  margin-bottom: 20px;
+}
+
+.all-agree {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.all-agree-text {
+  flex-basis: 90%;
+  padding-left: 10px;
+  font-weight: 550;
+}
+
+.essential-chk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.essential-chk-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #3f4150;
+  flex-basis: 90%;
+}
+
+.terms {
+  flex-basis: 10%;
+}
+
+.next-btn {
+  width: 100%;
+  height: 45px;
+  background-color: #b2b3b9;
+  color: #fff;
+  font-weight: 700px;
+  margin-top: 15px;
 }
 
 @media screen and (min-width: 1200px) {

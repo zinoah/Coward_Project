@@ -18,12 +18,12 @@
 
 .line {
   &1 {
-    color: $tertiary;
+    border: 0.5px solid $secondary;
     width: 135px;
   }
 
   &2 {
-    color: $tertiary;
+    border: 0.5px solid $secondary;
     width: 135px;
     position: relative;
     bottom: 2px;

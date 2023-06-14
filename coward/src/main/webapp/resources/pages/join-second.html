@@ -17,91 +17,103 @@
               class="login-bg-img lg-only"
             />
             <div class="join-second-box">
-              <div class="logo-welcome-box">
+              <div class="logo-info-box">
                 <a href="#">
                   <img src="../assets/images/home_logo.svg" class="logo-img" />
                 </a>
-                <p class="welcome">Coward에 오신 것을 환영합니다!</p>
+                <span class="info">
+                  다음 정보들을 입력 후 완료 버튼을 눌러주세요!
+                </span>
               </div>
-              <div class="mem-type-box">
-                <span class="mem-type">회원 타입 선택</span>
-                <span class="star">*</span>
-              </div>
-              <div class="mem-type-single">
-                <div class="chk-img1">
-                  <img
-                    src="../assets/images/gray-check-circle.svg"
-                    class="gray-check"
-                  />
+              <form action="#">
+                <div class="mem-type-box">
+                  <span class="mem-type">회원 타입 선택</span>
+                  <span class="star">*</span>
                 </div>
-                <div class="single-explanation-box">
-                  <span class="single">개인</span>
-                  <span class="single-explanation"
-                    >공모전을 참가하려면 개인 회원으로 시작하세요!</span
-                  >
-                </div>
-              </div>
-              <div class="mem-type-company">
-                <div class="chk-img2">
-                  <img
-                    src="../assets/images/gray-check-circle.svg"
-                    class="gray-check2"
-                  />
-                </div>
-                <div class="single-explanation-box">
-                  <span class="company">기업</span>
-                  <span class="company-explanation"
-                    >공모전을 개최하려면 기업 회원으로 시작하세요!</span
-                  >
-                </div>
-              </div>
-              <hr class="line" />
-              <div class="all-agree-box">
-                <div class="chk-img3">
-                  <img
-                    src="../assets/images/gray-check-circle.svg"
-                    class="gray-check3"
-                  />
-                </div>
-                <span class="all-agree">모두 동의하기</span>
-                <div class="essential-check1">
-                  <div class="chk-img4">
+                <div class="type-box" id="single-box">
+                  <div class="chk-img-1">
                     <img
                       src="../assets/images/gray-check-circle.svg"
-                      class="gray-check4"
+                      class="gray-chk"
                     />
                   </div>
-                  <span class="check-explanation1"
-                    >회원가입 및 이용 약관 동의 (필수)</span
-                  >
-                  <span class="check-explanation1-1">약관 보기</span>
+                  <div class="type-explanation-box">
+                    <span class="type">개인</span>
+                    <span class="type-explanation"
+                      >공모전을 참가하려면 개인 회원으로 시작하세요!</span
+                    >
+                  </div>
                 </div>
-                <div class="essential-check2">
-                  <div class="chk-img5">
+                <div class="type-box" id="company-box">
+                  <div class="chk-img-1">
                     <img
                       src="../assets/images/gray-check-circle.svg"
-                      class="gray-check5"
+                      class="gray-chk-2"
                     />
                   </div>
-                  <span class="check-explanation2"
-                    >개인정보 이용 약관 동의 (필수)</span
-                  >
-                  <span class="check-explanation2-1">약관 보기</span>
-                </div>
-                <div class="essential-check3">
-                  <div class="chk-img6">
-                    <img
-                      src="../assets/images/gray-check-circle.svg"
-                      class="gray-check6"
-                    />
+                  <div class="type-explanation-box">
+                    <span class="type">기업</span>
+                    <span class="type-explanation"
+                      >공모전을 개최하려면 기업 회원으로 시작하세요!</span
+                    >
                   </div>
-                  <span class="check-explanation3"
-                    >마케팅 정보 수집 동의 (선택)</span
-                  >
-                  <span class="check-explanation3-1">약관 보기</span>
                 </div>
-                <div class="btn-secondary btn-48">다음</div>
-              </div>
+                <hr class="line" />
+                <div class="all-agree-wrapper">
+                  <div class="all-agree">
+                    <div class="chk-img-2">
+                      <img
+                        src="../assets/images/gray-check-circle.svg"
+                        class="gray-chk-3"
+                      />
+                    </div>
+                    <span class="all-agree-text">모두 동의하기</span>
+                  </div>
+                  <div class="essential-chk">
+                    <div class="chk-img-2">
+                      <img
+                        src="../assets/images/gray-check-circle.svg"
+                        class="gray-chk-4"
+                      />
+                    </div>
+                    <div class="essential-chk-content">
+                      <span class="chk-explanation"
+                        >회원가입 및 이용 약관 동의 (필수)</span
+                      >
+                      <a href="#"><span class="terms">약관 보기</span></a>
+                    </div>
+                  </div>
+                  <div class="essential-chk">
+                    <div class="chk-img-2">
+                      <img
+                        src="../assets/images/gray-check-circle.svg"
+                        class="gray-chk5"
+                      />
+                    </div>
+                    <div class="essential-chk-content">
+                      <span class="chk-explanation"
+                        >개인정보 이용 약관 동의 (필수)</span
+                      >
+                      <a href="#"><span class="terms">약관 보기</span></a>
+                    </div>
+                  </div>
+                  <div class="essential-chk">
+                    <div class="chk-img-2">
+                      <img
+                        src="../assets/images/gray-check-circle.svg"
+                        class="gray-chk6"
+                      />
+                    </div>
+                    <div class="essential-chk-content">
+                      <span class="chk-explanation"
+                        >마케팅 정보 수집 동의 (선택)</span
+                      >
+                      <a href="#"><span class="terms">약관 보기</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-secondary btn-48 next-btn">다음</div>
+              </form>
             </div>
           </div>
         </div>
