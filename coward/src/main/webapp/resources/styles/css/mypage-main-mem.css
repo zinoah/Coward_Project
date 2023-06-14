@@ -1513,7 +1513,7 @@ i {
   text-align: center;
 }
 
-/******** 마이페이지 공통 코드 ********/
+/******** 여기까지 마이페이지 공통 코드 ********/
 /* 프로필 사진 + 백 + 닉네임 */
 .profile {
   display: flex;
@@ -1521,6 +1521,7 @@ i {
   align-items: center;
   justify-content: center;
   margin: 15px;
+  /* 타입과 이름 가로 배치 */
 }
 .profile-img {
   width: 85px;
@@ -1603,12 +1604,12 @@ i {
 }
 
 /* 내 기술 */
+/* 스크롤 줘야 할 거 같은데 가로? 세로? */
 .skill-box {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
   width: 100%;
   padding: 16px;
   margin-bottom: 16px;
@@ -1616,6 +1617,7 @@ i {
   border-radius: 10px;
 }
 
+/* 3의 배수로 light-blue 쓰자는 의견 */
 .my-skill {
   display: inline-block;
   width: auto;
@@ -1632,6 +1634,7 @@ i {
 }
 
 /* 관심 목록 */
+/* 반응형 시 가로배치 위해*/
 .watchlist-box-group {
   display: flex;
   align-items: flex-start;
@@ -1640,105 +1643,11 @@ i {
   overflow: hidden;
 }
 
-.contest-card {
-  margin-bottom: 20px;
-  height: 150px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-.contest-card .bookmark {
-  position: absolute;
-  right: 7%;
-  top: -5px;
-  font-size: 25px;
-}
-.contest-card .bookmark i {
-  color: #b2b3b9;
-}
-.contest-card:nth-child(1) {
-  margin-top: 10px;
-}
-.contest-card-first-line {
-  width: 100%;
-  flex-basis: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.contest-card-first-line div {
-  margin-right: 10px;
-}
-.contest-card-first-line div:nth-child(1) {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-}
-.contest-card-second-line {
-  width: 100%;
-  flex-basis: 70%;
-}
-.contest-card-second-line .first-box-article div {
-  margin-right: 5px;
-}
-.contest-card-second-line .second-box-article {
-  display: flex;
-  align-items: center;
-}
-.contest-card-second-line .second-box-article div {
-  margin-left: 10px;
-}
-.contest-card-second-line .second-box-article p {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-}
-.contest-card-second-line-first-box {
-  margin-top: 10px;
-  display: flex;
-}
-.contest-card-second-line-first-box div {
-  margin-right: 30px;
-}
-.contest-card-second-line-first-box div p:nth-child(1) {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  margin-bottom: 5px;
-}
-.contest-card-second-line-first-box div p:nth-child(2) {
-  font-weight: 500;
-}
-.contest-card-second-line-second-box {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.contest-card-third-line {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #e0e2e7;
-}
-.contest-card-third-line div {
-  margin: 10px 10px 10px 0;
-}
-.contest-card-third-line p {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-}
-
 /***** 태블릿 *****/
 @media screen and (min-width: 768px) {
-  /* 배너 */
-  .banner img {
-    width: 100%;
-    padding-top: 10px;
+  /* 마이페이지의 경우 nav바랑 떨어져서 margin 없애줌 */
+  .banner-top {
+    margin: 0;
   }
   /* 네비게이션 바 */
   .nav-bar {
@@ -1795,47 +1704,29 @@ i {
     line-height: 16px;
     letter-spacing: -0.005em;
   }
-  .contest-card {
-    width: 100%;
-    height: 250px;
-  }
-  .contest-card-first-line {
-    flex-basis: 20%;
-  }
-  .contest-card-second-line {
-    flex-basis: 70%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .contest-card-third-line {
-    flex-basis: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
+  /* 당선률 프로그래스 바 들어갈 공간 */
+  /* JS할 때 같이 진행 */
   .progress {
     position: relative;
     width: 135px;
     height: 135px;
     border-radius: 50%;
     margin: 15px 0 15px 65px;
-    background: #f8f8f8;
+    background: #3aacf8;
   }
 }
 /***** 웹 *****/
 @media screen and (min-width: 1200px) {
-  .banner {
-    height: 180px;
-  }
+  /* 헤더와 푸터 사이의 거리*/
   .empty-box {
     width: 100%;
     height: 700px;
   }
+  /* body에 relative 줄 경우 배치가 이상해져서 div 하나 생성 */
   .full {
     position: relative;
   }
+  /* 페이지 전환 시 자연스럽기 위해 크기 고정*/
   .web-box {
     display: flex;
     align-items: center;
@@ -1845,7 +1736,7 @@ i {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1040px;
-    height: 700px;
+    height: 715px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     background-color: #f8f8f8;
@@ -1853,6 +1744,7 @@ i {
   .nav {
     width: 100%;
     background-color: #f8f8f8;
+    /* 높이 안주면 가운데 배치 됨 */
   }
   .nav-bar {
     display: flex;
@@ -1866,7 +1758,6 @@ i {
     text-align: left;
   }
   .nav-web {
-    width: 180px;
     height: 603px;
   }
   .profile {
@@ -1875,7 +1766,7 @@ i {
     border-bottom: 1px solid #8c8d96;
   }
   .profile-wrapper {
-    padding: 15px 30px;
+    padding: 15px 30px 5px;
     border: 1px solid #e0e2e7;
     border-radius: 10px;
   }
@@ -1907,6 +1798,7 @@ i {
     height: 160px;
     background-color: #f8f8f8;
   }
+  /* 어워드 */
   .award {
     width: 220px;
     height: 338px;
@@ -1928,14 +1820,6 @@ i {
     margin: 30px 0 10px 0;
     background-color: #3aacf8;
   }
-  .skill {
-    width: 260px;
-  }
-  .skill-box {
-    height: 100px;
-    padding: 10px;
-    margin: 0;
-  }
   .credit {
     width: 260px;
   }
@@ -1956,23 +1840,33 @@ i {
     width: 28px;
     height: 17px;
     background-color: #abdeff;
-    border: none;
     border-radius: 10px;
     margin-right: 8px;
     font-size: 10px;
     font-weight: 700;
     color: white;
   }
-  .credit p {
+  .credit-amount {
     font-size: 20px;
     font-weight: 600;
   }
+  /* 내 기술 */
+  .skill {
+    width: 260px;
+  }
+  .skill-box {
+    height: 100px;
+    padding: 10px;
+    margin: 0;
+  }
+  /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 550px;
   }
+  /* 소개와 creadit-skill 세로 정렬 위해 */
   .one-credit-skill {
     display: flex;
     flex-direction: column;
@@ -1981,6 +1875,7 @@ i {
     width: 550px;
     margin-right: 12px;
   }
+  /* 어워드와 one-credit-skill 가로 정렬 위해 */
   .web-box-header {
     display: flex;
     align-items: center;
@@ -1995,7 +1890,7 @@ i {
     width: 35px;
     height: 35px;
     position: absolute;
-    transform: translateX(-5px) translateY(100px);
+    transform: translateX(-10px) translateY(120px);
     z-index: 5;
     border-radius: 50%;
     background-color: white;
@@ -2003,7 +1898,7 @@ i {
     transition: 0.5s;
   }
   .btn-prev:hover {
-    transform: translateX(-15px) translateY(100px);
+    transform: translateX(-20px) translateY(120px);
   }
   .btn-prev i {
     font-size: 15px;
@@ -2017,7 +1912,7 @@ i {
     width: 35px;
     height: 35px;
     position: absolute;
-    transform: translateX(755px) translateY(100px);
+    transform: translateX(765px) translateY(120px);
     z-index: 100;
     border-radius: 50%;
     background-color: white;
@@ -2025,29 +1920,10 @@ i {
     transition: 0.5s;
   }
   .btn-next:hover {
-    transform: translateX(765px) translateY(100px);
+    transform: translateX(775px) translateY(120px);
   }
   .btn-next i {
     font-size: 15px;
     color: #3f4150;
-  }
-  .contest-card {
-    width: 255px;
-    margin-bottom: 5px;
-    padding-bottom: 0;
-  }
-  .watchlist-box {
-    width: 220px;
-    height: 195px;
-    margin-bottom: 0;
-  }
-  .watchlist-info {
-    padding: 20px 20px 15px;
-  }
-  .company {
-    padding: 10px 15px;
-  }
-  .introduce-title {
-    margin-bottom: 10px;
   }
 }/*# sourceMappingURL=mypage-main-mem.css.map */

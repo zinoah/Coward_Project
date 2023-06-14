@@ -2,7 +2,14 @@
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
-  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
+  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix")
+      format("embedded-opentype"),
+    url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf")
+      format("truetype"),
+    url("/coward/src/main/webapp/resources/assets/fonts/coward.woff")
+      format("woff"),
+    url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward")
+      format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -82,7 +89,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -181,9 +188,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -191,9 +198,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -202,9 +209,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -248,8 +255,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -257,8 +264,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -266,7 +273,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -274,7 +281,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -433,7 +440,11 @@ address {
   }
 }
 
-.tag-purple, .tag-pink, .tag-gray, .tag-yellow, .tag-blue {
+.tag-purple,
+.tag-pink,
+.tag-gray,
+.tag-yellow,
+.tag-blue {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -471,17 +482,21 @@ address {
   background-color: #eae2ff;
 }
 
-.avatar-32, .avatar-24, .avatar {
+.avatar-32,
+.avatar-24,
+.avatar {
   display: block;
   overflow: hidden;
   border-radius: 50%;
 }
-.avatar-32 img, .avatar-24 img, .avatar img {
+.avatar-32 img,
+.avatar-24 img,
+.avatar img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .avatar-24 {
@@ -494,7 +509,12 @@ address {
   height: 32px;
 }
 
-.btn-ghost, .btn-yellow-outline, .btn-yellow, .btn-outlined, .btn-secondary, .btn-primary {
+.btn-ghost,
+.btn-yellow-outline,
+.btn-yellow,
+.btn-outlined,
+.btn-secondary,
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -502,7 +522,12 @@ address {
   font-weight: 700;
   border-radius: 5px;
 }
-.btn-ghost:disabled, .btn-yellow-outline:disabled, .btn-yellow:disabled, .btn-outlined:disabled, .btn-secondary:disabled, .btn-primary:disabled {
+.btn-ghost:disabled,
+.btn-yellow-outline:disabled,
+.btn-yellow:disabled,
+.btn-outlined:disabled,
+.btn-secondary:disabled,
+.btn-primary:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }
@@ -610,10 +635,11 @@ address {
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+.form-select::-moz-placeholder,
+.form-input::-moz-placeholder {
   color: #b2b3b9;
 }
 .form-select::placeholder,
@@ -758,8 +784,8 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+
+  object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -968,7 +994,7 @@ i {
   display: flex;
   flex-wrap: wrap;
 }
-.container [class^=col-] {
+.container [class^="col-"] {
   padding: 0 10px;
 }
 .container .col-sm-1 {
@@ -1103,7 +1129,7 @@ i {
   .header-right button {
     color: #3f4150;
   }
-  .header-right [class^=header-button]:not(:last-child) {
+  .header-right [class^="header-button"]:not(:last-child) {
     padding-right: 13px;
   }
   .header-user-image {
@@ -1125,7 +1151,7 @@ i {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1531,7 +1557,8 @@ i {
   align-items: center;
   justify-content: space-between;
   width: 45px;
-  /* 상태 표시 */
+  /* 상태표시 동그라미 */
+  /* 상태 표시 색 */
   /* 모집 중 */
   /* 심사 중 */
   /* 완료 */
@@ -1564,11 +1591,18 @@ i {
   font-size: 10px;
 }
 
+/* 공모전 이름이 길어지면 두줄이 됨
+근데 어떻게 손봐야 될지 모르겠음 */
+.contest {
+  /* 주최, 남은 기간 가로 정렬*/
+  /* 공모전 이름, content 세로 정렬 */
+}
 .contest-title {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
   font-weight: 600;
+  overflow: hidden;
 }
 .contest-content {
   display: flex;
@@ -1588,6 +1622,8 @@ i {
   font-size: 9px;
 }
 
+/*TODO: content에 between이 안먹어서 고정 마진으로 줌
+    -> 주최기업 이름 길이가 다를 경우 위치가 들쭉날쭉 */
 .deadline {
   font-size: 9px;
   margin-left: 15px;
@@ -1617,9 +1653,8 @@ i {
 /***** 태블릿 *****/
 @media screen and (min-width: 768px) {
   /* 배너 */
-  .banner img {
-    width: 100%;
-    padding-top: 10px;
+  .banner-top {
+    margin: 0;
   }
   /* 네비게이션 바 */
   .nav-bar {
@@ -1644,9 +1679,6 @@ i {
 }
 /***** 웹 *****/
 @media screen and (min-width: 1200px) {
-  .banner {
-    height: 180px;
-  }
   .empty-box {
     width: 100%;
     height: 700px;
@@ -1663,7 +1695,7 @@ i {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1040px;
-    height: 700px;
+    height: 715px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     background-color: #f8f8f8;
@@ -1679,17 +1711,15 @@ i {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 14px 0;
-    text-align: center;
-    list-style-type: none;
   }
   .nav li {
     padding: 5px 0 5px 10px;
     text-align: left;
   }
   .nav-web {
-    width: 180px;
     height: 603px;
   }
+  /* 메인과 위치 맞추기 위해 */
   aside {
     height: 613px;
   }
@@ -1745,9 +1775,10 @@ i {
     margin-left: 15px;
     border-bottom: 1px solid #8c8d96;
   }
+  /* 메인과 크기 맞추기 위해 */
   .contest-management {
     width: 843.33px;
-    height: 678.33px;
+    height: 695.33px;
     padding: 15px 30px;
     margin: 0 10px;
     border: 1px solid #e0e2e7;
@@ -1760,4 +1791,4 @@ i {
   .progress-box-group::-webkit-scrollbar {
     display: none;
   }
-}/*# sourceMappingURL=contest-progress.css.map */
+} /*# sourceMappingURL=contest-progress.css.map */
