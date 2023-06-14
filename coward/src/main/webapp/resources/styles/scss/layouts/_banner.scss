@@ -81,34 +81,6 @@
   }
 }
 
-.banner-bottom {
-  a {
-    @include column-flexbox;
-    width: 100%;
-    height: 160px;
-    background-color: #222121;
-    // margin-top: 20px;
-  }
-
-  &-image {
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .ad-slogan {
-    @include text-style(16, $white);
-    margin-top: 16px;
-    text-align: center;
-
-    .text-emphasis {
-      color: $yellow;
-    }
-  }
-}
-
 .banner-middle {
   @include flexbox;
   height: 150px;
@@ -133,6 +105,80 @@
     &-title {
       font-size: 30px;
       line-height: 40px;
+    }
+  }
+}
+
+.banner-bottom {
+  @include flexbox;
+  width: 100%;
+  height: 160px;
+  background-color: #222121;
+
+  a {
+    @include column-flexbox;
+    height: 100%;
+  }
+
+  &-image {
+    @include flexbox;
+    width: 120px;
+    height: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .ad-slogan {
+    @include text-style(16, $white);
+    margin-top: 16px;
+    text-align: center;
+
+    .text-emphasis {
+      color: $yellow;
+    }
+  }
+
+  @include responsive(T) {
+    a {
+      @include flexbox(between);
+      flex-direction: row-reverse;
+      padding: 0 40px;
+
+      .ad-slogan {
+        @include text-style(18, $white);
+        margin-top: 0;
+        text-align: start;
+        line-height: 40px;
+      }
+    }
+
+    &-image {
+      width: 140px;
+      height: 100%;
+    }
+  }
+
+  @include responsive(D) {
+    a {
+      @include flexbox(between);
+      flex-direction: row-reverse;
+      padding: 0 40px;
+
+      .ad-slogan {
+        @include text-style(24, $white);
+        margin-top: 0;
+        text-align: start;
+        line-height: 40px;
+      }
+    }
+
+    &-image {
+      width: 160px;
+      height: 100%;
     }
   }
 }
