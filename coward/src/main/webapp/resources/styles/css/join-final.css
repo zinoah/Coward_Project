@@ -1498,31 +1498,46 @@ i {
   }
 }
 
-/***** 모바일 *****/
-/* 네비게이션 바 */
-.nav {
-  width: 100%;
-  background-color: #f8f8f8;
-  margin-bottom: 20px;
-}
-.nav-bar {
+.join-final-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  font-size: 10px;
-  padding: 14px 0;
-  text-align: center;
-  list-style-type: none;
+  justify-content: center;
+  height: 100vh;
+}
+.join-final-box {
+  width: 320px;
+  height: 560px;
+  border: 1px solid black;
 }
 
-.introduce-title {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
+.logo-img {
+  width: 174.55px;
+  height: 40px;
   margin-bottom: 15px;
-  font-weight: 700;
-  padding: 10px;
-  border-bottom: 1px solid #e0e2e7;
+}
+.logo-final-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 25px;
 }
 
-/******* 모바일은 여기까지 복사해가면 됩니답 *******//*# sourceMappingURL=edit-profile-mem.css.map */
+@media screen and (min-width: 1200px) {
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
+  }
+  .join-fianl-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .join-final-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}/*# sourceMappingURL=join-final.css.map */

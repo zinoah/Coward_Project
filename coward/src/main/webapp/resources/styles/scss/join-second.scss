@@ -1,25 +1,125 @@
 @import "./main";
 
-.join-second-wrapper {
-  @include flexbox;
-  height: 100vh;
+.join {
+  &-second-wrapper {
+    @include flexbox;
+    height: 100vh;
+  }
+
+  &-second-box {
+    width: 320px;
+    height: 560px;
+  }
 }
 
-.join-second-box {
-  border: 1px solid black;
-  width: 320px;
-  height: 560px;
+.logo {
+  &-img {
+    width: 174.55px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+
+  &-info-box {
+    @include flexbox;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
 }
 
-.logo-img {
-  width: 174.55px;
-  height: 40px;
+.mem {
+  &-type-box {
+    margin-bottom: 10px;
+  }
+
+  &-type {
+    font-size: 16.5px;
+  }
+}
+
+.star {
+  color: #f86d7d;
+  font-size: larger;
+}
+
+.type {
+  @include text-style(16);
+
+  &-explanation {
+    @include text-style(12, $secondary);
+  }
+  &-box {
+    @include flexbox;
+    width: 100%;
+    height: 75px;
+    border: 1px solid $border;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  &-explanation-box {
+    @include column-flexbox(center, start);
+    flex-basis: 80%;
+  }
+}
+
+.chk {
+  &-img-1 {
+    @include flexbox;
+    flex-basis: 20%;
+    cursor: pointer;
+  }
+
+  &-img-2 {
+    flex-basis: 10%;
+
+    cursor: pointer;
+  }
+
+  &-explanation {
+    flex-basis: 80%;
+  }
+}
+
+.line {
+  border: 0.5px solid $secondary;
+  margin-bottom: 20px;
+}
+
+.all-agree {
+  @include inline-flexbox;
+
+  &-text {
+    flex-basis: 90%;
+    padding-left: 10px;
+    font-weight: 550;
+  }
+
   margin-bottom: 15px;
 }
 
-.logo-welcome-box {
-  @include flexbox;
-  flex-direction: column;
+.essential-chk {
+  @include inline-flexbox;
+  width: 100%;
+  margin-bottom: 15px;
+
+  &-content {
+    @include inline-flexbox;
+    @include text-style(14, $primary);
+    flex-basis: 90%;
+  }
+}
+
+.terms {
+  flex-basis: 10%;
+}
+
+.next-btn {
+  width: 100%;
+  height: 45px;
+  background-color: $tertiary;
+  color: $white;
+  font-weight: 700px;
+  margin-top: 15px;
 }
 
 @include responsive(D) {
