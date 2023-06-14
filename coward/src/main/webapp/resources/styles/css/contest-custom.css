@@ -1432,11 +1432,51 @@ i {
 }
 
 .banner-top {
-  background-color: #ffefc5;
+  background-color: #ffbbb1;
 }
 .banner-top-wrapper .banner-info .banner-button {
   background-color: #ffc200;
 }
 .banner-top-wrapper .banner-info .banner-button:hover {
   background-color: #fcd869;
+}
+
+.custom-card {
+  width: 30%;
+  height: 80px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 15px;
+}
+.custom-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.custom-card-img {
+  width: 60%;
+  height: 60%;
+}
+.custom-card img {
+  width: 100%;
+  height: 100%;
+}
+.custom-tap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom .btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom .btn-primary {
+  width: 30%;
 }/*# sourceMappingURL=contest-custom.css.map */
