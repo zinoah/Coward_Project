@@ -135,10 +135,11 @@
     <main class="home">
       <div class="container">
         <!-- Note: 공모전 둘러보기 -->
+        <!-- FIXME: 구조를 section>row>col로 리팩토링 요망! -->
         <div class="row">
           <div class="col-sm-4">
             <section class="home-contest-preview">
-              <div class="home-contest-preview-header">
+              <div class="section-title">
                 <h3>공모전 둘러보기</h3>
                 <a class="more-btn" href="#">
                   <span>더보기</span>
@@ -146,25 +147,291 @@
                 </a>
               </div>
 
-              <div class="home-contest-preview-slider">
+              <div class="slider-wrapper">
                 <div class="contest-slider">
-                  <div class="contest-slider-item">
-                    <div class="thumbnail">
-                      <img
-                        src="/coward/src/main/webapp/resources/assets/images/contest-gallery-card-img.svg"
-                      />
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>1식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                    <div class="info">
-                      <span class="user-nick">Pizza Bay Korea</span>
-                      <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                      <span class="totla-price"
-                        >총 상금 <span class="price">300</span> 만원</span
-                      >
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>2식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>3식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>4식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>5식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>6식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>7식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>8식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>9식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="contest-slider-card">
+                      <div class="contest-slider-card-img">
+                        <img
+                          src="../assets/images/contest-gallery-card-img.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="contest-slider-card-info">
+                        <div class="contest-slider-card-info-title">
+                          <p>10식품 쇼핑몰 웹사이트 제작</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>상금</p>
+                          <p>100만원</p>
+                        </div>
+                        <div class="contest-slider-card-info-detail">
+                          <p>남은기간</p>
+                          <p>1일</p>
+                        </div>
+                        <div class="contest-slider-card-info-button">
+                          <button class="btn-outlined btn-32">
+                            참여하러가기
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-
                 <div class="slider-controls">
+                  <!-- slider control 버튼 -->
                   <button class="control-button is-prev" type="button">
                     <i class="ic-chevron"></i>
                   </button>
@@ -180,20 +447,27 @@
         <!-- 이런 서비스는 어떠세요? -->
         <section class="home-services">
           <div class="row">
-            <div class="section-title">
-              <div class="col-sm-4">
+            <div class="col-sm-4">
+              <div class="section-title">
                 <h3>이런 서비스는 어떠세요?</h3>
               </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col-sm-1">
+            <!-- Note: 모바일 서비스 추천 바로가기 링크들 -->
+            <div class="col-sm-1 col-md-3 col-lg-3 service-wrapper">
               <div class="service">
                 <a href="#">
-                  <div class="service-image-1">
+                  <div class="service-image">
+                    <!-- Note: 모바일 아이콘 -->
                     <img
+                      class="sm-only"
                       src="/coward/src/main/webapp/resources/assets/images/thumbs-up-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                    <!-- Note: 태블릿, 데스크탑 아이콘 -->
+                    <img
+                      class="sm-hidden"
+                      src="/coward/src/main/webapp/resources/assets/images/thumbs-up.svg"
                       alt="맞춤 공모전 바로가기"
                     />
                   </div>
@@ -201,12 +475,20 @@
                 </a>
               </div>
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-1 col-md-3 col-lg-3 service-wrapper">
               <div class="service">
                 <a href="#">
-                  <div class="service-image-2">
+                  <div class="service-image">
+                    <!-- Note: 모바일 아이콘 -->
                     <img
+                      class="sm-only"
                       src="/coward/src/main/webapp/resources/assets/images/rocket-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                    <!-- Note: 태블릿, 데스크탑 아이콘 -->
+                    <img
+                      class="sm-hidden"
+                      src="/coward/src/main/webapp/resources/assets/images/rocket.svg"
                       alt="맞춤 공모전 바로가기"
                     />
                   </div>
@@ -214,12 +496,20 @@
                 </a>
               </div>
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-1 col-md-3 col-lg-3 service-wrapper">
               <div class="service">
                 <a href="#">
-                  <div class="service-image-3">
+                  <div class="service-image">
+                    <!-- Note: 모바일 아이콘 -->
                     <img
+                      class="sm-only"
                       src="/coward/src/main/webapp/resources/assets/images/present-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                    <!-- Note: 태블릿, 데스크탑 아이콘 -->
+                    <img
+                      class="sm-hidden"
+                      src="/coward/src/main/webapp/resources/assets/images/gift-box.svg"
                       alt="맞춤 공모전 바로가기"
                     />
                   </div>
@@ -227,12 +517,20 @@
                 </a>
               </div>
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-1 col-md-3 col-lg-3 service-wrapper">
               <div class="service">
                 <a href="#">
-                  <div class="service-image-4">
+                  <div class="service-image">
+                    <!-- Note: 모바일 아이콘 -->
                     <img
+                      class="sm-only"
                       src="/coward/src/main/webapp/resources/assets/images/info-2d.svg"
+                      alt="맞춤 공모전 바로가기"
+                    />
+                    <!-- Note: 태블릿, 데스크탑 아이콘 -->
+                    <img
+                      class="sm-hidden"
+                      src="/coward/src/main/webapp/resources/assets/images/word-bubble.svg"
                       alt="맞춤 공모전 바로가기"
                     />
                   </div>
@@ -244,7 +542,7 @@
         </section>
 
         <!-- 랭킹 보기 -->
-        <section class="home-ranking">
+        <section class="home-rankings">
           <div class="row">
             <div class="col-sm-4">
               <div class="section-title">
@@ -254,9 +552,206 @@
                   <i class="ic-chevron" aria-hidden></i>
                 </a>
               </div>
+            </div>
 
-              <!-- 랭킹 마크업 -->
-              <div class="temp-layout"></div>
+            <!-- 랭킹 마크업 -->
+            <div class="col-sm-4 col-md-4 col-lg-4 home-ranking">
+              <div class="home-ranking-show is-price">
+                <h5 class="ranking-title">이달의 상금왕 💎</h5>
+
+                <div class="ranking-image sm-hidden">
+                  <img
+                    src="/coward/src/main/webapp/resources/assets/images/running-doodle.svg"
+                    aria-hidden
+                  />
+                </div>
+
+                <ul class="ranking-list">
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">1</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">2</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">3</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4 home-ranking">
+              <div class="home-ranking-show is-victory">
+                <h5 class="ranking-title">이달의 우승왕 🏆</h5>
+
+                <div class="ranking-image sm-hidden">
+                  <img
+                    src="/coward/src/main/webapp/resources/assets/images/icecream-doodle.svg"
+                    aria-hidden
+                  />
+                </div>
+                <ul class="ranking-list">
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">1</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">2</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">3</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4 home-ranking">
+              <div class="home-ranking-show is-popular">
+                <h5 class="ranking-title">이달의 인기왕 💗</h5>
+
+                <div class="ranking-image sm-hidden">
+                  <img
+                    src="/coward/src/main/webapp/resources/assets/images/loving-doodle.svg"
+                    aria-hidden
+                  />
+                </div>
+                <ul class="ranking-list">
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">1</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">2</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">3</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          alt="1위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">Apple</span>
+                    </div>
+
+                    <div class="ranking-item-right">
+                      <span class="total-money">100,000,000</span>
+                      <span class="currency">원</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -266,16 +761,97 @@
           <div class="row">
             <div class="col-sm-4">
               <div class="section-title">
-                <h3>새로 등록된 공모전</h3>
+                <div class="section-title-new">
+                  <h3>새로 등록된 공모전</h3>
+                  <div class="tag-yellow">New</div>
+                </div>
                 <a class="more-btn" href="#">
                   <span>더보기</span>
                   <i class="ic-chevron" aria-hidden></i>
                 </a>
               </div>
+            </div>
+          </div>
 
-              <!-- TODO: 공모전 슬라이더 넣기 -->
-              <div class="contest-slider">
-                <div class="temp-layout"></div>
+          <div class="row">
+            <div class="col-md-7 col-lg-7 sm-hidden">
+              <div class="new-contest-list">
+                <div class="new-contest-item">
+                  <div class="contest-thumbnail">
+                    <img src="../assets/images/contest-gallery-card-img.svg" />
+                  </div>
+
+                  <div class="contest-info">
+                    <span class="user-nick">Pizza Planet</span>
+                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
+                    <div class="contest-price">
+                      <span>총 상금 <span class="price">300</span>만원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="new-contest-item">
+                  <div class="contest-thumbnail">
+                    <img src="../assets/images/contest-gallery-card-img.svg" />
+                  </div>
+
+                  <div class="contest-info">
+                    <span class="user-nick">Pizza Planet</span>
+                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
+                    <div class="contest-price">
+                      <span>총 상금 <span class="price">300</span>만원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="new-contest-item">
+                  <div class="contest-thumbnail">
+                    <img src="../assets/images/contest-gallery-card-img.svg" />
+                  </div>
+
+                  <div class="contest-info">
+                    <span class="user-nick">Pizza Planet</span>
+                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
+                    <div class="contest-price">
+                      <span>총 상금 <span class="price">300</span>만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-md-5 col-lg-5">
+              <div class="new-contest-board">
+                <div class="new-contest-item">
+                  <div class="contest-info">
+                    <div class="contest-thumbnail">
+                      <img
+                        src="../assets/images/contest-gallery-card-img.svg"
+                      />
+                    </div>
+                    <span class="user-nick">Pizza Planet</span>
+                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
+                    <div class="contest-price">
+                      <span>총 상금 <span class="price">300</span>만원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="new-contest-item">
+                  <div class="contest-info">
+                    <span class="user-nick">Pizza Planet</span>
+                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
+                    <div class="contest-price">
+                      <span>총 상금 <span class="price">300</span>만원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="new-contest-item">
+                  <div class="contest-info">
+                    <span class="user-nick">Pizza Planet</span>
+                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
+                    <div class="contest-price">
+                      <span>총 상금 <span class="price">300</span>만원</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -293,7 +869,8 @@
         </div>
         <p class="ad-slogan">
           Coward 신규 회원가입 하고
-          <strong class="text-emphasis">쿠폰팩</strong> 받으러가기 !
+          <br class="sm-only" /><strong class="text-emphasis">쿠폰팩</strong>
+          받으러가기 !
         </p>
       </a>
     </section>
@@ -395,6 +972,6 @@
 
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="/coward/src/main/webapp/resources/js/sliders.js"></script>
+    <script src="/coward/src/main/webapp/resources/js/slider.js"></script>
   </body>
 </html>

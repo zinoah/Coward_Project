@@ -760,6 +760,7 @@ i {
   position: relative;
   height: 320px;
   margin-bottom: 24px;
+
 }
 
 .contest-slider {
@@ -784,8 +785,9 @@ i {
   display: block;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 
-  object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1284,6 +1286,7 @@ i {
   }
 }
 
+
 /* banner-top html code
 
 <div class="banner-top">
@@ -1334,6 +1337,7 @@ i {
   }
 }
 */
+
 .nav {
   background-color: #fff;
   margin-bottom: 10px;

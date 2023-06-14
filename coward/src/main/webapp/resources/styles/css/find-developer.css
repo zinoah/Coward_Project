@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
@@ -1432,51 +1433,119 @@ i {
 }
 
 .banner-top {
-  background-color: #ffbbb1;
+  background-color: #9792f0;
 }
-.banner-top-wrapper .banner-info .banner-button {
-  background-color: #ffc200;
+.banner-top h3 {
+  color: white;
 }
-.banner-top-wrapper .banner-info .banner-button:hover {
-  background-color: #fcd869;
+.banner-top p {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: white;
+  font-weight: 600;
 }
 
-.custom-card {
-  width: 30%;
-  height: 80px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  margin: 15px;
-}
-.custom-card-wrapper {
+.stack-box {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.custom-card-img {
-  width: 60%;
-  height: 60%;
-}
-.custom-card img {
+  justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  margin-bottom: 25px;
 }
-.custom-tap {
+.stack-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 45px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: #3f4150;
+  font-weight: 600;
+  background-color: #f8f8f8;
+}
+.stack-btn input[type=radio] {
+  display: none;
+}
+.stack-btn label {
+  text-align: center;
+  width: 100%;
+  line-height: 23px;
+  border: 1.5px solid #8c8d96;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.stack-btn input[type=radio]:checked + label {
+  border: 1.5px solid #3aacf8;
+  background-color: #3aacf8;
+  color: white;
+  transition: background-color 200ms ease-in-out;
+}
+.stack-btn input[type=radio]:hover:not(:checked) + label {
+  border: 1.5px solid #028ae2;
+}
+.stack-btn input[type=radio]:active + label {
+  background-color: #3aacf8;
+  color: white;
+  transition: background-color 200ms ease-in-out;
+}
+
+.developer {
+  /* 타입과 이름 가로 배치 */
+}
+.developer-card {
+  padding: 20px 15px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+}
+.developer-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+}
+.developer-title {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.custom-title {
+.developer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.developer-profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.developer-type {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 28px;
+  height: 13px;
+  padding: 3px;
+  border: 1px solid #3aacf8;
+  border-radius: 5px;
+  font-size: 6px;
+  color: #3aacf8;
 }
-.custom .btn-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.developer-nick {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #3f4150;
+  font-weight: 600;
+  margin-right: 6px;
 }
-.custom .btn-primary {
-  width: 30%;
-}/*# sourceMappingURL=contest-custom.css.map */
+.developer-oneline {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}/*# sourceMappingURL=find-developer.css.map */

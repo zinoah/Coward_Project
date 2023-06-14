@@ -1431,52 +1431,34 @@ i {
   }
 }
 
-.banner-top {
-  background-color: #ffbbb1;
+.briefing-container .background-banner {
+  position: relative;
 }
-.banner-top-wrapper .banner-info .banner-button {
-  background-color: #ffc200;
-}
-.banner-top-wrapper .banner-info .banner-button:hover {
-  background-color: #fcd869;
-}
-
-.custom-card {
-  width: 30%;
-  height: 80px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  margin: 15px;
-}
-.custom-card-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.custom-card-img {
-  width: 60%;
-  height: 60%;
-}
-.custom-card img {
+.briefing-container .background-banner div {
   width: 100%;
-  height: 100%;
+  height: 250px;
+  position: absolute;
+  background-color: #abdeff;
 }
-.custom-tap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.briefing-container .contest-briefing {
+  position: relative;
 }
-.custom-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.briefing-container .contest-briefing-left-box {
+  background-color: blue;
+  height: 1000px;
+  margin-top: 100px;
 }
-.custom .btn-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.custom .btn-primary {
-  width: 30%;
-}/*# sourceMappingURL=contest-custom.css.map */
+@media screen and (min-width: 1200px) {
+  .briefing-container .contest-briefing .container {
+    display: flex;
+  }
+  .briefing-container .contest-briefing-right-box {
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: sticky;
+    top: 50px;
+    margin-top: 100px;
+  }
+}/*# sourceMappingURL=test.css.map */

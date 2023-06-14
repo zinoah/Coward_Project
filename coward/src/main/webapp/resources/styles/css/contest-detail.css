@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
@@ -733,7 +732,6 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
-  margin-bottom: 24px;
 }
 
 .contest-slider {
@@ -1206,7 +1204,6 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
-  margin-top: 20px;
 }
 .banner-bottom-image img {
   display: block;
@@ -1258,56 +1255,6 @@ i {
   }
 }
 
-/* banner-top html code
-
-<div class="banner-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="banner-top-wrapper">
-              <div class="banner-info">
-                <h3 class="main-title">
-                  Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트!
-                </h3>
-                <p class="sub-title sm-hidden">
-                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
-              </div>
-              <div class="banner-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                  aria-hidden
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
-/* banner-top scss 페이지 별 색상 변경 코드
-.banner {
-  &-top {
-    background-color: #ffefc5;
-
-    &-wrapper {
-      .banner-info {
-        .banner-button {
-          background-color: $yellow;
-
-          &:hover {
-            background-color: #fcd869;
-          }
-        }
-      }
-    }
-  }
-}
-*/
 .nav {
   background-color: #fff;
   margin-bottom: 10px;
@@ -1498,280 +1445,292 @@ i {
   }
 }
 
-.banner-top {
-  background-color: #ffefc5;
-}
-
-.contest-briefing {
+.briefing-container .background-banner {
   position: relative;
-  margin-bottom: 100px;
 }
-.contest-briefing-summary-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  top: -150px;
-  height: 600px;
-  width: calc(100% - 30px);
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  padding: 30px 30px 10px 30px;
-}
-.contest-briefing-summary-thumbnail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 60%;
-  height: 300px;
+.briefing-container .background-banner div {
   width: 100%;
-  overflow: hidden;
-  margin-bottom: 5px;
-  border-radius: 10px;
+  height: 250px;
+  position: absolute;
+  background-color: #abdeff;
 }
-.contest-briefing-summary-thumbnail img {
-  height: 100%;
-  width: 100%;
-
+.briefing-container .contest-briefing {
+  position: relative;
 }
-.contest-briefing-summary-info {
+.briefing-container .contest-briefing-content-box {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  flex-basis: 40%;
+  background-color: #fff;
+  margin-top: 100px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
-.contest-briefing-summary-info > div:not(:last-child) {
-  margin-bottom: 5px;
+.briefing-container .contest-briefing-content-box-thumbnail {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+.briefing-container .contest-briefing-content-box-thumbnail img {
+  width: 100%;
+}
+
+.briefing-container .contest-briefing-content-box-title {
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin-bottom: 30px;
+  height: 40px;
 
 }
-.contest-briefing-summary-info-title {
-  width: 100%;
-  flex-basis: 20%;
-  font-size: 22px;
+.briefing-container .contest-briefing-content-box-profile {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
   font-weight: 500;
+  margin-bottom: 16px;
 }
-.contest-briefing-summary-info-name {
-  width: 100%;
-  flex-basis: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.contest-briefing-summary-info-name > div {
+.briefing-container .contest-briefing-content-box-profile div {
   margin-right: 10px;
 }
-.contest-briefing-summary-info-tag {
-  width: 100%;
-  flex-basis: 20%;
+.briefing-container .contest-briefing-content-box-tag {
+  margin-bottom: 24px;
 }
-.contest-briefing-summary-info-tag > div:not(:nth-child(1)) {
-  margin-left: 10px;
+.briefing-container .contest-briefing-content-box-tag div {
+  margin-right: 10px;
 }
-.contest-briefing-summary-info-detail {
-  width: 100%;
-  flex-basis: 40%;
+.briefing-container .contest-briefing-content-box-info {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  flex-basis: 25%;
   border-top: 1px solid #e0e2e7;
 }
-.contest-briefing-summary-info-detail-item {
+.briefing-container .contest-briefing-content-box-info div {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex-basis: 33%;
-}
-.contest-briefing-summary-info-detail-item-title {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #8c8d96;
-  font-weight: 500;
-}
-.contest-briefing-summary-info-detail-item-info {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-  margin-top: 5px;
-}
-.contest-briefing-reward-wrapper {
-  margin-top: 500px;
-}
-.contest-briefing-reward-info-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   height: 100px;
-  background-color: #f8f8f8;
-  border: 1px solid #e0e2e7;
+  margin-bottom: 24px;
+}
+.briefing-container .contest-briefing-content-box-info div p:first-child {
+  color: #8c8d96;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.briefing-container .contest-briefing-content-box-info div p:last-child {
+  font-weight: 500;
+}
+.briefing-container .contest-briefing-content-box-award {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
   border-radius: 10px;
+  background-color: #e0e2e7;
+  margin-bottom: 24px;
 }
-.contest-briefing-reward-info-box > div {
+.briefing-container .contest-briefing-content-box-award div {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: 50%;
-  height: 80%;
   flex-direction: column;
+  flex-basis: 50%;
+  height: 70%;
 }
-.contest-briefing-reward-info-box > div:nth-child(1) {
-  border-right: 1px solid #e0e2e7;
+.briefing-container .contest-briefing-content-box-award div:last-child {
+  border-left: 1px solid #b2b3b9;
 }
-.contest-briefing-reward-info-box-title {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  font-weight: 700;
+.briefing-container .contest-briefing-content-box-award div p:first-child {
   color: #8c8d96;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-.contest-briefing-reward-info-box-detail {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+.briefing-container .contest-briefing-content-box-award div p:last-child {
+  font-weight: 500;
 }
-.contest-briefing-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.contest-briefing-button-wrapper > div:nth-child(1) {
-  flex-basis: 70%;
-}
-.contest-briefing-button-wrapper > div:nth-child(1) button {
-  width: 100%;
-  height: 50px;
-}
-.contest-briefing-button-wrapper > div:not(:nth-child(1)) {
-  flex-basis: 12%;
-  margin-left: 3%;
-}
-.contest-briefing-button-wrapper > div:not(:nth-child(1)) button {
+.briefing-container .contest-briefing-content-box-button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
+  height: 100px;
 }
-.contest-briefing-button-wrapper > div:not(:nth-child(1)) button i {
+.briefing-container .contest-briefing-content-box-button button {
+  height: 50px;
+  margin-right: 3%;
+}
+.briefing-container .contest-briefing-content-box-button button:last-child {
+  margin-right: 0;
+}
+.briefing-container .contest-briefing-content-box-button-join {
+  flex-basis: 64%;
+}
+.briefing-container .contest-briefing-content-box-button-bookmark {
+  flex-basis: 15%;
   color: #8c8d96;
+  border-color: #e0e2e7;
 }
-.contest-briefing-title-wrapper {
+.briefing-container .contest-briefing-content-box-button-link {
+  flex-basis: 15%;
+  border-color: #e0e2e7;
+}
+.briefing-container .contest-briefing-content-box-briefing-title {
+  width: 100%;
   height: 50px;
-  margin-top: 30px;
+  margin-top: 50px;
   border-bottom: 1px solid #e0e2e7;
 }
-.contest-briefing-subject-wrapper {
-  margin-top: 30px;
-}
-.contest-briefing-subject-wrapper-title {
-  height: 20px;
-  padding-left: 10px;
-  margin-bottom: 30px;
-  font-size: 20px;
+.briefing-container .contest-briefing-content-box-briefing-sub-title {
+  margin-top: 50px;
   color: #3aacf8;
-  font-weight: 700;
   border-left: 2px solid #3aacf8;
 }
-.contest-briefing-subject-wrapper-detail {
+.briefing-container .contest-briefing-content-box-briefing-sub-title h3 {
+  margin-left: 10px;
+}
+.briefing-container .contest-briefing-content-box-detail {
+  margin-top: 50px;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  margin-bottom: 20px;
 }
-@media screen and (min-width: 768px) {
-  .contest-briefing-summary-wrapper {
+@media screen and (min-width: 1200px) {
+  .briefing-container .contest-briefing .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    height: 430px;
-    padding: 30px;
   }
-  .contest-briefing-summary-thumbnail {
-    flex-basis: 48%;
-    height: 100%;
-    width: 100%;
-    margin-bottom: 0px;
+  .briefing-container .contest-briefing-content-box {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
   }
-  .contest-briefing-summary-thumbnail img {
-    height: 100%;
-    width: 100%;
-  }
-  .contest-briefing-summary-info {
-    flex-basis: 48%;
-    height: 100%;
-  }
-  .contest-briefing-summary-info > div:not(:last-child) {
-    margin-bottom: 5px;
-  }
-  .contest-briefing-summary-info-title {
-    width: 100%;
-    flex-basis: 20%;
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-weight: 500;
-  }
-  .contest-briefing-summary-info-name {
-    width: 100%;
-    flex-basis: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .contest-briefing-summary-info-name > div {
-    margin-right: 10px;
-  }
-  .contest-briefing-summary-info-tag {
-    width: 100%;
-    flex-basis: 20%;
-  }
-  .contest-briefing-summary-info-tag > div:not(:nth-child(1)) {
-    margin-left: 10px;
-  }
-  .contest-briefing-summary-info-detail {
-    width: 100%;
-    flex-basis: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid #e0e2e7;
-  }
-  .contest-briefing-summary-info-detail-item {
+  .briefing-container .contest-briefing-sticky-box {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex-basis: 33%;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: sticky;
+    top: 50px;
+    margin-top: 130px;
+    padding: 30px;
   }
-  .contest-briefing-summary-info-detail-item-title {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    color: #8c8d96;
-    font-weight: 500;
-  }
-  .contest-briefing-summary-info-detail-item-info {
+  .briefing-container .contest-briefing-sticky-box-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: -0.02em;
+    width: 100%;
+    flex-basis: 10%;
+    font-weight: 700;
+  }
+  .briefing-container .contest-briefing-sticky-box-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    flex-basis: 10%;
+  }
+  .briefing-container .contest-briefing-sticky-box-profile div {
+    margin-right: 10px;
+  }
+  .briefing-container .contest-briefing-sticky-box-tag {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    flex-basis: 10%;
+  }
+  .briefing-container .contest-briefing-sticky-box-tag div {
+    margin-right: 10px;
+  }
+  .briefing-container .contest-briefing-sticky-box-award {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-basis: 25%;
+  }
+  .briefing-container .contest-briefing-sticky-box-award div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+  .briefing-container .contest-briefing-sticky-box-award div p:first-child {
+    color: #8c8d96;
     font-weight: 500;
-    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .briefing-container .contest-briefing-sticky-box-award div p:last-child {
+    font-weight: 500;
+  }
+  .briefing-container .contest-briefing-sticky-box-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-basis: 25%;
+    border-top: 1px solid #e0e2e7;
+  }
+  .briefing-container .contest-briefing-sticky-box-info div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 33.33%;
+  }
+  .briefing-container .contest-briefing-sticky-box-info div p:first-child {
+    color: #8c8d96;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .briefing-container .contest-briefing-sticky-box-info div p:last-child {
+    font-weight: 500;
+  }
+  .briefing-container .contest-briefing-sticky-box-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-basis: 20%;
+  }
+  .briefing-container .contest-briefing-sticky-box-button button {
+    height: 50px;
+    margin-right: 3%;
+  }
+  .briefing-container .contest-briefing-sticky-box-button button:last-child {
+    margin-right: 0;
+  }
+  .briefing-container .contest-briefing-sticky-box-button-join {
+    flex-basis: 64%;
+  }
+  .briefing-container .contest-briefing-sticky-box-button-bookmark {
+    flex-basis: 15%;
+    color: #8c8d96;
+    border-color: #e0e2e7;
+  }
+  .briefing-container .contest-briefing-sticky-box-button-link {
+    flex-basis: 15%;
+    border-color: #e0e2e7;
   }
 }/*# sourceMappingURL=contest-detail.css.map */
