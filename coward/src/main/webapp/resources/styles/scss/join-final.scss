@@ -1,0 +1,47 @@
+@import "./main";
+
+.join {
+  &-final-wrapper {
+    @include flexbox;
+    height: 100vh;
+  }
+
+  &-final-box {
+    width: 320px;
+    height: 560px;
+    border: 1px solid black;
+  }
+}
+
+.logo {
+  &-img {
+    width: 174.55px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+
+  &-final-box {
+    @include flexbox;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+}
+
+@include responsive(D) {
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
+  }
+
+  .join-fianl-wrapper {
+    @include flexbox(between);
+  }
+
+  .join-final-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}

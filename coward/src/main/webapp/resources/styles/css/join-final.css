@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "coward";
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
@@ -80,7 +81,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -478,7 +480,8 @@ address {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .avatar-24 {
@@ -606,7 +609,12 @@ address {
   border: 1px solid #e0e2e7;
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-select::-moz-placeholder, .form-input::-moz-placeholder {
+  color: #b2b3b9;
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -725,6 +733,7 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
+  margin-bottom: 24px;
 }
 
 .contest-slider {
@@ -749,7 +758,8 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1114,7 +1124,8 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .banner-top-wrapper {
   display: flex;
@@ -1195,6 +1206,7 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
+  margin-top: 20px;
 }
 .banner-bottom-image img {
   display: block;
@@ -1246,6 +1258,56 @@ i {
   }
 }
 
+/* banner-top html code
+
+<div class="banner-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-top-wrapper">
+              <div class="banner-info">
+                <h3 class="main-title">
+                  Coward를 사랑해주시는 <br class="sm-only" />
+                  여러분들을 위한 이벤트!
+                </h3>
+                <p class="sub-title sm-hidden">
+                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                </p>
+                <a href="#" class="banner-button btn-32 btn-primary"
+                  >더 알아보기</a
+                >
+              </div>
+              <div class="banner-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/* banner-top scss 페이지 별 색상 변경 코드
+.banner {
+  &-top {
+    background-color: #ffefc5;
+
+    &-wrapper {
+      .banner-info {
+        .banner-button {
+          background-color: $yellow;
+
+          &:hover {
+            background-color: #fcd869;
+          }
+        }
+      }
+    }
+  }
+}
+*/
 .nav {
   background-color: #fff;
   margin-bottom: 10px;
@@ -1296,6 +1358,11 @@ i {
     border: 1px solid #e0e2e7;
     border-radius: 8px;
     padding: 10px 16px;
+  }
+  .nav .nav-search-input::-moz-placeholder {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
   }
   .nav .nav-search-input::placeholder {
     font-size: 12px;
@@ -1431,292 +1498,46 @@ i {
   }
 }
 
-.briefing-container .background-banner {
-  position: relative;
-}
-.briefing-container .background-banner div {
-  width: 100%;
-  height: 250px;
-  position: absolute;
-  background-color: #abdeff;
-}
-.briefing-container .contest-briefing {
-  position: relative;
-}
-.briefing-container .contest-briefing-content-box {
+.join-final-wrapper {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background-color: #fff;
-  margin-top: 100px;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
 }
-.briefing-container .contest-briefing-content-box-thumbnail {
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  object-fit: cover;
-  border-radius: 20px;
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-thumbnail img {
-  width: 100%;
+.join-final-box {
+  width: 320px;
+  height: 560px;
+  border: 1px solid black;
 }
 
-.briefing-container .contest-briefing-content-box-title {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  font-weight: 700;
-  margin-bottom: 30px;
+.logo-img {
+  width: 174.55px;
   height: 40px;
+  margin-bottom: 15px;
+}
+.logo-final-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
 
-}
-.briefing-container .contest-briefing-content-box-profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-.briefing-container .contest-briefing-content-box-profile div {
-  margin-right: 10px;
-}
-.briefing-container .contest-briefing-content-box-tag {
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-tag div {
-  margin-right: 10px;
-}
-.briefing-container .contest-briefing-content-box-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-basis: 25%;
-  border-top: 1px solid #e0e2e7;
-}
-.briefing-container .contest-briefing-content-box-info div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100px;
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-info div p:first-child {
-  color: #8c8d96;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.briefing-container .contest-briefing-content-box-info div p:last-child {
-  font-weight: 500;
-}
-.briefing-container .contest-briefing-content-box-award {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  border-radius: 10px;
-  background-color: #e0e2e7;
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-award div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-basis: 50%;
-  height: 70%;
-}
-.briefing-container .contest-briefing-content-box-award div:last-child {
-  border-left: 1px solid #b2b3b9;
-}
-.briefing-container .contest-briefing-content-box-award div p:first-child {
-  color: #8c8d96;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.briefing-container .contest-briefing-content-box-award div p:last-child {
-  font-weight: 500;
-}
-.briefing-container .contest-briefing-content-box-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-}
-.briefing-container .contest-briefing-content-box-button button {
-  height: 50px;
-  margin-right: 3%;
-}
-.briefing-container .contest-briefing-content-box-button button:last-child {
-  margin-right: 0;
-}
-.briefing-container .contest-briefing-content-box-button-join {
-  flex-basis: 64%;
-}
-.briefing-container .contest-briefing-content-box-button-bookmark {
-  flex-basis: 15%;
-  color: #8c8d96;
-  border-color: #e0e2e7;
-}
-.briefing-container .contest-briefing-content-box-button-link {
-  flex-basis: 15%;
-  border-color: #e0e2e7;
-}
-.briefing-container .contest-briefing-content-box-briefing-title {
-  width: 100%;
-  height: 50px;
-  margin-top: 50px;
-  border-bottom: 1px solid #e0e2e7;
-}
-.briefing-container .contest-briefing-content-box-briefing-sub-title {
-  margin-top: 50px;
-  color: #3aacf8;
-  border-left: 2px solid #3aacf8;
-}
-.briefing-container .contest-briefing-content-box-briefing-sub-title h3 {
-  margin-left: 10px;
-}
-.briefing-container .contest-briefing-content-box-detail {
-  margin-top: 50px;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-}
 @media screen and (min-width: 1200px) {
-  .briefing-container .contest-briefing .container {
-    display: flex;
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
   }
-  .briefing-container .contest-briefing-content-box {
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  .briefing-container .contest-briefing-sticky-box {
+  .join-fianl-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 500px;
-    background-color: #fff;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    position: sticky;
-    top: 50px;
-    margin-top: 130px;
-    padding: 30px;
+    justify-content: space-between;
   }
-  .briefing-container .contest-briefing-sticky-box-title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: -0.02em;
-    width: 100%;
-    flex-basis: 10%;
-    font-weight: 700;
+  .join-final-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
   }
-  .briefing-container .contest-briefing-sticky-box-profile {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    flex-basis: 10%;
-  }
-  .briefing-container .contest-briefing-sticky-box-profile div {
-    margin-right: 10px;
-  }
-  .briefing-container .contest-briefing-sticky-box-tag {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    flex-basis: 10%;
-  }
-  .briefing-container .contest-briefing-sticky-box-tag div {
-    margin-right: 10px;
-  }
-  .briefing-container .contest-briefing-sticky-box-award {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-basis: 25%;
-  }
-  .briefing-container .contest-briefing-sticky-box-award div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-basis: 50%;
-  }
-  .briefing-container .contest-briefing-sticky-box-award div p:first-child {
-    color: #8c8d96;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  .briefing-container .contest-briefing-sticky-box-award div p:last-child {
-    font-weight: 500;
-  }
-  .briefing-container .contest-briefing-sticky-box-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-basis: 25%;
-    border-top: 1px solid #e0e2e7;
-  }
-  .briefing-container .contest-briefing-sticky-box-info div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-basis: 33.33%;
-  }
-  .briefing-container .contest-briefing-sticky-box-info div p:first-child {
-    color: #8c8d96;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  .briefing-container .contest-briefing-sticky-box-info div p:last-child {
-    font-weight: 500;
-  }
-  .briefing-container .contest-briefing-sticky-box-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-basis: 20%;
-  }
-  .briefing-container .contest-briefing-sticky-box-button button {
-    height: 50px;
-    margin-right: 3%;
-  }
-  .briefing-container .contest-briefing-sticky-box-button button:last-child {
-    margin-right: 0;
-  }
-  .briefing-container .contest-briefing-sticky-box-button-join {
-    flex-basis: 64%;
-  }
-  .briefing-container .contest-briefing-sticky-box-button-bookmark {
-    flex-basis: 15%;
-    color: #8c8d96;
-    border-color: #e0e2e7;
-  }
-  .briefing-container .contest-briefing-sticky-box-button-link {
-    flex-basis: 15%;
-    border-color: #e0e2e7;
-  }
-}/*# sourceMappingURL=contest-detail.css.map */
+}/*# sourceMappingURL=join-final.css.map */
