@@ -1,5 +1,20 @@
 @import "./main.scss";
 
+$section-margin: 24px;
+
+$service-background: (
+  2: #ffdede,
+  3: #fcf2c4,
+  4: #eff9ff,
+  5: #ffe0c7,
+);
+
+$ranking-background: (
+  2: #abdeff,
+  3: #ffe9a4,
+  4: #ffc1c9,
+);
+
 .banner {
   &-top {
     background-color: #fbeee5;
@@ -19,34 +34,46 @@
 }
 
 .home {
-  &-contest-preview {
-    margin-bottom: 24px;
+  // Note: 공통 요소
+  .section-title {
+    @include flexbox(between);
+    margin-bottom: 16px;
 
-    &-header {
+    h3 {
       @include text-style(16);
-      @include flexbox(between);
-      margin-bottom: 16px;
+    }
 
-      .more-btn {
-        @include flexbox;
-        transition: color 150ms ease-in-out;
+    .more-btn {
+      @include flexbox;
+      transition: color 150ms ease-in-out;
 
-        &:not(:disabled):hover {
-          color: $tertiary;
-        }
+      &:not(:disabled):hover {
+        color: $tertiary;
+      }
 
-        span {
-          @include text-style(12);
-        }
+      span {
+        @include text-style(12);
+      }
 
-        .ic-chevron {
-          display: inline-block;
-          font-size: 12px;
-          margin-left: 4px;
-          transform: rotate(-180deg);
-        }
+      .ic-chevron {
+        display: inline-block;
+        font-size: 12px;
+        margin-left: 4px;
+        transform: rotate(-180deg);
       }
     }
+
+    &-new {
+      @include flexbox;
+
+      h3 {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &-contest-preview {
+    margin-bottom: $section-margin;
 
     &-slider {
       position: relative;
@@ -90,7 +117,7 @@
       .slider-controls {
         @include flexbox(between);
         @include pos-center;
-        width: 100%;
+        width: calc(100% + 40px);
 
         .control-button {
           @include inline-flexbox;
@@ -132,31 +159,35 @@
   }
 
   &-services {
+    margin-bottom: $section-margin;
+
     .service {
       a {
         @include column-flexbox;
       }
 
-      @for $i from 1 through 4 {
-        $service-background: (
-          1: #fcf2c4,
-          2: #ffdede,
-          3: #e1deff,
-          4: #eff9ff,
-        );
-
-        &-image-#{$i} {
-          @include flexbox;
-          width: 58px;
-          height: 58px;
-          border-radius: 50%;
-          background-color: map-get($service-background, $i);
-
-          img {
-            display: block;
-            width: auto;
-            height: 28px;
+      // Note: 서비스 추천 아이콘 배경색 변경
+      @for $i from 2 through 5 {
+        &-wrapper {
+          &:nth-of-type(#{$i}) {
+            .service-image {
+              background-color: map-get($service-background, $i);
+            }
           }
+        }
+      }
+
+      &-image {
+        @include flexbox;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        padding: 14px;
+
+        img {
+          display: block;
+          width: auto;
+          height: 100%;
         }
       }
 
@@ -168,12 +199,104 @@
     }
   }
 
-  // TODO: 규격용, 삭제 요망!//////////////
-  .temp-layout {
-    width: 100%;
-    height: 200px;
-    background-color: $blue;
-    border-radius: 10px;
+  &-rankings {
+    margin-bottom: $section-margin;
+
+    @for $i from 2 through 4 {
+      .home-ranking {
+        &:nth-of-type(#{$i}) {
+          .home-ranking-show {
+            .ranking-title {
+              background-color: map-get($ranking-background, $i);
+            }
+          }
+        }
+
+        &:not(:last-of-type) {
+          .home-ranking-show {
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+
+    .home-ranking-show {
+      .ranking-title {
+        @include text-style(14);
+        font-weight: 700;
+        line-height: 40px;
+
+        height: 40px;
+        border-radius: 8px;
+
+        padding-left: 16px;
+        margin-bottom: 10px;
+      }
+
+      .ranking-list {
+        .ranking-item {
+          @include flexbox(between);
+          @include text-style(14);
+
+          &-left {
+            @include flexbox(start);
+
+            .rank {
+              width: 8px;
+              margin-right: 20px;
+            }
+
+            .avatar-24 {
+              margin-right: 8px;
+            }
+          }
+
+          &-right {
+          }
+
+          &:not(:first-child) {
+            padding-top: 10px;
+          }
+
+          &:not(:last-child) {
+            padding-bottom: 10px;
+            border-bottom: 1px solid $border;
+          }
+        }
+      }
+    }
   }
-  ///////////////////////////////////
+
+  @include responsive(T) {
+    &-services {
+      .service {
+        &-image {
+          width: 100%;
+          height: 120px;
+          border-radius: 10px;
+        }
+
+        &-name {
+          @include text-style(14);
+        }
+      }
+    }
+
+    &-rankings {
+      .ranking-image {
+        width: 100px;
+        height: 100px;
+
+        img {
+          display: block;
+          width: 100px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 0;
 }

@@ -123,7 +123,7 @@
       &-button-wrapper {
         @include flexbox;
         .btn-outlined {
-          @include text-style-14;
+          @include text-style(14);
           width: 110px;
           height: 35px;
           background-color: $blue-light;
@@ -137,7 +137,7 @@
         }
 
         .btn-primary {
-          @include text-style-14;
+          @include text-style(14);
           width: 110px;
           height: 35px;
           margin-left: 30px;
@@ -150,7 +150,7 @@
     @include flexbox;
     margin-top: 30px;
     button {
-      @include text-style-18;
+      @include text-style(18);
       color: $white;
       background-color: $secondary;
       width: 120px;
@@ -160,7 +160,7 @@
 
     @include responsive(T) {
       button {
-        @include text-style-16;
+        @include text-style(16);
         width: 150px;
         height: 40px;
         margin: 40px;
@@ -169,7 +169,7 @@
 
     @include responsive(D) {
       button {
-        @include text-style-16;
+        @include text-style(16);
         width: 150px;
         height: 40px;
         margin: 40px;
