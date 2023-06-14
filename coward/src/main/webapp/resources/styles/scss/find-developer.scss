@@ -1,0 +1,115 @@
+@import "./main.scss";
+
+.banner-top {
+  background-color: #9792f0; // 배너 배경 색
+
+  h3 {
+    color: white;
+  }
+
+  p {
+    @include text-style(14);
+    color: white;
+    font-weight: 600;
+  }
+}
+
+.stack {
+  &-box {
+    @include flexbox(start);
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  &-btn {
+    @include flexbox;
+    @include text-style(12);
+
+    width: 45px;
+    height: 25px;
+    margin-right: 10px;
+
+    border-radius: 5px;
+    color: $primary;
+    font-weight: 600;
+    background-color: $background;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    label {
+      text-align: center;
+      width: 100%;
+      line-height: 23px;
+      border: 1.5px solid $secondary;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 200ms ease-in-out;
+    }
+    input[type="radio"] {
+      &:checked + label {
+        border: 1.5px solid $blue;
+        background-color: $blue;
+        color: white;
+        transition: background-color 200ms ease-in-out;
+      }
+    }
+
+    input[type="radio"]:hover:not(:checked) + label {
+      border: 1.5px solid $blue-dark;
+    }
+
+    input[type="radio"]:active + label {
+      background-color: $blue;
+      color: white;
+      transition: background-color 200ms ease-in-out;
+    }
+  }
+}
+
+.developer {
+  &-card {
+    padding: 20px 15px;
+    border: 1px solid $border;
+    border-radius: 10px;
+  }
+
+  &-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+  }
+
+  /* 타입과 이름 가로 배치 */
+  &-title {
+    @include flexbox;
+  }
+
+  &-info {
+    @include column-flexbox(center, start);
+  }
+
+  &-profile {
+    @include flexbox(start);
+  }
+  &-type {
+    @include flexbox;
+    width: 28px;
+    height: 13px;
+    padding: 3px;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    font-size: 6px;
+    color: $blue;
+  }
+
+  &-nick {
+    @include text-style(14);
+    color: $primary;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  &-oneline {
+    @include text-style(12);
+  }
+}

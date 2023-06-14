@@ -725,8 +725,6 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
-  margin-bottom: 24px;
-
 }
 
 .contest-slider {
@@ -753,7 +751,6 @@ i {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1200,7 +1197,6 @@ i {
   height: 160px;
   background-color: #222121;
   margin-top: 20px;
-
 }
 .banner-bottom-image img {
   display: block;
@@ -1252,7 +1248,6 @@ i {
   }
 }
 
-
 /* banner-top html code
 
 <div class="banner-top">
@@ -1303,6 +1298,7 @@ i {
   }
 }
 */
+
 
 .nav {
   background-color: #fff;
