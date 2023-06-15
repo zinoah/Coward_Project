@@ -68,20 +68,21 @@
   }
 }
 
+// 슬라이더 컨트롤러
 .slider-controls {
   @include flexbox(between);
   @include pos-center;
-  width: calc(100% + 40px);
+  width: calc(100% + 25px);
 
   .control-button {
     @include inline-flexbox;
-    width: 40px;
+    width: 30px;
     height: 40px;
-    font-size: 18px;
+    font-size: 14px;
     background-color: $white;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
     color: $primary;
-    border-radius: 50%;
+    border-radius: 10px;
     transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
 
     &-is-prev {
@@ -102,6 +103,15 @@
     &:hover {
       color: $white;
       background-color: $blue;
+    }
+  }
+
+  @include responsive(T) {
+    width: calc(100% + 40px);
+    .control-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
     }
   }
 }

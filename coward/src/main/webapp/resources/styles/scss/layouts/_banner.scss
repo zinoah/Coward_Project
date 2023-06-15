@@ -121,7 +121,7 @@
   background-size: 240px;
 
   &-title {
-    @include text-style(24);
+    font-size: 20px;
     font-weight: bold;
     color: $white;
   }
