@@ -1,5 +1,7 @@
 @import "./main.scss";
 
+$margin24: 24px;
+
 .banner {
   &-top {
     background-color: #ffefc5; // 배너 배경 색
@@ -16,33 +18,52 @@
       }
     }
   }
+
+  &-middle {
+    background-color: $red;
+    background-image: url("../../assets/images/two-peple-mobile.svg");
+    margin-top: $margin24;
+  }
 }
 
 .main {
-  .banner-middle {
-    background-color: $red;
-    background-image: url("../../assets/images/two-peple-mobile.svg");
-  }
-
   .title-wrapper {
+    @include flexbox(start, center);
+    width: 100%;
+    height: 30px;
+    margin-bottom: $margin24;
     h1 {
       @include text-style(24);
-      margin-bottom: 24px;
     }
   }
 
-  .category-button-box-mobile {
+  .category-button-box {
     @include flexbox(between);
     width: 100%;
     height: 45px;
     background-color: $border;
-    border: 2px solid $border;
 
     button {
       flex-basis: 25%;
       height: 45px;
+      background-color: $border;
+      font-weight: 700;
+      color: $secondary;
+
+      &.is-active {
+        background-color: $blue;
+
+        color: $white;
+
+        &:hover {
+          color: $white;
+          border-bottom: 2px solid $blue;
+          transition: 0.3s;
+        }
+      }
 
       &:hover {
+        color: $blue;
         border-bottom: 2px solid $blue;
         transition: 0.3s;
       }
@@ -53,7 +74,7 @@
     @include flexbox(end, center);
     height: 40px;
     margin-top: 10px;
-    .select {
+    .select-box {
       @include flexbox(between);
       border: 1px solid $border;
       border-radius: 5px;
@@ -71,6 +92,7 @@
     .category-button-wrapper {
       margin-top: 10px;
       button {
+        border-radius: 5px;
         margin-right: 5px;
         height: 45px;
       }
@@ -82,8 +104,14 @@
   }
 
   @include responsive(D) {
-    .category-button-wrapper {
+    .category-button-box {
+      @include flexbox(start, center);
+      height: 30px;
+      background-color: white;
+      border: none;
+
       button {
+        flex-basis: 6%;
         height: 30px;
         margin-right: 10px;
       }
