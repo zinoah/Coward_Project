@@ -15,6 +15,17 @@ $ranking-background: (
   4: #ffc1c9,
 );
 
+// 최하단 디자인 요소 사이즈 변수
+$feature-box-size-sm: 100px;
+$feature-box-size-md: 120px;
+$feature-box-size-lg: 150px;
+
+$feature-box-margin: 18px;
+
+$track-width-sm: ($feature-box-size-sm + $feature-box-margin) * 9;
+$track-width-md: ($feature-box-size-md + $feature-box-margin) * 9;
+$track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
+
 .banner {
   &-top {
     background-color: #fbeee5;
@@ -266,15 +277,29 @@ $ranking-background: (
   }
 
   &-contest-new {
+    margin-bottom: $section-margin;
+
     .new-contest-board {
       .new-contest-item {
+        @include flexbox(start);
         margin-bottom: 10px;
+        padding: 8px 16px;
+        border: 1px solid $border;
+        border-radius: 8px;
+
+        .contest-thumbnail {
+          width: 60px;
+          margin-right: 20px;
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+          }
+        }
 
         .contest-info {
-          padding: 10px;
-          padding-left: 24px;
-          border: 1px solid $border;
-          border-radius: 8px;
+          @include column-flexbox(center, start);
         }
       }
     }
@@ -285,11 +310,126 @@ $ranking-background: (
       }
 
       .contest-title {
-        @include text-style(16);
+        @include text-style(14);
       }
 
       .contest-price {
         @include text-style(14);
+      }
+    }
+  }
+
+  &-features {
+    .section-title {
+      justify-content: center;
+    }
+
+    .track-wrapper {
+      height: $feature-box-size-sm;
+      position: relative;
+      overflow-x: hidden;
+      margin-bottom: 16px;
+
+      .track {
+        @include flexbox(start);
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        transform: translate3d(0, 0, 0);
+
+        // Note: track 애니메이션 값 설정
+        &.first {
+          animation: slide-first 80s linear infinite;
+
+          @keyframes slide-first {
+            0% {
+              transform: translate3d(0, 0, 0);
+            }
+            100% {
+              transform: translate3d(-$track-width-sm, 0, 0);
+            }
+          }
+        }
+
+        &.second {
+          animation: slide-second 80s linear infinite;
+
+          @keyframes slide-second {
+            0% {
+              transform: translate3d($track-width-sm, 0, 0);
+            }
+            100% {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+        }
+
+        &.third {
+          top: initial;
+          bottom: 0;
+
+          animation: slide-third 80s linear infinite;
+
+          @keyframes slide-third {
+            0% {
+              transform: translate3d(-$track-width-sm, 0, 0);
+            }
+            100% {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+        }
+
+        &.forth {
+          top: initial;
+          bottom: 0;
+
+          animation: slide-forth 80s linear infinite;
+
+          @keyframes slide-forth {
+            0% {
+              transform: translate3d(0, 0, 0);
+            }
+            100% {
+              transform: translate3d($track-width-sm, 0, 0);
+            }
+          }
+        }
+
+        .feature-box {
+          @include column-flexbox;
+          @include text-style(16, $white);
+          font-weight: 500;
+          width: $feature-box-size-sm;
+          height: $feature-box-size-sm;
+          margin-right: $feature-box-margin;
+          border-radius: 10px;
+          box-shadow: $card-shadow;
+
+          &.is-blue {
+            background-color: $blue;
+          }
+
+          &.is-yellow {
+            background-color: $yellow;
+          }
+
+          .feature-image {
+            @include flexbox;
+            height: auto;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .feature-name {
+            @include text-style(14);
+          }
+        }
       }
     }
   }
@@ -349,31 +489,160 @@ $ranking-background: (
       }
     }
 
-    &-contest-new {
-      .new-contest-list {
-        @include flexbox(between);
-        flex-wrap: wrap;
+    &-features {
+      .track-wrapper {
+        height: $feature-box-size-md;
 
-        .new-contest-item {
-          // width: 200px;
-          // height: 280px;
-          width: 160px;
-          height: 240px;
-          padding: 10px;
-          margin-bottom: 10px;
-          box-shadow: $card-shadow;
-
-          .contest-thumbnail {
-            width: 140px;
-            height: 140px;
-            margin-bottom: 10px;
-
-            img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
+        .track {
+          // Note: track 애니메이션 값 설정
+          &.first {
+            @keyframes slide-first {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d(-$track-width-md, 0, 0);
+              }
             }
+          }
+
+          &.second {
+            @keyframes slide-second {
+              0% {
+                transform: translate3d($track-width-md, 0, 0);
+              }
+              100% {
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+
+          &.third {
+            @keyframes slide-third {
+              0% {
+                transform: translate3d(-$track-width-md, 0, 0);
+              }
+              100% {
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+
+          &.forth {
+            @keyframes slide-forth {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d($track-width-md, 0, 0);
+              }
+            }
+          }
+
+          .feature-box {
+            width: $feature-box-size-md;
+            height: $feature-box-size-md;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    .new-contest-list {
+      @include flexbox(start);
+      flex-wrap: wrap;
+
+      .new-contest-item {
+        width: 190px;
+        padding: 10px;
+        margin-right: 24px;
+        margin-bottom: 10px;
+        box-shadow: $card-shadow;
+
+        &.is-ad {
+          .contest-header {
+            @include flexbox(between);
+
+            .ad-tag {
+              font-size: 8px;
+              color: $tertiary;
+              border: 1px solid $border;
+              padding: 1px 5px;
+              border-radius: 4px;
+            }
+          }
+        }
+
+        .contest-thumbnail {
+          width: 100%;
+          height: 160px;
+          margin-bottom: 10px;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    &-features {
+      .track-wrapper {
+        height: $feature-box-size-lg * 2 + 18px;
+
+        .track {
+          // Note: track 애니메이션 값 설정
+          &.first {
+            @keyframes slide-first {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d(-$track-width-lg, 0, 0);
+              }
+            }
+          }
+
+          &.second {
+            @keyframes slide-second {
+              0% {
+                transform: translate3d($track-width-lg, 0, 0);
+              }
+              100% {
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+
+          &.third {
+            @keyframes slide-third {
+              0% {
+                transform: translate3d(-$track-width-lg, 0, 0);
+              }
+              100% {
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+
+          &.forth {
+            @keyframes slide-forth {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d($track-width-lg, 0, 0);
+              }
+            }
+          }
+
+          .feature-box {
+            width: $feature-box-size-lg;
+            height: $feature-box-size-lg;
           }
         }
       }
