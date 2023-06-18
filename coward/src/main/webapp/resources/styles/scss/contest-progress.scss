@@ -2,7 +2,7 @@
 
 /***** 모바일 *****/
 /* 네비게이션 바 */
-.nav {
+.category {
   width: 100%;
   background-color: $background;
   margin-bottom: 20px;
@@ -20,20 +20,22 @@
 
   margin-bottom: 15px;
   font-weight: 700;
-  padding: 10px;
+  padding: 8px;
   border-bottom: 1px solid $border;
 }
 
 .progress {
   /* 목업대로 가려면 start로 */
   @include flexbox(between);
-  width: 45px;
+  width: 42px;
+
   &-box {
     @include flexbox(between);
+
     border: 1px solid $border;
     border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 14px;
+    margin-bottom: 15px;
   }
 
   /* 상태표시 동그라미 */
@@ -63,13 +65,17 @@
   }
 }
 
-/* 공모전 이름이 길어지면 두줄이 됨
-근데 어떻게 손봐야 될지 모르겠음 */
 .contest {
   &-title {
     @include text-style(12);
     font-weight: 600;
-    overflow: hidden;
+    width: 155px;
+
+    P {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   /* 주최, 남은 기간 가로 정렬*/
@@ -84,26 +90,29 @@
   }
 
   &-company {
+    width: 105px;
     font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
-/*TODO: content에 between이 안먹어서 고정 마진으로 줌
-    -> 주최기업 이름 길이가 다를 경우 위치가 들쭉날쭉 */
 .deadline {
+  width: 30px;
   font-size: 9px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .company {
   &-profile {
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
 
     &-img {
-      width: 25px;
-      height: 25px;
+      width: 100%;
+      height: 100%;
     }
 
     &-left {
@@ -120,11 +129,11 @@
 @include responsive(T) {
   /* 배너 */
   .banner-top {
-    margin: 0;
+    margin-bottom: 0;
   }
 
   /* 네비게이션 바 */
-  .nav-bar {
+  .category-bar {
     @include text-style(16);
     padding: 15px 0;
   }
@@ -132,6 +141,24 @@
   /* 소제목 스타일 */
   .introduce-title {
     @include text-style(16);
+  }
+
+  .contest {
+    &-title {
+      @include text-style(12);
+      font-weight: 600;
+      width: 100%;
+    }
+
+    P {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-company {
+      width: 100%;
+    }
   }
 
   .company {
@@ -169,7 +196,7 @@
   }
 
   /* 네비게이션 바 */
-  .nav {
+  .category {
     width: 100%;
 
     background-color: $background;
@@ -248,8 +275,8 @@
 
   /* 메인과 크기 맞추기 위해 */
   .contest-management {
-    width: 843.33px;
-    height: 695.33px;
+    width: 845px;
+    height: 695px;
     padding: 15px 30px;
     margin: 0 10px;
     border: 1px solid $border;

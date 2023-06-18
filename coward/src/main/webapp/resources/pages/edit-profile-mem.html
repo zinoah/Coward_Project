@@ -59,6 +59,42 @@
         </div>
       </div>
     </header>
+
+    <nav class="nav">
+      <h2 class="visually-hidden">메뉴</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="nav-wrapper">
+              <div class="nav-left">
+                <ul class="nav-list">
+                  <li class="nav-item is-active">
+                    <a href="#">공모전</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">개발자 찾기</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">가격 안내</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nav-right lg-only">
+                <form class="nav-search" action="#">
+                  <input
+                    class="nav-search-input"
+                    type="text"
+                    placeholder="어떤 공모전을 찾으시나요?"
+                  />
+                  <i class="ic-search" aria-hidden></i>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="full">
       <div class="banner-top sm-hidden">
         <img src="../assets/images/mypage-banner.png" />
@@ -70,10 +106,10 @@
           <!-- 네비게이션 바 -->
 
           <aside>
-            <nav class="nav">
+            <nav class="category">
               <div class="container">
                 <div class="row">
-                  <div class="col-sm-4 nav-web">
+                  <div class="col-sm-4 category-web">
                     <p class="profile-mypage lg-only">마이페이지</p>
                     <div class="profile lg-only">
                       <div class="profile-img avatar">
@@ -87,7 +123,7 @@
                       </div>
                     </div>
 
-                    <ul class="nav-bar">
+                    <ul class="category-bar">
                       <li><a href="#">내 정보</a></li>
                       <li><a href="#">공모전 관리</a></li>
                       <li><a href="#">크레딧 인출</a></li>
@@ -108,70 +144,85 @@
                   <div class="edit-profile-wrapper">
                     <p class="introduce-title little-title">내 정보 수정</p>
                     <form>
-                      <div class="profile-edit">
-                        <div class="profile-user">
-                          <div class="profile-img avatar">
-                            <img
-                              src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                      <div class="profile-header">
+                        <div class="profile-edit">
+                          <div class="profile-user">
+                            <div class="profile-img avatar">
+                              <img
+                                src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                              />
+                            </div>
+                            <div class="edit-img">
+                              <i class="ic-camera"></i>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="nick-stack">
+                          <div class="nickname-box">
+                            <p class="introduce-title">닉네임</p>
+                            <input
+                              type="text"
+                              id="nickName"
+                              placeholder="자신만의 닉네임을 설정해보세요!"
                             />
                           </div>
-                          <div class="edit-img"><i class="ic-camera"></i></div>
-                        </div>
-                      </div>
 
-                      <div class="nick-stack">
-                        <div class="nickname-box">
-                          <p class="introduce-title">닉네임</p>
-                          <input
-                            type="text"
-                            id="nickName"
-                            placeholder="자신만의 닉네임을 설정해보세요!"
-                          />
-                        </div>
+                          <div class="stack-box">
+                            <p class="introduce-title">기술 스택</p>
+                            <div class="stack-btn-group">
+                              <div class="stack-btn">
+                                <input
+                                  id="front"
+                                  type="radio"
+                                  name="userStack"
+                                  value="front"
+                                />
+                                <label for="front">Front End</label>
+                              </div>
 
-                        <div class="stack-box">
-                          <p class="introduce-title">기술 스택</p>
-                          <div class="stack-btn-group">
-                            <div class="stack-btn">
-                              <input
-                                id="front"
-                                type="radio"
-                                name="userStack"
-                                value="front"
-                              />
-                              <label for="front">Front End</label>
-                            </div>
+                              <div class="stack-btn">
+                                <input
+                                  id="back"
+                                  type="radio"
+                                  name="userStack"
+                                  value="back"
+                                />
+                                <label for="back">Back End</label>
+                              </div>
 
-                            <div class="stack-btn">
-                              <input
-                                id="back"
-                                type="radio"
-                                name="userStack"
-                                value="back"
-                              />
-                              <label for="back">Back End</label>
-                            </div>
-
-                            <div class="stack-btn">
-                              <input
-                                id="full"
-                                type="radio"
-                                name="userStack"
-                                value="full"
-                              />
-                              <label for="full">Full Stack</label>
+                              <div class="stack-btn">
+                                <input
+                                  id="full"
+                                  type="radio"
+                                  name="userStack"
+                                  value="full"
+                                />
+                                <label for="full">Full Stack</label>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="one-skill">
-                        <div class="one-liner-box">
-                          <p class="introduce-title">한줄 소개</p>
-                          <textarea
-                            class="one-liner"
-                            maxlength="50"
-                            placeholder="자신을 어필할 소개를 해보세요!!"
-                          ></textarea>
+                      <div class="one-intro-skill">
+                        <div class="one-intro">
+                          <div class="one-liner-box">
+                            <p class="introduce-title">한줄 소개</p>
+                            <input
+                              type="text"
+                              class="one-liner"
+                              maxlenghth="50"
+                              placeholder="자신을 기업에게 한줄로 소개 해 보세요!"
+                            />
+                          </div>
+
+                          <div class="introduce-box">
+                            <p class="introduce-title">자기 소개</p>
+                            <textarea
+                              class="introduce-content"
+                              placeholder="자신을 어필할 소개를 해보세요!!"
+                            ></textarea>
+                          </div>
                         </div>
                         <div class="skill-group-box">
                           <p class="introduce-title">보유 스킬</p>
