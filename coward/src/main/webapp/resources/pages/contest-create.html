@@ -99,47 +99,47 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
-              <div class="contest-create-wrapper">
-                <div class="contest-create-form">
-                  <div class="contest-create-form-title">
-                    <div>👉 어떤 공모전 인가요?</div>
-                    <div class="contest-create-form-title-tooltip-link">
-                      <img src="../assets/images/question-circle.svg" />
-                      <div class="contest-create-form-title-tooltip-board">
-                        <div>
-                          <span> 아래 브리핑 예시를 참고해보세요! </span>
-                        </div>
-                        <div>
-                          <p>
-                            의뢰자님 설명이 세부적이고 명확할수록, 마음에 드는
-                            공모전이 등록될 확률이 높아집니다.
-                          </p>
-                          <p>
-                            작성이 어려운 경우 아래 기준으로 천천히 작성해
-                            보세요 😄
-                          </p>
-                          <br />
-                          <p>
-                            *공모 주제 : 원하는 스타일이 명확할 경우, 최대한
-                            상세하게 적어주시는게 좋아요.
-                          </p>
-                          <p>
-                            *응모 자격 : (ex. 졸업까지 남은 수업연한 2년 이하인
-                            대학생(휴학생, 졸업유예, 교육 기간 내 졸업예정자
-                            포함 등)
-                          </p>
-                          <br />
-                          <p>
-                            [참고 사항]- 0자 내외로 작성해 주세요!(ex. 띄어쓰기
-                            포함 여부 등 체크) - 다른 기업의 카피와 동일하지
-                            않아야 합니다.
-                          </p>
+              <form action="#" method="post">
+                <div class="contest-create-wrapper">
+                  <div class="contest-create-form">
+                    <div class="contest-create-form-title">
+                      <div>👉 어떤 공모전 인가요?</div>
+                      <div class="contest-create-form-title-tooltip-link">
+                        <img src="../assets/images/question-circle.svg" />
+                        <div class="contest-create-form-title-tooltip-board">
+                          <div>
+                            <span> 아래 브리핑 예시를 참고해보세요! </span>
+                          </div>
+                          <div>
+                            <p>
+                              의뢰자님 설명이 세부적이고 명확할수록, 마음에 드는
+                              공모전이 등록될 확률이 높아집니다.
+                            </p>
+                            <p>
+                              작성이 어려운 경우 아래 기준으로 천천히 작성해
+                              보세요 😄
+                            </p>
+                            <br />
+                            <p>
+                              *공모 주제 : 원하는 스타일이 명확할 경우, 최대한
+                              상세하게 적어주시는게 좋아요.
+                            </p>
+                            <p>
+                              *응모 자격 : (ex. 졸업까지 남은 수업연한 2년
+                              이하인 대학생(휴학생, 졸업유예, 교육 기간 내
+                              졸업예정자 포함 등)
+                            </p>
+                            <br />
+                            <p>
+                              [참고 사항]- 0자 내외로 작성해 주세요!(ex.
+                              띄어쓰기 포함 여부 등 체크) - 다른 기업의 카피와
+                              동일하지 않아야 합니다.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="contest-create-form-inner">
-                    <form action="#" method="post">
+                    <div class="contest-create-form-inner">
                       <div class="contest-create-form-company-name">
                         <div class="contest-create-form-inner-section-title">
                           <span>기업명</span><span>*</span>
@@ -301,7 +301,9 @@
                           </div>
                           <div class="price-box">
                             <div class="price-box-inner-box">
-                              <span class="sm-hidden">🏅 우승</span>
+                              <div class="sm-hidden">
+                                <span>🏅 우승</span>
+                              </div>
                               <div>
                                 <div class="peple-count">
                                   <input type="number" />
@@ -433,53 +435,59 @@
                           </div>
                         </div>
                       </div>
-                      <div class="contest-create-form-btn lg-hidden"></div>
-                    </form>
+                      <div class="contest-create-form-btn lg-hidden">
+                        <button class="btn-primary" type="submit">다음</button>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <!-- 웹화면 sticky -->
-                <div class="contest-create-summary lg-only">
-                  <div class="contest-create-summary-sticky-box">
-                    <div class="contest-create-summary-sticky-box-title">
-                      <h3>공모전 요약</h3>
-                    </div>
-                    <div class="contest-create-summary-sticky-box-thumbnail">
-                      <img
-                        src="../assets/images/contest-thumbnail.svg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="contest-create-summary-sticky-box-date">
-                      <span>기간</span>
-                      <span>2023.05.27 ~ 2023.07.10</span>
-                    </div>
-                    <div class="contest-create-summary-sticky-box-price">
-                      <div
-                        class="contest-create-summary-sticky-box-price-detail"
-                      >
-                        <div>
-                          <span>공모전 상금</span>
-                          <span>300,000</span>
-                        </div>
-                        <div>
-                          <span>프리미엄</span>
-                          <span>500,000</span>
-                        </div>
+                  <!-- 웹화면 sticky -->
+                  <div class="contest-create-summary lg-only">
+                    <div class="contest-create-summary-sticky-box">
+                      <div class="contest-create-summary-sticky-box-title">
+                        <h3>공모전 요약</h3>
                       </div>
-                      <div
-                        class="contest-create-summary-sticky-box-price-total"
-                      >
-                        <span>총 금액</span>
-                        <span>800,000원</span>
+                      <div class="contest-create-summary-sticky-box-thumbnail">
+                        <img
+                          src="../assets/images/contest-thumbnail.svg"
+                          alt=""
+                        />
                       </div>
-                      <div class="contest-create-summary-sticky-box-price-btn">
-                        <button class="btn-primary btn-40">다음</button>
+                      <div class="contest-create-summary-sticky-box-date">
+                        <span>기간</span>
+                        <span>2023.05.27 ~ 2023.07.10</span>
+                      </div>
+                      <div class="contest-create-summary-sticky-box-price">
+                        <div
+                          class="contest-create-summary-sticky-box-price-detail"
+                        >
+                          <div>
+                            <span>공모전 상금</span>
+                            <span>300,000</span>
+                          </div>
+                          <div>
+                            <span>프리미엄</span>
+                            <span>500,000</span>
+                          </div>
+                        </div>
+                        <div
+                          class="contest-create-summary-sticky-box-price-total"
+                        >
+                          <span>총 금액</span>
+                          <span>800,000원</span>
+                        </div>
+                        <div
+                          class="contest-create-summary-sticky-box-price-btn"
+                        >
+                          <button class="btn-primary btn-40" type="submit">
+                            다음
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
