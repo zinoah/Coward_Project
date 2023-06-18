@@ -1,11 +1,6 @@
 @import "./main.scss";
 
-<<<<<<< HEAD
-$section-margin: 24px;
-
-=======
 // Note: 속성값 변수 모음
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
 $service-background: (
   1: #ffdede,
   2: #fcf2c4,
@@ -19,8 +14,6 @@ $ranking-background: (
   4: #ffc1c9,
 );
 
-<<<<<<< HEAD
-=======
 // 최하단 디자인 요소 사이즈 변수
 $feature-box-size-sm: 100px;
 $feature-box-size-md: 120px;
@@ -34,7 +27,6 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
 
 $track-speed: 80s;
 
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
 .banner {
   &-top {
     background-color: #fbeee5;
@@ -51,13 +43,41 @@ $track-speed: 80s;
       }
     }
   }
+
+  &-bottom {
+    &:hover {
+      .banner-bottom-image {
+        transform: translateY(-10px);
+
+        animation: shake 1s infinite;
+
+        @keyframes shake {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(-4deg);
+          }
+          50% {
+            transform: rotate(4deg);
+          }
+          75% {
+            transform: rotate(-4deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+  }
 }
 
 .home {
   // Note: 공통 요소
   .section-title {
     @include flexbox(between);
-    margin-bottom: 16px;
+    margin-bottom: $section-title-bottom;
 
     // 타이틀 제목
     h3 {
@@ -78,8 +98,12 @@ $track-speed: 80s;
 
       .ic-chevron {
         display: inline-block;
-        font-size: 12px;
+        font-size: 10px;
         margin-left: 4px;
+
+        position: relative;
+        top: -1px;
+
         transform: rotate(-180deg);
       }
     }
@@ -95,7 +119,7 @@ $track-speed: 80s;
   }
 
   &-contest-preview {
-    margin-bottom: $section-margin;
+    margin-bottom: $between-section;
 
     &-slider {
       position: relative;
@@ -181,22 +205,9 @@ $track-speed: 80s;
   }
 
   &-services {
-    margin-bottom: $section-margin;
+    margin-bottom: $between-section;
 
     .service {
-<<<<<<< HEAD
-      a {
-        @include column-flexbox;
-      }
-
-      // Note: 서비스 추천 아이콘 배경색 변경
-      @for $i from 2 through 5 {
-        &-wrapper {
-          &:nth-of-type(#{$i}) {
-            .service-image {
-              background-color: map-get($service-background, $i);
-            }
-=======
       @include column-flexbox;
 
       // Note: 서비스 바로가기 버튼 링크들 배경색
@@ -204,7 +215,6 @@ $track-speed: 80s;
         &:nth-of-type(#{$i}) {
           .service-image {
             background-color: map-get($service-background, $i);
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
           }
         }
       }
@@ -232,7 +242,7 @@ $track-speed: 80s;
   }
 
   &-rankings {
-    margin-bottom: $section-margin;
+    margin-bottom: $between-section;
 
     .home-ranking {
       &:not(:last-of-type) {
@@ -296,17 +306,6 @@ $track-speed: 80s;
   }
 
   &-contest-new {
-<<<<<<< HEAD
-    .new-contest-board {
-      .new-contest-item {
-        margin-bottom: 10px;
-
-        .contest-info {
-          padding: 10px;
-          padding-left: 24px;
-          border: 1px solid $border;
-          border-radius: 8px;
-=======
     margin-bottom: $between-section;
 
     // Note: 보드형 공모전 보기
@@ -334,7 +333,6 @@ $track-speed: 80s;
             height: auto;
             border-radius: 4px;
           }
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
         }
       }
     }
@@ -346,22 +344,13 @@ $track-speed: 80s;
         @include text-style(12, $tertiary);
       }
 
-<<<<<<< HEAD
-      .contest-title {
-        @include text-style(16);
-      }
-
-=======
       .contest-title,
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
       .contest-price {
         @include text-style(14);
       }
     }
   }
 
-<<<<<<< HEAD
-=======
   &-features {
     .section-title {
       justify-content: center;
@@ -491,12 +480,15 @@ $track-speed: 80s;
     }
   }
 
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
   @include responsive(T) {
+    .section-title {
+      h3 {
+        @include text-style(18);
+      }
+    }
+
     &-services {
       .service {
-<<<<<<< HEAD
-=======
         &:hover {
           .service-image {
             img {
@@ -509,7 +501,6 @@ $track-speed: 80s;
           }
         }
 
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
         &-image {
           width: 100%;
           height: 120px;
@@ -569,21 +560,10 @@ $track-speed: 80s;
       }
     }
 
-    &-contest-new {
-      .new-contest-list {
-        @include flexbox(between);
-        flex-wrap: wrap;
+    &-features {
+      .track-wrapper {
+        height: $feature-box-size-md + 20px;
 
-<<<<<<< HEAD
-        .new-contest-item {
-          // width: 200px;
-          // height: 280px;
-          width: 160px;
-          height: 240px;
-          padding: 10px;
-          margin-bottom: 10px;
-          box-shadow: $card-shadow;
-=======
         .track {
           // Note: track 애니메이션 값 설정
           &.first {
@@ -702,19 +682,71 @@ $track-speed: 80s;
           margin-bottom: 10px;
 
           transition: 0.3s ease-in-out;
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
 
-          .contest-thumbnail {
-            width: 140px;
-            height: 140px;
-            margin-bottom: 10px;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
 
-            img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
+    &-features {
+      .track-wrapper {
+        height: $feature-box-size-lg * 2 + 40px;
+
+        .track {
+          // Note: track 애니메이션 값 설정
+          &.first {
+            @keyframes slide-first {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d(-$track-width-lg, 0, 0);
+              }
             }
+          }
+
+          &.second {
+            @keyframes slide-second {
+              0% {
+                transform: translate3d($track-width-lg, 0, 0);
+              }
+              100% {
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+
+          &.third {
+            @keyframes slide-third {
+              0% {
+                transform: translate3d(-$track-width-lg, 0, 0);
+              }
+              100% {
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+
+          &.forth {
+            @keyframes slide-forth {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d($track-width-lg, 0, 0);
+              }
+            }
+          }
+
+          .feature-box {
+            width: $feature-box-size-lg;
+            height: $feature-box-size-lg;
           }
         }
       }
