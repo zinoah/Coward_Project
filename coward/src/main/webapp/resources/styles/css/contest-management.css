@@ -835,18 +835,26 @@ i {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .contest-card:first-of-type {
   margin-top: 16px;
+}
+.contest-card:hover {
+  transform: translateY(-10px);
 }
 .contest-card .bookmark {
   position: absolute;
   right: 7%;
   top: -5px;
   font-size: 25px;
+  cursor: pointer;
 }
 .contest-card .bookmark i {
   color: #b2b3b9;
+}
+.contest-card .bookmark i:hover {
+  color: #ffc1c9;
 }
 .contest-card-title {
   display: flex;
@@ -1429,11 +1437,6 @@ i {
     border-top: none;
     border-bottom: 1px solid #e0e2e7;
   }
-}
-
-.banner img {
-  width: 100%;
-  padding-top: 10px;
 }
 
 .contest-top h3 {

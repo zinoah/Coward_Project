@@ -1439,290 +1439,658 @@ i {
   }
 }
 
-.briefing-container .background-banner {
+.create-container .background-banner {
   position: relative;
 }
-.briefing-container .background-banner div {
+.create-container .background-banner div {
   width: 100%;
   height: 250px;
   position: absolute;
   background-color: #abdeff;
 }
-.briefing-container .contest-briefing {
+.create-container .contest-create {
   position: relative;
 }
-.briefing-container .contest-briefing-content-box {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #fff;
-  margin-top: 100px;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-}
-.briefing-container .contest-briefing-content-box-thumbnail {
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  object-fit: cover;
-  border-radius: 20px;
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-thumbnail img {
-  width: 100%;
-}
-.briefing-container .contest-briefing-content-box-title {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  font-weight: 700;
-  margin-bottom: 30px;
-  height: 40px;
-}
-.briefing-container .contest-briefing-content-box-profile {
+.create-container .contest-create-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 1700px;
+  margin-top: 100px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.create-container .contest-create-form {
+  width: 100%;
+  height: 1700px;
+  padding: 20px;
+}
+.create-container .contest-create-form-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   font-size: 18px;
   line-height: 28px;
   letter-spacing: -0.02em;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-.briefing-container .contest-briefing-content-box-profile div {
-  margin-right: 10px;
-}
-.briefing-container .contest-briefing-content-box-tag {
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-tag div {
-  margin-right: 10px;
-}
-.briefing-container .contest-briefing-content-box-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-basis: 25%;
-  border-top: 1px solid #e0e2e7;
-}
-.briefing-container .contest-briefing-content-box-info div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100px;
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-info div p:first-child {
-  color: #8c8d96;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.briefing-container .contest-briefing-content-box-info div p:last-child {
-  font-weight: 500;
-}
-.briefing-container .contest-briefing-content-box-award {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  border-radius: 10px;
-  background-color: #e0e2e7;
-  margin-bottom: 24px;
-}
-.briefing-container .contest-briefing-content-box-award div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-basis: 50%;
-  height: 70%;
-}
-.briefing-container .contest-briefing-content-box-award div:last-child {
-  border-left: 1px solid #b2b3b9;
-}
-.briefing-container .contest-briefing-content-box-award div p:first-child {
-  color: #8c8d96;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.briefing-container .contest-briefing-content-box-award div p:last-child {
-  font-weight: 500;
-}
-.briefing-container .contest-briefing-content-box-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-}
-.briefing-container .contest-briefing-content-box-button button {
-  height: 50px;
-  margin-right: 3%;
-}
-.briefing-container .contest-briefing-content-box-button button:last-child {
-  margin-right: 0;
-}
-.briefing-container .contest-briefing-content-box-button-join {
-  flex-basis: 64%;
-}
-.briefing-container .contest-briefing-content-box-button-bookmark {
-  flex-basis: 15%;
-  color: #8c8d96;
-  border-color: #e0e2e7;
-}
-.briefing-container .contest-briefing-content-box-button-link {
-  flex-basis: 15%;
-  border-color: #e0e2e7;
-}
-.briefing-container .contest-briefing-content-box-briefing-title {
   width: 100%;
   height: 50px;
-  margin-top: 50px;
-  border-bottom: 1px solid #e0e2e7;
 }
-.briefing-container .contest-briefing-content-box-briefing-sub-title {
-  margin-top: 50px;
-  color: #3aacf8;
-  border-left: 2px solid #3aacf8;
-}
-.briefing-container .contest-briefing-content-box-briefing-sub-title h3 {
+.create-container .contest-create-form-title-tooltip-link {
+  width: 30px;
+  height: 30px;
   margin-left: 10px;
+  position: relative;
 }
-.briefing-container .contest-briefing-content-box-detail {
-  margin-top: 50px;
+.create-container .contest-create-form-title-tooltip-link img {
+  cursor: pointer;
+}
+.create-container .contest-create-form-title-tooltip-board {
+  width: 460px;
+  height: 220px;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.466);
+  border: 1.5px solid #3aacf8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: -96px;
+  left: 40px;
+  padding: 20px;
+}
+.create-container .contest-create-form-title-tooltip-board div:nth-child(1) {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.create-container .contest-create-form-title-tooltip-board div:nth-child(2) {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+}
+.create-container .contest-create-form-title-tooltip-board::after, .create-container .contest-create-form-title-tooltip-board::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  left: -8px;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  display: block;
+  border: 10px solid transparent;
+  border-right-color: #fff;
+}
+.create-container .contest-create-form-title-tooltip-board::before {
+  border: 10px solid transparent;
+  border-right-color: #3aacf8;
+  left: -10px;
+}
+.create-container .contest-create-form-inner {
+  width: 100%;
+  padding: 10px;
+}
+.create-container .contest-create-form-inner > form > div {
+  margin-bottom: 24px;
+}
+.create-container .contest-create-form-inner-section-title {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
 }
-@media screen and (min-width: 1200px) {
-  .briefing-container .contest-briefing .container {
-    display: flex;
-  }
-  .briefing-container .contest-briefing-content-box {
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  .briefing-container .contest-briefing-sticky-box {
+.create-container .contest-create-form-inner-section-title > span:nth-child(2) {
+  margin-left: 5px;
+  color: red;
+}
+.create-container .contest-create-form-company-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.create-container .contest-create-form-company-name > div:nth-child(1) {
+  flex-basis: 30%;
+}
+.create-container .contest-create-form-company-name > div:nth-child(2) {
+  flex-basis: 70%;
+}
+.create-container .contest-create-form-company-name input {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 35px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  text-indent: 16px;
+}
+.create-container .contest-create-form-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.create-container .contest-create-form-type > div:nth-child(1) {
+  flex-basis: 30%;
+}
+.create-container .contest-create-form-type > div:nth-child(2) {
+  flex-basis: 70%;
+}
+.create-container .contest-create-form-type input {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 35px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  text-indent: 16px;
+}
+.create-container .contest-create-form-subject > div:nth-child(1) {
+  margin-bottom: 10px;
+}
+.create-container .contest-create-form-subject textarea {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 70px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+}
+.create-container .contest-create-form-qualification > div:nth-child(1) {
+  margin-bottom: 10px;
+}
+.create-container .contest-create-form-qualification textarea {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 100px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+}
+.create-container .contest-create-form-note > div:nth-child(1) {
+  margin-bottom: 10px;
+}
+.create-container .contest-create-form-note textarea {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 100px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+}
+.create-container .contest-create-form-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.create-container .contest-create-form-date > div:nth-child(1) {
+  flex-basis: 50%;
+}
+.create-container .contest-create-form-date > div:nth-child(2) {
+  flex-basis: 50%;
+}
+.create-container .contest-create-form-date input {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  height: 35px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+  padding: 10px;
+}
+.create-container .contest-create-form-skill {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100px;
+}
+.create-container .contest-create-form-skill > div:nth-child(1) {
+  flex-basis: 50%;
+}
+.create-container .contest-create-form-skill > div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 50%;
+  overflow: scroll;
+}
+.create-container .contest-create-form-skill > div:nth-child(2) label {
+  margin: 0px 10px 10px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.create-container .contest-create-form-skill > div:nth-child(2) label:hover {
+  color: #fff;
+  background-color: #ffc200;
+}
+.create-container .contest-create-form-skill > div:nth-child(2) input {
+  display: none;
+}
+.create-container .contest-create-form-thumbnail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 80px;
+}
+.create-container .contest-create-form-thumbnail > div:nth-child(1) {
+  flex-basis: 50%;
+}
+.create-container .contest-create-form-thumbnail > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  border: 1px dotted #e0e2e7;
+  width: 100%;
+  height: 80px;
+}
+.create-container .contest-create-form-thumbnail > div:nth-child(2) div:nth-child(1) {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.create-container .contest-create-form-thumbnail > div:nth-child(2) div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.create-container .contest-create-form-thumbnail > div:nth-child(2) label {
+  width: 80%;
+  height: 30px;
+}
+.create-container .contest-create-form-thumbnail > div:nth-child(2) input {
+  display: none;
+}
+.create-container .contest-create-form-reward > div:nth-child(1) {
+  margin-bottom: 10px;
+}
+.create-container .contest-create-form-reward-price-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+}
+.create-container .contest-create-form-reward-price-box > div {
+  width: 100%;
+}
+.create-container .contest-create-form-reward-price-box .price-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px 0 50px;
+  flex-basis: 15%;
+}
+.create-container .contest-create-form-reward-price-box .price-bar div {
+  width: 100%;
+  height: 7px;
+  background-color: #3aacf8;
+  border-radius: 10px;
+}
+.create-container .contest-create-form-reward-price-box .price-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  padding: 10px;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box input[type=number] {
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e0e2e7;
+  border-radius: 5px;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box input[type=number]::-webkit-outer-spin-button,
+.create-container .contest-create-form-reward-price-box .price-box-inner-box input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box span {
+  margin-right: 20px;
+  color: #b2b3b9;
+  font-weight: 700;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 30%;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  position: relative;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div {
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e0e2e7;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div > div:hover {
+  background-color: #b2b3b9;
+  color: #fff;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div > div:nth-child(1) {
+  border-bottom: 0px;
+  border-radius: 0 5px 0 0;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div > div:nth-child(1) i {
+  rotate: 90deg;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div > div:nth-child(2) {
+  border-radius: 0 0 5px 0;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div > div:nth-child(2) i {
+  rotate: -90deg;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .peple-count > div > i {
+  display: inline-block;
+  color: #8c8d96;
+}
+.create-container .contest-create-form-reward-price-box .price-box-inner-box .reward-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 18%;
+  margin-right: 10px;
+}
+.create-container .contest-create-form-reward-price-box .price-total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 35%;
+  border-top: 1px solid #e0e2e7;
+  border-bottom: 1px solid #e0e2e7;
+}
+.create-container .contest-create-form-reward-price-box .price-total div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-container .contest-create-form-reward-price-box .price-total div span {
+  margin-right: 10px;
+}
+.create-container .contest-create-form-reward-price-box .price-total #result-price {
+  margin-left: 20px;
+  font-size: 20px;
+  color: #3aacf8;
+  font-weight: 500;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(1) {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(1) > span:nth-child(2) {
+  margin-left: 5px;
+  color: red;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-basis: 25%;
+  height: 100%;
+  border: 1px solid #e0e2e7;
+  border-radius: 20px;
+  background-color: #fff;
+  position: relative;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div {
+  flex-basis: 50%;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(1) {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #e0e2e7;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(2) {
+  width: 100%;
+  padding: 10px;
+  font-size: 10px;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(2) div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 20px;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(3) {
+  position: absolute;
+  top: -20px;
+  right: 10px;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) .general > div:nth-child(1) {
+  background-color: #ffe9a4;
+  border-radius: 20px 20px 0px 0px;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) .advanced > div:nth-child(1) {
+  background-color: #abdeff;
+  border-radius: 20px 20px 0px 0px;
+}
+.create-container .contest-create-form-promotion-products > div:nth-child(2) .premium > div:nth-child(1) {
+  background-color: #ffc1c9;
+  border-radius: 20px 20px 0px 0px;
+}
+.create-container .contest-create-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-basis: 30%;
+  height: 1700px;
+  border-left: 1px solid #e0e2e7;
+  padding: 30px;
+}
+.create-container .contest-create-summary-sticky-box {
+  height: 560px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 24px;
+  padding: 20px;
+}
+.create-container .contest-create-summary-sticky-box > div {
+  margin-bottom: 24px;
+}
+.create-container .contest-create-summary-sticky-box > div:last-child {
+  margin-bottom: 0px;
+}
+.create-container .contest-create-summary-sticky-box-title {
+  height: 30px;
+  border-bottom: 1px solid #e0e2e7;
+}
+.create-container .contest-create-summary-sticky-box-thumbnail {
+  width: 250px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.create-container .contest-create-summary-sticky-box-thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.create-container .contest-create-summary-sticky-box-date span:nth-child(2) {
+  color: #8c8d96;
+  margin-left: 10px;
+}
+.create-container .contest-create-summary-sticky-box-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  padding: 20px;
+}
+.create-container .contest-create-summary-sticky-box-price-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-basis: 40%;
+}
+.create-container .contest-create-summary-sticky-box-price-detail > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-basis: 50%;
+}
+.create-container .contest-create-summary-sticky-box-price-detail > div span {
+  color: #8c8d96;
+}
+.create-container .contest-create-summary-sticky-box-price-detail > div span:last-child {
+  font-weight: 700;
+}
+.create-container .contest-create-summary-sticky-box-price-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-basis: 30%;
+  border-top: 1px solid #e0e2e7;
+}
+.create-container .contest-create-summary-sticky-box-price-total span:last-child {
+  margin-left: 10px;
+  font-weight: 700;
+}
+.create-container .contest-create-summary-sticky-box-price-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-basis: 30%;
+}
+.create-container .contest-create-summary-sticky-box-price-btn button {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 250px;
+  }
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) > div {
+    display: flex;
     flex-direction: column;
-    height: 500px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-basis: 25%;
+    height: 100%;
+    border: 1px solid #e0e2e7;
+    border-radius: 20px;
     background-color: #fff;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    position: sticky;
-    top: 50px;
-    margin-top: 130px;
-    padding: 30px;
+    position: relative;
   }
-  .briefing-container .contest-briefing-sticky-box-title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div {
+    flex-basis: 50%;
+  }
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(1) {
     font-size: 18px;
     line-height: 28px;
     letter-spacing: -0.02em;
     width: 100%;
-    flex-basis: 10%;
-    font-weight: 700;
+    padding: 20px;
+    border-bottom: 1px solid #e0e2e7;
   }
-  .briefing-container .contest-briefing-sticky-box-profile {
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(2) {
+    width: 100%;
+    padding: 10px;
+    font-size: 10px;
+  }
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(2) div {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    flex-basis: 10%;
+    height: 20px;
   }
-  .briefing-container .contest-briefing-sticky-box-profile div {
-    margin-right: 10px;
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) > div > div:nth-child(3) {
+    position: absolute;
+    top: -20px;
+    right: 10px;
   }
-  .briefing-container .contest-briefing-sticky-box-tag {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    flex-basis: 10%;
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) .general > div:nth-child(1) {
+    background-color: #ffe9a4;
+    border-radius: 20px 20px 0px 0px;
   }
-  .briefing-container .contest-briefing-sticky-box-tag div {
-    margin-right: 10px;
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) .advanced > div:nth-child(1) {
+    background-color: #abdeff;
+    border-radius: 20px 20px 0px 0px;
   }
-  .briefing-container .contest-briefing-sticky-box-award {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-basis: 25%;
+  .create-container .contest-create-form-promotion-products > div:nth-child(2) .premium > div:nth-child(1) {
+    background-color: #ffc1c9;
+    border-radius: 20px 20px 0px 0px;
   }
-  .briefing-container .contest-briefing-sticky-box-award div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-basis: 50%;
+}
+@media screen and (min-width: 1200px) {
+  .create-container .contest-create-form {
+    flex-basis: 70%;
   }
-  .briefing-container .contest-briefing-sticky-box-award div p:first-child {
-    color: #8c8d96;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  .briefing-container .contest-briefing-sticky-box-award div p:last-child {
-    font-weight: 500;
-  }
-  .briefing-container .contest-briefing-sticky-box-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-basis: 25%;
-    border-top: 1px solid #e0e2e7;
-  }
-  .briefing-container .contest-briefing-sticky-box-info div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-basis: 33.33%;
-  }
-  .briefing-container .contest-briefing-sticky-box-info div p:first-child {
-    color: #8c8d96;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  .briefing-container .contest-briefing-sticky-box-info div p:last-child {
-    font-weight: 500;
-  }
-  .briefing-container .contest-briefing-sticky-box-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-basis: 20%;
-  }
-  .briefing-container .contest-briefing-sticky-box-button button {
-    height: 50px;
-    margin-right: 3%;
-  }
-  .briefing-container .contest-briefing-sticky-box-button button:last-child {
-    margin-right: 0;
-  }
-  .briefing-container .contest-briefing-sticky-box-button-join {
-    flex-basis: 64%;
-  }
-  .briefing-container .contest-briefing-sticky-box-button-bookmark {
-    flex-basis: 15%;
-    color: #8c8d96;
-    border-color: #e0e2e7;
-  }
-  .briefing-container .contest-briefing-sticky-box-button-link {
-    flex-basis: 15%;
-    border-color: #e0e2e7;
-  }
-}/*# sourceMappingURL=contest-detail.css.map */
+}/*# sourceMappingURL=contest-create.css.map */

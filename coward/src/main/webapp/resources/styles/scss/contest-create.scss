@@ -347,36 +347,60 @@ $input-box-margin: 24px;
                   width: 100%;
                   height: 40px;
                   border: 1px solid $border;
+                  border-radius: 5px;
                 }
+
                 input[type="number"]::-webkit-outer-spin-button,
                 input[type="number"]::-webkit-inner-spin-button {
                   -webkit-appearance: none;
                   margin: 0;
                 }
 
-                .peple-count {
+                span {
+                  margin-right: 20px;
+                  color: $tertiary;
+                  font-weight: 700;
+                }
+
+                & > div {
                   @include flexbox;
                   flex-basis: 30%;
-                  margin-right: 30px;
+                }
 
-                  div {
+                .peple-count {
+                  @include flexbox;
+                  margin-right: 10px;
+                  position: relative;
+
+                  & > div {
                     font-size: 12px;
-
-                    div {
+                    position: absolute;
+                    right: 0;
+                    & > div {
                       @include flexbox;
                       width: 20px;
                       height: 20px;
                       border: 1px solid $border;
-                      border-left: 0px;
                       background-color: $white;
+                      cursor: pointer;
+                      transition: 0.3s;
+
+                      &:hover {
+                        background-color: $tertiary;
+                        color: $white;
+                      }
 
                       &:nth-child(1) {
                         border-bottom: 0px;
+                        border-radius: 0 5px 0 0;
+
                         i {
                           rotate: 90deg;
                         }
                       }
+
                       &:nth-child(2) {
+                        border-radius: 0 0 5px 0;
                         i {
                           rotate: -90deg;
                         }
@@ -390,7 +414,9 @@ $input-box-margin: 24px;
                 }
 
                 .reward-price {
-                  flex-basis: 30%;
+                  @include flexbox;
+                  flex-basis: 18%;
+                  margin-right: 10px;
                 }
               }
             }
@@ -431,7 +457,7 @@ $input-box-margin: 24px;
             }
           }
           &:nth-child(2) {
-            @include flexbox(between);
+            @include column-flexbox;
             height: 250px;
 
             & > div {
@@ -602,6 +628,76 @@ $input-box-margin: 24px;
     }
 
     @include responsive(T) {
+      &-form {
+        &-promotion-products {
+          & > div {
+            &:nth-child(2) {
+              @include flexbox(between);
+              flex-direction: row;
+              height: 250px;
+
+              & > div {
+                @include column-flexbox(center, start);
+                flex-basis: 25%;
+                height: 100%;
+                border: 1px solid $border;
+                border-radius: 20px;
+                background-color: $white;
+                position: relative;
+
+                & > div {
+                  flex-basis: 50%;
+                  &:nth-child(1) {
+                    @include text-style(18);
+                    width: 100%;
+                    padding: 20px;
+                    border-bottom: 1px solid $border;
+                  }
+                  &:nth-child(2) {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 10px;
+                    div {
+                      @include flexbox(start, center);
+                      width: 100%;
+                      height: 20px;
+                    }
+                  }
+                  &:nth-child(3) {
+                    position: absolute;
+                    top: -20px;
+                    right: 10px;
+                  }
+                }
+              }
+              .general {
+                & > div {
+                  &:nth-child(1) {
+                    background-color: $yellow-light;
+                    border-radius: 20px 20px 0px 0px;
+                  }
+                }
+              }
+              .advanced {
+                & > div {
+                  &:nth-child(1) {
+                    background-color: $blue-light;
+                    border-radius: 20px 20px 0px 0px;
+                  }
+                }
+              }
+              .premium {
+                & > div {
+                  &:nth-child(1) {
+                    background-color: $red;
+                    border-radius: 20px 20px 0px 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
     @include responsive(D) {
       &-form {

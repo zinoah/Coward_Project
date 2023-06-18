@@ -726,7 +726,6 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
-  margin-bottom: 24px;
 }
 
 .contest-slider {
@@ -751,8 +750,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -838,18 +836,26 @@ i {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .contest-card:first-of-type {
   margin-top: 16px;
+}
+.contest-card:hover {
+  transform: translateY(-10px);
 }
 .contest-card .bookmark {
   position: absolute;
   right: 7%;
   top: -5px;
   font-size: 25px;
+  cursor: pointer;
 }
 .contest-card .bookmark i {
   color: #b2b3b9;
+}
+.contest-card .bookmark i:hover {
+  color: #ffc1c9;
 }
 .contest-card-title {
   display: flex;
@@ -1198,7 +1204,6 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
-  margin-top: 20px;
 }
 .banner-bottom-image img {
   display: block;
@@ -1249,57 +1254,6 @@ i {
     line-height: 40px;
   }
 }
-
-/* banner-top html code
-
-<div class="banner-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="banner-top-wrapper">
-              <div class="banner-info">
-                <h3 class="main-title">
-                  Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트!
-                </h3>
-                <p class="sub-title sm-hidden">
-                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
-              </div>
-              <div class="banner-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                  aria-hidden
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
-/* banner-top scss 페이지 별 색상 변경 코드
-.banner {
-  &-top {
-    background-color: #ffefc5;
-
-    &-wrapper {
-      .banner-info {
-        .banner-button {
-          background-color: $yellow;
-
-          &:hover {
-            background-color: #fcd869;
-          }
-        }
-      }
-    }
-  }
-}
-*/
 
 .nav {
   background-color: #fff;
@@ -1488,12 +1442,12 @@ i {
 
 /***** 모바일 *****/
 /* 네비게이션 바 */
-.nav {
+.category {
   width: 100%;
   background-color: #f8f8f8;
   margin-bottom: 20px;
 }
-.nav-bar {
+.category-bar {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1551,6 +1505,17 @@ i {
   color: #8c8d96;
 }
 
+.one-liner {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+}
+
 #nickName {
   font-size: 12px;
   line-height: 16px;
@@ -1605,7 +1570,7 @@ i {
   margin-bottom: 10px;
 }
 
-.one-liner {
+.introduce-content {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
@@ -1685,7 +1650,7 @@ i {
     margin: 0;
   }
   /* 네비게이션 바 */
-  .nav-bar {
+  .category-bar {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
@@ -1743,22 +1708,22 @@ i {
     background-color: #f8f8f8;
   }
   /* 네비게이션 바 */
-  .nav {
+  .category {
     width: 100%;
     background-color: #f8f8f8;
   }
-  .nav-bar {
+  .category-bar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 14px 0;
   }
-  .nav li {
+  .category li {
     padding: 5px 0 5px 10px;
     text-align: left;
   }
-  .nav-web {
+  .category-web {
     height: 603px;
   }
   /* 메인과 위치 맞추기 위해 */
@@ -1822,8 +1787,8 @@ i {
   }
   /* 메인과 크기 맞추기 위해 */
   .edit-profile {
-    width: 843.33px;
-    height: 695.33px;
+    width: 845px;
+    height: 695px;
     padding: 15px 30px;
     margin: 0 10px;
     border: 1px solid #e0e2e7;
@@ -1846,25 +1811,46 @@ i {
     border-bottom: 1px solid #e0e2e7;
   }
   .skill-group {
-    height: 170px;
+    height: 210px;
     margin: 0;
   }
   #nickName,
   .stack-box,
   .one-liner-box,
-  .skill-group-box {
+  .skill-group-box,
+  .introduce-box {
     width: 350px;
+  }
+  .one-liner {
+    margin-bottom: 8px;
   }
   .nick-stack {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 5px;
   }
-  .one-skill {
+  .stack-btn-group {
+    margin-bottom: 8px;
+  }
+  .introduce-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    padding: 8px;
+  }
+  .introduce-content {
+    height: 120px;
+  }
+  .one-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .one-intro-skill {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=edit-profile-mem.css.map */

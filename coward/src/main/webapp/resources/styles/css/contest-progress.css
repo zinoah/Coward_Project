@@ -726,8 +726,6 @@ i {
 .slider-wrapper {
   position: relative;
   height: 320px;
-  margin-bottom: 24px;
-
 }
 
 .contest-slider {
@@ -752,8 +750,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -839,18 +836,26 @@ i {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .contest-card:first-of-type {
   margin-top: 16px;
+}
+.contest-card:hover {
+  transform: translateY(-10px);
 }
 .contest-card .bookmark {
   position: absolute;
   right: 7%;
   top: -5px;
   font-size: 25px;
+  cursor: pointer;
 }
 .contest-card .bookmark i {
   color: #b2b3b9;
+}
+.contest-card .bookmark i:hover {
+  color: #ffc1c9;
 }
 .contest-card-title {
   display: flex;
@@ -1199,7 +1204,6 @@ i {
   width: 100%;
   height: 160px;
   background-color: #222121;
-  margin-top: 20px;
 }
 .banner-bottom-image img {
   display: block;
@@ -1250,58 +1254,6 @@ i {
     line-height: 40px;
   }
 }
-
-
-/* banner-top html code
-
-<div class="banner-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="banner-top-wrapper">
-              <div class="banner-info">
-                <h3 class="main-title">
-                  Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트!
-                </h3>
-                <p class="sub-title sm-hidden">
-                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
-              </div>
-              <div class="banner-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                  aria-hidden
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
-/* banner-top scss 페이지 별 색상 변경 코드
-.banner {
-  &-top {
-    background-color: #ffefc5;
-
-    &-wrapper {
-      .banner-info {
-        .banner-button {
-          background-color: $yellow;
-
-          &:hover {
-            background-color: #fcd869;
-          }
-        }
-      }
-    }
-  }
-}
-*/
 
 .nav {
   background-color: #fff;
@@ -1490,12 +1442,12 @@ i {
 
 /***** 모바일 *****/
 /* 네비게이션 바 */
-.nav {
+.category {
   width: 100%;
   background-color: #f8f8f8;
   margin-bottom: 20px;
 }
-.nav-bar {
+.category-bar {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1511,7 +1463,7 @@ i {
   letter-spacing: -0.01em;
   margin-bottom: 15px;
   font-weight: 700;
-  padding: 10px;
+  padding: 8px;
   border-bottom: 1px solid #e0e2e7;
 }
 
@@ -1520,7 +1472,7 @@ i {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 45px;
+  width: 42px;
   /* 상태표시 동그라미 */
   /* 상태 표시 색 */
   /* 모집 중 */
@@ -1533,8 +1485,8 @@ i {
   justify-content: space-between;
   border: 1px solid #e0e2e7;
   border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 14px;
+  margin-bottom: 15px;
 }
 .progress-color {
   width: 8px;
@@ -1555,8 +1507,6 @@ i {
   font-size: 10px;
 }
 
-/* 공모전 이름이 길어지면 두줄이 됨
-근데 어떻게 손봐야 될지 모르겠음 */
 .contest {
   /* 주최, 남은 기간 가로 정렬*/
   /* 공모전 이름, content 세로 정렬 */
@@ -1566,7 +1516,12 @@ i {
   line-height: 16px;
   letter-spacing: -0.005em;
   font-weight: 600;
+  width: 155px;
+}
+.contest-title P {
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .contest-content {
   display: flex;
@@ -1583,24 +1538,27 @@ i {
   justify-content: flex-start;
 }
 .contest-company {
+  width: 105px;
   font-size: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/*TODO: content에 between이 안먹어서 고정 마진으로 줌
-    -> 주최기업 이름 길이가 다를 경우 위치가 들쭉날쭉 */
 .deadline {
+  width: 30px;
   font-size: 9px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .company-profile {
-  width: 25px;
-  height: 25px;
-  margin-right: 8px;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
 }
 .company-profile-img {
-  width: 25px;
-  height: 25px;
+  width: 100%;
+  height: 100%;
 }
 .company-profile-left {
   display: flex;
@@ -1618,10 +1576,10 @@ i {
 @media screen and (min-width: 768px) {
   /* 배너 */
   .banner-top {
-    margin: 0;
+    margin-bottom: 0;
   }
   /* 네비게이션 바 */
-  .nav-bar {
+  .category-bar {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
@@ -1632,6 +1590,21 @@ i {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
+  }
+  .contest-title {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.005em;
+    font-weight: 600;
+    width: 100%;
+  }
+  .contest P {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .contest-company {
+    width: 100%;
   }
   .company-profile {
     margin-right: 15px;
@@ -1665,22 +1638,22 @@ i {
     background-color: #f8f8f8;
   }
   /* 네비게이션 바 */
-  .nav {
+  .category {
     width: 100%;
     background-color: #f8f8f8;
   }
-  .nav-bar {
+  .category-bar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 14px 0;
   }
-  .nav li {
+  .category li {
     padding: 5px 0 5px 10px;
     text-align: left;
   }
-  .nav-web {
+  .category-web {
     height: 603px;
   }
   /* 메인과 위치 맞추기 위해 */
@@ -1741,8 +1714,8 @@ i {
   }
   /* 메인과 크기 맞추기 위해 */
   .contest-management {
-    width: 843.33px;
-    height: 695.33px;
+    width: 845px;
+    height: 695px;
     padding: 15px 30px;
     margin: 0 10px;
     border: 1px solid #e0e2e7;

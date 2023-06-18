@@ -836,18 +836,26 @@ i {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .contest-card:first-of-type {
   margin-top: 16px;
+}
+.contest-card:hover {
+  transform: translateY(-10px);
 }
 .contest-card .bookmark {
   position: absolute;
   right: 7%;
   top: -5px;
   font-size: 25px;
+  cursor: pointer;
 }
 .contest-card .bookmark i {
   color: #b2b3b9;
+}
+.contest-card .bookmark i:hover {
+  color: #ffc1c9;
 }
 .contest-card-title {
   display: flex;
@@ -1434,11 +1442,11 @@ i {
 
 /***** 모바일 *****/
 /* 네비게이션 바 */
-.nav {
+.category {
   width: 100%;
   background-color: #f8f8f8;
 }
-.nav-bar {
+.category-bar {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1496,11 +1504,11 @@ i {
   font-weight: 700;
 }
 
-/* 한줄 소개 */
+/* 자기 소개 */
 .one-liner {
   margin-bottom: 16px;
 }
-.one-liner input {
+.one-liner textarea {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
@@ -1510,6 +1518,7 @@ i {
   border-radius: 10px;
   background-color: #fff;
   border: 1px solid #e0e2e7;
+  resize: none;
 }
 
 /* 수상 이력 */
@@ -1584,7 +1593,7 @@ i {
     margin: 0;
   }
   /* 네비게이션 바 */
-  .nav-bar {
+  .category-bar {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
@@ -1604,10 +1613,10 @@ i {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    margin: 0 10px 12px;
+    margin: 0 5px 12px;
   }
   /* 한줄 소개 */
-  .one-liner input {
+  .one-liner textarea {
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
@@ -1675,23 +1684,23 @@ i {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     background-color: #f8f8f8;
   }
-  .nav {
+  .category {
     width: 100%;
     background-color: #f8f8f8;
     /* 높이 안주면 가운데 배치 됨 */
   }
-  .nav-bar {
+  .category-bar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 14px 0;
   }
-  .nav li {
+  .category li {
     padding: 5px 0 5px 10px;
     text-align: left;
   }
-  .nav-web {
+  .category-web {
     height: 603px;
   }
   .profile {
@@ -1700,7 +1709,8 @@ i {
     border-bottom: 1px solid #8c8d96;
   }
   .profile-wrapper {
-    padding: 15px 30px 5px;
+    padding: 15px 25px;
+    height: 695px;
     border: 1px solid #e0e2e7;
     border-radius: 10px;
   }
@@ -1722,15 +1732,16 @@ i {
   }
   /* 한줄 소개 */
   .one-liner {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
-  .one-liner input {
+  .one-liner textarea {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: -0.005em;
-    width: 550px;
-    height: 160px;
+    width: 520px;
+    height: 140px;
     background-color: #f8f8f8;
+    resize: none;
   }
   /* 어워드 */
   .award {
@@ -1742,7 +1753,7 @@ i {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 304px;
+    height: 295px;
     justify-content: space-around;
     align-items: center;
     margin: 0;
@@ -1755,7 +1766,7 @@ i {
     background-color: #3aacf8;
   }
   .credit {
-    width: 260px;
+    width: 250px;
   }
   .credit-box {
     display: flex;
@@ -1786,19 +1797,22 @@ i {
   }
   /* 내 기술 */
   .skill {
-    width: 260px;
+    width: 250px;
   }
   .skill-box {
     height: 100px;
     padding: 10px;
     margin: 0;
   }
+  .watchlist {
+    overflow: hidden;
+  }
   /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 550px;
+    width: 520px;
   }
   /* 소개와 creadit-skill 세로 정렬 위해 */
   .one-credit-skill {
@@ -1814,50 +1828,30 @@ i {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
-  .btn-prev {
+  .contest-card {
+    cursor: pointer;
+    margin-top: 0;
+    position: relative;
+  }
+  .contest-slider {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    width: 35px;
-    height: 35px;
+    height: 250px;
+  }
+  .slider-wrapper {
+    height: 250px;
+  }
+  .tns-visually-hidden {
     position: absolute;
-    transform: translateX(-10px) translateY(120px);
-    z-index: 5;
-    border-radius: 50%;
-    background-color: white;
-    cursor: pointer;
-    transition: 0.5s;
+    left: -10000em;
   }
-  .btn-prev:hover {
-    transform: translateX(-20px) translateY(120px);
+  aside {
+    height: 613px;
   }
-  .btn-prev i {
-    font-size: 15px;
-    color: #3f4150;
-  }
-  .btn-next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    transform: translateX(765px) translateY(120px);
-    z-index: 100;
-    border-radius: 50%;
-    background-color: white;
-    cursor: pointer;
-    transition: 0.5s;
-  }
-  .btn-next:hover {
-    transform: translateX(775px) translateY(120px);
-  }
-  .btn-next i {
-    font-size: 15px;
-    color: #3f4150;
+  .category-web {
+    height: 613px;
   }
 }/*# sourceMappingURL=mypage-main-mem.css.map */
