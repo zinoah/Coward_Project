@@ -1,10 +1,11 @@
 @import "./main.scss";
 
+// Note: 속성값 변수 모음
 $service-background: (
-  2: #ffdede,
-  3: #fcf2c4,
-  4: #eff9ff,
-  5: #ffe0c7,
+  1: #ffdede,
+  2: #fcf2c4,
+  3: #eff9ff,
+  4: #ffe0c7,
 );
 
 $ranking-background: (
@@ -23,6 +24,8 @@ $feature-box-margin: 18px;
 $track-width-sm: ($feature-box-size-sm + $feature-box-margin) * 9;
 $track-width-md: ($feature-box-size-md + $feature-box-margin) * 9;
 $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
+
+$track-speed: 80s;
 
 .banner {
   &-top {
@@ -76,12 +79,13 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
     @include flexbox(between);
     margin-bottom: $section-title-bottom;
 
+    // 타이틀 제목
     h3 {
       @include text-style(16);
     }
 
     .more-btn {
-      @include inline-flexbox;
+      @include flexbox;
       transition: color 150ms ease-in-out;
 
       &:not(:disabled):hover {
@@ -104,6 +108,7 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
       }
     }
 
+    // Note: 태그가 있는 경우
     &-new {
       @include flexbox;
 
@@ -203,29 +208,13 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
     margin-bottom: $between-section;
 
     .service {
-      &:hover {
-        .service-image {
-          img {
-            transform: scale(1.1);
-          }
-        }
+      @include column-flexbox;
 
-        .service-name {
-          color: $blue;
-        }
-      }
-
-      a {
-        @include column-flexbox;
-      }
-
-      // Note: 서비스 추천 아이콘 배경색 변경
-      @for $i from 2 through 5 {
-        &-wrapper {
-          &:nth-of-type(#{$i}) {
-            .service-image {
-              background-color: map-get($service-background, $i);
-            }
+      // Note: 서비스 바로가기 버튼 링크들 배경색
+      @for $i from 1 through 4 {
+        &:nth-of-type(#{$i}) {
+          .service-image {
+            background-color: map-get($service-background, $i);
           }
         }
       }
@@ -241,14 +230,13 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
           display: block;
           width: auto;
           height: 100%;
-          transition: 0.2s ease-in-out;
         }
       }
 
       &-name {
         @include text-style(12);
         display: inline-block;
-        margin-top: 8px;
+        margin-top: 12px;
       }
     }
   }
@@ -256,33 +244,31 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
   &-rankings {
     margin-bottom: $between-section;
 
-    @for $i from 2 through 4 {
-      .home-ranking {
+    .home-ranking {
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+
+      // Note: .ranking-title 배경색
+      @for $i from 2 through 4 {
         &:nth-of-type(#{$i}) {
           .ranking-title {
             background-color: map-get($ranking-background, $i);
           }
         }
-
-        &:not(:last-of-type) {
-          .home-ranking-show {
-            margin-bottom: 16px;
-          }
-        }
       }
-    }
 
-    .home-ranking-show {
       .ranking-title {
         @include text-style(14);
         font-weight: 700;
-        line-height: 40px;
 
+        line-height: 40px;
         height: 40px;
+
         border-radius: 8px;
 
-        padding-left: 16px;
-        margin-bottom: 10px;
+        padding: 0 16px;
+        margin-bottom: 16px;
       }
 
       .ranking-list {
@@ -290,6 +276,18 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
           @include flexbox(between);
           @include text-style(14);
 
+          padding: 0 12px;
+
+          &:not(:first-child) {
+            padding-top: 12px;
+          }
+
+          &:not(:last-child) {
+            padding-bottom: 12px;
+            border-bottom: 1px solid $border;
+          }
+
+          // Note: 순위 / 프로필 / 닉네임
           &-left {
             @include flexbox(start);
 
@@ -302,18 +300,6 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
               margin-right: 8px;
             }
           }
-
-          &-right {
-          }
-
-          &:not(:first-child) {
-            padding-top: 10px;
-          }
-
-          &:not(:last-child) {
-            padding-bottom: 10px;
-            border-bottom: 1px solid $border;
-          }
         }
       }
     }
@@ -322,18 +308,21 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
   &-contest-new {
     margin-bottom: $between-section;
 
+    // Note: 보드형 공모전 보기
     .new-contest-board {
       .new-contest-item {
-        &:hover {
-          background-color: $background;
-        }
-
         @include flexbox(start);
         margin-bottom: 10px;
         padding: 8px 16px;
+
         border: 1px solid $border;
         border-radius: 8px;
+
         transition: background-color 0.15s ease-in-out;
+
+        &:hover {
+          background-color: $background;
+        }
 
         .contest-thumbnail {
           width: 60px;
@@ -345,22 +334,17 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
             border-radius: 4px;
           }
         }
-
-        .contest-info {
-          @include column-flexbox(center, start);
-        }
       }
     }
 
     .contest-info {
+      @include column-flexbox(center, start);
+
       .user-nick {
         @include text-style(12, $tertiary);
       }
 
-      .contest-title {
-        @include text-style(14);
-      }
-
+      .contest-title,
       .contest-price {
         @include text-style(14);
       }
@@ -389,7 +373,7 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
 
         // Note: track 애니메이션 값 설정
         &.first {
-          animation: slide-first 80s linear infinite;
+          animation: slide-first $track-speed linear infinite;
 
           @keyframes slide-first {
             0% {
@@ -402,7 +386,7 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
         }
 
         &.second {
-          animation: slide-second 80s linear infinite;
+          animation: slide-second $track-speed linear infinite;
 
           @keyframes slide-second {
             0% {
@@ -418,7 +402,7 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
           top: initial;
           bottom: 0;
 
-          animation: slide-third 80s linear infinite;
+          animation: slide-third $track-speed linear infinite;
 
           @keyframes slide-third {
             0% {
@@ -434,7 +418,7 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
           top: initial;
           bottom: 0;
 
-          animation: slide-forth 80s linear infinite;
+          animation: slide-forth $track-speed linear infinite;
 
           @keyframes slide-forth {
             0% {
@@ -449,12 +433,25 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
         .feature-box {
           @include column-flexbox;
           @include text-style(16, $white);
-          font-weight: 500;
+
           width: $feature-box-size-sm;
           height: $feature-box-size-sm;
+
           margin-right: $feature-box-margin;
+
           border-radius: 10px;
+
           box-shadow: $card-shadow;
+
+          // Note: 개발 관련 아이콘 사이즈 조정
+          &.is-blue,
+          &.is-yellow {
+            .feature-image {
+              img {
+                width: 100%;
+              }
+            }
+          }
 
           &.is-blue {
             background-color: $blue;
@@ -464,13 +461,13 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
             background-color: $yellow;
           }
 
+          // Note: 일반 3D 아이콘 사이즈 조정
           .feature-image {
             @include flexbox;
-            height: auto;
 
             img {
               display: block;
-              width: 100%;
+              width: 96px;
               height: 100%;
             }
           }
@@ -493,19 +490,31 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
     &-services {
       .service {
         &:hover {
-          &-image {
+          .service-image {
+            img {
+              transform: scale(1.1);
+            }
+          }
+
+          .service-name {
+            color: $blue-dark;
           }
         }
 
         &-image {
           width: 100%;
-          height: 160px;
+          height: 120px;
           padding: 28px;
-          border-radius: 10px;
+          border-radius: 8px;
+
+          img {
+            transition: 0.2s ease-in-out;
+          }
         }
 
         &-name {
           @include text-style(14);
+          margin-top: 14px;
         }
       }
     }
@@ -515,30 +524,32 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
       @for $i from 2 through 4 {
         .home-ranking {
           &:nth-of-type(#{$i}) {
-            .ranking-image {
-              background-color: map-get($ranking-background, $i);
-            }
-
             .ranking-title {
               background-color: transparent;
+            }
+
+            .ranking-image {
+              background-color: map-get($ranking-background, $i);
             }
           }
         }
       }
 
-      .home-ranking-show {
+      .home-ranking {
         .ranking-title {
           padding: 0;
-          margin-bottom: 0;
+          margin-bottom: 8px;
         }
 
         .ranking-image {
           @include flexbox;
           width: 100%;
           height: 120px;
+
           border-radius: 8px;
-          padding: 8px;
-          margin-bottom: 12px;
+
+          padding: 16px;
+          margin-bottom: 20px;
 
           img {
             display: block;
@@ -615,15 +626,31 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
       }
     }
 
+    &-services {
+      .service {
+        &-image {
+          height: 160px;
+        }
+
+        &-name {
+          @include text-style(16);
+          margin-top: 16px;
+        }
+      }
+    }
+
     .new-contest-list {
       @include flexbox(start);
       flex-wrap: wrap;
 
+      // Note: 카드형 공모전 보기
       .new-contest-item {
         width: 190px;
+
         padding: 10px;
         margin-right: 24px;
         margin-bottom: 16px;
+
         box-shadow: $card-shadow;
         transition: 0.2s ease-in-out;
 
@@ -634,12 +661,15 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
         &.is-ad {
           .contest-header {
             @include flexbox(between);
+            width: 100%;
 
             .ad-tag {
               font-size: 8px;
               color: $tertiary;
-              border: 1px solid $border;
+
               padding: 1px 5px;
+
+              border: 1px solid $border;
               border-radius: 4px;
             }
           }
@@ -648,7 +678,9 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
         .contest-thumbnail {
           width: 100%;
           height: 160px;
+
           margin-bottom: 10px;
+
           transition: 0.3s ease-in-out;
 
           img {
@@ -724,4 +756,78 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
 
 .footer {
   margin-top: 0;
+}
+
+.ad-modal {
+  display: none;
+  overflow: auto;
+
+  &.is-open {
+    @include pos-center(fixed);
+
+    display: block;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba($color: #000000, $alpha: 0.7);
+
+    .ad-wrapper {
+      @include column-flexbox;
+      @include pos-center;
+      width: 400px;
+      height: 520px;
+
+      border-radius: 10px;
+      overflow: hidden;
+
+      .ad-thumbnail {
+        width: 100%;
+        height: 100%;
+        flex-basis: 90%;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .buttons {
+        @include flexbox;
+        width: 100%;
+        flex-basis: 10%;
+
+        background-color: #fff;
+
+        .today-skip-button,
+        .close-button {
+          @include text-style(16);
+          @include flexbox;
+          width: 100%;
+          height: 100%;
+          flex-basis: 50%;
+          transition: all 0.15s ease-in-out;
+
+          &:hover {
+            color: $secondary;
+            background-color: $background;
+          }
+        }
+
+        .today-skip-button {
+          position: relative;
+
+          &::after {
+            @include pos-center-y;
+            content: "";
+            width: 1px;
+            height: 28px;
+            right: 0;
+            background-color: $border;
+          }
+        }
+      }
+    }
+  }
 }
