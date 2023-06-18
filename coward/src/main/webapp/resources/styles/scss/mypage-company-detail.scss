@@ -1,0 +1,37 @@
+@import "./main";
+
+.nav {
+  width: 100%;
+  background-color: $background;
+
+  &-bar {
+    @include flexbox(around);
+    font-size: 10px;
+    padding: 14px 0;
+    text-align: center;
+  }
+}
+
+.mypage {
+  .profile {
+    &-wrapper {
+      @include flexbox;
+      margin: 15px;
+    }
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .company {
+    &-name {
+      &-input {
+        @include text-style(12, red);
+        border: 1px solid $border;
+        padding: 8px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
