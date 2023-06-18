@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coward | 기업 마이페이지 세부정보</title>
+
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/mypage-company-detail.css"
+    />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      alt="Coward"
+                    />
+                  </a>
+                </h1>
+
+                <button
+                  class="header-button sm-only"
+                  type="button"
+                  aria-label="메뉴 버튼"
+                >
+                  <i class="ic-hamburger"></i>
+                </button>
+              </div>
+
+              <div class="header-right sm-hidden">
+                <!-- Note: 로그인을 하지 않은 경우 -->
+                <div class="header-buttons">
+                  <button
+                    class="header-button md-only"
+                    type="button"
+                    aria-label="통합 검색 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">로그인</a>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">회원가입</a>
+                  </button>
+                </div>
+                <!-- Note: 로그인을 한 경우 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--배너-->
+    <div class="banner-top sm-hidden">
+      <img
+        src="/coward/src/main/webapp/resources/assets/images/mypage-banner.png"
+        aria-hidden
+      />
+    </div>
+
+    <!--네비게이션-->
+
+    <nav class="nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <ul class="nav-bar">
+              <li><a href="#">내 정보</a></li>
+              <li><a href="#">공모전 관리</a></li>
+              <li><a href="#">크레딧 인출</a></li>
+              <li><a href="#">프로필 수정</a></li>
+              <li><a href="#">회원 탈퇴</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mypage">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="profile-wrapper">
+              <div class="avatar">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                />
+              </div>
+            </div>
+
+            <div class="company-name-rapper">
+              <h4>회사명</h4>
+              <input
+                type="text"
+                class="company-name-input"
+                placeholder="회사명을 입력해주세요"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

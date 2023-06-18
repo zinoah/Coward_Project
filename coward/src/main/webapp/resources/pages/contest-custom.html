@@ -24,10 +24,9 @@
                   다음 몇가지 질문들을 답변해주시면, 저희가 알맞은 공모전을
                   추천해드릴게요!
                 </p>
-
-                <a href="#" class="banner-button btn-32 btn-primary"
+                <!-- <a href="#" class="banner-button btn-32 btn-primary"
                   >더 알아보기</a
-                >
+                >-->
               </div>
               <div class="banner-image">
                 <img
@@ -45,12 +44,12 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <div class="custom-section-1">
-              <div class="custom-tap">
+            <div class="custom-step-1" id="custom-step-1">
+              <div class="custom-tab">
                 <img src="../assets/images/step1.svg" />
               </div>
               <div class="custom-title">
-                <h5>찾으시는 개발 공모전 분야가 다음 중 무엇인가요?</h5>
+                <p>찾으시는 개발 공모전 분야가 다음 중 무엇인가요?</p>
               </div>
 
               <div class="custom-card-wrapper">
@@ -58,30 +57,158 @@
                   <div class="custom-card-img">
                     <img src="../assets/images/user-interface.svg" />
                   </div>
+
+                  <p>모바일</p>
                 </div>
                 <div class="custom-card">
                   <div class="custom-card-img">
                     <img src="../assets/images/layout.svg" />
                   </div>
+
+                  <p>웹</p>
                 </div>
                 <div class="custom-card">
                   <div class="custom-card-img">
                     <img src="../assets/images/game.svg" />
                   </div>
+
+                  <p>게임</p>
                 </div>
                 <div class="custom-card">
                   <div class="custom-card-img">
                     <img src="../assets/images/shield.svg" />
                   </div>
+                  <p>보안</p>
                 </div>
               </div>
             </div>
+
+            <div class="custom-step-2" id="custom-step-2">
+              <div class="custom-tab">
+                <img src="../assets/images/step2.svg" />
+              </div>
+              <div class="custom-title">
+                <p>찾으시는 프로그래밍 언어 또는 프레임워크는</p>
+
+                <p>다음 중 무엇인가요?</p>
+              </div>
+              <div class="custom-skill-wrapper">
+                <div class="custom-skill">
+                  <div class="custom-skill-img">
+                    <img src="../assets/images/javaScript.svg" />
+                  </div>
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <div class="custom-skill-img">
+                    <img src="../assets/images/javaScript.svg" />
+                  </div>
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <img src="../assets/images/java.svg" />
+                  <h5>Java</h5>
+                </div>
+                <div class="custom-skill">
+                  <img src="../assets/images/java.svg" />
+                  <h5>Java</h5>
+                </div>
+                <div class="custom-skill">
+                  <img src="../assets/images/javaScript.svg" />
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <img src="../assets/images/javaScript.svg" />
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <div class="custom-skill-img">
+                    <img src="../assets/images/javaScript.svg" />
+                  </div>
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <div class="custom-skill-img">
+                    <img src="../assets/images/javaScript.svg" />
+                  </div>
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <img src="../assets/images/java.svg" />
+                  <h5>Java</h5>
+                </div>
+                <div class="custom-skill">
+                  <div class="custom-skill-img">
+                    <img src="../assets/images/javaScript.svg" />
+                  </div>
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <div class="custom-skill-img">
+                    <img src="../assets/images/javaScript.svg" />
+                  </div>
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <img src="../assets/images/java.svg" />
+                  <h5>Java</h5>
+                </div>
+                <div class="custom-skill">
+                  <div class="custom-skill-img">
+                    <img src="../assets/images/javaScript.svg" />
+                  </div>
+                  <h5>JavaScript</h5>
+                </div>
+                <div class="custom-skill">
+                  <img src="../assets/images/java.svg" />
+                  <h5>Java</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-step-3" id="custom-step-3">
+              <div class="custom-tab">
+                <img src="../assets/images/step1.svg" />
+              </div>
+              <div class="custom-title">
+                <p>찾으시는 상금의 금액대는 얼마인가요?</p>
+              </div>
+
+              <div class="custom-reward-wrapper">
+                <p>상금: <span id="value"></span>300만원 이상</p>
+                <div
+                  class="custom-reward-slide-bubble"
+                  id="custom-reward-slide-bubble"
+                >
+                  <span>상금을 조정해보세요😊</span>
+                </div>
+                <input
+                  type="range"
+                  class="custom-reward-slide"
+                  id="custom-reward-slide"
+                  min="1"
+                  max="1000"
+                  value="10"
+                />
+              </div>
+            </div>
+
             <div class="btn-wrapper">
-              <button class="btn-primary btn-40">다음</button>
+              <button class="btn-primary btn-40" id="next1" onclick="next1()">
+                다음
+              </button>
+              <button class="btn-primary btn-40" id="next2" onclick="next2()">
+                다음
+              </button>
+              <button class="btn-primary btn-40" id="next3" onclick="next3()">
+                다음
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="../js/contest-custom.js"></script>
   </body>
 </html>
