@@ -1,5 +1,7 @@
 @import "./main";
 
+$input-box-margin: 24px;
+
 .create-container {
   .background-banner {
     position: relative;
@@ -16,20 +18,595 @@
     &-wrapper {
       @include flexbox;
       width: 100%;
-      height: 1000px;
-      margin-top: 150px;
-      background-color: gray;
+      height: 1700px;
+      margin-top: 100px;
+      border-radius: 10px;
+      box-shadow: $card-shadow;
+      background-color: $white;
     }
 
-    &-form-box {
-      flex-basis: 70%;
-      height: 1000px;
-      background-color: red;
+    &-form {
+      width: 100%;
+      height: 1700px;
+      padding: 20px;
+
+      &-title {
+        @include flexbox(start, center);
+        @include text-style(18);
+        width: 100%;
+        height: 50px;
+
+        &-tooltip {
+          &-link {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            position: relative;
+            img {
+              cursor: pointer;
+            }
+          }
+          &-board {
+            width: 460px;
+            height: 220px;
+            display: none;
+            background-color: rgba(255, 255, 255, 0.466);
+            border: 1.5px solid $blue;
+            border-radius: 10px;
+            box-shadow: $card-shadow;
+            position: absolute;
+            top: -96px;
+            left: 40px;
+            padding: 20px;
+
+            div {
+              &:nth-child(1) {
+                @include text-style(16);
+                margin-bottom: 10px;
+              }
+              &:nth-child(2) {
+                @include text-style(12);
+              }
+            }
+
+            &::after,
+            &::before {
+              content: "";
+              @include pos-center;
+              left: -8px;
+              position: absolute;
+              width: 0px;
+              height: 0px;
+              display: block;
+              border: 10px solid transparent;
+              border-right-color: $white;
+            }
+
+            &::before {
+              border: 10px solid transparent;
+              border-right-color: $blue;
+              left: -10px;
+            }
+          }
+        }
+      }
+
+      &-inner {
+        width: 100%;
+        padding: 10px;
+
+        & > form > div {
+          margin-bottom: $input-box-margin;
+        }
+
+        &-section-title {
+          @include text-style(14);
+
+          & > span {
+            &:nth-child(2) {
+              margin-left: 5px;
+              color: red;
+            }
+          }
+        }
+      }
+
+      &-company-name {
+        @include flexbox(between);
+        height: 50px;
+
+        & > div {
+          &:nth-child(1) {
+            flex-basis: 30%;
+          }
+          &:nth-child(2) {
+            flex-basis: 70%;
+          }
+        }
+
+        input {
+          @include text-style(12);
+          width: 100%;
+          height: 35px;
+          border: 1px solid $border;
+          border-radius: 5px;
+          text-indent: 16px;
+        }
+      }
+
+      &-type {
+        @include flexbox(between);
+        height: 50px;
+
+        & > div {
+          &:nth-child(1) {
+            flex-basis: 30%;
+          }
+          &:nth-child(2) {
+            flex-basis: 70%;
+          }
+        }
+
+        input {
+          @include text-style(12);
+          width: 100%;
+          height: 35px;
+          border: 1px solid $border;
+          border-radius: 5px;
+          text-indent: 16px;
+        }
+      }
+
+      &-subject {
+        & > div {
+          &:nth-child(1) {
+            margin-bottom: 10px;
+          }
+        }
+
+        textarea {
+          @include text-style(12);
+          width: 100%;
+          height: 70px;
+          border: 1px solid $border;
+          border-radius: 5px;
+          resize: none;
+          padding: 10px;
+        }
+      }
+
+      &-qualification {
+        & > div {
+          &:nth-child(1) {
+            margin-bottom: 10px;
+          }
+        }
+
+        textarea {
+          @include text-style(12);
+          width: 100%;
+          height: 100px;
+          border: 1px solid $border;
+          border-radius: 5px;
+          resize: none;
+          padding: 10px;
+        }
+      }
+
+      &-note {
+        & > div {
+          &:nth-child(1) {
+            margin-bottom: 10px;
+          }
+        }
+
+        textarea {
+          @include text-style(12);
+          width: 100%;
+          height: 100px;
+          border: 1px solid $border;
+          border-radius: 5px;
+          resize: none;
+          padding: 10px;
+        }
+      }
+
+      &-date {
+        @include flexbox;
+        height: 50px;
+
+        & > div {
+          &:nth-child(1) {
+            flex-basis: 50%;
+          }
+          &:nth-child(2) {
+            flex-basis: 50%;
+          }
+        }
+
+        input {
+          @include text-style(12);
+          width: 100%;
+          height: 35px;
+          border: 1px solid $border;
+          border-radius: 5px;
+          padding: 10px;
+        }
+      }
+
+      &-skill {
+        @include flexbox(center, start);
+        height: 100px;
+
+        & > div {
+          &:nth-child(1) {
+            flex-basis: 50%;
+          }
+          &:nth-child(2) {
+            display: flex;
+            flex-wrap: wrap;
+            flex-basis: 50%;
+            overflow: scroll;
+
+            label {
+              margin: 0px 10px 10px 0;
+              cursor: pointer;
+              transition: 0.2s;
+              &:hover {
+                color: $white;
+                background-color: $yellow;
+              }
+            }
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &-thumbnail {
+        @include flexbox(start, start);
+        height: 80px;
+
+        & > div {
+          &:nth-child(1) {
+            flex-basis: 50%;
+          }
+          &:nth-child(2) {
+            @include column-flexbox;
+            flex-basis: 50%;
+            border: 1px dotted $border;
+            width: 100%;
+            height: 80px;
+
+            div {
+              &:nth-child(1) {
+                @include text-style(12);
+                @include flexbox;
+                margin-bottom: 12px;
+                width: 100%;
+              }
+              &:nth-child(2) {
+                @include flexbox;
+                width: 100%;
+              }
+            }
+            label {
+              width: 80%;
+              height: 30px;
+            }
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &-reward {
+        & > div {
+          &:nth-child(1) {
+            margin-bottom: 10px;
+          }
+        }
+        &-price-box {
+          @include column-flexbox;
+          width: 100%;
+          height: 300px;
+
+          & > div {
+            width: 100%;
+          }
+
+          .price {
+            &-bar {
+              @include flexbox;
+              padding: 0 50px 0 50px;
+              flex-basis: 15%;
+              div {
+                width: 100%;
+                height: 7px;
+                background-color: $blue;
+                border-radius: 10px;
+              }
+            }
+            &-box {
+              @include flexbox;
+              flex-basis: 50%;
+              padding: 10px;
+
+              &-inner-box {
+                @include flexbox;
+                background-color: $background;
+                border: 1px solid $border;
+                border-radius: 10px;
+                height: 100%;
+                width: 100%;
+
+                input[type="number"] {
+                  background-color: $white;
+                  width: 100%;
+                  height: 40px;
+                  border: 1px solid $border;
+                }
+                input[type="number"]::-webkit-outer-spin-button,
+                input[type="number"]::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+
+                .peple-count {
+                  @include flexbox;
+                  flex-basis: 30%;
+                  margin-right: 30px;
+
+                  div {
+                    font-size: 12px;
+
+                    div {
+                      @include flexbox;
+                      width: 20px;
+                      height: 20px;
+                      border: 1px solid $border;
+                      border-left: 0px;
+                      background-color: $white;
+
+                      &:nth-child(1) {
+                        border-bottom: 0px;
+                        i {
+                          rotate: 90deg;
+                        }
+                      }
+                      &:nth-child(2) {
+                        i {
+                          rotate: -90deg;
+                        }
+                      }
+                    }
+                    & > i {
+                      display: inline-block;
+                      color: $secondary;
+                    }
+                  }
+                }
+
+                .reward-price {
+                  flex-basis: 30%;
+                }
+              }
+            }
+            &-total {
+              @include flexbox;
+              flex-basis: 35%;
+              border-top: 1px solid $border;
+              border-bottom: 1px solid $border;
+
+              div {
+                @include flexbox;
+                span {
+                  margin-right: 10px;
+                }
+              }
+
+              #result-price {
+                margin-left: 20px;
+                font-size: 20px;
+                color: $blue;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+
+      &-promotion-products {
+        & > div {
+          &:nth-child(1) {
+            @include text-style(14);
+            margin-bottom: 20px;
+            & > span {
+              &:nth-child(2) {
+                margin-left: 5px;
+                color: red;
+              }
+            }
+          }
+          &:nth-child(2) {
+            @include flexbox(between);
+            height: 250px;
+
+            & > div {
+              @include column-flexbox(center, start);
+              flex-basis: 25%;
+              height: 100%;
+              border: 1px solid $border;
+              border-radius: 20px;
+              background-color: $white;
+              position: relative;
+
+              & > div {
+                flex-basis: 50%;
+                &:nth-child(1) {
+                  @include text-style(18);
+                  width: 100%;
+                  padding: 20px;
+                  border-bottom: 1px solid $border;
+                }
+                &:nth-child(2) {
+                  width: 100%;
+                  padding: 10px;
+                  font-size: 10px;
+                  div {
+                    @include flexbox(start, center);
+                    width: 100%;
+                    height: 20px;
+                  }
+                }
+                &:nth-child(3) {
+                  position: absolute;
+                  top: -20px;
+                  right: 10px;
+                }
+              }
+            }
+            .general {
+              & > div {
+                &:nth-child(1) {
+                  background-color: $yellow-light;
+                  border-radius: 20px 20px 0px 0px;
+                }
+              }
+            }
+            .advanced {
+              & > div {
+                &:nth-child(1) {
+                  background-color: $blue-light;
+                  border-radius: 20px 20px 0px 0px;
+                }
+              }
+            }
+            .premium {
+              & > div {
+                &:nth-child(1) {
+                  background-color: $red;
+                  border-radius: 20px 20px 0px 0px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
-    &-summary-box {
+    // 웹 화면에만 나올 sticky박스
+    &-summary {
+      @include flexbox(center, start);
       flex-basis: 30%;
-      background-color: yellow;
+      height: 1700px;
+      border-left: 1px solid $border;
+      padding: 30px;
+
+      &-sticky-box {
+        height: 560px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: $white;
+        box-shadow: $card-shadow;
+        position: sticky;
+        top: 24px;
+        padding: 20px;
+
+        & > div {
+          margin-bottom: 24px;
+
+          &:last-child {
+            margin-bottom: 0px;
+          }
+        }
+
+        &-title {
+          height: 30px;
+          border-bottom: 1px solid $border;
+        }
+
+        &-thumbnail {
+          width: 250px;
+          height: 200px;
+          overflow: hidden;
+          border-radius: 10px;
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+
+        &-date {
+          span {
+            &:nth-child(2) {
+              color: $secondary;
+              margin-left: 10px;
+            }
+          }
+        }
+
+        &-price {
+          @include column-flexbox;
+          height: 200px;
+          border: 1px solid $border;
+          border-radius: 10px;
+          padding: 20px;
+
+          &-detail {
+            @include column-flexbox;
+            width: 100%;
+            flex-basis: 40%;
+
+            & > div {
+              @include flexbox(between);
+              width: 100%;
+              flex-basis: 50%;
+
+              span {
+                color: $secondary;
+                &:last-child {
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+          &-total {
+            @include flexbox(between);
+            width: 100%;
+            flex-basis: 30%;
+            border-top: 1px solid $border;
+
+            span {
+              &:last-child {
+                margin-left: 10px;
+                font-weight: 700;
+              }
+            }
+          }
+          &-btn {
+            @include flexbox;
+            width: 100%;
+            flex-basis: 30%;
+
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    @include responsive(T) {
+    }
+    @include responsive(D) {
+      &-form {
+        flex-basis: 70%;
+      }
     }
   }
 }
