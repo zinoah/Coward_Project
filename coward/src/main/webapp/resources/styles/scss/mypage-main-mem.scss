@@ -2,7 +2,7 @@
 
 /***** 모바일 *****/
 /* 네비게이션 바 */
-.nav {
+.category {
   width: 100%;
   background-color: $background;
 
@@ -57,11 +57,11 @@
   font-weight: 700;
 }
 
-/* 한줄 소개 */
+/* 자기 소개 */
 .one-liner {
   margin-bottom: 16px;
 
-  input {
+  textarea {
     @include text-style(12);
     width: 100%;
     height: 190px;
@@ -69,6 +69,7 @@
     border-radius: 10px;
     background-color: $white;
     border: 1px solid $border;
+    resize: none;
   }
 }
 
@@ -148,7 +149,7 @@
     margin: 0;
   }
   /* 네비게이션 바 */
-  .nav-bar {
+  .category-bar {
     @include text-style(16);
     padding: 15px 0;
   }
@@ -167,12 +168,12 @@
   /* 소제목 스타일 */
   .introduce-title {
     @include text-style(16);
-    margin: 0 10px 12px;
+    margin: 0 5px 12px;
   }
 
   /* 한줄 소개 */
   .one-liner {
-    input {
+    textarea {
       @include text-style(14);
       width: 100%;
       height: 180px;
@@ -243,7 +244,7 @@
     background-color: $background;
   }
 
-  .nav {
+  .category {
     width: 100%;
 
     background-color: $background;
@@ -272,8 +273,8 @@
     border-bottom: 1px solid $secondary;
 
     &-wrapper {
-      padding: 15px 30px 5px;
-
+      padding: 15px 25px;
+      height: 695px;
       border: 1px solid $border;
       border-radius: 10px;
     }
@@ -299,12 +300,13 @@
   }
   /* 한줄 소개 */
   .one-liner {
-    margin-bottom: 10px;
-    input {
+    margin-bottom: 8px;
+    textarea {
       @include text-style(12);
-      width: 550px;
-      height: 160px;
+      width: 520px;
+      height: 140px;
       background-color: $background;
+      resize: none;
     }
   }
 
@@ -315,7 +317,7 @@
 
     &-box {
       @include column-flexbox;
-      height: 304px;
+      height: 295px;
       justify-content: space-around;
       align-items: center;
       margin: 0;
@@ -332,7 +334,7 @@
   }
 
   .credit {
-    width: 260px;
+    width: 250px;
     &-box {
       @include flexbox;
       height: 100px;
@@ -364,7 +366,7 @@
 
   /* 내 기술 */
   .skill {
-    width: 260px;
+    width: 250px;
     &-box {
       height: 100px;
       padding: 10px;
@@ -372,11 +374,14 @@
     }
   }
 
+  .watchlist {
+    overflow: hidden;
+  }
   /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
     @include flexbox(between);
 
-    width: 550px;
+    width: 520px;
   }
 
   /* 소개와 creadit-skill 세로 정렬 위해 */
@@ -389,54 +394,34 @@
   /* 어워드와 one-credit-skill 가로 정렬 위해 */
   .web-box-header {
     @include flexbox(between);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
-  .btn {
-    &-prev {
-      @include flexbox;
-      box-shadow: $card-shadow;
-      width: 35px;
-      height: 35px;
-      position: absolute;
-      transform: translateX(-10px) translateY(120px);
-      z-index: 5;
-      border-radius: 50%;
-      background-color: white;
-      cursor: pointer;
-      transition: 0.5s;
+  .contest-card {
+    cursor: pointer;
+    margin-top: 0;
+    position: relative;
+  }
 
-      &:hover {
-        transform: translateX(-20px) translateY(120px);
-      }
+  .contest-slider {
+    @include flexbox;
+    height: 250px;
+  }
 
-      i {
-        font-size: 15px;
-        color: $primary;
-      }
-    }
+  .slider-wrapper {
+    height: 250px;
+  }
 
-    &-next {
-      @include flexbox;
-      box-shadow: $card-shadow;
-      width: 35px;
-      height: 35px;
-      position: absolute;
-      transform: translateX(765px) translateY(120px);
-      z-index: 100;
-      border-radius: 50%;
-      background-color: white;
-      cursor: pointer;
-      transition: 0.5s;
+  .tns-visually-hidden {
+    position: absolute;
+    left: -10000em;
+  }
 
-      &:hover {
-        transform: translateX(775px) translateY(120px);
-      }
+  aside {
+    height: 613px;
+  }
 
-      i {
-        font-size: 15px;
-        color: $primary;
-      }
-    }
+  .category-web {
+    height: 613px;
   }
 }

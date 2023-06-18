@@ -61,6 +61,41 @@
       </div>
     </header>
 
+    <nav class="nav">
+      <h2 class="visually-hidden">메뉴</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="nav-wrapper">
+              <div class="nav-left">
+                <ul class="nav-list">
+                  <li class="nav-item is-active">
+                    <a href="#">공모전</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">개발자 찾기</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">가격 안내</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nav-right lg-only">
+                <form class="nav-search" action="#">
+                  <input
+                    class="nav-search-input"
+                    type="text"
+                    placeholder="어떤 공모전을 찾으시나요?"
+                  />
+                  <i class="ic-search" aria-hidden></i>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <!-- 배너 -->
     <!-- web-box 중앙 배치 위해 -->
     <div class="full">
@@ -76,10 +111,10 @@
           <!-- 네비게이션 바 -->
 
           <aside>
-            <nav class="nav">
+            <nav class="category">
               <div class="container">
                 <div class="row">
-                  <div class="col-sm-4 nav-web">
+                  <div class="col-sm-4 category-web">
                     <p class="profile-mypage lg-only">마이페이지</p>
                     <div class="profile lg-only">
                       <div class="profile-img avatar">
@@ -93,7 +128,7 @@
                       </div>
                     </div>
 
-                    <ul class="nav-bar">
+                    <ul class="category-bar">
                       <li><a href="#">내 정보</a></li>
                       <li><a href="#">공모전 관리</a></li>
                       <li><a href="#">크레딧 인출</a></li>
@@ -128,10 +163,10 @@
 
                     <div class="web-box-header">
                       <div class="one-credit-skill">
-                        <!-- 한줄 소개 -->
+                        <!-- 자기 소개 -->
                         <div class="one-liner">
                           <p class="introduce-title">소개</p>
-                          <input type="text" maxlength="50" disabled />
+                          <textarea type="text" disabled></textarea>
                         </div>
 
                         <div class="credit-skill">
@@ -187,17 +222,10 @@
                     <!-- 관심 목록 -->
                     <div class="watchlist">
                       <p class="introduce-title">관심 공모전</p>
-                      <div class="row">
+
+                      <!-- 모바일, 태블릿 -->
+                      <div class="row lg-hidden">
                         <div class="watchlist-box-group col-sm-4 col-md-12">
-                          <div class="btn-prev lg-only">
-                            <i class="ic-chevron"></i>
-                          </div>
-
-                          <!--FIXME: 오른쪽 화살표로 바꿔야 함-->
-                          <div class="btn-next lg-only">
-                            <i class="ic-chevron"></i>
-                          </div>
-
                           <div class="col-sm-4 col-md-6 col-lg-3">
                             <div class="contest-card">
                               <div class="bookmark">
@@ -301,6 +329,237 @@
                           </div>
                         </div>
                       </div>
+
+                      <!-- 웹 -->
+
+                      <div class="row lg-only">
+                        <div class="col-sm-4">
+                          <div class="slider-wrapper">
+                            <div class="contest-slider">
+                              <div>
+                                <div class="contest-card">
+                                  <div class="bookmark">
+                                    <i class="ic-bookmark-filled"></i>
+                                  </div>
+                                  <div class="contest-card-title">
+                                    <div><span>금융상품 공모전</span></div>
+                                    <div class="tag-yellow">new</div>
+                                  </div>
+                                  <div class="contest-card-info">
+                                    <div class="contest-card-info-detail">
+                                      <div>
+                                        <span>남은기간</span>
+                                        <span>17일</span>
+                                      </div>
+                                      <div>
+                                        <span>상금</span>
+                                        <span>400만원</span>
+                                      </div>
+                                    </div>
+                                    <div class="contest-card-info-tag">
+                                      <div class="contest-card-info-tag-list">
+                                        <div class="tag-purple">프리미엄</div>
+                                        <div class="tag-pink">css</div>
+                                        <div class="tag-pink">html</div>
+                                      </div>
+                                      <div
+                                        class="sm-only contest-card-info-profile"
+                                      >
+                                        <div class="avatar-24">
+                                          <img
+                                            src="../assets/images/default-user-img.png"
+                                            alt=""
+                                          />
+                                        </div>
+                                        <div><span>신한은행</span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="contest-card-profile sm-hidden">
+                                    <div class="avatar-24">
+                                      <img
+                                        src="../assets/images/default-user-img.png"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div><span>신한은행</span></div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div>
+                                <div class="contest-card">
+                                  <div class="bookmark">
+                                    <i class="ic-bookmark-filled"></i>
+                                  </div>
+                                  <div class="contest-card-title">
+                                    <div><span>금융상품 공모전</span></div>
+                                    <div class="tag-yellow">new</div>
+                                  </div>
+                                  <div class="contest-card-info">
+                                    <div class="contest-card-info-detail">
+                                      <div>
+                                        <span>남은기간</span>
+                                        <span>17일</span>
+                                      </div>
+                                      <div>
+                                        <span>상금</span>
+                                        <span>400만원</span>
+                                      </div>
+                                    </div>
+                                    <div class="contest-card-info-tag">
+                                      <div class="contest-card-info-tag-list">
+                                        <div class="tag-purple">프리미엄</div>
+                                        <div class="tag-pink">css</div>
+                                        <div class="tag-pink">html</div>
+                                      </div>
+                                      <div
+                                        class="sm-only contest-card-info-profile"
+                                      >
+                                        <div class="avatar-24">
+                                          <img
+                                            src="../assets/images/default-user-img.png"
+                                            alt=""
+                                          />
+                                        </div>
+                                        <div><span>신한은행</span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="contest-card-profile sm-hidden">
+                                    <div class="avatar-24">
+                                      <img
+                                        src="../assets/images/default-user-img.png"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div><span>신한은행</span></div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div>
+                                <div class="contest-card">
+                                  <div class="bookmark">
+                                    <i class="ic-bookmark-filled"></i>
+                                  </div>
+                                  <div class="contest-card-title">
+                                    <div><span>금융상품 공모전</span></div>
+                                    <div class="tag-yellow">new</div>
+                                  </div>
+                                  <div class="contest-card-info">
+                                    <div class="contest-card-info-detail">
+                                      <div>
+                                        <span>남은기간</span>
+                                        <span>17일</span>
+                                      </div>
+                                      <div>
+                                        <span>상금</span>
+                                        <span>400만원</span>
+                                      </div>
+                                    </div>
+                                    <div class="contest-card-info-tag">
+                                      <div class="contest-card-info-tag-list">
+                                        <div class="tag-purple">프리미엄</div>
+                                        <div class="tag-pink">css</div>
+                                        <div class="tag-pink">html</div>
+                                      </div>
+                                      <div
+                                        class="sm-only contest-card-info-profile"
+                                      >
+                                        <div class="avatar-24">
+                                          <img
+                                            src="../assets/images/default-user-img.png"
+                                            alt=""
+                                          />
+                                        </div>
+                                        <div><span>신한은행</span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="contest-card-profile sm-hidden">
+                                    <div class="avatar-24">
+                                      <img
+                                        src="../assets/images/default-user-img.png"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div><span>신한은행</span></div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div>
+                                <div class="contest-card">
+                                  <div class="bookmark">
+                                    <i class="ic-bookmark-filled"></i>
+                                  </div>
+                                  <div class="contest-card-title">
+                                    <div><span>금융상품 공모전</span></div>
+                                    <div class="tag-yellow">new</div>
+                                  </div>
+                                  <div class="contest-card-info">
+                                    <div class="contest-card-info-detail">
+                                      <div>
+                                        <span>남은기간</span>
+                                        <span>17일</span>
+                                      </div>
+                                      <div>
+                                        <span>상금</span>
+                                        <span>400만원</span>
+                                      </div>
+                                    </div>
+                                    <div class="contest-card-info-tag">
+                                      <div class="contest-card-info-tag-list">
+                                        <div class="tag-purple">프리미엄</div>
+                                        <div class="tag-pink">css</div>
+                                        <div class="tag-pink">html</div>
+                                      </div>
+                                      <div
+                                        class="sm-only contest-card-info-profile"
+                                      >
+                                        <div class="avatar-24">
+                                          <img
+                                            src="../assets/images/default-user-img.png"
+                                            alt=""
+                                          />
+                                        </div>
+                                        <div><span>신한은행</span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="contest-card-profile sm-hidden">
+                                    <div class="avatar-24">
+                                      <img
+                                        src="../assets/images/default-user-img.png"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div><span>신한은행</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="slider-controls">
+                              <button
+                                class="control-button is-prev"
+                                type="button"
+                              >
+                                <i class="ic-chevron"></i>
+                              </button>
+                              <button
+                                class="control-button is-next"
+                                type="button"
+                              >
+                                <i class="ic-chevron"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- 본문 끝 -->
                     </div>
                   </div>
                 </div>
@@ -405,5 +664,8 @@
         </address>
       </div>
     </footer>
+    <!-- tiny-slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="/coward/src/main/webapp/resources/js/mypage-slider.js"></script>
   </body>
 </html>
