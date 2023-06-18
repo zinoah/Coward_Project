@@ -59,6 +59,41 @@
         </div>
       </div>
     </header>
+    <nav class="nav">
+      <h2 class="visually-hidden">메뉴</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="nav-wrapper">
+              <div class="nav-left">
+                <ul class="nav-list">
+                  <li class="nav-item is-active">
+                    <a href="#">공모전</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">개발자 찾기</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">가격 안내</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nav-right lg-only">
+                <form class="nav-search" action="#">
+                  <input
+                    class="nav-search-input"
+                    type="text"
+                    placeholder="어떤 공모전을 찾으시나요?"
+                  />
+                  <i class="ic-search" aria-hidden></i>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="full">
       <div class="banner-top sm-hidden">
         <img src="../assets/images/mypage-banner.png" />
@@ -70,10 +105,10 @@
           <!-- 네비게이션 바 -->
 
           <aside>
-            <nav class="nav">
+            <nav class="category">
               <div class="container">
                 <div class="row">
-                  <div class="col-sm-4 nav-web">
+                  <div class="col-sm-4 category-web">
                     <p class="profile-mypage lg-only">마이페이지</p>
                     <div class="profile lg-only">
                       <div class="profile-img avatar">
@@ -87,7 +122,7 @@
                       </div>
                     </div>
 
-                    <ul class="nav-bar">
+                    <ul class="category-bar">
                       <li><a href="#">내 정보</a></li>
                       <li><a href="#">공모전 관리</a></li>
                       <li><a href="#">크레딧 인출</a></li>
@@ -131,7 +166,7 @@
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
@@ -143,6 +178,7 @@
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -152,55 +188,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>KH정보교육원 제작 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color complete"></div>
-                          <p class="progress-text">완료</p>
-                        </div>
-                      </div>
-
-                      <div class="progress-box col-sm-4">
-                        <div class="profile-left">
-                          <div class="company-profile">
-                            <div class="company-img avatar">
-                              <img
-                                src="../assets/images/default-user-img.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <div class="contest-mid">
-                            <div class="contest-title">
-                              <p>마가렛트 제작 공모전</p>
-                            </div>
-
-                            <div class="contest-content">
-                              <p class="contest-company">
-                                주최 : 스마트스토어 공단
-                              </p>
-                              <p class="deadline">15일 남음</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
                           <div class="progress-color recruiting"></div>
                           <p class="progress-text">모집중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -210,26 +221,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline"></p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
                           <div class="progress-color under-review"></div>
                           <p class="progress-text">심사중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -239,26 +254,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -268,26 +287,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline"></p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color complete"></div>
+                          <p class="progress-text">완료</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -297,26 +320,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -326,26 +353,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -355,26 +386,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -384,26 +419,30 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -413,26 +452,62 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
+                        </div>
+                      </div>
+                      <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
+                        <div class="profile-left">
+                          <div class="company-profile">
+                            <div class="company-img avatar">
+                              <img
+                                src="../assets/images/default-user-img.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
+                          <div class="contest-mid">
+                            <div class="contest-title">
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
+                            </div>
+
+                            <div class="contest-content">
+                              <p class="contest-company">
+                                주최 : 스마트스토어 공단
+                              </p>
+                              <p class="deadline">D-15</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
                         </div>
                       </div>
 
                       <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
@@ -442,51 +517,25 @@
                               />
                             </div>
                           </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
-                              <p>냠냠 공모전</p>
+                              <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
                                 주최 : 스마트스토어 공단
                               </p>
-                              <p class="deadline">15일 남음</p>
+                              <p class="deadline">D-15</p>
                             </div>
                           </div>
                         </div>
                         <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
-                        </div>
-                      </div>
-
-                      <div class="progress-box col-sm-4">
-                        <div class="profile-left">
-                          <div class="company-profile">
-                            <div class="company-img avatar">
-                              <img
-                                src="../assets/images/default-user-img.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <div class="contest-mid">
-                            <div class="contest-title">
-                              <p>냠냠 공모전</p>
-                            </div>
-
-                            <div class="contest-content">
-                              <p class="contest-company">
-                                주최 : 스마트스토어 공단
-                              </p>
-                              <p class="deadline">15일 남음</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="progress">
-                          <div class="progress-color under-review"></div>
-                          <p class="progress-text">심사중</p>
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
                         </div>
                       </div>
                     </div>
