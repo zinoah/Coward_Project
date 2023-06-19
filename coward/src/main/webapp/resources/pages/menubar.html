@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/home.css"
+    />
+    <title>menubar</title>
+  </head>
+  <body>
+    <!-- Note: 여기부터 시작 -->
+    <aside class="menubar lg-hidden is-open">
+      <div class="menu-wrapper">
+        <header class="menubar-header">
+          <h1 class="logo">
+            <a href="#">
+              <img
+                src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                alt="Coward"
+              />
+            </a>
+          </h1>
+
+          <!-- Note: 로그인을 한 경우 -->
+          <a class="member-info" href="#">
+            <div class="avatar-32">
+              <img
+                src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+              />
+            </div>
+            <strong class="username">빡과장</strong>
+          </a>
+
+          <!-- Note: 로그인을 하지 않은 경우 -->
+          <div class="menubar-auth">
+            <a class="btn-secondary btn-32" href="/">로그인</a>
+            <a class="btn-primary btn-32" href="/">회원가입</a>
+          </div>
+
+          <nav class="menubar-nav">
+            <h2 class="visually-hidden">메뉴</h2>
+
+            <ul class="menubar-list">
+              <li class="menubar-item"><a href="#"> 공모전 </a></li>
+              <li class="menubar-item"><a href="#">개발자 찾기</a></li>
+              <li class="menubar-item"><a href="#">가격 안내</a></li>
+              <li class="menubar-item"><a href="#">이벤트</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <footer class="menubar-footer">
+          <a href="#">
+            <div class="logout-icon">
+              <img
+                src="/coward/src/main/webapp/resources/assets/images/logout.svg"
+              />
+            </div>
+          </a>
+        </footer>
+      </div>
+    </aside>
+  </body>
+</html>

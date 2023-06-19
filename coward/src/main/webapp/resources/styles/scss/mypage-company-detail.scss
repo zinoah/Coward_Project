@@ -6,7 +6,7 @@
 
   &-bar {
     @include flexbox(around);
-    font-size: 10px;
+    @include text-style(12);
     padding: 14px 0;
     text-align: center;
   }
@@ -17,6 +17,7 @@
     &-wrapper {
       @include flexbox;
       margin: 15px;
+      padding-bottom: 20px;
     }
   }
   .avatar {
@@ -24,14 +25,64 @@
     height: 100px;
   }
 
-  .company {
-    &-name {
-      &-input {
-        @include text-style(12, red);
-        border: 1px solid $border;
-        padding: 8px;
-        border-radius: 5px;
+  .input {
+    &-container {
+      @include flexbox(between);
+      flex-wrap: wrap;
+    }
+
+    &-wrapper {
+      margin-bottom: 10px;
+
+      &:first-of-type {
+        width: 48%;
       }
+      &:nth-of-type(2) {
+        width: 48%;
+      }
+
+      &:last-of-type {
+        width: 100%;
+      }
+
+      h4 {
+        padding-bottom: 10px;
+      }
+
+      select {
+        @include text-style(14);
+        width: 100%;
+        height: 40px;
+        border: 1px solid $border;
+        padding: 7px;
+        border-radius: 10px;
+      }
+
+      textarea {
+        @include text-style(14);
+        width: 100%;
+        height: 200px;
+        border: 1px solid $border;
+        border-radius: 10px;
+      }
+    }
+
+    &-name {
+      @include text-style(14);
+      width: 100%;
+      height: 40px;
+      border: 1px solid $border;
+      padding: 5px;
+      border-radius: 10px;
+    }
+  }
+
+  button {
+    color: $white;
+    width: 50%;
+
+    &-wrapper {
+      @include flexbox;
     }
   }
 }
