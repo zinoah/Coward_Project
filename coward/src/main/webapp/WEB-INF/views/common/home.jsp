@@ -13,7 +13,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       src="https://kit.fontawesome.com/a2e8ca0ae3.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="resources/styles/css/index.css" />
+    <link rel="stylesheet" href="resources/styles/css/home.css" />
   </head>
   <body>
     <!--  jsp:include 태그
@@ -39,6 +39,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     ></script>
 
     <!-- main.js 연결 -->
-    <script src="${contextPath}/resources/js/main.js"></script>
+   <%--  <script src="${contextPath}/resources/js/main.js"></script> --%>
   </body>
 </html>

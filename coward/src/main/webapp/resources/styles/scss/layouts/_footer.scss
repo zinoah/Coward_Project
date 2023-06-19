@@ -2,7 +2,7 @@
   @include text-style(13);
   width: 100%;
   background-color: $background;
-  margin-top: 24px;
+  margin-top: $around-main-content;
 
   .logo {
     @include flexbox(start);

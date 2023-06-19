@@ -1496,162 +1496,71 @@ i {
   }
 }
 
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-.window {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-.popup .profile-section {
-  display: flex;
-  margin: 20px 0 0 10px;
-}
-.popup .profile-section img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50px;
-}
-.popup .profile-section h4 {
-  margin: 8px 0 0 10px;
-}
-.popup .profile-section .coding-type {
+.banner {
+  height: 200px;
+  background-color: #f8f8f8;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 8px;
-  color: #3aacf8;
-  width: 30px;
-  height: 20px;
-  border: 1px solid #3aacf8;
-  border-radius: 5px;
-  margin: 8px 0 0 10px;
+  padding: 20px;
+  margin-bottom: 50px;
 }
-.popup .intro h5 {
-  margin: 10px;
-}
-.popup .intro-input {
+.banner-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 120px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 10px;
+  flex-direction: column;
 }
-.popup .intro textarea {
-  font-size: 14px;
-  line-height: 24px;
+.banner-text-box div {
+  margin-bottom: 10px;
+}
+.banner-text-box-title {
+  font-size: 24px;
+  line-height: 34px;
   letter-spacing: -0.01em;
 }
-.popup .intro .github-input {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
+.banner-text-box-reward {
+  display: flex;
+}
+.banner-text-box-reward div {
+  margin-right: 15px;
+}
+.banner-button-box {
   display: flex;
   align-items: center;
-  width: 300px;
-  height: 40px;
-  border: 1px solid #e0e2e7;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-}
-.popup .intro .skill-box {
-  height: 80px;
-  padding-left: 10px;
-}
-.popup .intro .my-skill {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 8px;
-  margin: 4px;
-  background-color: #ffc200;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  text-align: center;
-}
-.popup .intro .story-board {
-  width: 200px;
-  height: 140px;
-  background-color: #e0e2e7;
-  margin: 15px 60px 0 60px;
-  border-radius: 10px;
-}
-.popup .button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-}
-.popup .button-wrapper .awards-status {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  border: 1px solid #e0e2e7;
-  width: 70px;
-  height: 32px;
-  border-radius: 5px;
-}
-.popup .button-wrapper .btn-primary {
-  width: 70px;
-  margin-left: 20px;
+  justify-content: flex-end;
 }
 @media screen and (min-width: 768px) {
-  .popup {
-    padding: 40px;
+  .banner {
+    height: 150px;
   }
-  .popup .profile-section {
-    margin: 0px 0 0 10px;
-  }
-  .popup .intro {
+  .banner-text-box {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
-  .popup .intro h5 {
-    margin-top: 10px;
-  }
-  .popup .intro .simple-intro-title {
-    margin-top: 30px;
-  }
-  .popup .intro .story-board-title {
-    margin-top: -30px;
-  }
-  .popup .intro .story-board {
-    width: 250px;
-    height: 270px;
-    background-color: #e0e2e7;
-    margin: 15px 0 0 20px;
-    border-radius: 10px;
+  .banner-text-box div {
+    margin-bottom: 5px;
   }
 }
-.popup .button-wrapper .awards-status {
-  width: 100px;
-  text-align: center;
+
+.contest-attend-form-inner-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+  padding: 20px;
 }
-.popup .button-wrapper .btn-primary {
-  width: 100px;
-}/*# sourceMappingURL=contest-form-modal.css.map */
+.contest-attend-form-inner-box-title {
+  flex-basis: 10%;
+  width: 100%;
+}
+.contest-attend-form-inner-box-main {
+  flex-basis: 80%;
+  width: 100%;
+}
+.contest-attend-form-inner-box-btn {
+  flex-basis: 10%;
+  width: 100%;
+}/*# sourceMappingURL=contest-attend-form.css.map */

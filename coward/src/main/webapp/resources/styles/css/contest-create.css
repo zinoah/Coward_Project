@@ -724,7 +724,8 @@ i {
 
 .slider-wrapper {
   position: relative;
-  height: 320px;
+  height: 300px;
+  margin-bottom: 70px;
 }
 
 .contest-slider {
@@ -1200,7 +1201,7 @@ i {
   align-items: center;
   justify-content: center;
   height: 150px;
-  margin-bottom: 24px;
+  margin-bottom: 70px;
   border-radius: 20px;
   overflow: hidden;
   flex-direction: column;
@@ -1381,7 +1382,7 @@ i {
   letter-spacing: -0.01em;
   width: 100%;
   background-color: #f8f8f8;
-  margin-top: 24px;
+  margin-top: 50px;
 }
 .footer .logo {
   display: flex;
@@ -1545,8 +1546,7 @@ i {
 .create-container .contest-create-form-title-tooltip-board {
   width: 460px;
   height: 220px;
-  display: none;
-  background-color: rgba(255, 255, 255, 0.466);
+  background-color: #fff;
   border: 1.5px solid #3aacf8;
   border-radius: 10px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);

@@ -41,23 +41,6 @@
     button {
       flex-basis: 25%;
       height: 45px;
-<<<<<<< HEAD
-=======
-      background-color: $border;
-      font-weight: 700;
-      color: $secondary;
-
-      &.is-active {
-        background-color: $blue;
-        color: $white;
-        border: 1px solid $blue;
-
-        &:hover {
-          color: $white;
-          border: 1px solid $blue;
-        }
-      }
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
 
       &:hover {
         border-bottom: 2px solid $blue;
@@ -70,12 +53,8 @@
     @include flexbox(end, center);
     height: 40px;
     margin-top: 10px;
-<<<<<<< HEAD
-    .select {
-=======
 
-    .select-box {
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
+    .select {
       @include flexbox(between);
       border: 1px solid $border;
       border-radius: 5px;
@@ -105,20 +84,8 @@
   }
 
   @include responsive(D) {
-<<<<<<< HEAD
     .category-button-wrapper {
       button {
-=======
-    .category-button-box {
-      @include flexbox(start, center);
-      height: 30px;
-      background-color: $white;
-      border: none;
-
-      button {
-        background-color: $white;
-        flex-basis: 7%;
->>>>>>> c7689c815d0448f360d81b24347eecca5e493013
         height: 30px;
         margin-right: 10px;
         border: 1px solid $border;

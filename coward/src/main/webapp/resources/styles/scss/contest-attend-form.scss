@@ -1,0 +1,70 @@
+@import "./main.scss";
+
+.banner {
+  height: 200px;
+  background-color: $background;
+  @include flexbox;
+  padding: 20px;
+  margin-bottom: $around-main-content;
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-text-box {
+    div {
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      @include text-style(24);
+    }
+    &-reward {
+      display: flex;
+      div {
+        margin-right: 15px;
+      }
+    }
+  }
+  &-button-box {
+    @include flexbox(end, center);
+  }
+
+  @include responsive(T) {
+    height: 150px;
+
+    &-text-box {
+      @include flexbox(between);
+    }
+
+    &-text-box {
+      div {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.contest-attend-form {
+  &-inner-box {
+    @include column-flexbox;
+    height: 600px;
+    border: 1px solid $border;
+    border-radius: 10px;
+    padding: 20px;
+
+    &-title {
+      flex-basis: 10%;
+      width: 100%;
+    }
+    &-main {
+      flex-basis: 80%;
+      width: 100%;
+    }
+    &-btn {
+      flex-basis: 10%;
+      width: 100%;
+    }
+  }
+}

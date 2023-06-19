@@ -49,8 +49,8 @@ $input-box-margin: 24px;
           &-board {
             width: 460px;
             height: 220px;
-            display: none;
-            background-color: rgba(255, 255, 255, 0.466);
+            //display: none;
+            background-color: $white;
             border: 1.5px solid $blue;
             border-radius: 10px;
             box-shadow: $card-shadow;
