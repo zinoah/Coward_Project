@@ -317,11 +317,11 @@
   /* 어워드 */
   .award {
     width: 220px;
-    height: 338px;
+    height: 323px;
 
     &-box {
       @include column-flexbox;
-      height: 295px;
+      height: 287px;
       justify-content: space-around;
       align-items: center;
       margin: 0;
