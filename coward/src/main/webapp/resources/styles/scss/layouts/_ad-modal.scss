@@ -1,0 +1,147 @@
+.ad-modal {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  pointer-events: visible;
+
+  &.is-open {
+    @include pos-center(fixed);
+    background-color: rgba($color: #000000, $alpha: 0.7);
+
+    .ad-wrapper {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .ad-wrapper {
+    @include column-flexbox;
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    background-color: $white;
+
+    transform: translate3d(0, 450px, 0);
+    transition: transform 300ms ease-in-out;
+
+    .ad-thumbnail {
+      @include inline-flexbox;
+      width: 100%;
+      height: 380px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+    }
+
+    .buttons {
+      @include flexbox(between);
+      width: 100%;
+      margin-top: 10px;
+
+      .today-skip-button,
+      .close-button {
+        @include text-style(14, $primary);
+        @include flexbox;
+        height: 100%;
+
+        transition: all 0.15s ease-in-out;
+
+        &:active {
+          color: $secondary;
+        }
+      }
+
+      .today-skip-button {
+        .check-icon {
+          @include flexbox;
+
+          margin-right: 8px;
+          border: 1px solid $border;
+          border-radius: 4px;
+          padding: 2px;
+
+          .ic-check {
+            font-size: 10px;
+          }
+        }
+
+        position: relative;
+      }
+
+      .close-button {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    display: none;
+    overflow: auto;
+
+    &.is-open {
+      display: block;
+
+      .ad-wrapper {
+        @include pos-center;
+        width: 400px;
+        height: 520px;
+        padding: 16px 16px 0 16px;
+
+        border-radius: 10px;
+        overflow: hidden;
+
+        .ad-thumbnail {
+          width: 100%;
+          height: 100%;
+          flex-basis: 90%;
+        }
+
+        .buttons {
+          @include flexbox;
+          flex-basis: 10%;
+          background-color: #fff;
+          margin-top: 0;
+
+          .today-skip-button,
+          .close-button {
+            @include text-style(16);
+            flex-basis: 50%;
+
+            transition: all 0.15s ease-in-out;
+
+            &:hover {
+              color: $secondary;
+              background-color: $background;
+            }
+          }
+
+          .today-skip-button {
+            position: relative;
+
+            &::after {
+              @include pos-center-y;
+              content: "";
+              width: 1px;
+              height: 28px;
+              right: 0;
+              background-color: $border;
+            }
+          }
+
+          .close-button {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
