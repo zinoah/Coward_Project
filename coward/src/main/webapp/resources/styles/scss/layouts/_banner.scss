@@ -84,7 +84,7 @@
 .banner-middle {
   @include flexbox;
   height: 150px;
-  margin-bottom: 24px;
+  margin-bottom: $between-section;
   border-radius: 20px;
   overflow: hidden;
   flex-direction: column;
