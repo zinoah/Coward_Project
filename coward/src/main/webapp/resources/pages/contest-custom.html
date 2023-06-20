@@ -11,6 +11,91 @@
     />
   </head>
   <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      alt="Coward"
+                    />
+                  </a>
+                </h1>
+
+                <button
+                  class="header-button sm-only"
+                  type="button"
+                  aria-label="메뉴 버튼"
+                >
+                  <i class="ic-hamburger"></i>
+                </button>
+              </div>
+
+              <div class="header-right sm-hidden">
+                <!-- Note: 로그인을 하지 않은 경우 -->
+                <div class="header-buttons">
+                  <button
+                    class="header-button md-only"
+                    type="button"
+                    aria-label="통합 검색 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">로그인</a>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">회원가입</a>
+                  </button>
+                </div>
+                <!-- Note: 로그인을 한 경우 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <h2 class="visually-hidden">메뉴</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="nav-wrapper">
+              <div class="nav-left">
+                <ul class="nav-list">
+                  <li class="nav-item is-active">
+                    <a href="#">공모전</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">개발자 찾기</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">가격 안내</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nav-right lg-only">
+                <form class="nav-search" action="#">
+                  <input
+                    class="nav-search-input"
+                    type="text"
+                    placeholder="어떤 공모전을 찾으시나요?"
+                  />
+                  <i class="ic-search" aria-hidden></i>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <div class="banner-top">
       <div class="container">
         <div class="row">
@@ -92,83 +177,85 @@
 
                 <p>다음 중 무엇인가요?</p>
               </div>
-              <div class="custom-skill-wrapper">
-                <div class="custom-skill">
-                  <div class="custom-skill-img">
-                    <img src="../assets/images/javaScript.svg" />
+              <div class="custom-skill-container">
+                <div class="custom-skill-wrapper">
+                  <div class="custom-skill">
+                    <div class="custom-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
                   </div>
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <div class="custom-skill-img">
-                    <img src="../assets/images/javaScript.svg" />
+                  <div class="custom-skill">
+                    <div class="custom-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
                   </div>
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <img src="../assets/images/java.svg" />
-                  <h5>Java</h5>
-                </div>
-                <div class="custom-skill">
-                  <img src="../assets/images/java.svg" />
-                  <h5>Java</h5>
-                </div>
-                <div class="custom-skill">
-                  <img src="../assets/images/javaScript.svg" />
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <img src="../assets/images/javaScript.svg" />
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <div class="custom-skill-img">
-                    <img src="../assets/images/javaScript.svg" />
+                  <div class="custom-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
                   </div>
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <div class="custom-skill-img">
-                    <img src="../assets/images/javaScript.svg" />
+                  <div class="custom-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
                   </div>
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <img src="../assets/images/java.svg" />
-                  <h5>Java</h5>
-                </div>
-                <div class="custom-skill">
-                  <div class="custom-skill-img">
+                  <div class="custom-skill">
                     <img src="../assets/images/javaScript.svg" />
+                    <h5>JavaScript</h5>
                   </div>
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <div class="custom-skill-img">
+                  <div class="custom-skill">
                     <img src="../assets/images/javaScript.svg" />
+                    <h5>JavaScript</h5>
                   </div>
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <img src="../assets/images/java.svg" />
-                  <h5>Java</h5>
-                </div>
-                <div class="custom-skill">
-                  <div class="custom-skill-img">
-                    <img src="../assets/images/javaScript.svg" />
+                  <div class="custom-skill">
+                    <div class="custom-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
                   </div>
-                  <h5>JavaScript</h5>
-                </div>
-                <div class="custom-skill">
-                  <img src="../assets/images/java.svg" />
-                  <h5>Java</h5>
+                  <div class="custom-skill">
+                    <div class="custom-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="custom-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
+                  <div class="custom-skill">
+                    <div class="custom-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="custom-skill">
+                    <div class="custom-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="custom-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
+                  <div class="custom-skill">
+                    <div class="custom-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="custom-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="custom-step-3" id="custom-step-3">
               <div class="custom-tab">
-                <img src="../assets/images/step1.svg" />
+                <img src="../assets/images/step3.svg" />
               </div>
               <div class="custom-title">
                 <p>찾으시는 상금의 금액대는 얼마인가요?</p>
@@ -176,12 +263,17 @@
 
               <div class="custom-reward-wrapper">
                 <p>상금: <span id="value"></span>300만원 이상</p>
+
+                <!-- 상금 조정 말풍선 추가 예정-->
+                <!--
                 <div
                   class="custom-reward-slide-bubble"
                   id="custom-reward-slide-bubble"
                 >
                   <span>상금을 조정해보세요😊</span>
                 </div>
+                -->
+
                 <input
                   type="range"
                   class="custom-reward-slide"
@@ -190,12 +282,6 @@
                   max="1000"
                   value="10"
                 />
-              </div>
-            </div>
-
-            <div class="custom-step-final" id="custom-step-final">
-              <div class="custom-title">
-                <p>입력한 정보를 바탕으로 불러온 추천 공모전입니다.</p>
               </div>
             </div>
 
@@ -214,6 +300,101 @@
         </div>
       </div>
     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-2 col-lg-3">
+            <h1 class="logo">
+              <a href="#">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  alt="Coward"
+                />
+              </a>
+            </h1>
+          </div>
+
+          <div class="col-sm-4 col-md-5 col-lg-3">
+            <div class="service-center">
+              <a href="#">
+                <h3>고객센터</h3>
+                <i class="ic-chevron"></i>
+              </a>
+            </div>
+            <div class="service-info">
+              <div class="row">
+                <div class="service-info-wrapper">
+                  <div class="service-info-time">
+                    <div class="service-info-title">상담시간</div>
+                    <p>
+                      평일 11:00 ~ 17:00 <br />
+                      점심 12:30 ~ 13:30 <br />
+                      (주말, 공휴일 제외)
+                    </p>
+                  </div>
+
+                  <div class="service-info-tel">
+                    <div class="service-info-title">연락처</div>
+                    <a class="footer-tel" href="tel:02-1234-5678"
+                      >02-1234-5678</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <address class="footer-info sm-hidden">
+            <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+            <p>Copyright © 2023 Coawrd All Right Reserved</p>
+          </address>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="footer-links">
+            <div class="row">
+              <div class="footer-links-wrapper">
+                <div class="icon-link">
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
+                      alt="Github 바로가기"
+                  /></a>
+                  <a class="icon-link-item" href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
+                      alt="Notion 바로가기"
+                    />
+                  </a>
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
+                      alt="Figma 바로가기"
+                  /></a>
+                </div>
+
+                <div class="text-link">
+                  <ul class="text-link-list">
+                    <li class="text-link-item"><a href="#">이용가이드</a></li>
+                    <li class="text-link-item">
+                      <a href="#">개인정보처리방침</a>
+                    </li>
+                    <li class="text-link-item"><a href="#">이용약관</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <address class="footer-info sm-only">
+          <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+          <p>Copyright © 2023 Coawrd All Right Reserved</p>
+        </address>
+      </div>
+    </footer>
 
     <script src="../js/contest-custom.js"></script>
   </body>
