@@ -58,6 +58,9 @@
       @include text-style(14);
       font-weight: bold;
     }
+
+    &:last-of-type {
+    }
   }
   &-card {
     @include column-flexbox;
