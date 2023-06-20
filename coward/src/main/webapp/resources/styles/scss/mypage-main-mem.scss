@@ -99,6 +99,7 @@
 
   &-table tr:first-child {
     @include text-style(20);
+    font-weight: 700;
   }
 
   &-table tr:last-child {
@@ -241,13 +242,13 @@
     height: 715px;
     border-radius: 10px;
     box-shadow: $card-shadow;
-    background-color: $background;
+    background-color: $white;
   }
 
   .category {
     width: 100%;
 
-    background-color: $background;
+    background-color: white;
 
     &-bar {
       @include column-flexbox(start, start);
@@ -298,6 +299,9 @@
       border-bottom: 1px solid $secondary;
     }
   }
+  .introduce-title {
+    margin-left: 0;
+  }
   /* 한줄 소개 */
   .one-liner {
     margin-bottom: 8px;
@@ -305,7 +309,7 @@
       @include text-style(12);
       width: 520px;
       height: 140px;
-      background-color: $background;
+      background-color: white;
       resize: none;
     }
   }
@@ -313,11 +317,11 @@
   /* 어워드 */
   .award {
     width: 220px;
-    height: 338px;
+    height: 323px;
 
     &-box {
       @include column-flexbox;
-      height: 295px;
+      height: 287px;
       justify-content: space-around;
       align-items: center;
       margin: 0;
@@ -376,6 +380,10 @@
 
   .watchlist {
     overflow: hidden;
+
+    p {
+      margin-bottom: 17px;
+    }
   }
   /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
@@ -418,7 +426,7 @@
   }
 
   aside {
-    height: 613px;
+    height: 650px;
   }
 
   .category-web {

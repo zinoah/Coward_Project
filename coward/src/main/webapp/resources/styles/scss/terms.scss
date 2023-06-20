@@ -1,0 +1,93 @@
+@import "./main";
+@import "./service_center";
+
+.header {
+  background-color: $yellow-light;
+
+  &-wrapper {
+    .login-button {
+      color: $yellow;
+    }
+  }
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.terms-box {
+  margin-bottom: 50px;
+}
+
+.ic-chevron {
+  font-size: 10px;
+  display: inline-block;
+  transform: rotate(-180deg);
+}
+
+.category {
+  @include text-style(12);
+  color: $secondary;
+  padding: 15px 0;
+  margin-bottom: 15px;
+}
+
+.list-box {
+  position: sticky;
+  top: 50px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  border: 1.5px solid $border;
+  border-radius: 10px;
+}
+
+.list-section {
+  height: 2781px;
+}
+
+.dd {
+  @include flexbox(between);
+}
+
+ul > p {
+  @include text-style(16);
+  font-weight: 700;
+  padding: 15px 20px;
+}
+
+li {
+  @include text-style(14);
+  font-weight: 600;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: $border;
+  color: $blue;
+}
+
+.drop-down {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  cursor: pointer;
+  // appearance: none;
+}
+
+.drop-btn {
+  @include text-style(14);
+  font-weight: 700;
+  color: $tertiary;
+  position: absolute;
+  display: inline-block;
+  transform: rotate(-90deg);
+  right: 25px;
+  top: 8px;
+}
+
+/*.vv {
+  position: relative;
+}*/
