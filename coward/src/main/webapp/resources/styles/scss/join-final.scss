@@ -26,8 +26,12 @@
   }
 }
 
-.btn-input-bundle {
+.final-info {
   @include text-style(14);
+}
+
+.btn-input-bundle {
+  @include text-style(12);
   width: 100%;
   height: 42px;
   border: 1px solid $border;
@@ -38,8 +42,8 @@
 .input {
   &-title {
     @include inline-flexbox;
-    @include text-style(16);
-    margin-bottom: 5px;
+    font-size: 15px;
+    margin-bottom: 8px;
   }
 }
 
@@ -54,7 +58,7 @@
   }
 
   &-cert-btn {
-    font-size: 15px;
+    @include text-style(14);
     margin-top: 20px;
     margin-bottom: 20px;
   }

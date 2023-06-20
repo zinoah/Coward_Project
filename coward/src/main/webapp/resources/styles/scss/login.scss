@@ -24,6 +24,10 @@
   &-pw {
     color: $black;
   }
+
+  &-first {
+    @include text-style(14);
+  }
 }
 
 .login {
