@@ -18,7 +18,7 @@ $input-box-margin: 24px;
     &-wrapper {
       @include flexbox;
       width: 100%;
-      height: 1700px;
+      height: 2000px;
       margin-top: 100px;
       border-radius: 10px;
       box-shadow: $card-shadow;
@@ -27,7 +27,7 @@ $input-box-margin: 24px;
 
     &-form {
       width: 100%;
-      height: 1700px;
+      height: 2000px;
       padding: 20px;
 
       &-title {
@@ -49,8 +49,8 @@ $input-box-margin: 24px;
           &-board {
             width: 460px;
             height: 220px;
-            display: none;
-            background-color: rgba(255, 255, 255, 0.466);
+            //display: none;
+            background-color: $white;
             border: 1.5px solid $blue;
             border-radius: 10px;
             box-shadow: $card-shadow;
@@ -95,7 +95,7 @@ $input-box-margin: 24px;
         width: 100%;
         padding: 10px;
 
-        & > form > div {
+        & > div {
           margin-bottom: $input-box-margin;
         }
 
@@ -246,6 +246,7 @@ $input-box-margin: 24px;
             display: flex;
             flex-wrap: wrap;
             flex-basis: 50%;
+            height: 100px;
             overflow: scroll;
 
             label {
@@ -266,7 +267,7 @@ $input-box-margin: 24px;
 
       &-thumbnail {
         @include flexbox(start, start);
-        height: 80px;
+        height: 120px;
 
         & > div {
           &:nth-child(1) {
@@ -276,8 +277,9 @@ $input-box-margin: 24px;
             @include column-flexbox;
             flex-basis: 50%;
             border: 1px dotted $border;
+            border-radius: 10px;
             width: 100%;
-            height: 80px;
+            height: 120px;
 
             div {
               &:nth-child(1) {
@@ -285,6 +287,7 @@ $input-box-margin: 24px;
                 @include flexbox;
                 margin-bottom: 12px;
                 width: 100%;
+                padding: 0 10px 0 10px;
               }
               &:nth-child(2) {
                 @include flexbox;
@@ -303,6 +306,7 @@ $input-box-margin: 24px;
       }
 
       &-reward {
+        margin-bottom: 24px;
         & > div {
           &:nth-child(1) {
             margin-bottom: 10px;
@@ -320,7 +324,7 @@ $input-box-margin: 24px;
           .price {
             &-bar {
               @include flexbox;
-              padding: 0 50px 0 50px;
+              padding: 0 20px 0 20px;
               flex-basis: 15%;
               div {
                 width: 100%;
@@ -333,9 +337,9 @@ $input-box-margin: 24px;
               @include flexbox;
               flex-basis: 50%;
               padding: 10px;
-
+              margin-bottom: 20px;
               &-inner-box {
-                @include flexbox;
+                @include column-flexbox;
                 background-color: $background;
                 border: 1px solid $border;
                 border-radius: 10px;
@@ -347,36 +351,64 @@ $input-box-margin: 24px;
                   width: 100%;
                   height: 40px;
                   border: 1px solid $border;
+                  border-radius: 5px;
                 }
+
                 input[type="number"]::-webkit-outer-spin-button,
                 input[type="number"]::-webkit-inner-spin-button {
                   -webkit-appearance: none;
                   margin: 0;
                 }
 
+                span {
+                  color: $tertiary;
+                  font-weight: 700;
+                  font-size: 10px;
+                }
+
+                & > div {
+                  @include flexbox;
+                  width: 80%;
+
+                  &:last-child {
+                    margin-top: 10px;
+                  }
+                }
+
                 .peple-count {
                   @include flexbox;
-                  flex-basis: 30%;
-                  margin-right: 30px;
+                  margin-right: 10px;
+                  position: relative;
 
-                  div {
+                  & > div {
                     font-size: 12px;
-
-                    div {
+                    position: absolute;
+                    right: 0;
+                    & > div {
                       @include flexbox;
                       width: 20px;
                       height: 20px;
                       border: 1px solid $border;
-                      border-left: 0px;
                       background-color: $white;
+                      cursor: pointer;
+                      transition: 0.3s;
+
+                      &:hover {
+                        background-color: $tertiary;
+                        color: $white;
+                      }
 
                       &:nth-child(1) {
                         border-bottom: 0px;
+                        border-radius: 0 5px 0 0;
+
                         i {
                           rotate: 90deg;
                         }
                       }
+
                       &:nth-child(2) {
+                        border-radius: 0 0 5px 0;
                         i {
                           rotate: -90deg;
                         }
@@ -390,7 +422,9 @@ $input-box-margin: 24px;
                 }
 
                 .reward-price {
-                  flex-basis: 30%;
+                  @include flexbox;
+
+                  margin-right: 10px;
                 }
               }
             }
@@ -431,26 +465,26 @@ $input-box-margin: 24px;
             }
           }
           &:nth-child(2) {
-            @include flexbox(between);
-            height: 250px;
+            @include column-flexbox;
+            height: 430px;
 
             & > div {
-              @include column-flexbox(center, start);
+              @include flexbox(center, start);
               flex-basis: 25%;
-              height: 100%;
+              width: 100%;
               border: 1px solid $border;
               border-radius: 20px;
               background-color: $white;
               position: relative;
 
               & > div {
-                flex-basis: 50%;
                 &:nth-child(1) {
-                  @include text-style(18);
+                  @include text-style(12);
                   width: 100%;
-                  padding: 20px;
+                  padding: 20px 10px 20px 10px;
                   border-bottom: 1px solid $border;
                 }
+
                 &:nth-child(2) {
                   width: 100%;
                   padding: 10px;
@@ -461,6 +495,7 @@ $input-box-margin: 24px;
                     height: 20px;
                   }
                 }
+
                 &:nth-child(3) {
                   position: absolute;
                   top: -20px;
@@ -469,30 +504,46 @@ $input-box-margin: 24px;
               }
             }
             .general {
+              margin-bottom: 30px;
               & > div {
                 &:nth-child(1) {
+                  flex-basis: 45%;
                   background-color: $yellow-light;
-                  border-radius: 20px 20px 0px 0px;
+                  height: 100%;
+                  border-radius: 20px 0px 0px 20px;
                 }
               }
             }
             .advanced {
+              margin-bottom: 30px;
               & > div {
                 &:nth-child(1) {
+                  flex-basis: 45%;
                   background-color: $blue-light;
-                  border-radius: 20px 20px 0px 0px;
+                  height: 100%;
+                  border-radius: 20px 0px 0px 20px;
                 }
               }
             }
             .premium {
+              margin-bottom: 30px;
               & > div {
                 &:nth-child(1) {
+                  flex-basis: 45%;
                   background-color: $red;
-                  border-radius: 20px 20px 0px 0px;
+                  height: 100%;
+                  border-radius: 20px 0px 0px 20px;
                 }
               }
             }
           }
+        }
+      }
+      &-btn {
+        @include flexbox;
+        button {
+          width: 100px;
+          height: 30px;
         }
       }
     }
@@ -501,7 +552,7 @@ $input-box-margin: 24px;
     &-summary {
       @include flexbox(center, start);
       flex-basis: 30%;
-      height: 1700px;
+      height: 1750px;
       border-left: 1px solid $border;
       padding: 30px;
 
@@ -602,10 +653,108 @@ $input-box-margin: 24px;
     }
 
     @include responsive(T) {
+      &-wrapper {
+        @include flexbox;
+
+        height: 1800px;
+      }
+      &-form {
+        height: 1800px;
+        &-inner {
+          & > div {
+            margin-bottom: $input-box-margin;
+          }
+        }
+        &-reward {
+          .price-box {
+            &-inner-box {
+              display: flex;
+              flex-direction: row;
+              padding: 20px;
+              & > div {
+                width: 20%;
+
+                &:not(:nth-child(1)) {
+                  width: 40%;
+                }
+
+                span {
+                  @include text-style(18);
+                }
+                &:last-child {
+                  margin-top: 0;
+                }
+              }
+            }
+          }
+        }
+        &-promotion-products {
+          & > div {
+            &:nth-child(2) {
+              @include flexbox(between);
+              flex-direction: row;
+              height: 250px;
+              margin-bottom: 40px;
+              & > div {
+                flex-direction: column;
+              }
+              .general {
+                height: 250px;
+                margin-bottom: 0px;
+                & > div {
+                  &:nth-child(1) {
+                    @include text-style(18);
+                    border-radius: 20px 20px 0 0;
+                    flex-basis: 50%;
+                    padding: 20px 0 0 20px;
+                  }
+                  &:nth-child(2) {
+                    flex-basis: 50%;
+                  }
+                }
+              }
+              .advanced {
+                height: 250px;
+                margin-bottom: 0px;
+                & > div {
+                  &:nth-child(1) {
+                    @include text-style(18);
+                    border-radius: 20px 20px 0 0;
+                    flex-basis: 50%;
+                    padding: 20px 0 0 20px;
+                  }
+                  &:nth-child(2) {
+                    flex-basis: 50%;
+                  }
+                }
+              }
+              .premium {
+                height: 250px;
+                margin-bottom: 0px;
+                & > div {
+                  &:nth-child(1) {
+                    @include text-style(18);
+                    border-radius: 20px 20px 0 0;
+                    flex-basis: 50%;
+                    padding: 20px 0 0 20px;
+                  }
+                  &:nth-child(2) {
+                    flex-basis: 50%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
     @include responsive(D) {
+      &-wrapper {
+        height: 1750px;
+      }
       &-form {
         flex-basis: 70%;
+        height: 1750px;
       }
     }
   }

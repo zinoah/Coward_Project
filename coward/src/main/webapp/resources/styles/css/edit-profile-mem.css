@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @font-face {
   font-family: "coward";
-  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
-  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
+  src: url("/coward/resources/assets/fonts/coward.eot");
+  src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -725,8 +725,8 @@ i {
 
 .slider-wrapper {
   position: relative;
-  height: 320px;
-  margin-bottom: 24px;
+  height: 300px;
+  margin-bottom: 70px;
 }
 
 .contest-slider {
@@ -751,8 +751,7 @@ i {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .contest-slider-card-info {
   position: absolute;
@@ -838,18 +837,26 @@ i {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .contest-card:first-of-type {
   margin-top: 16px;
+}
+.contest-card:hover {
+  transform: translateY(-10px);
 }
 .contest-card .bookmark {
   position: absolute;
   right: 7%;
   top: -5px;
   font-size: 25px;
+  cursor: pointer;
 }
 .contest-card .bookmark i {
   color: #b2b3b9;
+}
+.contest-card .bookmark i:hover {
+  color: #ffc1c9;
 }
 .contest-card-title {
   display: flex;
@@ -1110,7 +1117,7 @@ i {
   justify-content: center;
   width: 100%;
   height: 260px;
-  margin-bottom: 24px;
+  margin-bottom: 50px;
   overflow: hidden;
 }
 .banner-top img {
@@ -1190,15 +1197,59 @@ i {
   }
 }
 
+.banner-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  margin-bottom: 70px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: 90% 0;
+  background-size: 240px;
+}
+.banner-middle-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .banner-middle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 80px;
+  }
+  .banner-middle-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.banner-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  background-color: #222121;
+  margin-top: 50px;
+}
 .banner-bottom a {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 160px;
-  background-color: #222121;
-  margin-top: 20px;
+  height: 100%;
+}
+.banner-bottom-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 100%;
 }
 .banner-bottom-image img {
   display: block;
@@ -1216,90 +1267,50 @@ i {
 .banner-bottom .ad-slogan .text-emphasis {
   color: #ffc200;
 }
-
-.banner-middle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-  margin-bottom: 24px;
-  border-radius: 20px;
-  overflow: hidden;
-  flex-direction: column;
-  background-repeat: no-repeat;
-  background-position: 90% 0;
-  background-size: 240px;
-}
-.banner-middle-title {
-  font-size: 24px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  font-weight: bold;
-  color: #fff;
-}
 @media screen and (min-width: 768px) {
-  .banner-middle {
+  .banner-bottom a {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 50px 80px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 0 40px;
   }
-  .banner-middle-title {
-    font-size: 30px;
+  .banner-bottom a .ad-slogan {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-top: 0;
+    text-align: start;
     line-height: 40px;
   }
-}
-
-/* banner-top html code
-
-<div class="banner-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="banner-top-wrapper">
-              <div class="banner-info">
-                <h3 class="main-title">
-                  Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트!
-                </h3>
-                <p class="sub-title sm-hidden">
-                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
-              </div>
-              <div class="banner-image">
-                <img
-                  src="/coward/src/main/webapp/resources/assets/images/suprise-box.svg"
-                  aria-hidden
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-*/
-/* banner-top scss 페이지 별 색상 변경 코드
-.banner {
-  &-top {
-    background-color: #ffefc5;
-
-    &-wrapper {
-      .banner-info {
-        .banner-button {
-          background-color: $yellow;
-
-          &:hover {
-            background-color: #fcd869;
-          }
-        }
-      }
-    }
+  .banner-bottom-image {
+    width: 140px;
+    height: 100%;
   }
 }
-*/
+@media screen and (min-width: 1200px) {
+  .banner-bottom a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 0 40px;
+  }
+  .banner-bottom a .ad-slogan {
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-top: 0;
+    text-align: start;
+    line-height: 40px;
+  }
+  .banner-bottom-image {
+    width: 160px;
+    height: 100%;
+  }
+}
 
 .nav {
   background-color: #fff;
@@ -1366,13 +1377,111 @@ i {
   }
 }
 
+.menubar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  pointer-events: visible;
+}
+.menubar.is-open {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.menubar.is-open .menu-wrapper {
+  transform: translate3d(0, 0, 0);
+}
+.menubar .menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 260px;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  padding: 30px;
+  transform: translate3d(-260px, 0, 0);
+  transition: transform 300ms ease-in-out;
+}
+.menubar-header {
+  width: 100%;
+}
+.menubar-header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 40px;
+}
+.menubar-header .logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.menubar-header .member-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+.menubar-header .member-info .avatar-32 {
+  margin-right: 8px;
+}
+.menubar-header .member-info .username {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.menubar-header .menubar-auth {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+.menubar-header .menubar-auth a:first-child {
+  margin-right: 10px;
+}
+.menubar-nav {
+  width: 100%;
+}
+.menubar-nav .menubar-list {
+  border-top: 1px solid #e0e2e7;
+  margin-top: 24px;
+}
+.menubar-nav .menubar-list .menubar-item {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  width: 100%;
+  height: 24px;
+  margin-top: 16px;
+}
+.menubar-footer {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+.menubar-footer .logout-icon {
+  width: 24px;
+  height: 24px;
+}
+.menubar-footer .logout-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .footer {
   font-size: 13px;
   line-height: 20px;
   letter-spacing: -0.01em;
   width: 100%;
   background-color: #f8f8f8;
-  margin-top: 24px;
+  margin-top: 50px;
 }
 .footer .logo {
   display: flex;
@@ -1488,12 +1597,12 @@ i {
 
 /***** 모바일 *****/
 /* 네비게이션 바 */
-.nav {
+.category {
   width: 100%;
   background-color: #f8f8f8;
   margin-bottom: 20px;
 }
-.nav-bar {
+.category-bar {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1551,6 +1660,17 @@ i {
   color: #8c8d96;
 }
 
+.one-liner {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e2e7;
+  border-radius: 10px;
+}
+
 #nickName {
   font-size: 12px;
   line-height: 16px;
@@ -1605,7 +1725,7 @@ i {
   margin-bottom: 10px;
 }
 
-.one-liner {
+.introduce-content {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
@@ -1685,7 +1805,7 @@ i {
     margin: 0;
   }
   /* 네비게이션 바 */
-  .nav-bar {
+  .category-bar {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
@@ -1743,22 +1863,22 @@ i {
     background-color: #f8f8f8;
   }
   /* 네비게이션 바 */
-  .nav {
+  .category {
     width: 100%;
     background-color: #f8f8f8;
   }
-  .nav-bar {
+  .category-bar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 14px 0;
   }
-  .nav li {
+  .category li {
     padding: 5px 0 5px 10px;
     text-align: left;
   }
-  .nav-web {
+  .category-web {
     height: 603px;
   }
   /* 메인과 위치 맞추기 위해 */
@@ -1822,8 +1942,8 @@ i {
   }
   /* 메인과 크기 맞추기 위해 */
   .edit-profile {
-    width: 843.33px;
-    height: 695.33px;
+    width: 845px;
+    height: 695px;
     padding: 15px 30px;
     margin: 0 10px;
     border: 1px solid #e0e2e7;
@@ -1846,25 +1966,46 @@ i {
     border-bottom: 1px solid #e0e2e7;
   }
   .skill-group {
-    height: 170px;
+    height: 210px;
     margin: 0;
   }
   #nickName,
   .stack-box,
   .one-liner-box,
-  .skill-group-box {
+  .skill-group-box,
+  .introduce-box {
     width: 350px;
+  }
+  .one-liner {
+    margin-bottom: 8px;
   }
   .nick-stack {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 5px;
   }
-  .one-skill {
+  .stack-btn-group {
+    margin-bottom: 8px;
+  }
+  .introduce-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    padding: 8px;
+  }
+  .introduce-content {
+    height: 120px;
+  }
+  .one-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .one-intro-skill {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=edit-profile-mem.css.map */
