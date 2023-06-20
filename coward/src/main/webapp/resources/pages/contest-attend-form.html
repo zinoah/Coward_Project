@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/css/contest-attend-form.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
+      type="text/css"
+    />
+
     <title>Coward | 공모전 참가하기</title>
   </head>
   <body>
@@ -132,28 +138,98 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <div class="contest-attend-form-inner-box">
-              <form action="#" method="post">
+            <form action="#">
+              <div class="contest-attend-form-inner-box">
                 <div class="contest-attend-form-inner-box-title">
-                  <span>👉 양식에 맞게 작성해주세요</span>
+                  <h3>👉 양식에 맞게 작성해주세요</h3>
                 </div>
                 <div class="contest-attend-form-inner-box-main">
                   <div class="contest-attend-form-inner-box-main-info">
                     <div
                       class="contest-attend-form-inner-box-main-info-summary"
-                    ></div>
-                    <div></div>
-                    <div></div>
+                    >
+                      <p class="sub-title">간단 설명</p>
+                      <textarea
+                        maxlength="200"
+                        placeholder="200자이내로 입력하세요"
+                      ></textarea>
+                    </div>
+                    <div
+                      class="contest-attend-form-inner-box-main-info-github-address"
+                    >
+                      <p class="sub-title">github 주소</p>
+                      <input
+                        type="url"
+                        placeholder="제출품이 있는 레파지토리 주소를 입력해주세요."
+                      />
+                    </div>
+                    <div class="contest-attend-form-inner-box-main-info-skill">
+                      <p class="sub-title">사용 기술</p>
+                      <div class="tag-box">
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div
-                    class="contest-attend-form-inner-box-main-story-board"
-                  ></div>
+                  <div class="contest-attend-form-inner-box-main-story-board">
+                    <p class="sub-title">스토리보드</p>
+                    <!-- 드롭존 - 클릭영역 -->
+                    <div class="dropzone"></div>
+                  </div>
                 </div>
                 <div class="contest-attend-form-inner-box-btn">
-                  <button class="btn-secondary">제출하기</button>
+                  <button class="btn-secondary btn-32 submit-btn">
+                    제출하기
+                  </button>
                 </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -253,5 +329,7 @@
         </address>
       </div>
     </footer>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="../js/dropzone.js"></script>
   </body>
 </html>
