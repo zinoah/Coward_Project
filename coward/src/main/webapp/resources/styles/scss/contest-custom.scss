@@ -97,11 +97,15 @@
     padding: 8px 10px 8px 10px;
     margin: 5px;
 
+    &-container {
+      @include flexbox;
+      padding-bottom: $between-section;
+    }
+
     &-wrapper {
       @include flexbox(start, center);
       flex-wrap: wrap;
       margin: 10px;
-      padding-bottom: 40px;
     }
 
     h5 {
@@ -112,7 +116,7 @@
   &-reward {
     &-wrapper {
       @include column-flexbox;
-      padding-bottom: 40px;
+      padding-bottom: $between-section;
 
       p {
         margin-bottom: 20px;
@@ -170,6 +174,7 @@
 
   .btn-wrapper {
     @include flexbox;
+    padding-bottom: $around-main-content;
   }
   .btn-primary {
     width: 30%;
@@ -183,7 +188,7 @@
 
   @include responsive(T) {
     &-tab {
-      padding: 50px 0 40px;
+      padding-bottom: 40px;
     }
 
     &-title {
