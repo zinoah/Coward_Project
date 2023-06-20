@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-main-mem.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-company-detail.css"
+      href="/coward/src/main/webapp/resources/styles/css/credit-exchange.css"
     />
     <title>Document</title>
   </head>
-  <style>
-    .profile-wrapper {
-      width: 845px;
-    }
-  </style>
   <body>
-    <!-- 헤더 -->
     <header class="header">
       <div class="container">
         <div class="row">
@@ -70,7 +58,6 @@
         </div>
       </div>
     </header>
-
     <nav class="nav">
       <h2 class="visually-hidden">메뉴</h2>
       <div class="container">
@@ -106,17 +93,13 @@
         </div>
       </div>
     </nav>
-    <!-- 배너 -->
-    <!-- web-box 중앙 배치 위해 -->
     <div class="full">
       <div class="banner-top sm-hidden">
         <img src="../assets/images/mypage-banner.png" />
       </div>
 
       <!-- 웹 페이지 -->
-      <!-- 웹에서 헤더랑 푸터 사이 간격 주기 위해 사용 -->
       <div class="empty-box">
-        <!-- 네비 + 내용을 감싸는 박스(모든 페이지 크기 고정)-->
         <div class="web-box">
           <!-- 네비게이션 바 -->
 
@@ -152,18 +135,12 @@
           </aside>
 
           <!-- 본문 시작 -->
-          <main class="profile-mem">
+          <main class="credit-exchange">
             <div class="container">
               <div class="row">
                 <div class="col-sm-4">
-                  <div class="profile-wrapper">
-                    <!------------------------- 여기서 부터 작성 --------------------------->
-                    <div class="mypage">
-                      <div class="avatar">
-                        <img src="../assets/images/default-user-img.png" />
-                      </div>
-                    </div>
-                    <!-- 본문 끝 -->
+                  <div class="credit">
+                    <p class="introduce-title">리워드 인출</p>
                   </div>
                 </div>
               </div>
@@ -172,7 +149,7 @@
         </div>
       </div>
     </div>
-    <!-- 푸터 -->
+
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -232,18 +209,18 @@
                 <div class="icon-link">
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/github.png"
+                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
                       alt="Github 바로가기"
                   /></a>
                   <a class="icon-link-item" href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/notion.png"
+                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
                       alt="Notion 바로가기"
                     />
                   </a>
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/figma.png"
+                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
                       alt="Figma 바로가기"
                   /></a>
                 </div>
@@ -267,8 +244,5 @@
         </address>
       </div>
     </footer>
-    <!-- tiny-slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="/coward/src/main/webapp/resources/js/mypage-slider.js"></script>
   </body>
 </html>

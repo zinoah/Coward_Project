@@ -2,26 +2,17 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/css/contest-attend-form.css" />
     <link
       rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-main-mem.css"
+      href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
+      type="text/css"
     />
 
-    <link
-      rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-company-detail.css"
-    />
-    <title>Document</title>
+    <title>Coward | 공모전 참가하기</title>
   </head>
-  <style>
-    .profile-wrapper {
-      width: 845px;
-    }
-  </style>
   <body>
-    <!-- 헤더 -->
     <header class="header">
       <div class="container">
         <div class="row">
@@ -106,73 +97,144 @@
         </div>
       </div>
     </nav>
-    <!-- 배너 -->
-    <!-- web-box 중앙 배치 위해 -->
-    <div class="full">
-      <div class="banner-top sm-hidden">
-        <img src="../assets/images/mypage-banner.png" />
-      </div>
-
-      <!-- 웹 페이지 -->
-      <!-- 웹에서 헤더랑 푸터 사이 간격 주기 위해 사용 -->
-      <div class="empty-box">
-        <!-- 네비 + 내용을 감싸는 박스(모든 페이지 크기 고정)-->
-        <div class="web-box">
-          <!-- 네비게이션 바 -->
-
-          <aside>
-            <nav class="category">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-4 category-web">
-                    <p class="profile-mypage lg-only">마이페이지</p>
-                    <div class="profile lg-only">
-                      <div class="profile-img avatar">
-                        <img
-                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                        />
-                      </div>
-                      <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
-                      </div>
+    <section class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-wrapper">
+              <div class="banner-text-box">
+                <div class="banner-text-box-inner">
+                  <div class="banner-text-box-day">
+                    <div class="tag-blue">
+                      <p>13일</p>
                     </div>
-
-                    <ul class="category-bar">
-                      <li><a href="#">내 정보</a></li>
-                      <li><a href="#">공모전 관리</a></li>
-                      <li><a href="#">크레딧 인출</a></li>
-                      <li><a href="#">프로필 수정</a></li>
-                      <li><a href="#">회원 탈퇴</a></li>
-                    </ul>
                   </div>
+                  <div class="banner-text-box-title">
+                    <p>경기도청 홈페이지 제작 공모전</p>
+                  </div>
+                  <div class="banner-text-box-reward">
+                    <div>
+                      <p>총 상금</p>
+                    </div>
+                    <div>
+                      <p>300만원</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="banner-button-box sm-hidden">
+                  <button class="btn-outlined btn-40">브리핑 보러가기</button>
                 </div>
               </div>
-            </nav>
-          </aside>
-
-          <!-- 본문 시작 -->
-          <main class="profile-mem">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="profile-wrapper">
-                    <!------------------------- 여기서 부터 작성 --------------------------->
-                    <div class="mypage">
-                      <div class="avatar">
-                        <img src="../assets/images/default-user-img.png" />
-                      </div>
-                    </div>
-                    <!-- 본문 끝 -->
-                  </div>
-                </div>
+              <div class="banner-button-box sm-only">
+                <button class="btn-outlined btn-40">브리핑 보러가기</button>
               </div>
             </div>
-          </main>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- 푸터 -->
+    </section>
+
+    <main class="contest-attend-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <form action="#">
+              <div class="contest-attend-form-inner-box">
+                <div class="contest-attend-form-inner-box-title">
+                  <h3>👉 양식에 맞게 작성해주세요</h3>
+                </div>
+                <div class="contest-attend-form-inner-box-main">
+                  <div class="contest-attend-form-inner-box-main-info">
+                    <div
+                      class="contest-attend-form-inner-box-main-info-summary"
+                    >
+                      <p class="sub-title">간단 설명</p>
+                      <textarea
+                        maxlength="200"
+                        placeholder="200자이내로 입력하세요"
+                      ></textarea>
+                    </div>
+                    <div
+                      class="contest-attend-form-inner-box-main-info-github-address"
+                    >
+                      <p class="sub-title">github 주소</p>
+                      <input
+                        type="url"
+                        placeholder="제출품이 있는 레파지토리 주소를 입력해주세요."
+                      />
+                    </div>
+                    <div class="contest-attend-form-inner-box-main-info-skill">
+                      <p class="sub-title">사용 기술</p>
+                      <div class="tag-box">
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                        <div class="tag-gray">
+                          html
+                          <input type="radio" name="skill" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contest-attend-form-inner-box-main-story-board">
+                    <p class="sub-title">스토리보드</p>
+                    <!-- 드롭존 - 클릭영역 -->
+                    <div class="dropzone"></div>
+                  </div>
+                </div>
+                <div class="contest-attend-form-inner-box-btn">
+                  <button class="btn-secondary btn-32 submit-btn">
+                    제출하기
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -232,18 +294,18 @@
                 <div class="icon-link">
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/github.png"
+                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
                       alt="Github 바로가기"
                   /></a>
                   <a class="icon-link-item" href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/notion.png"
+                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
                       alt="Notion 바로가기"
                     />
                   </a>
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/figma.png"
+                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
                       alt="Figma 바로가기"
                   /></a>
                 </div>
@@ -267,8 +329,7 @@
         </address>
       </div>
     </footer>
-    <!-- tiny-slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="/coward/src/main/webapp/resources/js/mypage-slider.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="../js/dropzone.js"></script>
   </body>
 </html>

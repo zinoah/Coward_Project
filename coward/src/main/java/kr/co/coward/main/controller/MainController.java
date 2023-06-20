@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-	@RequestMapping("/main")
+	@RequestMapping("/home")
 	public String mainForward() {
 
-		return "common/main"; // DispatcherServlet이 받을거다! -> View Resolver
+		return "common/home"; // DispatcherServlet이 받을거다! -> View Resolver
 	}
 }
