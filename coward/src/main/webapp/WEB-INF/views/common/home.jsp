@@ -19,6 +19,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       href="${contextPath}/resources/styles/css/home.css"
     />
     <title>Coward | Home</title>
+
   </head>
   <body>
     <jsp:include page="/WEB-INF/views/common/header.jsp" />

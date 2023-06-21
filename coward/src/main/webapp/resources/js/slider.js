@@ -40,6 +40,7 @@ const defaultContestSlider = tns({
   },
 });
 
+
 // gallerycard hover시 이벤트
 const sliderCard = document.querySelectorAll(".contest-slider-card");
 

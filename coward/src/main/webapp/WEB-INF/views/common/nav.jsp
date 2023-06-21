@@ -11,7 +11,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="nav-left">
             <ul class="nav-list sm-hidden">
               <li class="nav-item is-active">
-                <a href="#">공모전</a>
+                <a href="${contextPath}/contest/main">공모전</a>
               </li>
               <li class="nav-item">
                 <a href="#">개발자 찾기</a>
