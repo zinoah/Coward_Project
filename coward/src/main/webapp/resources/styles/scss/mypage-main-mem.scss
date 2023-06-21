@@ -240,13 +240,13 @@
     height: 715px;
     border-radius: 10px;
     box-shadow: $card-shadow;
-    background-color: $background;
+    background-color: $white;
   }
 
   .category {
     width: 100%;
 
-    background-color: $background;
+    background-color: $white;
 
     &-bar {
       @include column-flexbox(start, start);
@@ -269,8 +269,8 @@
   .profile {
     margin-top: 0;
     margin-bottom: 0;
-    border-top: 1px solid $tertiary;
-    border-bottom: 1px solid $tertiary;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
 
     &-wrapper {
       padding: 15px 25px;
