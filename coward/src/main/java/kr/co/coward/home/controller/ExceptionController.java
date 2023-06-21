@@ -1,4 +1,4 @@
-package kr.co.coward.main.controller;
+package kr.co.coward.home.controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;

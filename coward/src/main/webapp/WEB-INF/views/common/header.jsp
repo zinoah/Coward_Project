@@ -9,7 +9,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="header-wrapper">
           <div class="header-left">
             <h1 class="logo">
+              
               <a href="${contextPath}">
+
                 <img
                   src="${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
@@ -18,6 +20,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </h1>
 
             <button
+              id="menubar-btn"
               class="header-button sm-only"
               type="button"
               aria-label="메뉴 버튼"
@@ -27,15 +30,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
 
           <div class="header-right sm-hidden">
-            <div class="header-buttons">
-              <button
-                class="header-button md-only"
-                type="button"
-                aria-label="통합 검색 버튼"
-              >
-                <i class="ic-search"></i>
-              </button>
-            </div>
             <c:choose>
               <c:when test="${ empty sessionScope.loginMember }">
                 <button class="header-button-text" type="button">

@@ -40,22 +40,6 @@ const defaultContestSlider = tns({
   },
 });
 
-// // 마이페이지 공모전 슬라이더
-// const myPageContestSlider = tns({
-//   container: ".contest-slider",
-//   controlsContainer: ".slider-controls",
-//   items: 3,
-//   gutter: 20,
-//   rewind: true,
-//   swipeAngle: false,
-//   nav: false,
-//   autoplay: false,
-//   role: false,
-//   autoplayHoverPause: true,
-//   autoplayButtonOutput: false,
-
-//   constrols: true,
-// });
 
 // gallerycard hover시 이벤트
 const sliderCard = document.querySelectorAll(".contest-slider-card");

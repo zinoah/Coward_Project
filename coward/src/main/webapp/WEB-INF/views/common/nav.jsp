@@ -9,7 +9,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <div class="col-sm-4">
         <div class="nav-wrapper">
           <div class="nav-left">
-            <ul class="nav-list">
+            <ul class="nav-list sm-hidden">
               <li class="nav-item is-active">
                 <a href="${contextPath}/contest/main">공모전</a>
               </li>
@@ -22,7 +22,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </ul>
           </div>
 
-          <div class="nav-right lg-only">
+          <div class="nav-right sm-hidden">
             <form class="nav-search" action="#">
               <input
                 class="nav-search-input"
