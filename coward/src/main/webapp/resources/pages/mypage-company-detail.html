@@ -13,13 +13,9 @@
       rel="stylesheet"
       href="/coward/src/main/webapp/resources/styles/css/mypage-company-detail.css"
     />
-    <title>Document</title>
+    <title>Coward | 마이페이지</title>
   </head>
-  <style>
-    .profile-wrapper {
-      width: 845px;
-    }
-  </style>
+
   <body>
     <!-- 헤더 -->
     <header class="header">
@@ -127,14 +123,16 @@
                   <div class="col-sm-4 category-web">
                     <p class="profile-mypage lg-only">마이페이지</p>
                     <div class="profile lg-only">
-                      <div class="profile-img avatar">
-                        <img
-                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                        />
+                      <div class="profile-img-box">
+                        <div class="profile-img avatar">
+                          <img
+                            src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          />
+                        </div>
                       </div>
+
                       <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
+                        <p class="profile-nick">삼성전자</p>
                       </div>
                     </div>
 
@@ -159,10 +157,54 @@
                   <div class="profile-wrapper">
                     <!------------------------- 여기서 부터 작성 --------------------------->
                     <div class="mypage">
-                      <div class="avatar">
-                        <img src="../assets/images/default-user-img.png" />
+                      <div class="title-wrapper lg-only">
+                        <p class="title">프로필 수정</p>
+                      </div>
+
+                      <div class="mypage-img-wrapper">
+                        <div class="avatar">
+                          <img src="../assets/images/default-user-img.png" />
+                        </div>
+                      </div>
+
+                      <div class="mypage-input-box-wrapper">
+                        <div class="mypage-input-box">
+                          <p>회사명</p>
+                          <input
+                            type="text"
+                            placeholder="회사명 입력"
+                            class="mypage-input"
+                          />
+                        </div>
+                        <div class="mypage-input-box">
+                          <p>회사명</p>
+                          <select class="mypage-input">
+                            <option>지역선택</option>
+                            <option>서울</option>
+                            <option>인천</option>
+                            <option>충남</option>
+                            <option>경기</option>
+                            <option>경남</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="textarea-box">
+                        <div>
+                          <p>소개글</p>
+                          <textarea
+                            cols="50"
+                            rows="10"
+                            placeholder="기업에 대해서 소개해주세요!"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <div class="button-wrapper">
+                        <button class="btn-40 btn-secondary">완료</button>
                       </div>
                     </div>
+
                     <!-- 본문 끝 -->
                   </div>
                 </div>

@@ -1,10 +1,10 @@
-package kr.co.coward.home.controller;
+package kr.co.coward.main.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class MainController {
 
 	@RequestMapping("/home")
 	public String mainForward() {

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coward | 맞춤 공모전</title>
+
+    <link
+      rel="stylesheet"
+      href="/coward/src/main/webapp/resources/styles/css/contest-recommend.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="header-wrapper">
+              <div class="header-left">
+                <h1 class="logo">
+                  <a href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      alt="Coward"
+                    />
+                  </a>
+                </h1>
+
+                <button
+                  class="header-button sm-only"
+                  type="button"
+                  aria-label="메뉴 버튼"
+                >
+                  <i class="ic-hamburger"></i>
+                </button>
+              </div>
+
+              <div class="header-right sm-hidden">
+                <!-- Note: 로그인을 하지 않은 경우 -->
+                <div class="header-buttons">
+                  <button
+                    class="header-button md-only"
+                    type="button"
+                    aria-label="통합 검색 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">로그인</a>
+                  </button>
+                  <button class="header-button-text" type="button">
+                    <a href="#">회원가입</a>
+                  </button>
+                </div>
+                <!-- Note: 로그인을 한 경우 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <h2 class="visually-hidden">메뉴</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="nav-wrapper">
+              <div class="nav-left">
+                <ul class="nav-list">
+                  <li class="nav-item is-active">
+                    <a href="#">공모전</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">개발자 찾기</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">가격 안내</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nav-right lg-only">
+                <form class="nav-search" action="#">
+                  <input
+                    class="nav-search-input"
+                    type="text"
+                    placeholder="어떤 공모전을 찾으시나요?"
+                  />
+                  <i class="ic-search" aria-hidden></i>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="banner-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="banner-top-wrapper">
+              <div class="banner-info">
+                <h3 class="main-title">
+                  맞춤 공모전 추천 <br class="sm-only" />
+                </h3>
+                <p class="sub-title sm-hidden">
+                  다음 몇가지 질문들을 답변해주시면, 저희가 알맞은 공모전을
+                  추천해드릴게요!
+                </p>
+                <!-- <a href="#" class="banner-button btn-32 btn-primary"
+                  >더 알아보기</a
+                >-->
+              </div>
+              <div class="banner-image">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/dart.svg"
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommend">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="recommend-step-1" id="recommend-step-1">
+              <div class="recommend-tab">
+                <img src="../assets/images/step1.svg" />
+              </div>
+              <div class="recommend-title">
+                <p>찾으시는 개발 공모전 분야가 다음 중 무엇인가요?</p>
+              </div>
+
+              <div class="recommend-card-wrapper">
+                <div class="recommend-card">
+                  <div class="recommend-card-img">
+                    <img src="../assets/images/user-interface.svg" />
+                  </div>
+
+                  <p>모바일</p>
+                </div>
+                <div class="recommend-card">
+                  <div class="recommend-card-img">
+                    <img src="../assets/images/layout.svg" />
+                  </div>
+
+                  <p>웹</p>
+                </div>
+                <div class="recommend-card">
+                  <div class="recommend-card-img">
+                    <img src="../assets/images/game.svg" />
+                  </div>
+
+                  <p>게임</p>
+                </div>
+                <div class="recommend-card">
+                  <div class="recommend-card-img">
+                    <img src="../assets/images/shield.svg" />
+                  </div>
+                  <p>보안</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommend-step-2" id="recommend-step-2">
+              <div class="recommend-tab">
+                <img src="../assets/images/step2.svg" />
+              </div>
+              <div class="recommend-title">
+                <p>찾으시는 프로그래밍 언어 또는 프레임워크는</p>
+
+                <p>다음 중 무엇인가요?</p>
+              </div>
+              <div class="recommend-skill-container">
+                <div class="recommend-skill-wrapper">
+                  <div class="recommend-skill">
+                    <div class="recommend-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <div class="recommend-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/javaScript.svg" />
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/javaScript.svg" />
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <div class="recommend-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <div class="recommend-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <div class="recommend-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <div class="recommend-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <div class="recommend-skill-img">
+                      <img src="../assets/images/javaScript.svg" />
+                    </div>
+                    <h5>JavaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Java</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommend-step-3" id="recommend-step-3">
+              <div class="recommend-tab">
+                <img src="../assets/images/step3.svg" />
+              </div>
+              <div class="recommend-title">
+                <p>찾으시는 상금의 금액대는 얼마인가요?</p>
+              </div>
+
+              <div class="recommend-reward-wrapper">
+                <p>상금: <span id="value"></span>300만원 이상</p>
+
+                <!-- 상금 조정 말풍선 추가 예정-->
+                <!--
+                <div
+                  class="recommend-reward-slide-bubble"
+                  id="recommend-reward-slide-bubble"
+                >
+                  <span>상금을 조정해보세요😊</span>
+                </div>
+                -->
+
+                <input
+                  type="range"
+                  class="recommend-reward-slide"
+                  id="recommend-reward-slide"
+                  min="1"
+                  max="1000"
+                  value="10"
+                />
+              </div>
+            </div>
+
+            <div class="btn-wrapper">
+              <button class="btn-primary btn-40" id="next1" onclick="next1()">
+                다음
+              </button>
+              <button class="btn-primary btn-40" id="back2" onclick="back2()">
+                이전
+              </button>
+              <button class="btn-primary btn-40" id="next2" onclick="next2()">
+                다음
+              </button>
+              <button class="btn-primary btn-40" id="back3" onclick="back3()">
+                이전
+              </button>
+              <button class="btn-primary btn-40" id="next3" onclick="next3()">
+                다음
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-2 col-lg-3">
+            <h1 class="logo">
+              <a href="#">
+                <img
+                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  alt="Coward"
+                />
+              </a>
+            </h1>
+          </div>
+
+          <div class="col-sm-4 col-md-5 col-lg-3">
+            <div class="service-center">
+              <a href="#">
+                <h3>고객센터</h3>
+                <i class="ic-chevron"></i>
+              </a>
+            </div>
+            <div class="service-info">
+              <div class="row">
+                <div class="service-info-wrapper">
+                  <div class="service-info-time">
+                    <div class="service-info-title">상담시간</div>
+                    <p>
+                      평일 11:00 ~ 17:00 <br />
+                      점심 12:30 ~ 13:30 <br />
+                      (주말, 공휴일 제외)
+                    </p>
+                  </div>
+
+                  <div class="service-info-tel">
+                    <div class="service-info-title">연락처</div>
+                    <a class="footer-tel" href="tel:02-1234-5678"
+                      >02-1234-5678</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <address class="footer-info sm-hidden">
+            <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+            <p>Copyright © 2023 Coawrd All Right Reserved</p>
+          </address>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="footer-links">
+            <div class="row">
+              <div class="footer-links-wrapper">
+                <div class="icon-link">
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
+                      alt="Github 바로가기"
+                  /></a>
+                  <a class="icon-link-item" href="#">
+                    <img
+                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
+                      alt="Notion 바로가기"
+                    />
+                  </a>
+                  <a class="icon-link-item" href="#"
+                    ><img
+                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
+                      alt="Figma 바로가기"
+                  /></a>
+                </div>
+
+                <div class="text-link">
+                  <ul class="text-link-list">
+                    <li class="text-link-item"><a href="#">이용가이드</a></li>
+                    <li class="text-link-item">
+                      <a href="#">개인정보처리방침</a>
+                    </li>
+                    <li class="text-link-item"><a href="#">이용약관</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <address class="footer-info sm-only">
+          <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
+          <p>Copyright © 2023 Coawrd All Right Reserved</p>
+        </address>
+      </div>
+    </footer>
+
+    <script src="../js/contest-recommend.js"></script>
+  </body>
+</html>

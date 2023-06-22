@@ -255,7 +255,7 @@
     height: 715px;
     border-radius: 10px;
     box-shadow: $card-shadow;
-    background-color: white;
+    background-color: $background;
   }
 
   /* 네비게이션 바 */
@@ -278,13 +278,12 @@
 
     &-web {
       height: 603px;
-      background-color: white;
     }
   }
 
   /* 메인과 위치 맞추기 위해 */
   aside {
-    height: 650px;
+    height: 613px;
   }
 
   .profile {
@@ -395,13 +394,11 @@
   .introduce-title {
     @include text-style(16);
     padding: 8px;
-    margin-left: 0;
   }
 
   .introduce-content {
     height: 120px;
   }
-
   .one-intro {
     @include column-flexbox;
   }

@@ -13,39 +13,84 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ic-chevron:before {
+.ic-bell:before {
   content: "\e900";
 }
-.ic-bookmark:before {
+.ic-bookmark-filled:before {
   content: "\e901";
 }
-.ic-bookmark-filled:before {
+.ic-bookmark:before {
   content: "\e902";
 }
 .ic-camera:before {
   content: "\e903";
 }
-.ic-cancle:before {
+.ic-check-circle-filled .path1:before {
   content: "\e904";
+  color: rgb(0, 0, 0);
 }
-.ic-check:before {
+.ic-check-circle-filled .path2:before {
   content: "\e905";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
-.ic-check-cercle:before {
+.ic-check-circle:before {
   content: "\e906";
 }
-.ic-hamburger:before {
+.ic-check-small:before {
   content: "\e907";
 }
-.ic-like:before {
+.ic-check:before {
   content: "\e908";
 }
-.ic-like-filled:before {
+.ic-chevron-small:before {
   content: "\e909";
 }
-.ic-password:before {
+.ic-chevron:before {
   content: "\e90a";
 }
-.ic-search:before {
+.ic-cross-small:before {
   content: "\e90b";
+}
+.ic-cross:before {
+  content: "\e90c";
+}
+.ic-eye-close:before {
+  content: "\e90d";
+}
+.ic-eye-open:before {
+  content: "\e90e";
+}
+.ic-filters:before {
+  content: "\e90f";
+}
+.ic-hamburger:before {
+  content: "\e910";
+}
+.ic-like-filled:before {
+  content: "\e911";
+}
+.ic-like:before {
+  content: "\e912";
+}
+.ic-link-filled:before {
+  content: "\e913";
+}
+.ic-link:before {
+  content: "\e914";
+}
+.ic-logout:before {
+  content: "\e915";
+}
+.ic-message:before {
+  content: "\e916";
+}
+.ic-question-circle:before {
+  content: "\e917";
+}
+.ic-search:before {
+  content: "\e918";
+}
+.ic-trophy:before {
+  content: "\e919";
 }
