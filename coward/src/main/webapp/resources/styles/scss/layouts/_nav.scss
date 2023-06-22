@@ -23,6 +23,12 @@
         }
       }
 
+      &:hover {
+        a {
+          color: $blue-dark;
+        }
+      }
+
       a {
         @include text-style(14);
         // font-weight: 700;

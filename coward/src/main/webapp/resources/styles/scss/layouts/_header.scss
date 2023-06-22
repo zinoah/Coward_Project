@@ -3,6 +3,16 @@
     @include flexbox(between);
     position: relative;
     height: 50px;
+
+    .header-left {
+      .header-button {
+        padding: 25px 0;
+
+        i {
+          font-size: 12px;
+        }
+      }
+    }
   }
 
   .logo {
@@ -15,7 +25,7 @@
     img {
       display: block;
       width: auto;
-      height: 20px;
+      height: 24px;
     }
   }
 
