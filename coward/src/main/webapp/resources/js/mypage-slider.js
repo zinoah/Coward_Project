@@ -1,7 +1,8 @@
+
 // 마이페이지 공모전 슬라이더
 const contestSlider = tns({
-  container: ".contest-slider my-page",
-  controlsContainer: ".slider-controls my-page",
+  container: ".contest-slider",
+  controlsContainer: ".slider-controls",
   items: 3,
   gutter: 20,
   rewind: true,
@@ -13,4 +14,11 @@ const contestSlider = tns({
   autoplayButtonOutput: false,
 
   constrols: true,
+};
+
+// 일반 공모전 슬라이더
+const contestSlider = tns({
+  container: ".contest-slider",
+  controlsContainer: ".slider-controls",
+  ...contestSliderBase,
 });

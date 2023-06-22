@@ -12,20 +12,19 @@ import lombok.ToString;
 public class Member {
 	private int memberNo;
 	private String memberType;
-	private String memberName;
 	private String memberId;
 	private String memberPw;
-	private String memberPhone;
-	private String enrollDate;
-	private String secessionFlag;
+	private String memberNick;
 	private String profileImg;
+	private String phone;
+	private int regionNo;
+	private String stack;
+	private String skill;
 	private String slogan;
 	private String introduce;
-	private int reward;
+	private String enrollDate;
+	private String secessionFlag;
 	private String termsFlag;
-	private String sns;
-	private String subType;
-	private int regionNo;
-	private int skillNo;
+	private String snsFlag;
 
 }

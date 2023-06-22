@@ -35,7 +35,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <p class="sub-title sm-hidden">
                   쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
                 </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
+                <a href="create" class="banner-button btn-32 btn-primary"
                   >더 알아보기</a
                 >
               </div>
