@@ -39,8 +39,9 @@
 }
 
 .progress {
-  @include flexbox(start);
-  width: 55px;
+  /* 목업대로 가려면 start로 */
+  @include flexbox(between);
+  width: 42px;
 
   &-box {
     @include flexbox(between);
@@ -48,14 +49,14 @@
     border: 1px solid $border;
     border-radius: 10px;
     padding: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   /* 상태표시 동그라미 */
   &-color {
     width: 8px;
     height: 8px;
-    margin-right: 8px;
+    margin-right: 3px;
     border-radius: 50%;
   }
 
@@ -74,18 +75,22 @@
     background-color: #f86d7d;
   }
   &-text {
-    @include text-style(12);
+    font-size: 10px;
   }
 }
 
 .contest {
   &-title {
-    @include flexbox;
-    @include text-style(14);
+    @include text-style(12);
     font-weight: 600;
 
-    p {
-      line-height: 1.2em;
+    width: 155px;
+
+    P {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
     }
   }
 
@@ -98,12 +103,15 @@
   /* 공모전 이름, content 세로 정렬 */
   &-mid {
     @include column-flexbox(start, start);
-    width: 100%;
+
   }
 
   &-company {
     width: 120px;
     font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -115,8 +123,8 @@
 
 .company {
   &-profile {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     margin-right: 12px;
 
     &-img {
@@ -197,7 +205,7 @@
     height: 715px;
     border-radius: 10px;
     box-shadow: $card-shadow;
-    background-color: white;
+    background-color: $background;
   }
 
   /* 네비게이션 바 */
@@ -231,13 +239,12 @@
 
     &-web {
       height: 603px;
-      background-color: white;
     }
   }
 
   /* 메인과 위치 맞추기 위해 */
   aside {
-    height: 650px;
+    height: 613px;
   }
 
   .profile {

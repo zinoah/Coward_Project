@@ -26,17 +26,13 @@
   }
 }
 
-.info {
-  @include text-style(14);
-}
-
 .mem {
   &-type-box {
     margin-bottom: 10px;
   }
 
   &-type {
-    @include text-style(16);
+    font-size: 16.5px;
   }
 }
 
@@ -62,45 +58,58 @@
 
   &-explanation-box {
     @include column-flexbox(center, start);
+    flex-basis: 80%;
+  }
+}
+
+.chk {
+  &-img-1 {
+    @include flexbox;
+    flex-basis: 20%;
     cursor: pointer;
+  }
+
+  &-img-2 {
+    flex-basis: 10%;
+    cursor: pointer;
+  }
+
+  &-explanation {
+    flex-basis: 80%;
   }
 }
 
 .line {
-  border: 0.2px solid $tertiary;
-  margin-top: 20px;
+  border: 0.5px solid $secondary;
   margin-bottom: 20px;
-}
-
-.chk-img {
-  margin-right: 15px;
 }
 
 .all-agree {
   @include inline-flexbox;
 
-  &-wrapper {
-    @include column-flexbox(center, start);
-  }
-
   &-text {
-    @include text-style(14);
-    font-weight: 700;
+    flex-basis: 90%;
+    padding-left: 10px;
+    font-weight: 550;
   }
 
   margin-bottom: 15px;
 }
 
 .essential-chk {
-  @include inline-flexbox(start, center);
+  @include inline-flexbox;
   width: 100%;
   margin-bottom: 15px;
 
   &-content {
-    @include text-style(13, $primary);
-    @include flexbox(between);
-    width: 100%;
+    @include inline-flexbox;
+    @include text-style(14, $primary);
+    flex-basis: 90%;
   }
+}
+
+.terms {
+  flex-basis: 10%;
 }
 
 .next-btn {
