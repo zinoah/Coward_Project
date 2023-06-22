@@ -16,14 +16,13 @@
       }
     }
   }
-}
-
-.main {
-  .banner-middle {
+  &-middle {
     background-color: $red;
     background-image: url("../../assets/images/two-peple-mobile.svg");
   }
+}
 
+.main {
   .title-wrapper {
     h1 {
       @include text-style(24);
@@ -92,8 +91,6 @@
         border-radius: 5px;
 
         &:hover {
-          color: $blue;
-          border: 1px solid $blue;
           transition: 0.3s;
         }
       }

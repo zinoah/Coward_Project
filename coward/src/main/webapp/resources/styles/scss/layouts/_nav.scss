@@ -40,9 +40,7 @@
         }
       }
     }
-  }
 
-  @include responsive(D) {
     .nav-search {
       position: relative;
       @include text-style(12);

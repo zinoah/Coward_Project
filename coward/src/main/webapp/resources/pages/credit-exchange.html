@@ -140,7 +140,45 @@
               <div class="row">
                 <div class="col-sm-4">
                   <div class="credit">
-                    <p class="introduce-title">리워드 인출</p>
+                    <p class="introduce-title">크레딧 인출</p>
+                    <div class="form-box">
+                      <form>
+                        <div class="bank">
+                          <p>은행명</p>
+                          <select>
+                            <option value="1">농협 은행</option>
+                            <option value="2">우리 은행</option>
+                            <option value="3">신한 은행</option>
+                            <option value="4">하나 은행</option>
+                          </select>
+                        </div>
+
+                        <div class="account-number">
+                          <p>계좌 번호</p>
+                          <input
+                            type="number"
+                            placeholder="'-' 없이 숫자만 입력 해주세요"
+                          />
+                        </div>
+
+                        <div class="name">
+                          <p>예금주</p>
+                          <input type="text" />
+                        </div>
+
+                        <div class="ssn">
+                          <p>주민 번호</p>
+                          <input type="text" placeholder="000000-0000000" />
+                        </div>
+                        <p>인출 금액</p>
+                        <div class="credit-box">3,6000,000 \</div>
+                      </form>
+                    </div>
+                    <div class="submit-btn">
+                      <button type="submit" class="btn-primary btn-32">
+                        인출하기
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
