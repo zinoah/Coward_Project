@@ -674,6 +674,7 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
 .ic-bell:before {
   content: "\e900";
 }
@@ -683,6 +684,17 @@ i {
 }
 
 .ic-bookmark:before {
+=======
+.ic-chevron:before {
+  content: "\e900";
+}
+
+.ic-bookmark:before {
+  content: "\e901";
+}
+
+.ic-bookmark-filled:before {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   content: "\e902";
 }
 
@@ -690,6 +702,7 @@ i {
   content: "\e903";
 }
 
+<<<<<<< HEAD
 .ic-check-circle-filled .path1:before {
   content: "\e904";
   color: rgb(0, 0, 0);
@@ -779,6 +792,38 @@ i {
 
 .ic-trophy:before {
   content: "\e919";
+=======
+.ic-cancle:before {
+  content: "\e904";
+}
+
+.ic-check:before {
+  content: "\e905";
+}
+
+.ic-check-cercle:before {
+  content: "\e906";
+}
+
+.ic-hamburger:before {
+  content: "\e907";
+}
+
+.ic-like:before {
+  content: "\e908";
+}
+
+.ic-like-filled:before {
+  content: "\e909";
+}
+
+.ic-password:before {
+  content: "\e90a";
+}
+
+.ic-search:before {
+  content: "\e90b";
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 
 .slider-wrapper {
@@ -1159,9 +1204,12 @@ i {
     height: 24px;
   }
   .header-right button {
+<<<<<<< HEAD
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
     color: #3f4150;
   }
   .header-right [class^=header-button]:not(:last-child) {
@@ -1410,6 +1458,11 @@ i {
     letter-spacing: -0.01em;
     margin-right: 16px;
   }
+<<<<<<< HEAD
+=======
+}
+@media screen and (min-width: 1200px) {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   .nav .nav-search {
     position: relative;
     font-size: 12px;
@@ -1436,6 +1489,7 @@ i {
   }
 }
 
+<<<<<<< HEAD
 .ad-modal {
   display: flex;
   flex-direction: column;
@@ -1596,6 +1650,36 @@ i {
 }
 .menubar.is-active {
   transform: translate3d(0, 0, 0);
+=======
+.menubar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  pointer-events: visible;
+}
+.menubar.is-open {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.menubar.is-open .menu-wrapper {
+  transform: translate3d(0, 0, 0);
+}
+.menubar .menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 260px;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  padding: 30px;
+  transform: translate3d(-260px, 0, 0);
+  transition: transform 300ms ease-in-out;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 .menubar-header {
   width: 100%;
@@ -1666,6 +1750,7 @@ i {
   height: 100%;
 }
 
+<<<<<<< HEAD
 .overlay {
   position: fixed;
   top: 0;
@@ -1683,6 +1768,8 @@ i {
   visibility: visible;
 }
 
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 .footer {
   font-size: 13px;
   line-height: 20px;
@@ -1877,7 +1964,10 @@ i {
   line-height: 24px;
   letter-spacing: -0.01em;
   margin-bottom: 10px;
+<<<<<<< HEAD
   font-weight: 700;
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 .contest-attend-form-inner-box-main-info {
   display: flex;
@@ -1928,16 +2018,28 @@ i {
   width: 100%;
   height: 100px;
 }
+<<<<<<< HEAD
 .contest-attend-form-inner-box-main-info-skill .tag-box label {
   margin: 0 5px 5px 0;
   transition: 0.3s;
 }
 .contest-attend-form-inner-box-main-info-skill .tag-box label:hover {
+=======
+.contest-attend-form-inner-box-main-info-skill .tag-box div {
+  margin: 0 5px 5px 0;
+  transition: 0.3s;
+}
+.contest-attend-form-inner-box-main-info-skill .tag-box div:hover {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   cursor: pointer;
   background-color: #ffc200;
   color: #fff;
 }
+<<<<<<< HEAD
 .contest-attend-form-inner-box-main-info-skill .tag-box label input {
+=======
+.contest-attend-form-inner-box-main-info-skill .tag-box div input {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   display: none;
 }
 .contest-attend-form-inner-box-main-story-board {
@@ -1948,8 +2050,14 @@ i {
 .contest-attend-form-inner-box-main-story-board > div {
   border: 1px solid #e0e2e7;
   border-radius: 5px;
+<<<<<<< HEAD
   height: 90%;
   overflow: auto;
+=======
+  height: 80%;
+  max-height: 360px;
+  overflow: scroll;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 .contest-attend-form-inner-box-btn {
   display: flex;
@@ -1957,7 +2065,10 @@ i {
   justify-content: center;
   flex-basis: 10%;
   width: 100%;
+<<<<<<< HEAD
   margin-top: 20px;
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 .contest-attend-form-inner-box-btn button {
   width: 100px;

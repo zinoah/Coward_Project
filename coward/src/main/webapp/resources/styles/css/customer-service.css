@@ -674,6 +674,7 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
 .ic-bell:before {
   content: "\e900";
 }
@@ -683,6 +684,17 @@ i {
 }
 
 .ic-bookmark:before {
+=======
+.ic-chevron:before {
+  content: "\e900";
+}
+
+.ic-bookmark:before {
+  content: "\e901";
+}
+
+.ic-bookmark-filled:before {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   content: "\e902";
 }
 
@@ -690,6 +702,7 @@ i {
   content: "\e903";
 }
 
+<<<<<<< HEAD
 .ic-check-circle-filled .path1:before {
   content: "\e904";
   color: rgb(0, 0, 0);
@@ -779,6 +792,38 @@ i {
 
 .ic-trophy:before {
   content: "\e919";
+=======
+.ic-cancle:before {
+  content: "\e904";
+}
+
+.ic-check:before {
+  content: "\e905";
+}
+
+.ic-check-cercle:before {
+  content: "\e906";
+}
+
+.ic-hamburger:before {
+  content: "\e907";
+}
+
+.ic-like:before {
+  content: "\e908";
+}
+
+.ic-like-filled:before {
+  content: "\e909";
+}
+
+.ic-password:before {
+  content: "\e90a";
+}
+
+.ic-search:before {
+  content: "\e90b";
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 
 .container {

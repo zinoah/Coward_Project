@@ -1,23 +1,5 @@
 @import "./main.scss";
 
-.banner {
-  &-top {
-    background-color: #fbeee5;
-
-    &-wrapper {
-      .banner-info {
-        .banner-button {
-          background-color: #f2999f;
-
-          &:hover {
-            background-color: $red;
-          }
-        }
-      }
-    }
-  }
-}
-
 .event-detail {
   margin-bottom: 24px;
 

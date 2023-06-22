@@ -675,6 +675,7 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
 .ic-bell:before {
   content: "\e900";
 }
@@ -684,6 +685,17 @@ i {
 }
 
 .ic-bookmark:before {
+=======
+.ic-chevron:before {
+  content: "\e900";
+}
+
+.ic-bookmark:before {
+  content: "\e901";
+}
+
+.ic-bookmark-filled:before {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   content: "\e902";
 }
 
@@ -691,6 +703,7 @@ i {
   content: "\e903";
 }
 
+<<<<<<< HEAD
 .ic-check-circle-filled .path1:before {
   content: "\e904";
   color: rgb(0, 0, 0);
@@ -780,6 +793,38 @@ i {
 
 .ic-trophy:before {
   content: "\e919";
+=======
+.ic-cancle:before {
+  content: "\e904";
+}
+
+.ic-check:before {
+  content: "\e905";
+}
+
+.ic-check-cercle:before {
+  content: "\e906";
+}
+
+.ic-hamburger:before {
+  content: "\e907";
+}
+
+.ic-like:before {
+  content: "\e908";
+}
+
+.ic-like-filled:before {
+  content: "\e909";
+}
+
+.ic-password:before {
+  content: "\e90a";
+}
+
+.ic-search:before {
+  content: "\e90b";
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 
 .slider-wrapper {
@@ -1160,9 +1205,12 @@ i {
     height: 24px;
   }
   .header-right button {
+<<<<<<< HEAD
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
     color: #3f4150;
   }
   .header-right [class^=header-button]:not(:last-child) {
@@ -1411,6 +1459,11 @@ i {
     letter-spacing: -0.01em;
     margin-right: 16px;
   }
+<<<<<<< HEAD
+=======
+}
+@media screen and (min-width: 1200px) {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   .nav .nav-search {
     position: relative;
     font-size: 12px;
@@ -1437,6 +1490,7 @@ i {
   }
 }
 
+<<<<<<< HEAD
 .ad-modal {
   display: flex;
   flex-direction: column;
@@ -1597,6 +1651,36 @@ i {
 }
 .menubar.is-active {
   transform: translate3d(0, 0, 0);
+=======
+.menubar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  pointer-events: visible;
+}
+.menubar.is-open {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.menubar.is-open .menu-wrapper {
+  transform: translate3d(0, 0, 0);
+}
+.menubar .menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 260px;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  padding: 30px;
+  transform: translate3d(-260px, 0, 0);
+  transition: transform 300ms ease-in-out;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 .menubar-header {
   width: 100%;
@@ -1667,6 +1751,7 @@ i {
   height: 100%;
 }
 
+<<<<<<< HEAD
 .overlay {
   position: fixed;
   top: 0;
@@ -1684,6 +1769,8 @@ i {
   visibility: visible;
 }
 
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 .footer {
   font-size: 13px;
   line-height: 20px;
@@ -1832,10 +1919,18 @@ i {
 }
 
 .progress {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 55px;
+=======
+  /* 목업대로 가려면 start로 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 42px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   /* 상태표시 동그라미 */
   /* 상태 표시 색 */
   /* 모집 중 */
@@ -1849,12 +1944,20 @@ i {
   border: 1px solid #e0e2e7;
   border-radius: 10px;
   padding: 14px;
+<<<<<<< HEAD
   margin-bottom: 20px;
+=======
+  margin-bottom: 15px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 .progress-color {
   width: 8px;
   height: 8px;
+<<<<<<< HEAD
   margin-right: 8px;
+=======
+  margin-right: 3px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   border-radius: 50%;
 }
 .progress .recruiting {
@@ -1867,9 +1970,13 @@ i {
   background-color: #f86d7d;
 }
 .progress-text {
+<<<<<<< HEAD
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.005em;
+=======
+  font-size: 10px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 
 .contest {
@@ -1877,6 +1984,7 @@ i {
   /* 공모전 이름, content 세로 정렬 */
 }
 .contest-title {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1887,6 +1995,15 @@ i {
   overflow: hidden;
 }
 .contest-title p {
+=======
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+  width: 155px;
+}
+.contest-title P {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1905,6 +2022,7 @@ i {
   align-items: flex-start;
   justify-content: flex-start;
 }
+<<<<<<< HEAD
 .contest-mid p {
   white-space: nowrap;
   overflow: hidden;
@@ -1913,6 +2031,14 @@ i {
 .contest-company {
   width: 105px;
   font-size: 9px;
+=======
+.contest-company {
+  width: 105px;
+  font-size: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 
 .deadline {
@@ -1922,8 +2048,13 @@ i {
 }
 
 .company-profile {
+<<<<<<< HEAD
   width: 35px;
   height: 35px;
+=======
+  width: 30px;
+  height: 30px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   margin-right: 12px;
 }
 .company-profile-img {
@@ -2005,7 +2136,11 @@ i {
     height: 715px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
     background-color: white;
+=======
+    background-color: #f8f8f8;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   }
   /* 네비게이션 바 */
   .category {
@@ -2025,11 +2160,18 @@ i {
   }
   .category-web {
     height: 603px;
+<<<<<<< HEAD
     background-color: white;
   }
   /* 메인과 위치 맞추기 위해 */
   aside {
     height: 650px;
+=======
+  }
+  /* 메인과 위치 맞추기 위해 */
+  aside {
+    height: 613px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   }
   .profile {
     display: flex;

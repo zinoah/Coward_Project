@@ -1,8 +1,6 @@
 // tiny slider
-// 일반 공모전 슬라이더
-const defaultContestSlider = tns({
-  container: ".contest-slider",
-  controlsContainer: ".slider-controls",
+
+const contestSliderBase = {
   items: 2,
   gutter: 20,
   rewind: true,
@@ -38,8 +36,21 @@ const defaultContestSlider = tns({
       items: 5,
     },
   },
+};
+
+// 일반 공모전 슬라이더
+const contestSlider = tns({
+  container: ".contest-slider",
+  controlsContainer: ".slider-controls",
+  ...contestSliderBase,
 });
 
+// 신규 공모전 슬라이더
+// const newContestSlider = tns({
+//   container: ".contest-slider.is-new",
+//   controlsContainer: ".slider-controls.is-new",
+//   ...contestSliderBase,
+// });
 
 // gallerycard hover시 이벤트
 const sliderCard = document.querySelectorAll(".contest-slider-card");

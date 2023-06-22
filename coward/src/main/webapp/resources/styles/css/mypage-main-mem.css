@@ -675,6 +675,7 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
 .ic-bell:before {
   content: "\e900";
 }
@@ -684,6 +685,17 @@ i {
 }
 
 .ic-bookmark:before {
+=======
+.ic-chevron:before {
+  content: "\e900";
+}
+
+.ic-bookmark:before {
+  content: "\e901";
+}
+
+.ic-bookmark-filled:before {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   content: "\e902";
 }
 
@@ -691,6 +703,7 @@ i {
   content: "\e903";
 }
 
+<<<<<<< HEAD
 .ic-check-circle-filled .path1:before {
   content: "\e904";
   color: rgb(0, 0, 0);
@@ -780,6 +793,38 @@ i {
 
 .ic-trophy:before {
   content: "\e919";
+=======
+.ic-cancle:before {
+  content: "\e904";
+}
+
+.ic-check:before {
+  content: "\e905";
+}
+
+.ic-check-cercle:before {
+  content: "\e906";
+}
+
+.ic-hamburger:before {
+  content: "\e907";
+}
+
+.ic-like:before {
+  content: "\e908";
+}
+
+.ic-like-filled:before {
+  content: "\e909";
+}
+
+.ic-password:before {
+  content: "\e90a";
+}
+
+.ic-search:before {
+  content: "\e90b";
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 
 .slider-wrapper {
@@ -1160,9 +1205,12 @@ i {
     height: 24px;
   }
   .header-right button {
+<<<<<<< HEAD
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
     color: #3f4150;
   }
   .header-right [class^=header-button]:not(:last-child) {
@@ -1411,6 +1459,11 @@ i {
     letter-spacing: -0.01em;
     margin-right: 16px;
   }
+<<<<<<< HEAD
+=======
+}
+@media screen and (min-width: 1200px) {
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   .nav .nav-search {
     position: relative;
     font-size: 12px;
@@ -1437,6 +1490,7 @@ i {
   }
 }
 
+<<<<<<< HEAD
 .ad-modal {
   display: flex;
   flex-direction: column;
@@ -1597,6 +1651,36 @@ i {
 }
 .menubar.is-active {
   transform: translate3d(0, 0, 0);
+=======
+.menubar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  pointer-events: visible;
+}
+.menubar.is-open {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.menubar.is-open .menu-wrapper {
+  transform: translate3d(0, 0, 0);
+}
+.menubar .menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 260px;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  padding: 30px;
+  transform: translate3d(-260px, 0, 0);
+  transition: transform 300ms ease-in-out;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 }
 .menubar-header {
   width: 100%;
@@ -1667,6 +1751,7 @@ i {
   height: 100%;
 }
 
+<<<<<<< HEAD
 .overlay {
   position: fixed;
   top: 0;
@@ -1684,6 +1769,8 @@ i {
   visibility: visible;
 }
 
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 .footer {
   font-size: 13px;
   line-height: 20px;
@@ -1906,9 +1993,12 @@ i {
 .award-table td {
   padding: 5px;
 }
+<<<<<<< HEAD
 .award-table tr:first-child {
   font-weight: 700;
 }
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
 .award-table tr:last-child {
   font-size: 10px;
 }
@@ -2049,11 +2139,19 @@ i {
     height: 715px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
     background-color: #fff;
   }
   .category {
     width: 100%;
     background-color: white;
+=======
+    background-color: #f8f8f8;
+  }
+  .category {
+    width: 100%;
+    background-color: #f8f8f8;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
     /* 높이 안주면 가운데 배치 됨 */
   }
   .category-bar {
@@ -2097,9 +2195,12 @@ i {
     margin-left: 15px;
     border-bottom: 1px solid #8c8d96;
   }
+<<<<<<< HEAD
   .introduce-title {
     margin-left: 0;
   }
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   /* 한줄 소개 */
   .one-liner {
     margin-bottom: 8px;
@@ -2110,20 +2211,32 @@ i {
     letter-spacing: -0.005em;
     width: 520px;
     height: 140px;
+<<<<<<< HEAD
     background-color: white;
+=======
+    background-color: #f8f8f8;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
     resize: none;
   }
   /* 어워드 */
   .award {
     width: 220px;
+<<<<<<< HEAD
     height: 323px;
+=======
+    height: 338px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   }
   .award-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     height: 287px;
+=======
+    height: 295px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
     justify-content: space-around;
     align-items: center;
     margin: 0;
@@ -2177,9 +2290,12 @@ i {
   .watchlist {
     overflow: hidden;
   }
+<<<<<<< HEAD
   .watchlist p {
     margin-bottom: 17px;
   }
+=======
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
     display: flex;
@@ -2222,7 +2338,11 @@ i {
     left: -10000em;
   }
   aside {
+<<<<<<< HEAD
     height: 650px;
+=======
+    height: 613px;
+>>>>>>> cd1bf17ab663514bd0971b1971b764887bffb0b9
   }
   .category-web {
     height: 613px;
