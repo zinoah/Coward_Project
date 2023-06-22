@@ -16,6 +16,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   <body>
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     <jsp:include page="/WEB-INF/views/common/nav.jsp" />
+
     <div class="create-container">
       <div class="background-banner">
         <div></div>
