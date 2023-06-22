@@ -1,8 +1,53 @@
 @import "./main";
 
+.profile-wrapper {
+  @include responsive(D) {
+    width: 845px;
+  }
+}
+
 .mypage {
+  .title {
+    @include text-style(18);
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+    &-wrapper {
+      border-bottom: 1px solid $border;
+    }
+  }
   .avatar {
     width: 100px;
     height: 100px;
+  }
+  &-img {
+    &-wrapper {
+      @include flexbox;
+      margin: 30px;
+    }
+  }
+
+  .input {
+    &-wrapper {
+      p {
+        @include text-style(16);
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      select {
+        width: 50%;
+        height: 40px;
+        border: 1px solid $border;
+        padding-left: 10px;
+        border-radius: 5px;
+      }
+    }
+    &-company {
+      width: 50%;
+      height: 40px;
+      padding: 10px;
+      border: 1px solid $border;
+      border-radius: 5px;
+    }
   }
 }
