@@ -23,4 +23,10 @@ public class ContestController {
 		return "contest/contest-main";
 	}
 
+	@RequestMapping("/create")
+	public String contestCreate() {
+
+		return "contest/contest-create";
+	}
+
 }
