@@ -6,12 +6,25 @@
   width: 100%;
   background-color: $background;
   margin-bottom: 20px;
+
   &-bar {
     @include flexbox(around);
+
     font-size: 10px;
-    padding: 14px 0;
+
     text-align: center;
     list-style-type: none;
+    li {
+      width: 100%;
+      height: 100%;
+      padding: 14px 0;
+      border-bottom: 2px solid $background;
+
+      &:hover {
+        border-bottom: 2px solid $blue;
+        transition: 0.3s;
+      }
+    }
   }
 }
 
@@ -20,6 +33,7 @@
 
   margin-bottom: 15px;
   font-weight: 700;
+
   padding: 8px;
   border-bottom: 1px solid $border;
 }
@@ -31,7 +45,7 @@
 
   &-box {
     @include flexbox(between);
-
+    overflow: hidden;
     border: 1px solid $border;
     border-radius: 10px;
     padding: 14px;
@@ -69,12 +83,14 @@
   &-title {
     @include text-style(12);
     font-weight: 600;
+
     width: 155px;
 
     P {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
     }
   }
 
@@ -87,10 +103,11 @@
   /* 공모전 이름, content 세로 정렬 */
   &-mid {
     @include column-flexbox(start, start);
+
   }
 
   &-company {
-    width: 105px;
+    width: 120px;
     font-size: 9px;
     white-space: nowrap;
     overflow: hidden;
@@ -117,6 +134,9 @@
 
     &-left {
       @include flexbox(start);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
@@ -135,7 +155,6 @@
   /* 네비게이션 바 */
   .category-bar {
     @include text-style(16);
-    padding: 15px 0;
   }
 
   /* 소제목 스타일 */
@@ -148,12 +167,6 @@
       @include text-style(12);
       font-weight: 600;
       width: 100%;
-    }
-
-    P {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     &-company {
@@ -211,6 +224,17 @@
     li {
       padding: 5px 0 5px 10px;
       text-align: left;
+      border: none;
+
+      &:hover {
+        background-color: $blue-light;
+        color: white;
+
+        border: none;
+      }
+      a {
+        width: 100%;
+      }
     }
 
     &-web {
@@ -225,9 +249,10 @@
 
   .profile {
     @include column-flexbox;
-    margin: 0 15px;
-
+    border-top: 1px solid $secondary;
     border-bottom: 1px solid $secondary;
+
+    // border-bottom: 1px solid $secondary;
 
     &-wrapper {
       padding: 15px 30px;
@@ -240,6 +265,10 @@
       width: 125px;
       height: 125px;
       margin: 30px 0 10px;
+
+      &-box {
+        padding: 0 15px;
+      }
     }
 
     &-info {
@@ -264,12 +293,11 @@
     }
     &-mypage {
       width: 125px;
-      text-align: center;
+      text-align: left;
       font-size: 20px;
       font-weight: 500;
       padding-bottom: 10px;
-      margin-left: 15px;
-      border-bottom: 1px solid $secondary;
+      margin-left: 10px;
     }
   }
 
