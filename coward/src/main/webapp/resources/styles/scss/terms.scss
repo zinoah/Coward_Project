@@ -1,0 +1,103 @@
+@import "./main";
+@import "./service_center";
+
+.header {
+  background-color: $yellow-light;
+
+  &-wrapper {
+    .login-button {
+      color: $yellow;
+    }
+  }
+}
+
+// 코워드 고객센터
+.category {
+  @include text-style(12);
+  color: $secondary;
+  padding: 15px 0;
+  margin-bottom: 35px;
+}
+
+.ic-chevron {
+  font-size: 10px;
+  display: inline-block;
+  transform: rotate(-180deg);
+}
+
+.drop-down {
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+  margin-bottom: 50px;
+  border: 1px solid $border;
+  border-radius: 10px;
+
+  cursor: pointer;
+  // appearance: none;
+}
+
+.terms-box {
+  margin-bottom: 100px;
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    @include text-style(14);
+  }
+}
+
+@include responsive(D) {
+  .list-box {
+    position: sticky;
+    top: 80px;
+    padding-bottom: 10px;
+
+    border: 1.5px solid $border;
+    border-radius: 10px;
+  }
+
+  // 이용약관이 늘어날때마다 조정
+  .list-section {
+    height: 3120px;
+  }
+
+  .full {
+    @include flexbox(between);
+  }
+
+  ul > p {
+    @include text-style(16);
+    font-weight: 700;
+    padding: 15px 20px;
+  }
+
+  li {
+    @include text-style(14);
+    font-weight: 600;
+    padding: 12px 20px;
+    cursor: pointer;
+  }
+
+  li:hover {
+    background-color: $border;
+    color: $blue;
+  }
+}
+
+// 드롭다운 화살표 디자인 관련 코드
+/* .drop-btn {
+  @include text-style(14);
+  font-weight: 700;
+  color: $tertiary;
+  position: absolute;
+  display: inline-block;
+  transform: rotate(-90deg);
+  right: 25px;
+  top: 8px;
+}
+
+.vv {
+  position: relative;
+}*/
