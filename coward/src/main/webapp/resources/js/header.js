@@ -5,10 +5,14 @@ const menuBar = document.getElementById("menubar");
 menubarBtn.addEventListener("click", () => {
   menuBar.classList.add("is-active");
   overlay.classList.add("is-active");
+
+  document.body.style.overflow = "hidden";
 });
 
 /** menubar 활성화 상태에서 뒷배경 클릭 시 비활성화 하는 click 이벤트 */
 overlay.addEventListener("click", () => {
   menuBar.classList.remove("is-active");
   overlay.classList.remove("is-active");
+
+  document.body.style.overflow = "auto";
 });
