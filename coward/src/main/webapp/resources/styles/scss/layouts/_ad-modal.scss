@@ -6,9 +6,9 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   height: $ad-modal-height;
-  padding: 20px;
+  padding: 12px;
   border-radius: 10px 10px 0 0;
   background-color: $white;
   z-index: $ad-modal-level;
@@ -76,40 +76,38 @@
 
   @include responsive(T) {
     display: none;
-    overflow: auto;
+    overflow: hidden;
+
+    border-radius: 10px;
+    height: 430px;
 
     &.is-active {
       @include pos-center;
       display: block;
-      width: 400px;
-      height: 520px;
-      padding: 16px;
-
-      border-radius: 10px;
-      overflow: hidden;
+      width: auto;
+      // height: 520px;
+      padding: 0;
 
       .ad-thumbnail {
-        width: 100%;
-        height: 100%;
-        flex-basis: 90%;
+        img {
+          border-radius: 0;
+        }
       }
 
       .buttons {
-        @include flexbox;
-        flex-basis: 10%;
-        background-color: #fff;
-        margin-top: 0;
+        // flex-basis: 10%;
+        // background-color: #fff;
+        // margin-top: 0;
 
         .today-skip-button,
         .close-button {
-          @include text-style(16);
+          @include text-style(14);
           flex-basis: 50%;
-
           transition: all 0.15s ease-in-out;
 
           &:hover {
             color: $secondary;
-            background-color: $background;
+            // background-color: $background;
           }
         }
 

@@ -24,7 +24,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     <jsp:include page="/WEB-INF/views/common/nav.jsp" />
 
-	  <main class="event-detail">
+    <main class="event-detail">
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
@@ -51,28 +51,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </main>
-
-    <div class="banner-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <a href="#">
-              <div class="banner-bottom-image">
-                <img
-                  src="${contextPath}/resources/assets/images/coupon.svg"
-                  aria-hidden
-                />
-              </div>
-              <p class="ad-slogan">
-                Coward 신규 회원가입 하고
-                <br /><strong class="text-emphasis">쿠폰팩</strong>
-                받으러가기 !
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 

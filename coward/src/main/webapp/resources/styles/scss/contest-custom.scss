@@ -99,7 +99,7 @@
 
     &-container {
       @include flexbox;
-      padding-bottom: $between-section;
+      padding-bottom: $between-section-lg;
     }
 
     &-wrapper {
@@ -116,7 +116,7 @@
   &-reward {
     &-wrapper {
       @include column-flexbox;
-      padding-bottom: $between-section;
+      padding-bottom: $between-section-lg;
 
       p {
         margin-bottom: 20px;
