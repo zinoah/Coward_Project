@@ -23,6 +23,10 @@
 }
 
 .main {
+  section {
+    margin-bottom: $between-section-sm;
+  }
+
   .title-wrapper {
     h1 {
       @include text-style(24);
@@ -69,6 +73,9 @@
   }
 
   @include responsive(T) {
+    section {
+      margin-bottom: $between-section-md;
+    }
     .category-button-wrapper {
       margin-top: 10px;
       button {
@@ -83,6 +90,9 @@
   }
 
   @include responsive(D) {
+    section {
+      margin-bottom: $between-section-lg;
+    }
     .category-button-wrapper {
       button {
         height: 30px;

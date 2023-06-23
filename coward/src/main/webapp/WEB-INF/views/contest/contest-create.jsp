@@ -30,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="contest-create-form-title">
                       <div>👉 어떤 공모전 인가요?</div>
                       <div class="contest-create-form-title-tooltip-link">
-                        <img src="../assets/images/question-circle.svg" />
+                        <i class="ic-question-circle"></i>
                         <div class="contest-create-form-title-tooltip-board">
                           <div>
                             <span> 아래 브리핑 예시를 참고해보세요! </span>
@@ -258,7 +258,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="price-total">
                             <div>
                               <span>
-                                <img src="../assets/images/trophy-icon.svg" />
+                                <i class="ic-trophy"></i>
                               </span>
                               <span>총 상금</span>
                               <span id="result-price">500</span>
@@ -278,28 +278,31 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                             <div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>하이라이트 기능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>홍보배너 게재 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>상단 노출 옵션 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/red-cross.svg" />
+                                <i class="ic-cross-small"></i>
                                 <span>SNS 홍보 선택 불가</span>
                               </div>
                               <div>
-                                <img src="../assets/images/red-cross.svg" />
+                                <i class="ic-cross-small"></i>
+
                                 <span>상품 환불 불가</span>
                               </div>
                             </div>
                             <div class="medal">
-                              <img src="../assets/images/general-medal.svg" />
+                              <img
+                                src="${contextPath}/resources/assets/images/general-medal.svg"
+                              />
                             </div>
                           </div>
                           <div class="advanced">
@@ -308,28 +311,30 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                             <div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>하이라이트 기능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>홍보배너 게재 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>상단 노출 옵션 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
-                                <span>SNS 홍보 선택 불가</span>
+                                <i class="ic-check-small"></i>
+                                <span>SNS 홍보 선택 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/red-cross.svg" />
+                                <i class="ic-cross-small"></i>
                                 <span>상품 환불 불가</span>
                               </div>
                             </div>
                             <div class="medal">
-                              <img src="../assets/images/advanced-medal.svg" />
+                              <img
+                                src="${contextPath}/resources/assets/images/advanced-medal.svg"
+                              />
                             </div>
                           </div>
                           <div class="premium">
@@ -338,28 +343,30 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                             <div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>하이라이트 기능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>홍보배너 게재 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
+                                <i class="ic-check-small"></i>
                                 <span>상단 노출 옵션 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
-                                <span>SNS 홍보 선택 불가</span>
+                                <i class="ic-check-small"></i>
+                                <span>SNS 홍보 선택 가능</span>
                               </div>
                               <div>
-                                <img src="../assets/images/green-check.svg" />
-                                <span>상품 환불 불가</span>
+                                <i class="ic-check-small"></i>
+                                <span>상품 환불 가능</span>
                               </div>
                             </div>
                             <div class="medal">
-                              <img src="../assets/images/premium-medal.svg" />
+                              <img
+                                src="${contextPath}/resources//assets/images/premium-medal.svg"
+                              />
                             </div>
                           </div>
                         </div>
@@ -378,7 +385,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       </div>
                       <div class="contest-create-summary-sticky-box-thumbnail">
                         <img
-                          src="../assets/images/contest-thumbnail.svg"
+                          src="${contextPath}/resources/assets/images/contest-thumbnail.svg"
                           alt=""
                         />
                       </div>
