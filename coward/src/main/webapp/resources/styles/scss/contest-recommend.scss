@@ -30,7 +30,7 @@
   }
 }
 
-.custom {
+.recommend {
   &-step-2 {
     @include column-flexbox;
     display: none;
@@ -99,7 +99,7 @@
 
     &-container {
       @include flexbox;
-      padding-bottom: $between-section-lg;
+      padding-bottom: $between-section;
     }
 
     &-wrapper {
@@ -116,7 +116,7 @@
   &-reward {
     &-wrapper {
       @include column-flexbox;
-      padding-bottom: $between-section-lg;
+      padding-bottom: $between-section;
 
       p {
         margin-bottom: 20px;
@@ -184,6 +184,16 @@
   }
   #next3 {
     display: none;
+  }
+
+  #back2 {
+    display: none;
+    margin-right: 10px;
+  }
+
+  #back3 {
+    display: none;
+    margin-right: 10px;
   }
 
   @include responsive(T) {

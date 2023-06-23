@@ -1,12 +1,17 @@
 @font-face {
   font-family: "coward";
 <<<<<<< HEAD
+  src: url("/coward/resources/assets/fonts/coward.eot");
+  src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
+=======
+<<<<<<< HEAD
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
 =======
   src: url("/coward/resources/assets/fonts/coward.eot");
   src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -86,11 +91,15 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
 <<<<<<< HEAD
+  text-decoration: underline dotted; /* 2 */
+=======
+<<<<<<< HEAD
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted; /* 2 */
 =======
   text-decoration: underline dotted; /* 2 */
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 
 /**
@@ -489,11 +498,15 @@ address {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 
 .avatar-24 {
@@ -622,6 +635,9 @@ address {
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
 <<<<<<< HEAD
+  appearance: none;
+=======
+<<<<<<< HEAD
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -631,6 +647,7 @@ address {
 =======
   appearance: none;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -699,6 +716,9 @@ i {
 }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .ic-chevron:before {
   content: "\e900";
 }
@@ -708,6 +728,8 @@ i {
 }
 
 .ic-bookmark-filled:before {
+<<<<<<< HEAD
+=======
 =======
 .ic-bell:before {
   content: "\e900";
@@ -719,6 +741,7 @@ i {
 
 .ic-bookmark:before {
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   content: "\e902";
 }
 
@@ -727,6 +750,9 @@ i {
 }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .ic-cancle:before {
   content: "\e904";
 }
@@ -759,6 +785,8 @@ i {
   content: "\e90b";
 }
 
+<<<<<<< HEAD
+=======
 =======
 .ic-check-circle-filled .path1:before {
   content: "\e904";
@@ -852,6 +880,7 @@ i {
 }
 
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .slider-wrapper {
   position: relative;
   height: 300px;
@@ -881,11 +910,15 @@ i {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1237,10 +1270,13 @@ i {
   .header-right button {
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     color: #3f4150;
   }
   .header-right [class^=header-button]:not(:last-child) {
@@ -1265,11 +1301,15 @@ i {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .banner-top-wrapper {
   display: flex;
@@ -1498,7 +1538,12 @@ i {
 }
 @media screen and (min-width: 1200px) {
 =======
+<<<<<<< HEAD
+}
+@media screen and (min-width: 1200px) {
+=======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .nav .nav-search {
     position: relative;
     font-size: 12px;
@@ -1512,6 +1557,8 @@ i {
     padding: 10px 16px;
   }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   .nav .nav-search-input::-moz-placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1519,6 +1566,7 @@ i {
   }
 =======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1533,6 +1581,9 @@ i {
   }
 }
 
+<<<<<<< HEAD
+.menubar {
+=======
 .ad-modal {
 <<<<<<< HEAD
   width: 100vw;
@@ -1782,6 +1833,7 @@ i {
 
 .menubar {
 <<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1809,6 +1861,8 @@ i {
   padding: 30px;
   transform: translate3d(-260px, 0, 0);
   transition: transform 300ms ease-in-out;
+<<<<<<< HEAD
+=======
 =======
   display: flex;
   flex-direction: column;
@@ -1834,6 +1888,7 @@ i {
 .menubar.is-active {
   transform: translate3d(0, 0, 0);
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .menubar-header {
   width: 100%;
@@ -1906,6 +1961,8 @@ i {
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 .overlay {
   position: fixed;
   top: 0;
@@ -1924,6 +1981,7 @@ i {
 }
 
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .footer {
   font-size: 13px;
   line-height: 20px;
@@ -2064,8 +2122,12 @@ i {
 <<<<<<< HEAD
   height: 2000px;
 =======
+<<<<<<< HEAD
+  height: 2000px;
+=======
   height: 2100px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   margin-top: 100px;
   border-radius: 10px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -2076,8 +2138,12 @@ i {
 <<<<<<< HEAD
   height: 2000px;
 =======
+<<<<<<< HEAD
+  height: 2000px;
+=======
   height: 2100px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   padding: 20px;
 }
 .create-container .contest-create-form-title {
@@ -2104,7 +2170,11 @@ i {
 <<<<<<< HEAD
   height: 220px;
 =======
+<<<<<<< HEAD
+  height: 220px;
+=======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   background-color: #fff;
   border: 1.5px solid #3aacf8;
   border-radius: 10px;
@@ -2273,14 +2343,20 @@ i {
   align-items: flex-start;
   justify-content: center;
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   height: 100px;
 }
 .create-container .contest-create-form-skill > div:nth-child(1) {
   flex-basis: 50%;
+<<<<<<< HEAD
+=======
 =======
   flex-direction: column;
   height: 200px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .create-container .contest-create-form-skill > div:nth-child(2) {
   display: flex;
@@ -2290,10 +2366,16 @@ i {
   height: 100px;
   overflow: scroll;
 =======
+<<<<<<< HEAD
+  flex-basis: 50%;
+  height: 100px;
+  overflow: scroll;
+=======
   margin-top: 16px;
   height: 150px;
   overflow: auto;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .create-container .contest-create-form-skill > div:nth-child(2) label {
   margin: 0px 10px 10px 0;
@@ -2312,14 +2394,20 @@ i {
   align-items: flex-start;
   justify-content: flex-start;
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   height: 120px;
 }
 .create-container .contest-create-form-thumbnail > div:nth-child(1) {
   flex-basis: 50%;
+<<<<<<< HEAD
+=======
 =======
   flex-direction: column;
   height: 150px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .create-container .contest-create-form-thumbnail > div:nth-child(2) {
   display: flex;
@@ -2329,8 +2417,12 @@ i {
 <<<<<<< HEAD
   flex-basis: 50%;
 =======
+<<<<<<< HEAD
+  flex-basis: 50%;
+=======
   margin-top: 16px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   border: 1px dotted #e0e2e7;
   border-radius: 10px;
   width: 100%;
@@ -2604,8 +2696,12 @@ i {
 <<<<<<< HEAD
   height: 1750px;
 =======
+<<<<<<< HEAD
+  height: 1750px;
+=======
   height: 1900px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   border-left: 1px solid #e0e2e7;
   padding: 30px;
 }
@@ -2639,11 +2735,15 @@ i {
   width: 100%;
   height: auto;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .create-container .contest-create-summary-sticky-box-date span:nth-child(2) {
   color: #8c8d96;
@@ -2708,20 +2808,28 @@ i {
     align-items: center;
     justify-content: center;
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     height: 1800px;
   }
   .create-container .contest-create-form {
     height: 1800px;
+<<<<<<< HEAD
+=======
 =======
     height: 2000px;
   }
   .create-container .contest-create-form {
     height: 2000px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   }
   .create-container .contest-create-form-inner > div {
     margin-bottom: 24px;
   }
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
   .create-container .contest-create-form-skill {
@@ -2739,6 +2847,7 @@ i {
     flex-basis: 50%;
   }
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .create-container .contest-create-form-reward .price-box-inner-box {
     display: flex;
     flex-direction: row;
@@ -2785,10 +2894,13 @@ i {
     flex-basis: 50%;
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   }
   .create-container .contest-create-form-promotion-products > div:nth-child(2) .advanced {
     height: 250px;
@@ -2806,10 +2918,13 @@ i {
     flex-basis: 50%;
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   }
   .create-container .contest-create-form-promotion-products > div:nth-child(2) .premium {
     height: 250px;
@@ -2827,20 +2942,28 @@ i {
     flex-basis: 50%;
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   }
 }
 @media screen and (min-width: 1200px) {
   .create-container .contest-create-wrapper {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     height: 1750px;
   }
   .create-container .contest-create-form {
     flex-basis: 70%;
     height: 1750px;
+<<<<<<< HEAD
+=======
 =======
     height: 1900px;
   }
@@ -2848,5 +2971,6 @@ i {
     flex-basis: 70%;
     height: 1900px;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   }
 }/*# sourceMappingURL=contest-create.css.map */

@@ -1,7 +1,12 @@
 @font-face {
   font-family: "coward";
+<<<<<<< HEAD
+  src: url("/coward/resources/assets/fonts/coward.eot");
+  src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
+=======
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -674,6 +679,17 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
+.ic-chevron:before {
+  content: "\e900";
+}
+
+.ic-bookmark:before {
+  content: "\e901";
+}
+
+.ic-bookmark-filled:before {
+=======
 .ic-bell:before {
   content: "\e900";
 }
@@ -683,6 +699,7 @@ i {
 }
 
 .ic-bookmark:before {
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   content: "\e902";
 }
 
@@ -690,6 +707,40 @@ i {
   content: "\e903";
 }
 
+<<<<<<< HEAD
+.ic-cancle:before {
+  content: "\e904";
+}
+
+.ic-check:before {
+  content: "\e905";
+}
+
+.ic-check-cercle:before {
+  content: "\e906";
+}
+
+.ic-hamburger:before {
+  content: "\e907";
+}
+
+.ic-like:before {
+  content: "\e908";
+}
+
+.ic-like-filled:before {
+  content: "\e909";
+}
+
+.ic-password:before {
+  content: "\e90a";
+}
+
+.ic-search:before {
+  content: "\e90b";
+}
+
+=======
 .ic-check-circle-filled .path1:before {
   content: "\e904";
   color: rgb(0, 0, 0);
@@ -781,6 +832,7 @@ i {
   content: "\e919";
 }
 
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .slider-wrapper {
   position: relative;
   height: 300px;
@@ -1159,9 +1211,12 @@ i {
     height: 24px;
   }
   .header-right button {
+<<<<<<< HEAD
+=======
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     color: #3f4150;
   }
   .header-right [class^=header-button]:not(:last-child) {
@@ -1410,6 +1465,11 @@ i {
     letter-spacing: -0.01em;
     margin-right: 16px;
   }
+<<<<<<< HEAD
+}
+@media screen and (min-width: 1200px) {
+=======
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .nav .nav-search {
     position: relative;
     font-size: 12px;
@@ -1436,6 +1496,8 @@ i {
   }
 }
 
+<<<<<<< HEAD
+=======
 .ad-modal {
 <<<<<<< HEAD
   width: 100vw;
@@ -1589,6 +1651,7 @@ i {
   }
 }
 
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .menubar {
   position: absolute;
   top: 50%;
@@ -1606,6 +1669,19 @@ i {
   transform: translate3d(0, 0, 0);
 }
 .menubar .menu-wrapper {
+<<<<<<< HEAD
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 260px;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  padding: 30px;
+  transform: translate3d(-260px, 0, 0);
+  transition: transform 300ms ease-in-out;
+=======
 =======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
   display: flex;
@@ -1767,6 +1843,7 @@ i {
 }
 .menubar.is-active {
   transform: translate3d(0, 0, 0);
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .menubar-header {
   width: 100%;
@@ -1837,6 +1914,8 @@ i {
   height: 100%;
 }
 
+<<<<<<< HEAD
+=======
 .overlay {
   position: fixed;
   top: 0;
@@ -1854,6 +1933,7 @@ i {
   visibility: visible;
 }
 
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .footer {
   font-size: 13px;
   line-height: 20px;

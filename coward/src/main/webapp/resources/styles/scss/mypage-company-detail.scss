@@ -1,8 +1,113 @@
 @import "./main";
 
+.profile-wrapper {
+  @include responsive(D) {
+    width: 845px;
+  }
+}
+
 .mypage {
+  .title {
+    @include text-style(18);
+    font-weight: bold;
+    margin-bottom: 2px;
+    &-wrapper {
+      border-bottom: 1px solid $border;
+    }
+  }
   .avatar {
     width: 100px;
     height: 100px;
+  }
+  &-img {
+    &-wrapper {
+      @include flexbox;
+      margin: 30px;
+    }
+  }
+  &-input {
+    @include text-style(14);
+    width: 100%;
+    height: 40px;
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
+
+    &-box {
+      width: 46%;
+      padding-bottom: 10px;
+
+      p {
+        @include text-style(16);
+        font-weight: bold;
+        padding-bottom: 10px;
+      }
+
+      &-wrapper {
+        @include flexbox(between);
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  p {
+    @include text-style(16);
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  textarea {
+    @include text-style(14);
+    width: 100%;
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .textarea-box {
+    margin-bottom: 50px;
+  }
+
+  .button-wrapper {
+    @include flexbox;
+    width: 100%;
+  }
+
+  .btn-secondary {
+    width: 40%;
+  }
+
+  @include responsive(T) {
+    &-input {
+      &-box {
+        width: 45%;
+        &-wrapper {
+          @include flexbox(around);
+          margin: 0 120px 0 120px;
+        }
+      }
+    }
+
+    textarea {
+      width: 100%;
+    }
+    .textarea-box {
+      @include flexbox;
+
+      div {
+        width: 64%;
+      }
+    }
+
+    .btn-secondary {
+      width: 20%;
+    }
+  }
+
+  @include responsive(D) {
+    &-input {
+      &-box {
+        width: 42%;
+      }
+    }
   }
 }

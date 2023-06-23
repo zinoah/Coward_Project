@@ -2,12 +2,17 @@
 @font-face {
   font-family: "coward";
 <<<<<<< HEAD
+  src: url("/coward/resources/assets/fonts/coward.eot");
+  src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
+=======
+<<<<<<< HEAD
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
 =======
   src: url("/coward/resources/assets/fonts/coward.eot");
   src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -87,11 +92,15 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
 <<<<<<< HEAD
+  text-decoration: underline dotted; /* 2 */
+=======
+<<<<<<< HEAD
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted; /* 2 */
 =======
   text-decoration: underline dotted; /* 2 */
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 
 /**
@@ -490,11 +499,15 @@ address {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 
 .avatar-24 {
@@ -623,6 +636,9 @@ address {
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
 <<<<<<< HEAD
+  appearance: none;
+=======
+<<<<<<< HEAD
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -632,6 +648,7 @@ address {
 =======
   appearance: none;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -700,6 +717,9 @@ i {
 }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .ic-chevron:before {
   content: "\e900";
 }
@@ -709,6 +729,8 @@ i {
 }
 
 .ic-bookmark-filled:before {
+<<<<<<< HEAD
+=======
 =======
 .ic-bell:before {
   content: "\e900";
@@ -720,6 +742,7 @@ i {
 
 .ic-bookmark:before {
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   content: "\e902";
 }
 
@@ -728,6 +751,9 @@ i {
 }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .ic-cancle:before {
   content: "\e904";
 }
@@ -760,6 +786,8 @@ i {
   content: "\e90b";
 }
 
+<<<<<<< HEAD
+=======
 =======
 .ic-check-circle-filled .path1:before {
   content: "\e904";
@@ -853,6 +881,7 @@ i {
 }
 
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .slider-wrapper {
   position: relative;
   height: 300px;
@@ -882,11 +911,15 @@ i {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1238,10 +1271,13 @@ i {
   .header-right button {
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     color: #3f4150;
   }
   .header-right [class^=header-button]:not(:last-child) {
@@ -1266,11 +1302,15 @@ i {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .banner-top-wrapper {
   display: flex;
@@ -1499,7 +1539,12 @@ i {
 }
 @media screen and (min-width: 1200px) {
 =======
+<<<<<<< HEAD
+}
+@media screen and (min-width: 1200px) {
+=======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .nav .nav-search {
     position: relative;
     font-size: 12px;
@@ -1513,6 +1558,8 @@ i {
     padding: 10px 16px;
   }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   .nav .nav-search-input::-moz-placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1520,6 +1567,7 @@ i {
   }
 =======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1534,6 +1582,9 @@ i {
   }
 }
 
+<<<<<<< HEAD
+.menubar {
+=======
 .ad-modal {
 <<<<<<< HEAD
   width: 100vw;
@@ -1783,6 +1834,7 @@ i {
 
 .menubar {
 <<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1810,6 +1862,8 @@ i {
   padding: 30px;
   transform: translate3d(-260px, 0, 0);
   transition: transform 300ms ease-in-out;
+<<<<<<< HEAD
+=======
 =======
   display: flex;
   flex-direction: column;
@@ -1835,6 +1889,7 @@ i {
 .menubar.is-active {
   transform: translate3d(0, 0, 0);
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .menubar-header {
   width: 100%;
@@ -1907,6 +1962,8 @@ i {
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 .overlay {
   position: fixed;
   top: 0;
@@ -1925,6 +1982,7 @@ i {
 }
 
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .footer {
   font-size: 13px;
   line-height: 20px;

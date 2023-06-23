@@ -2,12 +2,17 @@
 @font-face {
   font-family: "coward";
 <<<<<<< HEAD
+  src: url("/coward/resources/assets/fonts/coward.eot");
+  src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
+=======
+<<<<<<< HEAD
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
   src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
 =======
   src: url("/coward/resources/assets/fonts/coward.eot");
   src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -87,11 +92,15 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
 <<<<<<< HEAD
+  text-decoration: underline dotted; /* 2 */
+=======
+<<<<<<< HEAD
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted; /* 2 */
 =======
   text-decoration: underline dotted; /* 2 */
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 
 /**
@@ -490,11 +499,15 @@ address {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 
 .avatar-24 {
@@ -623,6 +636,9 @@ address {
   border-radius: 4px;
   transition: background-color 200ms ease-in-out;
 <<<<<<< HEAD
+  appearance: none;
+=======
+<<<<<<< HEAD
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -632,6 +648,7 @@ address {
 =======
   appearance: none;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .form-select::placeholder,
 .form-input::placeholder {
@@ -700,6 +717,9 @@ i {
 }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .ic-chevron:before {
   content: "\e900";
 }
@@ -709,6 +729,8 @@ i {
 }
 
 .ic-bookmark-filled:before {
+<<<<<<< HEAD
+=======
 =======
 .ic-bell:before {
   content: "\e900";
@@ -720,6 +742,7 @@ i {
 
 .ic-bookmark:before {
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   content: "\e902";
 }
 
@@ -728,6 +751,9 @@ i {
 }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .ic-cancle:before {
   content: "\e904";
 }
@@ -760,6 +786,8 @@ i {
   content: "\e90b";
 }
 
+<<<<<<< HEAD
+=======
 =======
 .ic-check-circle-filled .path1:before {
   content: "\e904";
@@ -853,6 +881,7 @@ i {
 }
 
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .slider-wrapper {
   position: relative;
   height: 300px;
@@ -882,11 +911,15 @@ i {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .contest-slider-card-info {
   position: absolute;
@@ -1238,10 +1271,13 @@ i {
   .header-right button {
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.01em;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     color: #3f4150;
   }
   .header-right [class^=header-button]:not(:last-child) {
@@ -1266,11 +1302,15 @@ i {
   width: 100%;
   height: 100%;
 <<<<<<< HEAD
+  object-fit: cover;
+=======
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
 =======
   object-fit: cover;
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .banner-top-wrapper {
   display: flex;
@@ -1499,7 +1539,12 @@ i {
 }
 @media screen and (min-width: 1200px) {
 =======
+<<<<<<< HEAD
+}
+@media screen and (min-width: 1200px) {
+=======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .nav .nav-search {
     position: relative;
     font-size: 12px;
@@ -1513,6 +1558,8 @@ i {
     padding: 10px 16px;
   }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   .nav .nav-search-input::-moz-placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1520,6 +1567,7 @@ i {
   }
 =======
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   .nav .nav-search-input::placeholder {
     font-size: 12px;
     line-height: 16px;
@@ -1534,6 +1582,9 @@ i {
   }
 }
 
+<<<<<<< HEAD
+.menubar {
+=======
 .ad-modal {
 <<<<<<< HEAD
   width: 100vw;
@@ -1783,6 +1834,7 @@ i {
 
 .menubar {
 <<<<<<< HEAD
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1810,6 +1862,8 @@ i {
   padding: 30px;
   transform: translate3d(-260px, 0, 0);
   transition: transform 300ms ease-in-out;
+<<<<<<< HEAD
+=======
 =======
   display: flex;
   flex-direction: column;
@@ -1835,6 +1889,7 @@ i {
 .menubar.is-active {
   transform: translate3d(0, 0, 0);
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 }
 .menubar-header {
   width: 100%;
@@ -1907,6 +1962,8 @@ i {
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 .overlay {
   position: fixed;
   top: 0;
@@ -1925,6 +1982,7 @@ i {
 }
 
 >>>>>>> 95b418a9343d29eba6dcae3920e62c20262f666f
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .footer {
   font-size: 13px;
   line-height: 20px;
@@ -2147,9 +2205,12 @@ i {
 .award-table td {
   padding: 5px;
 }
+<<<<<<< HEAD
+=======
 .award-table tr:first-child {
   font-weight: 700;
 }
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .award-table tr:last-child {
   font-size: 10px;
 }
@@ -2290,11 +2351,19 @@ i {
     height: 715px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
+    background-color: #f8f8f8;
+  }
+  .category {
+    width: 100%;
+    background-color: #f8f8f8;
+=======
     background-color: #fff;
   }
   .category {
     width: 100%;
     background-color: white;
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     /* 높이 안주면 가운데 배치 됨 */
   }
   .category-bar {
@@ -2338,9 +2407,12 @@ i {
     margin-left: 15px;
     border-bottom: 1px solid #8c8d96;
   }
+<<<<<<< HEAD
+=======
   .introduce-title {
     margin-left: 0;
   }
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   /* 한줄 소개 */
   .one-liner {
     margin-bottom: 8px;
@@ -2351,20 +2423,32 @@ i {
     letter-spacing: -0.005em;
     width: 520px;
     height: 140px;
+<<<<<<< HEAD
+    background-color: #f8f8f8;
+=======
     background-color: white;
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     resize: none;
   }
   /* 어워드 */
   .award {
     width: 220px;
+<<<<<<< HEAD
+    height: 338px;
+=======
     height: 323px;
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   }
   .award-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
+    height: 295px;
+=======
     height: 287px;
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
     justify-content: space-around;
     align-items: center;
     margin: 0;
@@ -2418,9 +2502,12 @@ i {
   .watchlist {
     overflow: hidden;
   }
+<<<<<<< HEAD
+=======
   .watchlist p {
     margin-bottom: 17px;
   }
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
     display: flex;
@@ -2463,7 +2550,11 @@ i {
     left: -10000em;
   }
   aside {
+<<<<<<< HEAD
+    height: 613px;
+=======
     height: 650px;
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   }
   .category-web {
     height: 613px;
