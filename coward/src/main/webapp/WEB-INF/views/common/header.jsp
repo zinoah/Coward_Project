@@ -52,6 +52,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     alt=""
                   />
                 </div>
+                <a href="${contextPath}/WEB-INF/views/mypage/person-main.jsp">
                 <div class="avatar-32 header-user-image">
                   <c:choose>
                     <c:when test="${empty loginMember.profileImg }">
@@ -70,6 +71,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </c:otherwise>
                   </c:choose>
                 </div>
+                </a>
               </c:otherwise>
             </c:choose>
           </div>
