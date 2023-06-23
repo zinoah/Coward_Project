@@ -23,6 +23,12 @@
         }
       }
 
+      &:hover {
+        a {
+          color: $blue-dark;
+        }
+      }
+
       a {
         @include text-style(14);
         // font-weight: 700;
@@ -40,9 +46,7 @@
         }
       }
     }
-  }
 
-  @include responsive(D) {
     .nav-search {
       position: relative;
       @include text-style(12);

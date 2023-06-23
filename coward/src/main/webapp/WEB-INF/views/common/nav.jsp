@@ -9,9 +9,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <div class="col-sm-4">
         <div class="nav-wrapper">
           <div class="nav-left">
-            <ul class="nav-list">
-              <li class="nav-item is-active">
-                <a href="#">공모전</a>
+            <ul class="nav-list sm-hidden">
+              <!-- is-active로 컨트롤 -->
+              <li class="nav-item">
+                <a href="${contextPath}/contest/main">공모전</a>
               </li>
               <li class="nav-item">
                 <a href="#">개발자 찾기</a>
@@ -22,7 +23,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </ul>
           </div>
 
-          <div class="nav-right lg-only">
+          <div class="nav-right sm-hidden">
             <form class="nav-search" action="#">
               <input
                 class="nav-search-input"

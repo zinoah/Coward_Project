@@ -7,7 +7,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <div class="row">
       <div class="col-sm-4 col-md-2 col-lg-3">
         <h1 class="logo">
-          <a href="#">
+          <a href="${contextPath}/home">
             <img
               src="${contextPath}/resources/assets/images/home_logo.svg"
               alt="Coward"
@@ -57,18 +57,27 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         <div class="row">
           <div class="footer-links-wrapper">
             <div class="icon-link">
-              <a class="icon-link-item" href="#"
+              <a
+                class="icon-link-item"
+                href="https://github.com/zinoah/Coward_Project"
+                target="_blank"
                 ><img
                   src="${contextPath}/resources/assets/images/github.svg"
                   alt="Github 바로가기"
               /></a>
-              <a class="icon-link-item" href="#">
+              <a
+                class="icon-link-item"
+                href="https://noaharea.notion.site/Coward-dcfa13756a424b4c988a6790d3d93e53?pvs=4"
+              >
                 <img
                   src="${contextPath}/resources/assets/images/notion.svg"
                   alt="Notion 바로가기"
                 />
               </a>
-              <a class="icon-link-item" href="#"
+              <a
+                class="icon-link-item"
+                href="https://www.figma.com/file/JeCS93KejkDwIfCU4EGque/Coward?type=design&node-id=1%3A4&mode=design&t=NYhPFAEyWxmOusse-1"
+                target="_blank"
                 ><img
                   src="${contextPath}/resources/assets/images/figma.svg"
                   alt="Figma 바로가기"
@@ -77,7 +86,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
             <div class="text-link">
               <ul class="text-link-list">
-                <li class="text-link-item"><a href="#">이용가이드</a></li>
+                <li class="text-link-item">
+                  <a
+                    href="https://noaharea.notion.site/Coward-8bebb80d9bfd4c8cad892261f36e8ea8?pvs=4"
+                    >이용가이드</a
+                  >
+                </li>
                 <li class="text-link-item">
                   <a href="#">개인정보처리방침</a>
                 </li>
@@ -96,7 +110,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 </footer>
 
 <c:if test="${ !empty message }">
-    <script>
-        alert("${message}");
-    </script>
-</c:if> 
+  <script>
+    alert("${message}");
+  </script>
+</c:if>
