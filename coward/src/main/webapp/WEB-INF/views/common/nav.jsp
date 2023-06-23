@@ -23,7 +23,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </ul>
           </div>
 
-          <div class="nav-right lg-only">
+          <div class="nav-right sm-hidden">
             <form class="nav-search" action="#">
               <input
                 class="nav-search-input"

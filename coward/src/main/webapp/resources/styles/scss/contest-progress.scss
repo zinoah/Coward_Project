@@ -39,9 +39,8 @@
 }
 
 .progress {
-  /* 목업대로 가려면 start로 */
-  @include flexbox(between);
-  width: 42px;
+  @include flexbox(start);
+  width: 55px;
 
   &-box {
     @include flexbox(between);
@@ -49,14 +48,14 @@
     border: 1px solid $border;
     border-radius: 10px;
     padding: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   /* 상태표시 동그라미 */
   &-color {
     width: 8px;
     height: 8px;
-    margin-right: 3px;
+    margin-right: 8px;
     border-radius: 50%;
   }
 
@@ -75,13 +74,14 @@
     background-color: #f86d7d;
   }
   &-text {
-    font-size: 10px;
+    @include text-style(12);
   }
 }
 
 .contest {
   &-title {
-    @include text-style(12);
+    @include flexbox;
+    @include text-style(14);
     font-weight: 600;
 
     p {
@@ -104,9 +104,6 @@
   &-company {
     width: 120px;
     font-size: 9px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 
@@ -118,8 +115,8 @@
 
 .company {
   &-profile {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     margin-right: 12px;
 
     &-img {
@@ -200,7 +197,7 @@
     height: 715px;
     border-radius: 10px;
     box-shadow: $card-shadow;
-    background-color: $background;
+    background-color: white;
   }
 
   /* 네비게이션 바 */
@@ -234,12 +231,13 @@
 
     &-web {
       height: 603px;
+      background-color: white;
     }
   }
 
   /* 메인과 위치 맞추기 위해 */
   aside {
-    height: 613px;
+    height: 650px;
   }
 
   .profile {

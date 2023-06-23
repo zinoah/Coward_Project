@@ -45,6 +45,7 @@
 
     &-right {
       button {
+        @include text-style(14);
         color: $primary;
       }
 

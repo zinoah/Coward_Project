@@ -17,24 +17,8 @@
   transition: transform 300ms ease-in-out;
   overscroll-behavior: contain;
 
-  &.is-open {
-    background-color: rgba($color: #000000, $alpha: 0.5);
-
-    .menu-wrapper {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  .menu-wrapper {
-    @include column-flexbox(between, start);
-    width: 260px;
-    height: 100vh;
-    background-color: #fff;
-    border-radius: 0 10px 10px 0;
-    padding: 30px;
-
-    transform: translate3d(-260px, 0, 0);
-    transition: transform 300ms ease-in-out;
+  &.is-active {
+    transform: translate3d(0, 0, 0);
   }
 
   &-header {

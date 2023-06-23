@@ -26,13 +26,17 @@
   }
 }
 
+.info {
+  @include text-style(14);
+}
+
 .mem {
   &-type-box {
     margin-bottom: 10px;
   }
 
   &-type {
-    font-size: 16.5px;
+    @include text-style(16);
   }
 }
 
@@ -58,29 +62,13 @@
 
   &-explanation-box {
     @include column-flexbox(center, start);
-    flex-basis: 80%;
-  }
-}
-
-.chk {
-  &-img-1 {
-    @include flexbox;
-    flex-basis: 20%;
     cursor: pointer;
-  }
-
-  &-img-2 {
-    flex-basis: 10%;
-    cursor: pointer;
-  }
-
-  &-explanation {
-    flex-basis: 80%;
   }
 }
 
 .line {
-  border: 0.5px solid $secondary;
+  border: 0.2px solid $tertiary;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -92,29 +80,28 @@
 .all-agree {
   @include inline-flexbox;
 
+  &-wrapper {
+    @include column-flexbox(center, start);
+  }
+
   &-text {
-    flex-basis: 90%;
-    padding-left: 10px;
-    font-weight: 550;
+    @include text-style(14);
+    font-weight: 700;
   }
 
   margin-bottom: 15px;
 }
 
 .essential-chk {
-  @include inline-flexbox;
+  @include inline-flexbox(start, center);
   width: 100%;
   margin-bottom: 15px;
 
   &-content {
-    @include inline-flexbox;
-    @include text-style(14, $primary);
-    flex-basis: 90%;
+    @include text-style(13, $primary);
+    @include flexbox(between);
+    width: 100%;
   }
-}
-
-.terms {
-  flex-basis: 10%;
 }
 
 .next-btn {
