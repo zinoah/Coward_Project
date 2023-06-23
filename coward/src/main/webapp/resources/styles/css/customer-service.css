@@ -1,7 +1,12 @@
 @font-face {
   font-family: "coward";
+<<<<<<< HEAD
   src: url("/coward/resources/assets/fonts/coward.eot");
   src: url("/coward/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/resources/assets/fonts/coward.woff") format("woff"), url("/coward/resources/assets/fonts/coward.svg#coward") format("svg");
+=======
+  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot");
+  src: url("/coward/src/main/webapp/resources/assets/fonts/coward.eot#iefix") format("embedded-opentype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.ttf") format("truetype"), url("/coward/src/main/webapp/resources/assets/fonts/coward.woff") format("woff"), url("/coward/src/main/webapp/resources/assets/fonts/coward.svg#coward") format("svg");
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -674,6 +679,7 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
 .ic-chevron:before {
   content: "\e900";
 }
@@ -683,6 +689,17 @@ i {
 }
 
 .ic-bookmark-filled:before {
+=======
+.ic-bell:before {
+  content: "\e900";
+}
+
+.ic-bookmark-filled:before {
+  content: "\e901";
+}
+
+.ic-bookmark:before {
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
   content: "\e902";
 }
 
@@ -690,6 +707,7 @@ i {
   content: "\e903";
 }
 
+<<<<<<< HEAD
 .ic-cancle:before {
   content: "\e904";
 }
@@ -722,6 +740,99 @@ i {
   content: "\e90b";
 }
 
+=======
+.ic-check-circle-filled .path1:before {
+  content: "\e904";
+  color: rgb(0, 0, 0);
+}
+
+.ic-check-circle-filled .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.ic-check-circle:before {
+  content: "\e906";
+}
+
+.ic-check-small:before {
+  content: "\e907";
+}
+
+.ic-check:before {
+  content: "\e908";
+}
+
+.ic-chevron-small:before {
+  content: "\e909";
+}
+
+.ic-chevron:before {
+  content: "\e90a";
+}
+
+.ic-cross-small:before {
+  content: "\e90b";
+}
+
+.ic-cross:before {
+  content: "\e90c";
+}
+
+.ic-eye-close:before {
+  content: "\e90d";
+}
+
+.ic-eye-open:before {
+  content: "\e90e";
+}
+
+.ic-filters:before {
+  content: "\e90f";
+}
+
+.ic-hamburger:before {
+  content: "\e910";
+}
+
+.ic-like-filled:before {
+  content: "\e911";
+}
+
+.ic-like:before {
+  content: "\e912";
+}
+
+.ic-link-filled:before {
+  content: "\e913";
+}
+
+.ic-link:before {
+  content: "\e914";
+}
+
+.ic-logout:before {
+  content: "\e915";
+}
+
+.ic-message:before {
+  content: "\e916";
+}
+
+.ic-question-circle:before {
+  content: "\e917";
+}
+
+.ic-search:before {
+  content: "\e918";
+}
+
+.ic-trophy:before {
+  content: "\e919";
+}
+
+>>>>>>> cccb13442cf6c4d0fd6ea8eb7da90e7a0ec0077e
 .container {
   width: 100%;
   padding: 0 5px;

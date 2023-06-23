@@ -84,6 +84,11 @@
   margin-bottom: 20px;
 }
 
+.chk-img {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
 .all-agree {
   @include inline-flexbox;
 
