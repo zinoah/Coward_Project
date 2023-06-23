@@ -77,7 +77,7 @@ $track-speed: 80s;
   // Note: 공통 요소
   .section-title {
     @include flexbox(between);
-    margin-bottom: $section-title-bottom;
+    margin-bottom: $section-title-bottom-sm;
 
     // 타이틀 제목
     h3 {
@@ -118,9 +118,15 @@ $track-speed: 80s;
     }
   }
 
-  &-contest-preview {
-    margin-bottom: $between-section;
+  // Note: 섹션 간 간격
+  &-contest-preview,
+  &-services,
+  &-rankings,
+  &-contest-new {
+    margin-bottom: $between-section-sm;
+  }
 
+  &-contest-preview {
     &-slider {
       position: relative;
 
@@ -205,8 +211,6 @@ $track-speed: 80s;
   }
 
   &-services {
-    margin-bottom: $between-section;
-
     .service {
       @include column-flexbox;
 
@@ -242,11 +246,9 @@ $track-speed: 80s;
   }
 
   &-rankings {
-    margin-bottom: $between-section;
-
     .home-ranking {
       &:not(:last-of-type) {
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
 
       // Note: .ranking-title 배경색
@@ -306,8 +308,6 @@ $track-speed: 80s;
   }
 
   &-contest-new {
-    margin-bottom: $between-section;
-
     // Note: 보드형 공모전 보기
     .new-contest-board {
       .new-contest-item {
@@ -482,9 +482,18 @@ $track-speed: 80s;
 
   @include responsive(T) {
     .section-title {
+      margin-bottom: $section-title-bottom-md;
+
       h3 {
         @include text-style(18);
       }
+    }
+
+    &-contest-preview,
+    &-services,
+    &-rankings,
+    &-contest-new {
+      margin-bottom: $between-section-md;
     }
 
     &-services {
@@ -621,9 +630,18 @@ $track-speed: 80s;
 
   @include responsive(D) {
     .section-title {
+      margin-bottom: $section-title-bottom-lg;
+
       h3 {
         @include text-style(24);
       }
+    }
+
+    &-contest-preview,
+    &-services,
+    &-rankings,
+    &-contest-new {
+      margin-bottom: $between-section-lg;
     }
 
     &-services {

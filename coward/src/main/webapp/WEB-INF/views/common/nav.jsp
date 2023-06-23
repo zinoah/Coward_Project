@@ -10,7 +10,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="nav-wrapper">
           <div class="nav-left">
             <ul class="nav-list sm-hidden">
-              <li class="nav-item is-active">
+              <!-- is-active로 컨트롤 -->
+              <li class="nav-item">
                 <a href="${contextPath}/contest/main">공모전</a>
               </li>
               <li class="nav-item">

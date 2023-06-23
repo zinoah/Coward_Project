@@ -1,6 +1,10 @@
 // main 영역 위, 아래 간격
 $around-main-content: 50px;
 // main 영역 내부, 섹션 간 간격
-$between-section: 70px;
+$between-section-sm: 50px;
+$between-section-md: 60px;
+$between-section-lg: 70px;
 // main > section 타이틀 아래 간격
-$section-title-bottom: 24px;
+$section-title-bottom-sm: 20px;
+$section-title-bottom-md: 24px;
+$section-title-bottom-lg: 28px;

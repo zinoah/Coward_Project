@@ -30,7 +30,7 @@
   }
 }
 
-.custom {
+.recommend {
   &-step-2 {
     @include column-flexbox;
     display: none;
@@ -184,6 +184,16 @@
   }
   #next3 {
     display: none;
+  }
+
+  #back2 {
+    display: none;
+    margin-right: 10px;
+  }
+
+  #back3 {
+    display: none;
+    margin-right: 10px;
   }
 
   @include responsive(T) {
