@@ -20,10 +20,10 @@
     .bookmark {
       position: absolute;
       right: 7%;
-      top: -5px;
-      font-size: 25px;
+      top: -14px;
       cursor: pointer;
       i {
+        font-size: 35px;
         color: $tertiary;
         &:hover {
           color: $red;
