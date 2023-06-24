@@ -11,7 +11,12 @@
 
     <link
       rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-company-detail.css"
+      href="/coward/src/main/webapp/resources/styles/css/mypage-company-main.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
     />
     <title>Coward | 마이페이지</title>
   </head>
@@ -132,7 +137,8 @@
                       </div>
 
                       <div class="profile-info">
-                        <p class="profile-nick">삼성전자</p>
+                        <div class="profile-type">Back</div>
+                        <p class="profile-nick">빡과장</p>
                       </div>
                     </div>
 
@@ -156,61 +162,49 @@
                 <div class="col-sm-4">
                   <div class="profile-wrapper">
                     <!------------------------- 여기서 부터 작성 --------------------------->
+
                     <div class="mypage">
-                      <div class="title-wrapper lg-only">
-                        <p class="title">프로필 수정</p>
-                      </div>
-
-                      <div class="mypage-img-wrapper">
-                        <div class="ic-camera-relative">
-                          <div class="avatar">
-                            <img src="../assets/images/default-user-img.png" />
-                            <div class="ic-camera-wrapper">
-                              <i class="ic-camera"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="mypage-input-box-wrapper">
-                        <div class="mypage-input-box">
-                          <p>회사명</p>
-                          <input
-                            type="text"
-                            placeholder="회사명 입력"
-                            class="mypage-input"
-                          />
-                        </div>
-                        <div class="mypage-input-box">
-                          <p>회사명</p>
-                          <select class="mypage-input">
-                            <option>지역선택</option>
-                            <option>서울</option>
-                            <option>인천</option>
-                            <option>충남</option>
-                            <option>경기</option>
-                            <option>경남</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="textarea-box">
-                        <div>
-                          <p>소개글</p>
-                          <textarea
-                            cols="50"
-                            rows="10"
-                            placeholder="기업에 대해서 소개해주세요!"
-                          ></textarea>
-                        </div>
-                      </div>
-
-                      <div class="button-wrapper">
-                        <button class="btn-40 btn-secondary">완료</button>
+                      <div class="btn-wrapper-status">
+                        <button class="btn-32 btn-secondary">전체</button>
+                        <button class="btn-32 btn-secondary">모집중</button>
+                        <button class="btn-32 btn-secondary">선발중</button>
+                        <button class="btn-32 btn-secondary">완료</button>
                       </div>
                     </div>
 
                     <!-- 본문 끝 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <main class="main">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="slider-wrapper">
+                    <div class="contest-slider">
+                      <div>
+                        <div class="contest-slider-card">
+                          <div class="contest-slider-card-img">
+                            <img
+                              src="../assets/images/contest-gallery-card-img.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="contest-slider-card-info">
+                            <div class="contest-slider-card-info-title">
+                              <p>식품 쇼핑몰 웹사이트 제작</p>
+                            </div>
+                            <div class="contest-slider-card-info-detail">
+                              <p>상금</p>
+                              <p>100만원</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

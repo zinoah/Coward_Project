@@ -1,0 +1,29 @@
+@import "./main";
+
+.profile-wrapper {
+  &-wrapper {
+    @include responsive(D) {
+      width: 850px;
+    }
+  }
+}
+
+.mypage {
+  .btn {
+    &-secondary {
+      background-color: $background;
+    }
+
+    &-wrapper {
+      &-status {
+        margin: 20px 0 20px 0;
+      }
+    }
+  }
+}
+
+.main {
+  .contest-slider-card-info {
+    width: 100%;
+  }
+}
