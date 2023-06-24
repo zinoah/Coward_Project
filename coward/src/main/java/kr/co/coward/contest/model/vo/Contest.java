@@ -10,5 +10,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Contest {
-
+	private int contestNo;
+	private int memberNo;
+	private String contestTitle;
+	private int typeNo;
+	private String subject;
+	private String qualification;
+	private String addInfo;
+	private String createDate;
+	private String endDate;
+	private String skill;
+	private int price;
+	private String thumbnail;
+	private int adNo;
+	private String winner;
 }
