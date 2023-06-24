@@ -2,4 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="contestMapper">
 
+
+	<resultMap type="contest" id="contest_rm">
+		<id property="contestNo" 		column="CONTEST_NO"/>
+		<result property="contestNo" 		column="MEMBER_NO"/>
+		<result property="contestTitle" 	column="CONTEST_TITLE"/>
+		<result property="typeNo" 		column="TYPE_NO"/>
+		<result property="subject" 	column="SUBJECT"/>
+		<result property="qualification" 	column="QUALIFICATION"/>
+		<result property="addInfo" 		column="ADD_INFOMATION"/>
+		<result property="createDate" 	column="CREATE_DATE"/>
+		<result property="endDate" 	column="END_DATE"/>
+		<result property="skill"    column="SKILL"/>
+		<result property="price" 	column="PRICE"/>
+		<result property="thumbnail" 	column="THUMBNAIL"/>
+		<result property="adNo" 	column="AD_NO"/>
+		<result property="winner" 	column="WINNER"/>
+	</resultMap>
 </mapper>
