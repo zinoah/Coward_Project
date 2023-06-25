@@ -24,32 +24,63 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     <jsp:include page="/WEB-INF/views/common/nav.jsp" />
 
-    <div class="banner-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="banner-top-wrapper">
-              <div class="banner-info">
-                <h3 class="main-title">
-                  Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트!
-                </h3>
-                <p class="sub-title sm-hidden">
-                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
-                </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
-              </div>
-              <div class="banner-image">
-                <img
-                  src="${contextPath}/resources/assets/images/suprise-box.svg"
-                  aria-hidden
-                />
+    <!-- Note: 상단 광고 슬라이더 배너 -->
+    <div class="banner-slider">
+      <div class="banner-carousel">
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="banner-item">
+                  <div class="banner-info">
+                    <div class="tag-gray">내일배움코스111</div>
+                    <h1 class="title">
+                      현업에서 사용하는 <br />
+                      데이터 분석법 알고 싶어?
+                    </h1>
+                    <span class="subtitle"
+                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                    >
+                  </div>
+                  <div class="banner-image">
+                    <img
+                      src="${contextPath}/resources/assets/images/dummy/banner-img-1.svg"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="banner-item">
+                  <div class="banner-info">
+                    <div class="tag-gray">222</div>
+                    <h1 class="title">
+                      현업에서 사용하는 <br />
+                      데이터 분석법 알고 싶어?
+                    </h1>
+                    <span class="subtitle"
+                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                    >
+                  </div>
+                  <div class="banner-image">
+                    <img
+                      src="${contextPath}/resources/assets/images/dummy/banner-img-2.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-carousel-controlls">
+        <button><i class="ic-chevron is-prev"></i></button>
+        <button><i class="ic-chevron is-next"></i></button>
       </div>
     </div>
 
@@ -1214,5 +1245,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/slider.js"></script>
     <script src="${contextPath}/resources/js/home.js"></script>
+    <script src="${contextPath}/resources/js/banner-slider.js"></script>
   </body>
 </html>
