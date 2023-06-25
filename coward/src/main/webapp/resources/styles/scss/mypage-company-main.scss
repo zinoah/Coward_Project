@@ -1,10 +1,8 @@
 @import "./main";
 
 .profile-wrapper {
-  &-wrapper {
-    @include responsive(D) {
-      width: 850px;
-    }
+  @include responsive(D) {
+    width: 850px;
   }
 }
 
@@ -20,10 +18,49 @@
       }
     }
   }
+
+  @include responsive(D) {
+    .btn {
+      &-wrapper {
+        &-status {
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
 
-.main {
-  .contest-slider-card-info {
+.contest-slider-card {
+  width: 100%;
+}
+
+/**************************스크롤*******************************/
+
+.scroll {
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .box {
+    max-width: 460px;
     width: 100%;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+  }
+  #tab ul {
+    white-space: nowrap;
+    overflow-x: auto;
+    text-align: center;
+  }
+  #tab ul li {
+    display: inline-block;
+    padding: 10px 10px;
+    margin-right: 10px;
+  }
+
+  @include responsive(T) {
   }
 }
