@@ -28,7 +28,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="contest-create-wrapper">
                   <div class="contest-create-form">
                     <div class="contest-create-form-title">
-                      <div>👉 어떤 공모전 인가요?</div>
+                      <div>
+                        <h3>👉 어떤 공모전 인가요?</h3>
+                      </div>
                       <div class="contest-create-form-title-tooltip-link">
                         <i class="ic-question-circle"></i>
                         <div class="contest-create-form-title-tooltip-board">
@@ -130,77 +132,117 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <span>요구 기술</span><span>*</span>
                         </div>
                         <div>
-                          <label class="tag-gray" name="skill">
+                          <label class="tag-gray">
                             JAVA
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="JAVA" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Spring
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Spring"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Spring Boot
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Spring Boot"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >PHP
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="PHP" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Oracle
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Oracle"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >MySQL
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="MySql" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Python
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Python"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Kotlin
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Kotlin"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Swift
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Swift "
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >C++
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="C++" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >C#
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="C#" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >HTML
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="HTML" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >CSS
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="CSS" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >JavaScript
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="JavaScript"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >jQuery
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="jQuery"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Vue.js
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Vue.js"
+                            />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >React
-                            <input type="checkbox" />
+                            <input type="checkbox" name="skill" value="React" />
                           </label>
-                          <label class="tag-gray" name="skill"
+                          <label class="tag-gray"
                             >Node.js
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              name="skill"
+                              value="Node.js"
+                            />
                           </label>
                         </div>
                       </div>
@@ -226,7 +268,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         </div>
                         <div class="contest-create-form-reward-price-box">
                           <div class="price-bar">
-                            <div></div>
+                            <input
+                              type="range"
+                              id="price"
+                              min="100"
+                              max="1000"
+                              step="50"
+                              value="100"
+                            />
                           </div>
                           <div class="price-box">
                             <div class="price-box-inner-box">
@@ -235,7 +284,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               </div>
                               <div>
                                 <div class="peple-count">
-                                  <input type="number" />
+                                  <input type="number" id="count" />
                                   <div>
                                     <div id="up-count-btn">
                                       <i class="ic-chevron"></i>
@@ -399,18 +448,18 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         >
                           <div>
                             <span>공모전 상금</span>
-                            <span>300,000</span>
+                            <span>0</span>
                           </div>
                           <div>
-                            <span>프리미엄</span>
-                            <span>500,000</span>
+                            <span>상품</span>
+                            <span>0</span>
                           </div>
                         </div>
                         <div
                           class="contest-create-summary-sticky-box-price-total"
                         >
                           <span>총 금액</span>
-                          <span>800,000원</span>
+                          <span>0원</span>
                         </div>
                         <div
                           class="contest-create-summary-sticky-box-price-btn"
