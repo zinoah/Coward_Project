@@ -255,7 +255,7 @@
 
     &-bar {
       @include column-flexbox(start, start);
-      @include text-style(18);
+      @include text-style(16);
 
       padding: 14px 0;
     }
