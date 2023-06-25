@@ -46,13 +46,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     alt=""
                   />
                 </div>
+                
                 <div class="header-user-image">
                   <img
                     src="${contextPath}/resources/assets/images/chat-icon.svg"
                     alt=""
                   />
                 </div>
-                <a href="${contextPath}/WEB-INF/views/mypage/person-main.jsp">
+                
+                 <a href="${contextPath}/mypage/myPage/info">
                 <div class="avatar-32 header-user-image">
                   <c:choose>
                     <c:when test="${empty loginMember.profileImg }">

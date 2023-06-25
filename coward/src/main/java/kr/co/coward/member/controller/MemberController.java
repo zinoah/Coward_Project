@@ -26,7 +26,7 @@ public class MemberController {
 	@GetMapping("/testLogin")
 	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra) {
 
-		logger.info("로그인 기능 수행됨");
+		logger.info("濡쒓렇�씤 湲곕뒫 �닔�뻾�맖");
 
 		String id = "test01";
 		String pw = "pass01!";
@@ -38,12 +38,12 @@ public class MemberController {
 
 		Member loginMember = service.login(testLoginMember);
 
-		if (loginMember != null) { // login 성공 시
+		if (loginMember != null) { // login �꽦怨� �떆
 			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
 
 		} else {
 
-			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+			ra.addFlashAttribute("message", "�븘�씠�뵒 �삉�뒗 鍮꾨�踰덊샇媛� �씪移섑븯吏� �븡�뒿�땲�떎.");
 		}
 
 		return "redirect:/";

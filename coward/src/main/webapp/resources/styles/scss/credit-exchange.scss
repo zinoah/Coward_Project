@@ -1,6 +1,10 @@
 @import "./main.scss";
 
 /***** 모바일 *****/
+.banner-top {
+  margin: 0;
+}
+
 /* 네비게이션 바 */
 .category {
   width: 100%;
@@ -32,17 +36,71 @@
     margin-bottom: 10px;
   }
   p {
-    width: 80px;
+    width: 75px;
     font-weight: 700;
     text-align: left;
   }
+
+  input {
+    text-align: center;
+    padding-bottom: 2px;
+  }
 }
 
+.bank {
+  font-size: 12px;
+}
+
+.name input {
+  width: 70%;
+  border-bottom: 1px solid $border;
+}
+
+.ssn input {
+  width: 70%;
+  border-bottom: 1px solid $border;
+}
 .credit-box {
+  @include column-flexbox;
   border: 1px solid $border;
   border-radius: 10px;
   padding: 15px;
+  margin-top: 10px;
+
+  input {
+    @include text-style(12);
+    width: 70%;
+    height: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $border;
+  }
+
+  .money-btn {
+    @include flexbox(between);
+    // justify-content: space-evenly;
+    width: 212px;
+    font-size: 10px;
+    margin: 0;
+
+    button {
+      border: 1px solid $border;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  }
 }
 .submit-btn {
   @include flexbox;
+}
+
+.account-number input {
+  @include text-style(12);
+  width: 70%;
+  border-bottom: 1px solid $border;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
