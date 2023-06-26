@@ -184,39 +184,28 @@
 }
 
 .banner-slider {
-  $banner-slider-bgc: (
-    1: #2656f6,
-    2: #5f5e5e,
-    3: #1a9a61,
-    4: #7f52ff,
-    5: #ffcfcf,
-  );
-
+  height: 260px;
   margin-bottom: $around-main-content;
-  background-color: map-get($banner-slider-bgc, 3);
 
   .banner-carousel {
     .banner-item {
-      @include flexbox(between);
+      @include column-flexbox;
 
       .banner-info {
         .tag-gray {
-          margin-bottom: 16px;
+          margin-bottom: 12px;
         }
 
         .title {
           @include text-style(24, $white);
-          margin-bottom: 20px;
-        }
-
-        .subtitle {
-          @include text-style(18, $white);
+          margin: 20px 0;
         }
       }
 
       .banner-image {
         width: auto;
-        height: 250px;
+        height: 160px;
+        margin-bottom: 10px;
 
         img {
           display: block;
@@ -225,18 +214,45 @@
         }
       }
     }
+  }
 
-    &-controlls {
-      position: absolute;
-      left: 0;
-      bottom: 0;
+  @include responsive(T) {
+    position: relative;
 
-      .ic-chevron {
-        &.is-prev {
+    .banner-carousel {
+      .banner-item {
+        @include flexbox(between);
+        flex-direction: row;
+
+        .banner-info {
+          .title {
+            @include text-style(24, $white);
+            margin-bottom: 20px;
+          }
+
+          .subtitle {
+            @include text-style(18, $white);
+          }
         }
 
-        &.is-next {
-          transform: translateX(90deg);
+        .banner-image {
+          height: 250px;
+        }
+      }
+
+      &-controlls {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        .ic-chevron {
+          color: $white;
+          font-size: 14px;
+
+          &.is-next {
+            display: block;
+            transform: rotate(-180deg);
+          }
         }
       }
     }

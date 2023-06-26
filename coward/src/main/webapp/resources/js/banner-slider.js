@@ -3,11 +3,12 @@ const bannerSlider = tns({
   container: ".banner-carousel",
   constrols: true,
   controlsContainer: ".banner-carousel-controlls",
+  mode: "gallery",
   items: 1,
   nav: false,
   autoplay: true,
   autoplayTimeout: 7000,
   autoplayHoverPause: true,
   autoplayButtonOutput: false,
-  speed: 600,
+  speed: 1500,
 });

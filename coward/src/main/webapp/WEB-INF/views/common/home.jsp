@@ -27,18 +27,18 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- Note: 상단 광고 슬라이더 배너 -->
     <div class="banner-slider">
       <div class="banner-carousel">
-        <div>
+        <div style="background-color: #2656f6">
           <div class="container">
             <div class="row">
               <div class="col-sm-4">
                 <div class="banner-item">
                   <div class="banner-info">
-                    <div class="tag-gray">내일배움코스111</div>
+                    <div class="tag-gray lg-only">내일배움코스111</div>
                     <h1 class="title">
                       현업에서 사용하는 <br />
                       데이터 분석법 알고 싶어?
                     </h1>
-                    <span class="subtitle"
+                    <span class="subtitle lg-only"
                       >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
                     >
                   </div>
@@ -52,18 +52,18 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </div>
           </div>
         </div>
-        <div>
+        <div style="background-color: #5f5e5e">
           <div class="container">
             <div class="row">
               <div class="col-sm-4">
                 <div class="banner-item">
                   <div class="banner-info">
-                    <div class="tag-gray">222</div>
+                    <div class="tag-gray lg-only">내일배움코스111</div>
                     <h1 class="title">
                       현업에서 사용하는 <br />
                       데이터 분석법 알고 싶어?
                     </h1>
-                    <span class="subtitle"
+                    <span class="subtitle lg-only"
                       >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
                     >
                   </div>
@@ -77,8 +77,85 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </div>
           </div>
         </div>
+        <div style="background-color: #1a9a61">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="banner-item">
+                  <div class="banner-info">
+                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <h1 class="title">
+                      현업에서 사용하는 <br />
+                      데이터 분석법 알고 싶어?
+                    </h1>
+                    <span class="subtitle lg-only"
+                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                    >
+                  </div>
+                  <div class="banner-image">
+                    <img
+                      src="${contextPath}/resources/assets/images/dummy/banner-img-3.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background-color: #7f52ff">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="banner-item">
+                  <div class="banner-info">
+                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <h1 class="title">
+                      현업에서 사용하는 <br />
+                      데이터 분석법 알고 싶어?
+                    </h1>
+                    <span class="subtitle lg-only"
+                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                    >
+                  </div>
+                  <div class="banner-image">
+                    <img
+                      src="${contextPath}/resources/assets/images/dummy/banner-img-4.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background-color: #fd9c9c">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="banner-item">
+                  <div class="banner-info">
+                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <h1 class="title">
+                      현업에서 사용하는 <br />
+                      데이터 분석법 알고 싶어?
+                    </h1>
+                    <span class="subtitle lg-only"
+                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                    >
+                  </div>
+                  <div class="banner-image">
+                    <img
+                      src="${contextPath}/resources/assets/images/dummy/banner-img-5.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="banner-carousel-controlls">
+
+      <!-- FIXME: 위치 다시 잡기 -->
+      <div class="banner-carousel-controlls lg-only">
         <button><i class="ic-chevron is-prev"></i></button>
         <button><i class="ic-chevron is-next"></i></button>
       </div>
