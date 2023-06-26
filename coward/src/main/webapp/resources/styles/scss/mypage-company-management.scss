@@ -1,0 +1,98 @@
+@import "./main";
+
+.profile-wrapper {
+  @include responsive(D) {
+    width: 850px;
+  }
+}
+
+.mypage {
+  .title {
+    @include text-style(18);
+    font-weight: bold;
+    margin-bottom: 10px;
+    &-wrapper {
+      border-bottom: 1px solid $border;
+      margin-bottom: $section-title-bottom-lg;
+    }
+  }
+  .btn {
+    &-secondary {
+      background-color: $background;
+    }
+
+    &-wrapper {
+      &-status {
+        margin: 20px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    .btn {
+      &-wrapper {
+        &-status {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+/**************************스크롤*******************************/
+
+.scroll {
+  .contest-slider-card {
+    width: 100%;
+  }
+
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .box {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #tab ul {
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  #tab ul li {
+    display: inline-block;
+    margin: 15px;
+  }
+
+  @include responsive(T) {
+    .box {
+      max-width: 100%;
+      height: 550px;
+      overflow-y: auto;
+    }
+
+    #tab {
+      @include flexbox;
+    }
+    #tab ul {
+      width: 700px;
+      white-space: normal;
+    }
+
+    .contest-slider-card {
+      width: 195px;
+    }
+  }
+
+  @include responsive(D) {
+    #tab ul {
+      width: 100%;
+    }
+
+    .contest-slider-card {
+      width: 100%;
+    }
+  }
+}
