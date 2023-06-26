@@ -47,15 +47,17 @@
     }
     input[type="radio"] {
       &:checked + label {
-        border: 1.5px solid $blue;
-        background-color: $blue;
+        border: 1.5px solid $blue-dark;
+        background-color: $blue-dark;
         color: white;
         transition: background-color 200ms ease-in-out;
       }
     }
 
     input[type="radio"]:hover:not(:checked) + label {
-      border: 1.5px solid $blue-dark;
+      border: 1.5px solid $blue-light;
+      background-color: $blue-light;
+      color: white;
     }
 
     input[type="radio"]:active + label {

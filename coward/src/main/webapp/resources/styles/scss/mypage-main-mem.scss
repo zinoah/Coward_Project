@@ -5,11 +5,12 @@
 .category {
   width: 100%;
   background-color: $background;
-
+  margin-bottom: 50px;
   &-bar {
     @include flexbox(around);
     font-size: 12px;
     padding: 14px 0;
+
     text-align: center;
   }
 }
@@ -145,8 +146,9 @@
 /***** 태블릿 *****/
 @include responsive(T) {
   /* 마이페이지의 경우 nav바랑 떨어져서 margin 없애줌 */
-  .banner-top {
-    margin: 0;
+
+  .category {
+    margin-top: -50px;
   }
   /* 네비게이션 바 */
   .category-bar {
@@ -225,6 +227,10 @@
     height: 700px;
   }
 
+  .category {
+    margin-top: 0;
+  }
+
   /* body에 relative 줄 경우 배치가 이상해져서 div 하나 생성 */
   .full {
     position: relative;
@@ -237,6 +243,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 1100px;
     height: 715px;
     border-radius: 10px;
     box-shadow: $card-shadow;
@@ -250,13 +257,14 @@
 
     &-bar {
       @include column-flexbox(start, start);
-      @include text-style(20);
 
+      @include text-style(20);
       padding: 14px 0;
+      margin-bottom: 0;
     }
 
     li {
-      padding: 5px 0 5px 10px;
+      padding: 5px 0 5px 0;
       text-align: left;
     }
 
@@ -273,7 +281,7 @@
     border-bottom: 1px solid $border;
 
     &-wrapper {
-      padding: 15px 25px;
+      padding: 25px;
       height: 695px;
       border: 1px solid $border;
       border-radius: 10px;
@@ -303,10 +311,11 @@
   }
   .introduce-title {
     margin-left: 0;
+    margin-bottom: 12px;
   }
   /* 한줄 소개 */
   .one-liner {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     textarea {
       @include text-style(12);
       width: 520px;
@@ -384,7 +393,7 @@
     overflow: hidden;
 
     p {
-      margin-bottom: 17px;
+      margin: 0 0 20px 15px;
     }
   }
   /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
@@ -410,12 +419,13 @@
   .contest-card {
     cursor: pointer;
     margin-top: 0;
-    position: relative;
+    // position: relative;
   }
 
   .contest-slider {
-    @include flexbox;
+    @include flexbox(start, center);
     height: 250px;
+    position: relative;
   }
 
   .slider-wrapper {
@@ -428,11 +438,11 @@
   }
 
   aside {
-    height: 650px;
+    height: 630px;
   }
 
   .category-web {
     height: 613px;
-    margin: 0 20px 0 20px;
+    margin: 0;
   }
 }

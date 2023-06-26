@@ -1,66 +1,119 @@
 @import "./main";
 
-.profile-wrapper {
-  @include responsive(D) {
-    width: 850px;
+.profile {
+  &-wrapper {
+    @include responsive(D) {
+      width: 850px;
+    }
   }
 }
 
 .mypage {
-  .btn {
-    &-secondary {
-      background-color: $background;
-    }
-
+  .title {
+    @include text-style(18);
+    font-weight: bold;
+    margin-bottom: 2px;
     &-wrapper {
-      &-status {
-        margin: 20px 0 20px 0;
+      border-bottom: 1px solid $border;
+    }
+  }
+
+  p {
+    @include text-style(16);
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+  &-img {
+    &-wrapper {
+      @include flexbox;
+      margin: 30px;
+    }
+  }
+
+  .ic-camera-relative {
+    position: relative;
+  }
+
+  .ic-camera-wrapper {
+    @include flexbox;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $background;
+    cursor: pointer;
+  }
+
+  .ic-camera {
+    font-size: 13px;
+    color: $secondary;
+    position: absolute;
+  }
+
+  &-input {
+    &-box {
+      textarea {
+        @include text-style(14);
+        width: 100%;
+        border: 1px solid $border;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
       }
     }
   }
 
-  @include responsive(D) {
-    .btn {
-      &-wrapper {
-        &-status {
-          margin-top: 0;
+  &-developer {
+    &-card {
+      &-scroll {
+        height: 200px;
+        overflow: auto;
+      }
+
+      border: 1px solid $border;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      .card-content {
+        @include flexbox(start);
+
+        width: 100%;
+      }
+
+      .nick-name {
+        @include text-style(16);
+        font-weight: bold;
+        &-wrapper {
+          @include flexbox(start);
+          flex-wrap: wrap;
         }
       }
+
+      p {
+        @include text-style(14);
+        font-weight: normal;
+        padding: 2px;
+        margin-right: 5px;
+      }
+
+      .user-type {
+        @include text-style(12);
+        @include flexbox;
+        color: $blue;
+        border: 1px solid $blue;
+        border-radius: 10px;
+        width: 35px;
+        padding: 2px;
+      }
     }
   }
-}
 
-.contest-slider-card {
-  width: 100%;
-}
-
-/**************************스크롤*******************************/
-
-.scroll {
-  ul {
-    list-style: none;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  .box {
-    max-width: 460px;
-    width: 100%;
-    border: 1px solid #ccc;
-    margin: 0 auto;
-  }
-  #tab ul {
-    white-space: nowrap;
-    overflow-x: auto;
-    text-align: center;
-  }
-  #tab ul li {
-    display: inline-block;
-    padding: 10px 10px;
-    margin-right: 10px;
-  }
-
-  @include responsive(T) {
+  .avatar-32 {
+    margin: 20px;
   }
 }

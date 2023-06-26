@@ -1,19 +1,15 @@
 @import "./main";
 
-// 수정 - 현재 비밀번호 확인
+.secession {
+  @include text-style(18, $primary);
+  font-weight: 600;
+}
+
+.title {
+  margin-top: 70px;
+}
+
 .pw {
-  &-change {
-    @include text-style(18, $primary);
-    font-weight: 600;
-  }
-
-  &-change-box {
-  }
-
-  &-change-box2 {
-    //display: none;
-  }
-
   &-input-title {
     @include text-style(16);
   }
@@ -23,10 +19,6 @@
     width: 100%;
     padding-left: 10px;
   }
-}
-
-.title {
-  margin-top: 70px;
 }
 
 .line {
@@ -64,32 +56,22 @@
   margin-bottom: 30px;
 }
 
-.validation {
-  @include text-style(12, $secondary);
-}
-
 @include responsive(T) {
-  .pw {
-    &-change-wrapper {
+  .secession {
+    &-wrapper {
       @include flexbox;
     }
 
-    &-change-box {
+    &-box {
       @include column-flexbox(center, start);
       width: 370px;
       height: 500px;
     }
+  }
 
-    &-change-box2 {
-      @include column-flexbox(center, start);
-      width: 370px;
-      height: 500px;
-    }
-
-    &-input-title {
-      @include text-style(16);
-      font-weight: 600;
-    }
+  .pw-input-title {
+    @include text-style(16);
+    font-weight: 600;
   }
 }
 
@@ -97,6 +79,7 @@
   .profile-wrapper {
     width: 845px;
   }
+
   .title {
     margin-top: 5px;
   }

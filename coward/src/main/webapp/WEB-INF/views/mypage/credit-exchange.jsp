@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/credit-exchange.css"
+      href="${contextPath}/resources/styles/css/credit-exchange.css"
     />
     <title>Document</title>
   </head>
@@ -19,7 +23,7 @@
                 <h1 class="logo">
                   <a href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
                       alt="Coward"
                     />
                   </a>
@@ -112,7 +116,7 @@
                     <div class="profile lg-only">
                       <div class="profile-img avatar">
                         <img
-                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          src="${contextPath}/resources/assets/images/default-user-img.png"
                         />
                       </div>
                       <div class="profile-info">
@@ -122,11 +126,11 @@
                     </div>
 
                     <ul class="category-bar">
-                      <li><a href="#">내 정보</a></li>
-                      <li><a href="#">공모전 관리</a></li>
-                      <li><a href="#">크레딧 인출</a></li>
-                      <li><a href="#">프로필 수정</a></li>
-                      <li><a href="#">회원 탈퇴</a></li>
+                  <li><a href="#">내 정보</a></li>
+                       <a href="${contextPath}/mypage/myPage/progress"><li>공모전 관리</li></a>
+                      <li>크레딧 인출</li>
+                      <a href="${contextPath}/mypage/myPage/editP"><li>프로필 수정</li></a>
+                      <li>회원 탈퇴</li>
                     </ul>
                   </div>
                 </div>
@@ -206,7 +210,7 @@
             <h1 class="logo">
               <a href="#">
                 <img
-                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  src="${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
                 />
               </a>
@@ -258,18 +262,18 @@
                 <div class="icon-link">
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/github.svg"
+                      src="${contextPath}/resources/assets/images/github.svg"
                       alt="Github 바로가기"
                   /></a>
                   <a class="icon-link-item" href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/notion.svg"
+                      src="${contextPath}/resources/assets/images/notion.svg"
                       alt="Notion 바로가기"
                     />
                   </a>
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/figma.svg"
+                      src="${contextPath}/resources/assets/images/figma.svg"
                       alt="Figma 바로가기"
                   /></a>
                 </div>

@@ -5,20 +5,36 @@
   justify-content: center;
 }
 
-.background-img {
-  width: 100%;
-  height: 100%;
-  background-color: $tertiary;
-  position: absolute;
-  opacity: 0.8;
-}
-
-.agree-box {
+.agree-box1 {
   width: 290px;
   height: 420px;
   border-radius: 10px;
   background-color: $white;
-  z-index: 1;
+  z-index: $agree-modal-level;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.agree-box2 {
+  width: 290px;
+  height: 420px;
+  border-radius: 10px;
+  background-color: $white;
+  z-index: $agree-modal-level;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.agree-box3 {
+  width: 290px;
+  height: 420px;
+  border-radius: 10px;
+  background-color: $white;
+  z-index: $agree-modal-level;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -52,12 +68,12 @@ strong {
   font-size: 10pt;
 }
 
-span {
+.yellow {
   border-bottom: 4px solid $yellow;
   padding-bottom: 3px;
 }
 
-.close {
+.close1 {
   width: 24px;
   height: 24px;
   position: relative;
@@ -69,6 +85,29 @@ span {
   cursor: pointer;
 }
 
+.close2 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 265px;
+  bottom: 27px;
+
+  color: $border;
+
+  cursor: pointer;
+}
+
+.close3 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 265px;
+  bottom: 27px;
+
+  color: $border;
+
+  cursor: pointer;
+}
 .agree-content {
   font-size: 8pt;
 }
