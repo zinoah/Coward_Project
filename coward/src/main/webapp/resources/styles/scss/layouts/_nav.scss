@@ -65,6 +65,7 @@
       .ic-search {
         @include pos-center-y;
         @include text-style(17, $border);
+        font-size: 18px;
         right: 16px;
       }
     }

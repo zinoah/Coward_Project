@@ -2,6 +2,14 @@
 
 $input-box-margin: 24px;
 
+.ic-check-small {
+  color: green;
+}
+
+.ic-cross-small {
+  color: red;
+}
+
 .create-container {
   .background-banner {
     position: relative;
@@ -42,13 +50,15 @@ $input-box-margin: 24px;
             height: 30px;
             margin-left: 10px;
             position: relative;
-            img {
+            top: 2px;
+            i {
               cursor: pointer;
+              color: $blue;
             }
           }
           &-board {
             width: 460px;
-            //display: none;
+            display: none;
             background-color: $white;
             border: 1.5px solid $blue;
             border-radius: 10px;
@@ -130,6 +140,10 @@ $input-box-margin: 24px;
           border: 1px solid $border;
           border-radius: 5px;
           text-indent: 16px;
+
+          &:focus {
+            border-color: $blue;
+          }
         }
       }
 
@@ -146,13 +160,21 @@ $input-box-margin: 24px;
           }
         }
 
-        input {
+        select {
           @include text-style(12);
           width: 100%;
           height: 35px;
           border: 1px solid $border;
           border-radius: 5px;
           text-indent: 16px;
+
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+
+          &:focus {
+            border-color: $blue;
+          }
         }
       }
 
@@ -171,6 +193,10 @@ $input-box-margin: 24px;
           border-radius: 5px;
           resize: none;
           padding: 10px;
+
+          &:focus {
+            border-color: $blue;
+          }
         }
       }
 
@@ -189,6 +215,10 @@ $input-box-margin: 24px;
           border-radius: 5px;
           resize: none;
           padding: 10px;
+
+          &:focus {
+            border-color: $blue;
+          }
         }
       }
 
@@ -207,6 +237,10 @@ $input-box-margin: 24px;
           border-radius: 5px;
           resize: none;
           padding: 10px;
+
+          &:focus {
+            border-color: $blue;
+          }
         }
       }
 
@@ -230,6 +264,10 @@ $input-box-margin: 24px;
           border: 1px solid $border;
           border-radius: 5px;
           padding: 10px;
+
+          &:focus {
+            border-color: $blue;
+          }
         }
       }
 
@@ -254,7 +292,12 @@ $input-box-margin: 24px;
                 color: $white;
                 background-color: $yellow;
               }
+              &.checked {
+                color: $white;
+                background-color: $yellow;
+              }
             }
+
             input {
               display: none;
             }
@@ -321,11 +364,10 @@ $input-box-margin: 24px;
               @include flexbox;
               padding: 0 20px 0 20px;
               flex-basis: 15%;
-              div {
+              input {
                 width: 100%;
                 height: 7px;
-                background-color: $blue;
-                border-radius: 10px;
+                cursor: grab;
               }
             }
             &-box {
@@ -341,18 +383,14 @@ $input-box-margin: 24px;
                 height: 100%;
                 width: 100%;
 
-                input[type="number"] {
+                input[type="text"] {
                   background-color: $white;
                   width: 100%;
                   height: 40px;
                   border: 1px solid $border;
                   border-radius: 5px;
-                }
-
-                input[type="number"]::-webkit-outer-spin-button,
-                input[type="number"]::-webkit-inner-spin-button {
-                  -webkit-appearance: none;
-                  margin: 0;
+                  text-align: end;
+                  padding: 0 25px 0 0;
                 }
 
                 span {
@@ -498,7 +536,7 @@ $input-box-margin: 24px;
                 }
               }
             }
-            .general {
+            #general {
               margin-bottom: 30px;
               & > div {
                 &:nth-child(1) {
@@ -509,7 +547,7 @@ $input-box-margin: 24px;
                 }
               }
             }
-            .advanced {
+            #advanced {
               margin-bottom: 30px;
               & > div {
                 &:nth-child(1) {
@@ -520,7 +558,7 @@ $input-box-margin: 24px;
                 }
               }
             }
-            .premium {
+            #premium {
               margin-bottom: 30px;
               & > div {
                 &:nth-child(1) {
@@ -530,6 +568,10 @@ $input-box-margin: 24px;
                   border-radius: 20px 0px 0px 20px;
                 }
               }
+            }
+            .product-card-is-active {
+              border: 1px solid $blue;
+              box-shadow: $card-shadow;
             }
           }
         }
@@ -554,9 +596,7 @@ $input-box-margin: 24px;
       &-sticky-box {
         height: 560px;
         width: 100%;
-        border-radius: 20px;
         background-color: $white;
-        box-shadow: $card-shadow;
         position: sticky;
         top: 24px;
         padding: 20px;
@@ -582,16 +622,16 @@ $input-box-margin: 24px;
 
           img {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
           }
         }
 
         &-date {
           span {
-            &:nth-child(2) {
+            margin-right: 5px;
+            &:nth-child(2n) {
               color: $secondary;
-              margin-left: 10px;
             }
           }
         }
@@ -629,7 +669,6 @@ $input-box-margin: 24px;
 
             span {
               &:last-child {
-                margin-left: 10px;
                 font-weight: 700;
               }
             }
@@ -708,8 +747,11 @@ $input-box-margin: 24px;
               margin-bottom: 40px;
               & > div {
                 flex-direction: column;
+                &:hover {
+                  cursor: pointer;
+                }
               }
-              .general {
+              #general {
                 height: 250px;
                 margin-bottom: 0px;
                 & > div {
@@ -725,7 +767,7 @@ $input-box-margin: 24px;
                   }
                 }
               }
-              .advanced {
+              #advanced {
                 height: 250px;
                 margin-bottom: 0px;
                 & > div {
@@ -741,7 +783,7 @@ $input-box-margin: 24px;
                   }
                 }
               }
-              .premium {
+              #premium {
                 height: 250px;
                 margin-bottom: 0px;
                 & > div {

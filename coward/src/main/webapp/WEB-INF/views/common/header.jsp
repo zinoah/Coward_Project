@@ -9,9 +9,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="header-wrapper">
           <div class="header-left">
             <h1 class="logo">
-              
               <a href="${contextPath}">
-
                 <img
                   src="${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
@@ -40,37 +38,31 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </button>
               </c:when>
               <c:otherwise>
-                <div class="header-user-image">
-                  <img
-                    src="${contextPath}/resources/assets/images/bell-icon.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="header-user-image">
-                  <img
-                    src="${contextPath}/resources/assets/images/chat-icon.svg"
-                    alt=""
-                  />
-                </div>
+                <button class="header-user-image">
+                  <i class="ic-bell"></i>
+                </button>
+                <a class="header-user-image" href="#">
+                  <i class="ic-message"></i>
+                </a>
                 <a href="${contextPath}/WEB-INF/views/mypage/person-main.jsp">
-                <div class="avatar-32 header-user-image">
-                  <c:choose>
-                    <c:when test="${empty loginMember.profileImg }">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="변경 프로필 사진"
-                        id="profile-image"
-                      />
-                    </c:when>
-                    <c:otherwise>
-                      <img
-                        src="${contextPath}/${loginMember.profileImg}"
-                        alt="변경 프로필 사진"
-                        id="profile-image"
-                      />
-                    </c:otherwise>
-                  </c:choose>
-                </div>
+                  <div class="avatar-24 header-user-image">
+                    <c:choose>
+                      <c:when test="${empty loginMember.profileImg }">
+                        <img
+                          src="${contextPath}/resources/assets/images/default-user-img.png"
+                          alt="변경 프로필 사진"
+                          id="profile-image"
+                        />
+                      </c:when>
+                      <c:otherwise>
+                        <img
+                          src="${contextPath}/${loginMember.profileImg}"
+                          alt="변경 프로필 사진"
+                          id="profile-image"
+                        />
+                      </c:otherwise>
+                    </c:choose>
+                  </div>
                 </a>
               </c:otherwise>
             </c:choose>

@@ -14,10 +14,8 @@
       href="/coward/src/main/webapp/resources/styles/css/mypage-company-main.css"
     />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
-    />
+    <script src="/coward/src/main/webapp/resources/js/slider.js"></script>
+
     <title>Coward | 마이페이지</title>
   </head>
 
@@ -164,354 +162,77 @@
                     <!------------------------- 여기서 부터 작성 --------------------------->
 
                     <div class="mypage">
-                      <div class="btn-wrapper-status">
-                        <button class="btn-32 btn-secondary">전체</button>
-                        <button class="btn-32 btn-secondary">모집중</button>
-                        <button class="btn-32 btn-secondary">선발중</button>
-                        <button class="btn-32 btn-secondary">완료</button>
+                      <div class="title-wrapper lg-only">
+                        <p class="title">내 정보</p>
                       </div>
-                    </div>
-                    <main class="scroll">
-                      <div class="box">
-                        <div id="tab">
-                          <ul>
-                            <li>
-                              <a href="#">
-                                <!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                            <li>
-                              <a href="#"
-                                ><!-- 해당 div부터 slider안에 들어갈 card요소-->
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="../assets/images/contest-gallery-card-img.svg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>식품 쇼핑몰 웹사이트 제작</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>상금</p>
-                                      <p>100만원</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>남은기간</p>
-                                      <p>1일</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <button class="btn-outlined btn-32">
-                                        참여하러가기
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div></a
-                              >
-                            </li>
-                          </ul>
+                      <div class="mypage-img-wrapper">
+                        <div class="ic-camera-relative">
+                          <div class="avatar">
+                            <img src="../assets/images/default-user-img.png" />
+                            <div class="ic-camera-wrapper">
+                              <i class="ic-camera"></i>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </main>
+
+                      <div class="mypage-input-box">
+                        <p>소개</p>
+                        <textarea
+                          cols="50"
+                          rows="5"
+                          placeholder="기업에 대해서 소개해 주세요!"
+                        ></textarea>
+                      </div>
+                      <div class="mypage-input-box">
+                        <p>관심있는 개발자</p>
+
+                        <div class="mypage-developer-card-scroll">
+                          <div class="mypage-developer-card">
+                            <div class="card-content">
+                              <div class="avatar-32">
+                                <img
+                                  src="../assets/images/default-user-img.png"
+                                />
+                              </div>
+                              <div class="nick-name-wrapper">
+                                <p class="nick-name">닉네임</p>
+                                <div class="user-type">back</div>
+                                <p>유능한 back 개발자 입니다</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mypage-developer-card">
+                            <div class="card-content">
+                              <div class="avatar-32">
+                                <img
+                                  src="../assets/images/default-user-img.png"
+                                />
+                              </div>
+                              <div class="nick-name-wrapper">
+                                <p class="nick-name">닉네임</p>
+                                <div class="user-type">back</div>
+                                <p>유능한 back 개발자 입니다</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mypage-developer-card">
+                            <div class="card-content">
+                              <div class="avatar-32">
+                                <img
+                                  src="../assets/images/default-user-img.png"
+                                />
+                              </div>
+                              <div class="nick-name-wrapper">
+                                <p class="nick-name">닉네임</p>
+                                <div class="user-type">back</div>
+                                <p>유능한 back 개발자 입니다</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                     <!-- 본문 끝 -->
                   </div>

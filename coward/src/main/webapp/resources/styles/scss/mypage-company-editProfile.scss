@@ -20,33 +20,12 @@
     margin-top: -50px;
   }
 }
-.ic-camera-relative {
-  position: relative;
-}
-
-.ic-camera-wrapper {
-  @include flexbox;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: $background;
-  cursor: pointer;
-}
-
-.ic-camera {
-  font-size: 13px;
-  color: $secondary;
-  position: absolute;
-}
 
 .mypage {
   .title {
     @include text-style(18);
     font-weight: bold;
-    margin-bottom: 2px;
+
     &-wrapper {
       border-bottom: 1px solid $border;
     }
@@ -60,6 +39,28 @@
       @include flexbox;
       margin: 30px;
     }
+  }
+
+  .ic-camera-relative {
+    position: relative;
+  }
+
+  .ic-camera-wrapper {
+    @include flexbox;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $background;
+    cursor: pointer;
+  }
+
+  .ic-camera {
+    font-size: 13px;
+    color: $secondary;
+    position: absolute;
   }
   &-input {
     @include text-style(14);
