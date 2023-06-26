@@ -8,7 +8,7 @@ const defaultContestSlider = tns({
   rewind: true,
   swipeAngle: false,
   nav: false,
-  autoplay: true,
+  // autoplay: true,
   autoplayTimeout: 5000,
   autoplayHoverPause: true,
   autoplayButtonOutput: false,
@@ -40,22 +40,21 @@ const defaultContestSlider = tns({
   },
 });
 
-
 // gallerycard hover시 이벤트
 const sliderCard = document.querySelectorAll(".contest-slider-card");
 
 const cardInfoTitle = document.querySelector(
   ".contest-slider-card-info-title > p"
 );
+
 sliderCard.forEach((card) =>
   card.addEventListener("mouseenter", function () {
-    console.log(card.lastElementChild);
-    card.lastElementChild.style.bottom = 0;
+    this.classList.add("is-hover");
   })
 );
 
 sliderCard.forEach((card) =>
   card.addEventListener("mouseleave", function () {
-    card.lastElementChild.style.bottom = "-95px";
+    this.classList.remove("is-hover");
   })
 );
