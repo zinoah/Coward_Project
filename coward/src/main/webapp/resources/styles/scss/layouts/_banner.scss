@@ -182,3 +182,79 @@
     }
   }
 }
+
+.banner-slider {
+  height: 260px;
+  margin-bottom: $around-main-content;
+
+  .banner-carousel {
+    .banner-item {
+      @include column-flexbox;
+
+      .banner-info {
+        .tag-gray {
+          margin-bottom: 12px;
+        }
+
+        .title {
+          @include text-style(24, $white);
+          margin: 20px 0;
+        }
+      }
+
+      .banner-image {
+        width: auto;
+        height: 160px;
+        margin-bottom: 10px;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    position: relative;
+
+    .banner-carousel {
+      .banner-item {
+        @include flexbox(between);
+        flex-direction: row;
+
+        .banner-info {
+          .title {
+            @include text-style(24, $white);
+            margin-bottom: 20px;
+          }
+
+          .subtitle {
+            @include text-style(18, $white);
+          }
+        }
+
+        .banner-image {
+          height: 250px;
+        }
+      }
+
+      &-controlls {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        .ic-chevron {
+          color: $white;
+          font-size: 14px;
+
+          &.is-next {
+            display: block;
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+  }
+}

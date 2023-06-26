@@ -8,9 +8,20 @@
       .header-button {
         padding: 25px 0;
 
-        i {
-          font-size: 12px;
+        .ic-hamburger {
+          font-size: 24px;
         }
+      }
+    }
+
+    .header-right {
+      display: flex;
+
+      .ic-bell,
+      .ic-message {
+        font-size: 24px;
+        color: $primary;
+        margin-right: 10px;
       }
     }
   }
