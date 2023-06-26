@@ -1,9 +1,45 @@
 @import "./main";
 
-.profile-wrapper {
-  @include responsive(D) {
-    width: 845px;
+.category {
+  @include responsive(T) {
+    margin-top: -50px;
   }
+
+  @include responsive(T) {
+    margin-top: 50px;
+  }
+}
+
+.profile {
+  &-wrapper {
+    @include responsive(D) {
+      width: 850px;
+    }
+  }
+  &-mypage {
+    margin-top: -50px;
+  }
+}
+.ic-camera-relative {
+  position: relative;
+}
+
+.ic-camera-wrapper {
+  @include flexbox;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $background;
+  cursor: pointer;
+}
+
+.ic-camera {
+  font-size: 13px;
+  color: $secondary;
+  position: absolute;
 }
 
 .mypage {
@@ -77,6 +113,11 @@
   }
 
   @include responsive(T) {
+    .ic-camera-wrapper {
+      bottom: 5px;
+      left: 100px;
+    }
+
     &-input {
       &-box {
         width: 45%;
@@ -101,6 +142,11 @@
     .btn-secondary {
       width: 20%;
     }
+
+    .ic-camera-wrapper {
+      top: 10;
+      left: 70px;
+    }
   }
 
   @include responsive(D) {
@@ -108,6 +154,10 @@
       &-box {
         width: 42%;
       }
+    }
+
+    .textarea-box {
+      margin-bottom: 25px;
     }
   }
 }

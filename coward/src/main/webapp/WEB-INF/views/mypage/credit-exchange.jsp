@@ -1,23 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-main-mem.css"
+      href="${contextPath}/resources/styles/css/credit-exchange.css"
     />
-
-    <link
-      rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-company-detail.css"
-    />
-    <title>Coward | 마이페이지</title>
+    <title>Document</title>
   </head>
-
   <body>
-    <!-- 헤더 -->
     <header class="header">
       <div class="container">
         <div class="row">
@@ -27,7 +23,7 @@
                 <h1 class="logo">
                   <a href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
                       alt="Coward"
                     />
                   </a>
@@ -66,7 +62,6 @@
         </div>
       </div>
     </header>
-
     <nav class="nav">
       <h2 class="visually-hidden">메뉴</h2>
       <div class="container">
@@ -102,17 +97,13 @@
         </div>
       </div>
     </nav>
-    <!-- 배너 -->
-    <!-- web-box 중앙 배치 위해 -->
     <div class="full">
       <div class="banner-top sm-hidden">
         <img src="../assets/images/mypage-banner.png" />
       </div>
 
       <!-- 웹 페이지 -->
-      <!-- 웹에서 헤더랑 푸터 사이 간격 주기 위해 사용 -->
       <div class="empty-box">
-        <!-- 네비 + 내용을 감싸는 박스(모든 페이지 크기 고정)-->
         <div class="web-box">
           <!-- 네비게이션 바 -->
 
@@ -123,25 +114,23 @@
                   <div class="col-sm-4 category-web">
                     <p class="profile-mypage lg-only">마이페이지</p>
                     <div class="profile lg-only">
-                      <div class="profile-img-box">
-                        <div class="profile-img avatar">
-                          <img
-                            src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
-                          />
-                        </div>
+                      <div class="profile-img avatar">
+                        <img
+                          src="${contextPath}/resources/assets/images/default-user-img.png"
+                        />
                       </div>
-
                       <div class="profile-info">
-                        <p class="profile-nick">삼성전자</p>
+                        <div class="profile-type">Back</div>
+                        <p class="profile-nick">빡과장</p>
                       </div>
                     </div>
 
                     <ul class="category-bar">
-                      <li><a href="#">내 정보</a></li>
-                      <li><a href="#">공모전 관리</a></li>
-                      <li><a href="#">크레딧 인출</a></li>
-                      <li><a href="#">프로필 수정</a></li>
-                      <li><a href="#">회원 탈퇴</a></li>
+                  <li><a href="#">내 정보</a></li>
+                       <a href="${contextPath}/mypage/myPage/progress"><li>공모전 관리</li></a>
+                      <li>크레딧 인출</li>
+                      <a href="${contextPath}/mypage/myPage/editP"><li>프로필 수정</li></a>
+                      <li>회원 탈퇴</li>
                     </ul>
                   </div>
                 </div>
@@ -150,67 +139,61 @@
           </aside>
 
           <!-- 본문 시작 -->
-          <main class="profile-mem">
+          <main class="credit-exchange">
             <div class="container">
               <div class="row">
                 <div class="col-sm-4">
-                  <div class="profile-wrapper">
-                    <!------------------------- 여기서 부터 작성 --------------------------->
-                    <div class="mypage">
-                      <div class="title-wrapper lg-only">
-                        <p class="title">프로필 수정</p>
-                      </div>
-
-                      <div class="mypage-img-wrapper">
-                        <div class="ic-camera-relative">
-                          <div class="avatar">
-                            <img src="../assets/images/default-user-img.png" />
-                            <div class="ic-camera-wrapper">
-                              <i class="ic-camera"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="mypage-input-box-wrapper">
-                        <div class="mypage-input-box">
-                          <p>회사명</p>
-                          <input
-                            type="text"
-                            placeholder="회사명 입력"
-                            class="mypage-input"
-                          />
-                        </div>
-                        <div class="mypage-input-box">
-                          <p>회사명</p>
-                          <select class="mypage-input">
-                            <option>지역선택</option>
-                            <option>서울</option>
-                            <option>인천</option>
-                            <option>충남</option>
-                            <option>경기</option>
-                            <option>경남</option>
+                  <div class="credit">
+                    <p class="introduce-title">크레딧 인출</p>
+                    <div class="form-box">
+                      <form>
+                        <div class="bank">
+                          <p>은행명</p>
+                          <select>
+                            <option value="1">농협 은행</option>
+                            <option value="2">우리 은행</option>
+                            <option value="3">신한 은행</option>
+                            <option value="4">하나 은행</option>
                           </select>
                         </div>
-                      </div>
 
-                      <div class="textarea-box">
-                        <div>
-                          <p>소개글</p>
-                          <textarea
-                            cols="50"
-                            rows="10"
-                            placeholder="기업에 대해서 소개해주세요!"
-                          ></textarea>
+                        <div class="account-number">
+                          <p>계좌 번호</p>
+                          <input
+                            type="number"
+                            placeholder="'-' 없이 숫자만 입력 해주세요"
+                          />
                         </div>
-                      </div>
 
-                      <div class="button-wrapper">
-                        <button class="btn-40 btn-secondary">완료</button>
-                      </div>
+                        <div class="name">
+                          <p>예금주</p>
+                          <input type="text" />
+                        </div>
+
+                        <div class="ssn">
+                          <p>주민 번호</p>
+                          <input type="text" placeholder="000000-0000000" />
+                        </div>
+                        <p>인출 금액</p>
+                        <div class="credit-box">
+                          <input
+                            type="number"
+                            placeholder="인출금액을 입력해주세요"
+                          />
+                          <div class="money-btn">
+                            <button>+100만원</button>
+                            <button>+50만원</button>
+                            <button>+10만원</button>
+                            <button>+5만원</button>
+                          </div>
+                        </div>
+                      </form>
                     </div>
-
-                    <!-- 본문 끝 -->
+                    <div class="submit-btn">
+                      <button type="submit" class="btn-primary btn-32">
+                        인출하기
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -219,7 +202,7 @@
         </div>
       </div>
     </div>
-    <!-- 푸터 -->
+
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -227,7 +210,7 @@
             <h1 class="logo">
               <a href="#">
                 <img
-                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  src="${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
                 />
               </a>
@@ -279,18 +262,18 @@
                 <div class="icon-link">
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/github.png"
+                      src="${contextPath}/resources/assets/images/github.svg"
                       alt="Github 바로가기"
                   /></a>
                   <a class="icon-link-item" href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/notion.png"
+                      src="${contextPath}/resources/assets/images/notion.svg"
                       alt="Notion 바로가기"
                     />
                   </a>
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/figma.png"
+                      src="${contextPath}/resources/assets/images/figma.svg"
                       alt="Figma 바로가기"
                   /></a>
                 </div>
@@ -314,8 +297,5 @@
         </address>
       </div>
     </footer>
-    <!-- tiny-slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="/coward/src/main/webapp/resources/js/mypage-slider.js"></script>
   </body>
 </html>

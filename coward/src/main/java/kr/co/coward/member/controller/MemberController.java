@@ -26,7 +26,7 @@ public class MemberController {
 	@GetMapping("/testLogin")
 	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra) {
 
-		logger.info("æ¿¡ì’“ë ‡ï¿½ì”¤ æ¹²ê³•ë’« ï¿½ë‹”ï¿½ë»¾ï¿½ë§–");
+		logger.info("·Î±×ÀÎ ±â´É ¼öÇàµÊ");
 
 		String id = "test01";
 		String pw = "pass01!";
@@ -38,14 +38,24 @@ public class MemberController {
 
 		Member loginMember = service.login(testLoginMember);
 
-		if (loginMember != null) { // login ï¿½ê½¦æ€¨ï¿½ ï¿½ë–†
+		if (loginMember != null) { // login ¼º°ø ½Ã
 			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
 
 		} else {
 
-			ra.addFlashAttribute("message", "ï¿½ë¸˜ï¿½ì” ï¿½ëµ’ ï¿½ì‚‰ï¿½ë’— é®ê¾¨ï¿½è¸°ëŠìƒ‡åª›ï¿½ ï¿½ì”ªç§»ì„‘ë¸¯ï§ï¿½ ï¿½ë¸¡ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+			ra.addFlashAttribute("message", "¾ÆÀÌµğ ¶Ç´Â ºñ¹Ğ¹øÈ® ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
 		}
 
 		return "redirect:/";
+	}
+	
+	@GetMapping("/findDev")
+	public String findDev() {
+		return "find-developer";
+	}
+	
+	@GetMapping("/terms")
+	public String terms() {
+		return "terms";
 	}
 }
