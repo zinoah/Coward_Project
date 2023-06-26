@@ -11,8 +11,11 @@
 
     <link
       rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-company-editProfile.css"
+      href="/coward/src/main/webapp/resources/styles/css/mypage-company-main.css"
     />
+
+    <script src="/coward/src/main/webapp/resources/js/slider.js"></script>
+
     <title>Coward | 마이페이지</title>
   </head>
 
@@ -132,7 +135,8 @@
                       </div>
 
                       <div class="profile-info">
-                        <p class="profile-nick">삼성전자</p>
+                        <div class="profile-type">Back</div>
+                        <p class="profile-nick">빡과장</p>
                       </div>
                     </div>
 
@@ -156,11 +160,11 @@
                 <div class="col-sm-4">
                   <div class="profile-wrapper">
                     <!------------------------- 여기서 부터 작성 --------------------------->
+
                     <div class="mypage">
                       <div class="title-wrapper lg-only">
-                        <p class="title">프로필 수정</p>
+                        <p class="title">내 정보</p>
                       </div>
-
                       <div class="mypage-img-wrapper">
                         <div class="ic-camera-relative">
                           <div class="avatar">
@@ -172,41 +176,61 @@
                         </div>
                       </div>
 
-                      <div class="mypage-input-box-wrapper">
-                        <div class="mypage-input-box">
-                          <p>회사명</p>
-                          <input
-                            type="text"
-                            placeholder="회사명 입력"
-                            class="mypage-input"
-                          />
-                        </div>
-                        <div class="mypage-input-box">
-                          <p>지역</p>
-                          <select class="mypage-input">
-                            <option>지역선택</option>
-                            <option>서울</option>
-                            <option>인천</option>
-                            <option>충남</option>
-                            <option>경기</option>
-                            <option>경남</option>
-                          </select>
-                        </div>
+                      <div class="mypage-input-box">
+                        <p>소개</p>
+                        <textarea
+                          cols="50"
+                          rows="5"
+                          placeholder="기업에 대해서 소개해 주세요!"
+                        ></textarea>
                       </div>
+                      <div class="mypage-input-box">
+                        <p>관심있는 개발자</p>
 
-                      <div class="textarea-box">
-                        <div>
-                          <p>소개글</p>
-                          <textarea
-                            cols="50"
-                            rows="10"
-                            placeholder="기업에 대해서 소개해주세요!"
-                          ></textarea>
+                        <div class="mypage-developer-card-scroll">
+                          <div class="mypage-developer-card">
+                            <div class="card-content">
+                              <div class="avatar-32">
+                                <img
+                                  src="../assets/images/default-user-img.png"
+                                />
+                              </div>
+                              <div class="nick-name-wrapper">
+                                <p class="nick-name">닉네임</p>
+                                <div class="user-type">back</div>
+                                <p>유능한 back 개발자 입니다</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mypage-developer-card">
+                            <div class="card-content">
+                              <div class="avatar-32">
+                                <img
+                                  src="../assets/images/default-user-img.png"
+                                />
+                              </div>
+                              <div class="nick-name-wrapper">
+                                <p class="nick-name">닉네임</p>
+                                <div class="user-type">back</div>
+                                <p>유능한 back 개발자 입니다</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mypage-developer-card">
+                            <div class="card-content">
+                              <div class="avatar-32">
+                                <img
+                                  src="../assets/images/default-user-img.png"
+                                />
+                              </div>
+                              <div class="nick-name-wrapper">
+                                <p class="nick-name">닉네임</p>
+                                <div class="user-type">back</div>
+                                <p>유능한 back 개발자 입니다</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-
-                      <div class="button-wrapper">
-                        <button class="btn-40 btn-secondary">완료</button>
                       </div>
                     </div>
 
