@@ -27,6 +27,11 @@ $track-width-lg: ($feature-box-size-lg + $feature-box-margin) * 9;
 
 $track-speed: 80s;
 
+// 광고 모달 활성화 시 스크롤 방지
+body {
+  overflow: hidden;
+}
+
 .banner {
   &-top {
     background-color: #fbeee5;

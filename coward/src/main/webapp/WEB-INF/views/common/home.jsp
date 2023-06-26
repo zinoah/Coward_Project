@@ -19,7 +19,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       href="${contextPath}/resources/styles/css/home.css"
     />
     <title>Coward | Home</title>
-
   </head>
   <body>
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -62,7 +61,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col-sm-4">
               <div class="section-title">
                 <h3>공모전 둘러보기</h3>
-                <a class="more-btn" href="#">
+                <a class="more-btn" href="${contextPath}/contest/main">
                   <span>더보기</span>
                   <i class="ic-chevron" aria-hidden></i>
                 </a>
@@ -667,7 +666,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <h3>새로 등록된 공모전</h3>
                   <div class="tag-yellow">New</div>
                 </div>
-                <a class="more-btn" href="#">
+                <a class="more-btn" href="${contextPath}/contest/main">
                   <span>더보기</span>
                   <i class="ic-chevron" aria-hidden></i>
                 </a>
@@ -1176,7 +1175,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
-    <aside id="ad-modal" class="ad-modal is-active">
+    <aside id="ad-modal" class="ad-modal">
       <a
         class="ad-thumbnail"
         href="${contextPath}resources/pages/event-detail.html"
@@ -1186,7 +1185,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         />
       </a>
       <div class="buttons">
-        <button class="today-skip-button">
+        <button id="ad-today-skip-button" class="today-skip-button">
           <div class="check-icon sm-only">
             <img
               src="${contextPath}/resources/assets/images/default-check.svg"
@@ -1201,7 +1200,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 모달 :: is-open -->
     <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
 
-    <div id="overlay" class="overlay is-active"></div>
+    <div id="overlay" class="overlay"></div>
 
     <!-- jQuery 라이브러리 추가 -->
     <script
@@ -1213,7 +1212,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/header.js"></script>
-    <script src="${contextPath}/resources/js/ad-modal.js"></script>
     <script src="${contextPath}/resources/js/slider.js"></script>
+    <script src="${contextPath}/resources/js/home.js"></script>
   </body>
 </html>
