@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -17,13 +21,13 @@
         <div class="col-sm-4">
           <div class="login-wrapper">
             <img
-              src="../assets/images/login-bg.svg"
+              src=".${ContextPath}/resources/assets/images/login-bg.svg"
               class="login-bg-img lg-only"
             />
             <div class="login-box">
               <div class="logo-p-box">
                 <a href="#">
-                  <img src="../assets/images/home_logo.svg" class="logo-img" />
+                  <img src="${ContextPath}/resources/assets/images/home_logo.svg" class="logo-img" />
                 </a>
                 <p class="p-first">Coward에 오신 것을 환영합니다!</p>
               </div>

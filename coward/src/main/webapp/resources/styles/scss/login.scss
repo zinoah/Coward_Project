@@ -40,6 +40,7 @@
     font-weight: 700;
     position: relative;
     top: 30px;
+    cursor: pointer;
   }
   &-box {
     width: 320px;
@@ -71,11 +72,13 @@
   height: 42px;
 }
 
-#pw-see-btn {
+.ic-eye-close {
   color: $tertiary;
   position: relative;
   left: 80px;
   top: 5px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .save-id-wrapper {
@@ -194,6 +197,10 @@ input[type="checkbox"] {
   position: relative;
   left: 50px;
   bottom: 30px;
+}
+
+.join:hover {
+  color: $blue;
 }
 
 .p-pw {
