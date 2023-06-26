@@ -15,31 +15,33 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
 
 @Controller
-@RequestMapping("/mypage/myPage")
-@SessionAttributes({"loginMember"}) // session scope¿¡¼­ loginMember¸¦ ¾ò¾î¿È
+@SessionAttributes({"loginMember"}) // session scopeï¿½ï¿½ï¿½ï¿½ loginMemberï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+@RequestMapping("/mypage")
 public class MyPageController {
 
 	@Autowired
 	private MyPageService service;
 
-	// È¸¿ø Á¤º¸ Á¶È¸(¸ÞÀÎ)
+
+	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½È¸(ï¿½ï¿½ï¿½ï¿½)
 	@GetMapping("/info")
 	public String info() {
 		return "mypage/person-main";
 	}
 	
 	
-	// °ø¸ðÀü °ü¸®
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	@GetMapping("/progress")
 	public String progress() {
 		return "mypage/contest-progress";
 	}
 	
-	// È¸¿øÁ¤º¸ ¼öÁ¤
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	@GetMapping("/editP")
 	public String editP() {
 		return "mypage/edit-profile";
@@ -47,32 +49,32 @@ public class MyPageController {
 	
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-							@RequestParam("editImg")MultipartFile editImg, /* ¾÷·Îµå ÆÄÀÏ */
+							@RequestParam("editImg")MultipartFile editImg, /* ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ */
 							@RequestParam Map<String, Object> paramMap,
 							String[] updateAddress,
-							HttpServletRequest req, /* ÆÄÀÏ ÀúÀå °æ·Î Å½»ö¿ë */
+							HttpServletRequest req, /* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½ */
 							RedirectAttributes ra) {
 		
 		
 		System.out.println(loginMember);
-		// È¸¿ø Á¤º¸ ¼öÁ¤ ¼­ºñ½º È£Ãâ
+		// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
 		int result = service.updateInfo(paramMap);
 		
 		String message = null;
 		
 		if(result > 0) {
-			message = "È¸¿ø Á¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.";
+			message = "È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½Ï´ï¿½.";
 			
-			// DB - SessionÀÇ È¸¿øÁ¤º¸ µ¿±âÈ­(¾èÀº º¹»ç È°¿ë)
+			// DB - Sessionï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­(ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½)
 			
-			loginMember.setMemberNick( (String)paramMap.get("updateNickname")); // ´Ð³×ÀÓ
-			loginMember.setStack( (String)paramMap.get("userStack")); // ½ºÅÃ
-			loginMember.setSlogan((String)paramMap.get("slogan")); // ÇÑÁÙ ¼Ò°³
-			loginMember.setIntroduce((String)paramMap.get("introduce")); // ¼Ò°³
-			loginMember.setSkill((String)paramMap.get("skill")); // ³» ±â¼ú
+			loginMember.setMemberNick( (String)paramMap.get("updateNickname")); // ï¿½Ð³ï¿½ï¿½ï¿½
+			loginMember.setStack( (String)paramMap.get("userStack")); // ï¿½ï¿½ï¿½ï¿½
+			loginMember.setSlogan((String)paramMap.get("slogan")); // ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½
+			loginMember.setIntroduce((String)paramMap.get("introduce")); // ï¿½Ò°ï¿½
+			loginMember.setSkill((String)paramMap.get("skill")); // ï¿½ï¿½ ï¿½ï¿½ï¿½
 			
 		} else {
-			message = "È¸¿ø Á¤º¸ ¼öÁ¤ ½ÇÆÐ";
+			message = "È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½";
 		}
 		
 		ra.addFlashAttribute("message", message);
@@ -81,4 +83,21 @@ public class MyPageController {
 		return "redirect:/info";
 	}
 			
+
+	@GetMapping("/company-main")
+	public String companyMain() {
+		return "mypage/mypage-company-main";
+	}
+
+	@GetMapping("/company-management")
+	public String companyManagement() {
+		return "mypage/mypage-company-management";
+	}
+
+	@GetMapping("/company-profile")
+	public String companyProfile() {
+		return "mypage/mypage-company-editProfile";
+	}
+
+
 }

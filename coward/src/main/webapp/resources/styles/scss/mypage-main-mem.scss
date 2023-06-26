@@ -146,8 +146,9 @@
 /***** 태블릿 *****/
 @include responsive(T) {
   /* 마이페이지의 경우 nav바랑 떨어져서 margin 없애줌 */
-  .banner-top {
-    margin: 0;
+
+  .category {
+    margin-top: -50px;
   }
   /* 네비게이션 바 */
   .category-bar {
@@ -226,6 +227,10 @@
     height: 700px;
   }
 
+  .category {
+    margin-top: 0;
+  }
+
   /* body에 relative 줄 경우 배치가 이상해져서 div 하나 생성 */
   .full {
     position: relative;
@@ -252,13 +257,14 @@
 
     &-bar {
       @include column-flexbox(start, start);
+
       @include text-style(20);
       padding: 14px 0;
       margin-bottom: 0;
     }
 
     li {
-      padding: 5px 0 5px 10px;
+      padding: 5px 0 5px 0;
       text-align: left;
     }
 
