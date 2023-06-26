@@ -51,11 +51,6 @@
 }
 
 .join {
-  color: $primary;
-  font-size: 13px;
-  position: relative;
-  left: 65px;
-
   &-first-box {
     width: 320px;
     height: 560px;
@@ -94,7 +89,6 @@
     padding-bottom: 35px;
   }
 }
-
 .google-logo {
   width: 30px;
   height: 30px;
@@ -115,6 +109,17 @@ span {
   font-size: 13px;
   position: relative;
   left: 60px;
+}
+
+.login {
+  color: $primary;
+  font-size: 13px;
+  position: relative;
+  left: 65px;
+}
+
+.login:hover {
+  color: $blue;
 }
 
 @include responsive(D) {

@@ -1,5 +1,15 @@
 @import "./main";
 
+.agree-box1 {
+  display: none;
+}
+.agree-box2 {
+  display: none;
+}
+.agree-box3 {
+  display: none;
+}
+
 .join {
   &-second-wrapper {
     @include flexbox;
@@ -58,11 +68,11 @@
     border: 1px solid $border;
     border-radius: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
   }
 
   &-explanation-box {
     @include column-flexbox(center, start);
-    cursor: pointer;
   }
 }
 
@@ -113,6 +123,14 @@
   color: $white;
   font-weight: bolder;
   margin-top: 15px;
+}
+
+.single-box.clicked {
+  border-color: $blue;
+}
+
+.company-box.clicked {
+  border-color: $blue;
 }
 
 @include responsive(D) {
