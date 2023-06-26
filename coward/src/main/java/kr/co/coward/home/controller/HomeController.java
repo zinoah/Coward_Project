@@ -9,6 +9,6 @@ public class HomeController {
 	@RequestMapping("/home")
 	public String mainForward() {
 
-		return "common/home"; // DispatcherServletì´ ë°›ì„ê±°ë‹¤! -> View Resolver
+		return "common/home"; // DispatcherServletÀÌ ¹ÞÀ»°Å´Ù! -> View Resolver
 	}
 }

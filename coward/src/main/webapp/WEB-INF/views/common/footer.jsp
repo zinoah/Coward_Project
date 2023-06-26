@@ -95,7 +95,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <li class="text-link-item">
                   <a href="#">개인정보처리방침</a>
                 </li>
-                <li class="text-link-item"><a href="#">이용약관</a></li>
+                <li class="text-link-item"><a href="${contextPath}/member/terms">이용약관</a></li>
               </ul>
             </div>
           </div>
