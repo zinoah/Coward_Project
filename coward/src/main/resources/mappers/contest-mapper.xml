@@ -19,4 +19,10 @@
 		<result property="adNo" 	column="AD_NO"/>
 		<result property="winner" 	column="WINNER"/>
 	</resultMap>
+	
+	<select id="getContestList" resultMap="contest_rm">
+		SELECT * 
+		FROM CONTEST
+		
+	</select>
 </mapper>

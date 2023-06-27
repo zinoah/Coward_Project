@@ -177,7 +177,35 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
               <div class="slider-wrapper">
                 <div class="contest-slider">
-                  <div>
+                  <c:forEach var="contest" items="${contestList}">
+                    <div>
+                      <div class="contest-slider-card">
+                        <div class="contest-slider-card-img">
+                          <img src="${contextPath}/${contest.thumbnail}" />
+                        </div>
+                        <div class="contest-slider-card-info">
+                          <div class="contest-slider-card-info-title">
+                            <p>${contest.contestTitle}</p>
+                          </div>
+                          <div class="contest-slider-card-info-detail">
+                            <p>상금</p>
+                            <p>${contest.price}만원</p>
+                          </div>
+                          <div class="contest-slider-card-info-detail">
+                            <p>남은기간</p>
+                            <p>1일</p>
+                          </div>
+                          <div class="contest-slider-card-info-button">
+                            <button class="btn-outlined btn-32">
+                              참여하러가기
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </c:forEach>
+
+                  <!-- <div>
                     <div class="contest-slider-card">
                       <div class="contest-slider-card-img">
                         <img
@@ -456,7 +484,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="slider-controls">
                   <!-- slider control 버튼 -->
@@ -482,7 +510,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </div>
 
             <!-- Note: 서비스 바로가기 버튼 링크들 -->
-            <a class="col-sm-1 col-md-3 col-lg-3 service" href="${contextPath}/contest/recommend">
+            <a
+              class="col-sm-1 col-md-3 col-lg-3 service"
+              href="${contextPath}/contest/recommend"
+            >
               <div class="service-image">
                 <!-- Note: 모바일 아이콘 -->
                 <img
