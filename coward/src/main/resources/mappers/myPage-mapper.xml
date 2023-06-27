@@ -19,4 +19,12 @@
 		PROFILE_IMG = #{profileImage}
 		WHERE MEMBER_NO = #{memberNo}
 	</update>
+	
+	<!-- 기업 회원 프로필 수정 -->
+	<update id="updateCompanyInfo">
+		UPDATE MEMBER SET
+		MEMBER_NICK = #{updateNickname},
+		INTRODUCE = #{updateIntroduce},
+		WHERE MEMBER_NO = ${memberNo}
+	</update>
 </mapper>

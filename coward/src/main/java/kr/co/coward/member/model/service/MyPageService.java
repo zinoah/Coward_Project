@@ -4,12 +4,20 @@ import java.util.Map;
 
 public interface MyPageService {
 
-
-	/** È¸¿ø Á¤º¸ ¼öÁ¤ ¼­ºñ½º
+	/**
+	 * È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param paramMap
 	 * @return result
 	 */
 	int updateInfo(Map<String, Object> paramMap);
+
+	/**
+	 * ê¸°ì—… íšŒì› ì •ë³´ ìˆ˜ì • ì„œë¹„ìŠ¤
+	 * 
+	 * @param paramMap
+	 * @return result
+	 */
+	int updateCompanyInfo(Map<String, Object> paramMap);
 
 }
