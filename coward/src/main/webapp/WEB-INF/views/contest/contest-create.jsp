@@ -11,6 +11,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/contest-create.css"
     />
+    <!-- sweet alert -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
+    />
+
     <title>Coward | 콘테스트를 만들어보세요</title>
   </head>
   <body>
@@ -24,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
-              <form action="#" method="post">
+              <form action="create" method="post">
                 <div class="contest-create-wrapper">
                   <div class="contest-create-form">
                     <div class="contest-create-form-title">
@@ -70,6 +76,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="contest-create-form-company-name">
                         <div class="contest-create-form-inner-section-title">
                           <span>기업명</span><span>*</span>
+                          <span id="user-num" style="display: none">1</span>
                         </div>
                         <div>
                           <input
@@ -529,9 +536,21 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </main>
     </div>
-
+    <button onclick="requestPay()">test</button>
     <!-- footer include -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+    <!-- jQuery 라이브러리 추가 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- iamport API  -->
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <!-- sweet alert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
     <script src="${contextPath}/resources/js/contest-create.js"></script>
+    <script src="${contextPath}/resources/js/header.js"></script>
   </body>
 </html>
