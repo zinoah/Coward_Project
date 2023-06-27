@@ -490,7 +490,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/slider.js"></script>
-
+    <script src="${contextPath}/resources/js/header.js"></script>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
