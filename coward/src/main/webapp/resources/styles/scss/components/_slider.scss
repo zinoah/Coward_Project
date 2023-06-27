@@ -47,7 +47,7 @@ $contest-slider-height-md: $contest-slider-card-height-md + 10px;
         background-color: $white;
 
         transform: translate3d(0, -20%, 0);
-        transition: transform 400ms ease-in-out;
+        transition: transform 300ms ease-in-out;
 
         &-title {
           width: 100%;
@@ -100,7 +100,6 @@ $contest-slider-height-md: $contest-slider-card-height-md + 10px;
       &-is-prev {
         .ic-chevron {
           display: inline-block;
-          // margin-right: 3px;
         }
       }
 
@@ -108,7 +107,6 @@ $contest-slider-height-md: $contest-slider-card-height-md + 10px;
         .ic-chevron {
           display: inline-block;
           transform: rotate(-180deg);
-          // margin-left: 3px;
         }
       }
 
