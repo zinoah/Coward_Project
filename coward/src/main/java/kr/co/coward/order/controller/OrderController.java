@@ -15,8 +15,7 @@ import com.siot.IamportRestClient.response.Payment;
 @Controller
 public class OrderController {
 
-	private IamportClient client = new IamportClient("8180716521067544",
-			"JkSSZZEw1WPXupUxA6ct318UtjMSZDj5AGTIPTrojMmWMxvX8kXINmrM1fnFO9mHpzFxqm5bSoRP3YUf");
+	private IamportClient client = new IamportClient("dd", "dd");
 
 	@ResponseBody
 	@PostMapping("/verify_iamport/{imp_uid}")
