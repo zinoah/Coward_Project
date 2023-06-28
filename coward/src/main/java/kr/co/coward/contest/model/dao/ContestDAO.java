@@ -1,5 +1,7 @@
 package kr.co.coward.contest.model.dao;
 
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,4 +15,10 @@ public class ContestDAO {
 	private SqlSessionTemplate sqlSession;
 
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
+
+	public int contestCreate(Map<String, Object> paramMap) {
+
+		// TODO Auto-generated method stub
+		return sqlSession.insert("contestMapper.contestCreate", paramMap);
+	}
 }
