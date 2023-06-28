@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -66,5 +67,23 @@ public class MemberController {
 	@GetMapping("/terms")
 	public String terms() {
 		return "terms";
+	}
+	
+	// 회원가입 화면 이동
+	@GetMapping("/join")
+	public String join() {
+		return "member/join";
+	}
+
+	// 로그인 화면 이동
+	@GetMapping("/login")
+	public String login() {
+		return "member/login";
+	}
+	
+	// 비밀번호 찾기 이동
+	@GetMapping("/pwFind")
+	public String pwFind() {
+		return "member/pw-find";
 	}
 }

@@ -50,7 +50,7 @@ public class MyPageController {
 	}
 
 	// 기업 마이페이지 프로필수정 이동
-	@GetMapping("/company-profile")
+	@GetMapping("/companyProfile")
 	public String companyProfile() {
 
 		return "mypage/mypage-company-editProfile";
@@ -84,45 +84,6 @@ public class MyPageController {
 		return "mypage/edit-profile";
 	}
 
-	// 기업 프로필 변경 회원정보
-	@PostMapping("/company-profile")
-	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam Map<String, Object> paramMap, // 요청 시 전달된 파라미터를 구분하지 않고 모두 Map에 담아서 얻어옴
-			String[] updateAddress, RedirectAttributes ra) {
-
-		paramMap.put("memberNo", loginMember.getMemberNo());
-		paramMap.put("memberNick", loginMember.getMemberNick());
-		paramMap.put("regionNo", loginMember.getRegionNo());
-		paramMap.put("introduce", loginMember.getIntroduce());
-
-		logger.info("로그인 정보 테스트");
-		logger.info("loginMember" + loginMember);
-
-		// 회원정보 수정 서비스 호출
-		int result = service.updateCompanyInfo(paramMap);
-
-		String message = null;
-
-		if (result > 0) {
-
-			message = "회원 정보가 수정되었습니다.";
-
-			// DB - Session의 회원정보 동기화(얕은 복사 활용)
-			loginMember.setMemberNick((String) paramMap.get("updateMemberNick"));
-			loginMember.setIntroduce((String) paramMap.get("updateIntroduce"));
-			loginMember.setRegionNo((int) paramMap.get("updateRegion"));
-
-		} else {
-			message = "회원 정보 수정이 실패하였습니다.";
-
-		}
-
-		ra.addFlashAttribute("message", message);
-
-		return "redirect:info";
-
-	}
-
 	// 일반회원 프로필 변경
 	/*@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
@@ -153,5 +114,47 @@ public class MyPageController {
 
 		return "redirect:info";
 	}*/
+
+	/**********************************
+	 * 기업 마이페이지 controller
+	 **********************************/
+
+	// 기업 프로필 변경 회원정보
+	@PostMapping("/companyProfile")
+	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam Map<String, Object> paramMap, // 요청 시 전달된 파라미터를 구분하지 않고 모두 Map에 담아서 얻어옴
+			RedirectAttributes ra) {
+
+		logger.info("로그인 정보 테스트");
+		logger.info("loginMember :" + loginMember);
+
+		// 회원정보 수정 서비스 호출
+		int result = service.updateCompanyInfo(paramMap);
+
+		logger.info("Result 값 확인: " + result);
+
+		String message = null;
+
+		if (result > 0) {
+
+			message = "회원 정보가 수정되었습니다.";
+
+			// DB - Session의 회원정보 동기화(얕은 복사 활용)
+			loginMember.setMemberNick((String) paramMap.get("updateNickName"));
+			loginMember.setIntroduce((String) paramMap.get("updateIntroduce"));
+
+		} else {
+			message = "회원 정보 수정이 실패하였습니다.";
+
+			logger.info((String) paramMap.get("updateNickName"));
+			logger.info((String) paramMap.get("updateIntroduce"));
+
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:companyProfile";
+
+	}
 
 }
