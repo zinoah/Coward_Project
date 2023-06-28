@@ -7,6 +7,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/contest-create.css"
@@ -16,7 +17,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
     />
-
     <title>Coward | 콘테스트를 만들어보세요</title>
   </head>
   <body>
@@ -30,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
-              <form action="create" method="post">
+              <form action="create" method="post" enctype="multipart/form-data">
                 <div class="contest-create-wrapper">
                   <div class="contest-create-form">
                     <div class="contest-create-form-title">
@@ -73,16 +73,17 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       </div>
                     </div>
                     <div class="contest-create-form-inner">
-                      <div class="contest-create-form-company-name">
+                      <div class="contest-create-form-contest-title">
                         <div class="contest-create-form-inner-section-title">
-                          <span>기업명</span><span>*</span>
-                          <span id="user-num" style="display: none">1</span>
+                          <span>제목</span><span>*</span>
                         </div>
                         <div>
                           <input
                             type="text"
-                            placeholder="기업명을 입력하세요"
-                            id="cp-name-input"
+                            placeholder="공모전 제목을 입력하세요"
+                            id="cp-title-input"
+                            name="contestTitle"
+                            required
                           />
                         </div>
                       </div>
@@ -91,12 +92,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <span>타입</span><span>*</span>
                         </div>
                         <div>
-                          <select name="contest-type" id="contest-type">
+                          <select name="typeNo" id="contest-type" required>
                             <option value="">선택하세요</option>
-                            <option value="web">web</option>
-                            <option value="app">app</option>
-                            <option value="game">game</option>
-                            <option value="mobile">mobile</option>
+                            <option value="1">웹</option>
+                            <option value="2">앱</option>
+                            <option value="3">모바일</option>
+                            <option value="4">게임</option>
                           </select>
                         </div>
                       </div>
@@ -109,6 +110,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             maxlength="100"
                             placeholder="100자이내로 입력하세요"
                             id="subject-textarea"
+                            name="subject"
+                            required
                           ></textarea>
                         </div>
                       </div>
@@ -121,6 +124,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             maxlength="500"
                             placeholder="500자이내로 입력하세요"
                             id="qualification-textarea"
+                            name="qualification"
+                            required
                           ></textarea>
                         </div>
                       </div>
@@ -133,6 +138,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             maxlength="500"
                             placeholder="500자이내로 입력하세요"
                             id="note-textarea"
+                            name="addInfo"
+                            required
                           ></textarea>
                         </div>
                       </div>
@@ -141,7 +148,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <span>종료 날짜</span><span>*</span>
                         </div>
                         <div>
-                          <input type="date" id="date-input" />
+                          <input
+                            type="date"
+                            id="date-input"
+                            name="endDate"
+                            required
+                          />
                         </div>
                       </div>
                       <div class="contest-create-form-skill">
@@ -274,7 +286,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div>
                             <label class="btn-primary">
                               파일 선택
-                              <input type="file" id="thumbnail-input" />
+                              <input
+                                type="file"
+                                id="thumbnail-input"
+                                name="thumbnail"
+                              />
                             </label>
                           </div>
                         </div>
@@ -338,7 +354,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <i class="ic-trophy"></i>
                               </span>
                               <span>총 상금</span>
-                              <span id="result-price">0</span>
+                              <input
+                                type="number"
+                                id="result-price"
+                                name="price"
+                                value="100"
+                                required
+                              />
                               <span>만원</span>
                             </div>
                           </div>
@@ -383,8 +405,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                             <input
                               type="radio"
-                              name="product"
-                              value="30"
+                              name="adNo"
+                              value="1"
                               style="display: none"
                             />
                           </div>
@@ -421,8 +443,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                             <input
                               type="radio"
-                              name="product"
-                              value="50"
+                              name="adNo"
+                              value="2"
                               style="display: none"
                             />
                           </div>
@@ -459,15 +481,28 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                             <input
                               type="radio"
-                              name="product"
-                              value="100"
+                              name="adNo"
+                              value="3"
                               style="display: none"
                             />
                           </div>
                         </div>
                       </div>
                       <div class="contest-create-form-btn lg-hidden">
-                        <button class="btn-primary" type="submit">다음</button>
+                        <button
+                          class="btn-primary btn-40 submit-btn"
+                          type="submit"
+                        >
+                          확인
+                        </button>
+                        <button
+                          class="btn-primary btn-40 payment-btn"
+                          type="button"
+                          onclick="requestPay()"
+                          style="display: none"
+                        >
+                          결제하기
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -522,8 +557,19 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <div
                           class="contest-create-summary-sticky-box-price-btn"
                         >
-                          <button class="btn-primary btn-40" type="submit">
-                            다음
+                          <button
+                            class="btn-primary btn-40 submit-btn"
+                            type="submit"
+                          >
+                            확인
+                          </button>
+                          <button
+                            class="btn-primary btn-40 payment-btn"
+                            type="button"
+                            onclick="requestPay()"
+                            style="display: none"
+                          >
+                            결제하기
                           </button>
                         </div>
                       </div>
@@ -536,9 +582,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </main>
     </div>
-    <button onclick="requestPay()">test</button>
+
+    <!-- 결제 정보 넘겨줄 parameter -->
+    <span id="user-num" style="display: none">${loginMember.memberNo}</span>
+    <span id="user-id" style="display: none">${loginMember.memberId}</span>
+    <span id="user-name" style="display: none">
+      ${loginMember.memberNick}
+    </span>
+    <span id="user-phone" style="display: none">${loginMember.phone}</span>
+
     <!-- footer include -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+    <!-- 모달 :: is-open -->
+    <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
+    <div id="overlay" class="overlay"></div>
+
     <!-- jQuery 라이브러리 추가 -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"

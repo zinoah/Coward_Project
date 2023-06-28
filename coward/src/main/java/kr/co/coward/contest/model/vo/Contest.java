@@ -21,8 +21,8 @@ public class Contest {
 	private String endDate;
 	private int dueDate;
 	private String skill;
-	private int price;
 	private String thumbnail;
+	private int price;
 	private int adNo;
 	private String winner;
 	private String conStatus;

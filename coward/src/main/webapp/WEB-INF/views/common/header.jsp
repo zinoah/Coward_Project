@@ -31,7 +31,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <c:choose>
               <c:when test="${ empty sessionScope.loginMember }">
                 <button class="header-button-text" type="button">
-                  <a href="member/testLogin">로그인</a>
+                  <a href="${contextPath}/member/testLogin">로그인</a>
                 </button>
                 <button class="header-button-text" type="button">
                   <a href="#">회원가입</a>
@@ -44,7 +44,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <a class="header-user-image" href="#">
                   <i class="ic-message"></i>
                 </a>
-                <a href="${contextPath}/WEB-INF/views/mypage/person-main.jsp">
+                <a href="${contextPath}/mypage/info">
                   <div class="avatar-24 header-user-image">
                     <c:choose>
                       <c:when test="${empty loginMember.profileImg }">

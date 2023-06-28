@@ -1,1 +1,185 @@
 @import "./main";
+
+.join {
+  &-final-wrapper {
+    @include flexbox;
+    height: 100vh;
+  }
+
+  &-final-box {
+    width: 320px;
+    height: 560px;
+  }
+}
+
+.logo {
+  &-img {
+    width: 174.55px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+
+  &-final-box {
+    @include flexbox;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+}
+
+.final-info {
+  @include text-style(14);
+}
+
+.btn-input-bundle {
+  @include text-style(12);
+  width: 100%;
+  height: 42px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.input {
+  &-title {
+    @include inline-flexbox;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+}
+
+.email {
+  &-cert-wrapper {
+    @include flexbox;
+    width: 100%;
+    height: 120px;
+    border: 1px solid $blue;
+    border-radius: 10px;
+    display: none;
+  }
+
+  &-cert-btn {
+    @include text-style(14);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &-explanation {
+    @include text-style(13, $secondary);
+  }
+
+  &-explanation-1 {
+    @include text-style(12, $secondary);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &-explanation-2 {
+    @include text-style(12);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.cert {
+  &-input {
+    @include text-style(13, $tertiary);
+  }
+
+  &-btn {
+    @include text-style(12, $white);
+    font-weight: 500;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: $tertiary;
+  }
+
+  &-code {
+    @include inline-flexbox;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: $background;
+    margin-right: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+}
+
+.timer {
+  @include text-style(13, $red);
+  font-weight: 900;
+  padding-left: 10px;
+}
+
+.warn {
+  &-image-container {
+    width: 12px;
+    height: 12px;
+  }
+
+  &-image {
+    @include flexbox;
+    overflow: hidden;
+    width: 12px;
+    height: 12px;
+  }
+
+  &-box {
+    @include inline-flexbox;
+  }
+}
+
+.pw {
+  &-explanation {
+    @include text-style(12, $secondary);
+    margin-left: 5px;
+  }
+
+  &-input-box {
+    @include inline-flexbox(between);
+    margin-bottom: 20px;
+  }
+
+  &-input {
+    width: 100%;
+  }
+
+  &-input-chk {
+    width: 100%;
+  }
+}
+
+.eye-img {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.complete-btn {
+  @include text-style(16, $white);
+  width: 100%;
+  height: 48px;
+  background-color: $tertiary;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+@include responsive(D) {
+  .login-bg-img {
+    width: 650px;
+    height: 590px;
+  }
+
+  .join-final-wrapper {
+    @include flexbox(between);
+  }
+
+  .join-final-box {
+    margin-right: 70px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 320px;
+    height: 560px;
+  }
+}

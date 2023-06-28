@@ -23,6 +23,7 @@
 		<result property="conStatus" 	column="CON_STATUS"/>
 	</resultMap>
 	
+
 	<!-- Note: 진행중인 공모전 - 기본 -->
 	<select id="getDefaultContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE, THUMBNAIL
@@ -42,4 +43,13 @@
 	<select id="getPopularContestList" resultMap="contest_rm">
 		
 	</select>
+  
+	<!-- 공모전 개최 -->
+	<insert id="contestCreate">
+		INSERT INTO CONTEST (CONTEST_NO,MEMBER_NO,CONTEST_TITLE,TYPE_NO,SUBJECT,QUALIFICATION,ADD_INFOMATION,CREATE_DATE,END_DATE,SKILL,PRICE,THUMBNAIL,AD_NO)
+		VALUES(SEQ_CONTEST_NO.NEXTVAL, #{memberNo} ,#{contestTitle}, #{typeNo}, #{subject}, #{qualification}, #{addInfo}, SYSDATE, #{endDate}, #{skill}, #{price}, #{thumbnail} , #{adNo})
+	</insert>
+	
+	
+
 </mapper>

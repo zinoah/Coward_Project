@@ -1,6 +1,8 @@
 package kr.co.coward.contest.model.service;
 
 import java.util.List;
+import java.io.IOException;
+import java.util.Map;
 
 import kr.co.coward.contest.model.vo.Contest;
 
@@ -12,5 +14,14 @@ public interface ContestService {
 	 * @return contestList
 	 */
 	List<Contest> getContestList(String type);
-	
+
+	/**
+	 * 콘테스트 개최 서비스
+	 * 
+	 * @param paramMap
+	 * @return
+	 * @throws IOException
+	 */
+	int contestCreate(Map<String, Object> paramMap) throws IOException;
+
 }

@@ -1,6 +1,8 @@
 package kr.co.coward.contest.model.dao;
 
+
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -17,6 +19,7 @@ public class ContestDAO {
 	private SqlSessionTemplate sqlSession;
 
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
+
 	
 	/** 
 	 * 진행중인 공모전 10개 리스트 조회 DAO
@@ -38,5 +41,12 @@ public class ContestDAO {
 		}
 		
 		return sqlSession.selectList(mapperPath);
+
+
+	public int contestCreate(Map<String, Object> paramMap) {
+
+		// TODO Auto-generated method stub
+		return sqlSession.insert("contestMapper.contestCreate", paramMap);
+
 	}
 }
