@@ -65,26 +65,34 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <!-- Note: 이벤트가 진행중인 경우 .is-active -->
           <div class="col-sm-4 col-md-6 col-lg-6">
             <!-- TODO: 경로 변경하기 -->
-            <a
-              class="event-item is-active"
-              href="${contextPath}/event/detail/1"
-            >
-              <div class="event-item-image">
-                <img
-                  src="${contextPath}/resources/assets/images/dummy/event-thumbnail.png"
-                  alt="이벤트 썸네일"
-                />
-              </div>
 
-              <div class="event-item-info">
-                <span class="status">진행중</span>
-                <div class="period">
-                  <span class="event-date">2023/05/26</span>
-                  ~
-                  <span class="event-date">2023/08/26</span>
-                </div>
-              </div>
-            </a>
+            <!-- status가 Y인 경우 == 진행중인 경우 -->
+            <c:forEach var="event" items="eventList">
+              <c:choose>
+                <c:when test="${event.status} == 'Y'">
+                  <a
+                    class="event-item is-active"
+                    href="${contextPath}/event/detail/${event.eventNo}"
+                  >
+                    <div class="event-item-image">
+                      <img
+                        src="${contextPath}/${event.eventContent}"
+                        alt="이벤트 썸네일"
+                      />
+                    </div>
+
+                    <div class="event-item-info">
+                      <span class="status">${event.status}</span>
+                      <div class="period">
+                        <span class="event-date">${event.createDate}</span>
+                        ~
+                        <span class="event-date">${event.endDate}</span>
+                      </div>
+                    </div>
+                  </a>
+                </c:when>
+              </c:choose>
+            </c:forEach>
           </div>
 
           <!-- Note: 이벤트가 종료된 경우 -->
