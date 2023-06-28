@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,16 +25,23 @@ import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
 
 @Controller
-@SessionAttributes({ "loginMember" }) // session scope���� loginMember�� ����
+@SessionAttributes({ "loginMember" })
 @RequestMapping("/mypage")
 public class MyPageController {
+
+	private Logger logger = LoggerFactory.getLogger(MyPageController.class);
+
+	@Autowired
+	private MyPageService service;
 
 	// 기업 마이페이지
 
 	// 기업 마이페이지 메인페이지 이동
 	@GetMapping("/company-main")
 	public String companyMain() {
+
 		return "mypage/mypage-company-main";
+
 	}
 
 	// 기업 마이페이지 공모전관리 이동
@@ -44,14 +53,16 @@ public class MyPageController {
 	// 기업 마이페이지 프로필수정 이동
 	@GetMapping("/company-profile")
 	public String companyProfile() {
+
 		return "mypage/mypage-company-editProfile";
 	}
 
+
 	@Autowired
 	private MyPageService service;
-
-
+  
 	// 마이페이지(메인)
+	// 회원 정보 조회
 	@GetMapping("/info")
 	public String info() {
 		return "mypage/person-main";
@@ -79,26 +90,36 @@ public class MyPageController {
 		return "mypage/edit-profile";
 	}
 
-	// 기업 프로필 변경
-	@PostMapping("companyProfile")
+	// 기업 프로필 변경 회원정보
+	@PostMapping("/company-profile")
 	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
 			@RequestParam Map<String, Object> paramMap, // 요청 시 전달된 파라미터를 구분하지 않고 모두 Map에 담아서 얻어옴
 			String[] updateAddress, RedirectAttributes ra) {
 
-// 회원 정보 수정 서비스 호출
+		paramMap.put("memberNo", loginMember.getMemberNo());
+		paramMap.put("memberNick", loginMember.getMemberNick());
+		paramMap.put("regionNo", loginMember.getRegionNo());
+		paramMap.put("introduce", loginMember.getIntroduce());
+
+		logger.info("로그인 정보 테스트");
+		logger.info("loginMember" + loginMember);
+
+		// 회원정보 수정 서비스 호출
 		int result = service.updateCompanyInfo(paramMap);
 
 		String message = null;
 
 		if (result > 0) {
+
 			message = "회원 정보가 수정되었습니다.";
 
-// DB - Session의 회원정보 동기화(얕은 복사 활용)
-			loginMember.setMemberNick((String) paramMap.get("updateNickname"));
+			// DB - Session의 회원정보 동기화(얕은 복사 활용)
+			loginMember.setMemberNick((String) paramMap.get("updateMemberNick"));
 			loginMember.setIntroduce((String) paramMap.get("updateIntroduce"));
+			loginMember.setRegionNo((int) paramMap.get("updateRegion"));
 
 		} else {
-			message = "회원 정보 수정 실패...";
+			message = "회원 정보 수정이 실패하였습니다.";
 
 		}
 

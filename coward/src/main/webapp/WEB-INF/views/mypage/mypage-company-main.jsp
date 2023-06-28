@@ -15,7 +15,11 @@
 <link rel="stylesheet"
 	href="${contextPath}/resources/styles/css/mypage-company-main.css" />
 
-<script src="${contextPath}/resources/js/slider.js"></script>
+<!-- tiny-slider -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+
+
 
 <title>Coward | 마이페이지</title>
 </head>
