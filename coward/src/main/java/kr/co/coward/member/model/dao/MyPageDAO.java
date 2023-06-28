@@ -6,14 +6,16 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
-public class MyPageDAO {
+public class MyPageDAO<Contest> {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
 	/**
-	 * ȸ�� ���� ���� DAO
+	 * 마이페이지 메인 DAO
 	 * 
 	 * @param paramMap
 	 * @return result
@@ -33,4 +35,12 @@ public class MyPageDAO {
 		return sqlSession.update("myPageMapper.updateCompanyInfo", paramMap);
 
 	}
+
+
+	
+
+	
+
+
+	
 }
