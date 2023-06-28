@@ -15,89 +15,119 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
 
 @Controller
-@SessionAttributes({"loginMember"}) // session scope���� loginMember�� ����
+@SessionAttributes({ "loginMember" }) // session scope���� loginMember�� ����
 @RequestMapping("/mypage")
 public class MyPageController {
+
+	// 기업 마이페이지
+
+	// 기업 마이페이지 메인페이지 이동
+	@GetMapping("/company-main")
+	public String companyMain() {
+		return "mypage/mypage-company-main";
+	}
+
+	// 기업 마이페이지 공모전관리 이동
+	@GetMapping("/company-management")
+	public String companyManagement() {
+		return "mypage/mypage-company-management";
+	}
+
+	// 기업 마이페이지 프로필수정 이동
+	@GetMapping("/company-profile")
+	public String companyProfile() {
+		return "mypage/mypage-company-editProfile";
+	}
 
 	@Autowired
 	private MyPageService service;
 
 
-	// 마이페이지(메인)
+	// ȸ�� ��� �ȸ(����)
 	@GetMapping("/info")
 	public String info() {
 		return "mypage/person-main";
 	}
 	
 	
-	// 공모전 관리
+	// ����� ��
 	@GetMapping("/progress")
 	public String progress() {
 		return "mypage/contest-progress";
 	}
 	
-	// 내 정보 수정
+	// ȸ����� ���
 	@GetMapping("/editP")
 	public String editP() {
 		return "mypage/edit-profile";
 	}
-	
+
+	// 기업 프로필 변경
+	@PostMapping("companyProfile")
+	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam Map<String, Object> paramMap, // 요청 시 전달된 파라미터를 구분하지 않고 모두 Map에 담아서 얻어옴
+			String[] updateAddress, RedirectAttributes ra) {
+
+// 회원 정보 수정 서비스 호출
+		int result = service.updateCompanyInfo(paramMap);
+
+		String message = null;
+
+		if (result > 0) {
+			message = "회원 정보가 수정되었습니다.";
+
+// DB - Session의 회원정보 동기화(얕은 복사 활용)
+			loginMember.setMemberNick((String) paramMap.get("updateNickname"));
+			loginMember.setIntroduce((String) paramMap.get("updateIntroduce"));
+
+		} else {
+			message = "회원 정보 수정 실패...";
+
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:info";
+
+	}
+
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-							@RequestParam("editImg")MultipartFile editImg, /* ��ε� ���� */
-							@RequestParam Map<String, Object> paramMap,
-							String[] updateAddress,
-							HttpServletRequest req, /* ���� ���� ��� Ž��� */
-							RedirectAttributes ra) {
-		
-		
+			@RequestParam("editImg") MultipartFile editImg, /* ��ε� ���� */
+			@RequestParam Map<String, Object> paramMap, String[] updateAddress, HttpServletRequest req, /*
+																										 * ���� ���� ���
+																										 * Ž���
+																										 */
+			RedirectAttributes ra) {
+
 		System.out.println(loginMember);
 		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
-		
+
 		String message = null;
 		
 		if(result > 0) {
-			message = "회원정보가 수정되었습니다.";
+			message = "ȸ�� ����� ����Ǿ��ϴ�.";
 			
-			// DB - Session의 회원정보 동기화(얕은 복사 활용)
+			// DB - Session�� ȸ����� ����ȭ(��� ���� Ȱ��)
 			
-			loginMember.setMemberNick( (String)paramMap.get("updateNickname")); // 닉네임
-			loginMember.setStack( (String)paramMap.get("userStack")); // 스택
-			loginMember.setSlogan((String)paramMap.get("slogan")); // 한줄 소개
-			loginMember.setIntroduce((String)paramMap.get("introduce")); // 소개
-			loginMember.setSkill((String)paramMap.get("skill")); // 기술
+			loginMember.setMemberNick( (String)paramMap.get("updateNickname")); // �г���
+			loginMember.setStack( (String)paramMap.get("userStack")); // ����
+			loginMember.setSlogan((String)paramMap.get("slogan")); // ���� �Ұ�
+			loginMember.setIntroduce((String)paramMap.get("introduce")); // �Ұ�
+			loginMember.setSkill((String)paramMap.get("skill")); // �� ���
 			
 		} else {
 			message = "회원정보 수정에 실패하였습니다";
 		}
-		
+
 		ra.addFlashAttribute("message", message);
-		
-		
+
 		return "redirect:/info";
 	}
-			
-
-	@GetMapping("/company-main")
-	public String companyMain() {
-		return "mypage/mypage-company-main";
-	}
-
-	@GetMapping("/company-management")
-	public String companyManagement() {
-		return "mypage/mypage-company-management";
-	}
-
-	@GetMapping("/company-profile")
-	public String companyProfile() {
-		return "mypage/mypage-company-editProfile";
-	}
-
 
 }
