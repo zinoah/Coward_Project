@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -95,6 +96,13 @@ public class ContestController {
 		ra.addFlashAttribute("message", message);
 
 		return "redirect:" + path;
+	}
+
+	@GetMapping("/detail/{contestNo}")
+	public String contestDetail(@PathVariable("contestNo") int contestNo) {
+
+		return "contest/contest-detail";
+
 	}
 
 	@GetMapping("/recommend")
