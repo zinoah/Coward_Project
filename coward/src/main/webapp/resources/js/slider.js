@@ -8,7 +8,7 @@ const defaultContestSlider = tns({
   rewind: true,
   swipeAngle: false,
   nav: false,
-  // autoplay: true,
+  autoplay: true,
   autoplayTimeout: 5000,
   autoplayHoverPause: true,
   autoplayButtonOutput: false,
