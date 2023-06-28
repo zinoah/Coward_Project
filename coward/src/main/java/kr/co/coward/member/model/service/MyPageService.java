@@ -13,7 +13,7 @@ public interface MyPageService {
 	int updateInfo(Map<String, Object> paramMap);
 
 	/**
-	 * 기업 회원 정보 수정 서비스
+	 * 기업 회원 프로필 수정 서비스
 	 * 
 	 * @param paramMap
 	 * @return result
