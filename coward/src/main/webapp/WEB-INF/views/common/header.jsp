@@ -44,7 +44,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <a class="header-user-image" href="#">
                   <i class="ic-message"></i>
                 </a>
-                <a href="${contextPath}/WEB-INF/views/mypage/person-main.jsp">
+                <a href="${contextPath}/mypage/info">
                   <div class="avatar-24 header-user-image">
                     <c:choose>
                       <c:when test="${empty loginMember.profileImg }">

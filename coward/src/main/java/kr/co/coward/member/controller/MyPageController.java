@@ -1,5 +1,6 @@
 package kr.co.coward.member.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
 
@@ -53,19 +57,34 @@ public class MyPageController {
 		return "mypage/mypage-company-editProfile";
 	}
 
+
+	@Autowired
+	private MyPageService service;
+  
+	// 마이페이지(메인)
 	// 회원 정보 조회
 	@GetMapping("/info")
 	public String info() {
 		return "mypage/person-main";
 	}
-
-	// ����� ��
+	
+	
+	// 공모전 관리
+	// @GetMapping("/progress")
+	// public String progress() {
+	// 	return "mypage/contest-progress";
+	// }
+	
+	// 공모전 목록 조회
 	@GetMapping("/progress")
-	public String progress() {
+	public String contestList(Model model) {
+		List<Contest> progress = MyPageService.contestList();
+		model.addAttribute("progress", progress);
+		
 		return "mypage/contest-progress";
 	}
-
-	// ȸ����� ���
+	
+	// 내 정보 수정(일반 회원)
 	@GetMapping("/editP")
 	public String editP() {
 		return "mypage/edit-profile";
@@ -110,39 +129,37 @@ public class MyPageController {
 
 	}
 
+	// 일반회원 프로필 변경
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
 			@RequestParam("editImg") MultipartFile editImg, /* ��ε� ���� */
-			@RequestParam Map<String, Object> paramMap, String[] updateAddress, HttpServletRequest req, /*
-																										 * ���� ���� ���
-																										 * Ž���
-																										 */
+			@RequestParam Map<String, Object> paramMap, String[] updateAddress, HttpServletRequest req, 
 			RedirectAttributes ra) {
 
 		System.out.println(loginMember);
-		// ȸ�� ��� ��� ���� ȣ��
+		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
 
 		String message = null;
-
-		if (result > 0) {
-			message = "ȸ�� ����� ����Ǿ��ϴ�.";
-
-			// DB - Session�� ȸ����� ����ȭ(��� ���� Ȱ��)
-
-			loginMember.setMemberNick((String) paramMap.get("updateNickname")); // �г���
-			loginMember.setStack((String) paramMap.get("userStack")); // ����
-			loginMember.setSlogan((String) paramMap.get("slogan")); // ���� �Ұ�
-			loginMember.setIntroduce((String) paramMap.get("introduce")); // �Ұ�
-			loginMember.setSkill((String) paramMap.get("skill")); // �� ���
-
+		
+		if(result > 0) {
+			message = "회원 정보가 수정되었습니다.";
+			
+			
+			
+			loginMember.setMemberNick( (String)paramMap.get("updateNickname")); // 닉네임
+			loginMember.setStack( (String)paramMap.get("userStack")); // 스택
+			loginMember.setSlogan((String)paramMap.get("slogan")); // 한줄 소개
+			loginMember.setIntroduce((String)paramMap.get("introduce")); // 소개
+			loginMember.setSkill((String)paramMap.get("skill")); // 내 기술
+			
 		} else {
-			message = "ȸ�� ��� ��� ����";
+			message = "회원정보 수정에 실패하였습니다";
 		}
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:/info";
+		return "redirect:info";
 	}
 
 }
