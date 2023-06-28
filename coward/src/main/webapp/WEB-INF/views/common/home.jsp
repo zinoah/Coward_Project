@@ -193,298 +193,21 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           </div>
                           <div class="contest-slider-card-info-detail">
                             <p>남은기간</p>
-                            <p>1일</p>
+                            <p>${contest.dueDate}일</p>
                           </div>
                           <div class="contest-slider-card-info-button">
-                            <button class="btn-outlined btn-32">
+                            <!-- FIXME: 요청 주소 수정 -->
+                            <a
+                              class="btn-outlined btn-32"
+                              href="${contextPath}/contest/detail?contestNo=${contest.contestNo}"
+                            >
                               참여하러가기
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </c:forEach>
-
-                  <!-- <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>1식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>2식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>3식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>4식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>5식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>6식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>7식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>8식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>9식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="contest-slider-card">
-                      <div class="contest-slider-card-img">
-                        <img
-                          src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div class="contest-slider-card-info">
-                        <div class="contest-slider-card-info-title">
-                          <p>10식품 쇼핑몰 웹사이트 제작</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>상금</p>
-                          <p>100만원</p>
-                        </div>
-                        <div class="contest-slider-card-info-detail">
-                          <p>남은기간</p>
-                          <p>1일</p>
-                        </div>
-                        <div class="contest-slider-card-info-button">
-                          <button class="btn-outlined btn-32">
-                            참여하러가기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
                 </div>
                 <div class="slider-controls">
                   <!-- slider control 버튼 -->
@@ -530,7 +253,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </div>
               <span class="service-name">맞춤 공모전</span>
             </a>
-            <a class="col-sm-1 col-md-3 col-lg-3 service" href="#">
+            <a
+              class="col-sm-1 col-md-3 col-lg-3 service"
+              href="${contextPath}/member/findDev"
+            >
               <div class="service-image">
                 <!-- Note: 모바일 아이콘 -->
                 <img
@@ -567,7 +293,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </div>
               <span class="service-name">이벤트</span>
             </a>
-            <a class="col-sm-1 col-md-3 col-lg-3 service" href="#">
+            <a class="col-sm-1 col-md-3 col-lg-3 service" href="">
               <div class="service-image">
                 <!-- Note: 모바일 아이콘 -->
                 <img
@@ -816,41 +542,37 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="row">
             <div class="col-lg-7 lg-only">
               <div class="new-contest-list">
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
+                <c:forEach
+                  var="contest"
+                  items="${newContestList}"
+                  begin="0"
+                  end="1"
+                  step="1"
+                >
+                  <!-- FIXME: 요청주소 수정 필요! -->
+                  <a class="new-contest-item" href="#">
+                    <div class="contest-thumbnail">
+                      <img src="${contextPath}/${contest.thumbnail}" />
                     </div>
-                  </div>
-                </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
 
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
+                    <div class="contest-info">
+                      <span class="user-nick"></span>
+                      <h3 class="contest-title">${contest.contestTitle}</h3>
+                      <div class="contest-price">
+                        <span
+                          >총 상금
+                          <span class="price">${contest.price}</span>만원</span
+                        >
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </c:forEach>
+
                 <!-- Note: 카드형 공모전 보기 중 광고인 경우 -->
                 <a class="new-contest-item is-ad" href="#">
                   <div class="contest-thumbnail">
                     <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
+                      src="${contextPath}/resources/assets/images/dummy/toss-ad.png"
                     />
                   </div>
 
@@ -861,62 +583,68 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
 
                     <h3 class="contest-title">
-                      흩어진 자산<br />
-                      한번에 모아 관리하기 !
+                      토스를 더 잘 쓰는 특별한 <br />방법, 토스 프라임
                     </h3>
                   </div>
                 </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
 
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
+                <c:forEach
+                  var="contest"
+                  items="${newContestList}"
+                  begin="2"
+                  end="4"
+                  step="1"
+                >
+                  <!-- FIXME: 요청주소 수정 필요! -->
+                  <a class="new-contest-item" href="#">
+                    <div class="contest-thumbnail">
+                      <img src="${contextPath}/${contest.thumbnail}" />
                     </div>
-                  </div>
-                </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
 
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
+                    <div class="contest-info">
+                      <span class="user-nick"></span>
+                      <h3 class="contest-title">${contest.contestTitle}</h3>
+                      <div class="contest-price">
+                        <span
+                          >총 상금
+                          <span class="price">${contest.price}</span>만원</span
+                        >
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
-                    </div>
-                  </div>
-                </a>
+                  </a>
+                </c:forEach>
               </div>
             </div>
 
             <div class="col-sm-4 col-lg-5">
               <div class="new-contest-board">
-                <a class="new-contest-item" href="#">
+                <c:forEach
+                  var="contest"
+                  items="${newContestList}"
+                  begin="5"
+                  end="10"
+                  step="1"
+                >
+                  <!-- FIXME: 요청주소 수정 필요! -->
+                  <a class="new-contest-item" href="#">
+                    <div class="contest-thumbnail">
+                      <img src="${contextPath}/${contest.thumbnail}" />
+                    </div>
+
+                    <div class="contest-info">
+                      <span class="user-nick"></span>
+                      <h3 class="contest-title">${contest.contestTitle}</h3>
+                      <div class="contest-price">
+                        <span
+                          >총 상금
+                          <span class="price">${contest.price}</span>만원</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </c:forEach>
+
+                <!-- <a class="new-contest-item" href="#">
                   <div class="contest-thumbnail">
                     <img
                       src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
@@ -990,7 +718,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <span>총 상금 <span class="price">300</span>만원</span>
                     </div>
                   </div>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>

@@ -21,7 +21,22 @@ public class ContestDAO {
 	/** 
 	 * 진행중인 공모전 10개 리스트 조회 DAO
 	 */
-	public List<Contest> getContestList() {
-		return sqlSession.selectList("contestMapper.getContestList");
+	public List<Contest> getContestList(String type) {
+		
+		String mapperPath = null;
+		
+		switch (type) {
+		case "default" : 
+			mapperPath = "contestMapper.getDefaultContestList";
+			break;
+		case "new" : 
+			mapperPath = "contestMapper.getNewContestList";
+			break;
+		case "popular":
+			mapperPath = "contestMapper.getPopularContestList";
+			break;
+		}
+		
+		return sqlSession.selectList(mapperPath);
 	}
 }

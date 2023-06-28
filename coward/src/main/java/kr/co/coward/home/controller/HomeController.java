@@ -21,16 +21,18 @@ public class HomeController {
 	@RequestMapping("/home")
 	public String mainForward(Model model) {
 		
-		// 1. 진행중인 공모전 10개 정보 받아오기
+		// 1-1. 진행중인 공모전 10개 정보 받아오기
 		// CON_STATUS = (심사중, 진행중, 완료)
-		List<Contest> contestList = contestService.getContestList();
-		
-		model.addAttribute(contestList);
+		List<Contest> contestList = contestService.getContestList("default");
 		
 		// 2. 랭킹 분야별 1~3위 받아오기
 		
 		// 3. 신규 등록된 공모전 10개 정보 받아오기 
-		List<Contest> newContestList = contestService.getNewContestList();
+		List<Contest> newContestList = contestService.getContestList("new");
+		
+		
+		model.addAttribute("contestList", contestList);
+		model.addAttribute("newContestList", newContestList);
 
 		return "common/home"; 
 	}

@@ -6,14 +6,11 @@ import kr.co.coward.contest.model.vo.Contest;
 
 public interface ContestService {
 
-	/** 진행중인 공모전 10개 리스트 조회 서비스
+	/** 공모전 10개 리스트 조회 서비스
+	 * default, new, popular
+	 * @param type
 	 * @return contestList
 	 */
-	List<Contest> getContestList();
-
-	/** 최신 등록된 공모전 10개 리스트 조회 서비스
-	 * @return newContestList
-	 */
-	List<Contest> getNewContestList();
+	List<Contest> getContestList(String type);
 	
 }

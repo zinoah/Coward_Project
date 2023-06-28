@@ -14,17 +14,11 @@ public class ContestServiceImpl implements ContestService {
 	@Autowired
 	private ContestDAO dao;
 
-	// 진행중인 공모전 10개 리스트 조회 서비스
+	// 공모전 10개 리스트 조회 서비스
+	// default, new, popular
 	@Override
-	public List<Contest> getContestList() {
-		return dao.getContestList();
-	}
-
-	//최신 등록된 공모전 10개 리스트 조회 서비스
-	@Override
-	public List<Contest> getNewContestList() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Contest> getContestList(String type) {
+		return dao.getContestList(type);
 	}
 	
 }

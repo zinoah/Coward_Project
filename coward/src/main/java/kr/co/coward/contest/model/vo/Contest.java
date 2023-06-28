@@ -19,9 +19,11 @@ public class Contest {
 	private String addInfo;
 	private String createDate;
 	private String endDate;
+	private int dueDate;
 	private String skill;
 	private int price;
 	private String thumbnail;
 	private int adNo;
 	private String winner;
+	private String conStatus;
 }
