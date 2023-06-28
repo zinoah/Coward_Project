@@ -12,11 +12,25 @@ public class MyPageDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	/** È¸¿ø Á¤º¸ ¼öÁ¤ DAO
+	/**
+	 * È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ DAO
+	 * 
 	 * @param paramMap
 	 * @return result
 	 */
 	public int updateInfo(Map<String, Object> paramMap) {
 		return sqlSession.update("myPageMapper.updateInfo", paramMap);
+	}
+
+	/**
+	 * ê¸°ì—… íšŒì› ì •ë³´ ìˆ˜ì • DAO
+	 * 
+	 * @param paramMap
+	 * @return result
+	 */
+	public int updateCompanyInfo(Map<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		return sqlSession.update("myPageMapper.updateCompanyInfo", paramMap);
+
 	}
 }

@@ -8,16 +8,22 @@ import org.springframework.stereotype.Service;
 import kr.co.coward.member.model.dao.MyPageDAO;
 
 @Service
-public class MyPageServiceImpl implements MyPageService{
-	
+public class MyPageServiceImpl implements MyPageService {
+
 	@Autowired
 	private MyPageDAO dao;
 
-	// È¸¿ø Á¤º¸ ¼öÁ¤ ¼­ºñ½º ±¸Çö
+	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public int updateInfo(Map<String, Object> paramMap) {
-		
+
 		return dao.updateInfo(paramMap);
+	}
+
+	// ê¸°ì—… íšŒì› ì •ë³´ ìˆ˜ì • ì„œë¹„ìŠ¤ êµ¬í˜„
+	@Override
+	public int updateCompanyInfo(Map<String, Object> paramMap) {
+		return dao.updateCompanyInfo(paramMap);
 	}
 
 }
