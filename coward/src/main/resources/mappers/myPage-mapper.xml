@@ -21,22 +21,21 @@
 		WHERE
 		MEMBER_NO = #{memberNo}
 	</update>
+	
+	
+	
+	<!-- ***************기업 마이페이지 맵퍼******************** -->
+	
 
 	<!-- 기업 회원 프로필 수정 -->
-	<update id="updateCompanyInfo">
+	<update id="updateCompanyInfo" >
 		UPDATE MEMBER SET
-		MEMBER_NICK = #{updateMemberNick},
-		REGION_NO = #{updateRegion},
+		MEMBER_NICK = #{updateNickName},
 		INTRODUCE = #{updateIntroduce}
-		WHERE MEMBER_NO = ${memberNo}
+		WHERE MEMBER_NO = #{memberNo}
 	</update>
 	
 	
-	<!-- 마이페이지 - 공모전 관리 -->
-	<select id="ContestList" resultMap="contestList_rm">
-		SELECT CONTEST_TITLE, MEMBER_NICK, PROFILE_IMG
-		FROM CONTEST C JOIN CONTEST_ATTEND A ON C.CONTEST_NO = A.CONTEST_NO
-		JOIN MEMBER M ON C.MEMBER_NO = M.MEMBER_NO
-		WHERE MEMBER_TYPE = 'C'
-	</select>
+
+	
 </mapper>
