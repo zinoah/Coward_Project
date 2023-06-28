@@ -194,7 +194,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             <p>${contest.dueDate}일</p>
                           </div>
                           <div class="contest-slider-card-info-button">
-                            <!-- FIXME: 요청 주소 수정 -->
                             <a
                               class="btn-outlined btn-32"
                               href="${contextPath}/contest/detail/${contest.contestNo}"
@@ -547,8 +546,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   end="1"
                   step="1"
                 >
-                  <!-- FIXME: 요청주소 수정 필요! -->
-                  <a class="new-contest-item" href="#">
+                  <a
+                    class="new-contest-item"
+                    href="${contextPath}/contest/detail/${contest.contestNo}"
+                  >
                     <div class="contest-thumbnail">
                       <img src="${contextPath}/${contest.thumbnail}" />
                     </div>
@@ -593,8 +594,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   end="4"
                   step="1"
                 >
-                  <!-- FIXME: 요청주소 수정 필요! -->
-                  <a class="new-contest-item" href="#">
+                  <a
+                    class="new-contest-item"
+                    href="${contextPath}/contest/detail/${contest.contestNo}"
+                  >
                     <div class="contest-thumbnail">
                       <img src="${contextPath}/${contest.thumbnail}" />
                     </div>
@@ -623,8 +626,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   end="10"
                   step="1"
                 >
-                  <!-- FIXME: 요청주소 수정 필요! -->
-                  <a class="new-contest-item" href="#">
+                  <a
+                    class="new-contest-item"
+                    href="${contextPath}/contest/detail/${contest.contestNo}"
+                  >
                     <div class="contest-thumbnail">
                       <img src="${contextPath}/${contest.thumbnail}" />
                     </div>
@@ -641,82 +646,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
                   </a>
                 </c:forEach>
-
-                <!-- <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
-                    </div>
-                  </div>
-                </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
-                    </div>
-                  </div>
-                </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
-                    </div>
-                  </div>
-                </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
-                    </div>
-                  </div>
-                </a>
-                <a class="new-contest-item" href="#">
-                  <div class="contest-thumbnail">
-                    <img
-                      src="${contextPath}/resources/assets/images/contest-gallery-card-img.svg"
-                    />
-                  </div>
-
-                  <div class="contest-info">
-                    <span class="user-nick">Pizza Planet</span>
-                    <h3 class="contest-title">피자 데이터베이스 구현</h3>
-                    <div class="contest-price">
-                      <span>총 상금 <span class="price">300</span>만원</span>
-                    </div>
-                  </div>
-                </a> -->
               </div>
             </div>
           </div>
