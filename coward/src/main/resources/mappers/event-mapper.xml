@@ -21,6 +21,11 @@
 		FROM EVENT
 	</select>
 	
-	
+	<select id="getEvent" parameterType="_int" resultMap="event_rm">
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, 
+				TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL 
+		FROM EVENT
+		WHERE EVENT_NO = #{eventNo}
+	</select>
 
 </mapper>

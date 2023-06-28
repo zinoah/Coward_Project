@@ -19,6 +19,11 @@ public class EventServiceImpl implements EventService {
 	public List<Event> getEventList() {
 		return dao.getEventList();
 	}
-	
-	
+
+	// 이벤트 상세 조회 서비스
+	@Override
+	public Event getEvent(int eventNo) {
+		return dao.getEvent(eventNo);
+	}
+
 }

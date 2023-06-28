@@ -1,7 +1,6 @@
 package kr.co.coward.event.model.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -14,14 +13,29 @@ import kr.co.coward.event.model.vo.Event;
 
 @Repository
 public class EventDAO {
-	
+
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
+	/**
+	 * 전체 이벤트 목록 조회 DAO
+	 * 
+	 * @return eventList
+	 */
 	public List<Event> getEventList() {
 		return sqlSession.selectList("eventMapper.getEventList");
+	}
+
+	/**
+	 * 이벤트 상세 조회 서비스
+	 * 
+	 * @param eventNo
+	 * @return event
+	 */
+	public Event getEvent(int eventNo) {
+		return sqlSession.selectOne("eventMapper.getEvent", eventNo);
 	}
 
 }
