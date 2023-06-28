@@ -16,16 +16,8 @@ public interface MyPageService {
 	int updateInfo(Map<String, Object> paramMap);
 
 	/**
-	 * 기업 회원 프로필 수정 서비스
-	 * 
-	 * @param paramMap
-	 * @return result
-	 */
-	int updateCompanyInfo(Map<String, Object> paramMap);
-
-	
-	/**
 	 * 일반회원 공모전 관리 서비스
+	 * 
 	 * @return
 	 */
 	static List<Contest> contestList() {
@@ -33,8 +25,16 @@ public interface MyPageService {
 		return null;
 	}
 
+	/**********************************
+	 * 기업 마이페이지 Service
+	 **********************************/
 
-	
-
+	/**
+	 * 기업 회원 프로필 수정 서비스
+	 * 
+	 * @param paramMap
+	 * @return result
+	 */
+	int updateCompanyInfo(Map<String, Object> paramMap);
 
 }

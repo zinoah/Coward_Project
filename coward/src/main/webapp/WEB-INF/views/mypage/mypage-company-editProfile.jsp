@@ -49,7 +49,7 @@
 										</div>
 
 										<div class="profile-info">
-											<p class="profile-nick">삼성전자</p>
+											<p class="profile-nick">${loginMember.memberNick}</p>
 										</div>
 									</div>
 
@@ -58,7 +58,7 @@
 										<li><a href="${contextPath}/mypage/company-management">공모전
 												관리</a></li>
 										<li><a href="#">크레딧 인출</a></li>
-										<li><a href="${contextPath}/mypage/company-profile">프로필
+										<li><a href="${contextPath}/mypage/companyProfile">프로필
 												수정</a></li>
 										<li><a href="#">회원 탈퇴</a></li>
 									</ul>
@@ -80,8 +80,8 @@
 											<p class="title">프로필 수정</p>
 										</div>
 
-										<form action="company-profile" method="POST" name="company-form"
-											onsubmit="return infoValidate()">
+										<form action="companyProfile" method="POST" name="company-form"
+											>
 											<div class="mypage-img-wrapper">
 												<div class="ic-camera-relative">
 													<div class="avatar">
@@ -98,7 +98,7 @@
 												<div class="mypage-input-box">
 													<p>회사명</p>
 													<input type="text" placeholder="회사명 입력"
-														class="mypage-input" id="memberNick"  value="${loginMember.memberNick}"  />
+														class="mypage-input" name="updateNickName"  value="${loginMember.memberNick}"  />
 														
 							
 												</div>
@@ -118,7 +118,7 @@
 											<div class="textarea-box">
 												<div>
 													<p>소개글</p>
-													<textarea cols="50" rows="10" placeholder="기업에 대해서 소개해주세요!"></textarea>
+													<textarea cols="50" rows="10" placeholder="기업에 대해서 소개해주세요!" name="updateIntroduce">${loginMember.introduce}</textarea>
 												</div>
 											</div>
 
