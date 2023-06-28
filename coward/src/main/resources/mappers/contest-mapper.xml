@@ -13,13 +13,37 @@
 		<result property="addInfo" 		column="ADD_INFOMATION"/>
 		<result property="createDate" 	column="CREATE_DATE"/>
 		<result property="endDate" 	column="END_DATE"/>
+		<result property="dueDate" 	column="DUE_DATE"/>
 		<result property="skill"    column="SKILL"/>
 		<result property="price" 	column="PRICE"/>
 		<result property="thumbnail" 	column="THUMBNAIL"/>
 		<result property="adNo" 	column="AD_NO"/>
 		<result property="winner" 	column="WINNER"/>
+		<!-- Note: 기획 정리 되면 사용 여부 결정 -->
+		<result property="conStatus" 	column="CON_STATUS"/>
 	</resultMap>
 	
+
+	<!-- Note: 진행중인 공모전 - 기본 -->
+	<select id="getDefaultContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE, THUMBNAIL
+		FROM CONTEST
+		<!-- Note: 기획 정리 되면 조건 설정 결정 -->
+		WHERE CON_STATUS = '진행중'
+	</select>
+	
+	<!-- Note: 진행중인 공모전 - 신규 -->
+	<select id="getNewContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO, CONTEST_TITLE, PRICE, THUMBNAIL
+		FROM CONTEST
+		WHERE CON_STATUS = '진행중'
+	</select>
+	
+	<!-- Note: 진행중인 공모전 - 인기 -->
+	<select id="getPopularContestList" resultMap="contest_rm">
+		
+	</select>
+  
 	<!-- 공모전 개최 -->
 	<insert id="contestCreate">
 		INSERT INTO CONTEST (CONTEST_NO,MEMBER_NO,CONTEST_TITLE,TYPE_NO,SUBJECT,QUALIFICATION,ADD_INFOMATION,CREATE_DATE,END_DATE,SKILL,PRICE,THUMBNAIL,AD_NO)
@@ -27,4 +51,5 @@
 	</insert>
 	
 	
+
 </mapper>

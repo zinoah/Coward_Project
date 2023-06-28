@@ -1,8 +1,11 @@
 package kr.co.coward.contest.model.service;
 
+
+import java.util.List;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +14,23 @@ import org.springframework.web.multipart.MultipartFile;
 import kr.co.coward.common.Util;
 import kr.co.coward.contest.model.dao.ContestDAO;
 
+import kr.co.coward.contest.model.dao.ContestDAO;
+import kr.co.coward.contest.model.vo.Contest;
+
 @Service
 public class ContestServiceImpl implements ContestService {
-
+	
 	@Autowired
 	private ContestDAO dao;
+
+
+	// 공모전 10개 리스트 조회 서비스
+	// default, new, popular
+	@Override
+	public List<Contest> getContestList(String type) {
+		return dao.getContestList(type);
+	}
+
 
 	// 공모전 개최
 	@Override
@@ -46,5 +61,6 @@ public class ContestServiceImpl implements ContestService {
 		}
 		return result;
 	}
+
 
 }

@@ -344,6 +344,7 @@ body {
 
     .contest-info {
       @include column-flexbox(center, start);
+      width: 100%;
 
       .user-nick {
         @include text-style(12, $tertiary);
@@ -352,6 +353,15 @@ body {
       .contest-title,
       .contest-price {
         @include text-style(14);
+      }
+
+      // Note: 2줄 허용
+      .contest-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
     }
   }
@@ -669,6 +679,8 @@ body {
       // Note: 카드형 공모전 보기
       .new-contest-item {
         width: 190px;
+        // Note: 광고 카드 2줄 기준, height
+        height: 260px;
 
         padding: 10px;
         margin-right: 24px;
