@@ -8,7 +8,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/css/login.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/styles/css/login.css" />
     <script
       src="https://kit.fontawesome.com/e5fede6c09.js"
       crossorigin="anonymous"
@@ -21,13 +21,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="col-sm-4">
           <div class="login-wrapper">
             <img
-              src=".${ContextPath}/resources/assets/images/login-bg.svg"
+              src="${contextPath}/resources/assets/images/login-bg.svg"
               class="login-bg-img lg-only"
             />
             <div class="login-box">
               <div class="logo-p-box">
                 <a href="#">
-                  <img src="${ContextPath}/resources/assets/images/home_logo.svg" class="logo-img" />
+                   <img
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
+                      class="logo-img"
+                    />
                 </a>
                 <p class="p-first">Coward에 오신 것을 환영합니다!</p>
               </div>
@@ -70,9 +73,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     >
                   </form>
                 </div>
-                <a href="../pages/pw-find.html" class="pw-find"
-                  >비밀번호 찾기</a
-                >
+                <a href="${contextPath}/member/pw-find" class="pw-find">비밀번호 찾기</a>
               </div>
               <div class="line-box">
                 <hr class="line1" />
@@ -81,16 +82,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </div>
               <div class="simple-login-box">
                 <img
-                  src="../assets/images/goolge-logo.png"
+                  src="${contextPath}/resources/assets/images/goolge-logo.png"
                   class="google-logo"
                 />
-                <img src="../assets/images/kakao-logo.png" class="kakao-logo" />
+                <img src="${contextPath}/resources/assets/images/kakao-logo.png" class="kakao-logo" />
                 <button class="google-btn">Google로 계속</button>
                 <button class="kakao-btn">Kakao로 계속</button>
               </div>
               <br />
               <span class="span-second">혹시 아직 회원이 아니신가요?</span>
-              <a href="../pages/join-first.html" class="join">회원가입</a>
+              <a href="${contextPath}/member/join" class="join">회원가입</a>
             </div>
           </div>
         </div>
