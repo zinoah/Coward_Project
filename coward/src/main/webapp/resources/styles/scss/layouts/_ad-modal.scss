@@ -1,19 +1,20 @@
-.ad-modal {
-  $ad-modal-height: 450px;
+$ad-modal-height-sm: 450px;
+$ad-modal-height-md: 480px;
 
+.ad-modal {
   @include column-flexbox;
 
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: $ad-modal-height;
+  height: $ad-modal-height-sm;
   padding: 12px;
   border-radius: 10px 10px 0 0;
   background-color: $white;
   z-index: $ad-modal-level;
 
-  transform: translate3d(0, $ad-modal-height, 0);
+  transform: translate3d(0, $ad-modal-height-sm, 0);
   transition: transform 300ms ease-in-out;
 
   &.is-active {
@@ -79,26 +80,24 @@
     overflow: hidden;
 
     border-radius: 10px;
-    height: 430px;
+    height: $ad-modal-height-md;
 
     &.is-active {
       @include pos-center;
       display: block;
       width: auto;
-      // height: 520px;
       padding: 0;
 
       .ad-thumbnail {
+        width: 100%;
+        height: 430px;
+
         img {
           border-radius: 0;
         }
       }
 
       .buttons {
-        // flex-basis: 10%;
-        // background-color: #fff;
-        // margin-top: 0;
-
         .today-skip-button,
         .close-button {
           @include text-style(14);
@@ -107,7 +106,6 @@
 
           &:hover {
             color: $secondary;
-            // background-color: $background;
           }
         }
 

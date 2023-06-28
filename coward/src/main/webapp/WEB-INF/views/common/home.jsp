@@ -1046,7 +1046,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         href="${contextPath}resources/pages/event-detail.html"
       >
         <img
-          src="${contextPath}/resources/assets/images/dummy/ad-modal/ad-modal-3.png"
+          src="${contextPath}/resources/assets/images/dummy/ad-modal/ad-modal-5.png"
         />
       </a>
       <div class="buttons">
