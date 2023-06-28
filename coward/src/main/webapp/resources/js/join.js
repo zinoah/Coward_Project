@@ -1,3 +1,4 @@
+// 개인 기업 박스 불들어오게하기
 var singleBox = document.querySelector(".single-box");
 var companyBox = document.querySelector(".company-box");
 
@@ -11,6 +12,7 @@ companyBox.addEventListener("click", function () {
   singleBox.classList.remove("clicked");
 });
 
+// 모달창 js
 const overlay = document.getElementById("overlay");
 
 const close1 = document.querySelector(".close1");
@@ -65,4 +67,25 @@ close3.addEventListener("click", function () {
   agreeModal_1.style.display = "none";
   agreeModal_2.style.display = "none";
   agreeModal_3.style.display = "none";
+});
+
+// 회원가입 마지막단계 가는 버튼
+const nextBtn = document.querySelector(".next-btn");
+
+nextBtn.addEventListener("click", function () {
+  const finalBox = document.querySelector(".join-final-display");
+  const joinBox = document.querySelector(".join-display");
+
+  finalBox.style.display = "block";
+  joinBox.style.display = "none";
+});
+
+// 이메일 인증하기 버튼 누르면 이메일 입력칸이랑 버튼 사라짐
+const emailBox = document.querySelector(".email-box");
+const emailDisplay = document.querySelector(".email-cert-display");
+const certBtn = document.querySelector(".email-cert-btn");
+
+certBtn.addEventListener("click", function () {
+  emailBox.style.display = "none";
+  emailDisplay.style.display = "block";
 });
