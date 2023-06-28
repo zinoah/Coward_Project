@@ -34,7 +34,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <a href="${contextPath}/member/testLogin">로그인</a>
                 </button>
                 <button class="header-button-text" type="button">
-                  <a href="#">회원가입</a>
+                  <a href="${contextPath}/member/join">회원가입</a>
                 </button>
               </c:when>
               <c:otherwise>
