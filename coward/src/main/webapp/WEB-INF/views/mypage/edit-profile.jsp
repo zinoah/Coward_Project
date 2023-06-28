@@ -51,9 +51,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                     <ul class="category-bar">
                       <li><a href="#">내 정보</a></li>
-                       <a href="${contextPath}/mypage/myPage/progress"><li>공모전 관리</li></a>
+                       <a href="${contextPath}/mypage/progress"><li>공모전 관리</li></a>
                       <li>크레딧 인출</li>
-                      <a href="${contextPath}/mypage/myPage/editP"><li>프로필 수정</li></a>
+                      <a href="${contextPath}/mypage/editP"><li>프로필 수정</li></a>
                       <li>회원 탈퇴</li>
                     </ul>
                   </div>
