@@ -23,17 +23,9 @@ public interface MyPageService {
 	 */
 	int updateCompanyInfo(Map<String, Object> paramMap);
 
+	List<Contest> contestList();
+
 	
-	/**
-	 * 일반회원 공모전 관리 서비스
-	 * @return
-	 */
-	static List<Contest> contestList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 	
 
 

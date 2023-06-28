@@ -30,6 +30,12 @@ public class MyPageServiceImpl implements MyPageService {
 		return dao.updateCompanyInfo(paramMap);
 	}
 
+	@Override
+	public List<Contest> contestList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	// 공모전 관리
 	

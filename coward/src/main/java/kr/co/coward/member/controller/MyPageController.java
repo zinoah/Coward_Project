@@ -72,7 +72,7 @@ public class MyPageController {
 	// 공모전 목록 조회
 	@GetMapping("/progress")
 	public String contestList(Model model) {
-		List<Contest> progress = MyPageService.contestList();
+		List<Contest> progress = service.contestList();
 		model.addAttribute("progress", progress);
 
 		return "mypage/contest-progress";
@@ -124,10 +124,10 @@ public class MyPageController {
 	}
 
 	// 일반회원 프로필 변경
-	@PostMapping("/editP")
+	/*@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam("editImg") MultipartFile editImg, /* ��ε� ���� */
-			@RequestParam Map<String, Object> paramMap, String[] updateAddress, HttpServletRequest req,
+			@RequestParam("editImg") MultipartFile editImg, /* ��ε� �
+		/*	@RequestParam Map<String, Object> paramMap, String[] updateAddress, HttpServletRequest req,
 			RedirectAttributes ra) {
 
 		System.out.println(loginMember);
@@ -152,6 +152,6 @@ public class MyPageController {
 		ra.addFlashAttribute("message", message);
 
 		return "redirect:info";
-	}
+	}*/
 
 }
