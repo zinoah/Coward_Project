@@ -344,6 +344,7 @@ body {
 
     .contest-info {
       @include column-flexbox(center, start);
+      width: 100%;
 
       .user-nick {
         @include text-style(12, $tertiary);
