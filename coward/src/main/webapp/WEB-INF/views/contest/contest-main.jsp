@@ -487,6 +487,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <!-- footer include -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+    <!-- 모달 :: is-open -->
+    <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
+    <div id="overlay" class="overlay"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/slider.js"></script>

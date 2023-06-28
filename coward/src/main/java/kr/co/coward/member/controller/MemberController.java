@@ -1,5 +1,7 @@
 package kr.co.coward.member.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +26,15 @@ public class MemberController {
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
 
 	@GetMapping("/testLogin")
-	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra) {
+	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra,
+			HttpServletRequest request) {
 
-		logger.info("·Î±×ÀÎ ±â´É ¼öÇàµÊ");
+		logger.info("ë¡œê·¸ì¸ ê¸°ëŠ¥ ìˆ˜í–‰ë¨");
 
 		String id = "test01";
 		String pw = "pass01!";
+
+		String referer = request.getHeader("Referer");
 
 		Member testLoginMember = new Member();
 
@@ -38,22 +43,26 @@ public class MemberController {
 
 		Member loginMember = service.login(testLoginMember);
 
-		if (loginMember != null) { // login ¼º°ø ½Ã
+		if (loginMember != null) { // login ì„±ê³µ ì‹œ
 			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
 
 		} else {
 
-			ra.addFlashAttribute("message", "¾ÆÀÌµğ ¶Ç´Â ºñ¹Ğ¹øÈ® ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+			ra.addFlashAttribute("message", "ë¡œê·¸ì¸ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 
-		return "redirect:/";
+		if (referer != null && !referer.isEmpty()) {
+			return "redirect:" + referer;
+		} else {
+			return "redirect:/"; // ê¸°ë³¸ì ì¸ í™ˆí˜ì´ì§€ë¡œ ì´ë™í•˜ë„ë¡ ì„¤ì •
+		}
 	}
-	
+
 	@GetMapping("/findDev")
 	public String findDev() {
 		return "find-developer";
 	}
-	
+
 	@GetMapping("/terms")
 	public String terms() {
 		return "terms";

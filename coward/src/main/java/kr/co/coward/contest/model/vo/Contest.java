@@ -20,8 +20,8 @@ public class Contest {
 	private String createDate;
 	private String endDate;
 	private String skill;
-	private int price;
 	private String thumbnail;
+	private int price;
 	private int adNo;
 	private String winner;
 }

@@ -120,7 +120,7 @@ $input-box-margin: 24px;
         }
       }
 
-      &-company-name {
+      &-contest-title {
         @include flexbox(between);
         height: 50px;
 
@@ -375,6 +375,7 @@ $input-box-margin: 24px;
               flex-basis: 50%;
               padding: 10px;
               margin-bottom: 20px;
+
               &-inner-box {
                 @include column-flexbox;
                 background-color: $background;
@@ -475,10 +476,17 @@ $input-box-margin: 24px;
               }
 
               #result-price {
-                margin-left: 20px;
+                width: 70px;
                 font-size: 20px;
                 color: $blue;
                 font-weight: 500;
+                text-align: end;
+
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
               }
             }
           }
