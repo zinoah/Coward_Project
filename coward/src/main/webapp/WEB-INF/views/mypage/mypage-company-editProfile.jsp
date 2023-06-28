@@ -80,7 +80,7 @@
 											<p class="title">프로필 수정</p>
 										</div>
 
-										<form action="companyProfile" method="POST" name="company-form"
+										<form action="company-profile" method="POST" name="company-form"
 											onsubmit="return infoValidate()">
 											<div class="mypage-img-wrapper">
 												<div class="ic-camera-relative">
@@ -98,7 +98,9 @@
 												<div class="mypage-input-box">
 													<p>회사명</p>
 													<input type="text" placeholder="회사명 입력"
-														class="mypage-input" />
+														class="mypage-input" id="memberNick"  value="${loginMember.memberNick}"  />
+														
+							
 												</div>
 												<div class="mypage-input-box">
 													<p>지역</p>
