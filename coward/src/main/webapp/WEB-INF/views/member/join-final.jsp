@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/css/join-second.css" />
-    <link rel="stylesheet" href="../styles/css/agree-modal.css" />
-    <title>Coward | 회원가입 - 타입선택 및 약관동의</title>
-  </head>
-  <body>
-    <div class="container">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
+
+<div class="container join-display">
       <div class="row">
         <div class="col-sm-4">
           <div class="join-second-wrapper">
@@ -101,12 +94,7 @@
                     </div>
                   </div>
                 </div>
-                <button
-                  class="next-btn"
-                  onclick="location.href='join-final.html'"
-                >
-                  다음
-                </button>
+                <button class="next-btn">다음</button>
               </form>
             </div>
           </div>
@@ -114,11 +102,108 @@
       </div>
     </div>
 
-    <!--
+    <!-- 회원가입 마지막 단계 -->
+    <div class="container join-final-display">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="join-final-wrapper">
+            <img
+              src="../assets/images/login-bg.svg"
+              class="login-bg-img lg-only"
+            />
+            <form action="#">
+              <div class="join-final-box">
+                <div class="logo-final-box">
+                  <a href="#">
+                    <img
+                      src="../assets/images/home_logo.svg"
+                      class="logo-img"
+                    />
+                  </a>
+                  <span class="final-info"> 정보 입력 마지막 단계입니다! </span>
+                </div>
+                <div class="email-box">
+                  <span class="input-title">이메일</span>
+                  <input
+                    class="btn-input-bundle email-input"
+                    type="email"
+                    placeholder="이메일 입력"
+                  />
+                  <button class="btn-input-bundle email-cert-btn">
+                    이메일 인증하기
+                  </button>
+                </div>
+                <div class="email-cert-display">
+                  <div class="email-cert-wrapper">
+                    <div class="email-cert-box">
+                      <span class="email-explanation"
+                        >이메일로 전송된 코드를 입력해주세요.</span
+                      >
+                      <div class="email-cert">
+                        <div class="cert-code">
+                          <input
+                            class="cert-input"
+                            placeholder="인증코드 6자리 입력"
+                          />
+                          <span class="timer">05:00</span>
+                        </div>
+                        <button class="cert-btn">확인</button>
+                      </div>
+                      <div class="warn-box">
+                        <div class="warn-img-container">
+                          <img
+                            src="../assets/images/warning-circle.svg"
+                            class="warn-image"
+                          />
+                        </div>
+                        <span class="email-explanation-1"
+                          >이메일을 받지 못하셨나요?</span
+                        >
+                        <span class="email-explanation-2"
+                          >이메일 재전송하기</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
+                <div class="pw-box">
+                  <span class="input-title">비밀번호</span>
+                  <span class="pw-explanation">유효성 검사 자리~~</span>
+                  <div class="btn-input-bundle pw-input-box">
+                    <input
+                      class="pw-input"
+                      placeholder="8자리 이상, 대소문자 포함"
+                      type="password"
+                    />
+                    <div class="eye-img">
+                      <img src="../assets/images/eye.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="pw-box">
+                  <span class="input-title">비밀번호 확인</span>
+                  <span class="pw-explanation">비밀번호 일치 확인 자리</span>
+                  <div class="btn-input-bundle pw-input-box">
+                    <input
+                      class="pw-input-chk"
+                      placeholder="비밀번호를 한번 더 입력해주세요!"
+                      type="password"
+                    />
+                    <div class="eye-img">
+                      <img src="../assets/images/eye.svg" />
+                    </div>
+                  </div>
+                </div>
+                <button class="complete-btn">완료</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-    -->
+    <!-- 이용약관 모달창 -->
 
     <div class="agree-all-wrapper">
       <div class="agree-box1">
@@ -335,8 +420,21 @@
       </div>
     </div>
 
+    <!-- 회원가입 축하 모달 -->
+    <div class="join-all-wrapper">
+      <div class="join-box">
+        <img src="../assets/images/check-circle.svg" class="check" />
+        <br /><br />
+        <pre class="pre-first">가입을 완료했어요 👏</pre>
+        <button class="add-information-btn">추가 정보 입력하기</button>
+
+        <br /><br />
+
+        <button class="reject" onclick="location.href='home.html'">
+          아니요. 다음에 입력할게요!
+        </button>
+      </div>
+    </div>
     <div id="overlay" class="overlay"></div>
 
-    <script src="../js/join-second.js"></script>
-  </body>
-</html>
+    <script src="../js/join.js"></script>
