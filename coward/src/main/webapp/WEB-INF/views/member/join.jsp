@@ -2,24 +2,89 @@
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="container join-display">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="join-second-wrapper">
-            <img
-              src="../assets/images/login-bg.svg"
-              class="login-bg-img lg-only"
-            />
-            <div class="join-second-box">
-              <div class="logo-info-box">
-                <a href="#">
-                  <img src="../assets/images/home_logo.svg" class="logo-img" />
-                </a>
-                <span class="info">
-                  다음 정보들을 입력 후 완료 버튼을 눌러주세요!
-                </span>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-second.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/styles/css/agree-modal.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-final.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-modal.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-first.css" />
+    <title>Coward | 회원가입 - 타입선택 및 약관동의</title>
+  </head>
+  <body>
+    <!--회원가입-->
+    <form action="signUp" method="POST" name="signUp-form" onsubmit="return signUpValidate()"	>
+      <div class="container first-join-wrapper">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="join-wrapper">
+              <img
+                src="${contextPath}/resources/assets/images/login-bg.svg"
+                class="login-bg-img lg-only"
+              />
+              <div class="join-first-box">
+                <div class="logo-p-box">
+                  <a href="#">
+                    <img
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
+                      class="logo-img"
+                    />
+                  </a>
+                  <p class="p-first">Coward에 오신 것을 환영합니다!</p>
+                </div>
+                <button class="join-email">이메일로 가입하기</button>
+                <div class="line-box">
+                  <hr class="line1" />
+                  <hr class="line2" />
+                  <p class="p-or">또는</p>
+                  <img
+                    src="${contextPath}/resources/assets/images/goolge-logo.png"
+                    class="google-logo"
+                  />
+                  <img
+                    src="${contextPath}/resources/assets/images/kakao-logo.png"
+                    class="kakao-logo"
+                  />
+                  <div class="join-google-box">
+                    <button class="join-google">Google로 간편가입</button>
+                  </div>
+                  <div class="join-kakao-box">
+                    <button class="join-kakao">Kakao로 간편가입</button>
+                  </div>
+                  <span class="question">이미 계정이 있으신가요?</span>
+                  <a href="${contextPath}/member/login" class="login">로그인 하기</a>
+                </div>
               </div>
-              <form action="#">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--이메일 가입 선택시 넘어감-->
+      <div class="container join-display">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="join-second-wrapper">
+              <img
+                src="${contextPath}/resources/assets/images/login-bg.svg"
+                class="login-bg-img lg-only"
+              />
+              <div class="join-second-box">
+                <div class="logo-info-box">
+                  <a href="#">
+                    <img
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
+                      class="logo-img"
+                    />
+                  </a>
+                  <span class="info">
+                    다음 정보들을 입력 후 완료 버튼을 눌러주세요!
+                  </span>
+                </div>
                 <div class="mem-type-box">
                   <span class="mem-type">회원 타입 선택</span>
                   <span class="star">*</span>
@@ -45,7 +110,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <div class="all-agree">
                     <div class="chk-img">
                       <img
-                        src="../assets/images/gray-check-circle.svg"
+                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
                         class="gray-chk-1"
                       />
                     </div>
@@ -54,7 +119,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <div class="essential-chk">
                     <div class="chk-img">
                       <img
-                        src="../assets/images/gray-check-circle.svg"
+                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
                         class="gray-chk-2"
                       />
                     </div>
@@ -68,7 +133,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <div class="essential-chk">
                     <div class="chk-img">
                       <img
-                        src="../assets/images/gray-check-circle.svg"
+                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
                         class="gray-chk3"
                       />
                     </div>
@@ -82,7 +147,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <div class="essential-chk">
                     <div class="chk-img">
                       <img
-                        src="../assets/images/gray-check-circle.svg"
+                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
                         class="gray-chk4"
                       />
                     </div>
@@ -95,28 +160,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                 </div>
                 <button class="next-btn">다음</button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- 회원가입 마지막 단계 -->
-    <div class="container join-final-display">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="join-final-wrapper">
-            <img
-              src="../assets/images/login-bg.svg"
-              class="login-bg-img lg-only"
-            />
-            <form action="#">
+      <!-- 회원가입 마지막 단계 -->
+      <div class="container join-final-display">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="join-final-wrapper">
+              <img
+                src="${contextPath}/resources/assets/images/login-bg.svg"
+                class="login-bg-img lg-only"
+              />
               <div class="join-final-box">
                 <div class="logo-final-box">
                   <a href="#">
                     <img
-                      src="../assets/images/home_logo.svg"
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
                     />
                   </a>
@@ -152,7 +215,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="warn-box">
                         <div class="warn-img-container">
                           <img
-                            src="../assets/images/warning-circle.svg"
+                            src="${contextPath}/resources/assets/images/warning-circle.svg"
                             class="warn-image"
                           />
                         </div>
@@ -177,7 +240,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="password"
                     />
                     <div class="eye-img">
-                      <img src="../assets/images/eye.svg" />
+                      <img src="${contextPath}/resources/assets/images/eye.svg" />
                     </div>
                   </div>
                 </div>
@@ -191,23 +254,23 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="password"
                     />
                     <div class="eye-img">
-                      <img src="../assets/images/eye.svg" />
+                      <img src="${contextPath}/resources/assets/images/eye.svg" />
                     </div>
                   </div>
                 </div>
                 <button class="complete-btn">완료</button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
 
     <!-- 이용약관 모달창 -->
 
     <div class="agree-all-wrapper">
       <div class="agree-box1">
-        <img src="../assets/images/cross.svg" class="close1" />
+        <img src="${contextPath}/resources/assets/images/cross.svg" class="close1" />
         <br />
         <h3>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow"
@@ -308,7 +371,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
     <div class="agree-all-wrapper">
       <div class="agree-box2">
-        <img src="../assets/images/cross.svg" class="close2" />
+        <img src="${contextPath}/resources/assets/images/cross.svg" class="close2" />
         <br />
         <h3>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow"
@@ -393,7 +456,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <div class="agree-all-wrapper">
       <div class="agree-box3">
-        <img src="../assets/images/cross.svg" class="close3" />
+        <img src="${contextPath}/resources/assets/images/cross.svg" class="close3" />
         <br />
         <h3>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow"
@@ -423,18 +486,20 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 회원가입 축하 모달 -->
     <div class="join-all-wrapper">
       <div class="join-box">
-        <img src="../assets/images/check-circle.svg" class="check" />
+        <img src="${contextPath}/resources/assets/images/check-circle.svg" class="check" />
         <br /><br />
         <pre class="pre-first">가입을 완료했어요 👏</pre>
         <button class="add-information-btn">추가 정보 입력하기</button>
 
         <br /><br />
 
-        <button class="reject" onclick="location.href='home.html'">
+        <button class="reject" onclick="location.href='home.jsp'">
           아니요. 다음에 입력할게요!
         </button>
       </div>
     </div>
     <div id="overlay" class="overlay"></div>
 
-    <script src="../js/join.js"></script>
+    <script src="${contextPath}/resources/js/join.js"></script>
+  </body>
+</html>
