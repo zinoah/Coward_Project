@@ -14,6 +14,14 @@
   display: none;
 }
 
+.join-box {
+  display: none;
+}
+
+.join-display {
+  display: none;
+}
+
 .join {
   &-second-wrapper {
     @include flexbox;

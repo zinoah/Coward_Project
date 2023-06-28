@@ -1,3 +1,21 @@
+const emailBtn = document.querySelector(".join-email");
+const joinFirstBox = document.querySelector(".first-join-wrapper");
+
+emailBtn.addEventListener("click", function () {
+  joinFirstBox.style.display = "none";
+  joinBox.style.display = "block";
+});
+
+// 회원가입 마지막단계 가는 버튼
+const nextBtn = document.querySelector(".next-btn");
+const joinBox = document.querySelector(".join-display");
+const finalBox = document.querySelector(".join-final-display");
+
+nextBtn.addEventListener("click", function () {
+  finalBox.style.display = "block";
+  joinBox.style.display = "none";
+});
+
 // 개인 기업 박스 불들어오게하기
 var singleBox = document.querySelector(".single-box");
 var companyBox = document.querySelector(".company-box");
@@ -69,17 +87,6 @@ close3.addEventListener("click", function () {
   agreeModal_3.style.display = "none";
 });
 
-// 회원가입 마지막단계 가는 버튼
-const nextBtn = document.querySelector(".next-btn");
-
-nextBtn.addEventListener("click", function () {
-  const finalBox = document.querySelector(".join-final-display");
-  const joinBox = document.querySelector(".join-display");
-
-  finalBox.style.display = "block";
-  joinBox.style.display = "none";
-});
-
 // 이메일 인증하기 버튼 누르면 이메일 입력칸이랑 버튼 사라짐
 const emailBox = document.querySelector(".email-box");
 const emailDisplay = document.querySelector(".email-cert-display");
@@ -88,4 +95,24 @@ const certBtn = document.querySelector(".email-cert-btn");
 certBtn.addEventListener("click", function () {
   emailBox.style.display = "none";
   emailDisplay.style.display = "block";
+});
+
+// 축하 모달
+const joinModal = document.querySelector(".join-box");
+const completeBtn = document.querySelector(".complete-btn");
+const reject = document.querySelector(".pre-second");
+
+completeBtn.addEventListener("click", function () {
+  overlay.classList.add("is-active");
+  joinModal.style.display = "block";
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("is-active");
+  joinModal.style.display = "none";
+});
+
+reject.addEventListener("click", function () {
+  overlay.classList.remove("is-active");
+  joinModal.style.display = "none";
 });

@@ -165,73 +165,83 @@
                       <div class="title-wrapper lg-only">
                         <p class="title">내 정보</p>
                       </div>
-                      <div class="mypage-img-wrapper">
-                        <div class="ic-camera-relative">
+
+                      <form
+                        action="info"
+                        method="POST"
+                        name="myPage-form"
+                        onsubmit="return infoValidate()"
+                      >
+                        <div class="mypage-img-wrapper lg-hidden">
                           <div class="avatar">
                             <img src="../assets/images/default-user-img.png" />
-                            <div class="ic-camera-wrapper">
-                              <i class="ic-camera"></i>
+                          </div>
+                        </div>
+                        <div class="mypage-input-box-wrapper">
+                          <div class="mypage-input-box">
+                            <p>소개</p>
+                            <textarea
+                              cols="50"
+                              rows="5"
+                              placeholder="기업에 대해서 소개해 주세요!"
+                            ></textarea>
+                          </div>
+                          <div class="mypage-input-box">
+                            <p>관심있는 개발자</p>
+
+                            <div class="mypage-developer-card-scroll">
+                              <div class="mypage-developer-card">
+                                <div class="card-content">
+                                  <div class="avatar-32">
+                                    <img
+                                      src="../assets/images/default-user-img.png"
+                                    />
+                                  </div>
+                                  <div class="nick-name-wrapper">
+                                    <p class="nick-name">닉네임</p>
+                                    <div class="user-type">back</div>
+                                    <div class="one-line-intro">
+                                      <p>유능한 back 개발자 입니다</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mypage-developer-card">
+                                <div class="card-content">
+                                  <div class="avatar-32">
+                                    <img
+                                      src="../assets/images/default-user-img.png"
+                                    />
+                                  </div>
+                                  <div class="nick-name-wrapper">
+                                    <p class="nick-name">닉네임</p>
+                                    <div class="user-type">back</div>
+                                    <div class="one-line-intro">
+                                      <p>유능한 back 개발자 입니다</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mypage-developer-card">
+                                <div class="card-content">
+                                  <div class="avatar-32">
+                                    <img
+                                      src="../assets/images/default-user-img.png"
+                                    />
+                                  </div>
+                                  <div class="nick-name-wrapper">
+                                    <p class="nick-name">닉네임</p>
+                                    <div class="user-type">back</div>
+                                    <div class="one-line-intro">
+                                      <p>유능한 back 개발자 입니다</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-
-                      <div class="mypage-input-box">
-                        <p>소개</p>
-                        <textarea
-                          cols="50"
-                          rows="5"
-                          placeholder="기업에 대해서 소개해 주세요!"
-                        ></textarea>
-                      </div>
-                      <div class="mypage-input-box">
-                        <p>관심있는 개발자</p>
-
-                        <div class="mypage-developer-card-scroll">
-                          <div class="mypage-developer-card">
-                            <div class="card-content">
-                              <div class="avatar-32">
-                                <img
-                                  src="../assets/images/default-user-img.png"
-                                />
-                              </div>
-                              <div class="nick-name-wrapper">
-                                <p class="nick-name">닉네임</p>
-                                <div class="user-type">back</div>
-                                <p>유능한 back 개발자 입니다</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="mypage-developer-card">
-                            <div class="card-content">
-                              <div class="avatar-32">
-                                <img
-                                  src="../assets/images/default-user-img.png"
-                                />
-                              </div>
-                              <div class="nick-name-wrapper">
-                                <p class="nick-name">닉네임</p>
-                                <div class="user-type">back</div>
-                                <p>유능한 back 개발자 입니다</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="mypage-developer-card">
-                            <div class="card-content">
-                              <div class="avatar-32">
-                                <img
-                                  src="../assets/images/default-user-img.png"
-                                />
-                              </div>
-                              <div class="nick-name-wrapper">
-                                <p class="nick-name">닉네임</p>
-                                <div class="user-type">back</div>
-                                <p>유능한 back 개발자 입니다</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      </form>
                     </div>
 
                     <!-- 본문 끝 -->

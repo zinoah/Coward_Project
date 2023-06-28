@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/css/join-second.css" />
-    <link rel="stylesheet" href="../styles/css/agree-modal.css" />
-    <link rel="stylesheet" href="../styles/css/join-final.css" />
-    <link rel="stylesheet" href="../styles/css/join-modal.css" />
-    <title>Coward | 회원가입 - 타입선택 및 약관동의</title>
-  </head>
-  <body>
-    <div class="container join-display">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
+
+<div class="container join-display">
       <div class="row">
         <div class="col-sm-4">
           <div class="join-second-wrapper">
@@ -429,8 +420,21 @@
       </div>
     </div>
 
+    <!-- 회원가입 축하 모달 -->
+    <div class="join-all-wrapper">
+      <div class="join-box">
+        <img src="../assets/images/check-circle.svg" class="check" />
+        <br /><br />
+        <pre class="pre-first">가입을 완료했어요 👏</pre>
+        <button class="add-information-btn">추가 정보 입력하기</button>
+
+        <br /><br />
+
+        <button class="reject" onclick="location.href='home.html'">
+          아니요. 다음에 입력할게요!
+        </button>
+      </div>
+    </div>
     <div id="overlay" class="overlay"></div>
 
     <script src="../js/join.js"></script>
-  </body>
-</html>
