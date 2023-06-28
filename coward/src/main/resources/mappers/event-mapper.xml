@@ -5,18 +5,19 @@
 	<resultMap type="event" id="event_rm">
 		<id property="eventNo" column="EVENT_NO"/>
 		<result property="eventTitle"  column="EVENT_TITLE"/>
-		<result property="eventThunbnail"  column="EVENT_THUMBNAIL"/>
+		<result property="eventThumbnail"  column="EVENT_THUMBNAIL"/>
 		<result property="eventContent"  column="EVENT_CONTENT"/>
 		<result property="bannerImg"  column="BANNER_IMG"/>
 		<result property="adImg"  column="AD_IMG"/>
 		<result property="createDate"  column="CREATE_DATE" />
 		<result property="endDate"  column="END_DATE"/>
-		<result property="status"  column="STATUS_FL"/>
+		<result property="statusFl"  column="STATUS_FL"/>
 	</resultMap>
 
 
 	<select id="getEventList" resultMap="event_rm">
-		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, 
+				TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL
 		FROM EVENT
 	</select>
 	
