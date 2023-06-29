@@ -65,7 +65,7 @@ public class ContestController {
 			@RequestParam Map<String, Object> paramMap, String[] skill, RedirectAttributes ra,
 			@RequestParam("thumbnail") MultipartFile uploadImage, HttpServletRequest req) throws IOException {
 
-		String skillList = String.join("/", skill);
+		String skillList = String.join(",", skill);
 
 		// 웹 접근경로
 		String webPath = "/resources/assets/images/contest-thumbnail/";
@@ -79,15 +79,15 @@ public class ContestController {
 		paramMap.put("thumbnail", uploadImage);
 		paramMap.put("memberNo", loginMember.getMemberNo());
 
-		int result = service.contestCreate(paramMap);
+		int contestNo = service.contestCreate(paramMap);
 
 		String message = null;
 		String path = null;
 
-		if (result > 0) {
+		if (contestNo > 0) {
 			message = "공모전 개최가 완료되었습니다.";
 
-			path = "main";
+			path = "../contest/detail/" + contestNo;
 
 		} else {
 			message = "공모전 개최를 실패하였습니다.";

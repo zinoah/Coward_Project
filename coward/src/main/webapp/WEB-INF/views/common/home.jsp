@@ -197,7 +197,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             <!-- FIXME: 요청 주소 수정 -->
                             <a
                               class="btn-outlined btn-32"
-                              href="${contextPath}/contest/detail/${contest.contestNo}"
+                              href="contest/detail/${contest.contestNo}"
                             >
                               참여하러가기
                             </a>
