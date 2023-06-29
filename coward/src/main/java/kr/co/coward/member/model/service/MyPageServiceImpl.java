@@ -1,5 +1,7 @@
 package kr.co.coward.member.model.service;
 
+
+import java.util.List;
 import java.io.IOException;
 import java.util.Map;
 
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.dao.MyPageDAO;
 
 @Service
@@ -15,7 +18,7 @@ public class MyPageServiceImpl implements MyPageService {
 	@Autowired
 	private MyPageDAO dao;
 
-	// 마이페이지 메인 (일반 회원)
+	// 일반 회원 정보 수정 서비스 구현
 	@Override
 	public int updateInfo(Map<String, Object> paramMap) {
 
@@ -32,6 +35,13 @@ public class MyPageServiceImpl implements MyPageService {
 		return dao.updateCompanyInfo(paramMap);
 	}
 
+
+	@Override
+	public List<Contest> contestList() {
+		
+		return null;
+	}
+
 	// 기업 프로필 수정 서비스 구현
 	@Override
 	public int updateCompanyProfile(Map<String, Object> map) throws IOException {
@@ -43,5 +53,6 @@ public class MyPageServiceImpl implements MyPageService {
 
 		return 0;
 	}
+
 
 }

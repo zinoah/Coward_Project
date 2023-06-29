@@ -73,39 +73,53 @@ public class MyPageController {
 	// return "mypage/contest-progress";
 	// }
 
-	// 공모전 목록 조회
-	@GetMapping("/progress")
-	public String contestList(Model model) {
-		List<Contest> progress = MyPageService.contestList();
-		model.addAttribute("progress", progress);
-
-		return "mypage/contest-progress";
-	}
-
-	// 내 정보 수정(일반 회원)
+	
+	
+	// 내 정보 수정으로 이동(일반 회원)
 	@GetMapping("/editP")
 	public String editP() {
 		return "mypage/edit-profile";
 	}
 
-	// 일반회원 프로필 변경
+	/**
+	 * 내 정보 수정 (일반 회원)
+	 */
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam("editImg") MultipartFile editImg, /* ��ε� ���� */
-			@RequestParam Map<String, Object> paramMap, String[] updateAddress, HttpServletRequest req,
-			RedirectAttributes ra) {
+			@RequestParam("editImg") MultipartFile profileImg,
+			@RequestParam Map<String, Object> paramMap, String[] skill, HttpServletRequest req,
+			RedirectAttributes ra) throws IOException {
 
-		System.out.println(loginMember);
+		String skillList = String.join("/", skill);
+		
+		// 웹 접근경로
+		String webPath = "/resources/assets/images/member-profile/";
+		
+		// 서버 저장 폴더 경로
+		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
+		
+		paramMap.put("webPath", webPath);
+		paramMap.put("folderPath", folderPath);
+		paramMap.put("skill", skillList);
+		paramMap.put("profileImg", profileImg);
+		
+		
+		int MemberNo = loginMember.getMemberNo();
+		paramMap.put("memberNo", MemberNo);
+
+		
 		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
 
 		String message = null;
-
+		
+				
+		
 		if (result > 0) {
 			message = "회원 정보가 수정되었습니다.";
 
 			loginMember.setMemberNick((String) paramMap.get("updateNickname")); // 닉네임
-			loginMember.setStack((String) paramMap.get("userStack")); // 스택
+			loginMember.setStack((String) paramMap.get("stack")); // 스택
 			loginMember.setSlogan((String) paramMap.get("slogan")); // 한줄 소개
 			loginMember.setIntroduce((String) paramMap.get("introduce")); // 소개
 			loginMember.setSkill((String) paramMap.get("skill")); // 내 기술
@@ -118,7 +132,19 @@ public class MyPageController {
 
 		return "redirect:info";
 	}
+	
+	
+	
+	// 마이페이지 - 공모전 목록 조회
+	/*	@GetMapping("/progress")
+		public String contestList(Model model) {
+			List<Contest> progress = ((Object) service).progress("");
+			model.addAttribute("progress", progress);
 
+			return "mypage/contest-progress";
+		}*/
+		
+		
 	/**********************************
 	 * 기업 마이페이지 controller
 	 **********************************/
