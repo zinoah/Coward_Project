@@ -2,17 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="myPageMapper">
 
-
-	<resultMap type="region" id="region_rm">
-
-		<id property="memberNo" column="MEMBER_NO" />
-		<result property="regionNo" column="REGION_NO" />
-		<result property="regionName" column="REGION_NAME" />
-
-	</resultMap>
-
-
-
 	<!-- 회원 정보 수정 -->
 	<update id="updateInfo">
 		UPDATE MEMBER SET
@@ -40,22 +29,10 @@
 	<!-- 기업 회원 프로필 수정 -->
 	<update id="updateCompanyInfo">
 		UPDATE MEMBER SET
-		MEMBER_NICK =
-		#{memberNick},
-		INTRODUCE = #{introduce}
+		MEMBER_NICK =#{memberNick},
+		INTRODUCE = #{introduce},
+		REGION_NO = #{regionNo}
 		WHERE MEMBER_NO = ${memberNo}
 	</update>
-
-	<!-- 기업 회원 지역 정보 불러오기 -->
-	
-	<!-- 
-	
-	<select id="allRegions" resultMap="member_rm">
-		SELECT REGION_NO, REGION_NAME
-		FROM REGION;
-	</select>
-	 -->
-	
-
 
 </mapper>

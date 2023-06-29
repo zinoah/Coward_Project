@@ -51,15 +51,13 @@ public class MyPageController {
 	}
 
 	// 기업 마이페이지 프로필수정 이동
-	/*
-	 * @GetMapping("/companyProfile") public String companyProfile(Model model) {
-	 * 
-	 * List<Region> regionList = service.allRegions();
-	 * 
-	 * model.addAttribute("regionList", regionList);
-	 * 
-	 * return "mypage/mypage-company-editProfile"; }
-	 */
+
+	@GetMapping("/companyProfile")
+	public String companyProfile() {
+
+		return "mypage/mypage-company-editProfile";
+
+	}
 
 	// 마이페이지(메인)
 	// 회원 정보 조회
@@ -127,7 +125,8 @@ public class MyPageController {
 	// 기업 프로필 변경 회원정보
 	@PostMapping("/companyProfile")
 	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam Map<String, Object> paramMap, // 요청 시 전달된 파라미터를 구분하지 않고 모두 Map에 담아서 얻어옴
+			@ModelAttribute("getRegionName") String getRegionName, @RequestParam Map<String, Object> paramMap, // 요청 시
+			// 얻어옴
 			RedirectAttributes ra) {
 
 		logger.info("로그인 정보 테스트");
@@ -152,9 +151,6 @@ public class MyPageController {
 
 		} else {
 			message = "회원 정보 수정이 실패하였습니다.";
-
-			logger.info((String) paramMap.get("memberNick"));
-			logger.info((String) paramMap.get("introduce"));
 
 		}
 

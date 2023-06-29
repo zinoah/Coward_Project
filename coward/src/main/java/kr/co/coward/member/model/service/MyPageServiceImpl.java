@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 import kr.co.coward.member.model.dao.MyPageDAO;
 
-
-
 @Service
 public class MyPageServiceImpl implements MyPageService {
 
@@ -31,7 +29,5 @@ public class MyPageServiceImpl implements MyPageService {
 	public int updateCompanyInfo(Map<String, Object> paramMap) {
 		return dao.updateCompanyInfo(paramMap);
 	}
-
-	// 공모전 관리
 
 }
