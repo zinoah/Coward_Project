@@ -63,8 +63,8 @@
 									</div>
 
 									<ul class="category-bar">
-										<li><a href="${contextPath}/mypage/company-main">내 정보</a></li>
-										<li><a href="${contextPath}/mypage/company-management">공모전
+										<li><a href="${contextPath}/mypage/companyMain">내 정보</a></li>
+										<li><a href="${contextPath}/mypage/companyManagement">공모전
 												관리</a></li>
 										<li><a href="#">크레딧 인출</a></li>
 										<li><a href="${contextPath}/mypage/companyProfile">프로필
