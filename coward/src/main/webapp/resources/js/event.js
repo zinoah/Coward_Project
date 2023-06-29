@@ -3,7 +3,7 @@
 const target = document.querySelector(".target");
 /** 새 이벤트가 추가될 .row 요소 */
 const eventRow = document.getElementById("eventRow");
-
+/** 무한스크롤 페이징 기법용 변수 */
 let page = 1;
 
 // *****************Request*******************
@@ -16,6 +16,7 @@ function getEventListAjax() {
     dataType: "json",
     success: function (eventList) {
       eventList.forEach((event) => {
+        createEventSkeleton();
         createEvents(event);
       });
       page++;
@@ -98,6 +99,35 @@ const createEvents = (result) => {
   eventItem.appendChild(eventItemInfo);
 
   colDiv.appendChild(eventItem);
+
+  eventRow.appendChild(colDiv);
+};
+
+/** Event Item 스켈레톤 UI 생성 */
+const createEventSkeleton = () => {
+  const colDiv = document.createElement("div");
+  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-6");
+  const phCol12 = document.createElement("div");
+  phCol12.setAttribute("class", "ph-col-12");
+  const phPicture = document.createElement("div");
+  phPicture.setAttribute("class", "ph-picture");
+  const phRow = document.createElement("div");
+  phRow.setAttribute("class", "ph-row");
+  const phCol2Big = document.createElement("div");
+  phCol2Big.setAttribute("class", "ph-col-2 big");
+  const phCol4EmptyBig = document.createElement("div");
+  phCol4EmptyBig.setAttribute("class", "ph-col-4 empty big");
+  const phCol6Big = document.createElement("div");
+  phCol6Big.setAttribute("class", "ph-col-6 big");
+
+  phRow.appendChild(phCol2Big);
+  phRow.appendChild(phCol4EmptyBig);
+  phRow.appendChild(phCol6Big);
+
+  phCol12.appendChild(phPicture);
+  phCol12.appendChild(phRow);
+
+  colDiv.appendChild(phCol12);
 
   eventRow.appendChild(colDiv);
 };

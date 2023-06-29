@@ -26,7 +26,7 @@ public class EventDAO {
 	 * 
 	 * @return eventList
 	 */
-	public List<Event> getEventList(int offset, int pageSize) {
+	public List<Event> getEventsByPage(int offset, int pageSize) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("offset", offset);
 		params.put("pageSize", pageSize);

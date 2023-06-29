@@ -15,6 +15,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="${contextPath}/resources/styles/css/event.css"
     />
     <title>Coward | Event-Main</title>

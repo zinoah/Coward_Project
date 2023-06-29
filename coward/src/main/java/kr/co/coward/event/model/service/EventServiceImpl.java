@@ -16,8 +16,8 @@ public class EventServiceImpl implements EventService {
 
 	// 전체 이벤트 목록 조회 서비스
 	@Override
-	public List<Event> getEventList(int offset, int pageSize) {
-		return dao.getEventList(offset, pageSize);
+	public List<Event> getEventsByPage(int offset, int pageSize) {
+		return dao.getEventsByPage(offset, pageSize);
 	}
 
 	// 이벤트 상세 조회 서비스
