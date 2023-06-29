@@ -196,7 +196,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="contest-slider-card-info-button">
                             <a
                               class="btn-outlined btn-32"
-                              href="${contextPath}/contest/detail/${contest.contestNo}"
+                              href="contest/detail/${contest.contestNo}"
                             >
                               참여하러가기
                             </a>
@@ -548,7 +548,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 >
                   <a
                     class="new-contest-item"
-                    href="${contextPath}/contest/detail/${contest.contestNo}"
+                    href="contest/detail/${contest.contestNo}"
                   >
                     <div class="contest-thumbnail">
                       <img src="${contextPath}/${contest.thumbnail}" />
@@ -596,7 +596,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 >
                   <a
                     class="new-contest-item"
-                    href="${contextPath}/contest/detail/${contest.contestNo}"
+                    href="contest/detail/${contest.contestNo}"
                   >
                     <div class="contest-thumbnail">
                       <img src="${contextPath}/${contest.thumbnail}" />
@@ -628,7 +628,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 >
                   <a
                     class="new-contest-item"
-                    href="${contextPath}/contest/detail/${contest.contestNo}"
+                    href="contest/detail/${contest.contestNo}"
                   >
                     <div class="contest-thumbnail">
                       <img src="${contextPath}/${contest.thumbnail}" />
