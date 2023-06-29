@@ -53,14 +53,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="profile-img-box">
                         <div class="profile-img avatar">
                           <img
-                            src="${contextPath}/resources/assets/images/default-user-img.png"
+                            src="${contextPath}${loginMember.profileImg}"
                           />
                         </div>
                       </div>
 
                       <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
+                        <!-- <div class="profile-type">Back</div>-->
+                        <p class="profile-nick">${loginMember.memberNick}</p>
                       </div>
                     </div>
 

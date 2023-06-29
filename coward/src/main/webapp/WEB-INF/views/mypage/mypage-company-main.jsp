@@ -52,13 +52,13 @@
 										<div class="profile-img-box">
 											<div class="profile-img avatar">
 												<img
-													src="${contextPath}/resources/assets/images/default-user-img.png" />
+													src="${contextPath}${loginMember.profileImg}" />
 											</div>
 										</div>
 
 										<div class="profile-info">
-											<div class="profile-type">Back</div>
-											<p class="profile-nick">빡과장</p>
+											<!-- <div class="profile-type">Back</div>-->
+											<p class="profile-nick">${loginMember.memberNick}</p>
 										</div>
 									</div>
 
@@ -103,7 +103,7 @@
 										<div class="mypage-input-box-wrapper">
 											<div class="mypage-input-box">
 												<p>소개</p>
-												<textarea cols="50" rows="5" placeholder="기업에 대해서 소개해 주세요!"></textarea>
+												<textarea cols="50" rows="5" placeholder="기업에 대해서 소개해 주세요!">${loginMember.introduce}</textarea>
 											</div>
 											<div class="mypage-input-box">
 												<p>관심있는 개발자</p>
