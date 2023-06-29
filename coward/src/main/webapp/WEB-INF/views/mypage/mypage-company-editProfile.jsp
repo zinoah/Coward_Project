@@ -79,46 +79,84 @@
 										<div class="title-wrapper lg-only">
 											<p class="title">프로필 수정</p>
 										</div>
-
-										<form action="companyProfile" method="POST" name="company-form"
-											>
+										<form action="profileImg" method="POST" name="myPage-form"
+											enctype="multipart/form-data">
 											<div class="mypage-img-wrapper">
 												<div class="ic-camera-relative">
 													<div class="avatar">
-														<img
-															src="${contextPath}/resources/assets/images/default-user-img.png" />
+														<c:if test"${$emptyloginMember.profileImg}>
+															<img
+																src="${contextPath}/resources/assets/images/default-user-img.png" />
+														</c:if>
+
+														<c:if test="${!empty loginMember.profileImg}">
+															<img src="${contextPath}${loginMember.profileImg}"
+																id="profile-image">
+														</c:if>
+
 														<div class="ic-camera-wrapper">
 															<i class="ic-camera"></i>
 														</div>
 													</div>
 												</div>
 											</div>
+										</form>
+
+
+										<form action="companyProfile" method="POST"
+											name="company-form">
 
 											<div class="mypage-input-box-wrapper">
 												<div class="mypage-input-box">
 													<p>회사명</p>
 													<input type="text" placeholder="회사명 입력"
-														class="mypage-input" name="updateNickName"  value="${loginMember.memberNick}"  />
-														
-							
+														class="mypage-input" name="memberNick"
+														value="${loginMember.memberNick}" />
+
+
 												</div>
 												<div class="mypage-input-box">
+
+													<input type="hidden" id="loginMemberRegionNo"
+														value="${loginMember.regionNo}">
+
 													<p>지역</p>
-													<select class="mypage-input">
-														<option>지역선택</option>
-														<option>서울</option>
-														<option>인천</option>
-														<option>충남</option>
-														<option>경기</option>
-														<option>경남</option>
+													<select class="mypage-input" name="regionNo"
+														id="regionSelect">
+														<option value="1">서울</option>
+														<option value="2">부산</option>
+														<option value="3">대구</option>
+														<option value="4">인천</option>
+														<option value="5">광주</option>
+														<option value="6">대전</option>
+														<option value="7">울산</option>
+														<option value="8">세종</option>
+														<option value="9">경기</option>
+														<option value="10">강원</option>
+														<option value="11">충북</option>
+														<option value="12">충남</option>
+														<option value="13">전북</option>
+														<option value="14">전남</option>
+														<option value="15">경북</option>
+														<option value="16">경남</option>
+														<option value="17">제주</option>
+
 													</select>
+
+
+
+
+
 												</div>
+
+
 											</div>
 
 											<div class="textarea-box">
 												<div>
 													<p>소개글</p>
-													<textarea cols="50" rows="10" placeholder="기업에 대해서 소개해주세요!" name="updateIntroduce">${loginMember.introduce}</textarea>
+													<textarea cols="50" rows="10" placeholder="기업에 대해서 소개해주세요!"
+														name="introduce">${loginMember.introduce}</textarea>
 												</div>
 											</div>
 
@@ -139,6 +177,9 @@
 	</div>
 	<!-- 푸터 -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+	<script src="${contextPath}/resources/js/mypage-company-editProfile.js"></script>
+
 	<!-- tiny-slider -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
