@@ -38,9 +38,12 @@
       }
 
       .status {
-        color: $blue;
-        font-weight: 700;
         margin-top: 16px;
+
+        &.is-active {
+          color: $blue;
+          font-weight: 700;
+        }
       }
 
       .period {
