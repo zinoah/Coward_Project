@@ -9,11 +9,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- tiny-slider -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
-    />
     <link
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/event-detail.css"
@@ -30,21 +25,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="col-sm-4">
             <div class="event-detail-wrapper">
               <div class="event-info">
-                <h1 class="title">친구 추천하고 너도, 나도 적립금 받자!</h1>
-                <span class="status">진행중</span>
+                <h1 class="title">${event.eventTitle}</h1>
+
+                <c:choose>
+                  <c:when test="${event.statusFl == 'Y'}">
+                    <span class="status is-active">진행중</span>
+                  </c:when>
+                  <c:when test="${event.statusFl == 'N'}">
+                    <span class="status">종료</span>
+                  </c:when>
+                </c:choose>
+
                 <div class="period">
-                  <span class="event-date">2023/05/26</span>
+                  <span class="event-date">${event.createDate}</span>
                   ~
-                  <span class="event-date">2023/08/26</span>
+                  <span class="event-date">${event.endDate}</span>
                 </div>
               </div>
 
               <div class="event-detail-image">
-                <!-- TODO: 경로 지정 주의 -->
-                <img
-                  src="${contextPath}/resources/assets/images/dummy/event-detail.jpg"
-                  aria-hidden
-                />
+                <img src="${contextPath}/${event.eventContent}" aria-hidden />
               </div>
             </div>
           </div>
@@ -63,9 +63,5 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-
-    <!-- tiny-slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="${contextPath}/resources/js/slider.js"></script>
   </body>
 </html>

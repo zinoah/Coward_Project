@@ -16,6 +16,7 @@ public class ContestDAO {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	private Contest contest;
 
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
@@ -42,10 +43,23 @@ public class ContestDAO {
 
 	}
 
+	/**
+	 * 공모전 개최
+	 * 
+	 * @param paramMap
+	 * @return
+	 */
 	public int contestCreate(Map<String, Object> paramMap) {
 
 		// TODO Auto-generated method stub
-		return sqlSession.insert("contestMapper.contestCreate", paramMap);
+		int result = sqlSession.insert("contestMapper.contestCreate", paramMap);
+
+		if (result > 0)
+			result = (int) paramMap.get("contestNo");
+
+		System.out.println(result);
+
+		return result;
 
 	}
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="eventMapper">
+
+	<resultMap type="event" id="event_rm">
+		<id property="eventNo" column="EVENT_NO"/>
+		<result property="eventTitle"  column="EVENT_TITLE"/>
+		<result property="eventThumbnail"  column="EVENT_THUMBNAIL"/>
+		<result property="eventContent"  column="EVENT_CONTENT"/>
+		<result property="bannerImg"  column="BANNER_IMG"/>
+		<result property="adImg"  column="AD_IMG"/>
+		<result property="createDate"  column="CREATE_DATE" />
+		<result property="endDate"  column="END_DATE"/>
+		<result property="statusFl"  column="STATUS_FL"/>
+	</resultMap>
+
+
+	<select id="getEventList" parameterType="_int" resultMap="event_rm">
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, 
+				TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL
+		FROM EVENT
+	</select>
+	
+	<select id="getEventsByPage" resultMap="event_rm">
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, CREATE_DATE, END_DATE, STATUS_FL
+		FROM EVENT
+		OFFSET ${offset} ROWS FETCH NEXT ${pageSize} ROWS ONLY
+	</select>
+
+	
+	
+	<select id="getEvent" parameterType="_int" resultMap="event_rm">
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, 
+				TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL 
+		FROM EVENT
+		WHERE EVENT_NO = #{eventNo}
+	</select>
+
+</mapper>

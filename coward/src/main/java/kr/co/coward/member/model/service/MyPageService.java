@@ -1,5 +1,6 @@
 package kr.co.coward.member.model.service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -15,10 +16,7 @@ public interface MyPageService {
 	 */
 	int updateInfo(Map<String, Object> paramMap);
 
-	
-	
-	
-	
+
 	/**
 	 * 기업 회원 프로필 수정 서비스
 	 * 
@@ -37,13 +35,15 @@ public interface MyPageService {
 	List<Contest> contestList();
 
 
-	
-	
-	
-	
 
+	/**********************************
+	 * 기업 마이페이지 Service
+	 **********************************/
 
-	
+	// 기업 회원정보 수정 서비스
+	int updateCompanyInfo(Map<String, Object> paramMap);
 
+	// 기업 프로필 사진 수정 서비스
+	int updateCompanyProfile(Map<String, Object> map) throws IOException;
 
 }
