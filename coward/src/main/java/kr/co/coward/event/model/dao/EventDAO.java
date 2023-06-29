@@ -1,6 +1,8 @@
 package kr.co.coward.event.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -24,8 +26,12 @@ public class EventDAO {
 	 * 
 	 * @return eventList
 	 */
-	public List<Event> getEventList() {
-		return sqlSession.selectList("eventMapper.getEventList");
+	public List<Event> getEventList(int offset, int pageSize) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("offset", offset);
+		params.put("pageSize", pageSize);
+
+		return sqlSession.selectList("eventMapper.getEventsByPage", params);
 	}
 
 	/**

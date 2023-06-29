@@ -11,7 +11,7 @@ public interface EventService {
 	 * 
 	 * @return eventList
 	 */
-	List<Event> getEventList();
+	List<Event> getEventList(int offset, int pageSize);
 
 	/**
 	 * 이벤트 상세 조회 서비스

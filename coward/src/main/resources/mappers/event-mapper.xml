@@ -15,11 +15,19 @@
 	</resultMap>
 
 
-	<select id="getEventList" resultMap="event_rm">
+	<select id="getEventList" parameterType="_int" resultMap="event_rm">
 		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, 
 				TO_CHAR(CREATE_DATE, 'YYYY/MM/DD') AS CREATE_DATE, TO_CHAR(END_DATE, 'YYYY/MM/DD') AS END_DATE, STATUS_FL
 		FROM EVENT
 	</select>
+	
+	<select id="getEventsByPage" resultMap="event_rm">
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, CREATE_DATE, END_DATE, STATUS_FL
+		FROM EVENT
+		OFFSET ${offset} ROWS FETCH NEXT ${pageSize} ROWS ONLY
+	</select>
+
+	
 	
 	<select id="getEvent" parameterType="_int" resultMap="event_rm">
 		SELECT EVENT_NO, EVENT_TITLE, EVENT_THUMBNAIL, EVENT_CONTENT, BANNER_IMG, AD_IMG, 
