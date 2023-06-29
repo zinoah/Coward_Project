@@ -1,7 +1,6 @@
 package kr.co.coward.member.controller;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +18,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
 //import kr.co.coward.member.model.vo.Region;
@@ -38,7 +35,7 @@ public class MyPageController {
 	// 기업 마이페이지
 
 	// 기업 마이페이지 메인페이지 이동
-	@GetMapping("/company-main")
+	@GetMapping("/companyMain")
 	public String companyMain() {
 
 		return "mypage/mypage-company-main";
@@ -46,7 +43,7 @@ public class MyPageController {
 	}
 
 	// 기업 마이페이지 공모전관리 이동
-	@GetMapping("/company-management")
+	@GetMapping("/companyManagement")
 	public String companyManagement() {
 		return "mypage/mypage-company-management";
 	}
@@ -73,8 +70,6 @@ public class MyPageController {
 	// return "mypage/contest-progress";
 	// }
 
-	
-	
 	// 내 정보 수정으로 이동(일반 회원)
 	@GetMapping("/editP")
 	public String editP() {
@@ -86,35 +81,30 @@ public class MyPageController {
 	 */
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam("editImg") MultipartFile profileImg,
-			@RequestParam Map<String, Object> paramMap, String[] skill, HttpServletRequest req,
-			RedirectAttributes ra) throws IOException {
+			@RequestParam("editImg") MultipartFile profileImg, @RequestParam Map<String, Object> paramMap,
+			String[] skill, HttpServletRequest req, RedirectAttributes ra) throws IOException {
 
 		String skillList = String.join("/", skill);
-		
+
 		// 웹 접근경로
 		String webPath = "/resources/assets/images/member-profile/";
-		
+
 		// 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
-		
+
 		paramMap.put("webPath", webPath);
 		paramMap.put("folderPath", folderPath);
 		paramMap.put("skill", skillList);
 		paramMap.put("profileImg", profileImg);
-		
-		
+
 		int MemberNo = loginMember.getMemberNo();
 		paramMap.put("memberNo", MemberNo);
 
-		
 		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
 
 		String message = null;
-		
-				
-		
+
 		if (result > 0) {
 			message = "회원 정보가 수정되었습니다.";
 
@@ -132,30 +122,30 @@ public class MyPageController {
 
 		return "redirect:info";
 	}
-	
-	
-	
-	// 마이페이지 - 공모전 목록 조회
-	/*	@GetMapping("/progress")
-		public String contestList(Model model) {
-			List<Contest> progress = ((Object) service).progress("");
-			model.addAttribute("progress", progress);
 
-			return "mypage/contest-progress";
-		}*/
-		
-		
+	// 마이페이지 - 공모전 목록 조회
+	/*
+	 * @GetMapping("/progress") public String contestList(Model model) {
+	 * List<Contest> progress = ((Object) service).progress("");
+	 * model.addAttribute("progress", progress);
+	 * 
+	 * return "mypage/contest-progress"; }
+	 */
+
 	/**********************************
 	 * 기업 마이페이지 controller
 	 **********************************/
 
-	// 기업 프로필 사진 변경
-	@PostMapping("/profileImg")
-	public String updateCompanyProfile(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam("uploadImage") MultipartFile uploadImage /* 업로드 파일 */
-			, @RequestParam Map<String, Object> map /* delete 담겨있음 */
-			, HttpServletRequest req /* 파일 저장 경로 탐색용 */
-			, RedirectAttributes ra) throws IOException {
+	// 기업 회원정보 변경
+	@PostMapping("/companyProfile")
+	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam Map<String, Object> paramMap,
+			HttpServletRequest req, RedirectAttributes ra) throws IOException {
+
+		// logger.info("로그인 정보 테스트");
+		// logger.info("loginMember :" + loginMember);
+
+		paramMap.put("memberNo", loginMember.getMemberNo());
 
 		// 경로 작성하기
 
@@ -166,42 +156,9 @@ public class MyPageController {
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
 
 		// map에 경로 2개, 이미지, delete, 회원번호 담기
-		map.put("webPath", webPath);
-		map.put("folderPath", folderPath);
-		map.put("uploadImage", uploadImage);
-		map.put("memberNo", loginMember.getMemberNo());
-
-		int result = service.updateCompanyProfile(map);
-
-		String message = null;
-
-		if (result > 0) {
-			message = "프로필 이미지가 변경되었습니다.";
-
-			// DB-세션 동기화
-
-			// 서비스 호출 시 전달된 map은 실제로는 주소만 전달(얕은복사)
-			// -> 서비스에서 추가된 "profileImage"는 원본 map에 그대로 남아있음~!
-
-			loginMember.setProfileImg((String) map.get("profileImg"));
-
-		} else {
-			message = "프로필 이미지 변경 실패하였습니다.";
-		}
-
-		ra.addFlashAttribute("message", message);
-
-		return "redirect:companyProfile";
-	}
-
-	// 기업 회원정보 변경
-	@PostMapping("/companyProfile")
-	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam Map<String, Object> paramMap, RedirectAttributes ra) {
-
-		// logger.info("로그인 정보 테스트");
-		// logger.info("loginMember :" + loginMember);
-
+		paramMap.put("webPath", webPath);
+		paramMap.put("folderPath", folderPath);
+		paramMap.put("uploadImage", uploadImage);
 		paramMap.put("memberNo", loginMember.getMemberNo());
 
 		// 회원정보 수정 서비스 호출
@@ -218,6 +175,7 @@ public class MyPageController {
 			// DB - Session의 회원정보 동기화(얕은 복사 활용)
 			loginMember.setMemberNick((String) paramMap.get("memberNick"));
 			loginMember.setIntroduce((String) paramMap.get("introduce"));
+			loginMember.setProfileImg((String) paramMap.get("profileImg"));
 
 		} else {
 			message = "회원 정보 수정이 실패하였습니다.";
