@@ -16,25 +16,12 @@ public interface MyPageService {
 	 */
 	int updateInfo(Map<String, Object> paramMap);
 
-
 	/**
-	 * 기업 회원 프로필 수정 서비스
+	 * 마이페이지 - 공모전 목록 조회 서비스
 	 * 
-	 * @param paramMap
-	 * @return result
+	 * @return
 	 */
-	int updateCompanyInfo(Map<String, Object> paramMap);
-
-
-
-
-/**
- * 마이페이지 - 공모전 목록 조회 서비스
- * @return
- */
 	List<Contest> contestList();
-
-
 
 	/**********************************
 	 * 기업 마이페이지 Service
