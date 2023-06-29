@@ -8,13 +8,17 @@ import kr.co.coward.contest.model.vo.Contest;
 public interface MyPageService {
 
 	/**
-	 * 마이페이지 메인 (일반회원)
+	 * 일반회원 정보 수정 서비스
 	 * 
 	 * @param paramMap
 	 * @return result
 	 */
 	int updateInfo(Map<String, Object> paramMap);
 
+	
+	
+	
+	
 	/**
 	 * 기업 회원 프로필 수정 서비스
 	 * 
@@ -23,15 +27,20 @@ public interface MyPageService {
 	 */
 	int updateCompanyInfo(Map<String, Object> paramMap);
 
+
+
+
+/**
+ * 마이페이지 - 공모전 목록 조회 서비스
+ * @return
+ */
+	List<Contest> contestList();
+
+
 	
-	/**
-	 * 일반회원 공모전 관리 서비스
-	 * @return
-	 */
-	static List<Contest> contestList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
+	
 
 
 	

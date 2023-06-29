@@ -9,8 +9,7 @@
 		STACK = #{stack},
 		SLOGAN = #{slogan},
 		INTRODUCE = #{introduce},
-		SKILL =
-		#{skill}
+		SKILL = #{skill}
 		WHERE MEMBER_NO = ${memberNo}
 	</update>
 
@@ -37,10 +36,11 @@
 	
 	
 	<!-- 마이페이지 - 공모전 관리 -->
-	<select id="ContestList" resultMap="contestList_rm">
-		SELECT CONTEST_TITLE, MEMBER_NICK, PROFILE_IMG
-		FROM CONTEST C JOIN CONTEST_ATTEND A ON C.CONTEST_NO = A.CONTEST_NO
-		JOIN MEMBER M ON C.MEMBER_NO = M.MEMBER_NO
-		WHERE MEMBER_TYPE = 'C'
+  	<select id="contestList">
+		SELECT ca.MEMBER_NO,  CONTEST_TITLE, CREATE_DATE, END_DATE , MEMBER_NICK, PROFILE_IMG
+		FROM CONTEST_ATTEND ca , CONTEST c , "MEMBER" m
+		WHERE ca.CONTEST_NO  = c.CONTEST_NO  
+		AND c.MEMBER_NO = m.MEMBER_NO
+		AND ca.MEMBER_NO = ${memberNo};
 	</select>
 </mapper>
