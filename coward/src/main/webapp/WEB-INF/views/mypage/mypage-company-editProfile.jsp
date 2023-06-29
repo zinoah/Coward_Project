@@ -98,27 +98,28 @@
 												<div class="mypage-input-box">
 													<p>회사명</p>
 													<input type="text" placeholder="회사명 입력"
-														class="mypage-input" name="updateNickName"  value="${loginMember.memberNick}"  />
+														class="mypage-input" name="memberNick"  value="${loginMember.memberNick}"  />
 														
 							
 												</div>
 												<div class="mypage-input-box">
 													<p>지역</p>
-													<select class="mypage-input">
-														<option>지역선택</option>
-														<option>서울</option>
-														<option>인천</option>
-														<option>충남</option>
-														<option>경기</option>
-														<option>경남</option>
+													<select class="mypage-input" >
+												<option value="">지역 선택</option>
+												<c:forEach var = "list" items="${result}">
+												<option value = "${list.regionNo}">${list.regionName}</option>
+												</c:forEach>
+							
 													</select>
+													
+													
 												</div>
 											</div>
 
 											<div class="textarea-box">
 												<div>
 													<p>소개글</p>
-													<textarea cols="50" rows="10" placeholder="기업에 대해서 소개해주세요!" name="updateIntroduce">${loginMember.introduce}</textarea>
+													<textarea cols="50" rows="10" placeholder="기업에 대해서 소개해주세요!" name="introduce">${loginMember.introduce}</textarea>
 												</div>
 											</div>
 
@@ -139,6 +140,8 @@
 	</div>
 	<!-- 푸터 -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+	
+	 <script src="${contextPath}/resources/js/mypage-company-editProfile.js"></script>
 	<!-- tiny-slider -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>

@@ -22,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
+//import kr.co.coward.member.model.vo.Region;
 
 @Controller
 @SessionAttributes({ "loginMember" })
@@ -50,11 +51,15 @@ public class MyPageController {
 	}
 
 	// 기업 마이페이지 프로필수정 이동
-	@GetMapping("/companyProfile")
-	public String companyProfile() {
-
-		return "mypage/mypage-company-editProfile";
-	}
+	/*
+	 * @GetMapping("/companyProfile") public String companyProfile(Model model) {
+	 * 
+	 * List<Region> regionList = service.allRegions();
+	 * 
+	 * model.addAttribute("regionList", regionList);
+	 * 
+	 * return "mypage/mypage-company-editProfile"; }
+	 */
 
 	// 마이페이지(메인)
 	// 회원 정보 조회
@@ -128,6 +133,8 @@ public class MyPageController {
 		logger.info("로그인 정보 테스트");
 		logger.info("loginMember :" + loginMember);
 
+		paramMap.put("memberNo", loginMember.getMemberNo());
+
 		// 회원정보 수정 서비스 호출
 		int result = service.updateCompanyInfo(paramMap);
 
@@ -140,14 +147,14 @@ public class MyPageController {
 			message = "회원 정보가 수정되었습니다.";
 
 			// DB - Session의 회원정보 동기화(얕은 복사 활용)
-			loginMember.setMemberNick((String) paramMap.get("updateNickName"));
-			loginMember.setIntroduce((String) paramMap.get("updateIntroduce"));
+			loginMember.setMemberNick((String) paramMap.get("memberNick"));
+			loginMember.setIntroduce((String) paramMap.get("introduce"));
 
 		} else {
 			message = "회원 정보 수정이 실패하였습니다.";
 
-			logger.info((String) paramMap.get("updateNickName"));
-			logger.info((String) paramMap.get("updateIntroduce"));
+			logger.info((String) paramMap.get("memberNick"));
+			logger.info((String) paramMap.get("introduce"));
 
 		}
 
