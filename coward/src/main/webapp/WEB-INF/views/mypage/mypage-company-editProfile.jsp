@@ -79,20 +79,32 @@
 										<div class="title-wrapper lg-only">
 											<p class="title">프로필 수정</p>
 										</div>
-
-										<form action="companyProfile" method="POST"
-											name="company-form">
+										<form action="profileImg" method="POST" name="myPage-form"
+											enctype="multipart/form-data">
 											<div class="mypage-img-wrapper">
 												<div class="ic-camera-relative">
 													<div class="avatar">
-														<img
-															src="${contextPath}/resources/assets/images/default-user-img.png" />
+														<c:if test"${$emptyloginMember.profileImg}>
+															<img
+																src="${contextPath}/resources/assets/images/default-user-img.png" />
+														</c:if>
+
+														<c:if test="${!empty loginMember.profileImg}">
+															<img src="${contextPath}${loginMember.profileImg}"
+																id="profile-image">
+														</c:if>
+
 														<div class="ic-camera-wrapper">
 															<i class="ic-camera"></i>
 														</div>
 													</div>
 												</div>
 											</div>
+										</form>
+
+
+										<form action="companyProfile" method="POST"
+											name="company-form">
 
 											<div class="mypage-input-box-wrapper">
 												<div class="mypage-input-box">
@@ -104,11 +116,13 @@
 
 												</div>
 												<div class="mypage-input-box">
-												
-												<input type="hidden" id="loginMemberRegionNo" value="${loginMember.regionNo}">
-													
+
+													<input type="hidden" id="loginMemberRegionNo"
+														value="${loginMember.regionNo}">
+
 													<p>지역</p>
-													<select class="mypage-input" name="regionNo" id="regionSelect">
+													<select class="mypage-input" name="regionNo"
+														id="regionSelect">
 														<option value="1">서울</option>
 														<option value="2">부산</option>
 														<option value="3">대구</option>
@@ -128,11 +142,11 @@
 														<option value="17">제주</option>
 
 													</select>
-													
-												
-													
-													
-										
+
+
+
+
+
 												</div>
 
 
@@ -163,9 +177,9 @@
 	</div>
 	<!-- 푸터 -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
-	
+
 	<script src="${contextPath}/resources/js/mypage-company-editProfile.js"></script>
-	
+
 	<!-- tiny-slider -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>

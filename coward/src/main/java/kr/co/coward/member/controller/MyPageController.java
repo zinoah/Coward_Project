@@ -1,5 +1,6 @@
 package kr.co.coward.member.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -122,22 +123,65 @@ public class MyPageController {
 	 * 기업 마이페이지 controller
 	 **********************************/
 
-	// 기업 프로필 변경 회원정보
+	// 기업 프로필 사진 변경
+	@PostMapping("/profileImg")
+	public String updateCompanyProfile(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam("uploadImage") MultipartFile uploadImage /* 업로드 파일 */
+			, @RequestParam Map<String, Object> map /* delete 담겨있음 */
+			, HttpServletRequest req /* 파일 저장 경로 탐색용 */
+			, RedirectAttributes ra) throws IOException {
+
+		// 경로 작성하기
+
+		// 1) 웹 접근 경로
+		String webPath = "/resources/assets/images/";
+
+		// 2) 서버 저장 폴더 경로
+		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
+
+		// map에 경로 2개, 이미지, delete, 회원번호 담기
+		map.put("webPath", webPath);
+		map.put("folderPath", folderPath);
+		map.put("uploadImage", uploadImage);
+		map.put("memberNo", loginMember.getMemberNo());
+
+		int result = service.updateCompanyProfile(map);
+
+		String message = null;
+
+		if (result > 0) {
+			message = "프로필 이미지가 변경되었습니다.";
+
+			// DB-세션 동기화
+
+			// 서비스 호출 시 전달된 map은 실제로는 주소만 전달(얕은복사)
+			// -> 서비스에서 추가된 "profileImage"는 원본 map에 그대로 남아있음~!
+
+			loginMember.setProfileImg((String) map.get("profileImg"));
+
+		} else {
+			message = "프로필 이미지 변경 실패하였습니다.";
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:companyProfile";
+	}
+
+	// 기업 회원정보 변경
 	@PostMapping("/companyProfile")
 	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
-			@ModelAttribute("getRegionName") String getRegionName, @RequestParam Map<String, Object> paramMap, // 요청 시
-			// 얻어옴
-			RedirectAttributes ra) {
+			@RequestParam Map<String, Object> paramMap, RedirectAttributes ra) {
 
-		logger.info("로그인 정보 테스트");
-		logger.info("loginMember :" + loginMember);
+		// logger.info("로그인 정보 테스트");
+		// logger.info("loginMember :" + loginMember);
 
 		paramMap.put("memberNo", loginMember.getMemberNo());
 
 		// 회원정보 수정 서비스 호출
 		int result = service.updateCompanyInfo(paramMap);
 
-		logger.info("Result 값 확인: " + result);
+		// logger.info("Result 값 확인: " + result);
 
 		String message = null;
 
