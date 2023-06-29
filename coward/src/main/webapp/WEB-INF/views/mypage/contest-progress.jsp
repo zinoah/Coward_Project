@@ -89,6 +89,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <!-- 공모전 제목과 주최, 남은 기간 -->
                           <div class="contest-mid">
                             <div class="contest-title">
+                            
+                            <!-- foreach로 for문 돌려서 -> 메인페이지 참고 -->
                               <p>스마트스토어 웹사이트 제작 공모전</p>
                             </div>
 

@@ -9,8 +9,7 @@
 		STACK = #{stack},
 		SLOGAN = #{slogan},
 		INTRODUCE = #{introduce},
-		SKILL =
-		#{skill}
+		SKILL = #{skill}
 		WHERE MEMBER_NO = ${memberNo}
 	</update>
 
@@ -21,17 +20,27 @@
 		WHERE
 		MEMBER_NO = #{memberNo}
 	</update>
-	
-	
-	
+
+
+
 	<!-- ***************기업 마이페이지 맵퍼******************** -->
-	
 
 	<!-- 기업 회원 프로필 수정 -->
-	<update id="updateCompanyInfo" >
+	<update id="updateCompanyInfo">
 		UPDATE MEMBER SET
-		MEMBER_NICK = #{updateNickName},
-		INTRODUCE = #{updateIntroduce}
-		WHERE MEMBER_NO = #{memberNo}
+		MEMBER_NICK =#{memberNick},
+		INTRODUCE = #{introduce},
+		REGION_NO = #{regionNo}
+		WHERE MEMBER_NO = ${memberNo}
 	</update>
+
+	<!-- 마이페이지 - 공모전 관리 -->
+  	<select id="contestList">
+		SELECT ca.MEMBER_NO,  CONTEST_TITLE, CREATE_DATE, END_DATE , MEMBER_NICK, PROFILE_IMG
+		FROM CONTEST_ATTEND ca , CONTEST c , "MEMBER" m
+		WHERE ca.CONTEST_NO  = c.CONTEST_NO  
+		AND c.MEMBER_NO = m.MEMBER_NO
+		AND ca.MEMBER_NO = ${memberNo};
+	</select>
+
 </mapper>
