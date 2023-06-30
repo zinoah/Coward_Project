@@ -17,12 +17,20 @@ public interface ContestService {
 	List<Contest> getContestList(String type);
 
 	/**
-	 * 콘테스트 개최 서비스
+	 * 공모전 개최 서비스
 	 * 
 	 * @param paramMap
 	 * @return
 	 * @throws IOException
 	 */
 	int contestCreate(Map<String, Object> paramMap) throws IOException;
+
+	/**
+	 * 공모전 디테일
+	 * 
+	 * @param contestNo
+	 * @return
+	 */
+	Contest contestDetail(int contestNo);
 
 }
