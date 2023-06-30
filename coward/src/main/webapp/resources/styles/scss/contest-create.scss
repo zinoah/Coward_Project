@@ -57,15 +57,15 @@ $input-box-margin: 24px;
             }
           }
           &-board {
-            width: 460px;
+            width: 290px;
             display: none;
             background-color: $white;
             border: 1.5px solid $blue;
             border-radius: 10px;
             box-shadow: $card-shadow;
             position: absolute;
-            top: -96px;
-            left: 40px;
+            top: 40px;
+            left: -218px;
             padding: 20px;
 
             div {
@@ -81,20 +81,21 @@ $input-box-margin: 24px;
             &::after,
             &::before {
               content: "";
-              @include pos-center;
-              left: -8px;
+              right: 52px;
+              top: -19px;
               position: absolute;
               width: 0px;
               height: 0px;
               display: block;
               border: 10px solid transparent;
-              border-right-color: $white;
+              border-bottom-color: $white;
             }
 
             &::before {
               border: 10px solid transparent;
-              border-right-color: $blue;
-              left: -10px;
+              border-bottom-color: $blue;
+              right: 52px;
+              top: -21px;
             }
           }
         }
@@ -702,6 +703,33 @@ $input-box-margin: 24px;
       }
       &-form {
         height: 2000px;
+
+        &-title {
+          &-tooltip {
+            &-board {
+              width: 460px;
+              top: -100px;
+              left: 40px;
+
+              &::after,
+              &::before {
+                @include pos-center;
+                top: 50%;
+                left: -8px;
+                border: 10px solid transparent;
+                border-right-color: $white;
+              }
+
+              &::before {
+                @include pos-center;
+                top: 50%;
+                left: -10px;
+                border: 10px solid transparent;
+                border-right-color: $blue;
+              }
+            }
+          }
+        }
         &-inner {
           & > div {
             margin-bottom: $input-box-margin;

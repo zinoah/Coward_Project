@@ -13,6 +13,8 @@ public class Contest {
 	private int contestNo;
 	private int memberNo;
 	private String contestTitle;
+	private String companyNick;
+	private String companyProfile;
 	private int typeNo;
 	private String subject;
 	private String qualification;
@@ -24,6 +26,8 @@ public class Contest {
 	private String thumbnail;
 	private int price;
 	private int adNo;
+	private String adType;
 	private String winner;
 	private String conStatus;
+	private int bookmarkCount;
 }

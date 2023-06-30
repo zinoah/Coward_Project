@@ -28,9 +28,6 @@ public interface MyPageService {
 	 **********************************/
 
 	// 기업 회원정보 수정 서비스
-	int updateCompanyInfo(Map<String, Object> paramMap);
-
-	// 기업 프로필 사진 수정 서비스
-	int updateCompanyProfile(Map<String, Object> map) throws IOException;
+	int updateCompanyInfo(Map<String, Object> paramMap) throws IOException;
 
 }

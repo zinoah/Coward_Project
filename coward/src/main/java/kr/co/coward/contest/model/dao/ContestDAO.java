@@ -62,4 +62,15 @@ public class ContestDAO {
 		return result;
 
 	}
+
+	/**
+	 * 공모전 디테일
+	 * 
+	 * @param contestNo
+	 * @return
+	 */
+	public Contest contestDetail(int contestNo) {
+
+		return sqlSession.selectOne("contestMapper.contestDetail", contestNo);
+	}
 }

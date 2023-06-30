@@ -1,6 +1,5 @@
 package kr.co.coward.member.model.dao;
 
-import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MyPageDAO<Contest> {
 
-	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
@@ -25,7 +23,7 @@ public class MyPageDAO<Contest> {
 	}
 
 	/**
-	 * 기업 회원 정보 수정 DAO
+	 * 기업 회원정보 수정 DAO
 	 * 
 	 * @param paramMap
 	 * @return result

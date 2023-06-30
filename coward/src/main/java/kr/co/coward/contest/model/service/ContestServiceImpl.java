@@ -75,4 +75,11 @@ public class ContestServiceImpl implements ContestService {
 		return contestNo;
 	}
 
+	// 공모전 디테일
+	@Override
+	public Contest contestDetail(int contestNo) {
+
+		return dao.contestDetail(contestNo);
+	}
+
 }

@@ -7,6 +7,8 @@
 		<id property="contestNo" 		column="CONTEST_NO"/>
 		<result property="contestNo" 		column="MEMBER_NO"/>
 		<result property="contestTitle" 	column="CONTEST_TITLE"/>
+		<result property="companyNick" 	column="COMPANY_NICK"/>
+		<result property="companyProfile"  column="COMPANY_PROFILE"/>
 		<result property="typeNo" 		column="TYPE_NO"/>
 		<result property="subject" 	column="SUBJECT"/>
 		<result property="qualification" 	column="QUALIFICATION"/>
@@ -18,9 +20,11 @@
 		<result property="price" 	column="PRICE"/>
 		<result property="thumbnail" 	column="THUMBNAIL"/>
 		<result property="adNo" 	column="AD_NO"/>
+		<result property="adType" 	column="AD_TYPE"/>
 		<result property="winner" 	column="WINNER"/>
 		<!-- Note: 기획 정리 되면 사용 여부 결정 -->
 		<result property="conStatus" 	column="CON_STATUS"/>
+		<result property="bookmarkCount" column="BOOKMARK_COUNT"/>
 	</resultMap>
 	
 
@@ -31,6 +35,7 @@
 		WHERE CON_STATUS = '모집중'
 		AND TRUNC(END_DATE - CREATE_DATE) > 0
 		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+
 	</select>
 	
 	<!-- Note: 진행중인 공모전 - 신규 -->
@@ -40,6 +45,7 @@
 		WHERE CON_STATUS = '모집중'
 		ORDER BY CREATE_DATE DESC
 		OFFSET 0 ROWS FETCH NEXT 11 ROWS ONLY
+
 	</select>
 	
 	<!-- Note: 진행중인 공모전 - 인기 -->
@@ -55,5 +61,20 @@
 		INSERT INTO CONTEST (CONTEST_NO,MEMBER_NO,CONTEST_TITLE,TYPE_NO,SUBJECT,QUALIFICATION,ADD_INFOMATION,CREATE_DATE,END_DATE,SKILL,PRICE,THUMBNAIL,AD_NO)
 		VALUES( #{contestNo}, #{memberNo} ,#{contestTitle}, #{typeNo}, #{subject}, #{qualification}, #{addInfo}, SYSDATE, #{endDate}, #{skill}, #{price}, #{thumbnail} , #{adNo})
 	</insert>
+
+	<!-- 공모전 상세조회  -->
+	<select id="contestDetail" parameterType="_int" resultMap="contest_rm">
+		SELECT CONTEST_NO, CONTEST_TITLE, m.MEMBER_NICK AS COMPANY_NICK ,m.PROFILE_IMG AS COMPANY_PROFILE ,
+		TYPE_NO, SUBJECT ,QUALIFICATION ,ADD_INFOMATION ,CREATE_DATE, END_DATE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
+		c.SKILL, PRICE, THUMBNAIL, c.AD_NO, ad.AD_TYPE AS AD_TYPE, CON_STATUS,
+		(SELECT COUNT(*)
+		FROM LIKE_CON lc 
+		WHERE CONTEST_NO = ${contestNo}) AS BOOKMARK_COUNT
+		FROM CONTEST c, MEMBER m , AD ad
+		WHERE c.MEMBER_NO = m.MEMBER_NO
+		AND c.AD_NO  = ad.AD_NO 
+		AND CONTEST_NO = ${contestNo}
+	</select>
+
 
 </mapper>
