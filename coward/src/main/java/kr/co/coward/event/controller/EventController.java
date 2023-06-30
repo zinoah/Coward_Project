@@ -30,7 +30,7 @@ public class EventController {
 		int offset = 0; // OFFSET 계산
 
 		// 이벤트 리스트 조회
-		List<Event> eventList = service.getEventList(offset, pageSize);
+		List<Event> eventList = service.getEventsByPage(offset, pageSize);
 
 		// 이벤트 리스트 적재
 		model.addAttribute("eventList", eventList);
@@ -59,7 +59,7 @@ public class EventController {
 		int offset = page * pageSize; // OFFSET 계산
 
 		// 이벤트 리스트 조회
-		List<Event> eventList = service.getEventList(offset, pageSize);
+		List<Event> eventList = service.getEventsByPage(offset, pageSize);
 
 		// 값 자체 전달
 		return eventList;

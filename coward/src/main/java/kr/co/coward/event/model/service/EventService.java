@@ -7,11 +7,11 @@ import kr.co.coward.event.model.vo.Event;
 public interface EventService {
 
 	/**
-	 * 전체 이벤트 목록 조회 서비스
+	 * 이벤트 목록 조회 서비스 (Offset == 8)
 	 * 
 	 * @return eventList
 	 */
-	List<Event> getEventList(int offset, int pageSize);
+	List<Event> getEventsByPage(int offset, int pageSize);
 
 	/**
 	 * 이벤트 상세 조회 서비스
