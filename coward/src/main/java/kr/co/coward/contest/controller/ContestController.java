@@ -133,9 +133,21 @@ public class ContestController {
 
 	}
 
-	@GetMapping("/recommend")
+	@GetMapping("/contestRecommend")
 	public String contestRecommend() {
 		return "contest/contest-recommend";
+	}
+
+	@PostMapping("/contestRecommend")
+	public String selectContestRecommend(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam Map<String, Object> paramMap, RedirectAttributes ra, HttpServletRequest req) {
+
+		String typeNo = (String) paramMap.get("typeNo");
+		logger.info("Received typeNo: " + typeNo);
+
+		// paramMap에서 받아온 값들을 활용하여 원하는 처리를 수행
+
+		return "redirect:contestRecommend";
 	}
 
 }

@@ -232,7 +232,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <!-- Note: 서비스 바로가기 버튼 링크들 -->
             <a
               class="col-sm-1 col-md-3 col-lg-3 service"
-              href="${contextPath}/contest/recommend"
+              href="${contextPath}/contest/contestRecommend"
             >
               <div class="service-image">
                 <!-- Note: 모바일 아이콘 -->

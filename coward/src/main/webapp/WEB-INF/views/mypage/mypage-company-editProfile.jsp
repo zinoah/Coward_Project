@@ -44,7 +44,7 @@
 										<div class="profile-img-box">
 											<div class="profile-img avatar">
 												<img
-													src="${contextPath}/resources/assets/images/default-user-img.png" />
+													src="${contextPath}${loginMember.profileImg}" />
 											</div>
 										</div>
 
@@ -54,8 +54,8 @@
 									</div>
 
 									<ul class="category-bar">
-										<li><a href="${contextPath}/mypage/company-main">내 정보</a></li>
-										<li><a href="${contextPath}/mypage/company-management">공모전
+										<li><a href="${contextPath}/mypage/companyMain">내 정보</a></li>
+										<li><a href="${contextPath}/mypage/companyManagement">공모전
 												관리</a></li>
 										<li><a href="#">크레딧 인출</a></li>
 										<li><a href="${contextPath}/mypage/companyProfile">프로필
@@ -79,32 +79,38 @@
 										<div class="title-wrapper lg-only">
 											<p class="title">프로필 수정</p>
 										</div>
-										<form action="profileImg" method="POST" name="myPage-form"
-											enctype="multipart/form-data">
+										<form action="companyProfile" method="POST"
+											name="company-form" enctype="multipart/form-data" >
 											<div class="mypage-img-wrapper">
 												<div class="ic-camera-relative">
 													<div class="avatar">
-														<c:if test"${$emptyloginMember.profileImg}>
+														<c:if test="${empty loginMember.profileImg}">
 															<img
-																src="${contextPath}/resources/assets/images/default-user-img.png" />
+																src="${contextPath}/resources/assets/images/default-user-img.png"
+																id="profileImg" />
 														</c:if>
 
 														<c:if test="${!empty loginMember.profileImg}">
 															<img src="${contextPath}${loginMember.profileImg}"
-																id="profile-image">
+																id="profileImg">
 														</c:if>
-
-														<div class="ic-camera-wrapper">
-															<i class="ic-camera"></i>
-														</div>
+														<label for="inputImg">
+															<div class="ic-camera-wrapper">
+																<input type="file" name="uploadImage" id="inputImg"
+																	accept="image/*"> <i class="ic-camera"></i>
+															</div>
+														</label>
 													</div>
+
+
 												</div>
 											</div>
-										</form>
 
 
-										<form action="companyProfile" method="POST"
-											name="company-form">
+											<input type="hidden" name="delete" id="delete" value="0">
+											<!-- 삭제버튼(x)이 눌러짐을 기록하는 숨겨진 input 태그 -->
+											<!-- 0 : 안눌러짐   /   1: 눌러짐 -->
+
 
 											<div class="mypage-input-box-wrapper">
 												<div class="mypage-input-box">
@@ -143,12 +149,7 @@
 
 													</select>
 
-
-
-
-
 												</div>
-
 
 											</div>
 
