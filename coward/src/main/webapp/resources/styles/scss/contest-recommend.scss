@@ -66,6 +66,7 @@
     box-shadow: $card-shadow;
     border-radius: 5px;
     margin: 15px;
+    cursor: pointer;
 
     &-wrapper {
       @include flexbox;
