@@ -14,13 +14,31 @@ public class RankingDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	/** 상금순으로 정렬된 멤버 리스트 조회 DAO
-	 * @return
+	/**
+	 * 상금순으로 정렬된 멤버 리스트 조회 DAO
+	 * 
+	 * @return priceKingList
 	 */
-	public List<Member> getPriceKingList() {
-		return sqlSession.selectList("contestMapper.getPriceKingList");
+	public List<Member> getPriceKingList(int offset) {
+		return sqlSession.selectList("memberMapper.getPriceKingList", offset);
 	}
-	
-	
-	
+
+	/**
+	 * 우승횟수 순으로 정렬된 멤버 리스트 조회 DAO
+	 * 
+	 * @return victoryKingList
+	 */
+	public List<Member> getVictoryKingList(int offset) {
+		return sqlSession.selectList("memberMapper.getVictoryKingList", offset);
+	}
+
+	/**
+	 * 좋아요 순으로 정렬된 멤버 리스트 조회 DAO
+	 * 
+	 * @return likeKingList
+	 */
+	public List<Member> getLikeKingList(int offset) {
+		return sqlSession.selectList("memberMapper.getLikeKingList", offset);
+	}
+
 }

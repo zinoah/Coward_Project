@@ -29,4 +29,6 @@ public class Member {
 	private String termsFlag;
 	private String snsFlag;
 
+	private int victoryCount;
+	private int likeCount;
 }

@@ -335,57 +335,25 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </div>
 
               <ul class="ranking-list">
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">1</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
+                <c:forEach var="member" items="${priceKingList}" varStatus="vs">
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">${vs.count}</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="${contextPath}/${member.profileImg}"
+                          alt="${priceKingList}위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">${member.memberNick}</span>
                     </div>
-                    <span class="user-name">Apple</span>
-                  </div>
 
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">2</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
+                    <div class="ranking-item-right">
+                      <span class="total-money">${member.totalPrice}</span>
+                      <span class="currency">만원</span>
                     </div>
-                    <span class="user-name">Apple</span>
-                  </div>
-
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">3</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
-                    </div>
-                    <span class="user-name">Apple</span>
-                  </div>
-
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
+                  </li>
+                </c:forEach>
               </ul>
             </div>
             <!-- Note: 이달의 우승왕 -->
@@ -399,57 +367,29 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 />
               </div>
               <ul class="ranking-list">
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">1</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
+                <c:forEach
+                  var="member"
+                  items="${victoryKingList}"
+                  varStatus="vs"
+                >
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">${vs.count}</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="${contextPath}/${member.profileImg}"
+                          alt="${vs.count}위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">${member.memberNick}</span>
                     </div>
-                    <span class="user-name">Apple</span>
-                  </div>
 
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">2</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
+                    <div class="ranking-item-right">
+                      <span class="total-money">${member.victoryCount}</span>
+                      <span class="currency">회</span>
                     </div>
-                    <span class="user-name">Apple</span>
-                  </div>
-
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">3</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
-                    </div>
-                    <span class="user-name">Apple</span>
-                  </div>
-
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
+                  </li>
+                </c:forEach>
               </ul>
             </div>
             <!-- Note: 이달의 인기왕 -->
@@ -463,57 +403,25 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 />
               </div>
               <ul class="ranking-list">
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">1</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
+                <c:forEach var="member" items="${likeKingList}" varStatus="vs">
+                  <li class="ranking-item">
+                    <div class="ranking-item-left">
+                      <span class="rank">${vs.count}</span>
+                      <div class="user-profile avatar-24">
+                        <img
+                          src="${contextPath}/${member.profileImg}"
+                          alt="${vs.count}위 프로필"
+                        />
+                      </div>
+                      <span class="user-name">${member.memberNick}</span>
                     </div>
-                    <span class="user-name">Apple</span>
-                  </div>
 
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">2</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
+                    <div class="ranking-item-right">
+                      <span class="total-money">${member.likeCount}</span>
+                      <span class="currency">좋아요</span>
                     </div>
-                    <span class="user-name">Apple</span>
-                  </div>
-
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
-                <li class="ranking-item">
-                  <div class="ranking-item-left">
-                    <span class="rank">3</span>
-                    <div class="user-profile avatar-24">
-                      <img
-                        src="${contextPath}/resources/assets/images/default-user-img.png"
-                        alt="1위 프로필"
-                      />
-                    </div>
-                    <span class="user-name">Apple</span>
-                  </div>
-
-                  <div class="ranking-item-right">
-                    <span class="total-money">100,000,000</span>
-                    <span class="currency">원</span>
-                  </div>
-                </li>
+                  </li>
+                </c:forEach>
               </ul>
             </div>
           </div>
