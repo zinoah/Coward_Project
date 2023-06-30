@@ -97,5 +97,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
+    <script src="${contextPath}/resources/js/login.js"></script>
   </body>
 </html>

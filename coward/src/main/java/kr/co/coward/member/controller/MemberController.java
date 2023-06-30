@@ -1,6 +1,7 @@
 package kr.co.coward.member.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -21,42 +24,58 @@ import kr.co.coward.member.model.vo.Member;
 @SessionAttributes({ "loginMember" })
 public class MemberController {
 
+	private Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
 	@Autowired
 	private MemberService service;
 
-	private Logger logger = LoggerFactory.getLogger(MemberController.class);
-
-	@GetMapping("/testLogin")
-	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra,
-			HttpServletRequest request) {
-
+//	@GetMapping("/testLogin")
+//	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra,
+//			HttpServletRequest request) {
+//
+//		logger.info("로그인 기능 수행됨");
+//
+//		String id = "test01";
+//		String pw = "pass01!";
+//
+//		String referer = request.getHeader("Referer");
+//
+//		Member testLoginMember = new Member();
+//
+//		testLoginMember.setMemberId(id);
+//		testLoginMember.setMemberPw(pw);
+//
+//		Member loginMember = service.login(testLoginMember);
+//
+//		if (loginMember != null) { // login 성공 시
+//			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
+//
+//		} else {
+//
+//			ra.addFlashAttribute("message", "로그인에 실패하였습니다.");
+//		}
+//
+//		if (referer != null && !referer.isEmpty()) {
+//			return "redirect:" + referer;
+//		} else {
+//			return "redirect:/"; // 기본적인 홈페이지로 이동하도록 설정
+//		}
+//	}
+	
+	@PostMapping("/login") 
+	public String login( @ModelAttribute Member inputMember 
+			, Model model
+			, RedirectAttributes ra
+			, HttpServletResponse resp 
+			, HttpServletRequest req
+			, @RequestParam(value="saveId", required = false) String saveId) {
+		
 		logger.info("로그인 기능 수행됨");
-
-		String id = "test01";
-		String pw = "pass01!";
-
-		String referer = request.getHeader("Referer");
-
-		Member testLoginMember = new Member();
-
-		testLoginMember.setMemberId(id);
-		testLoginMember.setMemberPw(pw);
-
-		Member loginMember = service.login(testLoginMember);
-
-		if (loginMember != null) { // login 성공 시
-			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
-
-		} else {
-
-			ra.addFlashAttribute("message", "로그인에 실패하였습니다.");
-		}
-
-		if (referer != null && !referer.isEmpty()) {
-			return "redirect:" + referer;
-		} else {
-			return "redirect:/"; // 기본적인 홈페이지로 이동하도록 설정
-		}
+		
+		Member loginMember = service.login(inputMember);
+		
+		return "redirect:/";
+		
 	}
 
 	@GetMapping("/findDev")
@@ -85,5 +104,16 @@ public class MemberController {
 	@GetMapping("/pwFind")
 	public String pwFind() {
 		return "member/pw-find";
+	}
+	
+	
+	// 회원가입
+	@PostMapping("/signUp")
+	public String signUp(@ModelAttribute Member member) {
+		System.out.println(member.toString());
+		
+		service.insertMember(member);
+		
+		return "common/home";
 	}
 }

@@ -874,7 +874,45 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
-
+    
+	<!-- 챗봇 -->
+	 <script>
+      (function () {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function () {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function (args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];   
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+    </script>
+    
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
     <aside id="ad-modal" class="ad-modal">
@@ -907,7 +945,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- jQuery 라이브러리 추가 -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
       crossorigin="anonymous"
     ></script>
 
@@ -917,5 +955,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="${contextPath}/resources/js/slider.js"></script>
     <script src="${contextPath}/resources/js/home.js"></script>
     <script src="${contextPath}/resources/js/banner-slider.js"></script>
+    <script src="${contextPath}/resources/js/chat.js"></script>
   </body>
 </html>
