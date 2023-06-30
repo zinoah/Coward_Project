@@ -11,6 +11,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/contest-detail.css"
     />
+    <!-- sweet alert -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
+    />
     <title>Cowrad | 콘테스트 브리핑</title>
   </head>
   <body>
@@ -27,50 +32,62 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col-sm-4 col-md-12 col-lg-7">
               <div class="contest-briefing-content-box">
                 <div class="contest-briefing-content-box-thumbnail">
-                  <!-- FIXME: 여기 -->
-                  <img src="../assets/images/contest-thumbnail.svg" />
+                  <img src="${contextPath}/${contest.thumbnail}" />
                 </div>
                 <div class="contest-briefing-content-box-title lg-hidden">
-                  <!-- FIXME: 여기 -->
-                  <span>‘제주투어’ 관광브랜드 웹사이트 제작 공모전</span>
+                  <span>${contest.contestTitle}</span>
                 </div>
                 <div class="contest-briefing-content-box-profile lg-hidden">
                   <div class="avatar-32">
-                    <!-- FIXME: 여기 -->
-                    <img src="../assets/images/default-user-img.png" />
+                    <c:choose>
+                      <c:when test="${empty contest.companyProfile}">
+                        <img
+                          src="${contextPath}/resources/assets/images/default-user-img.png"
+                          alt="기업 프로필 사진"
+                        />
+                      </c:when>
+                      <c:otherwise>
+                        <img
+                          src="${contextPath}/${contest.companyProfile}"
+                          alt="기업 프로필 사진"
+                        />
+                      </c:otherwise>
+                    </c:choose>
                   </div>
-                  <!-- FIXME: 여기 -->
-                  <span>엔이에스티 제주투어</span>
+                  <span>${contest.companyNick}</span>
                 </div>
 
                 <div class="contest-briefing-content-box-tag lg-hidden">
-                  <!-- FIXME: 여기 -->
-                  <div class="tag-purple">프리미엄</div>
-                  <div class="tag-pink">HTML</div>
-                  <div class="tag-pink">JAVASCRIPT</div>
+                  <div class="tag-purple">${contest.adType}</div>
+                  <c:forEach var="skill" items="${skillList}">
+                    <div class="tag-pink">${skill}</div>
+                  </c:forEach>
                 </div>
                 <div class="contest-briefing-content-box-info lg-hidden">
                   <div>
                     <p>남은 기간</p>
-                    <!-- FIXME: 여기 -->
-                    <p>21일</p>
+                    <p>${contest.dueDate}</p>
                   </div>
                   <div>
                     <p>북마크 수</p>
-                    <!-- FIXME: 여기 -->
-                    <p>40 명</p>
+                    <c:choose>
+                      <c:when test="${empty contest.bookmarkCount}">
+                        <p>0 명</p>
+                      </c:when>
+                      <c:otherwise>
+                        <p>${contest.bookmarkCount}명</p>
+                      </c:otherwise>
+                    </c:choose>
                   </div>
                   <div>
                     <p>진행상태</p>
-                    <!-- FIXME: 여기 -->
-                    <p>진행중</p>
+                    <p id="contest-status">${contest.conStatus}</p>
                   </div>
                 </div>
                 <div class="contest-briefing-content-box-award lg-hidden">
                   <div>
                     <p>총 상금</p>
-                    <!-- FIXME: 여기 -->
-                    <p>300만원</p>
+                    <p>${contest.price} 만원</p>
                   </div>
                   <div>
                     <p>지원자</p>
@@ -84,7 +101,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   >
                     공모전 참가하기
                   </button>
-                  <!-- FIXME: 여기 -->
                   <button
                     class="btn-outlined contest-briefing-content-box-button-bookmark"
                   >
@@ -92,8 +108,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </button>
                   <button
                     class="btn-outlined contest-briefing-content-box-button-link"
+                    onclick="clip()"
                   >
-                    <img src="../assets/images/link-icon.svg" alt="" />
+                    <i class="ic-link" onclick="clip()"></i>
                   </button>
                 </div>
                 <div class="contest-briefing-content-box-briefing-title">
@@ -102,48 +119,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="contest-briefing-content-box-briefing-sub-title">
                   <h3>공모주제</h3>
                 </div>
-                <!-- FIXME: 여기 -->
                 <div class="contest-briefing-content-box-detail">
-                  교육주제 <br /><br />
-                  - 조직이해, 문서작성, 직장생활 가이드<br /><br />
-                  - 반도체 개념과 소자, 공정- 반도체 공정, 생산·품질, 안전·보건,
-                  반도체 심화
-                  <br /><br />-반도체 리포트, 설계 세미나, 팀 프로젝트
+                  ${contest.subject}
                 </div>
                 <div class="contest-briefing-content-box-briefing-sub-title">
                   <h3>응모 자격</h3>
                 </div>
                 <div class="contest-briefing-content-box-detail">
-                  <!-- FIXME: 여기 -->
-                  지원자격 <br /><br />
-
-                  - 졸업까지 남은 수업연한 2년 이하인 대학생(휴학생, 졸업유예,
-                  교육 기간 내 졸업예정자 포함)<br /><br />
-
-                  - 내일배움카드 보유 또는 신규 발급이 가능한 대학생(기존
-                  보유자의 경우 잔액 1원 이상)<br /><br />
-
-                  - 기존의 K-Digital Training 과정 수강이력이 없는 분
+                  ${contest.qualification}
                 </div>
                 <div class="contest-briefing-content-box-briefing-sub-title">
                   <h3>공모일정</h3>
                 </div>
                 <div class="contest-briefing-content-box-detail">
-                  <!-- FIXME: 여기 -->
-                  5월 3일 ~ 5월 22일
+                  ${contest.createDate} ~ ${contest.endDate}
                 </div>
                 <div class="contest-briefing-content-box-briefing-sub-title">
                   <h3>추가 내용</h3>
                 </div>
                 <div class="contest-briefing-content-box-detail">
-                  <!-- FIXME: 여기 -->
-                  참여혜택<br /><br />
-
-                  - SK하이닉스 전·현직 전문 강사의 고품질 반도체 직무교육<br /><br />
-
-                  - 이력서 클리닉, 취업 컨설팅 등 단계별 취업지원 프로그램<br /><br />
-
-                  - 월 최대 316,000원의 교육훈련비 지급
+                  ${contest.addInfo}
                 </div>
               </div>
             </div>
@@ -159,52 +154,65 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col-sm-4 col-lg-4">
               <div class="contest-briefing-sticky-box">
                 <div class="contest-briefing-sticky-box-title">
-                  <!-- FIXME: 여기 -->
-                  <span>‘제주투어’ 관광브랜드 웹사이트 제작 공모전</span>
+                  <span>${contest.contestTitle}</span>
                 </div>
                 <div class="contest-briefing-sticky-box-profile">
                   <div class="avatar-32">
-                    <!-- FIXME: 여기 -->
-                    <img src="../assets/images/default-user-img.png" />
+                    <c:choose>
+                      <c:when test="${empty contest.companyProfile}">
+                        <img
+                          src="${contextPath}/resources/assets/images/default-user-img.png"
+                          alt="기업 프로필 사진"
+                        />
+                      </c:when>
+                      <c:otherwise>
+                        <img
+                          src="${contextPath}/${contest.companyProfile}"
+                          alt="기업 프로필 사진"
+                        />
+                      </c:otherwise>
+                    </c:choose>
                   </div>
                   <div>
-                    <!-- FIXME: 여기 -->
-                    <span>엔이에스티 제주투어</span>
+                    <span>${contest.companyNick}</span>
                   </div>
                 </div>
                 <div class="contest-briefing-sticky-box-tag">
-                  <!-- FIXME: 여기 -->
-                  <div class="tag-purple">프리미엄</div>
-                  <div class="tag-pink">HTML</div>
-                  <div class="tag-pink">JAVASCRIPT</div>
+                  <div class="tag-purple">${contest.adType}</div>
+                  <c:forEach var="skill" items="${skillList}">
+                    <div class="tag-pink">${skill}</div>
+                  </c:forEach>
                 </div>
                 <div class="contest-briefing-sticky-box-award">
                   <div>
                     <p>총 상금</p>
-                    <!-- FIXME: 여기 -->
-                    <p>500 만원</p>
+                    <p>${contest.price} 만원</p>
                   </div>
                   <div>
                     <p>지원자</p>
-                    <!-- FIXME: 여기 -->
+                    <!-- FIXME: 어떻게 받아올지 생각해야함 -->
                     <p>40 명</p>
                   </div>
                 </div>
                 <div class="contest-briefing-sticky-box-info">
                   <div>
                     <p>남은 기간</p>
-                    <!-- FIXME: 여기 -->
-                    <p>500 만원</p>
+                    <p>${contest.dueDate}</p>
                   </div>
                   <div>
                     <p>북마크 수</p>
-                    <!-- FIXME: 여기 -->
-                    <p>40 명</p>
+                    <c:choose>
+                      <c:when test="${empty contest.bookmarkCount}">
+                        <p>0 명</p>
+                      </c:when>
+                      <c:otherwise>
+                        <p>${contest.bookmarkCount}명</p>
+                      </c:otherwise>
+                    </c:choose>
                   </div>
                   <div>
                     <p>진행상태</p>
-                    <!-- FIXME: 여기 -->
-                    <p>진행중</p>
+                    <p id="contest-status">${contest.conStatus}</p>
                   </div>
                 </div>
                 <div class="contest-briefing-sticky-box-button">
@@ -215,13 +223,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </button>
                   <button
                     class="btn-outlined contest-briefing-sticky-box-button-bookmark"
+                    onclick="bookmark('${contest.bookmarkCount}')"
                   >
                     <i class="ic-bookmark-filled"></i>
                   </button>
                   <button
                     class="btn-outlined contest-briefing-sticky-box-button-link"
+                    onclick="clip()"
                   >
-                    <i class="ic-link"></i>
+                    <i class="ic-link" id="contest-status"></i>
                   </button>
                 </div>
               </div>
@@ -238,5 +248,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <div id="overlay" class="overlay"></div>
 
     <script src="${contextPath}/resources/js/header.js"></script>
+    <script src="${contextPath}/resources/js/contest-detail.js"></script>
+    <!-- sweet alert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
   </body>
 </html>

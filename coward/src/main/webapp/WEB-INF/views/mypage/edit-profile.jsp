@@ -71,7 +71,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p class="introduce-title little-title">내 정보 수정</p>
                     
                     
-                    <form action="editP" method="POST" name="myPage-form">
+                    <form action="editP" method="POST" name="myPage-form" enctype="multipart/form-data">
                       <div class="profile-header">
                         <div class="profile-edit">
                           <div class="profile-user">
@@ -121,7 +121,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <input
                                   id="front"
                                   type="radio"
-                                  name="userStack"
+                                  name="stack"
                                   value="front"
                                 />
                                 <label for="front">Front End</label>
@@ -131,7 +131,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <input
                                   id="back"
                                   type="radio"
-                                  name="userStack"
+                                  name="stack"
                                   value="back"
                                 />
                                 <label for="back">Back End</label>
@@ -141,7 +141,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <input
                                   id="full"
                                   type="radio"
-                                  name="userStack"
+                                  name="stack"
                                   value="full"
                                 />
                                 <label for="full">Full Stack</label>
@@ -173,38 +173,114 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           </div>
                         </div>
                         <div class="skill-group-box">
-                          <p class="introduce-title">보유 스킬</p>
+                          <p class="introduce-title">보유 기술</p>
 
                           <div class="skill-group">
                             <div class="skill-box">
-                              <input type="checkbox" id="java" name="skill" value="java" />
+                              <input type="checkbox" id="java" name="skill" value="JAVA" />
                               <label for="java">JAVA</label>
                             </div>
 
                             <div class="skill-box">
-                              <input type="checkbox" id="css" name="skill" value="css" />
-                              <label for="css">CSS</label>
+                              <input type="checkbox" id="spring" name="skill" value="Spring" />
+                              <label for="spring">Spring</label>
                             </div>
 
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="Spring Boot"
+                                name="skill"
+                                value="Spring Boot"
+                              />
+                              <label for="spring Boot">Spring Boot</label>
+                            </div>
+                            
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="php"
+                                name="skill"
+                                value="PHP"
+                              />
+                              <label for="spring">PHP</label>
+                            </div>
+
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="oracle"
+                                name="skill"
+                                value="Oracle"
+                              />
+                              <label for="oracle">Oracle</label>
+                            </div>
+
+                            <div class="skill-box">
+                              <input type="checkbox" id="python" name="skill" value="Python" />
+                              <label for="python">Python</label>
+                            </div>
+
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="kotlin"
+                                name="skill"
+                                value="Kotlin"
+                              />
+                              <label for="kotlin">Kotlin</label>
+                            </div>
+
+                            <div class="skill-box">
+                              <input type="checkbox" id="swift" name="skill" value="Swift" />
+                              <label for="swift">Swift</label>
+                            </div>
+
+                            <div class="skill-box">
+                              <input type="checkbox" id="ccc" name="skill" value="C++" />
+                              <label for="ccc">C++</label>
+                            </div>
+
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="cc"
+                                name="skill"
+                                value="C#"
+                              />
+                              <label for="cc">C#</label>
+                            </div>
+                            
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="html"
+                                name="skill"
+                                value="HTML"
+                              />
+                              <label for="html">HTML</label>
+                            </div>
+                            
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="css"
+                                name="skill"
+                                value="CSS"
+                              />
+                              <label for="css">CSS</label>
+                            </div>
+                            
                             <div class="skill-box">
                               <input
                                 type="checkbox"
                                 id="javascript"
                                 name="skill"
-                                value="javascript"
+                                value="JavaScript"
                               />
-                              <label for="javascript">JAVA SCRIPT</label>
+                              <label for="javascript">JavaScript</label>
                             </div>
-                            <div class="skill-box">
-                              <input
-                                type="checkbox"
-                                id="spring"
-                                name="skill"
-                                value="spring"
-                              />
-                              <label for="spring">SPRING</label>
-                            </div>
-
+                            
                             <div class="skill-box">
                               <input
                                 type="checkbox"
@@ -214,40 +290,35 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               />
                               <label for="jQuery">jQuery</label>
                             </div>
-
-                            <div class="skill-box">
-                              <input type="checkbox" id="jsp" name="skill" value="jsp" />
-                              <label for="jsp">JSP</label>
-                            </div>
-
+                            
                             <div class="skill-box">
                               <input
                                 type="checkbox"
-                                id="oracle"
+                                id="vue-js"
                                 name="skill"
-                                value="oracle"
+                                value="Vue.js"
                               />
-                              <label for="oracle">ORACLE</label>
+                              <label for="vue-js">Vue.js</label>
                             </div>
-
-                            <div class="skill-box">
-                              <input type="checkbox" id="mysql" name="skill" value="mysql" />
-                              <label for="mysql">MySQL</label>
-                            </div>
-
-                            <div class="skill-box">
-                              <input type="checkbox" id="react" name="skill" value="react" />
-                              <label for="react">REACT</label>
-                            </div>
-
+                            
                             <div class="skill-box">
                               <input
                                 type="checkbox"
-                                id="python"
+                                id="react"
                                 name="skill"
-                                value="python"
+                                value="React"
                               />
-                              <label for="python">Python</label>
+                              <label for="react">React</label>
+                            </div>
+                            
+                            <div class="skill-box">
+                              <input
+                                type="checkbox"
+                                id="node-js"
+                                name="skill"
+                                value="Node.js"
+                              />
+                              <label for="node-js">Node.js</label>
                             </div>
                           </div>
                         </div>

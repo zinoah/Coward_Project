@@ -1,1 +1,87 @@
 @import "./main";
+
+.ad {
+  background-image: url("../../assets/images/chat-ad.svg");
+  width: 100px;
+  height: 70px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10px 0 15px;
+}
+
+.profile {
+  &-img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.chat {
+  &-box {
+    @include flexbox(start);
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background;
+    }
+
+    &-group {
+      overflow-y: scroll;
+      height: 700px;
+    }
+  }
+
+  &-message {
+    @include text-style(14);
+    color: $primary;
+    margin: 0 10px;
+  }
+
+  &-date {
+    font-size: 10px;
+    color: $secondary;
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.opponent {
+  background-color: $yellow;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.me {
+  background-color: $blue;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.inputbox {
+  input {
+    @include text-style(14, $primary);
+    border: 2px solid $border;
+    border-radius: 20px;
+    width: 90%;
+    height: 35px;
+    padding: 5px 20px;
+    margin: 20px;
+  }
+}
+
+@include responsive(T) {
+  .full {
+    display: flexbox(between);
+  }
+  .chat-box-group {
+    width: 320px;
+  }
+}

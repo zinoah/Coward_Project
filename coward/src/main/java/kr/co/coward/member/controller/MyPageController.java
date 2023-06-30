@@ -1,6 +1,6 @@
 package kr.co.coward.member.controller;
 
-import java.util.List;
+import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,9 +18,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
+//import kr.co.coward.member.model.vo.Region;
 
 @Controller
 @SessionAttributes({ "loginMember" })
@@ -33,10 +32,29 @@ public class MyPageController {
 	@Autowired
 	private MyPageService service;
 
+	// 마이페이지 이동하는 공통 버튼
+
+	@GetMapping("/memberTypeInfo")
+	public String memberTypeInfo(@ModelAttribute("loginMember") Member loginMember) {
+		String memberType = loginMember.getMemberType();
+
+		String redirectUrl = null;
+
+		if (memberType.equals("P")) {
+			redirectUrl = "/mypage/info";
+		} else if (memberType.equals("C")) {
+			redirectUrl = "/mypage/companyMain";
+		} else {
+			// 다른 조건에 대한 처리
+		}
+
+		return "redirect:" + redirectUrl;
+	}
+
 	// 기업 마이페이지
 
 	// 기업 마이페이지 메인페이지 이동
-	@GetMapping("/company-main")
+	@GetMapping("/companyMain")
 	public String companyMain() {
 
 		return "mypage/mypage-company-main";
@@ -44,16 +62,18 @@ public class MyPageController {
 	}
 
 	// 기업 마이페이지 공모전관리 이동
-	@GetMapping("/company-management")
+	@GetMapping("/companyManagement")
 	public String companyManagement() {
 		return "mypage/mypage-company-management";
 	}
 
 	// 기업 마이페이지 프로필수정 이동
+
 	@GetMapping("/companyProfile")
 	public String companyProfile() {
 
 		return "mypage/mypage-company-editProfile";
+
 	}
 
 	// 마이페이지(메인)
@@ -69,29 +89,36 @@ public class MyPageController {
 	// return "mypage/contest-progress";
 	// }
 
-	// 공모전 목록 조회
-	@GetMapping("/progress")
-	public String contestList(Model model) {
-		List<Contest> progress = MyPageService.contestList();
-		model.addAttribute("progress", progress);
-
-		return "mypage/contest-progress";
-	}
-
-	// 내 정보 수정(일반 회원)
+	// 내 정보 수정으로 이동(일반 회원)
 	@GetMapping("/editP")
 	public String editP() {
 		return "mypage/edit-profile";
 	}
 
-	// 일반회원 프로필 변경
+	/**
+	 * 내 정보 수정 (일반 회원)
+	 */
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam("editImg") MultipartFile editImg, /* ��ε� ���� */
-			@RequestParam Map<String, Object> paramMap, String[] updateAddress, HttpServletRequest req,
-			RedirectAttributes ra) {
+			@RequestParam("editImg") MultipartFile profileImg, @RequestParam Map<String, Object> paramMap,
+			String[] skill, HttpServletRequest req, RedirectAttributes ra) throws IOException {
 
-		System.out.println(loginMember);
+		String skillList = String.join("/", skill);
+
+		// 웹 접근경로
+		String webPath = "/resources/assets/images/member-profile/";
+
+		// 서버 저장 폴더 경로
+		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
+
+		paramMap.put("webPath", webPath);
+		paramMap.put("folderPath", folderPath);
+		paramMap.put("skill", skillList);
+		paramMap.put("profileImg", profileImg);
+
+		int MemberNo = loginMember.getMemberNo();
+		paramMap.put("memberNo", MemberNo);
+
 		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
 
@@ -101,7 +128,7 @@ public class MyPageController {
 			message = "회원 정보가 수정되었습니다.";
 
 			loginMember.setMemberNick((String) paramMap.get("updateNickname")); // 닉네임
-			loginMember.setStack((String) paramMap.get("userStack")); // 스택
+			loginMember.setStack((String) paramMap.get("stack")); // 스택
 			loginMember.setSlogan((String) paramMap.get("slogan")); // 한줄 소개
 			loginMember.setIntroduce((String) paramMap.get("introduce")); // 소개
 			loginMember.setSkill((String) paramMap.get("skill")); // 내 기술
@@ -115,23 +142,48 @@ public class MyPageController {
 		return "redirect:info";
 	}
 
+	// 마이페이지 - 공모전 목록 조회
+	/*
+	 * @GetMapping("/progress") public String contestList(Model model) {
+	 * List<Contest> progress = ((Object) service).progress("");
+	 * model.addAttribute("progress", progress);
+	 * 
+	 * return "mypage/contest-progress"; }
+	 */
+
 	/**********************************
 	 * 기업 마이페이지 controller
 	 **********************************/
 
-	// 기업 프로필 변경 회원정보
+	// 기업 회원정보 변경
 	@PostMapping("/companyProfile")
 	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam Map<String, Object> paramMap, // 요청 시 전달된 파라미터를 구분하지 않고 모두 Map에 담아서 얻어옴
-			RedirectAttributes ra) {
+			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam Map<String, Object> paramMap,
+			HttpServletRequest req, RedirectAttributes ra) throws IOException {
 
-		logger.info("로그인 정보 테스트");
-		logger.info("loginMember :" + loginMember);
+		// logger.info("로그인 정보 테스트");
+		// logger.info("loginMember :" + loginMember);
+
+		paramMap.put("memberNo", loginMember.getMemberNo());
+
+		// 경로 작성하기
+
+		// 1) 웹 접근 경로
+		String webPath = "/resources/assets/images/dummy/profile-img/";
+
+		// 2) 서버 저장 폴더 경로
+		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
+
+		// map에 경로 2개, 이미지, delete, 회원번호 담기
+		paramMap.put("webPath", webPath);
+		paramMap.put("folderPath", folderPath);
+		paramMap.put("uploadImage", uploadImage);
+		paramMap.put("memberNo", loginMember.getMemberNo());
 
 		// 회원정보 수정 서비스 호출
 		int result = service.updateCompanyInfo(paramMap);
 
-		logger.info("Result 값 확인: " + result);
+		// logger.info("Result 값 확인: " + result);
 
 		String message = null;
 
@@ -140,14 +192,12 @@ public class MyPageController {
 			message = "회원 정보가 수정되었습니다.";
 
 			// DB - Session의 회원정보 동기화(얕은 복사 활용)
-			loginMember.setMemberNick((String) paramMap.get("updateNickName"));
-			loginMember.setIntroduce((String) paramMap.get("updateIntroduce"));
+			loginMember.setMemberNick((String) paramMap.get("memberNick"));
+			loginMember.setIntroduce((String) paramMap.get("introduce"));
+			loginMember.setProfileImg((String) paramMap.get("profileImg"));
 
 		} else {
 			message = "회원 정보 수정이 실패하였습니다.";
-
-			logger.info((String) paramMap.get("updateNickName"));
-			logger.info((String) paramMap.get("updateIntroduce"));
 
 		}
 

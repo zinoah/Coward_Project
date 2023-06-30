@@ -1,5 +1,10 @@
 @import "./main.scss";
+// General Class
+.hide {
+  display: none;
+}
 
+// Banner color Overriding
 .banner {
   &-top {
     background-color: #fbeee5;
@@ -18,7 +23,53 @@
   }
 }
 
+.is-new {
+  display: none;
+}
+
 .event {
+  // Skeleton UI Overring
+  .ph-col-12 {
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+
+    &::before {
+      -webkit-animation: ph-animation 0.8s linear infinite;
+      animation: ph-animation 0.8s linear infinite;
+      background: linear-gradient(
+          90deg,
+          hsla(0, 0%, 100%, 0) 46%,
+          hsla(0, 0%, 100%, 0.35) 50%,
+          hsla(0, 0%, 100%, 0) 54%
+        )
+        50% 50%;
+      bottom: 0;
+      content: " ";
+      left: 0;
+      margin-left: -100%;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 250%;
+      z-index: 1;
+    }
+  }
+
+  .ph-picture {
+    height: 180px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .ph-row .big {
+    height: 18px;
+    margin: 0;
+    border-radius: 4px;
+  }
+
   &-title {
     @include text-style(18);
     margin-bottom: 16px;
@@ -26,7 +77,21 @@
 
   &-item {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+
+    // Note: 진행중인 이벤트
+    &.is-active {
+      .event-item-image {
+        filter: brightness(100%);
+      }
+
+      .event-item-info {
+        .status {
+          color: $blue;
+          font-weight: 700;
+        }
+      }
+    }
 
     &-image {
       width: 100%;
@@ -56,20 +121,6 @@
     &-info {
       @include flexbox(between);
       @include text-style(14);
-    }
-
-    // Note: 진행중인 이벤트
-    &.is-active {
-      .event-item-image {
-        filter: brightness(100%);
-      }
-
-      .event-item-info {
-        .status {
-          color: $blue;
-          font-weight: 700;
-        }
-      }
     }
   }
 
@@ -117,6 +168,11 @@
   }
 
   @include responsive(D) {
+    // Skeleton UI Overriding
+    .ph-picture {
+      height: 220px;
+    }
+
     &-banner {
       height: 240px;
 

@@ -53,22 +53,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="profile-img-box">
                         <div class="profile-img avatar">
                           <img
-                            src="${contextPath}/resources/assets/images/default-user-img.png"
+                            src="${contextPath}${loginMember.profileImg}"
                           />
                         </div>
                       </div>
 
                       <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
+                        <!-- <div class="profile-type">Back</div>-->
+                        <p class="profile-nick">${loginMember.memberNick}</p>
                       </div>
                     </div>
 
                     <ul class="category-bar">
-                      <li><a href="${contextPath}/mypage/company-main">내 정보</a></li>
-                      <li><a href="${contextPath}/mypage/company-management">공모전 관리</a></li>
+                      <li><a href="${contextPath}/mypage/companyMain">내 정보</a></li>
+                      <li><a href="${contextPath}/mypage/companyManagement">공모전 관리</a></li>
                       <li><a href="#">크레딧 인출</a></li>
-                      <li><a href="${contextPath}/mypage/company-profile">프로필 수정</a></li>
+                      <li><a href="${contextPath}/mypage/companyProfile">프로필 수정</a></li>
                       <li><a href="#">회원 탈퇴</a></li>
                     </ul>
                   </div>

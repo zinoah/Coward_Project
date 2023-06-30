@@ -22,7 +22,6 @@ const dateInput = document.getElementById("date-input"); // 종료 날짜
 const skillList = document.getElementsByName("skill"); // 요구 기술
 const thumbnailInput = document.getElementById("thumbnail-input"); // 인풋 이미지
 const priceBar = document.getElementById("price-bar"); // 상금 range
-const countInput = document.getElementById("count"); // 상금받는 인원
 const priceInput = document.getElementById("price"); // 상금
 const resultPrice = document.getElementById("result-price"); // 인원수 + 공모전 상금
 
@@ -52,10 +51,8 @@ const paymentBtn = document.getElementById("payment-btn"); // 결제버튼
 
 /** 가격 * 인원수 결과값 나타내는 함수  */
 function result() {
-  let totalPrice = parseInt(priceInput.value) * parseInt(countInput.value);
-
-  resultPrice.value = totalPrice;
-  stickyBoxPrice.innerText = totalPrice;
+  resultPrice.value = priceInput.value;
+  stickyBoxPrice.innerText = priceInput.value;
 }
 
 function total() {
@@ -116,25 +113,6 @@ skillList.forEach((skill) =>
     }
   })
 );
-
-/* 우승자 카운트 */
-function count(type) {
-  // 현재 화면에 표시된 값
-  let number = countInput.value;
-
-  // 더하기/빼기
-  if (type == "plus") {
-    number = parseInt(number) + 1;
-  } else if (type == "minus") {
-    number = parseInt(number) - 1;
-  }
-
-  // 결과 출력
-  countInput.value = number;
-
-  result();
-  total();
-}
 
 /* input range로 가격올리기 */
 function RangeSlider() {
@@ -217,6 +195,13 @@ dateInput.addEventListener("input", function () {
 
   endDate.innerText = dateValue;
 });
+
+// date input  오늘이전날짜 선택 불가
+let formattedMonth = ("0" + month).slice(-2);
+let formattedDay = ("0" + day).slice(-2);
+let date = year + "-" + formattedMonth + "-" + formattedDay;
+dateInput.value = date;
+dateInput.setAttribute("min", date);
 
 /*****************************************************************************************/
 /*********************************** Port One 라이브러리 *********************************/

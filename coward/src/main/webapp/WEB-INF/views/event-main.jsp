@@ -15,6 +15,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="${contextPath}/resources/styles/css/event.css"
     />
     <title>Coward | Event-Main</title>
@@ -57,7 +61,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="eventRow">
           <!-- Note: 이벤트가 진행중인 경우 .is-active -->
           <c:forEach var="event" items="${eventList}">
             <c:choose>
@@ -106,6 +110,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </c:choose>
           </c:forEach>
         </div>
+        <div class="target"></div>
       </div>
     </main>
 
@@ -120,5 +125,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script>
+      const contextPath = "${contextPath}";
+    </script>
+    <script src="${contextPath}/resources/js/event.js"></script>
   </body>
 </html>

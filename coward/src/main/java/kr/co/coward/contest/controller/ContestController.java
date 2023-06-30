@@ -1,6 +1,8 @@
 package kr.co.coward.contest.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,17 +11,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.coward.contest.model.service.ContestService;
+import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.vo.Member;
 
 @Controller
@@ -65,10 +70,10 @@ public class ContestController {
 			@RequestParam Map<String, Object> paramMap, String[] skill, RedirectAttributes ra,
 			@RequestParam("thumbnail") MultipartFile uploadImage, HttpServletRequest req) throws IOException {
 
-		String skillList = String.join("/", skill);
+		String skillList = String.join(",", skill);
 
 		// 웹 접근경로
-		String webPath = "/resources/assets/images/contest-thumbnail/";
+		String webPath = "resources/assets/images/contest-thumbnail/";
 
 		// 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
@@ -79,15 +84,15 @@ public class ContestController {
 		paramMap.put("thumbnail", uploadImage);
 		paramMap.put("memberNo", loginMember.getMemberNo());
 
-		int result = service.contestCreate(paramMap);
+		int contestNo = service.contestCreate(paramMap);
 
 		String message = null;
 		String path = null;
 
-		if (result > 0) {
+		if (contestNo > 0) {
 			message = "공모전 개최가 완료되었습니다.";
 
-			path = "main";
+			path = "../contest/detail/" + contestNo;
 
 		} else {
 			message = "공모전 개최를 실패하였습니다.";
@@ -98,16 +103,51 @@ public class ContestController {
 		return "redirect:" + path;
 	}
 
+	/**
+	 * 공모전 상세조회
+	 * 
+	 * @param contestNo
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/detail/{contestNo}")
-	public String contestDetail(@PathVariable("contestNo") int contestNo) {
+	public String contestDetail(@PathVariable("contestNo") int contestNo, Model model) {
+
+		Contest contest = service.contestDetail(contestNo);
+
+		String[] temp = contest.getSkill().split(",");
+
+		List<String> skillList = Arrays.asList(temp); // 배열 -> List 변환
+
+		model.addAttribute("contest", contest);
+		model.addAttribute("skillList", skillList);
 
 		return "contest/contest-detail";
+	}
+
+	@ResponseBody
+	@GetMapping("/bookmark")
+	public String bookmarkCount(int count) {
+
+		return null;
 
 	}
 
-	@GetMapping("/recommend")
+	@GetMapping("/contestRecommend")
 	public String contestRecommend() {
 		return "contest/contest-recommend";
+	}
+
+	@PostMapping("/contestRecommend")
+	public String selectContestRecommend(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam Map<String, Object> paramMap, RedirectAttributes ra, HttpServletRequest req) {
+
+		String typeNo = (String) paramMap.get("typeNo");
+		logger.info("Received typeNo: " + typeNo);
+
+		// paramMap에서 받아온 값들을 활용하여 원하는 처리를 수행
+
+		return "redirect:contestRecommend";
 	}
 
 }

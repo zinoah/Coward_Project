@@ -14,10 +14,15 @@
 		<result property="stack"    column="SKILL"/>
 		<result property="slogan" 	column="SLOGAN"/>
 		<result property="introduce" 	column="INTRODUCE"/>
+		<result property="totalPrice" 	column="TOTAL_PRICE"/>
+		<result property="currPrice" 	column="CURR_PRICE"/>
 		<result property="enrollDate" 	column="ENROLL_DATE"/>
 		<result property="secessionFlag" 	column="SECESSION_FL"/>
 		<result property="termsFlag" 	column="TERMS_FL"/>
 		<result property="snsFlag" 	column="SNS_FL"/>
+		
+		<result property="likeCount" 	column="LIKE_COUNT"/>
+		<result property="victoryCount" 	column="VICTORY_COUNT"/>
 	 </resultMap>
 
 
@@ -29,7 +34,46 @@
 		AND SECESSION_FL = 'N'
 	 </select>
 	 
+
 	 <insert id="insertMember" parameterType="member">
 	 	insert into member (member_no, member_type, member_id, member_pw) values (SEQ_MEMBER_NO.nextval, '${memberType}', '${memberId}', '${memberPw}')
 	 </insert>
+
+	<!-- 상금순 랭킹 조회 -->
+	<select id="getPriceKingList" parameterType="_int" resultMap="member_rm">
+		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
+		FROM MEMBER
+		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
+	</select>
+	
+	<!-- 상금순 랭킹 조회 -->
+	<select id="getVictoryKingList" parameterType="_int" resultMap="member_rm">
+		SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
+		FROM MEMBER
+		JOIN (
+		    SELECT WINNER, COUNT(MEMBER_NO) AS VICTORY_COUNT
+		    FROM CONTEST
+		    GROUP BY WINNER
+		    HAVING WINNER IS NOT NULL
+		    ORDER BY VICTORY_COUNT DESC
+		) VICTORY_COUNTS
+		ON MEMBER_NO = VICTORY_COUNTS.WINNER
+		ORDER BY VICTORY_COUNT DESC
+		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
+	</select>
+	
+	 <!-- 좋아요순 랭킹 조회 -->
+	<select id="getLikeKingList" resultMap="member_rm">
+		SELECT MEMBER_NO, LIKE_COUNT, PROFILE_IMG, MEMBER_NICK
+		FROM MEMBER
+		JOIN (
+		    SELECT P_MEMBER_NO, COUNT(P_MEMBER_NO) AS LIKE_COUNT
+		    FROM LIKE_USER
+		    GROUP BY P_MEMBER_NO
+		) LIKE_COUNTS
+		ON MEMBER_NO = LIKE_COUNTS.P_MEMBER_NO
+		ORDER BY LIKE_COUNTS.LIKE_COUNT DESC
+		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
+	</select>
+
 </mapper> 
