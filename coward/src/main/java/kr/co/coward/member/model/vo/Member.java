@@ -22,6 +22,8 @@ public class Member {
 	private String skill;
 	private String slogan;
 	private String introduce;
+	private int totalPrice;
+	private int currPrice;
 	private String enrollDate;
 	private String secessionFlag;
 	private String termsFlag;
