@@ -7,7 +7,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/contest-create.css"
@@ -315,31 +314,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               <div class="sm-hidden">
                                 <span>🏅 우승</span>
                               </div>
-                              <div>
-                                <div class="peple-count">
-                                  <input
-                                    type="text"
-                                    id="count"
-                                    min="1"
-                                    value="1"
-                                  />
-                                  <div>
-                                    <div
-                                      id="up-count-btn"
-                                      onclick='count("plus")'
-                                    >
-                                      <i class="ic-chevron"></i>
-                                    </div>
-                                    <div
-                                      id="down-count-btn"
-                                      onclick='count("minus")'
-                                    >
-                                      <i class="ic-chevron"></i>
-                                    </div>
-                                  </div>
-                                </div>
-                                <span>명에게</span>
-                              </div>
+
                               <div>
                                 <div class="reward-price">
                                   <input type="text" id="price" value="100" />
