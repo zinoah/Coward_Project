@@ -30,4 +30,13 @@
 		AND MEMBER_PW= #{memberPw}
 		AND SECESSION_FL = 'N'
 	 </select>
+	 
+	 <!-- 우승횟수 랭킹 조회 -->
+	<select id="getPriceKingList" resultMap="member_rm">
+		SELECT WINNER AS 우승자번호, COUNT(MEMBER_NO) AS 우승횟수
+		FROM CONTEST
+		GROUP BY WINNER
+		HAVING WINNER IS NOT NULL
+		ORDER BY 우승횟수 DESC
+	 </select>
 </mapper> 
