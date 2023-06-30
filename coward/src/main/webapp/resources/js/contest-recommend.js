@@ -1,12 +1,22 @@
+// 맞춤 선택 STEP
 var step1 = document.getElementById("recommend-step-1");
 var step2 = document.getElementById("recommend-step-2");
 var step3 = document.getElementById("recommend-step-3");
+
+// 이전, 다음 버튼
 var nextBtn1 = document.getElementById("next1");
 var nextBtn2 = document.getElementById("next2");
 var nextBtn3 = document.getElementById("next3");
 var backBtn1 = document.getElementById("back1");
 var backBtn2 = document.getElementById("back2");
 var backBtn3 = document.getElementById("back3");
+
+// dev_Type 카드
+var typeNo = document.getElementById("typeNo");
+var mobile = document.getElementById("mobileCard");
+var web = document.getElementById("webCard");
+var game = document.getElementById("gameCard");
+var security = document.getElementById("securityCard");
 
 function next1() {
   step1.style.display = "none";
@@ -42,10 +52,25 @@ function back3() {
   backBtn3.style.display = "none";
 }
 
-/*
-const slideValue = document.getElementById("recommend-reward-slide-bubble");
-const inputSlider = document.getElementById("recommend-reward-slide");
-inputSlider.oninput = () => {
-  let value = inputSlider.value;
-  slideValue.style.left = value / 2 + "%";
-};*/
+// dev_Type 카드 function
+
+function mobileClick() {
+  typeNo.value = mobile.value;
+  console.log("Mobile Clicked"); // 로그 메시지 추가
+  document.getElementById("recommendForm").submit();
+}
+
+function webClick() {
+  typeNo.value = web.value;
+  console.log("Web Clicked"); // 로그 메시지 추가
+}
+
+function gameClick() {
+  typeNo.value = game.value;
+  console.log("Game Clicked"); // 로그 메시지 추가
+}
+
+function securityClick() {
+  typeNo.value = security.value;
+  console.log("Security Clicked"); // 로그 메시지 추가
+}
