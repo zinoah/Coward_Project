@@ -28,15 +28,18 @@
 	<select id="getDefaultContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE, THUMBNAIL
 		FROM CONTEST
-		<!-- Note: 기획 정리 되면 조건 설정 결정 -->
 		WHERE CON_STATUS = '모집중'
+		AND TRUNC(END_DATE - CREATE_DATE) > 0
+		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 	</select>
 	
 	<!-- Note: 진행중인 공모전 - 신규 -->
 	<select id="getNewContestList" resultMap="contest_rm">
-		SELECT CONTEST_NO, CONTEST_TITLE, PRICE, THUMBNAIL
+		SELECT CONTEST_NO, CONTEST_TITLE, PRICE, THUMBNAIL, CREATE_DATE
 		FROM CONTEST
 		WHERE CON_STATUS = '모집중'
+		ORDER BY CREATE_DATE DESC
+		OFFSET 0 ROWS FETCH NEXT 11 ROWS ONLY
 	</select>
 	
 	<!-- Note: 진행중인 공모전 - 인기 -->
