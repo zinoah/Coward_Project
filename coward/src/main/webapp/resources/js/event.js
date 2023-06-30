@@ -16,8 +16,7 @@ function getEventListAjax() {
     dataType: "json",
     success: function (eventList) {
       eventList.forEach((event) => {
-        createEventSkeleton();
-        createEvents(event);
+        showEventAfterTwoSecond(event);
       });
       page++;
     },
@@ -46,7 +45,7 @@ const observeIntersection = (target, callback) => {
 /** Event 객체 정보를 이용해 event-item 생성 */
 const createEvents = (result) => {
   const colDiv = document.createElement("div");
-  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-6");
+  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-6 is-new");
 
   const eventItem = document.createElement("a");
   if (result.statusFl == "Y") {
@@ -106,7 +105,7 @@ const createEvents = (result) => {
 /** Event Item 스켈레톤 UI 생성 */
 const createEventSkeleton = () => {
   const colDiv = document.createElement("div");
-  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-6");
+  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-6 is-skeleton");
   const phCol12 = document.createElement("div");
   phCol12.setAttribute("class", "ph-col-12");
   const phPicture = document.createElement("div");
@@ -131,5 +130,20 @@ const createEventSkeleton = () => {
 
   eventRow.appendChild(colDiv);
 };
+
+/** 스켈레톤 UI에서 Event Item으로 전환 */
+function showEventAfterTwoSecond(event) {
+  createEventSkeleton();
+  createEvents(event);
+
+  const skeletons = document.querySelectorAll(".is-skeleton");
+  const newEvents = document.querySelectorAll(".is-new");
+
+  // 2초 뒤 스켈레톤 숨기고, 실제 콘텐츠 보여주기
+  setTimeout(() => {
+    skeletons.forEach((sk) => (sk.style.display = "none"));
+    newEvents.forEach((event) => (event.style.display = "block"));
+  }, 2000);
+}
 
 observeIntersection(target, getEventListAjax);
