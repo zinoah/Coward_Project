@@ -32,6 +32,25 @@ public class MyPageController {
 	@Autowired
 	private MyPageService service;
 
+	// 마이페이지 이동하는 공통 버튼
+
+	@GetMapping("/memberTypeInfo")
+	public String memberTypeInfo(@ModelAttribute("loginMember") Member loginMember) {
+		String memberType = loginMember.getMemberType();
+
+		String redirectUrl = null;
+
+		if (memberType.equals("P")) {
+			redirectUrl = "/mypage/info";
+		} else if (memberType.equals("C")) {
+			redirectUrl = "/mypage/companyMain";
+		} else {
+			// 다른 조건에 대한 처리
+		}
+
+		return "redirect:" + redirectUrl;
+	}
+
 	// 기업 마이페이지
 
 	// 기업 마이페이지 메인페이지 이동
