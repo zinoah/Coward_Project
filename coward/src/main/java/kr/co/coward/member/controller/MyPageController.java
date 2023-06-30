@@ -150,7 +150,7 @@ public class MyPageController {
 		// 경로 작성하기
 
 		// 1) 웹 접근 경로
-		String webPath = "/resources/assets/images/";
+		String webPath = "/resources/assets/images/dummy/profile-img/";
 
 		// 2) 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
