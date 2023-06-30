@@ -17,7 +17,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   </head>
   <body>
     <!--회원가입-->
-    <form action="signUp" method="POST" name="signUp-form" onsubmit="return signUpValidate()"	>
+    <form action="signUp" method="POST" id="signUp-form" name="signUp-form" onsubmit="return signUpValidate()"	>
       <div class="container first-join-wrapper">
         <div class="row">
           <div class="col-sm-4">
@@ -36,7 +36,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </a>
                   <p class="p-first">Coward에 오신 것을 환영합니다!</p>
                 </div>
-                <button class="join-email">이메일로 가입하기</button>
+                <button type="button" class="join-email">이메일로 가입하기</button>
                 <div class="line-box">
                   <hr class="line1" />
                   <hr class="line2" />
@@ -89,7 +89,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <span class="mem-type">회원 타입 선택</span>
                   <span class="star">*</span>
                 </div>
-                <div class="type-box single-box">
+                <div  onclick="onMemberTypeClick('P')" class="type-box single-box">
                   <div class="type-explanation-box">
                     <span class="type">개인</span>
                     <span class="type-explanation"
@@ -97,7 +97,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     >
                   </div>
                 </div>
-                <div class="type-box company-box">
+                <div  onclick="onMemberTypeClick('C')" class="type-box company-box">
                   <div class="type-explanation-box">
                     <span class="type">기업</span>
                     <span class="type-explanation"
@@ -159,7 +159,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
                   </div>
                 </div>
-                <button class="next-btn">다음</button>
+                <button type="button" class="next-btn">다음</button>
               </div>
             </div>
           </div>
@@ -189,10 +189,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <span class="input-title">이메일</span>
                   <input
                     class="btn-input-bundle email-input"
+                    name="memberId"
                     type="email"
                     placeholder="이메일 입력"
                   />
-                  <button class="btn-input-bundle email-cert-btn">
+                  <input name="memberType" type="hidden" id="memberType">
+                  <button type="button" class="btn-input-bundle email-cert-btn">
                     이메일 인증하기
                   </button>
                 </div>
@@ -232,10 +234,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                 <div class="pw-box">
                   <span class="input-title">비밀번호</span>
-                  <span class="pw-explanation">유효성 검사 자리~~</span>
+                  <span class="pw-explanation"></span>
                   <div class="btn-input-bundle pw-input-box">
                     <input
                       class="pw-input"
+                      id="password"
+                      name="memberPw"
                       placeholder="8자리 이상, 대소문자 포함"
                       type="password"
                     />
@@ -246,19 +250,21 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
                 <div class="pw-box">
                   <span class="input-title">비밀번호 확인</span>
-                  <span class="pw-explanation">비밀번호 일치 확인 자리</span>
+                  <span class="pw-explanation"></span>
                   <div class="btn-input-bundle pw-input-box">
                     <input
                       class="pw-input-chk"
+                      id="password-chk"
                       placeholder="비밀번호를 한번 더 입력해주세요!"
                       type="password"
+                      oninput="checkPassword()"
                     />
                     <div class="eye-img">
                       <img src="${contextPath}/resources/assets/images/eye.svg" />
                     </div>
                   </div>
                 </div>
-                <button class="complete-btn">완료</button>
+                <button type="button" class="complete-btn" onclick="onSubmit">완료</button>
               </div>
             </div>
           </div>
@@ -493,7 +499,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
         <br /><br />
 
-        <button class="reject" onclick="location.href='home.jsp'">
+        <button type="button" class="reject" onclick="location.href='home.jsp'">
           아니요. 다음에 입력할게요!
         </button>
       </div>

@@ -30,6 +30,12 @@ companyBox.addEventListener("click", function () {
   singleBox.classList.remove("clicked");
 });
 
+// 개인, 기업 타입 얻어오기
+function onMemberTypeClick(type) {
+  const memberType = document.getElementById("memberType");
+  memberType.value = type;
+}
+
 // 모달창 js
 const overlay = document.getElementById("overlay");
 
@@ -102,9 +108,18 @@ const joinModal = document.querySelector(".join-box");
 const completeBtn = document.querySelector(".complete-btn");
 const reject = document.querySelector(".pre-second");
 
+// 완료 버튼 클릭
 completeBtn.addEventListener("click", function () {
-  overlay.classList.add("is-active");
-  joinModal.style.display = "block";
+  //  overlay.classList.add("is-active");
+  //  joinModal.style.display = "block";
+
+  const signUpForm = document.getElementById("signUp-form");
+  signUpForm.submit();
+});
+
+reject.addEventListener("click", function () {
+  overlay.classList.remove("is-active");
+  joinModal.style.display = "none";
 });
 
 overlay.addEventListener("click", () => {
@@ -112,7 +127,43 @@ overlay.addEventListener("click", () => {
   joinModal.style.display = "none";
 });
 
-reject.addEventListener("click", function () {
-  overlay.classList.remove("is-active");
-  joinModal.style.display = "none";
-});
+// 비밀번호 같은지 확인작업
+function checkPassword() {
+  const password = document.getElementById("password").value;
+  const passwordChk = document.getElementById("password-chk").value;
+  const passDiscord = document.querySelector(".pw-explanation");
+  //console.log(password, passwordchk);
+
+  if (password !== passwordChk) {
+    passDiscord.textContent = "비밀번호가 일치하지 않습니다!";
+    passDiscord.style.color = "red";
+    completeBtn.addEventListener("click", showWarning);
+  } else {
+    passDiscord.textContent = "";
+    completeBtn.removeEventListener("click", showWarning);
+  }
+}
+
+function onSubmit() {
+  var password = document.getElementById("password").value;
+  var passwordChk = document.getElementById("password-chk").value;
+
+  if (password !== passwordChk) {
+    window.alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
+  } else {
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "/signUp";
+
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "memberPw";
+    input.value = password;
+    form.appendChild(input);
+
+    document.body.appendChild(form);
+    form.submit();
+  }
+}
+
+document.querySelector(".complete-btn").addEventListener("click", onSubmit);

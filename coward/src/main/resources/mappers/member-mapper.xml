@@ -28,4 +28,8 @@
 		AND MEMBER_PW= #{memberPw}
 		AND SECESSION_FL = 'N'
 	 </select>
+	 
+	 <insert id="insertMember" parameterType="member">
+	 	insert into member (member_no, member_type, member_id, member_pw) values (SEQ_MEMBER_NO.nextval, '${memberType}', '${memberId}', '${memberPw}')
+	 </insert>
 </mapper> 
