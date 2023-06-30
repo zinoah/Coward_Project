@@ -29,14 +29,14 @@
 		SELECT CONTEST_NO, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE, THUMBNAIL
 		FROM CONTEST
 		<!-- Note: 기획 정리 되면 조건 설정 결정 -->
-		WHERE CON_STATUS = '진행중'
+		WHERE CON_STATUS = '모집중'
 	</select>
 	
 	<!-- Note: 진행중인 공모전 - 신규 -->
 	<select id="getNewContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO, CONTEST_TITLE, PRICE, THUMBNAIL
 		FROM CONTEST
-		WHERE CON_STATUS = '진행중'
+		WHERE CON_STATUS = '모집중'
 	</select>
 	
 	<!-- Note: 진행중인 공모전 - 인기 -->
@@ -52,7 +52,5 @@
 		INSERT INTO CONTEST (CONTEST_NO,MEMBER_NO,CONTEST_TITLE,TYPE_NO,SUBJECT,QUALIFICATION,ADD_INFOMATION,CREATE_DATE,END_DATE,SKILL,PRICE,THUMBNAIL,AD_NO)
 		VALUES( #{contestNo}, #{memberNo} ,#{contestTitle}, #{typeNo}, #{subject}, #{qualification}, #{addInfo}, SYSDATE, #{endDate}, #{skill}, #{price}, #{thumbnail} , #{adNo})
 	</insert>
-	
-	
 
 </mapper>
