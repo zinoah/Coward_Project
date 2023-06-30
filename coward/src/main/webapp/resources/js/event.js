@@ -143,7 +143,7 @@ function showEventAfterTwoSecond(event) {
   setTimeout(() => {
     skeletons.forEach((sk) => (sk.style.display = "none"));
     newEvents.forEach((event) => (event.style.display = "block"));
-  }, 2000);
+  }, 700);
 }
 
 observeIntersection(target, getEventListAjax);
