@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +20,7 @@ public class ContestServiceImpl implements ContestService {
 
 	@Autowired
 	private ContestDAO dao;
+	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
 	// 공모전 10개 리스트 조회 서비스
 	// default, new, popular
@@ -80,6 +83,36 @@ public class ContestServiceImpl implements ContestService {
 	public Contest contestDetail(int contestNo) {
 
 		return dao.contestDetail(contestNo);
+	}
+
+	// 맞춤 공모전
+	/*
+	 * @Override public List<Contest> recommendContest(int typeNo) {
+	 * logger.info("recommendContest() 메서드 호출됨. typeNo: " + typeNo);
+	 * 
+	 * List<Contest> recommendContestList = dao.recommendContest(typeNo);
+	 * 
+	 * logger.info("recommendContest() 메서드 실행 결과: " + recommendContestList);
+	 * 
+	 * return recommendContestList; }
+	 */
+
+	/*
+	 * @Override public Contest getRecommendContest(int typeNo) {
+	 * 
+	 * logger.info("Received typeNo: " + typeNo);
+	 * 
+	 * return dao.getRecommendContest(typeNo); }
+	 */
+
+	@Override
+	public List<Contest> getRecommendList(int typeNo) {
+
+		logger.info("Received typeNo Serviceimpl: " + typeNo);
+
+		logger.info("recommendContest() 메서드 실행 결과: " + dao.getRecommendList(typeNo));
+
+		return dao.getRecommendList(typeNo);
 	}
 
 }

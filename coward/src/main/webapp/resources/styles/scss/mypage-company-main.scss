@@ -115,6 +115,11 @@
           height: 195px;
         }
       }
+
+      &-intro {
+        height: 195px;
+        border: 1px solid $border;
+      }
     }
   }
 }

@@ -72,5 +72,30 @@ public class ContestDAO {
 	public Contest contestDetail(int contestNo) {
 
 		return sqlSession.selectOne("contestMapper.contestDetail", contestNo);
+
 	}
+
+	/**
+	 * 맞춤 공모전
+	 * 
+	 * @param contestNo
+	 * @return
+	 */
+	/*
+	 * public List<Contest> recommendContest(int typeNo) {
+	 * 
+	 * logger.info("typeNo 확인: " + typeNo);
+	 * 
+	 * return sqlSession.selectList("contestMapper.recommendContest", typeNo);
+	 * 
+	 * }
+	 */
+
+	public List<Contest> getRecommendList(int typeNo) {
+
+		logger.info("typeNo DAO 확인: " + typeNo);
+
+		return sqlSession.selectList("contestMapper.getRecommendList", typeNo);
+	}
+
 }

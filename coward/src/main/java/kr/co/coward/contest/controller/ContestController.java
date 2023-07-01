@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
+
 import kr.co.coward.contest.model.service.ContestService;
 import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.vo.Member;
@@ -133,21 +135,54 @@ public class ContestController {
 
 	}
 
-	@GetMapping("/contestRecommend")
+	@GetMapping("/recommend")
 	public String contestRecommend() {
+
 		return "contest/contest-recommend";
 	}
 
-	@PostMapping("/contestRecommend")
-	public String selectContestRecommend(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam Map<String, Object> paramMap, RedirectAttributes ra, HttpServletRequest req) {
+	/**
+	 * 맞춤 공모전
+	 * 
+	 * @param contestNo
+	 * @param model
+	 * @return
+	 * 
+	 *         @PostMapping("/recommend") public String selectContestRecommend(Model
+	 *         model, @ModelAttribute("loginMember") Member loginMember,
+	 * @RequestParam int typeNo, RedirectAttributes ra, HttpServletRequest req) {
+	 * 
+	 *               logger.info("Received typeNo: " + typeNo); //
+	 *               logger.info("Received skill: " + skill); //
+	 *               logger.info("Received price: " + price);
+	 * 
+	 *               // paramMap.put("skill", skill); // paramMap.put("price",
+	 *               price);
+	 * 
+	 *               List<Contest> recommendContestList =
+	 *               service.recommendContest(typeNo);
+	 * 
+	 *               model.addAttribute("recommendContestList",
+	 *               recommendContestList);
+	 * 
+	 *               return "redirect:contestRecommend";
+	 * 
+	 *               }
+	 */
 
-		String typeNo = (String) paramMap.get("typeNo");
+	@ResponseBody
+	@PostMapping("/recommend")
+	public String getRecommendContest(@RequestParam int typeNo) {
+
+		logger.info("컨트롤러 수행");
 		logger.info("Received typeNo: " + typeNo);
 
-		// paramMap에서 받아온 값들을 활용하여 원하는 처리를 수행
+		List<Contest> recommendList = service.getRecommendList(typeNo);
 
-		return "redirect:contestRecommend";
+		logger.info("recommendContest() 메서드 실행 결과: " + recommendList);
+
+		return new Gson().toJson(recommendList);
+
 	}
 
 }

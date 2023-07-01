@@ -33,4 +33,14 @@ public interface ContestService {
 	 */
 	Contest contestDetail(int contestNo);
 
+	/**
+	 * 맞춤 공모전
+	 * 
+	 * @param contestNo
+	 * @return
+	 */
+
+	// public abstract Contest getRecommendContest(int typeNo);
+	public abstract List<Contest> getRecommendList(int typeNo);
+
 }
