@@ -65,7 +65,7 @@
 	<!-- 공모전 상세조회  -->
 	<select id="contestDetail" parameterType="_int" resultMap="contest_rm">
 		SELECT CONTEST_NO, CONTEST_TITLE, m.MEMBER_NICK AS COMPANY_NICK ,m.PROFILE_IMG AS COMPANY_PROFILE ,
-		TYPE_NO, SUBJECT ,QUALIFICATION ,ADD_INFOMATION ,CREATE_DATE, END_DATE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
+		TYPE_NO, SUBJECT ,QUALIFICATION ,ADD_INFOMATION , TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE, TO_CHAR (END_DATE,'YYYY-MM-DD') AS END_DATE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
 		c.SKILL, PRICE, THUMBNAIL, c.AD_NO, ad.AD_TYPE AS AD_TYPE, CON_STATUS,
 		(SELECT COUNT(*)
 		FROM LIKE_CON lc 
@@ -76,5 +76,14 @@
 		AND CONTEST_NO = ${contestNo}
 	</select>
 
+	<insert id="bookmarkCount" parameterType="contest">
+		<selectKey keyProperty="bookmarkCount" resultType="_int" order="BEFORE">
+			SELECT COUNT(*) AS BOOKMARK_COUNT
+			FROM LIKE_CON 
+			WHERE CONTEST_NO = ${contestNo}
+		</selectKey>
+		INSERT INTO LIKE_CON (LIKE_CON_NO, MEMBER_NO, CONTEST_NO)
+		VALUES(SEQ_LIKE_CON_NO.NEXTVAL , ${memberNo}, ${contestNo)
+	</insert>
 
 </mapper>

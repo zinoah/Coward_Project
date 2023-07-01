@@ -44,14 +44,13 @@ public class ContestDAO {
 	}
 
 	/**
-	 * 공모전 개최
+	 * 공모전 개최 DAO
 	 * 
 	 * @param paramMap
 	 * @return
 	 */
 	public int contestCreate(Map<String, Object> paramMap) {
 
-		// TODO Auto-generated method stub
 		int result = sqlSession.insert("contestMapper.contestCreate", paramMap);
 
 		if (result > 0)
@@ -64,7 +63,7 @@ public class ContestDAO {
 	}
 
 	/**
-	 * 공모전 디테일
+	 * 공모전 디테일 DAO
 	 * 
 	 * @param contestNo
 	 * @return
@@ -72,5 +71,24 @@ public class ContestDAO {
 	public Contest contestDetail(int contestNo) {
 
 		return sqlSession.selectOne("contestMapper.contestDetail", contestNo);
+	}
+
+	/**
+	 * 북마크 카운트 DAO
+	 * 
+	 * @param contest
+	 * @return
+	 */
+	public int bookmarkCount(Contest contest) {
+
+		int result = sqlSession.insert("contestMapper.bookmarkCount", contest);
+
+		if (result > 0)
+			result = contest.getBookmarkCount();
+
+		System.out.println(result);
+
+		return result;
+
 	}
 }

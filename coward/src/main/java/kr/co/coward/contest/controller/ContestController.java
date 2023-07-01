@@ -125,11 +125,34 @@ public class ContestController {
 		return "contest/contest-detail";
 	}
 
+	/**
+	 * 북마크 카운트
+	 * 
+	 * @param bookmark
+	 * @param loginMember
+	 * @return
+	 */
 	@ResponseBody
-	@GetMapping("/bookmark")
-	public String bookmarkCount(int count) {
+	@PostMapping("/bookmark")
+	public int bookmarkCount(@RequestParam Map<String, Object> map, @ModelAttribute("loginMember") Member loginMember) {
 
-		return null;
+		System.out.println(map);
+		int memberNo = loginMember.getMemberNo();
+		int bookmarkCount = Integer.parseInt(map.get("bookmarkCount").toString());
+		int contestNo = Integer.parseInt(map.get("contestNo").toString());
+
+		System.out.println("bookmark :" + bookmarkCount);
+		System.out.println("contestNo :" + contestNo);
+
+		Contest contest = new Contest();
+
+		contest.setBookmarkCount(bookmarkCount);
+		contest.setMemberNo(memberNo);
+		contest.setContestNo(contestNo);
+
+		int bookmark = service.bookmarkCount(contest);
+
+		return bookmark;
 
 	}
 

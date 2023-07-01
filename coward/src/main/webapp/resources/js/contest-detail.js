@@ -14,24 +14,37 @@ const clip = async () => {
   }
 };
 
+let counter = 0;
+var clicked = false;
 // 북마크 COUNT
-function bookmark(bookmark) {
+function bookmark(bookmark, contestNo) {
   const bookmarkBtn = document.querySelector(
     ".contest-briefing-sticky-box-button-bookmark"
   );
+  console.log(typeof bookmark);
+  console.log(typeof contestNo);
 
-  bookmarkBtn.style.color = "#3aacf8";
+  if (!clicked) {
+    counter = 1; // 처음 클릭 시 1 반환
+    clicked = true;
+    bookmarkBtn.style.color = "#3aacf8";
+  } else {
+    counter = -1; // 두 번째 클릭 시 -1 반환
+    clicked = false;
+    bookmarkBtn.style.color = "#8c8d96";
+  }
+  console.log(counter);
 
   $.ajax({
-    url: "emailDupCheck",
-    data: { bookmark: bookmark },
+    url: "bookmark",
+    dataType: "json",
+    data: { bookmarkCount: bookmark, contestNo: contestNo, counter: counter },
     type: "GET",
     success: function (result) {
-      if (result == 1) {
-      } else {
-      }
+      const bookmarkCount = document.getElementById("bookmarkCount");
+      bookmarkCount.innerText = result + "명";
+      console.log(result);
     },
-
     error: function () {
       // 비동기 통신(ajax) 중 오류가 발생한 경우
       console.log("에러 발생");

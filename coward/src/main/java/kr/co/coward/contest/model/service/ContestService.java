@@ -33,4 +33,12 @@ public interface ContestService {
 	 */
 	Contest contestDetail(int contestNo);
 
+	/**
+	 * 북마크 카운
+	 * 
+	 * @param contest
+	 * @return
+	 */
+	int bookmarkCount(Contest contest);
+
 }

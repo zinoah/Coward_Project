@@ -82,4 +82,11 @@ public class ContestServiceImpl implements ContestService {
 		return dao.contestDetail(contestNo);
 	}
 
+	// 북마크 카운
+	@Override
+	public int bookmarkCount(Contest contest) {
+
+		return dao.bookmarkCount(contest);
+	}
+
 }

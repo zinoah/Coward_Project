@@ -72,10 +72,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p>북마크 수</p>
                     <c:choose>
                       <c:when test="${empty contest.bookmarkCount}">
-                        <p>0 명</p>
+                        <p id="bookmarkCount">0 명</p>
                       </c:when>
                       <c:otherwise>
-                        <p>${contest.bookmarkCount}명</p>
+                        <p id="bookmarkCount">${contest.bookmarkCount}명</p>
                       </c:otherwise>
                     </c:choose>
                   </div>
@@ -190,7 +190,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                   <div>
                     <p>지원자</p>
-                    <!-- FIXME: 어떻게 받아올지 생각해야함 -->
+                    <!-- FIXME: 지원서 기능 구현후 뿌려줄 예정  -->
                     <p>40 명</p>
                   </div>
                 </div>
@@ -203,10 +203,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p>북마크 수</p>
                     <c:choose>
                       <c:when test="${empty contest.bookmarkCount}">
-                        <p>0 명</p>
+                        <p id="bookmarkCount">0 명</p>
                       </c:when>
                       <c:otherwise>
-                        <p>${contest.bookmarkCount}명</p>
+                        <p id="bookmarkCount">${contest.bookmarkCount}명</p>
                       </c:otherwise>
                     </c:choose>
                   </div>
@@ -223,7 +223,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </button>
                   <button
                     class="btn-outlined contest-briefing-sticky-box-button-bookmark"
-                    onclick="bookmark('${contest.bookmarkCount}')"
+                    onclick="bookmark('${contest.bookmarkCount}', '${contest.contestNo}')"
                   >
                     <i class="ic-bookmark-filled"></i>
                   </button>
@@ -247,6 +247,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
     <div id="overlay" class="overlay"></div>
 
+    <!-- jQuery 라이브러리 추가 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/contest-detail.js"></script>
     <!-- sweet alert -->
