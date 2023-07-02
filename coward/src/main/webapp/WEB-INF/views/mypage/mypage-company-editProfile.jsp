@@ -44,7 +44,7 @@
 										<div class="profile-img-box">
 											<div class="profile-img avatar">
 												<img
-													src="${contextPath}${loginMember.profileImg}" />
+													src="${contextPath}/${loginMember.profileImg}" />
 											</div>
 										</div>
 
@@ -91,7 +91,7 @@
 														</c:if>
 
 														<c:if test="${!empty loginMember.profileImg}">
-															<img src="${contextPath}${loginMember.profileImg}"
+															<img src="${contextPath}/${loginMember.profileImg}"
 																id="profileImg">
 														</c:if>
 														<label for="inputImg">
@@ -184,6 +184,6 @@
 	<!-- tiny-slider -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-	<script src="/coward/src/main/webapp/resources/js/mypage-slider.js"></script>
+	
 </body>
 </html>

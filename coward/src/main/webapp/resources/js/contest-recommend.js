@@ -152,7 +152,7 @@ slider.oninput = function () {
   console.log(price.value);
 };
 
-// 콘테스트 정보 조회 비동기 통신(AJAX)
+// 맞춤 콘테스트 정보 조회(AJAX)
 nextBtn3.addEventListener("click", function () {
   const typeNo = document.getElementById("typeNo");
   const div = document.getElementById("result1");

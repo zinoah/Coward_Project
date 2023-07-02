@@ -86,25 +86,6 @@ public class ContestServiceImpl implements ContestService {
 	}
 
 	// 맞춤 공모전
-	/*
-	 * @Override public List<Contest> recommendContest(int typeNo) {
-	 * logger.info("recommendContest() 메서드 호출됨. typeNo: " + typeNo);
-	 * 
-	 * List<Contest> recommendContestList = dao.recommendContest(typeNo);
-	 * 
-	 * logger.info("recommendContest() 메서드 실행 결과: " + recommendContestList);
-	 * 
-	 * return recommendContestList; }
-	 */
-
-	/*
-	 * @Override public Contest getRecommendContest(int typeNo) {
-	 * 
-	 * logger.info("Received typeNo: " + typeNo);
-	 * 
-	 * return dao.getRecommendContest(typeNo); }
-	 */
-
 	@Override
 	public List<Contest> getRecommendList(int typeNo) {
 

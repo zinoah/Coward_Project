@@ -52,7 +52,7 @@
 										<div class="profile-img-box">
 											<div class="profile-img avatar">
 												<img
-													src="${contextPath}${loginMember.profileImg}" />
+													src="${contextPath}/${loginMember.profileImg}" />
 											</div>
 										</div>
 
@@ -171,6 +171,6 @@
 	<!-- tiny-slider -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-	<script src="${contextPath}/resources/js/mypage-slider.js"></script>
+	
 </body>
 </html>

@@ -1,6 +1,7 @@
 package kr.co.coward.member.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +15,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
+
+import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
 //import kr.co.coward.member.model.vo.Region;
@@ -169,7 +174,7 @@ public class MyPageController {
 		// 경로 작성하기
 
 		// 1) 웹 접근 경로
-		String webPath = "/resources/assets/images/dummy/profile-img/";
+		String webPath = "resources/assets/images/dummy/profile-img/";
 
 		// 2) 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
@@ -205,6 +210,21 @@ public class MyPageController {
 
 		return "redirect:companyProfile";
 
+	}
+
+	// 기업 마이페이지 내 공모전 관리
+	@ResponseBody
+	@PostMapping("/companyManagement")
+	public String getContestList(@RequestParam String conStatus) {
+
+		logger.info("컨트롤러 수행");
+		logger.info("Received conStatus: " + conStatus);
+
+		List<Contest> getContestList = service.getContestList(conStatus);
+
+		logger.info("getContestList() 메서드 실행 결과: " + getContestList);
+
+		return new Gson().toJson(getContestList);
 	}
 
 }

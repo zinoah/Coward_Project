@@ -1,5 +1,6 @@
 package kr.co.coward.member.model.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -31,6 +32,30 @@ public class MyPageDAO<Contest> {
 	public int updateCompanyInfo(Map<String, Object> paramMap) {
 		// TODO Auto-generated method stub
 		return sqlSession.update("myPageMapper.updateCompanyInfo", paramMap);
+
+	}
+
+	public List<Contest> getContestList(String type) {
+
+		String mapperPath = null;
+
+		switch (type) {
+		case "전체":
+			mapperPath = "myPageMapper.getAllContestList";
+			break;
+		case "모집중":
+			mapperPath = "myPageMapper.getRecruitingContestList";
+			break;
+		case "심사중":
+			mapperPath = "myPageMapper.getCastingContestList";
+			break;
+
+		case "완료":
+			mapperPath = "myPageMapper.getEndContestList";
+			break;
+		}
+
+		return sqlSession.selectList(mapperPath);
 
 	}
 

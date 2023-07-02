@@ -5,11 +5,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.coward.common.Util;
+import kr.co.coward.contest.model.dao.ContestDAO;
 import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.dao.MyPageDAO;
 
@@ -18,6 +21,7 @@ public class MyPageServiceImpl implements MyPageService {
 
 	@Autowired
 	private MyPageDAO dao;
+	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
 	// 일반 회원 정보 수정 서비스 구현
 	@Override
@@ -69,6 +73,17 @@ public class MyPageServiceImpl implements MyPageService {
 		}
 
 		return result;
+
+	}
+
+	// 상태별 공모전 조회
+	public List<Contest> getContestList(String conStatus) {
+
+		logger.info("Received conStatus Serviceimpl: " + conStatus);
+
+		logger.info("getContestList() 메서드 실행 결과: " + dao.getContestList(conStatus));
+
+		return dao.getContestList(conStatus);
 
 	}
 
