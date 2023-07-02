@@ -77,13 +77,14 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	// 상태별 공모전 조회
-	public List<Contest> getContestList(String conStatus) {
+	public List<Contest> getContestList(String conStatus, int memberNo) {
 
 		logger.info("Received conStatus Serviceimpl: " + conStatus);
+		logger.info("Received memberNo Serviceimpl: " + memberNo);
 
-		logger.info("getContestList() 메서드 실행 결과: " + dao.getContestList(conStatus));
+		logger.info("getContestList() 메서드 실행 결과: " + dao.getContestList(conStatus, memberNo));
 
-		return dao.getContestList(conStatus);
+		return dao.getContestList(conStatus, memberNo);
 
 	}
 

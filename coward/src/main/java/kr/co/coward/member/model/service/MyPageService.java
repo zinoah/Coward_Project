@@ -31,6 +31,6 @@ public interface MyPageService {
 	int updateCompanyInfo(Map<String, Object> paramMap) throws IOException;
 
 	// 공모전 상태별 조회 서비스
-	List<Contest> getContestList(String conStatus);
+	List<Contest> getContestList(String conStatus, int memberNo);
 
 }

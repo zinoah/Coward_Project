@@ -35,7 +35,7 @@ public class MyPageDAO<Contest> {
 
 	}
 
-	public List<Contest> getContestList(String type) {
+	public List<Contest> getContestList(String type, int memberNo) {
 
 		String mapperPath = null;
 
@@ -55,7 +55,7 @@ public class MyPageDAO<Contest> {
 			break;
 		}
 
-		return sqlSession.selectList(mapperPath);
+		return sqlSession.selectList(mapperPath, memberNo);
 
 	}
 

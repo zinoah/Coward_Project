@@ -215,12 +215,14 @@ public class MyPageController {
 	// 기업 마이페이지 내 공모전 관리
 	@ResponseBody
 	@PostMapping("/companyManagement")
-	public String getContestList(@RequestParam String conStatus) {
+	public String getContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
 
 		logger.info("컨트롤러 수행");
 		logger.info("Received conStatus: " + conStatus);
 
-		List<Contest> getContestList = service.getContestList(conStatus);
+		int memberNo = loginMember.getMemberNo();
+
+		List<Contest> getContestList = service.getContestList(conStatus, memberNo);
 
 		logger.info("getContestList() 메서드 실행 결과: " + getContestList);
 
