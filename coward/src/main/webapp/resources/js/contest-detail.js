@@ -28,17 +28,19 @@ function bookmark(bookmark, contestNo) {
     counter = 1; // 처음 클릭 시 1 반환
     clicked = true;
     bookmarkBtn.style.color = "#3aacf8";
+    bookmarkCount = bookmark + counter;
   } else {
     counter = -1; // 두 번째 클릭 시 -1 반환
     clicked = false;
     bookmarkBtn.style.color = "#8c8d96";
+    bookmarkCount = bookmark + counter;
   }
   console.log(counter);
+  console.log(bookmarkCount);
 
   $.ajax({
-    url: "bookmark",
-    dataType: "json",
-    data: { bookmarkCount: bookmark, contestNo: contestNo, counter: counter },
+    url: "../bookmark",
+    data: { bookmarkCount: bookmarkCount, contestNo: contestNo },
     type: "GET",
     success: function (result) {
       const bookmarkCount = document.getElementById("bookmarkCount");

@@ -26,6 +26,13 @@ public class ContestServiceImpl implements ContestService {
 		return dao.getContestList(type);
 	}
 
+	// 필터 공모전 리스트 조회 서비스
+	@Override
+	public List<Contest> filterContestList(String parameter) {
+
+		return dao.filterContestList(parameter);
+	}
+
 	// 공모전 개최
 	@Override
 	public int contestCreate(Map<String, Object> paramMap) throws IOException {
@@ -75,14 +82,14 @@ public class ContestServiceImpl implements ContestService {
 		return contestNo;
 	}
 
-	// 공모전 디테일
+	// 공모전 상세조회 서비스
 	@Override
 	public Contest contestDetail(int contestNo) {
 
 		return dao.contestDetail(contestNo);
 	}
 
-	// 북마크 카운
+	// 북마크 카운트 서비스
 	@Override
 	public int bookmarkCount(Contest contest) {
 

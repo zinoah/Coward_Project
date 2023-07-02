@@ -21,13 +21,16 @@ public class ContestDAO {
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
 	/**
-	 * 진행중인 공모전 10개 리스트 조회 DAO
+	 * 진행중인 공모전 리스트 조회 DAO
 	 */
 	public List<Contest> getContestList(String type) {
 
 		String mapperPath = null;
 
 		switch (type) {
+		case "all":
+			mapperPath = "contestMapper.getAllContestList";
+			break;
 		case "default":
 			mapperPath = "contestMapper.getDefaultContestList";
 			break;
@@ -39,6 +42,34 @@ public class ContestDAO {
 			break;
 		}
 
+		return sqlSession.selectList(mapperPath);
+
+	}
+
+	/**
+	 * 필터 공모전 리스트 조회 DAO
+	 * 
+	 * @param type
+	 * @return
+	 */
+	public List<Contest> filterContestList(String type) {
+
+		String mapperPath = null;
+
+		switch (type) {
+		case "all":
+			mapperPath = "contestMapper.getAllContestList";
+			break;
+		case "recruiting":
+			mapperPath = "contestMapper.getRecruitingContestList";
+			break;
+		case "imminent":
+			mapperPath = "contestMapper.getImminentContestList";
+			break;
+		case "end":
+			mapperPath = "contestMapper.getEndContestList";
+			break;
+		}
 		return sqlSession.selectList(mapperPath);
 
 	}

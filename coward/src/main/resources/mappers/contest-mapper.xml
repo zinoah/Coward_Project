@@ -22,12 +22,40 @@
 		<result property="adNo" 	column="AD_NO"/>
 		<result property="adType" 	column="AD_TYPE"/>
 		<result property="winner" 	column="WINNER"/>
-		<!-- Note: 기획 정리 되면 사용 여부 결정 -->
 		<result property="conStatus" 	column="CON_STATUS"/>
 		<result property="bookmarkCount" column="BOOKMARK_COUNT"/>
 	</resultMap>
-	
-
+	<!-- 공모전 전체 조회  -->
+	<select id="getAllContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
+		FROM CONTEST c, "MEMBER" m , AD a 
+		WHERE c.MEMBER_NO  = m.MEMBER_NO 
+		AND c.AD_NO = a.AD_NO
+	</select>
+	<!-- 모집중인 공모전 조회 -->
+	<select id="getRecruitingContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
+		FROM CONTEST c, "MEMBER" m , AD a 
+		WHERE c.MEMBER_NO  = m.MEMBER_NO 
+		AND c.AD_NO = a.AD_NO
+		AND TRUNC(END_DATE - CREATE_DATE) &gt; 0
+	</select>
+	<!-- 마감임박 공모전 조회 (2주) -->
+	<select id="getImminentContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
+		FROM CONTEST c, "MEMBER" m , AD a 
+		WHERE c.MEMBER_NO  = m.MEMBER_NO 
+		AND c.AD_NO = a.AD_NO
+		AND TRUNC(END_DATE - CREATE_DATE) &lt; 15
+	</select>
+	<!-- 마감 공모전 조회 -->
+	<select id="getEndContestList" resultMap="contest_rm">
+	SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
+	FROM CONTEST c, "MEMBER" m , AD a 
+	WHERE c.MEMBER_NO  = m.MEMBER_NO 
+	AND c.AD_NO = a.AD_NO
+	AND TRUNC(END_DATE - CREATE_DATE) &lt; 0
+	</select>
 	<!-- Note: 진행중인 공모전 - 기본 -->
 	<select id="getDefaultContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE, THUMBNAIL
@@ -35,7 +63,6 @@
 		WHERE CON_STATUS = '모집중'
 		AND TRUNC(END_DATE - CREATE_DATE) > 0
 		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
-
 	</select>
 	
 	<!-- Note: 진행중인 공모전 - 신규 -->
@@ -50,7 +77,18 @@
 	
 	<!-- Note: 진행중인 공모전 - 인기 -->
 	<select id="getPopularContestList" resultMap="contest_rm">
-		
+		WITH BookmarkCounts AS (
+		    SELECT C.CONTEST_NO, COUNT(LC.CONTEST_NO) AS BOOKMARK_COUNT
+		    FROM CONTEST C
+		    LEFT JOIN LIKE_CON LC ON LC.CONTEST_NO = C.CONTEST_NO
+		    GROUP BY C.CONTEST_NO
+		)
+		SELECT C.CONTEST_NO AS CONTEST_NO , C.CONTEST_TITLE AS CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, C.PRICE AS PRICE , C.THUMBNAIL AS THUMBNAIL , BC.BOOKMARK_COUNT AS BOOKMARK_COUNT
+		FROM CONTEST C
+		LEFT JOIN BookmarkCounts BC ON BC.CONTEST_NO = C.CONTEST_NO
+		WHERE C.CON_STATUS = '모집중'
+		AND TRUNC(C.END_DATE - C.CREATE_DATE) > 0
+		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 	</select>
   
 	<!-- 공모전 개최 -->
@@ -83,7 +121,7 @@
 			WHERE CONTEST_NO = ${contestNo}
 		</selectKey>
 		INSERT INTO LIKE_CON (LIKE_CON_NO, MEMBER_NO, CONTEST_NO)
-		VALUES(SEQ_LIKE_CON_NO.NEXTVAL , ${memberNo}, ${contestNo)
+		VALUES(SEQ_LIKE_CON_NO.NEXTVAL , ${memberNo}, ${contestNo})
 	</insert>
 
 </mapper>

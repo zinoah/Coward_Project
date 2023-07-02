@@ -103,6 +103,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </button>
                   <button
                     class="btn-outlined contest-briefing-content-box-button-bookmark"
+                    type="button"
+                    onclick="bookmarkCount(${contest.bookmarkCount}, ${contest.contestNo})"
                   >
                     <i class="ic-bookmark-filled"></i>
                   </button>
@@ -110,7 +112,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     class="btn-outlined contest-briefing-content-box-button-link"
                     onclick="clip()"
                   >
-                    <i class="ic-link" onclick="clip()"></i>
+                    <i class="ic-link" ></i>
                   </button>
                 </div>
                 <div class="contest-briefing-content-box-briefing-title">
@@ -223,7 +225,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </button>
                   <button
                     class="btn-outlined contest-briefing-sticky-box-button-bookmark"
-                    onclick="bookmark('${contest.bookmarkCount}', '${contest.contestNo}')"
+                    type="button"
+                    onclick="bookmarkCount(${contest.bookmarkCount}, ${contest.contestNo})"
                   >
                     <i class="ic-bookmark-filled"></i>
                   </button>
