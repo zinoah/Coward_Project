@@ -148,26 +148,6 @@ public class ContestController {
 	 * @param model
 	 * @return
 	 * 
-	 *         @PostMapping("/recommend") public String selectContestRecommend(Model
-	 *         model, @ModelAttribute("loginMember") Member loginMember,
-	 * @RequestParam int typeNo, RedirectAttributes ra, HttpServletRequest req) {
-	 * 
-	 *               logger.info("Received typeNo: " + typeNo); //
-	 *               logger.info("Received skill: " + skill); //
-	 *               logger.info("Received price: " + price);
-	 * 
-	 *               // paramMap.put("skill", skill); // paramMap.put("price",
-	 *               price);
-	 * 
-	 *               List<Contest> recommendContestList =
-	 *               service.recommendContest(typeNo);
-	 * 
-	 *               model.addAttribute("recommendContestList",
-	 *               recommendContestList);
-	 * 
-	 *               return "redirect:contestRecommend";
-	 * 
-	 *               }
 	 */
 
 	@ResponseBody

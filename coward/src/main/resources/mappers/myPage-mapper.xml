@@ -92,7 +92,7 @@
 		WHERE CON_STATUS = '모집중' AND MEMBER_NO = #{memberNo}
 	</select>
 	
-		<!-- Note: 심사중 공모전 -->
+	<!-- Note: 심사중 공모전 -->
 	<select id="getCastingContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO,
 		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
@@ -101,7 +101,7 @@
 		WHERE CON_STATUS = '심사중'  AND MEMBER_NO = #{memberNo}
 	</select>
 	
-		<!-- Note: 완료 공모전 -->
+	<!-- Note: 완료 공모전 -->
 	<select id="getEndContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO,
 		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
@@ -109,5 +109,22 @@
 		FROM CONTEST
 		WHERE CON_STATUS = '완료'  AND MEMBER_NO =  #{memberNo}
 	</select>
+	
+	
+	<!-- 관심있는 개발자 목록 조회 -->
+	<select id = "developerLikeList" resultMap="contest_rm">
+	SELECT
+    m.MEMBER_NICK,
+    m.SLOGAN,
+    m.STACK,
+    m.PROFILE_IMG
+	FROM MEMBER m
+	JOIN
+    LIKE_USER l ON m.MEMBER_NO = l.P_MEMBER_NO
+	WHERE
+    l.C_MEMBER_NO = #{memberNo};
+	</select>
+	
+	
 
 </mapper>

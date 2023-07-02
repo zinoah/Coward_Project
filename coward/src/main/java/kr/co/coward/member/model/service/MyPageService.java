@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.member.model.vo.Member;
 
 public interface MyPageService {
 
@@ -32,5 +33,8 @@ public interface MyPageService {
 
 	// 공모전 상태별 조회 서비스
 	List<Contest> getContestList(String conStatus, int memberNo);
+
+	// 관심있는 개발자 목록 조회 서비스
+	List<Member> developerLikeList(int memberNo);
 
 }

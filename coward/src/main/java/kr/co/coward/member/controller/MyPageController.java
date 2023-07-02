@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,7 +61,16 @@ public class MyPageController {
 
 	// 기업 마이페이지 메인페이지 이동
 	@GetMapping("/companyMain")
-	public String companyMain() {
+	public String companyMain(@ModelAttribute("loginMember") Member loginMember, Model model) {
+
+		int memberNo = loginMember.getMemberNo();
+		// 관심있는 개발자 목록 조회하기
+
+		logger.info("컨트롤러 수행");
+		logger.info("loginMember :" + loginMember);
+
+		List<Member> developerLikeList = service.developerLikeList(memberNo);
+		model.addAttribute("developerLikeList", developerLikeList);
 
 		return "mypage/mypage-company-main";
 
@@ -159,6 +169,24 @@ public class MyPageController {
 	/**********************************
 	 * 기업 마이페이지 controller
 	 **********************************/
+
+	// 기업이 관심있는 개발자 조회
+
+	// @RequestMapping("/mypage")
+	// public String selectCompanyProfile(@ModelAttribute("loginMember") Member
+	// loginMember) {
+
+	// int memberNo = loginMember.getMemberNo();
+	// 관심있는 개발자 목록 조회하기
+
+	// logger.info("컨트롤러 수행");
+	// logger.info("loginMember :" + loginMember);
+
+	// List<Member> developerLikeList = service.developerLikeList(memberNo);
+
+	// return "mypage/mypage-company-main";
+
+	// }
 
 	// 기업 회원정보 변경
 	@PostMapping("/companyProfile")

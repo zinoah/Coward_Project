@@ -7,6 +7,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.co.coward.member.model.vo.Member;
+
 @Repository
 public class MyPageDAO<Contest> {
 
@@ -56,6 +58,12 @@ public class MyPageDAO<Contest> {
 		}
 
 		return sqlSession.selectList(mapperPath, memberNo);
+
+	}
+
+	public List<Member> developerLikeList(int memberNo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("myPageMapper.developerLikeList", memberNo);
 
 	}
 

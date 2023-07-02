@@ -15,6 +15,7 @@ import kr.co.coward.common.Util;
 import kr.co.coward.contest.model.dao.ContestDAO;
 import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.dao.MyPageDAO;
+import kr.co.coward.member.model.vo.Member;
 
 @Service
 public class MyPageServiceImpl implements MyPageService {
@@ -88,4 +89,13 @@ public class MyPageServiceImpl implements MyPageService {
 
 	}
 
+	// 관심있는 개발자 목록 조회
+
+	public List<Member> developerLikeList(int memberNo) {
+
+		logger.info("마이페이지 ServiceImpl");
+		logger.info("memberNo :" + memberNo);
+
+		return dao.developerLikeList(memberNo);
+	}
 }
