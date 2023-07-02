@@ -46,15 +46,18 @@
 	 <insert id="insertMember" parameterType="member">
 	 	insert into member (member_no, member_type, member_id, member_pw) values (SEQ_MEMBER_NO.nextval, '${memberType}', '${memberId}', '${memberPw}')
 	 </insert>
+	 
 
 	<!-- 상금순 랭킹 조회 -->
 	<select id="getPriceKingList" parameterType="_int" resultMap="member_rm">
 		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
 		FROM MEMBER
+		WHERE TOTAL_PRICE IS NOT NULL
 		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
 	
-	<!-- 상금순 랭킹 조회 -->
+	
+	<!-- 우승 순 랭킹 조회 -->
 	<select id="getVictoryKingList" parameterType="_int" resultMap="member_rm">
 		SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
 		FROM MEMBER
@@ -69,6 +72,7 @@
 		ORDER BY VICTORY_COUNT DESC
 		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
+	
 	
 	 <!-- 좋아요순 랭킹 조회 -->
 	<select id="getLikeKingList" resultMap="member_rm">
