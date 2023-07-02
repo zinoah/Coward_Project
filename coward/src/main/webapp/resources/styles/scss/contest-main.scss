@@ -1,5 +1,10 @@
 @import "./main.scss";
 
+.filter-btn-active {
+  background-color: $blue;
+  color: $white;
+}
+
 .banner {
   &-top {
     background-color: #ffefc5; // 배너 배경 색

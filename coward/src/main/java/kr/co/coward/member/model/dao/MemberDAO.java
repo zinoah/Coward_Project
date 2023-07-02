@@ -15,16 +15,29 @@ public class MemberDAO {
 	private SqlSessionTemplate sqlSession;
 
 	private Logger logger = LoggerFactory.getLogger(MemberDAO.class);
-	
+
 	// 테스트 로그인
-//	public Member login(Member testLoginMember) {
-//
-//		return sqlSession.selectOne("memberMapper.login", testLoginMember);
-//	}
-	
-	/** 회원 가입 DAO
+	public Member testLogin(Member testLoginMember) {
+
+		return sqlSession.selectOne("memberMapper.testLogin", testLoginMember);
+	}
+
+	/**
+	 * 로그인
+	 * 
+	 * @param testLoginMember
+	 * @return
+	 */
+	public Member login(Member loginMember) {
+
+		return sqlSession.selectOne("memberMapper.login", loginMember);
+	}
+
+	/**
+	 * 회원 가입 DAO
+	 * 
 	 * @param member
-	 * @return 
+	 * @return
 	 */
 	public int insertMember(Member member) {
 		return sqlSession.insert("memberMapper.insertMember", member);

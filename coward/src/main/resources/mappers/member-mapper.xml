@@ -26,6 +26,14 @@
 	 </resultMap>
 
 
+ 	 <select id="testLogin" parameterType="member" resultMap="member_rm">
+	 	SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID = 'test01'
+		AND MEMBER_PW= 'pass01!'
+		AND SECESSION_FL = 'N'
+	 </select>
+
 	 <select id="login" parameterType="member" resultMap="member_rm">
 	 	SELECT *
 		FROM MEMBER

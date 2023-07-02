@@ -1,6 +1,7 @@
 package kr.co.coward.contest.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -43,9 +44,59 @@ public class ContestController {
 	 * @return
 	 */
 	@RequestMapping("/main")
-	public String contestMain() {
+	public String contestMain(Model model) {
+
+		// 인기있는 공모전 슬라이더 10개
+		List<Contest> contestPopularList = service.getContestList("popular");
+
+		// 전체 공모전
+		List<Contest> resultList = service.getContestList("all");
+
+		List<Contest> contestList = new ArrayList<>();
+
+		for (Contest contest : resultList) {
+
+			String[] temp = contest.getSkill().split(",");
+			List<String> skillList = Arrays.asList(temp);
+			contest.setSkillList(skillList);
+
+		}
+
+		contestList.addAll(resultList);
+
+		model.addAttribute("contestPopularList", contestPopularList);
+		model.addAttribute("contestList", contestList);
 
 		return "contest/contest-main";
+	}
+
+	/**
+	 * 필터별 공모전 List 조회
+	 * 
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("/filterList")
+	public List<Contest> filterContestList(@RequestParam String parameter) {
+
+		List<Contest> resultList = service.filterContestList(parameter);
+
+		// 리스트에 담긴 스킬리스트 리스트화
+
+		List<Contest> contestList = new ArrayList<>();
+
+		for (Contest contest : resultList) {
+
+			String[] temp = contest.getSkill().split(",");
+			List<String> skillList = Arrays.asList(temp);
+			contest.setSkillList(skillList);
+
+		}
+
+		contestList.addAll(resultList);
+
+		return contestList;
+
 	}
 
 	/**
@@ -125,11 +176,36 @@ public class ContestController {
 		return "contest/contest-detail";
 	}
 
+	/**
+	 * 북마크 카운트
+	 * 
+	 * @param bookmark
+	 * @param loginMember
+	 * @return
+	 */
 	@ResponseBody
 	@GetMapping("/bookmark")
-	public String bookmarkCount(int count) {
+	public int bookmarkCount(@RequestParam Map<String, Object> map, @ModelAttribute("loginMember") Member loginMember) {
 
-		return null;
+		System.out.println(map);
+		int memberNo = loginMember.getMemberNo();
+		int bookmarkCount = Integer.parseInt(map.get("bookmarkCount").toString());
+		int contestNo = Integer.parseInt(map.get("contestNo").toString());
+
+		System.out.println("bookmark :" + bookmarkCount);
+		System.out.println("contestNo :" + contestNo);
+
+		Contest contest = new Contest();
+
+		contest.setBookmarkCount(bookmarkCount);
+		contest.setMemberNo(memberNo);
+		contest.setContestNo(contestNo);
+
+		int bookmark = service.bookmarkCount(contest);
+
+		System.out.println(bookmark);
+
+		return bookmark;
 
 	}
 

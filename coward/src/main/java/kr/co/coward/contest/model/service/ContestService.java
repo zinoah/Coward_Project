@@ -17,6 +17,14 @@ public interface ContestService {
 	List<Contest> getContestList(String type);
 
 	/**
+	 * 필터 공모전 리스트 조회 서비스
+	 * 
+	 * @param parameter
+	 * @return
+	 */
+	List<Contest> filterContestList(String parameter);
+
+	/**
 	 * 공모전 개최 서비스
 	 * 
 	 * @param paramMap
@@ -26,11 +34,19 @@ public interface ContestService {
 	int contestCreate(Map<String, Object> paramMap) throws IOException;
 
 	/**
-	 * 공모전 디테일
+	 * 공모전 상세조회 서비스
 	 * 
 	 * @param contestNo
 	 * @return
 	 */
 	Contest contestDetail(int contestNo);
+
+	/**
+	 * 북마크 카운트 서비스
+	 * 
+	 * @param contest
+	 * @return
+	 */
+	int bookmarkCount(Contest contest);
 
 }
