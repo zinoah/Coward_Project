@@ -37,8 +37,8 @@ public class MemberController {
 
 		logger.info("로그인 기능 수행됨");
 
-		String id = "test02";
-		String pw = "Abc22345";
+		String id = "test01";
+		String pw = "pass01!";
 
 		String referer = request.getHeader("Referer");
 
