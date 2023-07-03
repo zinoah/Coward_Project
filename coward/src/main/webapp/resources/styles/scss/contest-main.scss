@@ -7,22 +7,30 @@
 
 .banner {
   &-top {
-    background-color: #ffefc5; // 배너 배경 색
-
+    background-color: #5f5e5e; // 배너 배경 색
+    color: $white;
     &-wrapper {
       .banner-info {
+        .main-title {
+          color: $white;
+        }
+        .sub-title {
+          color: $white;
+        }
         .banner-button {
-          background-color: $yellow; // 버튼 기본 색
+          background-color: $background; // 버튼 기본 색
+          color: #5f5e5e;
 
           &:hover {
-            background-color: #fcd869; // 버튼 hover 색
+            background-color: $blue; // 버튼 hover 색
+            color: $white;
           }
         }
       }
     }
   }
   &-middle {
-    background-color: $red;
+    background-color: #3e53ee;
     background-image: url("../../assets/images/two-peple-mobile.svg");
   }
 }

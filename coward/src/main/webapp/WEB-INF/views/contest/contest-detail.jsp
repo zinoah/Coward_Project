@@ -96,11 +96,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                 </div>
                 <div class="contest-briefing-content-box-button lg-hidden">
-                  <button
+                  <a
+                    href="$../attendAgree/{contest.contestNo}"
                     class="btn-primary btn-primary contest-briefing-content-box-button-join"
                   >
                     공모전 참가하기
-                  </button>
+                  </a>
                   <button
                     class="btn-outlined contest-briefing-content-box-button-bookmark"
                     type="button"
@@ -112,7 +113,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     class="btn-outlined contest-briefing-content-box-button-link"
                     onclick="clip()"
                   >
-                    <i class="ic-link" ></i>
+                    <i class="ic-link"></i>
                   </button>
                 </div>
                 <div class="contest-briefing-content-box-briefing-title">
@@ -218,11 +219,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                 </div>
                 <div class="contest-briefing-sticky-box-button">
-                  <button
-                    class="btn-primary contest-briefing-sticky-box-button-join"
+                  <a
+                    href="../attendAgree/${contest.contestNo}"
+                    class="btn-primary btn-primary contest-briefing-content-box-button-join"
                   >
-                    공모 참가하기
-                  </button>
+                    공모전 참가하기
+                  </a>
                   <button
                     class="btn-outlined contest-briefing-sticky-box-button-bookmark"
                     type="button"
