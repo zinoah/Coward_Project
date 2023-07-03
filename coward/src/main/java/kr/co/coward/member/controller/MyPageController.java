@@ -83,6 +83,7 @@ public class MyPageController {
 		return "mypage/person-main";
 	}
 
+
 	// 공모전 관리
 	// @GetMapping("/progress")
 	// public String progress() {
@@ -100,24 +101,26 @@ public class MyPageController {
 	 */
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam("editImg") MultipartFile profileImg, @RequestParam Map<String, Object> paramMap,
+			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam Map<String, Object> paramMap,
 			String[] skill, HttpServletRequest req, RedirectAttributes ra) throws IOException {
 
-		String skillList = String.join("/", skill);
+		String skillList = String.join(",", skill);
 
 		// 웹 접근경로
-		String webPath = "/resources/assets/images/member-profile/";
+		String webPath = "resources/assets/images/dummy/profile-img/";
+
 
 		// 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
 
+		int MemberNo = loginMember.getMemberNo();
+		paramMap.put("memberNo", MemberNo);
+
 		paramMap.put("webPath", webPath);
 		paramMap.put("folderPath", folderPath);
 		paramMap.put("skill", skillList);
-		paramMap.put("profileImg", profileImg);
+		paramMap.put("uploadImage",uploadImage);
 
-		int MemberNo = loginMember.getMemberNo();
-		paramMap.put("memberNo", MemberNo);
 
 		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
@@ -132,6 +135,8 @@ public class MyPageController {
 			loginMember.setSlogan((String) paramMap.get("slogan")); // 한줄 소개
 			loginMember.setIntroduce((String) paramMap.get("introduce")); // 소개
 			loginMember.setSkill((String) paramMap.get("skill")); // 내 기술
+			loginMember.setProfileImg((String) paramMap.get("profileImg")); // 프로필 사진
+
 
 		} else {
 			message = "회원정보 수정에 실패하였습니다";

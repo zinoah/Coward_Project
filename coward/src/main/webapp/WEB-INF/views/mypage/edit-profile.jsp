@@ -37,15 +37,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="profile lg-only">
                       <div class="profile-img-box">
                         <div class="profile-img avatar">
-                          <img
-                            src="${contextPath}/resources/assets/images/default-user-img.png"
-                          />
+                         <c:if test="${empty loginMember.profileImg}">
+                  <img
+                    src="${contextPath}/resources/assets/images/default-user-img.png"
+                    alt="변경 프로필 사진"
+                    id="profile-image"
+                  />
+                </c:if>
+           <c:if test="${!empty loginMember.profileImg}">
+                  <img
+                    src="${contextPath}/${loginMember.profileImg}"
+                    alt="변경 프로필 사진"
+                    id="profile-image"
+                  />
+                </c:if>
                         </div>
                       </div>
 
                       <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
+                        <div class="profile-type">${loginMember.stack}</div>
+                        <p class="profile-nick">${loginMember.memberNick}</p>
                       </div>
                     </div>
 
@@ -77,14 +88,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="profile-user">
                           
                             <div class="profile-img avatar">
-                  <c:if test="${empty loginMember.profileImg }">
+                  	<c:if test="${empty loginMember.profileImg}">
                   <img
                     src="${contextPath}/resources/assets/images/default-user-img.png"
                     alt="변경 프로필 사진"
                     id="profile-image"
                   />
                 </c:if>
-                <c:if test="${!empty loginMember.profileImg }">
+           <c:if test="${!empty loginMember.profileImg}">
                   <img
                     src="${contextPath}/${loginMember.profileImg}"
                     alt="변경 프로필 사진"
@@ -92,14 +103,17 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   />
                 </c:if>
                             </div>
-                 <input type="file" name="editImg" id="edit-img" accept="image/*">
+                 <input type="file" name="uploadImage" id="edit-img" accept="image/*">
                            <label for="edit-img" class="edit-img">
                               <i class="ic-camera"></i>
                             </label>
                           </div>
                         </div>
-                       
-						
+                        
+                       <input type="hidden" name="delete" id="delete" value="0">
+											<!-- 삭제버튼(x)이 눌러짐을 기록하는 숨겨진 input 태그 -->
+											<!-- 0 : 안눌러짐   /   1: 눌러짐 -->
+				
 						
 						
                         <div class="nick-stack">
@@ -109,7 +123,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               type="text"
                               id="nickName"
                               name="updateNickname"
-                              value="$loginMember.memberNick"
+                              value="${loginMember.memberNick}"
                               placeholder="자신만의 닉네임을 설정해보세요!"
                             />
                           </div>
@@ -159,6 +173,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               class="one-liner"
                               maxlenghth="50"
                               name="slogan"
+                              value="${loginMember.slogan}"
                               placeholder="자신을 기업에게 한줄로 소개 해 보세요!"
                             />
                           </div>
@@ -169,7 +184,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               class="introduce-content"
 								name="introduce"
                               placeholder="자신을 어필할 소개를 해보세요!!"
-                            ></textarea>
+                            >${loginMember.introduce}</textarea>
                           </div>
                         </div>
                         <div class="skill-group-box">

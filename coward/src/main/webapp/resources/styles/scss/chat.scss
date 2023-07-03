@@ -2,12 +2,11 @@
 
 .ad {
   background-image: url("../../assets/images/chat-ad.svg");
-  width: 100px;
   height: 70px;
   border-radius: 10px;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 10px 0 15px;
+  margin-bottom: 15px;
 }
 
 .profile {
@@ -16,10 +15,16 @@
     height: 40px;
   }
 }
+
+.list {
+  padding: 5px 10px 10px;
+  border-bottom: 1px solid $primary;
+  margin: 8px;
+}
 .chat {
   &-box {
     @include flexbox(start);
-    padding: 8px;
+    padding: 8px 15px;
     margin: 5px 0;
     cursor: pointer;
 
@@ -29,7 +34,16 @@
 
     &-group {
       overflow-y: scroll;
-      height: 700px;
+      width: 300px;
+      height: 650px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 15px;
+      margin-left: 15px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 
@@ -45,43 +59,12 @@
   }
 }
 
-.reverse {
-  flex-direction: row-reverse;
-}
-
-.opponent {
-  background-color: $yellow;
-  border-radius: 10px;
-  padding: 5px 10px;
-  color: white;
-  font-weight: 500;
-}
-
-.me {
-  background-color: $blue;
-  border-radius: 10px;
-  padding: 5px 10px;
-  color: white;
-  font-weight: 500;
-}
-
-.inputbox {
-  input {
-    @include text-style(14, $primary);
-    border: 2px solid $border;
-    border-radius: 20px;
-    width: 90%;
-    height: 35px;
-    padding: 5px 20px;
-    margin: 20px;
-  }
-}
-
 @include responsive(T) {
-  .full {
-    display: flexbox(between);
-  }
-  .chat-box-group {
-    width: 320px;
+  .full-chat {
+    display: flex;
+    box-shadow: $card-shadow;
+    padding: 20px 0;
+    border-radius: 15px;
+    background-color: $background;
   }
 }

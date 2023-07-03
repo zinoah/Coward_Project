@@ -7,6 +7,7 @@
 	<update id="updateInfo">
 		UPDATE MEMBER SET
 		MEMBER_NICK = #{updateNickname},
+		PROFILE_IMG = #{profileImg},
 		STACK = #{stack},
 		SLOGAN = #{slogan},
 		INTRODUCE = #{introduce},
@@ -15,13 +16,7 @@
 		WHERE MEMBER_NO = ${memberNo}
 	</update>
 
-	<!-- 프로필 이미지 수정 -->
-	<update id="updateProfile">
-		UPDATE MEMBER SET
-		PROFILE_IMG = #{profileImage}
-		WHERE
-		MEMBER_NO = #{memberNo}
-	</update>
+	
 
 	<!-- 마이페이지 - 공모전 관리 -->
 	<select id="contestList">
@@ -34,7 +29,13 @@
 		AND ca.MEMBER_NO = ${memberNo};
 	</select>
 
-
+	
+	<!-- 마이페이지(메인) - 관심 공모전 -->
+	<select id="likeConList">
+		SELECT CONTEST_NO
+	FROM LIKE_CON
+	WHERE MEMBER_NO = ${memberNo};
+	</select>
 
 	<!-- ***************기업 마이페이지 맵퍼******************** -->
 

@@ -20,6 +20,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <li class="nav-item">
                 <a href="${contextPath}/mypage/companyMain">가격 안내</a>
               </li>
+              <li class="nav-item">
+                <a href="${contextPath}/chat/roomList">채팅</a>
+              </li>
+             
             </ul>
           </div>
 

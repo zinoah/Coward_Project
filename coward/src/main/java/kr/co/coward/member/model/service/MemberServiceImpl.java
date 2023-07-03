@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 
 import kr.co.coward.member.model.dao.MemberDAO;
 import kr.co.coward.member.model.vo.Member;
+
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,20 +18,20 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDAO dao;
 	
-	@Autowired
-	private BCryptPasswordEncoder bcrypt;
+//	@Autowired
+//	private BCryptPasswordEncoder bcrypt;
 
 	private Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 		
 
 	// 테스트 로그인 
-//	@Override
-//	public Member login(Member testLoginMember) {
-//
-//		Member loginMember = dao.login(testLoginMember);
-//
-//		return loginMember;
-//	}
+	@Override
+	public Member login(Member testLoginMember) {
+
+		Member loginMember = dao.login(testLoginMember);
+
+		return loginMember;
+	}
 	
 	
 	
@@ -42,10 +45,19 @@ public class MemberServiceImpl implements MemberService {
 		return count;
 	}
 
-	// 로그인
+
+	/**
+	 * 개발자 목록 조회
+	 */
 	@Override
-	public Member login(Member inputMember) {
-		return null;
+	public List<Member> getFindDevPage(int pageSize) {
+		return dao.getDevList(pageSize);
 	}
+
+	// 로그인
+//	@Override
+//	public Member login(Member inputMember) {
+//		return null;
+//	}
 
 }
