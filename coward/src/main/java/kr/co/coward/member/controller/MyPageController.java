@@ -70,7 +70,10 @@ public class MyPageController {
 		logger.info("loginMember :" + loginMember);
 
 		List<Member> developerLikeList = service.developerLikeList(memberNo);
+
 		model.addAttribute("developerLikeList", developerLikeList);
+
+		logger.info("developerLikeList() 메서드 실행 결과: " + developerLikeList);
 
 		return "mypage/mypage-company-main";
 
@@ -98,7 +101,6 @@ public class MyPageController {
 		return "mypage/person-main";
 	}
 
-
 	// 공모전 관리
 	// @GetMapping("/progress")
 	// public String progress() {
@@ -124,7 +126,6 @@ public class MyPageController {
 		// 웹 접근경로
 		String webPath = "resources/assets/images/dummy/profile-img/";
 
-
 		// 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
 
@@ -134,8 +135,7 @@ public class MyPageController {
 		paramMap.put("webPath", webPath);
 		paramMap.put("folderPath", folderPath);
 		paramMap.put("skill", skillList);
-		paramMap.put("uploadImage",uploadImage);
-
+		paramMap.put("uploadImage", uploadImage);
 
 		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
@@ -151,7 +151,6 @@ public class MyPageController {
 			loginMember.setIntroduce((String) paramMap.get("introduce")); // 소개
 			loginMember.setSkill((String) paramMap.get("skill")); // 내 기술
 			loginMember.setProfileImg((String) paramMap.get("profileImg")); // 프로필 사진
-
 
 		} else {
 			message = "회원정보 수정에 실패하였습니다";
@@ -176,22 +175,6 @@ public class MyPageController {
 	 **********************************/
 
 	// 기업이 관심있는 개발자 조회
-
-	// @RequestMapping("/mypage")
-	// public String selectCompanyProfile(@ModelAttribute("loginMember") Member
-	// loginMember) {
-
-	// int memberNo = loginMember.getMemberNo();
-	// 관심있는 개발자 목록 조회하기
-
-	// logger.info("컨트롤러 수행");
-	// logger.info("loginMember :" + loginMember);
-
-	// List<Member> developerLikeList = service.developerLikeList(memberNo);
-
-	// return "mypage/mypage-company-main";
-
-	// }
 
 	// 기업 회원정보 변경
 	@PostMapping("/companyProfile")

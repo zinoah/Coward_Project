@@ -37,6 +37,7 @@ public class MyPageDAO<Contest> {
 
 	}
 
+	// 공모전 상태별 조회 DAO
 	public List<Contest> getContestList(String type, int memberNo) {
 
 		String mapperPath = null;
@@ -61,8 +62,9 @@ public class MyPageDAO<Contest> {
 
 	}
 
+	// 관심있는 개발자 목록 조회 DAO
 	public List<Member> developerLikeList(int memberNo) {
-		// TODO Auto-generated method stub
+
 		return sqlSession.selectList("myPageMapper.developerLikeList", memberNo);
 
 	}

@@ -69,7 +69,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                         <a href="${contextPath}/mypage/companyMain">내 정보</a>
                       </li>
                       <li>
-                        <a href="${contextPath}/mypage/companyManagement">공모전 관리</a>
+                        <a href="${contextPath}/mypage/companyManagement"
+                          >공모전 관리</a
+                        >
                       </li>
                       <li><a href="#">크레딧 인출</a></li>
                       <li>
@@ -111,51 +113,95 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           <textarea
                             cols="50"
                             rows="5"
-                            placeholder="기업에 대해서 소개해 주세요!"
-                          > ${loginMember.introduce}</textarea
-                          >
+                            placeholder="기업에 대해서 소개해 주세요!"> ${loginMember.introduce}</textarea>
                         </div>
                         <div class="mypage-input-box">
                           <p>관심있는 개발자</p>
 
                           <div class="mypage-developer-card-scroll">
-                          
-                           <c:forEach var="member" items="${developerLikeList}">
-                           <div class="mypage-developer-card">
+                            <c:forEach
+                              var="member"
+                              items="${developerLikeList}"
+                            >
+                              <div class="mypage-developer-card">
                                 <div class="card-content">
                                   <div class="avatar-32">
                                     <img
-                                      src="${contextPath}${member.profileImg}"
+                                      src="${contextPath}/${member.profileImg}"
                                     />
                                   </div>
                                   <div class="nick-name-wrapper">
-                                    <p class="nick-name">${member.memberNick}</p>
-                                    <div class="user-type"></div>
+                                    <p class="nick-name">
+                                      ${member.memberNick}
+                                    </p>
+                                    <div class="user-type">${member.stack}</div>
                                     <div class="one-line-intro">
                                       <p>${member.slogan}</p>
                                     </div>
                                   </div>
                                 </div>
-                              </div> 
-                           
-                           </c:forEach>
-                           
-                            <!--<div class="mypage-developer-card">
-                                <div class="card-content">
-                                  <div class="avatar-32">
-                                    <img
-                                      src="../assets/images/default-user-img.png"
-                                    />
-                                  </div>
-                                  <div class="nick-name-wrapper">
-                                    <p class="nick-name">닉네임</p>
-                                    <div class="user-type">back</div>
-                                    <div class="one-line-intro">
-                                      <p>유능한 back 개발자 입니다</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div> -->
+                              </div>
+                            </c:forEach>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p>내가 개최한 공모전</p>
+                      <div class="btn-wrapper-status">
+                        <input
+                          type="hidden"
+                          id="conStatus"
+                          name="conStatus"
+                          value=""
+                        />
+                        <button
+                          class="btn-32 btn-secondary"
+                          id="all"
+                          onclick="all()"
+                        >
+                          전체
+                        </button>
+                        <button
+                          class="btn-32 btn-secondary"
+                          id="recruiting"
+                          onclick="recruiting()"
+                        >
+                          모집중
+                        </button>
+                        <button
+                          class="btn-32 btn-secondary"
+                          id="casting"
+                          onclick="casting()"
+                        >
+                          심사중
+                        </button>
+                        <button
+                          class="btn-32 btn-secondary"
+                          id="end"
+                          onclick="end()"
+                        >
+                          완료
+                        </button>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="slider-wrapper">
+                            <div class="contest-slider" id="result"></div>
+
+                            <div class="slider-controls">
+                              <button
+                                class="control-button is-prev"
+                                type="button"
+                              >
+                                <i class="ic-chevron"></i>
+                              </button>
+                              <button
+                                class="control-button is-next"
+                                type="button"
+                              >
+                                <i class="ic-chevron"></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -172,6 +218,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     </div>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- tiny-slider -->
+    <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="${contextPath}/resources//mypage-slider.js"></script>
+    <script>
+      const contextPath = "${contextPath}";
+    </script>
   </body>
 </html>
