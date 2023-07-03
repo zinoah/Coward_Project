@@ -31,4 +31,5 @@ public class Member {
 
 	private int victoryCount;
 	private int likeCount;
+	private int attendCount;
 }

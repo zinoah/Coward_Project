@@ -1,8 +1,12 @@
 package kr.co.coward.member.model.service;
 
+import java.util.List;
+
 import kr.co.coward.member.model.vo.Member;
 
 public interface MemberService {
+
+
 
 	/**
 	 * 테스트 로그인
@@ -22,6 +26,18 @@ public interface MemberService {
 	 * @param inputMember
 	 * @return loginMember
 	 */
+	//public abstract Member login(Member inputMember);
+	
+
+	
+	/**
+	 * 개발자 찾기
+	 * @param pageSize
+	 * @return
+	 */
+	List<Member> getFindDevPage(int pageSize);
+
+  
 	public abstract Member login(Member inputMember);
 
 }

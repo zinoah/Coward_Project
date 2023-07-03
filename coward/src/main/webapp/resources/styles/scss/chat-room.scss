@@ -1,0 +1,77 @@
+@import "./main";
+
+.nav {
+  margin-bottom: 50px;
+}
+
+.room {
+  &-wrapper {
+    background-color: $background;
+    height: 650px;
+    border-radius: 15px;
+  }
+
+  &-header {
+    padding: 23px 10px 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $primary;
+  }
+}
+
+.input-area {
+  @include flexbox(between);
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid $border;
+  padding: 8px 15px 8px 10px;
+}
+
+#inputChatting {
+  @include text-style(14);
+
+  background-color: white;
+  resize: none;
+
+  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.display-chatting {
+  height: 510px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+
+  overflow: hidden;
+}
+
+#send {
+  @include text-style(12);
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  background-color: $blue;
+}
+
+.myChat {
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.myChat > p {
+  @include text-style(12);
+
+  padding: 8px 15px;
+  border-radius: 10px;
+  background-color: $blue;
+  color: white;
+  font-weight: 600;
+}
+
+.chatDate {
+  font-size: 9px;
+}

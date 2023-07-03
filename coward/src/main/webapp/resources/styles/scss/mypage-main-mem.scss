@@ -393,9 +393,19 @@
     overflow: hidden;
 
     p {
-      margin: 0 0 20px 15px;
+      margin: 0 0 5px 15px;
     }
   }
+
+  .slider-controls {
+    width: calc(98% + 35px);
+
+    .control-button {
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+
   /* 코워드 크레딧과 나의 기술 가로 정렬 위해 */
   .credit-skill {
     @include flexbox(between);

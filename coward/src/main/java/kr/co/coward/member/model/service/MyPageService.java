@@ -15,7 +15,7 @@ public interface MyPageService {
 	 * @param paramMap
 	 * @return result
 	 */
-	int updateInfo(Map<String, Object> paramMap);
+	int updateInfo(Map<String, Object> paramMap) throws IOException;
 
 	/**
 	 * 마이페이지 - 공모전 목록 조회 서비스

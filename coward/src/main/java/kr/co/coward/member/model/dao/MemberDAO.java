@@ -1,5 +1,9 @@
 package kr.co.coward.member.model.dao;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +45,20 @@ public class MemberDAO {
 	 */
 	public int insertMember(Member member) {
 		return sqlSession.insert("memberMapper.insertMember", member);
+	}
+
+
+	
+	
+	/**
+	 * 개발자 찾기 DAO 
+	 * 
+	 */
+	public List<Member> getDevList(int pageSize) {
+		Map<String, Object> params = new HashMap<>();
+		
+		params.put("pageSize", pageSize);
+		return sqlSession.selectList("memberMapper.getDevList", params);
 	}
 
 }

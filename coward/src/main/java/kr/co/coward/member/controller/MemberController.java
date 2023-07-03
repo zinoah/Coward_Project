@@ -1,5 +1,7 @@
 package kr.co.coward.member.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,6 +40,7 @@ public class MemberController {
 		String id = "test01";
 		String pw = "pass01!";
 
+
 		String referer = request.getHeader("Referer");
 
 		Member testLoginMember = new Member();
@@ -62,6 +65,23 @@ public class MemberController {
 		}
 	}
 
+
+	@GetMapping("/findDev")
+	public String findDev(Model model) {
+		
+		int pageSize = 6; // 한 페이지당 가져올 데이터 개수 -> 2와 3의 공배수가 보기 예쁨
+		
+		// 개발자 리스트 조회
+		List<Member> devList = service.getFindDevPage(pageSize);
+		
+		// 개발자 리스트 적재
+		model.addAttribute("devList", devList);
+  
+  	return "find-developer";
+}
+		
+
+
 	@PostMapping("/login")
 	public String login(@ModelAttribute Member inputMember, Model model, RedirectAttributes ra,
 			HttpServletResponse resp, HttpServletRequest req,
@@ -75,10 +95,6 @@ public class MemberController {
 
 	}
 
-	@GetMapping("/findDev")
-	public String findDev() {
-		return "find-developer";
-	}
 
 	@GetMapping("/terms")
 	public String terms() {
