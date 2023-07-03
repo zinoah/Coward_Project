@@ -1,5 +1,7 @@
 package kr.co.coward.contest.model.vo;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,4 +32,6 @@ public class Contest {
 	private String winner;
 	private String conStatus;
 	private int bookmarkCount;
+	private List<String> skillList;
+
 }
