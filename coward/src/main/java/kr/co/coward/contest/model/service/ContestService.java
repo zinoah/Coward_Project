@@ -42,11 +42,22 @@ public interface ContestService {
 	Contest contestDetail(int contestNo);
 
 	/**
+
+	 * 맞춤 공모전
+	 * 
+	 * @param contestNo
+	 * @return
+	 */
+	// public abstract Contest getRecommendContest(int typeNo);
+  public abstract List<Contest> getRecommendList(int typeNo);
+  
+  
 	 * 북마크 카운트 서비스
 	 * 
 	 * @param contest
 	 * @return
 	 */
 	int bookmarkCount(Contest contest);
+
 
 }

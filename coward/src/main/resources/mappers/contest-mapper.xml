@@ -25,6 +25,7 @@
 		<result property="conStatus" 	column="CON_STATUS"/>
 		<result property="bookmarkCount" column="BOOKMARK_COUNT"/>
 	</resultMap>
+  
 	<!-- 공모전 전체 조회  -->
 	<select id="getAllContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
@@ -32,6 +33,7 @@
 		WHERE c.MEMBER_NO  = m.MEMBER_NO 
 		AND c.AD_NO = a.AD_NO
 	</select>
+  
 	<!-- 모집중인 공모전 조회 -->
 	<select id="getRecruitingContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
@@ -40,6 +42,7 @@
 		AND c.AD_NO = a.AD_NO
 		AND TRUNC(END_DATE - CREATE_DATE) &gt; 0
 	</select>
+  
 	<!-- 마감임박 공모전 조회 (2주) -->
 	<select id="getImminentContestList" resultMap="contest_rm">
 		SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
@@ -48,6 +51,7 @@
 		AND c.AD_NO = a.AD_NO
 		AND TRUNC(END_DATE - CREATE_DATE) &lt; 15
 	</select>
+  
 	<!-- 마감 공모전 조회 -->
 	<select id="getEndContestList" resultMap="contest_rm">
 	SELECT CONTEST_NO , CONTEST_TITLE , TRUNC(C.END_DATE - C.CREATE_DATE) AS DUE_DATE, PRICE , c.SKILL , c.AD_NO , AD_TYPE , m.PROFILE_IMG AS COMPANY_PROFILE , m.MEMBER_NICK AS COMPANY_NICK
@@ -56,25 +60,32 @@
 	AND c.AD_NO = a.AD_NO
 	AND TRUNC(END_DATE - CREATE_DATE) &lt; 0
 	</select>
+  
 	<!-- Note: 진행중인 공모전 - 기본 -->
 	<select id="getDefaultContestList" resultMap="contest_rm">
-		SELECT CONTEST_NO, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE, THUMBNAIL
+		SELECT CONTEST_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		THUMBNAIL
 		FROM CONTEST
 		WHERE CON_STATUS = '모집중'
-		AND TRUNC(END_DATE - CREATE_DATE) > 0
+		AND TRUNC(END_DATE -
+		CREATE_DATE) > 0
 		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 	</select>
-	
+
 	<!-- Note: 진행중인 공모전 - 신규 -->
 	<select id="getNewContestList" resultMap="contest_rm">
-		SELECT CONTEST_NO, CONTEST_TITLE, PRICE, THUMBNAIL, CREATE_DATE
+		SELECT CONTEST_NO,
+		CONTEST_TITLE, PRICE, THUMBNAIL, CREATE_DATE
 		FROM CONTEST
-		WHERE CON_STATUS = '모집중'
+		WHERE
+		CON_STATUS = '모집중'
 		ORDER BY CREATE_DATE DESC
-		OFFSET 0 ROWS FETCH NEXT 11 ROWS ONLY
+		OFFSET 0 ROWS FETCH NEXT 11
+		ROWS ONLY
 
 	</select>
-	
+
 	<!-- Note: 진행중인 공모전 - 인기 -->
 	<select id="getPopularContestList" resultMap="contest_rm">
 		WITH BookmarkCounts AS (
@@ -90,15 +101,20 @@
 		AND TRUNC(C.END_DATE - C.CREATE_DATE) > 0
 		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 	</select>
-  
+
 	<!-- 공모전 개최 -->
 	<insert id="contestCreate">
-		<selectKey keyProperty="contestNo" resultType="_int" order="BEFORE">
+		<selectKey keyProperty="contestNo" resultType="_int"
+			order="BEFORE">
 			SELECT SEQ_CONTEST_NO.NEXTVAL FROM DUAL
 		</selectKey>
-		INSERT INTO CONTEST (CONTEST_NO,MEMBER_NO,CONTEST_TITLE,TYPE_NO,SUBJECT,QUALIFICATION,ADD_INFOMATION,CREATE_DATE,END_DATE,SKILL,PRICE,THUMBNAIL,AD_NO)
-		VALUES( #{contestNo}, #{memberNo} ,#{contestTitle}, #{typeNo}, #{subject}, #{qualification}, #{addInfo}, SYSDATE, #{endDate}, #{skill}, #{price}, #{thumbnail} , #{adNo})
+		INSERT INTO CONTEST
+		(CONTEST_NO,MEMBER_NO,CONTEST_TITLE,TYPE_NO,SUBJECT,QUALIFICATION,ADD_INFOMATION,CREATE_DATE,END_DATE,SKILL,PRICE,THUMBNAIL,AD_NO)
+		VALUES( #{contestNo}, #{memberNo} ,#{contestTitle}, #{typeNo},
+		#{subject}, #{qualification}, #{addInfo}, SYSDATE, #{endDate},
+		#{skill}, #{price}, #{thumbnail} , #{adNo})
 	</insert>
+
 
 	<!-- 공모전 상세조회  -->
 	<select id="contestDetail" parameterType="_int" resultMap="contest_rm">
@@ -106,11 +122,12 @@
 		TYPE_NO, SUBJECT ,QUALIFICATION ,ADD_INFOMATION , TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE, TO_CHAR (END_DATE,'YYYY-MM-DD') AS END_DATE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
 		c.SKILL, PRICE, THUMBNAIL, c.AD_NO, ad.AD_TYPE AS AD_TYPE, CON_STATUS,
 		(SELECT COUNT(*)
-		FROM LIKE_CON lc 
+		FROM LIKE_CON lc
 		WHERE CONTEST_NO = ${contestNo}) AS BOOKMARK_COUNT
-		FROM CONTEST c, MEMBER m , AD ad
+		FROM CONTEST c,
+		MEMBER m , AD ad
 		WHERE c.MEMBER_NO = m.MEMBER_NO
-		AND c.AD_NO  = ad.AD_NO 
+		AND c.AD_NO = ad.AD_NO
 		AND CONTEST_NO = ${contestNo}
 	</select>
 
@@ -124,4 +141,9 @@
 		VALUES(SEQ_LIKE_CON_NO.NEXTVAL , ${memberNo}, ${contestNo})
 	</insert>
 
+<select id="getRecommendList" parameterType="int" resultMap="contest_rm">
+	SELECT CONTEST_NO, CONTEST_TITLE, PRICE
+	FROM CONTEST
+	WHERE TYPE_NO = #{typeNo}
+</select>
 </mapper>

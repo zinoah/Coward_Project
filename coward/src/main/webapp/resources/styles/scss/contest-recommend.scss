@@ -97,6 +97,7 @@
     border-radius: 5px;
     padding: 8px 10px 8px 10px;
     margin: 5px;
+    cursor: pointer;
 
     &-container {
       @include flexbox;
@@ -260,4 +261,9 @@
       width: 15%;
     }
   }
+}
+
+//슬라이드 자꾸 세로정렬되니까 빡쳐서 임시로 해놈(나중에해결)
+#result1 {
+  @include flexbox;
 }

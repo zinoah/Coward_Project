@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.member.model.vo.Member;
 
 public interface MyPageService {
 
@@ -29,5 +30,11 @@ public interface MyPageService {
 
 	// 기업 회원정보 수정 서비스
 	int updateCompanyInfo(Map<String, Object> paramMap) throws IOException;
+
+	// 공모전 상태별 조회 서비스
+	List<Contest> getContestList(String conStatus, int memberNo);
+
+	// 관심있는 개발자 목록 조회 서비스
+	List<Member> developerLikeList(int memberNo);
 
 }

@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="/coward/src/main/webapp/resources/styles/css/contest-recommend.css"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
   </head>
   <body>
     <header class="header">
@@ -183,71 +188,87 @@
                     <div class="recommend-skill-img">
                       <img src="../assets/images/javaScript.svg" />
                     </div>
-                    <h5>JavaScript</h5>
+                    <h5>Java</h5>
                   </div>
                   <div class="recommend-skill">
                     <div class="recommend-skill-img">
                       <img src="../assets/images/javaScript.svg" />
                     </div>
-                    <h5>JavaScript</h5>
+                    <h5>Spring</h5>
                   </div>
                   <div class="recommend-skill">
                     <img src="../assets/images/java.svg" />
-                    <h5>Java</h5>
+                    <h5>Spring Boot</h5>
                   </div>
                   <div class="recommend-skill">
                     <img src="../assets/images/java.svg" />
-                    <h5>Java</h5>
+                    <h5>PHP</h5>
                   </div>
                   <div class="recommend-skill">
                     <img src="../assets/images/javaScript.svg" />
-                    <h5>JavaScript</h5>
+                    <h5>Oracle</h5>
                   </div>
                   <div class="recommend-skill">
                     <img src="../assets/images/javaScript.svg" />
-                    <h5>JavaScript</h5>
+                    <h5>MySQL</h5>
                   </div>
                   <div class="recommend-skill">
                     <div class="recommend-skill-img">
                       <img src="../assets/images/javaScript.svg" />
                     </div>
-                    <h5>JavaScript</h5>
+                    <h5>python</h5>
                   </div>
                   <div class="recommend-skill">
                     <div class="recommend-skill-img">
                       <img src="../assets/images/javaScript.svg" />
                     </div>
-                    <h5>JavaScript</h5>
+                    <h5>kotlin</h5>
                   </div>
                   <div class="recommend-skill">
                     <img src="../assets/images/java.svg" />
-                    <h5>Java</h5>
+                    <h5>Swift</h5>
                   </div>
                   <div class="recommend-skill">
                     <div class="recommend-skill-img">
                       <img src="../assets/images/javaScript.svg" />
                     </div>
-                    <h5>JavaScript</h5>
+                    <h5>C++</h5>
                   </div>
                   <div class="recommend-skill">
                     <div class="recommend-skill-img">
                       <img src="../assets/images/javaScript.svg" />
                     </div>
-                    <h5>JavaScript</h5>
+                    <h5>C#</h5>
                   </div>
                   <div class="recommend-skill">
                     <img src="../assets/images/java.svg" />
-                    <h5>Java</h5>
+                    <h5>HTML</h5>
                   </div>
                   <div class="recommend-skill">
                     <div class="recommend-skill-img">
                       <img src="../assets/images/javaScript.svg" />
                     </div>
-                    <h5>JavaScript</h5>
+                    <h5>CSS</h5>
                   </div>
                   <div class="recommend-skill">
                     <img src="../assets/images/java.svg" />
-                    <h5>Java</h5>
+                    <h5>javaScript</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>jQuery</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Vue.js</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>React</h5>
+                  </div>
+                  <div class="recommend-skill">
+                    <img src="../assets/images/java.svg" />
+                    <h5>Node.js</h5>
                   </div>
                 </div>
               </div>
@@ -282,6 +303,57 @@
                   max="1000"
                   value="10"
                 />
+              </div>
+            </div>
+
+            <div class="recommend-step-4" id="recommend-step-4">
+              <div class="recommend-title">
+                <p>입력한 정보를 바탕으로 불러온 추천 공모전입니다.</p>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="slider-wrapper">
+                    <div class="contest-slider">
+                      <div>
+                        <div class="contest-slider-card">
+                          <div class="contest-slider-card-img">
+                            <img
+                              src="../assets/images/contest-gallery-card-img.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="contest-slider-card-info">
+                            <div class="contest-slider-card-info-title">
+                              <p>식품 쇼핑몰 웹사이트 제작</p>
+                            </div>
+                            <div class="contest-slider-card-info-detail">
+                              <p>상금</p>
+                              <p>100만원</p>
+                            </div>
+                            <div class="contest-slider-card-info-detail">
+                              <p>남은기간</p>
+                              <p>1일</p>
+                            </div>
+                            <div class="contest-slider-card-info-button">
+                              <button class="btn-outlined btn-32">
+                                참여하러가기
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider-controls">
+                      <button class="control-button is-prev" type="button">
+                        <i class="ic-chevron"></i>
+                      </button>
+                      <button class="control-button is-next" type="button">
+                        <i class="ic-chevron"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -403,5 +475,7 @@
     </footer>
 
     <script src="../js/contest-recommend.js"></script>
+    <script src="../js/slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   </body>
 </html>

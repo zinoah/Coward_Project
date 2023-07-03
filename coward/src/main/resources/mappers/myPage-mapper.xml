@@ -2,6 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="myPageMapper">
 
+	<resultMap type="contest" id="contest_rm">
+		<id property="contestNo" column="CONTEST_NO" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="contestTitle" column="CONTEST_TITLE" />
+		<result property="companyNick" column="COMPANY_NICK" />
+		<result property="companyProfile" column="COMPANY_PROFILE" />
+		<result property="typeNo" column="TYPE_NO" />
+		<result property="subject" column="SUBJECT" />
+		<result property="qualification" column="QUALIFICATION" />
+		<result property="addInfo" column="ADD_INFOMATION" />
+		<result property="createDate" column="CREATE_DATE" />
+		<result property="endDate" column="END_DATE" />
+		<result property="dueDate" column="DUE_DATE" />
+		<result property="skill" column="SKILL" />
+		<result property="price" column="PRICE" />
+		<result property="thumbnail" column="THUMBNAIL" />
+		<result property="adNo" column="AD_NO" />
+		<result property="adType" column="AD_TYPE" />
+		<result property="winner" column="WINNER" />
+		<!-- Note: 기획 정리 되면 사용 여부 결정 -->
+		<result property="conStatus" column="CON_STATUS" />
+		<result property="bookmarkCount" column="BOOKMARK_COUNT" />
+	</resultMap>
+
 
 	<!-- 회원 정보 수정 -->
 	<update id="updateInfo">
@@ -48,6 +72,59 @@
 		WHERE MEMBER_NO =
 		${memberNo}
 	</update>
-
+	
+	<!-- Note: 전체 공모전 -->
+	<select id="getAllContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		THUMBNAIL
+		FROM CONTEST
+		WHERE CON_STATUS = '모집중' OR CON_STATUS = '심사중' OR CON_STATUS = '완료'  AND MEMBER_NO = #{memberNo}
+		
+	</select>
+	
+	<!-- Note: 모집중 공모전 -->
+	<select id="getRecruitingContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		THUMBNAIL
+		FROM CONTEST
+		WHERE CON_STATUS = '모집중' AND MEMBER_NO = #{memberNo}
+	</select>
+	
+	<!-- Note: 심사중 공모전 -->
+	<select id="getCastingContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		THUMBNAIL
+		FROM CONTEST
+		WHERE CON_STATUS = '심사중'  AND MEMBER_NO = #{memberNo}
+	</select>
+	
+	<!-- Note: 완료 공모전 -->
+	<select id="getEndContestList" resultMap="contest_rm">
+		SELECT CONTEST_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		THUMBNAIL
+		FROM CONTEST
+		WHERE CON_STATUS = '완료'  AND MEMBER_NO =  #{memberNo}
+	</select>
+	
+	
+	<!-- 관심있는 개발자 목록 조회 -->
+	<select id = "developerLikeList" resultMap="contest_rm">
+	SELECT
+    m.MEMBER_NICK,
+    m.SLOGAN,
+    m.STACK,
+    m.PROFILE_IMG
+	FROM MEMBER m
+	JOIN
+    LIKE_USER l ON m.MEMBER_NO = l.P_MEMBER_NO
+	WHERE
+    l.C_MEMBER_NO = #{memberNo};
+	</select>
+	
+	
 
 </mapper>
