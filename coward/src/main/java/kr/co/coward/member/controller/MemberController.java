@@ -68,7 +68,7 @@ public class MemberController {
 //			return "redirect:/"; // 기본적인 홈페이지로 이동하도록 설정
 //		}
 //	}
-	
+//	
 	// 여기서부터 작업!
 	@PostMapping("/login") 
 	public String login( @ModelAttribute Member inputMember 

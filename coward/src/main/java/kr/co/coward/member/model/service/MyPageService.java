@@ -24,6 +24,16 @@ public interface MyPageService {
 	 */
 	List<Contest> contestList();
 
+	
+	/**
+	 * 마이페이지 메인 - 정보 조회 서비스
+	 * @param memberNo
+	 * @return
+	 */
+	Member mypageInfo(int memberNo);
+
+	
+	
 	/**********************************
 	 * 기업 마이페이지 Service
 	 **********************************/
@@ -36,5 +46,6 @@ public interface MyPageService {
 
 	// 관심있는 개발자 목록 조회 서비스
 	List<Member> developerLikeList(int memberNo);
+
 
 }
