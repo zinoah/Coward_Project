@@ -9,7 +9,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="header-wrapper">
           <div class="header-left">
             <h1 class="logo">
-              <a href="${contextPath}">
+              <a href="${contextPath}/home">
                 <img
                   src="${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
