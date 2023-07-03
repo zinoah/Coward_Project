@@ -1,0 +1,101 @@
+@import "./main";
+
+.change-pw-box {
+  display: none;
+}
+
+.secession {
+  @include text-style(18, $primary);
+  font-weight: 600;
+}
+
+.title {
+  margin-top: 70px;
+}
+
+.pw {
+  &-input-title {
+    @include text-style(16);
+  }
+
+  &-input {
+    @include text-style(12);
+    width: 100%;
+    padding-left: 10px;
+  }
+}
+
+.line {
+  border: 0.2px solid $border;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 60px;
+}
+
+.input-bundle {
+  @include flexbox(between);
+  border: 1px solid $border;
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.ic-eye-close {
+  margin-right: 15px;
+  font-size: 20px;
+  color: $tertiary;
+  cursor: pointer;
+}
+
+.next-btn {
+  @include text-style(14, $white);
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: $tertiary;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.pw-change-btn {
+  @include text-style(14, $white);
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: $tertiary;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@include responsive(T) {
+  .secession {
+    &-wrapper {
+      @include flexbox;
+    }
+
+    &-box {
+      @include column-flexbox(center, start);
+      width: 370px;
+      height: 500px;
+    }
+  }
+
+  .pw-input-title {
+    @include text-style(16);
+    font-weight: 600;
+  }
+}
+
+@include responsive(D) {
+  .profile-wrapper {
+    width: 845px;
+  }
+
+  .title {
+    margin-top: 5px;
+  }
+}

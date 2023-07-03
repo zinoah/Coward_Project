@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="/coward/src/main/webapp/resources/styles/css/mypage-main-mem.css"
     />
-    <link rel="stylesheet" href="../styles/css/member-secession.css" />
+    <link rel="stylesheet" href="../styles/css/change-pw.css" />
     <title>Coward | 회원 탈퇴</title>
   </head>
   <body>
@@ -153,22 +153,49 @@
                     <!-- 비밀번호 수정 - 현재 비밀번호 확인-->
 
                     <div class="title md-hidden">
-                      <span class="secession">회원 탈퇴</span>
+                      <span class="secession">비밀번호 변경</span>
                       <hr class="line" />
                     </div>
                     <div class="secession-wrapper">
                       <div class="secession-box">
-                        <span class="pw-input-title">현재 비밀번호</span>
-                        <div class="input-bundle">
-                          <input
-                            class="pw-input"
-                            id="current-pw"
-                            type="password"
-                            placeholder="현재 비밀번호를 입력해주세요!"
-                          />
-                          <i class="ic-eye-close"></i>
+                        <div class="current-pw-box">
+                          <span class="pw-input-title">현재 비밀번호</span>
+                          <div class="input-bundle">
+                            <input
+                              class="pw-input"
+                              id="current-pw"
+                              type="password"
+                              placeholder="현재 비밀번호를 입력해주세요!"
+                            />
+                            <i class="ic-eye-close"></i>
+                          </div>
+                          <button class="pw-change-btn">다음</button>
                         </div>
-                        <button class="next-btn">다음</button>
+                        <div class="change-pw-box">
+                          <span class="pw-input-title">변경할 비밀번호</span>
+                          <div class="input-bundle">
+                            <input
+                              class="pw-input"
+                              id="changePw"
+                              type="password"
+                              placeholder="변경할 입력해주세요!"
+                            />
+                            <i class="ic-eye-close"></i>
+                          </div>
+                          <span class="pw-input-title"
+                            >변경할 비밀번호 확인</span
+                          >
+                          <div class="input-bundle">
+                            <input
+                              class="pw-input"
+                              id="changePwChk"
+                              type="password"
+                              placeholder="힌번 더 입력해주세요!"
+                            />
+                            <i class="ic-eye-close"></i>
+                          </div>
+                          <button class="next-btn">변경하기</button>
+                        </div>
                       </div>
                     </div>
                     <!-- 본문 끝 -->
@@ -278,5 +305,6 @@
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="/coward/src/main/webapp/resources/js/mypage-slider.js"></script>
+    <script src="/coward/src/main/webapp/resources/js/change-pw.js"></script>
   </body>
 </html>
