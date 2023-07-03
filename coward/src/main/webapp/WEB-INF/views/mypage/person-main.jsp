@@ -44,15 +44,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="profile lg-only">
                       <div class="profile-img-box">
                         <div class="profile-img avatar">
-                          <img
-                            src="${contextPath}/resources/assets/images/default-user-img.png"
-                          />
+                         <c:if test="${empty loginMember.profileImg}">
+                  <img
+                    src="${contextPath}/resources/assets/images/default-user-img.png"
+                    alt="변경 프로필 사진"
+                    id="profile-image"
+                  />
+                </c:if>
+           <c:if test="${!empty loginMember.profileImg}">
+                  <img
+                    src="${contextPath}/${loginMember.profileImg}"
+                    alt="변경 프로필 사진"
+                    id="profile-image"
+                  />
+                </c:if>
                         </div>
                       </div>
 
                       <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
+                        <div class="profile-type">${loginMember.stack}</div>
+                        <p class="profile-nick">${loginMember.memberNick}</p>
                       </div>
                     </div>
 
@@ -79,13 +90,24 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                     <div class="profile lg-hidden">
                       <div class="profile-img avatar">
-                        <img
-                          src="${contextPath}/resources/assets/images/default-user-img.png"
-                        />
+                       <c:if test="${empty loginMember.profileImg}">
+                  <img
+                    src="${contextPath}/resources/assets/images/default-user-img.png"
+                    alt="변경 프로필 사진"
+                    id="profile-image"
+                  />
+                </c:if>
+           <c:if test="${!empty loginMember.profileImg}">
+                  <img
+                    src="${contextPath}/${loginMember.profileImg}"
+                    alt="변경 프로필 사진"
+                    id="profile-image"
+                  />
+                </c:if>
                       </div>
                       <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
+                        <div class="profile-type">${loginMember.stack}</div>
+                        <p class="profile-nick">${loginMember.memberNick}</p>
                       </div>
                     </div>
 
@@ -94,7 +116,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <!-- 자기 소개 -->
                         <div class="one-liner">
                           <p class="introduce-title">소개</p>
-                          <textarea type="text" disabled></textarea>
+                          <textarea type="text" disabled>${loginMember.introduce}</textarea>
                         </div>
 
                         <div class="credit-skill">
@@ -104,7 +126,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                             <div class="credit-box">
                               <div class="credit-c">C</div>
-                              <p class="credit-amount">123,456,789</p>
+                              <p class="credit-amount">${loginMember.currPrice}</p>
                             </div>
                           </div>
 
@@ -134,12 +156,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <table class="award-table">
                             <tr class="award-table-num">
                               <td>10</td>
-                              <td>5</td>
+                              <td>${loginMember.victoryCount}</td>
                               <td class="lg-hidden">50%</td>
                             </tr>
                             <tr class="award-table-title">
                               <td>참여 횟수</td>
-                              <td>당선작</td>
+                              <td>우승 횟수</td>
                               <td class="lg-hidden">당선률</td>
                             </tr>
                           </table>
@@ -469,6 +491,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               </div>
                            
 
+                          </div>
                             <div class="slider-controls">
                               <button
                                 class="control-button is-prev"
@@ -483,7 +506,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <i class="ic-chevron"></i>
                               </button>
                             </div>
-                          </div>
                         </div>
                       </div>
 

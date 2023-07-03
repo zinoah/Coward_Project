@@ -1,7 +1,9 @@
 package kr.co.coward.member.controller;
 
+
 import javax.servlet.ServletRequest;
 import javax.servlet.http.Cookie;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -30,43 +32,11 @@ import kr.co.coward.member.model.vo.Member;
 public class MemberController {
 
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
-	
+
 	@Autowired
 	private MemberService service;
 
-//	@GetMapping("/testLogin")
-//	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra,
-//			HttpServletRequest request) {
-//
-//		logger.info("로그인 기능 수행됨");
-//
-//		String id = "test01";
-//		String pw = "pass01!";
-//
-//		String referer = request.getHeader("Referer");
-//
-//		Member testLoginMember = new Member();
-//
-//		testLoginMember.setMemberId(id);
-//		testLoginMember.setMemberPw(pw);
-//
-//		Member loginMember = service.login(testLoginMember);
-//
-//		if (loginMember != null) { // login 성공 시
-//			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
-//
-//		} else {
-//
-//			ra.addFlashAttribute("message", "로그인에 실패하였습니다.");
-//		}
-//
-//		if (referer != null && !referer.isEmpty()) {
-//			return "redirect:" + referer;
-//		} else {
-//			return "redirect:/"; // 기본적인 홈페이지로 이동하도록 설정
-//		}
-//	}
-	
+
 	// 여기서부터 작업!
 	@PostMapping("/login") 
 	public String login( @ModelAttribute Member inputMember 
@@ -102,9 +72,57 @@ public class MemberController {
 		} else { // 로그인 실패
 			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
+
+	@GetMapping("/testLogin")
+	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra,
+			HttpServletRequest request) {
+
+		logger.info("로그인 기능 수행됨");
+
+		String id = "test01";
+		String pw = "pass01!";
+
+
+		String referer = request.getHeader("Referer");
+
+		Member testLoginMember = new Member();
+
+		testLoginMember.setMemberId(id);
+		testLoginMember.setMemberPw(pw);
+
+		Member loginMember = service.testLogin(testLoginMember);
+
+		if (loginMember != null) { // login 성공 시
+			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
+
+		} else {
+
+			ra.addFlashAttribute("message", "로그인에 실패하였습니다.");
+		}
+
+		if (referer != null && !referer.isEmpty()) {
+			return "redirect:" + referer;
+		} else {
+			return "redirect:/"; // 기본적인 홈페이지로 이동하도록 설정
+		}
+	}
+
+
+	@GetMapping("/findDev")
+	public String findDev(Model model) {
 		
-		return "redirect:/";
+		int pageSize = 6; // 한 페이지당 가져올 데이터 개수 -> 2와 3의 공배수가 보기 예쁨
 		
+		// 개발자 리스트 조회
+		List<Member> devList = service.getFindDevPage(pageSize);
+		
+		// 개발자 리스트 적재
+		model.addAttribute("devList", devList);
+  
+  	return "find-developer";
+}
+		
+
 	}
 	
 	// 이메일 중복 검사
@@ -140,18 +158,26 @@ public class MemberController {
 	}
 
 
-	
 
-	@GetMapping("/findDev")
-	public String findDev() {
-		return "find-developer";
+	@PostMapping("/login")
+	public String login(@ModelAttribute Member inputMember, Model model, RedirectAttributes ra,
+			HttpServletResponse resp, HttpServletRequest req,
+			@RequestParam(value = "saveId", required = false) String saveId) {
+
+		logger.info("로그인 기능 수행됨");
+
+		Member loginMember = service.login(inputMember);
+
+		return "redirect:/";
+
 	}
+
 
 	@GetMapping("/terms")
 	public String terms() {
 		return "terms";
 	}
-	
+
 	// 회원가입 화면 이동
 	@GetMapping("/join")
 	public String join() {
@@ -163,14 +189,13 @@ public class MemberController {
 	public String login() {
 		return "member/login";
 	}
-	
+
 	// 비밀번호 찾기 이동
 	@GetMapping("/pwFind")
 	public String pwFind() {
 		return "member/pwFind";
 	}
-	
-	
+
 	// 회원가입
 	@PostMapping("/signUp")
 	public String signUp(@ModelAttribute Member inputMember
@@ -237,8 +262,6 @@ public class MemberController {
 				
 		return "redirect:" + path;
 		
-		
-		
-	}
-	
+
+  }
 }

@@ -1,6 +1,7 @@
 package kr.co.coward.member.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,15 +10,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
+
+import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.service.MyPageService;
 import kr.co.coward.member.model.vo.Member;
 //import kr.co.coward.member.model.vo.Region;
@@ -55,7 +61,16 @@ public class MyPageController {
 
 	// 기업 마이페이지 메인페이지 이동
 	@GetMapping("/companyMain")
-	public String companyMain() {
+	public String companyMain(@ModelAttribute("loginMember") Member loginMember, Model model) {
+
+		int memberNo = loginMember.getMemberNo();
+		// 관심있는 개발자 목록 조회하기
+
+		logger.info("컨트롤러 수행");
+		logger.info("loginMember :" + loginMember);
+
+		List<Member> developerLikeList = service.developerLikeList(memberNo);
+		model.addAttribute("developerLikeList", developerLikeList);
 
 		return "mypage/mypage-company-main";
 
@@ -83,6 +98,7 @@ public class MyPageController {
 		return "mypage/person-main";
 	}
 
+
 	// 공모전 관리
 	// @GetMapping("/progress")
 	// public String progress() {
@@ -100,24 +116,26 @@ public class MyPageController {
 	 */
 	@PostMapping("/editP")
 	public String updateInfo(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam("editImg") MultipartFile profileImg, @RequestParam Map<String, Object> paramMap,
+			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam Map<String, Object> paramMap,
 			String[] skill, HttpServletRequest req, RedirectAttributes ra) throws IOException {
 
-		String skillList = String.join("/", skill);
+		String skillList = String.join(",", skill);
 
 		// 웹 접근경로
-		String webPath = "/resources/assets/images/member-profile/";
+		String webPath = "resources/assets/images/dummy/profile-img/";
+
 
 		// 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
 
+		int MemberNo = loginMember.getMemberNo();
+		paramMap.put("memberNo", MemberNo);
+
 		paramMap.put("webPath", webPath);
 		paramMap.put("folderPath", folderPath);
 		paramMap.put("skill", skillList);
-		paramMap.put("profileImg", profileImg);
+		paramMap.put("uploadImage",uploadImage);
 
-		int MemberNo = loginMember.getMemberNo();
-		paramMap.put("memberNo", MemberNo);
 
 		// 회원정보 수정 서비스 호출
 		int result = service.updateInfo(paramMap);
@@ -132,6 +150,8 @@ public class MyPageController {
 			loginMember.setSlogan((String) paramMap.get("slogan")); // 한줄 소개
 			loginMember.setIntroduce((String) paramMap.get("introduce")); // 소개
 			loginMember.setSkill((String) paramMap.get("skill")); // 내 기술
+			loginMember.setProfileImg((String) paramMap.get("profileImg")); // 프로필 사진
+
 
 		} else {
 			message = "회원정보 수정에 실패하였습니다";
@@ -155,6 +175,24 @@ public class MyPageController {
 	 * 기업 마이페이지 controller
 	 **********************************/
 
+	// 기업이 관심있는 개발자 조회
+
+	// @RequestMapping("/mypage")
+	// public String selectCompanyProfile(@ModelAttribute("loginMember") Member
+	// loginMember) {
+
+	// int memberNo = loginMember.getMemberNo();
+	// 관심있는 개발자 목록 조회하기
+
+	// logger.info("컨트롤러 수행");
+	// logger.info("loginMember :" + loginMember);
+
+	// List<Member> developerLikeList = service.developerLikeList(memberNo);
+
+	// return "mypage/mypage-company-main";
+
+	// }
+
 	// 기업 회원정보 변경
 	@PostMapping("/companyProfile")
 	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
@@ -169,7 +207,7 @@ public class MyPageController {
 		// 경로 작성하기
 
 		// 1) 웹 접근 경로
-		String webPath = "/resources/assets/images/dummy/profile-img/";
+		String webPath = "resources/assets/images/dummy/profile-img/";
 
 		// 2) 서버 저장 폴더 경로
 		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
@@ -205,6 +243,23 @@ public class MyPageController {
 
 		return "redirect:companyProfile";
 
+	}
+
+	// 기업 마이페이지 내 공모전 관리
+	@ResponseBody
+	@PostMapping("/companyManagement")
+	public String getContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
+
+		logger.info("컨트롤러 수행");
+		logger.info("Received conStatus: " + conStatus);
+
+		int memberNo = loginMember.getMemberNo();
+
+		List<Contest> getContestList = service.getContestList(conStatus, memberNo);
+
+		logger.info("getContestList() 메서드 실행 결과: " + getContestList);
+
+		return new Gson().toJson(getContestList);
 	}
 
 }

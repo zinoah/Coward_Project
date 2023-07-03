@@ -1,6 +1,7 @@
 package kr.co.coward.contest.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
+
 import kr.co.coward.contest.model.service.ContestService;
 import kr.co.coward.contest.model.vo.Contest;
 import kr.co.coward.member.model.vo.Member;
@@ -43,9 +46,59 @@ public class ContestController {
 	 * @return
 	 */
 	@RequestMapping("/main")
-	public String contestMain() {
+	public String contestMain(Model model) {
+
+		// 인기있는 공모전 슬라이더 10개
+		List<Contest> contestPopularList = service.getContestList("popular");
+
+		// 전체 공모전
+		List<Contest> resultList = service.getContestList("all");
+
+		List<Contest> contestList = new ArrayList<>();
+
+		for (Contest contest : resultList) {
+
+			String[] temp = contest.getSkill().split(",");
+			List<String> skillList = Arrays.asList(temp);
+			contest.setSkillList(skillList);
+
+		}
+
+		contestList.addAll(resultList);
+
+		model.addAttribute("contestPopularList", contestPopularList);
+		model.addAttribute("contestList", contestList);
 
 		return "contest/contest-main";
+	}
+
+	/**
+	 * 필터별 공모전 List 조회
+	 * 
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("/filterList")
+	public List<Contest> filterContestList(@RequestParam String parameter) {
+
+		List<Contest> resultList = service.filterContestList(parameter);
+
+		// 리스트에 담긴 스킬리스트 리스트화
+
+		List<Contest> contestList = new ArrayList<>();
+
+		for (Contest contest : resultList) {
+
+			String[] temp = contest.getSkill().split(",");
+			List<String> skillList = Arrays.asList(temp);
+			contest.setSkillList(skillList);
+
+		}
+
+		contestList.addAll(resultList);
+
+		return contestList;
+
 	}
 
 	/**
@@ -125,29 +178,99 @@ public class ContestController {
 		return "contest/contest-detail";
 	}
 
+	/**
+	 * 북마크 카운트
+	 * 
+	 * @param bookmark
+	 * @param loginMember
+	 * @return
+	 */
 	@ResponseBody
 	@GetMapping("/bookmark")
-	public String bookmarkCount(int count) {
+	public int bookmarkCount(@RequestParam Map<String, Object> map, @ModelAttribute("loginMember") Member loginMember) {
 
-		return null;
+		System.out.println(map);
+		int memberNo = loginMember.getMemberNo();
+		int bookmarkCount = Integer.parseInt(map.get("bookmarkCount").toString());
+		int contestNo = Integer.parseInt(map.get("contestNo").toString());
+
+		System.out.println("bookmark :" + bookmarkCount);
+		System.out.println("contestNo :" + contestNo);
+
+		Contest contest = new Contest();
+
+		contest.setBookmarkCount(bookmarkCount);
+		contest.setMemberNo(memberNo);
+		contest.setContestNo(contestNo);
+
+		int bookmark = service.bookmarkCount(contest);
+
+		System.out.println(bookmark);
+
+		return bookmark;
 
 	}
 
-	@GetMapping("/contestRecommend")
+	@GetMapping("/recommend")
 	public String contestRecommend() {
+
 		return "contest/contest-recommend";
 	}
 
-	@PostMapping("/contestRecommend")
-	public String selectContestRecommend(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam Map<String, Object> paramMap, RedirectAttributes ra, HttpServletRequest req) {
+	/**
+	 * 맞춤 공모전
+	 * 
+	 * @param contestNo
+	 * @param model
+	 * @return
+	 * 
+	 */
 
-		String typeNo = (String) paramMap.get("typeNo");
+	@ResponseBody
+	@PostMapping("/recommend")
+	public String getRecommendContest(@RequestParam int typeNo) {
+
+		logger.info("컨트롤러 수행");
 		logger.info("Received typeNo: " + typeNo);
 
-		// paramMap에서 받아온 값들을 활용하여 원하는 처리를 수행
+		List<Contest> recommendList = service.getRecommendList(typeNo);
 
-		return "redirect:contestRecommend";
+		logger.info("recommendContest() 메서드 실행 결과: " + recommendList);
+
+		return new Gson().toJson(recommendList);
+
+	}
+
+	/**
+	 * 공모전 참가 동의페이지 이동
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/attendAgree/{contestNo}")
+	public String contestAttendAgree(@PathVariable("contestNo") int contestNo, Model model) {
+
+		Contest contest = service.contestDetail(contestNo);
+
+		model.addAttribute("contest", contest);
+
+		return "contest/contest-attend-agree";
+	}
+
+	/**
+	 * 공모전 참가 양식페이지 이동
+	 * 
+	 * @param contestNo
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/attendForm/{contestNo}")
+	public String contestAttendForm(@PathVariable("contestNo") int contestNo, Model model) {
+
+		Contest contest = service.contestDetail(contestNo);
+
+		model.addAttribute("contest", contest);
+
+		return "contest/contest-attend-form";
 	}
 
 }

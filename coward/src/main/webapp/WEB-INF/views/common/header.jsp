@@ -30,8 +30,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="header-right sm-hidden">
             <c:choose>
               <c:when test="${ empty sessionScope.loginMember }">
+                <button>
+                  <a href="${contextPath}/member/testLogin">test로그인</a>
+                </button>
                 <button class="header-button-text" type="button">
-                  <a href="${contextPath}/member/login">로그인</a>
+                  <a href="${contextPath}/member/testLogin">로그인</a>
                 </button>
                 <button class="header-button-text" type="button">
                   <a href="${contextPath}/member/join">회원가입</a>

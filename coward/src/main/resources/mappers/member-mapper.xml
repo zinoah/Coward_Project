@@ -11,7 +11,7 @@
 		<result property="phone" 		column="PHONE"/>
 		<result property="regionNo" 	column="REGION_NO"/>
 		<result property="stack" 	column="STACK"/>
-		<result property="stack"    column="SKILL"/>
+		<result property="skill"    column="SKILL"/>
 		<result property="slogan" 	column="SLOGAN"/>
 		<result property="introduce" 	column="INTRODUCE"/>
 		<result property="totalPrice" 	column="TOTAL_PRICE"/>
@@ -23,7 +23,18 @@
 		
 		<result property="likeCount" 	column="LIKE_COUNT"/>
 		<result property="victoryCount" 	column="VICTORY_COUNT"/>
+		<result property="attendCount"	column="ATTEND_COUNT"/>
 	 </resultMap>
+
+
+
+ 	 <select id="testLogin" parameterType="member" resultMap="member_rm">
+	 	SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID = 'test01'
+		AND MEMBER_PW= 'pass01!'
+		AND SECESSION_FL = 'N'
+	 </select>
 
 	<!-- 로그인 -->
 	 <select id="login" parameterType="member" resultMap="member_rm">
@@ -38,6 +49,7 @@
 	 	insert into member (member_no, member_type, member_id, member_pw) values (SEQ_MEMBER_NO.nextval, '${memberType}', '${memberId}', '${memberPw}')
 	 </insert>
 	 
+
 	 <!-- 이메일 중복검사 -->
 	 <select id="emailDupCheck" parameterType="string" resultType="_int">
   		SELECT COUNT(*) FROM MEMBER
@@ -73,17 +85,18 @@
 		SECESSION_FL = 'Y'
 		WHERE MEMBER_NO = ${memberNo};
 	</update>
-	 
-	
+
 
 	<!-- 상금순 랭킹 조회 -->
 	<select id="getPriceKingList" parameterType="_int" resultMap="member_rm">
 		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
 		FROM MEMBER
+		WHERE TOTAL_PRICE IS NOT NULL
 		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
 	
-	<!-- 상금순 랭킹 조회 -->
+	
+	<!-- 우승 순 랭킹 조회 -->
 	<select id="getVictoryKingList" parameterType="_int" resultMap="member_rm">
 		SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
 		FROM MEMBER
@@ -99,6 +112,7 @@
 		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
 	
+	
 	 <!-- 좋아요순 랭킹 조회 -->
 	<select id="getLikeKingList" resultMap="member_rm">
 		SELECT MEMBER_NO, LIKE_COUNT, PROFILE_IMG, MEMBER_NICK
@@ -112,5 +126,38 @@
 		ORDER BY LIKE_COUNTS.LIKE_COUNT DESC
 		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
+	
+	
+	
+	
+	<!-- 개발자 찾기[ALL] (상금 순 정렬) -->
+	<select id="getDevList" parameterType="_int"  resultMap="member_rm">
+	SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, MEMBER_NO, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE, STACK, SLOGAN, VICTORY_COUNT
+	FROM MEMBER
+	JOIN (SELECT WINNER, COUNT(MEMBER_NO) AS VICTORY_COUNT
+		    FROM CONTEST
+		    GROUP BY WINNER
+		    HAVING WINNER IS NOT NULL
+		)VICTORY_COUNTS
+		ON MEMBER_NO = VICTORY_COUNTS.WINNER
+		WHERE MEMBER_TYPE = 'P'
+		
+	
+		
+	 <!-- 	참가 횟수도 조회 가능 해야 함
+ 		JOIN (SELECT MEMBER_NO, COUNT(MEMBER_NO) AS ATTEND_COUNT
+		FROM CONTEST_ATTEND
+		GROUP BY MEMBER_NO)ATTEND_COUNTS
+		ON MEMBER_NO = ATTEND_COUNTS.MEMBER_NO; -->
+		
+	</select>
+	
+
+	
+	<!-- 기업 -> 개발자 좋아요 -->
+	<insert id="likeUser">
+	INSERT INTO LIKE_USER (LIKE_USER_NO, C_MEMBER_NO, P_MEMBER_NO)
+	VALUES (SEQ_LIKE_USER_NO.NEXTVAL, ${memberNo}, #{memberNo});
+	</insert>
 
 </mapper> 

@@ -110,6 +110,7 @@
 
   @include responsive(D) {
     @include text-style(16);
+    display: block;
 
     &-body {
       display: block;

@@ -1,11 +1,13 @@
 package kr.co.coward.member.model.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import kr.co.coward.member.model.dao.MemberDAO;
 import kr.co.coward.member.model.vo.Member;
+
 
 import java.util.HashMap;
 import java.util.Properties;
@@ -19,33 +21,33 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 @Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDAO dao;
-	
-	@Autowired
-	private BCryptPasswordEncoder bcrypt;
+
+   @Autowired
+   private BCryptPasswordEncoder bcrypt;
 
 	private Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
-		
 
-	// 테스트 로그인 
-//	@Override
-//	public Member login(Member testLoginMember) {
-//
-//		Member loginMember = dao.login(testLoginMember);
-//
-//		return loginMember;
-//	}
-	
-	
-	
-	// 회원가입 
+	// 테스트 로그인
+	@Override
+	public Member testLogin(Member testLoginMember) {
+
+
+		Member loginMember = dao.login(testLoginMember);
+
+		return loginMember;
+	}
+
+	// 회원가입
 	@Override
 	public int insertMember(Member inputMember) {
 		
@@ -54,10 +56,12 @@ public class MemberServiceImpl implements MemberService {
 		
 		int count = dao.insertMember(inputMember);
 		
-		return count;
-	}
 
-	// 로그인
+
+
+	/**
+	 * 개발자 목록 조회
+	 */
 	@Override
 	public Member login(Member inputMember) {
 		logger.info("로그인 서비스 기능 수행됨");
@@ -181,6 +185,10 @@ public class MemberServiceImpl implements MemberService {
             System.out.println(e.getMessage());
         }
 		return "sucessce";
+
+	public List<Member> getFindDevPage(int pageSize) {
+		return dao.getDevList(pageSize);
+
 	}
 	
 	// 인증번호 일치 여부 확인
@@ -223,5 +231,11 @@ public class MemberServiceImpl implements MemberService {
 	
 	
 	
+
+	// 로그인
+//	@Override
+//	public Member login(Member inputMember) {
+//		return null;
+//	}
 
 }
