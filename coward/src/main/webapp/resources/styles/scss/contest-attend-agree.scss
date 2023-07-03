@@ -1,5 +1,9 @@
 @import "./main.scss";
 
+.is-checked {
+  background-color: $blue;
+}
+
 .banner {
   height: 200px;
   background-color: $background;
@@ -67,53 +71,55 @@
     flex-direction: column;
   }
   &-check-box {
+    @include flexbox(start, center);
     width: 65%;
     height: 50px;
     border: 1px solid $border;
     border-radius: 10px;
-    @include flexbox(start, center);
     margin: auto;
     margin-bottom: 30px;
     padding: 20px;
 
+    label {
+      width: 12px;
+      height: 12px;
+      background-color: $tertiary;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 8px;
+      color: $tertiary;
+      @include flexbox;
+      margin-right: 10px;
+
+      i {
+        color: $white;
+      }
+    }
     div {
-      &:nth-child(1) {
-        width: 12px;
-        height: 12px;
-        background-color: $blue;
-
-        border-radius: 20px;
-        font-size: 8px;
-        color: $tertiary;
-        @include flexbox;
-        margin-right: 10px;
-      }
-
-      &:nth-child(2) {
-        @include text-style(14);
-      }
+      @include text-style(14);
     }
   }
 
   &-all-check {
     @include flexbox;
     margin-bottom: 70px;
+    label {
+      @include flexbox;
+      width: 12px;
+      color: $tertiary;
+      height: 12px;
+      background-color: $tertiary;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 8px;
+      margin-right: 10px;
+
+      i {
+        color: $white;
+      }
+    }
     div {
-      &:nth-child(1) {
-        width: 12px;
-        height: 12px;
-        background-color: $tertiary;
-
-        border-radius: 20px;
-        font-size: 8px;
-        color: $tertiary;
-        @include flexbox;
-        margin-right: 10px;
-      }
-
-      &:nth-child(2) {
-        @include text-style(14);
-      }
+      @include text-style(14);
     }
   }
   &-button-wrapper {
@@ -130,7 +136,7 @@
       @include text-style(12);
     }
 
-    button {
+    a {
       width: 100px;
     }
   }

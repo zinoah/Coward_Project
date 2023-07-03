@@ -11,13 +11,11 @@ public interface MemberService {
 	 * @param pw
 	 * @return
 	 */
-	// Member login(Member testLoginMember);
-	
+	Member testLogin(Member testLoginMember);
 
-	// 회원가입 
+	// 회원가입
 	int insertMember(Member member);
-	
-	
+
 	/**
 	 * 로그인
 	 * 
@@ -25,8 +23,5 @@ public interface MemberService {
 	 * @return loginMember
 	 */
 	public abstract Member login(Member inputMember);
-	
-
-	
 
 }

@@ -64,7 +64,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <option class="ranking-dropdown-menu" value="victory-king">
                 이달의 우승왕 🏆
               </option>
-              <option class="ranking-dropdown-menu" value="popular-king">
+              <option class="ranking-dropdown-menu" value="like-king">
                 이달의 인기왕 💗
               </option>
             </select>
@@ -74,7 +74,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="row">
           <!-- TODO: li 내부 우측 데이터 영역 손봐야 함 -->
           <div class="col-sm-4 col-lg-4">
-            <div class="ranking-body is-active">
+            <div id="priceKing" class="ranking-body is-active">
               <h5 class="ranking-title lg-only">이달의 상금왕 💎</h5>
 
               <div class="ranking-image">
@@ -109,7 +109,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
           <!-- TODO: li 내부 우측 데이터 영역 손봐야 함 -->
           <div class="col-sm-4 col-lg-4">
-            <div class="ranking-body">
+            <div id="victoryKing" class="ranking-body">
               <h5 class="ranking-title lg-only">이달의 우승왕 🏆</h5>
 
               <div class="ranking-image">
@@ -148,7 +148,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
           <!-- TODO: li 내부 우측 데이터 영역 손봐야 함 -->
           <div class="col-sm-4 col-lg-4">
-            <div class="ranking-body">
+            <div id="likeKing" class="ranking-body">
               <h5 class="ranking-title lg-only">이달의 인기왕 💗</h5>
 
               <div class="ranking-image">
@@ -195,5 +195,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+
+    <script src="${contextPath}/resources/js/ranking.js"></script>
   </body>
 </html>

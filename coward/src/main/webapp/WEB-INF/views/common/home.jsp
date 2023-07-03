@@ -172,7 +172,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <i class="ic-chevron" aria-hidden></i>
                 </a>
               </div>
-
               <div class="slider-wrapper">
                 <div class="contest-slider">
                   <c:forEach var="contest" items="${contestList}">
@@ -874,9 +873,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
-    
-	<!-- 챗봇 -->
-	 <script>
+
+    <!-- 챗봇 -->
+    <script>
       (function () {
         var w = window;
         if (w.ChannelIO) {
@@ -899,7 +898,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           s.type = "text/javascript";
           s.async = true;
           s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
-          var x = document.getElementsByTagName("script")[0];   
+          var x = document.getElementsByTagName("script")[0];
           if (x.parentNode) {
             x.parentNode.insertBefore(s, x);
           }
@@ -912,7 +911,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         }
       })();
     </script>
-    
+
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
     <aside id="ad-modal" class="ad-modal">
@@ -945,7 +944,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- jQuery 라이브러리 추가 -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
 
