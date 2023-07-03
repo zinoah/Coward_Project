@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,12 +20,20 @@ public class ContestServiceImpl implements ContestService {
 
 	@Autowired
 	private ContestDAO dao;
+	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
 	// 공모전 10개 리스트 조회 서비스
 	// default, new, popular
 	@Override
 	public List<Contest> getContestList(String type) {
 		return dao.getContestList(type);
+	}
+
+	// 필터 공모전 리스트 조회 서비스
+	@Override
+	public List<Contest> filterContestList(String parameter) {
+
+		return dao.filterContestList(parameter);
 	}
 
 	// 공모전 개최
@@ -75,11 +85,30 @@ public class ContestServiceImpl implements ContestService {
 		return contestNo;
 	}
 
-	// 공모전 디테일
+	// 공모전 상세조회 서비스
 	@Override
 	public Contest contestDetail(int contestNo) {
 
 		return dao.contestDetail(contestNo);
+	}
+
+
+	// 맞춤 공모전
+	@Override
+	public List<Contest> getRecommendList(int typeNo) {
+
+		logger.info("Received typeNo Serviceimpl: " + typeNo);
+
+		logger.info("recommendContest() 메서드 실행 결과: " + dao.getRecommendList(typeNo));
+
+		return dao.getRecommendList(typeNo);
+  }
+  
+	// 북마크 카운트 서비스
+	@Override
+	public int bookmarkCount(Contest contest) {
+
+		return dao.bookmarkCount(contest);
 	}
 
 }

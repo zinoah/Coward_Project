@@ -21,13 +21,16 @@ public class ContestDAO {
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
 	/**
-	 * 진행중인 공모전 10개 리스트 조회 DAO
+	 * 진행중인 공모전 리스트 조회 DAO
 	 */
 	public List<Contest> getContestList(String type) {
 
 		String mapperPath = null;
 
 		switch (type) {
+		case "all":
+			mapperPath = "contestMapper.getAllContestList";
+			break;
 		case "default":
 			mapperPath = "contestMapper.getDefaultContestList";
 			break;
@@ -44,14 +47,41 @@ public class ContestDAO {
 	}
 
 	/**
-	 * 공모전 개최
+	 * 필터 공모전 리스트 조회 DAO
+	 * 
+	 * @param type
+	 * @return
+	 */
+	public List<Contest> filterContestList(String type) {
+
+		String mapperPath = null;
+
+		switch (type) {
+		case "all":
+			mapperPath = "contestMapper.getAllContestList";
+			break;
+		case "recruiting":
+			mapperPath = "contestMapper.getRecruitingContestList";
+			break;
+		case "imminent":
+			mapperPath = "contestMapper.getImminentContestList";
+			break;
+		case "end":
+			mapperPath = "contestMapper.getEndContestList";
+			break;
+		}
+		return sqlSession.selectList(mapperPath);
+
+	}
+
+	/**
+	 * 공모전 개최 DAO
 	 * 
 	 * @param paramMap
 	 * @return
 	 */
 	public int contestCreate(Map<String, Object> paramMap) {
 
-		// TODO Auto-generated method stub
 		int result = sqlSession.insert("contestMapper.contestCreate", paramMap);
 
 		if (result > 0)
@@ -64,7 +94,7 @@ public class ContestDAO {
 	}
 
 	/**
-	 * 공모전 디테일
+	 * 공모전 디테일 DAO
 	 * 
 	 * @param contestNo
 	 * @return
@@ -72,5 +102,49 @@ public class ContestDAO {
 	public Contest contestDetail(int contestNo) {
 
 		return sqlSession.selectOne("contestMapper.contestDetail", contestNo);
+
+	}
+
+	/**
+	 * 맞춤 공모전
+	 * 
+	 * @param contestNo
+	 * @return
+	 */
+	/*
+	 * public List<Contest> recommendContest(int typeNo) {
+	 * 
+	 * logger.info("typeNo 확인: " + typeNo);
+	 * 
+	 * return sqlSession.selectList("contestMapper.recommendContest", typeNo);
+	 * 
+	 * }
+	 */
+
+	public List<Contest> getRecommendList(int typeNo) {
+
+		logger.info("typeNo DAO 확인: " + typeNo);
+
+		return sqlSession.selectList("contestMapper.getRecommendList", typeNo);
+	}
+
+
+	/**
+	 * 북마크 카운트 DAO
+	 * 
+	 * @param contest
+	 * @return
+	 */
+	public int bookmarkCount(Contest contest) {
+
+		int result = sqlSession.insert("contestMapper.bookmarkCount", contest);
+
+		if (result > 0)
+			result = contest.getBookmarkCount();
+
+		System.out.println(result);
+
+		return result;
+
 	}
 }
