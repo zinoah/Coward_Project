@@ -10,6 +10,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <title>Coward | 맞춤 공모전</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
 
     <link
       rel="stylesheet"
@@ -267,7 +273,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="col-sm-4">
                 <div class="slider-wrapper">
                   <div class="contest-slider">
-                    <div id="result1" style="width : 100%"></div>
+               
                   </div>
                 </div>
               </div>
@@ -281,5 +287,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <script src="${contextPath}/resources/js/contest-recommend.js"></script>
     <script src="/coward/src/main/webapp/resources/js/slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   </body>
 </html>

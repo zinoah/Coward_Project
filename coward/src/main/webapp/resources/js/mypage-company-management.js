@@ -5,35 +5,12 @@ var btnEnd = document.getElementById("end");
 
 var conStatus = document.getElementById("conStatus");
 
-//버튼 기능 수행
-
-function all() {
+//전체 공모전 조회Ajax
+btnAll.addEventListener("click", function () {
   conStatus.value = "전체";
   console.log("전체 Clicked"); // 로그 메시지 추가
   console.log(conStatus.value);
-}
 
-function recruiting() {
-  conStatus.value = "모집중";
-  console.log("모집중 Clicked"); // 로그 메시지 추가
-  console.log(conStatus.value);
-}
-
-function casting() {
-  conStatus.value = "심사중";
-  console.log("심사중 Clicked"); // 로그 메시지 추가
-  console.log(conStatus.value);
-}
-
-function end() {
-  conStatus.value = "완료";
-  console.log("완료 Clicked"); // 로그 메시지 추가
-  console.log(conStatus.value);
-}
-
-//전체 공모전 조회Ajax
-btnAll.addEventListener("click", function () {
-  all();
   const conStatus = document.getElementById("conStatus");
   const div = document.getElementById("result1");
 
@@ -121,7 +98,10 @@ btnAll.addEventListener("click", function () {
 
 //모집중 공모전 조회Ajax
 btnRecruiting.addEventListener("click", function () {
-  recruiting();
+  conStatus.value = "모집중";
+  console.log("모집중 Clicked"); // 로그 메시지 추가
+  console.log(conStatus.value);
+
   const conStatus = document.getElementById("conStatus");
   const div = document.getElementById("result1");
 
@@ -209,7 +189,10 @@ btnRecruiting.addEventListener("click", function () {
 
 //심사중 공모전 조회Ajax
 btnCasting.addEventListener("click", function () {
-  casting();
+  conStatus.value = "심사중";
+  console.log("심사중 Clicked"); // 로그 메시지 추가
+  console.log(conStatus.value);
+
   const conStatus = document.getElementById("conStatus");
   const div = document.getElementById("result1");
 
@@ -297,7 +280,10 @@ btnCasting.addEventListener("click", function () {
 
 //완료된 공모전 조회Ajax
 btnEnd.addEventListener("click", function () {
-  end();
+  conStatus.value = "완료";
+  console.log("완료 Clicked"); // 로그 메시지 추가
+  console.log(conStatus.value);
+
   const conStatus = document.getElementById("conStatus");
   const div = document.getElementById("result1");
 

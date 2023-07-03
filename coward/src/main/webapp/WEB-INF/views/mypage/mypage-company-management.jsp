@@ -103,16 +103,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           name="conStatus"
                           value=""
                         />
-                        <button class="btn-32 btn-secondary" id="all" onclick="all()">
+                        <button class="btn-32 btn-secondary" id="all">
                           전체
                         </button>
-                        <button class="btn-32 btn-secondary" id="recruiting" onclick="recruiting()">
+                        <button class="btn-32 btn-secondary" id="recruiting">
                           모집중
                         </button>
-                        <button class="btn-32 btn-secondary" id="casting" onclick="casting()">
+                        <button class="btn-32 btn-secondary" id="casting">
                           심사중
                         </button>
-                        <button class="btn-32 btn-secondary" id="end" onclick="end()">
+                        <button class="btn-32 btn-secondary" id="end">
                           완료
                         </button>
                       </div>
