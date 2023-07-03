@@ -17,7 +17,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   </head>
   <body>
     <!--회원가입-->
-    <form action="signUp" method="POST" id="signUp-form" name="signUp-form" onsubmit="return signUpValidate()"	>
+    <form action="signUp" method="POST" id="signUp-form" name="signUp-form">
       <div class="container first-join-wrapper">
         <div class="row">
           <div class="col-sm-4">
@@ -50,10 +50,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     class="kakao-logo"
                   />
                   <div class="join-google-box">
-                    <button class="join-google">Google로 간편가입</button>
+                    <button type="button" class="join-google">Google로 간편가입</button>
                   </div>
                   <div class="join-kakao-box">
-                    <button class="join-kakao">Kakao로 간편가입</button>
+                    <button type="button" class="join-kakao">Kakao로 간편가입</button>
                   </div>
                   <span class="question">이미 계정이 있으신가요?</span>
                   <a href="${contextPath}/member/login" class="login">로그인 하기</a>
@@ -187,14 +187,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
                 <div class="email-box">
                   <span class="input-title">이메일</span>
+                   <span class="email-explanation" id="emailMessage"></span>
                   <input
                     class="btn-input-bundle email-input"
                     name="memberId"
-                    type="email"
+                   	id="memberEmail"
+                    type="text"
                     placeholder="이메일 입력"
                   />
                   <input name="memberType" type="hidden" id="memberType">
-                  <button type="button" class="btn-input-bundle email-cert-btn">
+                  <button type="button" class="btn-input-bundle email-cert-btn" id="sendBtn"  autocomplete="off" onclick="sendEmail()" required>
                     이메일 인증하기
                   </button>
                 </div>
@@ -207,12 +209,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="email-cert">
                         <div class="cert-code">
                           <input
+                          	type="text"
                             class="cert-input"
+                            mexlength="6"
+                            autocomplete="off"
+                            id="cNumber"
                             placeholder="인증코드 6자리 입력"
                           />
-                          <span class="timer">05:00</span>
+                          <span class="timer" id="cMessage"></span>
                         </div>
-                        <button class="cert-btn">확인</button>
+                        <button type="button" class="cert-btn" id="cBtn" onclick="emailCertChk()">확인</button>
                       </div>
                       <div class="warn-box">
                         <div class="warn-img-container">
@@ -224,7 +230,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <span class="email-explanation-1"
                           >이메일을 받지 못하셨나요?</span
                         >
-                        <span class="email-explanation-2"
+                        <span class="email-explanation-2" onclick="sendEmail()" required
                           >이메일 재전송하기</span
                         >
                       </div>
@@ -234,11 +240,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                 <div class="pw-box">
                   <span class="input-title">비밀번호</span>
-                  <span class="pw-explanation"></span>
+                  <span class="pw-explanation1"></span>
                   <div class="btn-input-bundle pw-input-box">
                     <input
                       class="pw-input"
-                      id="password"
+                      id="memberPw"
                       name="memberPw"
                       placeholder="8자리 이상, 대소문자 포함"
                       type="password"
@@ -250,14 +256,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
                 <div class="pw-box">
                   <span class="input-title">비밀번호 확인</span>
-                  <span class="pw-explanation"></span>
+                  <span class="pw-explanation2"></span>
                   <div class="btn-input-bundle pw-input-box">
                     <input
                       class="pw-input-chk"
-                      id="password-chk"
+                      id="memberPwConfirm"
                       placeholder="비밀번호를 한번 더 입력해주세요!"
                       type="password"
-                      oninput="checkPassword()"
                     />
                     <div class="eye-img">
                       <img src="${contextPath}/resources/assets/images/eye.svg" />
@@ -505,7 +510,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
     <div id="overlay" class="overlay"></div>
-
+    
+    <!-- jQuery 라이브러리 추가(CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/join.js"></script>
   </body>
 </html>

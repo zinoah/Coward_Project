@@ -134,8 +134,18 @@
   }
 }
 
+.email-explanation {
+  @include text-style(12, $secondary);
+  margin-left: 5px;
+}
+
 .pw {
-  &-explanation {
+  &-explanation1 {
+    @include text-style(12, $secondary);
+    margin-left: 5px;
+  }
+
+  &-explanation2 {
     @include text-style(12, $secondary);
     margin-left: 5px;
   }

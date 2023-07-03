@@ -72,7 +72,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                        <a href="${contextPath}/mypage/progress"><li>공모전 관리</li></a>
                       <li>크레딧 인출</li>
                       <a href="${contextPath}/mypage/editP"><li>프로필 수정</li></a>
-                      <li>회원 탈퇴</li>
+                      <a href="${contextPath}/member/secession"><li>회원 탈퇴</li></a>
                     </ul>
                   </div>
                 </div>
