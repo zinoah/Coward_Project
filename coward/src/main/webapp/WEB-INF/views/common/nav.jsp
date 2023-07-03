@@ -15,15 +15,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <a href="${contextPath}/contest/main">공모전</a>
               </li>
               <li class="nav-item">
-               <a href="${contextPath}/member/findDev">개발자 찾기</a>
+                <a href="${contextPath}/member/findDev">개발자 찾기</a>
               </li>
               <li class="nav-item">
                 <a href="${contextPath}/mypage/companyMain">가격 안내</a>
               </li>
               <li class="nav-item">
-                <a href="${contextPath}/chat/roomList">채팅</a>
+                <a href="${contextPath}/event/main">이벤트</a>
               </li>
-             
             </ul>
           </div>
 
