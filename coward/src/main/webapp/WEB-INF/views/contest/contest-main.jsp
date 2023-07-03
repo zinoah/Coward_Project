@@ -30,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="banner-info">
                 <h3 class="main-title">
                   Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트!
+                  여러분들을 위한 이벤트
                 </h3>
                 <p class="sub-title sm-hidden">
                   쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
@@ -41,7 +41,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </div>
               <div class="banner-image">
                 <img
-                  src="${contextPath}/resources/assets/images/suprise-box.svg"
+                  src="${contextPath}/resources/assets/images/contest-main-banner-img.png"
                   aria-hidden
                 />
               </div>
@@ -215,7 +215,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
                     <div class="sm-hidden contest-card-profile">
                       <div class="avatar-24">
-                        <img src="${contextPath}/${contest.companyNick}" />
+                        <img src="${contextPath}/${contest.companyProfile}" />
                       </div>
                       <div><span>${contest.companyNick}</span></div>
                     </div>

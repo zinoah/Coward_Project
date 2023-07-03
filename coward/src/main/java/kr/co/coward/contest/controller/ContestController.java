@@ -226,4 +226,36 @@ public class ContestController {
 		return "redirect:contestRecommend";
 	}
 
+	/**
+	 * 공모전 참가 동의페이지 이동
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/attendAgree/{contestNo}")
+	public String contestAttendAgree(@PathVariable("contestNo") int contestNo, Model model) {
+
+		Contest contest = service.contestDetail(contestNo);
+
+		model.addAttribute("contest", contest);
+
+		return "contest/contest-attend-agree";
+	}
+
+	/**
+	 * 공모전 참가 양식페이지 이동
+	 * 
+	 * @param contestNo
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/attendForm/{contestNo}")
+	public String contestAttendForm(@PathVariable("contestNo") int contestNo, Model model) {
+
+		Contest contest = service.contestDetail(contestNo);
+
+		model.addAttribute("contest", contest);
+
+		return "contest/contest-attend-form";
+	}
+
 }
