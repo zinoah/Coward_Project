@@ -27,6 +27,7 @@
 	 </resultMap>
 
 
+
  	 <select id="testLogin" parameterType="member" resultMap="member_rm">
 	 	SELECT *
 		FROM MEMBER
@@ -35,19 +36,56 @@
 		AND SECESSION_FL = 'N'
 	 </select>
 
+	<!-- 로그인 -->
 	 <select id="login" parameterType="member" resultMap="member_rm">
 	 	SELECT *
 		FROM MEMBER
 		WHERE MEMBER_ID = #{memberId}
-		AND MEMBER_PW= #{memberPw}
 		AND SECESSION_FL = 'N'
 	 </select>
 	 
-
+	<!-- 회원 가입 -->
 	 <insert id="insertMember" parameterType="member">
 	 	insert into member (member_no, member_type, member_id, member_pw) values (SEQ_MEMBER_NO.nextval, '${memberType}', '${memberId}', '${memberPw}')
 	 </insert>
 	 
+
+	 <!-- 이메일 중복검사 -->
+	 <select id="emailDupCheck" parameterType="string" resultType="_int">
+  		SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+		AND SECESSION_FL = 'N'
+  	</select>
+  	
+  	<!-- 이메일 인증번호 db에 넣기 -->
+  	<insert id="insertRanNum" parameterType="hashmap">
+  		insert into certification (CLIST_NO, c_number, c_email) values (CERTIFICATION_c_list_seq.nextval, #{randomNum}, #{email})
+  	</insert>
+  	
+  	<!-- db에 들어간 인증번호랑 입력한 인증번호가 맞는지 확인 -->
+  	<select id="emailCertChk" parameterType="string" resultType="string">
+  		SELECT C_NUMBER 
+		FROM
+		(
+		select c_number from certification where c_email = #{memberEmail} order by clist_no desc 
+		) aaa
+		WHERE ROWNUM = 1
+  	</select>
+  	  	
+  	<!-- 현재 로그인한 회원의 암호화된 비밀번호 조회 -->
+	<select id="selectEncPw" resultType="string">
+		SELECT MEMBER_PW
+		FROM MEMBER
+		WHERE MEMBER_NO = ${memberNo}
+	</select>
+  	
+  	<!-- 회원 탈퇴 -->
+	<update id="secession">
+		UPDATE MEMBER SET
+		SECESSION_FL = 'Y'
+		WHERE MEMBER_NO = ${memberNo};
+	</update>
+
 
 	<!-- 상금순 랭킹 조회 -->
 	<select id="getPriceKingList" parameterType="_int" resultMap="member_rm">

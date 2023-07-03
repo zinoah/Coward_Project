@@ -17,16 +17,35 @@ public interface MemberService {
 	 */
 	Member testLogin(Member testLoginMember);
 
-	// 회원가입
-	int insertMember(Member member);
 
+	// 회원가입 
+	public abstract int insertMember(Member inputMember);
+	
 	/**
 	 * 로그인
 	 * 
 	 * @param inputMember
 	 * @return loginMember
 	 */
-	//public abstract Member login(Member inputMember);
+
+	public abstract Member login(Member inputMember);
+
+
+	// 이메일 중복검사
+	public abstract int emailDupCheck(String memberEmail);
+
+	
+	// 이메일로 인증번호 보내기
+	public abstract int sendEmail(String memberEmail);
+
+
+	// 발급된 인증번호, 입력한 인증번호 일치하는지 확인
+	public int emailCertChk(String memberEmail, String randomNumFromUI);
+	
+	// 회원 탈퇴
+	int secession(Member loginMember);
+
+
 	
 
 	

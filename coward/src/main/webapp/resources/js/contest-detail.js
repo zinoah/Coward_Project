@@ -1,4 +1,4 @@
-// URL 복사
+/* // URL 복사
 const clip = async () => {
   try {
     var url = "";
@@ -52,4 +52,4 @@ function bookmark(bookmark, contestNo) {
       console.log("에러 발생");
     },
   });
-}
+} */

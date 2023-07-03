@@ -39,13 +39,18 @@
     background-color: $tertiary;
     font-weight: 700;
     position: relative;
-    top: 30px;
+    top: 40px;
     cursor: pointer;
   }
   &-box {
     width: 320px;
     height: 560px;
   }
+}
+
+.login-btn:hover {
+  background-color: $blue;
+  color: $white;
 }
 
 .input {
@@ -70,6 +75,11 @@
   border-radius: 10px;
   width: 100%;
   height: 42px;
+}
+
+.saveid-findpw-wrapper {
+  position: relative;
+  top: 20px;
 }
 
 .ic-eye-close {
@@ -177,18 +187,16 @@ input[type="checkbox"] {
   height: 12px;
 }
 
-.span {
-  &-first {
-    font-size: 14px;
-    color: $primary;
-  }
+.span-second {
+  font-size: 13px;
+  position: relative;
+  bottom: 30px;
+  left: 50px;
+}
 
-  &-second {
-    font-size: 13px;
-    position: relative;
-    bottom: 30px;
-    left: 50px;
-  }
+.save-id {
+  font-size: 14px;
+  color: $primary;
 }
 
 .join {

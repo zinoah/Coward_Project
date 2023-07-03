@@ -35,46 +35,54 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <p class="p-first">Coward에 오신 것을 환영합니다!</p>
               </div>
               <br /><br />
+              
+              <form action="${contextPath}/member/login" method="POST" name="login-form" onsubmit="return loginValidate()">
               <p class="p-email">이메일</p>
               <div class="email-input-box">
                 <input
                   placeholder="example@gmail.com"
                   type="email"
                   class="input-email"
+                  name="memberId"
+                  value="${cookie.saveId.value}"
                 />
               </div>
+
               <br />
               <div class="pw-input-box">
                 <p class="p-pw">비밀번호</p>
-                <form action="#" name="pw-form">
                   <fieldset>
                     <input
                       placeholder="example@gmail.com"
                       type="password"
                       class="input-pw"
+                      name="memberPw"
                     />
                     <i class="ic-eye-close"></i>
                   </fieldset>
-                  <div class="btn-secondary btn-48 login-btn">로그인</div>
-                </form>
+
+                  <button class="login-btn">로그인</button>
                 <br />
               </div>
+              
               <br /><br />
               <div class="saveid-findpw-wrapper">
                 <div class="save-id-wrapper">
-                  <form action="#">
-                    <input
-                      type="checkbox"
-                      id="save-id"
-                      class="save-id-chk-box"
-                    />
-                    <label for="save-id"
-                      ><span class="span-first">아이디 저장</span></label
-                    >
-                  </form>
+                   
+	               <c:if test="${ !empty cookie.saveId.value}">
+	                    <%-- chk 변수 생성(page scope)--%>
+	                    <c:set var="chk" value="checked"/>
+
+	                </c:if>
+	                
+                  	<label class="save-id">
+                    <input type="checkbox" name="saveId" ${chk} id="saveId" />
+                    아이디 저장
+                  </label>
                 </div>
-                <a href="${contextPath}/member/pw-find" class="pw-find">비밀번호 찾기</a>
+                <a href="${contextPath}/member/pwFind" class="pw-find">비밀번호 찾기</a>
               </div>
+              </form>
               <div class="line-box">
                 <hr class="line1" />
                 <hr class="line2" />
@@ -97,6 +105,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
+    <!-- jQuery 라이브러리 추가(CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
     <script src="${contextPath}/resources/js/login.js"></script>
+    <script src="${contextPath}/resources/js/join.js"></script>
   </body>
 </html>

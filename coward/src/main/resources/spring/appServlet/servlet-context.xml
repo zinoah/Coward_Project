@@ -57,6 +57,10 @@
 	<!-- @Scheduled 어노테이션 인식을 위한 태그 -->
 	<task:annotation-driven/>
 	
+
+	<!-- 비밀번호 암호화 위한 설정 -->
+	<beans:bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></beans:bean>
+
 	<!-- Websocket 요청 시 핸들러 클래스와 연결하기 -->
 	<beans:bean id="chatHandler" class="kr.co.coward.chat.model.websocket.ChatWebsocketHandler" />
 	
@@ -81,6 +85,7 @@
 		
 	</websocket:handlers>
 	
+
 	
 	
 </beans:beans>

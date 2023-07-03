@@ -26,7 +26,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="logo-final-box">
                   <a href="#">
                     <img
-                      src="${ContextPath}/resources/assets/images/home_logo.svg"
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
                     />
                   </a>
@@ -61,7 +61,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="warn-box">
                       <div class="warn-img-container">
                         <img
-                          src="${ContextPath}/resources/assets/images/warning-circle.svg"
+                          src="${contextPath}/resources/assets/images/warning-circle.svg"
                           class="warn-image"
                         />
                       </div>
@@ -82,7 +82,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="password"
                     />
                     <div class="eye-img">
-                      <img src="${ContextPath}/resources/assets/images/eye.svg" />
+                      <img src="${contextPath}/resources/assets/images/eye.svg" />
                     </div>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="password"
                     />
                     <div class="eye-img">
-                      <img src="${ContextPath}/resources/assets/images/eye.svg" />
+                      <img src="${contextPath}/resources/assets/images/eye.svg" />
                     </div>
                   </div>
                 </div>
