@@ -67,6 +67,7 @@ public class MemberController {
 //		}
 //	}
 	
+	// 여기서부터 작업!
 	@PostMapping("/login") 
 	public String login( @ModelAttribute Member inputMember 
 			, Model model
@@ -78,7 +79,7 @@ public class MemberController {
 		logger.info("로그인 기능 수행됨");
 		System.out.println(inputMember.toString());
 		
-		Member loginMember = service.login(inputMember);    
+		Member loginMember = service.login(inputMember);       
 		
 		
 		if(loginMember != null) {
