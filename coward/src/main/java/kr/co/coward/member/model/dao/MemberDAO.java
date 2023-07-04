@@ -92,10 +92,11 @@ public class MemberDAO {
     * 개발자 찾기 DAO 
     * 
     */
-	public List<Member> getDevList(int pageSize) {
+	public List<Member> getDevList(int pageSize, int offset) {
 		Map<String, Object> params = new HashMap<>();
-		
+		params.put("offset", offset);
 		params.put("pageSize", pageSize);
+
 		return sqlSession.selectList("memberMapper.getDevList", params);
 	 }
 	

@@ -48,7 +48,7 @@ public interface MemberService {
     * @param pageSize
     * @return
     */
-	List<Member> getFindDevPage(int pageSize);
+	List<Member> getFindDevPage(int pageSize, int offset);
 
 	
 

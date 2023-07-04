@@ -45,7 +45,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="row">
           <div class="stack-box">
             <div class="stack-btn">
-              <input id="all" type="radio" name="userStack" value="all"  checked />
+              <input
+                id="all"
+                type="radio"
+                name="userStack"
+                value="all"
+                checked
+              />
               <label for="all">ALL</label>
             </div>
 
@@ -67,62 +73,66 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
 
         <div class="row">
-        <c:forEach var="devList" items="${devList}">
-          <div class="col-sm-4 col-md-6 col-lg-4">
-          <form id="cr-form" method="POST" action="${contextPath}/chat/openChatRoom">
-            <div class="developer-card">
-           
-              <div class="developer-profile">
-                <div class="developer-img">
-                  <div class="profile-img avatar">
-                   <img
-                          src="${contextPath}/${devList.profileImg}"
-                         
-                        />
+          <c:forEach var="devList" items="${devList}">
+            <div class="col-sm-4 col-md-6 col-lg-4">
+              <form
+                id="cr-form"
+                method="POST"
+                action="${contextPath}/chat/openChatRoom"
+              >
+                <div class="developer-card">
+                  <div class="developer-profile">
+                    <div class="developer-img">
+                      <div class="profile-img avatar">
+                        <img src="${contextPath}/${devList.profileImg}" />
+                      </div>
+                    </div>
+                    <div class="developer-info">
+                      <div class="developer-title">
+                        <p class="developer-nick">${devList.memberNick}</p>
+                        <div class="developer-type">${devList.stack}</div>
+                      </div>
+                      <p class="developer-oneline">${devList.slogan}</p>
+                    </div>
+                  </div>
+                  <div class="developer-record">
+                    <div>
+                      <span>총 수익</span>
+                      <p>${devList.totalPrice}만원</p>
+                    </div>
+                    <div>
+                      <span>우승</span>
+                      <p>${devList.victoryCount}회</p>
+                    </div>
+
+                    <div>
+                      <span>총 참가</span>
+                      <p>${devList.attendCount}건</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="developer-chat-btn">
+                      <a
+                        class="profile-btn btn-primary btn-32"
+                        href="${contextPath}/mypage/info/${devList.memberNo}"
+                      >
+                        프로필 보기
+                      </a>
+
+                      <button type="submit" class="btn-primary btn-32">
+                        채팅 하기
+                      </button>
+                    </div>
+                    <button id="like-btn" class="like-btn" />
+                    <label for="like-btn"><i class="ic-like-filled"></i></label>
                   </div>
                 </div>
-                <div class="developer-info">
-                  <div class="developer-title">
-                    <p class="developer-nick">${devList.memberNick}</p>
-                    <div class="developer-type">${devList.stack}</div>
-                  </div>
-                  <p class="developer-oneline">${devList.slogan}</p>
-                </div>
-              </div>
-              <div class="developer-record">
-                <div>
-                  <span>총 수익</span>
-                  <p>${devList.totalPrice}만원</p>
-                </div>
-                <div>
-                  <span>우승</span>
-                  <p>${devList.victoryCount}회</p>
-                </div>
-
-                <div>
-                  <span>총 참가</span>
-                  <p>12건</p>
-                </div>
-              </div>
-
-              <div>
-                <div class="developer-chat-btn">
-                  <a class="profile-btn btn-primary btn-32" href="${contextPath}/mypage/info/${devList.memberNo}">
-                    프로필 보기
-                  </a>
-                  
-                  <button type="submit" class="btn-primary btn-32">채팅 하기</button>
-                 
-                </div>
-                <button id="like-btn" class="like-btn" />
-                <label for="like-btn"><i class="ic-like-filled"></i></label>
-              </div>
-              
+              </form>
             </div>
-            </form>
-          </div>
           </c:forEach>
-         
+
+          <div class="target"></div>
         </div>
       </div>
     </main>
@@ -130,5 +140,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <script src="../js/mypage-slider.js"></script>
     <script src="${contextPath}/resources/js/slider.js"></script>
+    <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
 </html>

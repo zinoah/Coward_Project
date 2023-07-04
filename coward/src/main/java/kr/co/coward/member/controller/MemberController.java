@@ -229,12 +229,14 @@ public class MemberController {
 	}
 
 	@GetMapping("/findDev")
-   public String findDev(Model model) {
+   public String findDev(Model model, @RequestParam int page) {
+		
+		int pageSize = 6; // 한 페이지당 가져올 데이터 개수
+		int offset = page * pageSize; // OFFSET 계산
       
-      int pageSize = 6; // 한 페이지당 가져올 데이터 개수 -> 2와 3의 공배수가 보기 예쁨
       
       // 개발자 리스트 조회
-      List<Member> devList = service.getFindDevPage(pageSize);
+      List<Member> devList = service.getFindDevPage(pageSize, offset);
       
       // 개발자 리스트 적재
       model.addAttribute("devList", devList);
