@@ -19,11 +19,11 @@
 	<typeAliases>
 		<typeAlias type="kr.co.coward.member.model.vo.Member" alias="member"/>
 		<typeAlias type="kr.co.coward.contest.model.vo.Contest" alias="contest"/>
+		<typeAlias type="kr.co.coward.contest.model.vo.ContestAttend" alias="contestAttend"/>	
 		<typeAlias type="kr.co.coward.event.model.vo.Event" alias="event"/>
 		<typeAlias type="kr.co.coward.chat.model.vo.ChatRoom" alias="chatRoom"/>		
 		<typeAlias type="kr.co.coward.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>	
 		<typeAlias type="kr.co.coward.chat.model.vo.ChatMessage" alias="chatMessage"/>	
-	
 	</typeAliases>
 	
 	<!-- SQL이 작성되는 mapper 파일 위치를 등록 -->
@@ -34,6 +34,7 @@
 		 -->
 		<mapper resource="/mappers/member-mapper.xml"/>
 		<mapper resource="/mappers/contest-mapper.xml"/>
+		<mapper resource="/mappers/contest-attend-mapper.xml"/>
 		<mapper resource="/mappers/myPage-mapper.xml"/>
 		<mapper resource="/mappers/event-mapper.xml"/>
 		<mapper resource="/mappers/chatting-mapper.xml"/>

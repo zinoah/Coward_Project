@@ -164,7 +164,8 @@ public class ContestController {
 	 * @return
 	 */
 	@GetMapping("/detail/{contestNo}")
-	public String contestDetail(@PathVariable("contestNo") int contestNo, Model model) {
+	public String contestDetail(@ModelAttribute("loginMember") Member loginMember,
+			@PathVariable("contestNo") int contestNo, Model model) {
 
 		Contest contest = service.contestDetail(contestNo);
 
@@ -174,6 +175,7 @@ public class ContestController {
 
 		model.addAttribute("contest", contest);
 		model.addAttribute("skillList", skillList);
+		model.addAttribute("loginMember", loginMember);
 
 		return "contest/contest-detail";
 	}
@@ -271,6 +273,44 @@ public class ContestController {
 		model.addAttribute("contest", contest);
 
 		return "contest/contest-attend-form";
+	}
+
+	@PostMapping("/attendForm")
+	public String contestAttendForm(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam Map<String, Object> paramMap, String[] skill, RedirectAttributes ra,
+			@RequestParam("pptFile") MultipartFile uploadFile, HttpServletRequest req) throws IOException {
+
+		String skillList = String.join(",", skill);
+
+		// 웹 접근경로
+		String webPath = "resources/assets/file/";
+
+		// 서버 저장 폴더 경로
+		String folderPath = req.getSession().getServletContext().getRealPath(webPath);
+
+		paramMap.put("webPath", webPath);
+		paramMap.put("folderPath", folderPath);
+		paramMap.put("skill", skillList);
+		paramMap.put("pptFile", uploadFile);
+		paramMap.put("memberNo", loginMember.getMemberNo());
+
+		int result = service.contestAttendForm(paramMap);
+
+		String message = null;
+		String path = null;
+
+		if (result > 0) {
+			message = "참가신청 완료!!";
+
+			path = "../contest/detail/" + result;
+
+		} else {
+			message = "참가신청 실패하였습니다.";
+			path = "/attendForm/" + result;
+		}
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:" + path;
 	}
 
 }

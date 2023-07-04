@@ -16,7 +16,14 @@
 
     .header-right {
       display: flex;
+      #member-type-c-btn {
+        margin-right: 10px;
+      }
 
+      .header-user-image,
+      .header-user- {
+        @include flexbox;
+      }
       .ic-bell,
       .ic-message {
         font-size: 24px;
