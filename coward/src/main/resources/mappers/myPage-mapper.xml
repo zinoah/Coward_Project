@@ -55,12 +55,18 @@
 
 	
 	<!-- 마이페이지(메인) - 관심 공모전 -->
-	<select id="likeConList">
+	<!--  <select id="likeConList">
 		SELECT CONTEST_NO
 	FROM LIKE_CON
 	WHERE MEMBER_NO = ${memberNo};
 	</select>
+-->
 
+	<select id="mypageInfo">
+		SELECT MEMBER_NO, MEMBER_NICK, STACK, PROFILE_IMG, INTRODUCE, SKILL, CURR_PRICE
+		FROM MEMBER
+		WHERE MEMBER_NO = ${memberNo}
+	</select>
 	<!-- ***************기업 마이페이지 맵퍼******************** -->
 
 	<!-- 기업 회원정보 수정 -->
