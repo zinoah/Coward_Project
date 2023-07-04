@@ -9,6 +9,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="${contextPath}/resources/styles/css/find-developer.css"
     />
     <title>Coward | 개발자 찾기</title>
@@ -72,7 +76,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
         </div>
 
-        <div class="row">
+        <div id="devListRow" class="row">
           <c:forEach var="devList" items="${devList}">
             <div class="col-sm-4 col-md-6 col-lg-4">
               <form
@@ -87,6 +91,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <img src="${contextPath}/${devList.profileImg}" />
                       </div>
                     </div>
+
                     <div class="developer-info">
                       <div class="developer-title">
                         <p class="developer-nick">${devList.memberNick}</p>
@@ -124,8 +129,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         채팅 하기
                       </button>
                     </div>
-                    <button id="like-btn" class="like-btn" />
-                    <label for="like-btn"><i class="ic-like-filled"></i></label>
+                    <button id="like-btn" class="like-btn">
+                      <label for="like-btn"
+                        ><i class="ic-like-filled"></i
+                      ></label>
+                    </button>
                   </div>
                 </div>
               </form>
@@ -138,8 +146,47 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </main>
     <!-- 푸터 -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
-    <script src="../js/mypage-slider.js"></script>
-    <script src="${contextPath}/resources/js/slider.js"></script>
+
+    <!-- jQuery 라이브러리 추가 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const contextPath = "${contextPath}";
+    </script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
 </html>
+
+<div class="ph-item">
+  <div class="ph-col-2">
+    <div class="ph-avatar"></div>
+  </div>
+  <div>
+    <div class="ph-row">
+      <div class="ph-col-4"></div>
+      <div class="ph-col-8 empty"></div>
+      <div class="ph-col-12"></div>
+    </div>
+  </div>
+  <div class="ph-col-12">
+    <div class="ph-row">
+      <div class="ph-col-2"></div>
+      <div class="ph-col-2 empty"></div>
+      <div class="ph-col-2"></div>
+      <div class="ph-col-6 empty"></div>
+      <div class="ph-col-2"></div>
+    </div>
+  </div>
+  <div class="ph-col-12">
+    <div class="ph-row">
+      <div class="ph-col-6 big"></div>
+      <div class="ph-col-6 big"></div>
+      <div class="ph-col-12 big"></div>
+    </div>
+  </div>
+</div>
+;
