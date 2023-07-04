@@ -18,7 +18,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                <a href="${contextPath}/member/findDev">개발자 찾기</a>
               </li>
               <li class="nav-item">
-                <a href="${contextPath}/mypage/companyMain">가격 안내</a>
+                <a href="${contextPath}/contest/contestManagement">가격 안내</a>
               </li>
               <li class="nav-item">
                 <a href="${contextPath}/chat/roomList">채팅</a>

@@ -211,6 +211,8 @@ public class ContestController {
 
 	}
 
+	// 맞춤 공모전 페이지로 이동
+
 	@GetMapping("/recommend")
 	public String contestRecommend() {
 
@@ -239,6 +241,14 @@ public class ContestController {
 
 		return new Gson().toJson(recommendList);
 
+	}
+
+	// 공모전 우승자 선정 페이지로 이동
+
+	@GetMapping("/contestManagement")
+	public String contestManagement() {
+
+		return "contest/contest-management";
 	}
 
 	/**
