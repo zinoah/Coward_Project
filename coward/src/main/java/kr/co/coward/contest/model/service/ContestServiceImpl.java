@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import kr.co.coward.common.Util;
 import kr.co.coward.contest.model.dao.ContestDAO;
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 
 @Service
 public class ContestServiceImpl implements ContestService {
@@ -92,7 +93,6 @@ public class ContestServiceImpl implements ContestService {
 		return dao.contestDetail(contestNo);
 	}
 
-
 	// 맞춤 공모전
 	@Override
 	public List<Contest> getRecommendList(int typeNo) {
@@ -102,13 +102,54 @@ public class ContestServiceImpl implements ContestService {
 		logger.info("recommendContest() 메서드 실행 결과: " + dao.getRecommendList(typeNo));
 
 		return dao.getRecommendList(typeNo);
-  }
-  
+	}
+
 	// 북마크 카운트 서비스
 	@Override
 	public int bookmarkCount(Contest contest) {
 
 		return dao.bookmarkCount(contest);
+	}
+
+	// 공모전 참가 서비스
+	@Override
+	public int contestAttendForm(Map<String, Object> paramMap) throws IOException {
+
+		// XSS 방지 처리 + 개행문자 처리
+
+		String discription = (String) paramMap.get("discription");
+
+		ContestAttend attend = new ContestAttend();
+
+		attend.setDiscription(discription);
+
+		paramMap.put("discription", Util.XSSHandling(attend.getDiscription()));
+		paramMap.put("discription", Util.newLineHandling(attend.getDiscription()));
+
+		// 자주쓰는 값 변수에 저장
+		MultipartFile uploadFile = (MultipartFile) paramMap.get("pptFile");
+
+		String renameFile = null;
+
+		if (uploadFile != null) {
+			// 파일명 변경
+			// uploadImage.getOriginalFilename() : 원본 파일명
+			renameFile = Util.fileRename(uploadFile.getOriginalFilename());
+			// 20230422858583.png
+
+			paramMap.put("thumbnail", paramMap.get("webPath") + renameFile);
+			// /resources/image/memberProfile/20230422858583.png
+		} else {
+			paramMap.put("thumbnail", null);
+		}
+
+		int result = dao.contestAttendForm(paramMap);
+
+		// DB 수정 성공 시 메모리에 임시 저장되어있는 파일을 서버에 저장
+		if (result > 0 && paramMap.get("pptFile") != null) {
+			uploadFile.transferTo(new File(paramMap.get("folderPath") + renameFile));
+		}
+		return result;
 	}
 
 }

@@ -11,11 +11,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/contest-attend-form.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
-      type="text/css"
-    />
 
     <title>Coward | 공모전 참가하기</title>
   </head>
@@ -55,7 +50,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
               </div>
               <div class="banner-button-box sm-only">
-                <a href="#" class="btn-outlined btn-40">브리핑 보러가기</a>
+                <a
+                  href="../detail/${contest.contestNo}"
+                  class="btn-outlined btn-32"
+                  >브리핑 보러가기</a
+                >
               </div>
             </div>
           </div>
@@ -67,7 +66,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <form action="#">
+            <form
+              action="${contextPath}/contest/attendForm"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <input
+                type="hidden"
+                name="contestNo"
+                value="${contest.contestNo}"
+              />
               <div class="contest-attend-form-inner-box">
                 <div class="contest-attend-form-inner-box-title">
                   <h3>👉 양식에 맞게 작성해주세요</h3>
@@ -79,8 +87,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     >
                       <p class="sub-title">간단 설명</p>
                       <textarea
-                        maxlength="200"
-                        placeholder="200자이내로 입력하세요"
+                        maxlength="500"
+                        placeholder="500자이내로 입력하세요"
+                        name="discription"
                       ></textarea>
                     </div>
                     <div
@@ -90,90 +99,107 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <input
                         type="url"
                         placeholder="제출품이 있는 레파지토리 주소를 입력해주세요."
+                        name="githubAddress"
                       />
+                    </div>
+                    <div class="contest-attend-form-inner-box-main-info-file">
+                      <p class="sub-title">PPT 첨부</p>
+                      <label class="btn-secondary">
+                        파일 첨부 (zip, ppt)
+                        <input
+                          type="file"
+                          style="display: none"
+                          name="pptFile"
+                          accept=".zip, .pdf"
+                          id="pptFileInput"
+                        />
+                      </label>
                     </div>
                     <div class="contest-attend-form-inner-box-main-info-skill">
                       <p class="sub-title">사용 기술</p>
                       <div class="tag-box">
-                        <label class="tag-gray" name="skill">
+                        <label class="tag-gray">
                           JAVA
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="JAVA" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Spring
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="Spring" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Spring Boot
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            name="skill"
+                            value="Spring Boot"
+                          />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >PHP
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="PHP" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Oracle
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="Oracle" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >MySQL
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="MySql" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Python
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="Python" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Kotlin
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="Kotlin" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Swift
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="Swift " />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >C++
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="C++" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >C#
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="C#" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >HTML
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="HTML" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >CSS
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="CSS" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >JavaScript
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            name="skill"
+                            value="JavaScript"
+                          />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >jQuery
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="jQuery" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Vue.js
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="Vue.js" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >React
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="React" />
                         </label>
-                        <label class="tag-gray" name="skill"
+                        <label class="tag-gray"
                           >Node.js
-                          <input type="checkbox" />
+                          <input type="checkbox" name="skill" value="Node.js" />
                         </label>
                       </div>
                     </div>
-                  </div>
-                  <div class="contest-attend-form-inner-box-main-story-board">
-                    <p class="sub-title">스토리보드</p>
-                    <!-- 드롭존 - 클릭영역 -->
-                    <div class="dropzone"></div>
                   </div>
                 </div>
                 <div class="contest-attend-form-inner-box-btn">
@@ -193,7 +219,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
     <div id="overlay" class="overlay"></div>
 
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <script src="${contextPath}/resources/js/dropzone.js"></script>
     <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/contest-attend-form.js"></script>

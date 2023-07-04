@@ -24,6 +24,7 @@
 		<result property="winner" 	column="WINNER"/>
 		<result property="conStatus" 	column="CON_STATUS"/>
 		<result property="bookmarkCount" column="BOOKMARK_COUNT"/>
+		<result property="attendCount" column="ATTEND_COUNT"/>
 	</resultMap>
   
 	<!-- 공모전 전체 조회  -->
@@ -68,8 +69,7 @@
 		THUMBNAIL
 		FROM CONTEST
 		WHERE CON_STATUS = '모집중'
-		AND TRUNC(END_DATE -
-		CREATE_DATE) > 0
+		AND TRUNC(END_DATE - CREATE_DATE) > 0
 		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 	</select>
 
@@ -123,7 +123,10 @@
 		c.SKILL, PRICE, THUMBNAIL, c.AD_NO, ad.AD_TYPE AS AD_TYPE, CON_STATUS,
 		(SELECT COUNT(*)
 		FROM LIKE_CON lc
-		WHERE CONTEST_NO = ${contestNo}) AS BOOKMARK_COUNT
+		WHERE CONTEST_NO = ${contestNo}) AS BOOKMARK_COUNT,
+		(SELECT COUNT(*)
+		FROM CONTEST_ATTEND 
+		WHERE CONTEST_NO = ${contestNo}) AS ATTEND_COUNT
 		FROM CONTEST c,
 		MEMBER m , AD ad
 		WHERE c.MEMBER_NO = m.MEMBER_NO

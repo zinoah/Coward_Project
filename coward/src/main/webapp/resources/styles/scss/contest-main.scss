@@ -65,26 +65,6 @@
     }
   }
 
-  .type-button-wrapper {
-    @include flexbox(end, center);
-    height: 40px;
-    margin-top: 10px;
-
-    .select {
-      @include flexbox(between);
-      border: 1px solid $border;
-      border-radius: 5px;
-      width: 70px;
-      height: 30px;
-      padding: 10px;
-      overflow: hidden;
-      text-align: inherit;
-      p {
-        font-size: 14px;
-      }
-    }
-  }
-
   @include responsive(T) {
     section {
       margin-bottom: $between-section-md;
@@ -112,15 +92,11 @@
         margin-right: 10px;
         border: 1px solid $border;
         border-radius: 5px;
-
+        margin-bottom: 24px;
         &:hover {
           transition: 0.3s;
         }
       }
-    }
-
-    .type-button-wrapper {
-      margin-top: 0;
     }
   }
 }

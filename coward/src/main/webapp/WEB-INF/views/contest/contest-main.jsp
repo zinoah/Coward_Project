@@ -164,12 +164,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <button class="filterBtn" data-parameter="end">마감</button>
                 </div>
               </div>
-              <div class="type-button-wrapper">
-                <div class="select">
-                  <i class="ic-filters"></i>
-                  <p>타입</p>
-                </div>
-              </div>
             </div>
           </div>
           <div class="row" id="contestArea">
@@ -178,9 +172,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="col-sm-4 col-md-4 col-lg-3">
                 <a href="detail/${contest.contestNo}">
                   <div class="contest-card">
-                    <div class="bookmark">
-                      <i class="ic-bookmark-filled"></i>
-                    </div>
                     <div class="contest-card-title">
                       <div><span>${contest.contestTitle}</span></div>
                       <div class="tag-yellow">new</div>

@@ -32,6 +32,7 @@ public class Contest {
 	private String winner;
 	private String conStatus;
 	private int bookmarkCount;
+	private int attendCount;
 	private List<String> skillList;
 
 }
