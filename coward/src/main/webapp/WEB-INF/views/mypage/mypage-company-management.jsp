@@ -121,11 +121,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="row">
                       <div class="col-sm-4">
                         <div class="slider-wrapper">
-                          <div class="contest-slider">
-                          <div>
-                          <div id="result1" style="width: 100%"></div>
+                          <div class="contest-slider" >
+                          
+                
                             <!--<div id="result1" style="width: 100%"></div>  -->
-                          </div>
+                 
                          
                          </div>
                          

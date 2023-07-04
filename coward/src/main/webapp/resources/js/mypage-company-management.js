@@ -4,7 +4,7 @@ var btnCasting = document.getElementById("casting");
 var btnEnd = document.getElementById("end");
 
 var conStatus = document.getElementById("conStatus");
-const div = document.getElementById("result1");
+const result = document.querySelector(".contest-slider");
 
 //전체 공모전 조회Ajax
 btnAll.addEventListener("click", function () {
@@ -21,11 +21,14 @@ btnAll.addEventListener("click", function () {
     success: function (response) {
       const getContestList = response;
 
-      div.innerHTML = "";
+      // result.innerHTML = "";
 
       if (getContestList.length > 0) {
         for (let i = 0; i < getContestList.length; i++) {
           const contest = getContestList[i];
+
+          const divWrapper = document.createElement("div");
+          divWrapper.id = "wrapper";
 
           const divContest = document.createElement("div");
           divContest.className = "contest-slider-card";
@@ -33,7 +36,8 @@ btnAll.addEventListener("click", function () {
           const divImg = document.createElement("div");
           divImg.className = "contest-slider-card-img";
           const img = document.createElement("img");
-          img.src = contest.thumbnail;
+          img.src = "../assets/images/contest-gallery-card-img.svg";
+          img.alt = "";
           divImg.appendChild(img);
 
           const divInfo = document.createElement("div");
@@ -42,7 +46,7 @@ btnAll.addEventListener("click", function () {
           const divTitle = document.createElement("div");
           divTitle.className = "contest-slider-card-info-title";
           const pTitle = document.createElement("p");
-          pTitle.innerText = "콘테스트 제목: " + contest.contestTitle;
+          pTitle.innerText = contest.contestTitle;
           divTitle.appendChild(pTitle);
 
           const divDetail1 = document.createElement("div");
@@ -78,13 +82,15 @@ btnAll.addEventListener("click", function () {
           divContest.appendChild(divImg);
           divContest.appendChild(divInfo);
 
-          div.appendChild(divContest);
+          divWrapper.appendChild(divContest);
+
+          result.appendChild(divWrapper);
         }
       } else {
         const h4 = document.createElement("h4");
         h4.innerText = "일치하는 콘테스트가 없습니다";
 
-        div.append(h4);
+        result.append(h4);
       }
     },
     error: function (request, status, error) {
@@ -109,11 +115,12 @@ btnRecruiting.addEventListener("click", function () {
     success: function (response) {
       const getContestList = response;
 
-      div.innerHTML = "";
+      //div.innerHTML = "";
 
       if (getContestList.length > 0) {
         for (let i = 0; i < getContestList.length; i++) {
-          const contest = getContestList[i];
+          const divWrapper = document.createElement("div");
+          divWrapper.id = "wrapper";
 
           const divContest = document.createElement("div");
           divContest.className = "contest-slider-card";
@@ -121,7 +128,8 @@ btnRecruiting.addEventListener("click", function () {
           const divImg = document.createElement("div");
           divImg.className = "contest-slider-card-img";
           const img = document.createElement("img");
-          img.src = contest.thumbnail;
+          img.src = "../assets/images/contest-gallery-card-img.svg";
+          img.alt = "";
           divImg.appendChild(img);
 
           const divInfo = document.createElement("div");
@@ -130,7 +138,7 @@ btnRecruiting.addEventListener("click", function () {
           const divTitle = document.createElement("div");
           divTitle.className = "contest-slider-card-info-title";
           const pTitle = document.createElement("p");
-          pTitle.innerText = "콘테스트 제목: " + contest.contestTitle;
+          pTitle.innerText = contest.contestTitle;
           divTitle.appendChild(pTitle);
 
           const divDetail1 = document.createElement("div");
@@ -166,7 +174,9 @@ btnRecruiting.addEventListener("click", function () {
           divContest.appendChild(divImg);
           divContest.appendChild(divInfo);
 
-          div.appendChild(divContest);
+          divWrapper.appendChild(divContest);
+
+          div.appendChild(divWrapper);
         }
       } else {
         const h4 = document.createElement("h4");
@@ -197,11 +207,14 @@ btnCasting.addEventListener("click", function () {
     success: function (response) {
       const getContestList = response;
 
-      div.innerHTML = "";
+      //div.innerHTML = "";
 
       if (getContestList.length > 0) {
         for (let i = 0; i < getContestList.length; i++) {
           const contest = getContestList[i];
+
+          const divWrapper = document.createElement("div");
+          divWrapper.id = "wrapper";
 
           const divContest = document.createElement("div");
           divContest.className = "contest-slider-card";
@@ -209,7 +222,8 @@ btnCasting.addEventListener("click", function () {
           const divImg = document.createElement("div");
           divImg.className = "contest-slider-card-img";
           const img = document.createElement("img");
-          img.src = contest.thumbnail;
+          img.src = "../assets/images/contest-gallery-card-img.svg";
+          img.alt = "";
           divImg.appendChild(img);
 
           const divInfo = document.createElement("div");
@@ -218,7 +232,7 @@ btnCasting.addEventListener("click", function () {
           const divTitle = document.createElement("div");
           divTitle.className = "contest-slider-card-info-title";
           const pTitle = document.createElement("p");
-          pTitle.innerText = "콘테스트 제목: " + contest.contestTitle;
+          pTitle.innerText = contest.contestTitle;
           divTitle.appendChild(pTitle);
 
           const divDetail1 = document.createElement("div");
@@ -254,7 +268,9 @@ btnCasting.addEventListener("click", function () {
           divContest.appendChild(divImg);
           divContest.appendChild(divInfo);
 
-          div.appendChild(divContest);
+          divWrapper.appendChild(divContest);
+
+          div.appendChild(divWrapper);
         }
       } else {
         const h4 = document.createElement("h4");
@@ -285,11 +301,14 @@ btnEnd.addEventListener("click", function () {
     success: function (response) {
       const getContestList = response;
 
-      div.innerHTML = "";
+      // div.innerHTML = "";
 
       if (getContestList.length > 0) {
         for (let i = 0; i < getContestList.length; i++) {
           const contest = getContestList[i];
+
+          const divWrapper = document.createElement("div");
+          divWrapper.id = "wrapper";
 
           const divContest = document.createElement("div");
           divContest.className = "contest-slider-card";
@@ -297,7 +316,8 @@ btnEnd.addEventListener("click", function () {
           const divImg = document.createElement("div");
           divImg.className = "contest-slider-card-img";
           const img = document.createElement("img");
-          img.src = contest.thumbnail;
+          img.src = "../assets/images/contest-gallery-card-img.svg";
+          img.alt = "";
           divImg.appendChild(img);
 
           const divInfo = document.createElement("div");
@@ -306,7 +326,7 @@ btnEnd.addEventListener("click", function () {
           const divTitle = document.createElement("div");
           divTitle.className = "contest-slider-card-info-title";
           const pTitle = document.createElement("p");
-          pTitle.innerText = "콘테스트 제목: " + contest.contestTitle;
+          pTitle.innerText = contest.contestTitle;
           divTitle.appendChild(pTitle);
 
           const divDetail1 = document.createElement("div");
@@ -342,7 +362,9 @@ btnEnd.addEventListener("click", function () {
           divContest.appendChild(divImg);
           divContest.appendChild(divInfo);
 
-          div.appendChild(divContest);
+          divWrapper.appendChild(divContest);
+
+          div.appendChild(divWrapper);
         }
       } else {
         const h4 = document.createElement("h4");
