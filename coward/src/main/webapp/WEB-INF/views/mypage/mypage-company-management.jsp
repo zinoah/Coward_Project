@@ -122,8 +122,31 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="col-sm-4">
                         <div class="slider-wrapper">
                           <div class="contest-slider">
-                            <div id="result1" style="width: 100%"></div>
+                          <div>
+                          <div id="result1" style="width: 100%"></div>
+                            <!--<div id="result1" style="width: 100%"></div>  -->
                           </div>
+                         
+                         </div>
+                         
+                            <div class="slider-controls">
+                            <button
+                              class="control-button is-prev"
+                              type="button"
+                            >
+                              <i class="ic-chevron"></i>
+                            </button>
+                            <button
+                              class="control-button is-next"
+                              type="button"
+                            >
+                              <i class="ic-chevron"></i>
+                            </button>
+                          </div>
+                          
+                          
+                          
+                        
                         </div>
                       </div>
                     </div>
@@ -141,7 +164,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="${contextPath}/resources/js/slider.js"></script>
+    <script src="${contextPath}/resources/js/mypage-slider.js"></script>
     <script src="${contextPath}/resources/js/mypage-company-management.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>

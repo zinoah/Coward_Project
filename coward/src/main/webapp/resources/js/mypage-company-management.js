@@ -4,15 +4,13 @@ var btnCasting = document.getElementById("casting");
 var btnEnd = document.getElementById("end");
 
 var conStatus = document.getElementById("conStatus");
+const div = document.getElementById("result1");
 
 //전체 공모전 조회Ajax
 btnAll.addEventListener("click", function () {
   conStatus.value = "전체";
   console.log("전체 Clicked"); // 로그 메시지 추가
   console.log(conStatus.value);
-
-  const conStatus = document.getElementById("conStatus");
-  const div = document.getElementById("result1");
 
   $.ajax({
     url: "companyManagement",
@@ -102,9 +100,6 @@ btnRecruiting.addEventListener("click", function () {
   console.log("모집중 Clicked"); // 로그 메시지 추가
   console.log(conStatus.value);
 
-  const conStatus = document.getElementById("conStatus");
-  const div = document.getElementById("result1");
-
   $.ajax({
     url: "companyManagement",
     data: { conStatus: conStatus.value },
@@ -193,9 +188,6 @@ btnCasting.addEventListener("click", function () {
   console.log("심사중 Clicked"); // 로그 메시지 추가
   console.log(conStatus.value);
 
-  const conStatus = document.getElementById("conStatus");
-  const div = document.getElementById("result1");
-
   $.ajax({
     url: "companyManagement",
     data: { conStatus: conStatus.value },
@@ -283,9 +275,6 @@ btnEnd.addEventListener("click", function () {
   conStatus.value = "완료";
   console.log("완료 Clicked"); // 로그 메시지 추가
   console.log(conStatus.value);
-
-  const conStatus = document.getElementById("conStatus");
-  const div = document.getElementById("result1");
 
   $.ajax({
     url: "companyManagement",
