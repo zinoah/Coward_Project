@@ -80,6 +80,7 @@
 	<select id="getPriceKingList" parameterType="_int" resultMap="member_rm">
 		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
 		FROM MEMBER
+		WHERE TOTAL_PRICE IS NOT NULL
 		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
 	

@@ -43,7 +43,7 @@ public interface ContestService {
 
 	/**
 	 * 
-	 * 맞춤 공모전
+	 * 맞춤 공모전 서비스
 	 * 
 	 * @param contestNo
 	 * @return
@@ -51,6 +51,21 @@ public interface ContestService {
 	// public abstract Contest getRecommendContest(int typeNo);
 	public abstract List<Contest> getRecommendList(int typeNo);
 
+	/**
+	 * 북마크 서비스
+	 * 
+	 * @param contest
+	 * @return
+	 */
 	int bookmarkCount(Contest contest);
+
+	/**
+	 * 공모전 참가 서비스
+	 * 
+	 * @param paramMap
+	 * @return
+	 * @throws IOException
+	 */
+	int contestAttendForm(Map<String, Object> paramMap) throws IOException;
 
 }
