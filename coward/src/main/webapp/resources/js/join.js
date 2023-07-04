@@ -23,6 +23,16 @@ const joinBox = document.querySelector(".join-display");
 const finalBox = document.querySelector(".join-final-display");
 
 nextBtn.addEventListener("click", function () {
+  // 개인/기업 선택 여부 확인
+  const isPersonalSelected = singleBox.classList.contains("clicked");
+  const isCompanySelected = companyBox.classList.contains("clicked");
+
+  if (!isPersonalSelected && !isCompanySelected) {
+    // 개인/기업 선택하지 않은 경우 경고창 표시
+    alert("회원 타입을 선택해주세요!");
+    return;
+  }
+
   finalBox.style.display = "block";
   joinBox.style.display = "none";
 });
@@ -136,7 +146,7 @@ overlay.addEventListener("click", () => {
 
 // 이메일 유효성 + 중복 검사
 const memberEmail = document.getElementById("memberEmail");
-const emailMessage = document.querySelector("#emailMessage"); // 이메일 유효한지 텍스트 띄울공간
+const emailMessage = document.querySelectorAll("#emailMessage"); // 이메일 유효한지 텍스트 띄울공간
 
 memberEmail.addEventListener("input", function () {
   // 입력이 안됐을때
@@ -338,3 +348,14 @@ function checkPw() {
     pwMessage2.classList.remove("confirm");
   }
 }
+
+// allAgree 체크박스 요소 가져오기
+const allAgree = document.getElementById("allAgree");
+const agree1 = document.getElementById("agree-1");
+const agree2 = document.getElementById("agree-2");
+const agree3 = document.getElementById("agree-3");
+const checkboxes = document.querySelectorAll('[id^="agree-"]');
+
+allAgree.addEventListener("click", function () {
+  agree1.checked = true;
+});
