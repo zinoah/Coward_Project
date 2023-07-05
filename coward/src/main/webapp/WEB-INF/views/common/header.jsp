@@ -9,7 +9,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="header-wrapper">
           <div class="header-left">
             <h1 class="logo">
-              <a href="${contextPath}">
+              <a href="${contextPath}/home">
                 <img
                   src="${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
@@ -30,9 +30,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="header-right sm-hidden">
             <c:choose>
               <c:when test="${ empty sessionScope.loginMember }">
-                <button>
-                  <a href="${contextPath}/member/testLogin">test로그인</a>
-                </button>
                 <button class="header-button-text" type="button">
                   <a href="${contextPath}/member/login">로그인</a>
                 </button>
@@ -41,14 +38,31 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </button>
               </c:when>
               <c:otherwise>
+                <c:choose>
+                  <c:when test="${loginMember.memberType == 'C'}">
+                    <a
+                      href="${contextPath}/contest/create"
+                      class="btn-32 btn-primary"
+                      id="member-type-c-btn"
+                    >
+                      공모전 개최하기</a
+                    >
+                  </c:when>
+                </c:choose>
+                <a href="${contextPath}/member/logout">
+                  <i class="ic-logout"></i>
+                </a>
                 <button class="header-user-image">
                   <i class="ic-bell"></i>
                 </button>
                 <a class="header-user-image" href="#">
                   <i class="ic-message"></i>
                 </a>
-                <a href="${contextPath}/mypage/memberTypeInfo">
-                  <div class="avatar-24 header-user-image">
+                <a
+                  href="${contextPath}/mypage/memberTypeInfo"
+                  class="header-user-image"
+                >
+                  <div class="avatar-24">
                     <c:choose>
                       <c:when test="${empty loginMember.profileImg }">
                         <img

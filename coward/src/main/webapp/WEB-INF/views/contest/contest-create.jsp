@@ -279,9 +279,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <span>썸네일</span><span>*</span>
                         </div>
                         <div>
-                          <div>
-                            500MB 이하의 jpg, gif 파일만 등록할 수 있습니다.
-                          </div>
+                          <div>jpg, gif 파일만 등록할 수 있습니다.</div>
                           <div>
                             <label class="btn-primary">
                               파일 선택
@@ -289,6 +287,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 type="file"
                                 id="thumbnail-input"
                                 name="thumbnail"
+                                accept=".gif, .jpg"
                               />
                             </label>
                           </div>
@@ -535,6 +534,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <button
                             class="btn-primary btn-40 submit-btn"
                             type="submit"
+                            style="display: none"
                           >
                             확인
                           </button>
@@ -542,7 +542,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             class="btn-primary btn-40 payment-btn"
                             type="button"
                             onclick="requestPay()"
-                            style="display: none"
                           >
                             결제하기
                           </button>

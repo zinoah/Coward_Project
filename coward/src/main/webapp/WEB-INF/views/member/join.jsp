@@ -8,11 +8,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-second.css" />
-    <link rel="stylesheet" href="${contextPath}/resources/styles/css/agree-modal.css" />
-    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-final.css" />
-    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-modal.css" />
-    <link rel="stylesheet" href="${contextPath}/resources/styles/css/join-first.css" />
+    <link
+      rel="stylesheet"
+      href="${contextPath}/resources/styles/css/join-second.css"
+    />
+    <link
+      rel="stylesheet"
+      href="${contextPath}/resources/styles/css/agree-modal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="${contextPath}/resources/styles/css/join-final.css"
+    />
+    <link
+      rel="stylesheet"
+      href="${contextPath}/resources/styles/css/join-modal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="${contextPath}/resources/styles/css/join-first.css"
+    />
     <title>Coward | 회원가입 - 타입선택 및 약관동의</title>
   </head>
   <body>
@@ -36,7 +51,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </a>
                   <p class="p-first">Coward에 오신 것을 환영합니다!</p>
                 </div>
-                <button type="button" class="join-email">이메일로 가입하기</button>
+                <button type="button" class="join-email">
+                  이메일로 가입하기
+                </button>
                 <div class="line-box">
                   <hr class="line1" />
                   <hr class="line2" />
@@ -50,13 +67,19 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     class="kakao-logo"
                   />
                   <div class="join-google-box">
-                    <button type="button" class="join-google">Google로 간편가입</button>
+                    <button type="button" class="join-google">
+                      Google로 간편가입
+                    </button>
                   </div>
                   <div class="join-kakao-box">
-                    <button type="button" class="join-kakao">Kakao로 간편가입</button>
+                    <button type="button" class="join-kakao">
+                      Kakao로 간편가입
+                    </button>
                   </div>
                   <span class="question">이미 계정이 있으신가요?</span>
-                  <a href="${contextPath}/member/login" class="login">로그인 하기</a>
+                  <a href="${contextPath}/member/login" class="login"
+                    >로그인 하기</a
+                  >
                 </div>
               </div>
             </div>
@@ -89,7 +112,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <span class="mem-type">회원 타입 선택</span>
                   <span class="star">*</span>
                 </div>
-                <div  onclick="onMemberTypeClick('P')" class="type-box single-box">
+                <div
+                  onclick="onMemberTypeClick('P')"
+                  class="type-box single-box"
+                >
                   <div class="type-explanation-box">
                     <span class="type">개인</span>
                     <span class="type-explanation"
@@ -97,7 +123,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     >
                   </div>
                 </div>
-                <div  onclick="onMemberTypeClick('C')" class="type-box company-box">
+                <div
+                  onclick="onMemberTypeClick('C')"
+                  class="type-box company-box"
+                >
                   <div class="type-explanation-box">
                     <span class="type">기업</span>
                     <span class="type-explanation"
@@ -109,19 +138,19 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="all-agree-wrapper">
                   <div class="all-agree">
                     <div class="chk-img">
-                      <img
-                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
-                        class="gray-chk-1"
-                      />
+                      <input type="checkbox" name="allAgree" id="allAgree" />
+                      <label for="allAgree"></label>
                     </div>
                     <span class="all-agree-text">모두 동의하기</span>
                   </div>
                   <div class="essential-chk">
                     <div class="chk-img">
-                      <img
-                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
-                        class="gray-chk-2"
+                      <input
+                        type="checkbox"
+                        name="essentialAgree1"
+                        id="agree-1"
                       />
+                      <label for="agree-1"></label>
                     </div>
                     <div class="essential-chk-content">
                       <span class="chk-explanation"
@@ -132,10 +161,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                   <div class="essential-chk">
                     <div class="chk-img">
-                      <img
-                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
-                        class="gray-chk3"
+                      <input
+                        type="checkbox"
+                        name="essentialAgree2"
+                        id="agree-2"
                       />
+                      <label for="agree-2"></label>
                     </div>
                     <div class="essential-chk-content">
                       <span class="chk-explanation"
@@ -146,10 +177,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                   <div class="essential-chk">
                     <div class="chk-img">
-                      <img
-                        src="${contextPath}/resources/assets/images/gray-check-circle.svg"
-                        class="gray-chk4"
+                      <input
+                        type="checkbox"
+                        name="essentialAgree3"
+                        id="agree-3"
                       />
+                      <label for="agree-3"></label>
                     </div>
                     <div class="essential-chk-content">
                       <span class="chk-explanation"
@@ -187,16 +220,23 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
                 <div class="email-box">
                   <span class="input-title">이메일</span>
-                   <span class="email-explanation" id="emailMessage"></span>
+                  <span class="email-explanation" id="emailMessage"></span>
                   <input
                     class="btn-input-bundle email-input"
                     name="memberId"
-                   	id="memberEmail"
+                    id="memberEmail"
                     type="text"
                     placeholder="이메일 입력"
                   />
-                  <input name="memberType" type="hidden" id="memberType">
-                  <button type="button" class="btn-input-bundle email-cert-btn" id="sendBtn"  autocomplete="off" onclick="sendEmail()" required>
+                  <input name="memberType" type="hidden" id="memberType" />
+                  <button
+                    type="button"
+                    class="btn-input-bundle email-cert-btn"
+                    id="sendBtn"
+                    autocomplete="off"
+                    onclick="sendEmail()"
+                    required
+                  >
                     이메일 인증하기
                   </button>
                 </div>
@@ -209,7 +249,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="email-cert">
                         <div class="cert-code">
                           <input
-                          	type="text"
+                            type="text"
                             class="cert-input"
                             mexlength="6"
                             autocomplete="off"
@@ -218,7 +258,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           />
                           <span class="timer" id="cMessage"></span>
                         </div>
-                        <button type="button" class="cert-btn" id="cBtn" onclick="emailCertChk()">확인</button>
+                        <button
+                          type="button"
+                          class="cert-btn"
+                          id="cBtn"
+                          onclick="emailCertChk()"
+                        >
+                          확인
+                        </button>
                       </div>
                       <div class="warn-box">
                         <div class="warn-img-container">
@@ -230,7 +277,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <span class="email-explanation-1"
                           >이메일을 받지 못하셨나요?</span
                         >
-                        <span class="email-explanation-2" onclick="sendEmail()" required
+                        <span
+                          class="email-explanation-2"
+                          onclick="sendEmail()"
+                          required
                           >이메일 재전송하기</span
                         >
                       </div>
@@ -250,7 +300,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="password"
                     />
                     <div class="eye-img">
-                      <img src="${contextPath}/resources/assets/images/eye.svg" />
+                      <img
+                        src="${contextPath}/resources/assets/images/eye.svg"
+                      />
                     </div>
                   </div>
                 </div>
@@ -265,11 +317,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="password"
                     />
                     <div class="eye-img">
-                      <img src="${contextPath}/resources/assets/images/eye.svg" />
+                      <img
+                        src="${contextPath}/resources/assets/images/eye.svg"
+                      />
                     </div>
                   </div>
                 </div>
-                <button type="button" class="complete-btn" onclick="onSubmit">완료</button>
+                <button type="button" class="complete-btn" onclick="onSubmit">
+                  완료
+                </button>
               </div>
             </div>
           </div>
@@ -281,7 +337,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <div class="agree-all-wrapper">
       <div class="agree-box1">
-        <img src="${contextPath}/resources/assets/images/cross.svg" class="close1" />
+        <img
+          src="${contextPath}/resources/assets/images/cross.svg"
+          class="close1"
+        />
         <br />
         <h3>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow"
@@ -382,7 +441,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
     <div class="agree-all-wrapper">
       <div class="agree-box2">
-        <img src="${contextPath}/resources/assets/images/cross.svg" class="close2" />
+        <img
+          src="${contextPath}/resources/assets/images/cross.svg"
+          class="close2"
+        />
         <br />
         <h3>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow"
@@ -467,7 +529,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <div class="agree-all-wrapper">
       <div class="agree-box3">
-        <img src="${contextPath}/resources/assets/images/cross.svg" class="close3" />
+        <img
+          src="${contextPath}/resources/assets/images/cross.svg"
+          class="close3"
+        />
         <br />
         <h3>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow"
@@ -497,7 +562,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 회원가입 축하 모달 -->
     <div class="join-all-wrapper">
       <div class="join-box">
-        <img src="${contextPath}/resources/assets/images/check-circle.svg" class="check" />
+        <img
+          src="${contextPath}/resources/assets/images/check-circle.svg"
+          class="check"
+        />
         <br /><br />
         <pre class="pre-first">가입을 완료했어요 👏</pre>
         <button class="add-information-btn">추가 정보 입력하기</button>
@@ -510,9 +578,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
     <div id="overlay" class="overlay"></div>
-    
+
     <!-- jQuery 라이브러리 추가(CDN) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="${contextPath}/resources/js/join.js"></script>
   </body>
 </html>

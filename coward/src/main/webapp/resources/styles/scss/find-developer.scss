@@ -1,5 +1,41 @@
 @import "./main.scss";
 
+// Note: Skeleton Overriding
+.ph-item {
+  border-radius: 10px;
+}
+
+.ph-avatar {
+  min-width: 50px;
+}
+
+// Note: 스켈레톤 UI용 새로 불러온 요소에 적용할 클래스
+.is-new {
+  display: none;
+}
+
+[class*="ph-col"] {
+  border-radius: 3px;
+}
+
+.ph-col-12 {
+  .ph-row {
+    justify-content: space-between;
+
+    .buttons {
+      justify-content: space-between;
+    }
+
+    .ph-col-6 {
+      &:nth-child(1),
+      &:nth-child(2) {
+        flex-basis: 48%;
+      }
+    }
+  }
+}
+
+// Note: Banner Color Overriding
 .banner-top {
   background-color: #9792f0; // 배너 배경 색
 

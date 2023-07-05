@@ -1,10 +1,14 @@
+// Note: 비회원
 ChannelIO("boot", {
   pluginKey: "1efbfcc5-e202-4a9e-b764-806bc2103a43",
+  zIndex: 200,
 });
 
+// Note: 회원
 ChannelIO("boot", {
   pluginKey: "1efbfcc5-e202-4a9e-b764-806bc2103a43",
   memberId: "USER_MEMBER_ID", // fill user's member id
+  zIndex: 200,
   profile: {
     // fill user's profile
     name: "USER_NAME", // fill user's name

@@ -94,9 +94,39 @@
   margin-bottom: 20px;
 }
 
-.chk-img {
-  margin-right: 15px;
+/* 체크박스 디자인 수정 */
+.chk-img input[type="checkbox"] {
+  display: none;
+}
+
+.chk-img label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
+  background-color: $tertiary;
+  position: relative;
+  margin-right: 5px;
+}
+
+.chk-img label::before {
+  content: "\2713";
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: $white;
+}
+
+/* 체크됐을 때 배경색 변경 */
+.chk-img input[type="checkbox"]:checked + label {
+  background-color: $blue;
 }
 
 .all-agree {
@@ -135,6 +165,11 @@
   color: $white;
   font-weight: bolder;
   margin-top: 15px;
+}
+
+.next-btn-blue {
+  background-color: $blue;
+  color: white;
 }
 
 .single-box.clicked {

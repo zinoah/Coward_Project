@@ -40,10 +40,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <h2 class="visually-hidden">메뉴</h2>
 
       <ul class="menubar-list">
-        <li class="menubar-item"><a href="#">공모전</a></li>
-        <li class="menubar-item"><a href="#">개발자 찾기</a></li>
+        <li class="menubar-item">
+          <a href="${contextPath}/contest/main">공모전</a>
+        </li>
+        <li class="menubar-item">
+          <a href="${contextPath}/member/findDev">개발자 찾기</a>
+        </li>
         <li class="menubar-item"><a href="#">가격 안내</a></li>
-        <li class="menubar-item"><a href="#">이벤트</a></li>
+        <li class="menubar-item">
+          <a href="${contextPath}/event/main">이벤트</a>
+        </li>
       </ul>
     </nav>
   </header>

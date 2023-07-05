@@ -128,7 +128,6 @@ public class ContestDAO {
 		return sqlSession.selectList("contestMapper.getRecommendList", typeNo);
 	}
 
-
 	/**
 	 * 북마크 카운트 DAO
 	 * 
@@ -147,4 +146,23 @@ public class ContestDAO {
 		return result;
 
 	}
+
+	/**
+	 * 공모전 참가 DAO
+	 * 
+	 * @param paramMap
+	 * @return
+	 */
+	public int contestAttendForm(Map<String, Object> paramMap) {
+
+		int result = sqlSession.insert("contestAttendMapper.contestAttend", paramMap);
+
+		if (result > 0) {
+			sqlSession.update("memberMapper.attendCountUp", paramMap);
+		}
+
+		return result;
+
+	}
+
 }

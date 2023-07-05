@@ -28,34 +28,34 @@ public class MyPageServiceImpl implements MyPageService {
 	@Override
 	public int updateInfo(Map<String, Object> paramMap) throws IOException {
 		// 자주쓰는 값 변수에 저장
-				MultipartFile uploadImage = (MultipartFile) paramMap.get("uploadImage");
-				String delete = (String) paramMap.get("delete");// "0" (변경) / "1" (삭제)
+		MultipartFile uploadImage = (MultipartFile) paramMap.get("uploadImage");
+		String delete = (String) paramMap.get("delete");// "0" (변경) / "1" (삭제)
 
-				// 프로필 삭제 여부 확인
-				// 삭제가 아닌 경우는 새이미질 변경
-				// 삭제된 경우 Null 값을 준비(DB에 Update)
+		// 프로필 삭제 여부 확인
+		// 삭제가 아닌 경우는 새이미질 변경
+		// 삭제된 경우 Null 값을 준비(DB에 Update)
 
-				String renameImg = null; // 변경된 파일명 저장
+		String renameImg = null; // 변경된 파일명 저장
 
-				if (delete.equals("0")) { // 이미지가 변경된 경우
-					// 파일명 변경
-					renameImg = Util.fileRename(uploadImage.getOriginalFilename());
-					paramMap.put("profileImg", paramMap.get("webPath") + renameImg);
+		if (delete.equals("0")) { // 이미지가 변경된 경우
+			// 파일명 변경
+			renameImg = Util.fileRename(uploadImage.getOriginalFilename());
+			paramMap.put("profileImg", paramMap.get("webPath") + renameImg);
 
-				} else {
-					paramMap.put("profileImg", null);
-				}
+		} else {
+			paramMap.put("profileImg", null);
+		}
 
-				// DAO를 호출해서 프로필 이미지 수정
-				int result = dao.updateInfo(paramMap);
+		// DAO를 호출해서 프로필 이미지 수정
+		int result = dao.updateInfo(paramMap);
 
-				// DB 수정 성공 시 메모리에 임시 저장되어있는 파일을 서버에 저장
-				if (result > 0 && paramMap.get("profileImg") != null) {
-					uploadImage.transferTo(new File(paramMap.get("folderPath") + renameImg));
-					// transferTo() : 해당 파일을 지정된 경로+이름으로 저장
-				}
+		// DB 수정 성공 시 메모리에 임시 저장되어있는 파일을 서버에 저장
+		if (result > 0 && paramMap.get("profileImg") != null) {
+			uploadImage.transferTo(new File(paramMap.get("folderPath") + renameImg));
+			// transferTo() : 해당 파일을 지정된 경로+이름으로 저장
+		}
 
-				return result;
+		return result;
 
 	}
 
@@ -120,6 +120,7 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	// 상태별 공모전 조회
+	@Override
 	public List<Contest> getContestList(String conStatus, int memberNo) {
 
 		logger.info("Received conStatus Serviceimpl: " + conStatus);
@@ -132,13 +133,14 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	// 관심있는 개발자 목록 조회
-
+	@Override
 	public List<Member> developerLikeList(int memberNo) {
 
 		logger.info("마이페이지 ServiceImpl");
 		logger.info("memberNo :" + memberNo);
 
 		return dao.developerLikeList(memberNo);
+
 	}
 
 }

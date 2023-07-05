@@ -24,7 +24,33 @@
 		<result property="winner" 	column="WINNER"/>
 		<result property="conStatus" 	column="CON_STATUS"/>
 		<result property="bookmarkCount" column="BOOKMARK_COUNT"/>
+		<result property="attendCount" column="ATTEND_COUNT"/>
 	</resultMap>
+	
+		  <resultMap type="member" id="member_rm">
+		<id property="memberNo" 		column="MEMBER_NO"/>
+		<result property="memberType" 		column="MEMBER_TYPE"/>
+		<result property="memberId" 	column="MEMBER_ID"/>
+		<result property="memberPw" 		column="MEMBER_PW"/>
+		<result property="memberNick" 	column="MEMBER_NICK"/>
+		<result property="profileImg" 	column="PROFILE_IMG"/>
+		<result property="phone" 		column="PHONE"/>
+		<result property="regionNo" 	column="REGION_NO"/>
+		<result property="stack" 	column="STACK"/>
+		<result property="stack"    column="SKILL"/>
+		<result property="slogan" 	column="SLOGAN"/>
+		<result property="introduce" 	column="INTRODUCE"/>
+		<result property="totalPrice" 	column="TOTAL_PRICE"/>
+		<result property="currPrice" 	column="CURR_PRICE"/>
+		<result property="enrollDate" 	column="ENROLL_DATE"/>
+		<result property="secessionFlag" 	column="SECESSION_FL"/>
+		<result property="termsFlag" 	column="TERMS_FL"/>
+		<result property="snsFlag" 	column="SNS_FL"/>
+		
+		<result property="likeCount" 	column="LIKE_COUNT"/>
+		<result property="victoryCount" 	column="VICTORY_COUNT"/>
+	 </resultMap>
+	
   
 	<!-- 공모전 전체 조회  -->
 	<select id="getAllContestList" resultMap="contest_rm">
@@ -68,8 +94,7 @@
 		THUMBNAIL
 		FROM CONTEST
 		WHERE CON_STATUS = '모집중'
-		AND TRUNC(END_DATE -
-		CREATE_DATE) > 0
+		AND TRUNC(END_DATE - CREATE_DATE) > 0
 		OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 	</select>
 
@@ -123,7 +148,10 @@
 		c.SKILL, PRICE, THUMBNAIL, c.AD_NO, ad.AD_TYPE AS AD_TYPE, CON_STATUS,
 		(SELECT COUNT(*)
 		FROM LIKE_CON lc
-		WHERE CONTEST_NO = ${contestNo}) AS BOOKMARK_COUNT
+		WHERE CONTEST_NO = ${contestNo}) AS BOOKMARK_COUNT,
+		(SELECT COUNT(*)
+		FROM CONTEST_ATTEND 
+		WHERE CONTEST_NO = ${contestNo}) AS ATTEND_COUNT
 		FROM CONTEST c,
 		MEMBER m , AD ad
 		WHERE c.MEMBER_NO = m.MEMBER_NO
@@ -131,6 +159,8 @@
 		AND CONTEST_NO = ${contestNo}
 	</select>
 
+
+	<!-- 북마크 카운트  -->
 	<insert id="bookmarkCount" parameterType="contest">
 		<selectKey keyProperty="bookmarkCount" resultType="_int" order="BEFORE">
 			SELECT COUNT(*) AS BOOKMARK_COUNT
@@ -146,4 +176,11 @@
 	FROM CONTEST
 	WHERE TYPE_NO = #{typeNo}
 </select>
+
+ <!-- 우승자 선정 페이지에서 참가자 리스트 불러오기 -->
+ <select id = "selectWinnerList" resultMap="member_rm">
+ 
+ </select>
+ 
+ 
 </mapper>

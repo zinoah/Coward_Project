@@ -1,5 +1,4 @@
 @import "./main";
-
 // 수정 - 현재 비밀번호 확인
 .pw {
   &-change {
@@ -7,11 +6,8 @@
     font-weight: 600;
   }
 
-  &-change-box {
-  }
-
   &-change-box2 {
-    //display: none;
+    display: none;
   }
 
   &-input-title {

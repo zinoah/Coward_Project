@@ -16,6 +16,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
     />
+
     <title>Cowrad | 콘테스트 브리핑</title>
   </head>
   <body>
@@ -91,17 +92,43 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                   <div>
                     <p>지원자</p>
-                    <!-- FIXME: 여기 -->
-                    <p>40명</p>
+                    <p>${contest.attendCount} 명</p>
                   </div>
                 </div>
                 <div class="contest-briefing-content-box-button lg-hidden">
-                  <a
-                    href="$../attendAgree/{contest.contestNo}"
-                    class="btn-primary btn-primary contest-briefing-content-box-button-join"
-                  >
-                    공모전 참가하기
-                  </a>
+                  <c:choose>
+                    <c:when test="${empty sessionScope.loginMember}">
+                      <a
+                        class="contest-briefing-content-box-button-join"
+                        id="c-type-button"
+                      >
+                        로그인 후 이용하세요
+                      </a>
+                    </c:when>
+                    <c:otherwise>
+                      <c:choose>
+                        <c:when
+                          test="${sessionScope.loginMember.memberType == 'C'}"
+                        >
+                          <a
+                            class="contest-briefing-content-box-button-join"
+                            id="c-type-button"
+                          >
+                            개인회원으로 로그인 하세요
+                          </a>
+                        </c:when>
+                        <c:otherwise>
+                          <a
+                            href="../attendAgree/${contest.contestNo}"
+                            class="btn-primary contest-briefing-content-box-button-join"
+                          >
+                            공모전 참가하기
+                          </a>
+                        </c:otherwise>
+                      </c:choose>
+                    </c:otherwise>
+                  </c:choose>
+
                   <button
                     class="btn-outlined contest-briefing-content-box-button-bookmark"
                     type="button"
@@ -193,8 +220,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                   <div>
                     <p>지원자</p>
-                    <!-- FIXME: 지원서 기능 구현후 뿌려줄 예정  -->
-                    <p>40 명</p>
+                    <p>${contest.attendCount} 명</p>
                   </div>
                 </div>
                 <div class="contest-briefing-sticky-box-info">
@@ -219,12 +245,39 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                 </div>
                 <div class="contest-briefing-sticky-box-button">
-                  <a
-                    href="../attendAgree/${contest.contestNo}"
-                    class="btn-primary btn-primary contest-briefing-content-box-button-join"
-                  >
-                    공모전 참가하기
-                  </a>
+                  <c:choose>
+                    <c:when test="${empty sessionScope.loginMember}">
+                      <a
+                        class="contest-briefing-content-box-button-join"
+                        id="c-type-button"
+                      >
+                        로그인 후 이용하세요
+                      </a>
+                    </c:when>
+                    <c:otherwise>
+                      <c:choose>
+                        <c:when
+                          test="${sessionScope.loginMember.memberType == 'C'}"
+                        >
+                          <a
+                            class="contest-briefing-content-box-button-join"
+                            id="c-type-button"
+                          >
+                            개인회원으로 로그인 하세요
+                          </a>
+                        </c:when>
+                        <c:otherwise>
+                          <a
+                            href="../attendAgree/${contest.contestNo}"
+                            class="btn-primary contest-briefing-content-box-button-join"
+                          >
+                            공모전 참가하기
+                          </a>
+                        </c:otherwise>
+                      </c:choose>
+                    </c:otherwise>
+                  </c:choose>
+
                   <button
                     class="btn-outlined contest-briefing-sticky-box-button-bookmark"
                     type="button"
