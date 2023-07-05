@@ -84,22 +84,12 @@ public class MyPageController {
 
 
 
-	// 마이페이지(메인)
-	// 회원 정보 조회
-	@GetMapping("/info/${memberNo}")
-	public String info(@PathVariable("contestNo") int memberNo, Model model) {
-		
-		Member member = service.mypageInfo(memberNo);
-		
-		String[] temp = member.getSkill().split(",");
-		
-		List<String> skillList = Arrays.asList(temp);
-		
-		model.addAttribute("member", member);
-		model.addAttribute("skillList", skillList);
-		
-		return "mypage/person-main";
-	}
+	   // 마이페이지(메인)
+	   // 회원 정보 조회
+	   @GetMapping("/info")
+	   public String info() {
+	      return "mypage/person-main";
+	   }
 	
 	// 기업 마이페이지 프로필수정 이동
 	@GetMapping("/companyProfile")
