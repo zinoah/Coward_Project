@@ -155,7 +155,7 @@ slider.oninput = function () {
 // 맞춤 콘테스트 정보 조회(AJAX)
 nextBtn3.addEventListener("click", function () {
   const typeNo = document.getElementById("typeNo");
-  const div = document.getElementById("result1");
+  const div = document.querySelector(".contest-slider");
 
   $.ajax({
     url: "recommend",
