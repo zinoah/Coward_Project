@@ -81,20 +81,8 @@ public class MyPageController {
 
 	}
 
-	// 기업 마이페이지 공모전관리 이동
-	@GetMapping("/companyManagement")
-	public String companyManagement() {
-		return "mypage/mypage-company-management";
-	}
 
-	// 기업 마이페이지 프로필수정 이동
 
-	@GetMapping("/companyProfile")
-	public String companyProfile() {
-
-		return "mypage/mypage-company-editProfile";
-
-	}
 
 	// 마이페이지(메인)
 	// 회원 정보 조회
@@ -111,6 +99,14 @@ public class MyPageController {
 		model.addAttribute("skillList", skillList);
 		
 		return "mypage/person-main";
+	}
+	
+	// 기업 마이페이지 프로필수정 이동
+	@GetMapping("/companyProfile")
+	public String companyProfile() {
+
+		return "mypage/mypage-company-editProfile";
+
 	}
 
 
@@ -243,22 +239,7 @@ public class MyPageController {
 
 	}
 
-	// 기업 마이페이지 내 공모전 관리
-	@ResponseBody
-	@PostMapping("/companyManagement")
-	public String getContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
 
-		logger.info("컨트롤러 수행");
-		logger.info("Received conStatus: " + conStatus);
-
-		int memberNo = loginMember.getMemberNo();
-
-		List<Contest> getContestList = service.getContestList(conStatus, memberNo);
-
-		logger.info("getContestList() 메서드 실행 결과: " + getContestList);
-
-		return new Gson().toJson(getContestList);
-	}
 
 	// 기업 마이페이지 메인(공모전 관리 조회)
 	@ResponseBody
@@ -277,4 +258,45 @@ public class MyPageController {
 		return new Gson().toJson(mainContestList);
 	}
 
+	
+	
+	
+	
+	
+	// Note: 기업 마이페이지 슬라이더  
+
+	// 기업 마이페이지 공모전관리 이동
+	@GetMapping("/companyManagement")
+	public String companyManagement(@ModelAttribute("loginMember") Member loginMember, Model model) {
+		
+		int memberNo = loginMember.getMemberNo();
+		
+		List<Contest> contestList = service.getContestList("전체", memberNo);
+		
+		model.addAttribute("contestList", contestList);
+		
+		return "mypage/mypage-company-management";
+	}
+
+	
+	// 기업 마이페이지 내 공모전 관리
+	@ResponseBody
+	@PostMapping("/companyManagement")
+	public List<Contest> getContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
+
+		logger.info("컨트롤러 수행");
+		logger.info("Received conStatus: " + conStatus);
+
+		int memberNo = loginMember.getMemberNo();
+
+		List<Contest> contestList = service.getContestList(conStatus, memberNo);
+
+		for(Contest c : contestList) {
+			System.out.println(c);
+		}
+
+		return contestList;
+	}
+	
+	
 }

@@ -110,16 +110,32 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           name="conStatus"
                           value=""
                         />
-                        <button class="btn-32 btn-secondary" id="all">
+                        <button
+                          class="btn-32 btn-secondary filterBtn"
+                          id="all"
+                          data-parameter="전체"
+                        >
                           전체
                         </button>
-                        <button class="btn-32 btn-secondary" id="recruiting">
+                        <button
+                          class="btn-32 btn-secondary filterBtn"
+                          id="recruiting"
+                          data-parameter="모집중"
+                        >
                           모집중
                         </button>
-                        <button class="btn-32 btn-secondary" id="casting">
+                        <button
+                          class="btn-32 btn-secondary filterBtn"
+                          id="casting"
+                          data-parameter="심사중"
+                        >
                           심사중
                         </button>
-                        <button class="btn-32 btn-secondary" id="end">
+                        <button
+                          class="btn-32 btn-secondary filterBtn"
+                          id="end"
+                          data-parameter="완료"
+                        >
                           완료
                         </button>
                       </div>
@@ -129,7 +145,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="col-sm-4">
                         <div class="slider-wrapper">
                           <div class="contest-slider" id="contest-slider">
-                            <c:forEach var="contest" items="${getContestList}">
+                            <c:forEach var="contest" items="${contestList}">
                               <div>
                                 <div class="contest-slider-card">
                                   <div class="contest-slider-card-img">
@@ -139,19 +155,34 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                   </div>
                                   <div class="contest-slider-card-info">
                                     <div class="contest-slider-card-info-title">
+                                      <<<<<<< HEAD
                                       <p>test</p>
+                                      =======
+                                      <p>${contest.contestTitle}</p>
+                                      >>>>>>>
+                                      52fb4ec93def9d93bcfbd1404f197ab51df43d71
                                     </div>
                                     <div
                                       class="contest-slider-card-info-detail"
                                     >
                                       <p>상금</p>
+                                      <<<<<<< HEAD
                                       <p>0만원</p>
+                                      =======
+                                      <p>${contest.price}만원</p>
+                                      >>>>>>>
+                                      52fb4ec93def9d93bcfbd1404f197ab51df43d71
                                     </div>
                                     <div
                                       class="contest-slider-card-info-detail"
                                     >
                                       <p>남은기간</p>
+                                      <<<<<<< HEAD
                                       <p>0일</p>
+                                      =======
+                                      <p>${contest.dueDate}일</p>
+                                      >>>>>>>
+                                      52fb4ec93def9d93bcfbd1404f197ab51df43d71
                                     </div>
                                     <div
                                       class="contest-slider-card-info-button"
@@ -201,6 +232,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/mypage-slider.js"></script>
+    <script>
+      const contextPath = "${contextPath}";
+    </script>
     <script src="${contextPath}/resources/js/mypage-company-management.js"></script>
   </body>
 </html>
