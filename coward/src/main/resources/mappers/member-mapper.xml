@@ -71,7 +71,14 @@
 	<update id="secession">
 		UPDATE MEMBER SET
 		SECESSION_FL = 'Y'
-		WHERE MEMBER_NO = ${memberNo};
+		WHERE MEMBER_NO = ${memberNo}
+	</update>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="changePw">
+		UPDATE MEMBER SET
+		MEMBER_PW = #{newPw}
+		WHERE MEMBER_NO = #{memberNo}
 	</update>
 	 
 	

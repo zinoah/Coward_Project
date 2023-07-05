@@ -49,6 +49,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     >
                   </c:when>
                 </c:choose>
+                <a href="${contextPath}/member/logout">
+                  <i class="ic-logout"></i>
+                </a>
                 <button class="header-user-image">
                   <i class="ic-bell"></i>
                 </button>

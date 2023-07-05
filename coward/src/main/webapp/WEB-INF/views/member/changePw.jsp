@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -6,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="/coward/src/main/webapp/resources/styles/css/mypage-main-mem.css"
+      href="${contextPath}/resources/styles/css/mypage-main-mem.css"
     />
-    <link rel="stylesheet" href="../styles/css/pw-change.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/styles/css/pw-change.css" />
     <title>Coward | 비밀번호 변경</title>
   </head>
   <body>
@@ -22,7 +26,7 @@
                 <h1 class="logo">
                   <a href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                      src="${contextPath}/resources/assets/images/home_logo.svg"
                       alt="Coward"
                     />
                   </a>
@@ -48,10 +52,10 @@
                     <i class="ic-search"></i>
                   </button>
                   <button class="header-button-text" type="button">
-                    <a href="#">로그인</a>
+                    <a href="${contextPath}/member/login">로그인</a>
                   </button>
                   <button class="header-button-text" type="button">
-                    <a href="#">회원가입</a>
+                    <a href="${contextPath}/member/join"">회원가입</a>
                   </button>
                 </div>
                 <!-- Note: 로그인을 한 경우 -->
@@ -101,7 +105,7 @@
     <!-- web-box 중앙 배치 위해 -->
     <div class="full">
       <div class="banner-top sm-hidden">
-        <img src="../assets/images/mypage-banner.png" />
+        <img src="${contextPath}/resources/assets/images/mypage-banner.png" />
       </div>
 
       <!-- 웹 페이지 -->
@@ -120,7 +124,7 @@
                     <div class="profile lg-only">
                       <div class="profile-img avatar">
                         <img
-                          src="/coward/src/main/webapp/resources/assets/images/default-user-img.png"
+                          src="${contextPath}/resources/assets/images/default-user-img.png"
                         />
                       </div>
                       <div class="profile-info">
@@ -154,51 +158,57 @@
                       <span class="pw-change">비밀번호 변경</span>
                       <hr class="line" />
                     </div>
-                    <div class="pw-change-wrapper">
-                      <div class="pw-change-box">
-                        <span class="pw-input-title">현재 비밀번호</span>
-                        <div class="input-bundle">
-                          <input
-                            class="pw-input"
-                            id="current-pw"
-                            type="password"
-                            placeholder="현재 비밀번호를 입력해주세요!"
-                          />
-                          <i class="ic-eye-close"></i>
+                    <form action="changePw" method="POST" name="myPage-form" onsubmit="return changePwValidate()">
+                      <div class="pw-change-wrapper">
+                        <div class="pw-change-box">
+                          <span class="pw-input-title">현재 비밀번호</span>
+                          <div class="input-bundle">
+                            <input
+                              class="pw-input"
+                              id="current-pw"
+                              type="password"
+                              name="currentPw"
+                              placeholder="현재 비밀번호를 입력해주세요!"
+                            />
+                            <i class="ic-eye-close"></i>
+                          </div>
+                          <button type="button" class="next-btn">다음</button>
                         </div>
-                        <button class="next-btn">다음</button>
                       </div>
-                    </div>
-                    <!-- 비밀번호 변경 -->
-                    <div class="pw-change-wrapper">
-                      <div class="pw-change-box2">
-                        <div>
-                          <span class="pw-input-title">비밀번호</span>
+                      <!-- 비밀번호 변경 -->
+                      <div class="pw-change-wrapper">
+                        <div class="pw-change-box2">
+                          <div>
+                            <span class="pw-input-title">비밀번호</span>
+                            <span class="validation"></span>
+                          </div>
+                          <div class="input-bundle">
+                            <input
+                              class="pw-input"
+                              id="change-pw"
+                              type="password"
+                              name="newPw"
+                              placeholder="8자리 이상, 대소문자 포함"
+                            />
+                            <i class="ic-eye-close"></i>
+                          </div>
+                          <span class="pw-input-title">비밀번호 확인</span>
                           <span class="validation"></span>
+                          <div class="input-bundle">
+                            <input
+                              class="pw-input"
+                              id="change-pw-chk"
+                              name="newPwConfirm"
+                              type="password"
+                              placeholder="현재 비밀번호를 입력해주세요!"
+                            />
+                            <i class="ic-eye-close"></i>
+                          </div>
+                          <button class="next-btn">다음</button>
                         </div>
-                        <div class="input-bundle">
-                          <input
-                            class="pw-input"
-                            id="change-pw"
-                            type="password"
-                            placeholder="8자리 이상, 대소문자 포함"
-                          />
-                          <i class="ic-eye-close"></i>
-                        </div>
-                        <span class="pw-input-title">비밀번호 확인</span>
-                        <span class="validation"></span>
-                        <div class="input-bundle">
-                          <input
-                            class="pw-input"
-                            id="change-pw-chk"
-                            type="password"
-                            placeholder="현재 비밀번호를 입력해주세요!"
-                          />
-                          <i class="ic-eye-close"></i>
-                        </div>
-                        <button class="next-btn">다음</button>
                       </div>
-                    </div>
+                    </form>
+                  
 
                     <!-- 본문 끝 -->
                   </div>
@@ -217,7 +227,7 @@
             <h1 class="logo">
               <a href="#">
                 <img
-                  src="/coward/src/main/webapp/resources/assets/images/home_logo.svg"
+                  src="${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
                 />
               </a>
@@ -269,18 +279,18 @@
                 <div class="icon-link">
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/github.png"
+                      src="${contextPath}/resources/assets/images/github.png"
                       alt="Github 바로가기"
                   /></a>
                   <a class="icon-link-item" href="#">
                     <img
-                      src="/coward/src/main/webapp/resources/assets/images/notion.png"
+                      src="${contextPath}/resources/assets/images/notion.png"
                       alt="Notion 바로가기"
                     />
                   </a>
                   <a class="icon-link-item" href="#"
                     ><img
-                      src="/coward/src/main/webapp/resources/assets/images/figma.png"
+                      src="${contextPath}/resources/assets/images/figma.png"
                       alt="Figma 바로가기"
                   /></a>
                 </div>
@@ -306,7 +316,7 @@
     </footer>
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="/coward/src/main/webapp/resources/js/mypage-slider.js"></script>
-    <script src="/coward/src/main/webapp/resources/js/pw-change.js"></script>
+    <script src="${contextPath}/resources/js/mypage-slider.js"></script>
+    <script src="${contextPath}/resources/js/pw-change.js"></script>
   </body>
 </html>
