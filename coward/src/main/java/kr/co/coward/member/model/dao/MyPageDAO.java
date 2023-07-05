@@ -38,11 +38,11 @@ public class MyPageDAO<Contest> {
 	}
 
 	// 공모전 상태별 조회 DAO
-	public List<Contest> getContestList(String type, int memberNo) {
+	public List<Contest> getContestList(String conStatus, int memberNo) {
 
 		String mapperPath = null;
 
-		switch (type) {
+		switch (conStatus) {
 		case "전체":
 			mapperPath = "myPageMapper.getAllContestList";
 			break;
@@ -52,7 +52,6 @@ public class MyPageDAO<Contest> {
 		case "심사중":
 			mapperPath = "myPageMapper.getCastingContestList";
 			break;
-
 		case "완료":
 			mapperPath = "myPageMapper.getEndContestList";
 			break;
