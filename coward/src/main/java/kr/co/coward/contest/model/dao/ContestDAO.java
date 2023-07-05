@@ -155,6 +155,13 @@ public class ContestDAO {
 	 */
 	public int contestAttendForm(Map<String, Object> paramMap) {
 
-		return sqlSession.insert("contestAttendMapper.contestAttend", paramMap);
+		int result = sqlSession.insert("contestAttendMapper.contestAttend", paramMap);
+
+		if (result > 0) {
+			sqlSession.update("memberMapper.attendCountUp", paramMap);
+		}
+
+		return result;
+
 	}
 }
