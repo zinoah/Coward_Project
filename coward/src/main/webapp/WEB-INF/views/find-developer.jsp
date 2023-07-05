@@ -9,6 +9,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="${contextPath}/resources/styles/css/find-developer.css"
     />
     <title>Coward | 개발자 찾기</title>
@@ -45,7 +49,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="row">
           <div class="stack-box">
             <div class="stack-btn">
-              <input id="all" type="radio" name="userStack" value="all"  checked />
+              <input
+                id="all"
+                type="radio"
+                name="userStack"
+                value="all"
+                checked
+              />
               <label for="all">ALL</label>
             </div>
 
@@ -66,69 +76,86 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
         </div>
 
-        <div class="row">
-        <c:forEach var="devList" items="${devList}">
-          <div class="col-sm-4 col-md-6 col-lg-4">
-          <form id="cr-form" method="POST" action="${contextPath}/chat/openChatRoom">
-            <div class="developer-card">
-           
-              <div class="developer-profile">
-                <div class="developer-img">
-                  <div class="profile-img avatar">
-                   <img
-                          src="${contextPath}/${devList.profileImg}"
-                         
-                        />
+        <div id="devListRow" class="row">
+          <c:forEach var="devList" items="${devList}">
+            <div class="col-sm-4 col-md-6 col-lg-4">
+              <form
+                id="cr-form"
+                method="POST"
+                action="${contextPath}/chat/openChatRoom"
+              >
+                <div class="developer-card">
+                  <div class="developer-profile">
+                    <div class="developer-img">
+                      <div class="profile-img avatar">
+                        <img src="${contextPath}/${devList.profileImg}" />
+                      </div>
+                    </div>
+
+                    <div class="developer-info">
+                      <div class="developer-title">
+                        <p class="developer-nick">${devList.memberNick}</p>
+                        <div class="developer-type">${devList.stack}</div>
+                      </div>
+                      <p class="developer-oneline">${devList.slogan}</p>
+                    </div>
+                  </div>
+                  <div class="developer-record">
+                    <div>
+                      <span>총 수익</span>
+                      <p>${devList.totalPrice}만원</p>
+                    </div>
+                    <div>
+                      <span>우승</span>
+                      <p>${devList.victoryCount}회</p>
+                    </div>
+
+                    <div>
+                      <span>총 참가</span>
+                      <p>${devList.attendCount}건</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="developer-chat-btn">
+                      <a
+                        class="profile-btn btn-primary btn-32"
+                        href="${contextPath}/mypage/info/${devList.memberNo}"
+                      >
+                        프로필 보기
+                      </a>
+
+                      <button type="submit" class="btn-primary btn-32">
+                        채팅 하기
+                      </button>
+                    </div>
+                    <button id="like-btn" class="like-btn">
+                      <label for="like-btn"
+                        ><i class="ic-like-filled"></i
+                      ></label>
+                    </button>
                   </div>
                 </div>
-                <div class="developer-info">
-                  <div class="developer-title">
-                    <p class="developer-nick">${devList.memberNick}</p>
-                    <div class="developer-type">${devList.stack}</div>
-                  </div>
-                  <p class="developer-oneline">${devList.slogan}</p>
-                </div>
-              </div>
-              <div class="developer-record">
-                <div>
-                  <span>총 수익</span>
-                  <p>${devList.totalPrice}만원</p>
-                </div>
-                <div>
-                  <span>우승</span>
-                  <p>${devList.victoryCount}회</p>
-                </div>
-
-                <div>
-                  <span>총 참가</span>
-                  <p>12건</p>
-                </div>
-              </div>
-
-              <div>
-                <div class="developer-chat-btn">
-                  <a class="profile-btn btn-primary btn-32" href="${contextPath}/mypage/info/${devList.memberNo}">
-                    프로필 보기
-                  </a>
-                  
-                  <button type="submit" class="btn-primary btn-32">채팅 하기</button>
-                 
-                </div>
-                <button id="like-btn" class="like-btn" />
-                <label for="like-btn"><i class="ic-like-filled"></i></label>
-              </div>
-              
+              </form>
             </div>
-            </form>
-          </div>
           </c:forEach>
-         
         </div>
+        <div class="target"></div>
       </div>
     </main>
     <!-- 푸터 -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
-    <script src="../js/mypage-slider.js"></script>
-    <script src="${contextPath}/resources/js/slider.js"></script>
+
+    <!-- jQuery 라이브러리 추가 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const contextPath = "${contextPath}";
+    </script>
+    <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
 </html>

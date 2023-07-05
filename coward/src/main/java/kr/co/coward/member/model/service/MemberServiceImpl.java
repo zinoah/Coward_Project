@@ -242,8 +242,8 @@ public class MemberServiceImpl implements MemberService {
     * 개발자 목록 조회 ServiceImpl
     */
 	@Override
-	public List<Member> getFindDevPage(int pageSize) {
-	   return dao.getDevList(pageSize);
+	public List<Member> getFindDevPage(int pageSize, int offset) {
+	   return dao.getDevList(pageSize, offset);
 	}
 
 	
