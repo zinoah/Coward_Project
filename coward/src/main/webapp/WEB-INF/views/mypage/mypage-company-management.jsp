@@ -155,34 +155,23 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                   </div>
                                   <div class="contest-slider-card-info">
                                     <div class="contest-slider-card-info-title">
-                                      <<<<<<< HEAD
-                                      <p>test</p>
-                                      =======
+                                    
                                       <p>${contest.contestTitle}</p>
-                                      >>>>>>>
-                                      52fb4ec93def9d93bcfbd1404f197ab51df43d71
+             
                                     </div>
                                     <div
                                       class="contest-slider-card-info-detail"
                                     >
-                                      <p>상금</p>
-                                      <<<<<<< HEAD
-                                      <p>0만원</p>
-                                      =======
+                               
                                       <p>${contest.price}만원</p>
-                                      >>>>>>>
-                                      52fb4ec93def9d93bcfbd1404f197ab51df43d71
+                                   
                                     </div>
                                     <div
                                       class="contest-slider-card-info-detail"
                                     >
-                                      <p>남은기간</p>
-                                      <<<<<<< HEAD
-                                      <p>0일</p>
-                                      =======
+
                                       <p>${contest.dueDate}일</p>
-                                      >>>>>>>
-                                      52fb4ec93def9d93bcfbd1404f197ab51df43d71
+                      
                                     </div>
                                     <div
                                       class="contest-slider-card-info-button"
