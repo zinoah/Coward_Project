@@ -47,12 +47,28 @@ const rowDiv = document.getElementById("devListRow");
 /** 무한스크롤 페이징 기법용 변수 */
 let page = 3;
 
+let filter = "";
+
+// Note: 개발자 찾기 필터링
+const stackButtons = document.querySelectorAll(".stack-btn");
+
+stackButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    filter = this.querySelector('input[name="userStack"]').value;
+
+    page = 0;
+    rowDiv.innerHTML = "";
+
+    getDevAjax(filter);
+  });
+});
+
 // Note: developer 요청 Ajax
-function getDevAjax() {
+function getDevAjax(filter) {
   $.ajax({
     url: "findDev",
     type: "POST",
-    data: { page: page },
+    data: { page: page, filter: filter },
     dataType: "json",
     success: function (devList) {
       devList.forEach((dev) => {
@@ -71,7 +87,7 @@ const observeIntersection = (target, callback) => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        callback();
+        callback(filter);
       }
     });
   });
@@ -140,7 +156,7 @@ const createDev = (dev) => {
   const recordSpan3 = document.createElement("span");
   recordSpan3.innerText = "총 참가";
   const recordP3 = document.createElement("p");
-  recordP3.innerText = dev.attendCound + "건";
+  recordP3.innerText = dev.attendCount + "건";
 
   const devChatBtnWrapper = document.createElement("div");
   const devleoperChatBtn = document.createElement("div");
@@ -325,7 +341,7 @@ function showDevAfterTwoSecond(dev) {
   setTimeout(() => {
     skeletons.forEach((sk) => (sk.style.display = "none"));
     newDev.forEach((nd) => (nd.style.display = "block"));
-  }, 1000);
+  }, 700);
 }
 
 observeIntersection(target, getDevAjax);

@@ -38,11 +38,9 @@ public interface MemberService {
 
 	// 회원 탈퇴
 	int secession(Member loginMember);
-	
+
 	// 비밀번호 변경
 	int changePw(Map<String, Object> paramMap);
-	
-
 
 	/**
 	 * 개발자 찾기 Service
@@ -50,6 +48,6 @@ public interface MemberService {
 	 * @param pageSize
 	 * @return
 	 */
-	List<Member> getFindDevPage(int pageSize, int offset);
+	List<Member> getFindDevPage(int pageSize, int offset, String filter);
 
 }
