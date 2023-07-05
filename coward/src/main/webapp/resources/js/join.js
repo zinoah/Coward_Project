@@ -23,22 +23,44 @@ const joinBox = document.querySelector(".join-display");
 const finalBox = document.querySelector(".join-final-display");
 
 nextBtn.addEventListener("click", function () {
-  finalBox.style.display = "block";
-  joinBox.style.display = "none";
+  // 개인/기업 선택 여부 확인
+  // clicked는 join-second.scss에 정의되어있음
+  const isPersonalSelected = singleBox.classList.contains("clicked");
+  const isCompanySelected = companyBox.classList.contains("clicked");
+
+  // 회원타입 선택하지 않은 경우 경고창 표시 + 페이지 이동 금지
+  if (!isPersonalSelected && !isCompanySelected) {
+    alert("회원 타입을 선택해주세요!");
+    return;
+  }
+
+  // 필수항목 다 체크 안했을 경우 경고표시 + 페이지 이동 금지
+  nextBtn.addEventListener("click", function () {
+    if (!allAgree.checked || (!agree1.checked && !agree2.checked)) {
+      alert("약관 필수 항목에 동의해주세요!");
+      return false;
+    }
+
+    finalBox.style.display = "block";
+    joinBox.style.display = "none";
+  });
 });
 
 // 개인 기업 박스 불들어오게하기
+// clicked는 join-second.scss에 정의되어있음
 var singleBox = document.querySelector(".single-box");
 var companyBox = document.querySelector(".company-box");
 
 singleBox.addEventListener("click", function () {
   singleBox.classList.toggle("clicked");
   companyBox.classList.remove("clicked");
+  updateNextBtnColor();
 });
 
 companyBox.addEventListener("click", function () {
   companyBox.classList.toggle("clicked");
   singleBox.classList.remove("clicked");
+  updateNextBtnColor();
 });
 
 // 개인, 기업 타입 얻어오기
@@ -47,7 +69,7 @@ function onMemberTypeClick(type) {
   memberType.value = type;
 }
 
-// 모달창 js
+// 모달창 띄우기
 const overlay = document.getElementById("overlay");
 
 const close1 = document.querySelector(".close1");
@@ -136,7 +158,7 @@ overlay.addEventListener("click", () => {
 
 // 이메일 유효성 + 중복 검사
 const memberEmail = document.getElementById("memberEmail");
-const emailMessage = document.querySelector("#emailMessage"); // 이메일 유효한지 텍스트 띄울공간
+const emailMessage = document.getElementById("emailMessage"); // 이메일 유효한지 텍스트 띄울공간
 
 memberEmail.addEventListener("input", function () {
   // 입력이 안됐을때
@@ -338,3 +360,76 @@ function checkPw() {
     pwMessage2.classList.remove("confirm");
   }
 }
+
+// allAgree 체크박스 요소 가져오기
+const allAgree = document.getElementById("allAgree");
+const agree1 = document.getElementById("agree-1");
+const agree2 = document.getElementById("agree-2");
+const agree3 = document.getElementById("agree-3");
+const checkboxes = document.querySelectorAll('[id^="agree-"]');
+
+allAgree.addEventListener("click", function () {
+  const checkboxes = document.querySelectorAll('[id^="agree-"]');
+  checkboxes.forEach((checkbox) => {
+    //agree-1, agree-2, agree-3의 체크 상태를 allAgree 체크 상태랑 맞춤
+    checkbox.checked = allAgree.checked;
+  });
+  updateNextBtnColor();
+});
+
+// 모두 동의 해제 하면 나머지 항목도 체크 해제
+allAgree.addEventListener("change", function () {
+  if (!allAgree.checked) {
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+  }
+});
+
+//
+
+// 회원 타입선택 + 모두동의하기 버튼눌렀거나 + 필수항목 눌렀으면 다음 버튼에 불들어오게 하기
+// updateNextBtnColor(); 이 함수를 개인, 기업 불들어오게 하기, 모두동의버튼 클릭에 추가
+function updateNextBtnColor() {
+  if (
+    ((singleBox.classList.contains("clicked") ||
+      companyBox.classList.contains("clicked")) &&
+      allAgree.checked) ||
+    (agree1.checked &&
+      agree2.checked &&
+      (singleBox.classList.contains("clicked") ||
+        companyBox.classList.contains("clicked")))
+  ) {
+    nextBtn.style.backgroundColor = "#3AACF8";
+  } else {
+    nextBtn.style.backgroundColor = ""; // 기본 버튼 색상으로 복원
+  }
+}
+agree1.addEventListener("change", updateNextBtnColor);
+agree2.addEventListener("change", updateNextBtnColor);
+
+// 타입선택 + 필수 항목2개 누르면 다음에 불들어오기
+function essentialAgree_updateNextBtnColor() {
+  if (
+    (singleBox.classList.contains("clicked") ||
+      companyBox.classList.contains("clicked")) &&
+    agree1.checked &&
+    agree2.checked
+  ) {
+    nextBtn.style.backgroundColor = "#3AACF8";
+  } else {
+    nextBtn.style.backgroundColor = "";
+  }
+
+  // 항목중 하나라도 해제 하면 모두 동의하기 체크 해제
+  var isAnyUnchecked = Array.from(checkboxes).some(
+    (checkbox) => !checkbox.checked
+  );
+  if (isAnyUnchecked) {
+    allAgree.checked = false;
+  }
+}
+
+agree1.addEventListener("change", essentialAgree_updateNextBtnColor);
+agree2.addEventListener("change", essentialAgree_updateNextBtnColor);
+agree3.addEventListener("change", essentialAgree_updateNextBtnColor);

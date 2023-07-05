@@ -117,14 +117,16 @@ public class ContestServiceImpl implements ContestService {
 
 		// XSS 방지 처리 + 개행문자 처리
 
-		String discription = (String) paramMap.get("discription");
+		String description = (String) paramMap.get("description");
 
 		ContestAttend attend = new ContestAttend();
 
-		attend.setDiscription(discription);
+		attend.setDescription(description);
 
-		paramMap.put("discription", Util.XSSHandling(attend.getDiscription()));
-		paramMap.put("discription", Util.newLineHandling(attend.getDiscription()));
+		System.out.println("간단설명 : " + description);
+
+		paramMap.put("description", Util.XSSHandling(attend.getDescription()));
+		paramMap.put("description", Util.newLineHandling(attend.getDescription()));
 
 		// 자주쓰는 값 변수에 저장
 		MultipartFile uploadFile = (MultipartFile) paramMap.get("pptFile");
@@ -137,10 +139,10 @@ public class ContestServiceImpl implements ContestService {
 			renameFile = Util.fileRename(uploadFile.getOriginalFilename());
 			// 20230422858583.png
 
-			paramMap.put("thumbnail", paramMap.get("webPath") + renameFile);
+			paramMap.put("pptFile", paramMap.get("webPath") + renameFile);
 			// /resources/image/memberProfile/20230422858583.png
 		} else {
-			paramMap.put("thumbnail", null);
+			paramMap.put("pptFile", null);
 		}
 
 		int result = dao.contestAttendForm(paramMap);

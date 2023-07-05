@@ -164,8 +164,7 @@ public class ContestController {
 	 * @return
 	 */
 	@GetMapping("/detail/{contestNo}")
-	public String contestDetail(@ModelAttribute("loginMember") Member loginMember,
-			@PathVariable("contestNo") int contestNo, Model model) {
+	public String contestDetail(@PathVariable("contestNo") int contestNo, Model model) {
 
 		Contest contest = service.contestDetail(contestNo);
 
@@ -175,7 +174,6 @@ public class ContestController {
 
 		model.addAttribute("contest", contest);
 		model.addAttribute("skillList", skillList);
-		model.addAttribute("loginMember", loginMember);
 
 		return "contest/contest-detail";
 	}
@@ -213,6 +211,8 @@ public class ContestController {
 
 	}
 
+	// 맞춤 공모전 페이지로 이동
+
 	@GetMapping("/recommend")
 	public String contestRecommend() {
 
@@ -243,6 +243,14 @@ public class ContestController {
 
 	}
 
+	// 공모전 우승자 선정 페이지로 이동
+
+	@GetMapping("/contestWinnerSelect")
+	public String contestManagement(@ModelAttribute("loginMember") Member loginMember, Model model) {
+
+		return "contest/contest-winnerSelect";
+	}
+
 	/**
 	 * 공모전 참가 동의페이지 이동
 	 * 
@@ -271,7 +279,6 @@ public class ContestController {
 		Contest contest = service.contestDetail(contestNo);
 
 		model.addAttribute("contest", contest);
-
 		return "contest/contest-attend-form";
 	}
 
@@ -293,6 +300,7 @@ public class ContestController {
 		paramMap.put("skill", skillList);
 		paramMap.put("pptFile", uploadFile);
 		paramMap.put("memberNo", loginMember.getMemberNo());
+		paramMap.put("attendCount", loginMember.getAttendCount());
 
 		int result = service.contestAttendForm(paramMap);
 

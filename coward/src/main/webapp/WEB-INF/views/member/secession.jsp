@@ -10,7 +10,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="${contextPath}/resources/styles/css//mypage-main-mem.css"
+      href="${contextPath}/resources/styles/css/mypage-main-mem.css"
     />
     <link rel="stylesheet" href="${contextPath}/resources/styles/css/member-secession.css" />
     <title>Coward | 회원 탈퇴</title>
@@ -24,7 +24,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="header-wrapper">
               <div class="header-left">
                 <h1 class="logo">
-                  <a href="#">
+                  <a href="${contextPath}/common/home">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       alt="Coward"
@@ -105,7 +105,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- web-box 중앙 배치 위해 -->
     <div class="full">
       <div class="banner-top sm-hidden">
-        <img src="../assets/images/mypage-banner.png" />
+        <img src="${contextPath}/resources/assets/images/mypage-banner.png" />
       </div>
 
       <!-- 웹 페이지 -->
@@ -138,7 +138,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <li><a href="#">공모전 관리</a></li>
                       <li><a href="#">크레딧 인출</a></li>
                       <li><a href="#">프로필 수정</a></li>
-                      <li><a href="#">회원 탈퇴</a></li>
+                      <li><a href="${contextPath}/member/changePw">비밀번호 변경</a></li>
+					  <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>
                     </ul>
                   </div>
                 </div>
@@ -161,20 +162,17 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
                     <div class="secession-wrapper">
                       <div class="secession-box">
-                      <form action="secession" method="POST" name="myPage-form" onsubmit="return secessionValidate()">
-                      	<span class="pw-input-title">현재 비밀번호</span>
+                        <span class="pw-input-title">현재 비밀번호</span>
                         <div class="input-bundle">
                           <input
                             class="pw-input"
                             id="current-pw"
-                            name="memberPw"
                             type="password"
                             placeholder="현재 비밀번호를 입력해주세요!"
                           />
                           <i class="ic-eye-close"></i>
                         </div>
-                        <button class="next-btn" id="secessionBtn">다음</button>
-                        </form>
+                        <button class="next-btn">다음</button>
                       </div>
                     </div>
                     <!-- 본문 끝 -->
@@ -194,7 +192,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <h1 class="logo">
               <a href="#">
                 <img
-                  src="${contextPath}/resources/assets/images/home_logo.svg"
+                  src="/${contextPath}/resources/assets/images/home_logo.svg"
                   alt="Coward"
                 />
               </a>
@@ -284,6 +282,5 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/mypage-slider.js"></script>
-    <script src="${contextPath}/resources/js/secession.js"></script>
   </body>
 </html>

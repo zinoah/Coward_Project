@@ -72,16 +72,14 @@
 }
 
 @include responsive(T) {
-  .secession {
-    &-wrapper {
-      @include flexbox;
-    }
+  .secession-wrapper {
+    @include flexbox;
+  }
 
-    &-box {
-      @include column-flexbox(center, start);
-      width: 370px;
-      height: 500px;
-    }
+  .current-pw-box {
+    @include column-flexbox(center, start);
+    width: 370px;
+    height: 500px;
   }
 
   .pw-input-title {

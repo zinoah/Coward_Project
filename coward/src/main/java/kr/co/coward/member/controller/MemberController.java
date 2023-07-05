@@ -1,6 +1,7 @@
 package kr.co.coward.member.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -68,19 +69,24 @@ public class MemberController {
 //	}
 
 	// 여기서부터 작업!
-	@PostMapping("/login")
-	public String login(@ModelAttribute Member inputMember, Model model, RedirectAttributes ra,
-			HttpServletResponse resp, HttpServletRequest req,
-			@RequestParam(value = "saveId", required = false) String saveId) {
-
+	@PostMapping("/login") 
+	public String login( @ModelAttribute Member inputMember 
+			, Model model
+			, RedirectAttributes ra
+			, HttpServletResponse resp 
+			, HttpServletRequest req
+			, HttpSession session
+			, @RequestParam(value="saveId", required = false) String saveId) {
+		
 		logger.info("로그인 기능 수행됨");
 		System.out.println(inputMember.toString());
-
-		Member loginMember = service.login(inputMember);
-
-		if (loginMember != null) {
-			model.addAttribute("loginMember", loginMember);
-
+		
+		Member loginMember = service.login(inputMember);       
+		
+		
+		if(loginMember != null) {
+			session.setAttribute("loginMember", loginMember);
+			
 			// 로그인 성공했을 때 쿠키생성하기
 			Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
 
@@ -246,5 +252,62 @@ public class MemberController {
 	public String terms() {
 		return "terms";
 	}
+
+	//로그아웃
+	@GetMapping("/logout")
+	public String logout(SessionStatus status) {
+		
+		logger.info("로그아웃 수행됨");
+		
+		status.setComplete(); 
+		
+		return "redirect:/"; 
+		
+	}
+	
+	// 비밀번호 변경 페이지 이동
+	@GetMapping("/changePw")
+	public String changePw() {
+		return "member/changePw";
+	}
+	
+	// 비밀번호 변경
+	@PostMapping("/changePw")
+	public String changePw(@RequestParam Map<String, Object> paramMap,
+						   @ModelAttribute("loginMember") Member loginMember,
+						   HttpSession session,
+						   RedirectAttributes ra) {
+		
+		  	loginMember = (Member) session.getAttribute("loginMember");
+		    if (loginMember == null) {
+		        // 로그인되지 않은 상태로 비밀번호 변경 페이지에 접근한 경우 처리
+		        // 적절한 경로로 리다이렉트 또는 오류 메시지를 설정하여 처리할 수 있습니다.
+		        return "redirect:/login"; // 로그인 페이지로 리다이렉트
+		    }
+
+		    paramMap.put("memberNo", loginMember.getMemberNo());
+		
+		paramMap.put("memberNo", loginMember.getMemberNo());
+	
+		int result = service.changePw(paramMap);
+		
+		String message = null;
+		String path = null;
+		
+		if(result > 0) {
+			message = "비밀번호가 변경되었습니다.";
+			path = "common/main";
+			
+	        
+		}else {
+			message = "현재 비밀번호가 일치하지 않습니다.";
+			path = "changePw";
+		}
+		
+		ra.addFlashAttribute("message", message);
+		
+		return "redirect:" + path;
+  }
+	
 
 }

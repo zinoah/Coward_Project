@@ -13,7 +13,7 @@ public class ContestAttend {
 	private int attendNo;
 	private int memberNo;
 	private int contestNo;
-	private String discription;
+	private String description;
 	private String githubAddress;
 	private String pptFile;
 	private String skill;

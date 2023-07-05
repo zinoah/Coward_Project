@@ -76,7 +76,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           >프로필 수정</a
                         >
                       </li>
-                      <li><a href="#">회원 탈퇴</a></li>
+                      <li><a href="${contextPath}/member/changePw">비밀번호 변경</a></li>
+					  <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>
                     </ul>
                   </div>
                 </div>
@@ -103,16 +104,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           name="conStatus"
                           value=""
                         />
-                        <button class="btn-32 btn-secondary" id="all" onclick="all()">
+                        <button class="btn-32 btn-secondary" id="all">
                           전체
                         </button>
-                        <button class="btn-32 btn-secondary" id="recruiting" onclick="recruiting()">
+                        <button class="btn-32 btn-secondary" id="recruiting">
                           모집중
                         </button>
-                        <button class="btn-32 btn-secondary" id="casting" onclick="casting()">
+                        <button class="btn-32 btn-secondary" id="casting">
                           심사중
                         </button>
-                        <button class="btn-32 btn-secondary" id="end" onclick="end()">
+                        <button class="btn-32 btn-secondary" id="end">
                           완료
                         </button>
                       </div>
@@ -121,8 +122,201 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="row">
                       <div class="col-sm-4">
                         <div class="slider-wrapper">
-                          <div class="contest-slider">
-                            <div id="result1" style="width: 100%"></div>
+                          <div class="contest-slider" id="contest-slider">
+                            <div>
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>test</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>상금</p>
+                                    <p>0만원</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>남은기간</p>
+                                    <p>0일</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-button">
+                                    <a
+                                      class="btn-outlined btn-32"
+                                      href="detail/${contest.contestNo}"
+                                    >
+                                      참여하러가기
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>test</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>상금</p>
+                                    <p>0만원</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>남은기간</p>
+                                    <p>0일</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-button">
+                                    <a
+                                      class="btn-outlined btn-32"
+                                      href="detail/${contest.contestNo}"
+                                    >
+                                      참여하러가기
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>test</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>상금</p>
+                                    <p>0만원</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>남은기간</p>
+                                    <p>0일</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-button">
+                                    <a
+                                      class="btn-outlined btn-32"
+                                      href="detail/${contest.contestNo}"
+                                    >
+                                      참여하러가기
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>test</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>상금</p>
+                                    <p>0만원</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>남은기간</p>
+                                    <p>0일</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-button">
+                                    <a
+                                      class="btn-outlined btn-32"
+                                      href="detail/${contest.contestNo}"
+                                    >
+                                      참여하러가기
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>test</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>상금</p>
+                                    <p>0만원</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>남은기간</p>
+                                    <p>0일</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-button">
+                                    <a
+                                      class="btn-outlined btn-32"
+                                      href="detail/${contest.contestNo}"
+                                    >
+                                      참여하러가기
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>test</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>상금</p>
+                                    <p>0만원</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>남은기간</p>
+                                    <p>0일</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-button">
+                                    <a
+                                      class="btn-outlined btn-32"
+                                      href="detail/${contest.contestNo}"
+                                    >
+                                      참여하러가기
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="slider-controls">
+                            <button
+                              class="control-button is-prev"
+                              type="button"
+                            >
+                              <i class="ic-chevron"></i>
+                            </button>
+                            <button
+                              class="control-button is-next"
+                              type="button"
+                            >
+                              <i class="ic-chevron"></i>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -139,10 +333,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
     <!-- 푸터 -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
-    <!-- tiny-slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="${contextPath}/resources/js/slider.js"></script>
-    <script src="${contextPath}/resources/js/mypage-company-management.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="${contextPath}/resources/js/mypage-slider.js"></script>
+    <script src="${contextPath}/resources/js/mypage-company-management.js"></script>
   </body>
 </html>
