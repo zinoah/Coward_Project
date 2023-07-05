@@ -9,6 +9,11 @@
   min-width: 50px;
 }
 
+// Note: 스켈레톤 UI용 새로 불러온 요소에 적용할 클래스
+.is-new {
+  display: none;
+}
+
 [class*="ph-col"] {
   border-radius: 3px;
 }

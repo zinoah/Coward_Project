@@ -42,7 +42,6 @@
 // Note: 개발자 찾기 무한 스크롤 적용
 
 const target = document.querySelector(".target");
-
 const rowDiv = document.getElementById("devListRow");
 
 /** 무한스크롤 페이징 기법용 변수 */
@@ -57,7 +56,7 @@ function getDevAjax() {
     dataType: "json",
     success: function (devList) {
       devList.forEach((dev) => {
-        createDev(dev);
+        showDevAfterTwoSecond(dev);
       });
       page++;
     },
@@ -82,7 +81,7 @@ const observeIntersection = (target, callback) => {
 // Note: col- > cr-form > developer-card 동적 생성
 const createDev = (dev) => {
   const colDiv = document.createElement("div");
-  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-4");
+  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-4 is-new");
 
   const crForm = document.createElement("form");
   crForm.setAttribute("id", "cr-form");
@@ -90,7 +89,7 @@ const createDev = (dev) => {
   crForm.setAttribute("action", contextPath + "/chat/openChatRoom");
 
   const developerCard = document.createElement("div");
-  developerCard.setAttribute("class", "developer-card is-new");
+  developerCard.setAttribute("class", "developer-card");
 
   const developerProfile = document.createElement("div");
   developerProfile.setAttribute("class", "developer-profile");
@@ -210,16 +209,25 @@ const createDev = (dev) => {
   rowDiv.appendChild(colDiv);
 };
 
-// is-skeleton
+// Note: 스켈레톤 UI 생성
 const createDevSkeleton = () => {
+  const colDiv = document.createElement("div");
+  colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-4 is-skeleton");
+
   const phItem = document.createElement("div");
   phItem.setAttribute("class", "ph-item");
 
+  // Avatar Div
+
   const avatarCol = document.createElement("div");
-  phCol2.setAttribute("class", "ph-col-2");
+  avatarCol.setAttribute("class", "ph-col-2");
 
   const phAvatar = document.createElement("div");
   phAvatar.setAttribute("class", "ph-avatar");
+
+  avatarCol.appendChild(phAvatar);
+
+  // Info Div
 
   const infoDiv = document.createElement("div");
 
@@ -232,6 +240,14 @@ const createDevSkeleton = () => {
   empty1.setAttribute("class", "ph-col-8 empty");
   const slogan = document.createElement("div");
   slogan.setAttribute("class", "ph-col-12");
+
+  phRowInfo.appendChild(name);
+  phRowInfo.appendChild(empty1);
+  phRowInfo.appendChild(slogan);
+
+  infoDiv.appendChild(phRowInfo);
+
+  // Count Div
 
   const countsCol = document.createElement("div");
   countsCol.setAttribute("class", "ph-col-12");
@@ -254,8 +270,18 @@ const createDevSkeleton = () => {
   const count3 = document.createElement("div");
   count3.setAttribute("class", "ph-col-2");
 
+  phRowCounts.appendChild(count1);
+  phRowCounts.appendChild(countEmpty1);
+  phRowCounts.appendChild(count2);
+  phRowCounts.appendChild(countEmpty2);
+  phRowCounts.appendChild(count3);
+
+  countsCol.appendChild(phRowCounts);
+
+  // Button Div
+
   const buttonsCol = document.createElement("div");
-  phItem.setAttribute("class", "ph-col-12");
+  buttonsCol.setAttribute("class", "ph-col-12");
 
   const phRowButton = document.createElement("div");
   phRowButton.setAttribute("class", "ph-row");
@@ -268,6 +294,23 @@ const createDevSkeleton = () => {
 
   const button3 = document.createElement("div");
   button3.setAttribute("class", "ph-col-12 big");
+
+  phRowButton.appendChild(button1);
+  phRowButton.appendChild(button2);
+  phRowButton.appendChild(button3);
+
+  buttonsCol.appendChild(phRowButton);
+
+  // 조립
+
+  phItem.appendChild(avatarCol);
+  phItem.appendChild(infoDiv);
+  phItem.appendChild(countsCol);
+  phItem.appendChild(buttonsCol);
+
+  colDiv.appendChild(phItem);
+
+  rowDiv.appendChild(colDiv);
 };
 
 /** 스켈레톤 UI에서 dev로 전환 */
@@ -282,7 +325,7 @@ function showDevAfterTwoSecond(dev) {
   setTimeout(() => {
     skeletons.forEach((sk) => (sk.style.display = "none"));
     newDev.forEach((nd) => (nd.style.display = "block"));
-  }, 700);
+  }, 1000);
 }
 
 observeIntersection(target, getDevAjax);

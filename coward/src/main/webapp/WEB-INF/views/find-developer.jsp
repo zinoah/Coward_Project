@@ -139,9 +139,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </form>
             </div>
           </c:forEach>
-
-          <div class="target"></div>
         </div>
+        <div class="target"></div>
       </div>
     </main>
     <!-- 푸터 -->
@@ -160,33 +159,3 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
 </html>
-
-<div class="ph-item">
-  <div class="ph-col-2">
-    <div class="ph-avatar"></div>
-  </div>
-  <div>
-    <div class="ph-row">
-      <div class="ph-col-4"></div>
-      <div class="ph-col-8 empty"></div>
-      <div class="ph-col-12"></div>
-    </div>
-  </div>
-  <div class="ph-col-12">
-    <div class="ph-row">
-      <div class="ph-col-2"></div>
-      <div class="ph-col-2 empty"></div>
-      <div class="ph-col-2"></div>
-      <div class="ph-col-6 empty"></div>
-      <div class="ph-col-2"></div>
-    </div>
-  </div>
-  <div class="ph-col-12">
-    <div class="ph-row">
-      <div class="ph-col-6 big"></div>
-      <div class="ph-col-6 big"></div>
-      <div class="ph-col-12 big"></div>
-    </div>
-  </div>
-</div>
-;
