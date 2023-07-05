@@ -106,6 +106,7 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	// 상태별 공모전 조회
+	@Override
 	public List<Contest> getContestList(String conStatus, int memberNo) {
 
 		logger.info("Received conStatus Serviceimpl: " + conStatus);
@@ -118,7 +119,7 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	// 관심있는 개발자 목록 조회
-
+	@Override
 	public List<Member> developerLikeList(int memberNo) {
 
 		logger.info("마이페이지 ServiceImpl");

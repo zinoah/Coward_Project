@@ -247,10 +247,10 @@ public class ContestController {
 
 	// 공모전 우승자 선정 페이지로 이동
 
-	@GetMapping("/contestManagement")
-	public String contestManagement() {
+	@GetMapping("/contestWinnerSelect")
+	public String contestManagement(@ModelAttribute("loginMember") Member loginMember, Model model) {
 
-		return "contest/contest-management";
+		return "contest/contest-winnerSelect";
 	}
 
 	/**
@@ -281,7 +281,6 @@ public class ContestController {
 		Contest contest = service.contestDetail(contestNo);
 
 		model.addAttribute("contest", contest);
-
 		return "contest/contest-attend-form";
 	}
 

@@ -245,4 +245,21 @@ public class MyPageController {
 		return new Gson().toJson(getContestList);
 	}
 
+	// 기업 마이페이지 메인(공모전 관리 조회)
+	@ResponseBody
+	@PostMapping("/companyMain")
+	public String mainContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
+
+		logger.info("컨트롤러 수행");
+		logger.info("Received conStatus: " + conStatus);
+
+		int memberNo = loginMember.getMemberNo();
+
+		List<Contest> mainContestList = service.getContestList(conStatus, memberNo);
+
+		logger.info("mainContestList() 메서드 실행 결과: " + mainContestList);
+
+		return new Gson().toJson(mainContestList);
+	}
+
 }

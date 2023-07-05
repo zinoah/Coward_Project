@@ -157,4 +157,5 @@ public class ContestDAO {
 
 		return sqlSession.insert("contestAttendMapper.contestAttend", paramMap);
 	}
+
 }

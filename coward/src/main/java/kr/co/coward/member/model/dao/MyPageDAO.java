@@ -59,7 +59,6 @@ public class MyPageDAO<Contest> {
 		}
 
 		return sqlSession.selectList(mapperPath, memberNo);
-
 	}
 
 	// 관심있는 개발자 목록 조회 DAO
