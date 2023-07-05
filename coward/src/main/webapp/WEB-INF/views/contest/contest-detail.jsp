@@ -16,6 +16,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
     />
+
     <title>Cowrad | 콘테스트 브리핑</title>
   </head>
   <body>
@@ -96,21 +97,35 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
                 <div class="contest-briefing-content-box-button lg-hidden">
                   <c:choose>
-                    <c:when test="${loginMember.memberType == 'C'}">
+                    <c:when test="${empty sessionScope.loginMember}">
                       <a
                         class="contest-briefing-content-box-button-join"
                         id="c-type-button"
                       >
-                        개인회원으로 로그인 하세요
+                        로그인 후 이용하세요
                       </a>
                     </c:when>
                     <c:otherwise>
-                      <a
-                        href="../attendAgree/${contest.contestNo}"
-                        class="btn-primary contest-briefing-content-box-button-join"
-                      >
-                        공모전 참가하기
-                      </a>
+                      <c:choose>
+                        <c:when
+                          test="${sessionScope.loginMember.memberType == 'C'}"
+                        >
+                          <a
+                            class="contest-briefing-content-box-button-join"
+                            id="c-type-button"
+                          >
+                            개인회원으로 로그인 하세요
+                          </a>
+                        </c:when>
+                        <c:otherwise>
+                          <a
+                            href="../attendAgree/${contest.contestNo}"
+                            class="btn-primary contest-briefing-content-box-button-join"
+                          >
+                            공모전 참가하기
+                          </a>
+                        </c:otherwise>
+                      </c:choose>
                     </c:otherwise>
                   </c:choose>
 
@@ -231,21 +246,35 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
                 <div class="contest-briefing-sticky-box-button">
                   <c:choose>
-                    <c:when test="${loginMember.memberType == 'C'}">
+                    <c:when test="${empty sessionScope.loginMember}">
                       <a
                         class="contest-briefing-content-box-button-join"
                         id="c-type-button"
                       >
-                        개인회원으로 로그인 하세요
+                        로그인 후 이용하세요
                       </a>
                     </c:when>
                     <c:otherwise>
-                      <a
-                        href="../attendAgree/${contest.contestNo}"
-                        class="btn-primary contest-briefing-content-box-button-join"
-                      >
-                        공모전 참가하기
-                      </a>
+                      <c:choose>
+                        <c:when
+                          test="${sessionScope.loginMember.memberType == 'C'}"
+                        >
+                          <a
+                            class="contest-briefing-content-box-button-join"
+                            id="c-type-button"
+                          >
+                            개인회원으로 로그인 하세요
+                          </a>
+                        </c:when>
+                        <c:otherwise>
+                          <a
+                            href="../attendAgree/${contest.contestNo}"
+                            class="btn-primary contest-briefing-content-box-button-join"
+                          >
+                            공모전 참가하기
+                          </a>
+                        </c:otherwise>
+                      </c:choose>
                     </c:otherwise>
                   </c:choose>
 

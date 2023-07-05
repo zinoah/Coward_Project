@@ -89,7 +89,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <textarea
                         maxlength="500"
                         placeholder="500자이내로 입력하세요"
-                        name="discription"
+                        name="description"
                       ></textarea>
                     </div>
                     <div

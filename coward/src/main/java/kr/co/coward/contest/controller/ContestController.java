@@ -164,8 +164,7 @@ public class ContestController {
 	 * @return
 	 */
 	@GetMapping("/detail/{contestNo}")
-	public String contestDetail(@ModelAttribute("loginMember") Member loginMember,
-			@PathVariable("contestNo") int contestNo, Model model) {
+	public String contestDetail(@PathVariable("contestNo") int contestNo, Model model) {
 
 		Contest contest = service.contestDetail(contestNo);
 
@@ -175,7 +174,6 @@ public class ContestController {
 
 		model.addAttribute("contest", contest);
 		model.addAttribute("skillList", skillList);
-		model.addAttribute("loginMember", loginMember);
 
 		return "contest/contest-detail";
 	}
@@ -302,6 +300,7 @@ public class ContestController {
 		paramMap.put("skill", skillList);
 		paramMap.put("pptFile", uploadFile);
 		paramMap.put("memberNo", loginMember.getMemberNo());
+		paramMap.put("attendCount", loginMember.getAttendCount());
 
 		int result = service.contestAttendForm(paramMap);
 

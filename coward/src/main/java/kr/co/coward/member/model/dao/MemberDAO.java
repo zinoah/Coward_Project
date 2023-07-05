@@ -77,7 +77,7 @@ public class MemberDAO {
 	 * @return 
 	 */
 	public String selectEncPw(int memberNo) {
-		return sqlSession.selectOne("myPageMapper.selectEncPw", memberNo);
+		return sqlSession.selectOne("memberMapper.selectEncPw", memberNo);
 	}
 	
 	/** 회원 탈퇴 DAO
@@ -85,8 +85,19 @@ public class MemberDAO {
 	 * @return 
 	 */
 	public int secession(int memberNo) {
-		return sqlSession.update("myPageMapper.secession", memberNo);
+		return sqlSession.update("memberMapper.secession", memberNo);
 	}
+	
+	/** 비밀번호 변경 DAO
+	 * @param 
+	 * @return 
+	 */
+	public int changePw(Map<String, Object> paramMap) {
+		return sqlSession.update("memberMapper.changePw", paramMap);
+	}
+	
+	
+	
 
 	  /**
     * 개발자 찾기 DAO 
