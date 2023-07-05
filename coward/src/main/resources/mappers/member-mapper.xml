@@ -20,9 +20,9 @@
 		<result property="secessionFlag" 	column="SECESSION_FL"/>
 		<result property="termsFlag" 	column="TERMS_FL"/>
 		<result property="snsFlag" 	column="SNS_FL"/>
-		
 		<result property="likeCount" 	column="LIKE_COUNT"/>
 		<result property="victoryCount" 	column="VICTORY_COUNT"/>
+		<result property="attendCount"  column="ATTEND_COUNT"/>
 	 </resultMap>
 
 	<!-- 로그인 -->
@@ -93,11 +93,11 @@
 	
 	<!-- 상금순 랭킹 조회 -->
 	<select id="getVictoryKingList" parameterType="_int" resultMap="member_rm">
-	SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
-      FROM MEMBER
-      WHERE VICTORY_COUNT > 0
-      ORDER BY VICTORY_COUNT DESC
-      OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
+		  SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
+	      FROM MEMBER
+	      WHERE VICTORY_COUNT > 0
+	      ORDER BY VICTORY_COUNT DESC
+	      OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
 	
 	 <!-- 좋아요순 랭킹 조회 -->
@@ -140,5 +140,11 @@
    INSERT INTO LIKE_USER (LIKE_USER_NO, C_MEMBER_NO, P_MEMBER_NO)
    VALUES (SEQ_LIKE_USER_NO.NEXTVAL, ${memberNo}, #{memberNo});
    </insert>
+
+	<update id="attendCountUp">
+		UPDATE MEMBER SET ATTEND_COUNT = ${attendCount} + 1
+		WHERE MEMBER_NO = ${memberNo}
+	</update>
+
 
 </mapper> 

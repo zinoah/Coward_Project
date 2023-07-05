@@ -134,6 +134,8 @@
 		AND CONTEST_NO = ${contestNo}
 	</select>
 
+
+	<!-- 북마크 카운트  -->
 	<insert id="bookmarkCount" parameterType="contest">
 		<selectKey keyProperty="bookmarkCount" resultType="_int" order="BEFORE">
 			SELECT COUNT(*) AS BOOKMARK_COUNT
