@@ -132,35 +132,39 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="stack-box">
                             <p class="introduce-title">기술 스택</p>
                             <div class="stack-btn-group">
-                              <div class="stack-btn">
-                                <input
-                                  id="front"
-                                  type="radio"
-                                  name="stack"
-                                  value="front"
-                                />
-                                <label for="front">Front End</label>
-                              </div>
+                           
+		                              <div class="stack-btn">
+		                                <input
+		                                  id="front"
+		                                  type="radio"
+		                                  name="stack"
+		                                  value="front"<c:if test="${loginMember.stack eq 'front'}">checked="checked"</c:if>
+		                                />
+		                                <label for="front">Front End</label>
+		                              </div>
 
-                              <div class="stack-btn">
-                                <input
-                                  id="back"
-                                  type="radio"
-                                  name="stack"
-                                  value="back"
-                                />
-                                <label for="back">Back End</label>
-                              </div>
-
-                              <div class="stack-btn">
-                                <input
-                                  id="full"
-                                  type="radio"
-                                  name="stack"
-                                  value="full"
-                                />
-                                <label for="full">Full Stack</label>
-                              </div>
+		                              <div class="stack-btn">
+		                                <input
+		                                  id="back"
+		                                  type="radio"
+		                                  name="stack"
+		                                  value="back" <c:if test="${loginMember.stack eq 'back'}">checked="checked"</c:if>
+		                                />
+		                                <label for="back">Back End</label>
+		                              </div>
+								
+		                              <div class="stack-btn">
+		                                <input
+		                                  id="full"
+		                                  type="radio"
+		                                  name="stack"
+		                                  value="full"<c:if test="${loginMember.stack eq 'full'}">checked="checked"</c:if>
+		                                />
+		                                <label for="full">Full Stack</label>
+		                              </div>
+                              	
+                              
+                             
                             </div>
                           </div>
                         </div>
@@ -361,5 +365,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 푸터 -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <script src="${contextPath}/resources/js/edit-profile-mem.js"></script>
+   
   </body>
 </html>

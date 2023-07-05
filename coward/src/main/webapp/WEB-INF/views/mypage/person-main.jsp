@@ -106,6 +106,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   />
                 </c:if>
                       </div>
+                      
                       <div class="profile-info">
                         <div class="profile-type">${loginMember.stack}</div>
                         <p class="profile-nick">${loginMember.memberNick}</p>
@@ -117,7 +118,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <!-- 자기 소개 -->
                         <div class="one-liner">
                           <p class="introduce-title">소개</p>
-                          <textarea type="text" disabled>${loginMember.introduce}</textarea>
+                          <textarea disabled>${loginMember.introduce}</textarea>
                         </div>
 
                         <div class="credit-skill">
@@ -145,7 +146,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           </div>
                         </div>
                       </div>
-
+ 			
                       <!-- 수상 이력 -->
                       <div class="award">
                         <p class="introduce-title">어워드</p>
@@ -515,6 +516,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </main>
         </div>

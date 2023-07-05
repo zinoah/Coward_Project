@@ -65,6 +65,20 @@ public class MyPageServiceImpl implements MyPageService {
 		return null;
 	}
 
+	/**
+	 * 마이페이지 메인 - 정보 조회 서비스
+	 */
+	
+	@Override
+	public Member mypageInfo(int memberNo) {
+		
+		return dao.mypageInfo(memberNo);
+	}
+
+	
+	
+	
+	
 	/**********************************
 	 * 기업 마이페이지 ServiceImpl
 	 **********************************/

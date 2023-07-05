@@ -1,6 +1,7 @@
 package kr.co.coward.member.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -96,10 +98,21 @@ public class MyPageController {
 
 	// 마이페이지(메인)
 	// 회원 정보 조회
-	@GetMapping("/info")
-	public String info() {
+	@GetMapping("/info/${memberNo}")
+	public String info(@PathVariable("contestNo") int memberNo, Model model) {
+		
+		Member member = service.mypageInfo(memberNo);
+		
+		String[] temp = member.getSkill().split(",");
+		
+		List<String> skillList = Arrays.asList(temp);
+		
+		model.addAttribute("member", member);
+		model.addAttribute("skillList", skillList);
+		
 		return "mypage/person-main";
 	}
+
 
 	// 공모전 관리
 	// @GetMapping("/progress")
@@ -161,6 +174,8 @@ public class MyPageController {
 		return "redirect:info";
 	}
 
+	
+	
 	// 마이페이지 - 공모전 목록 조회
 	/*
 	 * @GetMapping("/progress") public String contestList(Model model) {

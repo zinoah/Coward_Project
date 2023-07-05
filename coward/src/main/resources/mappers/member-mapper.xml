@@ -11,7 +11,7 @@
 		<result property="phone" 		column="PHONE"/>
 		<result property="regionNo" 	column="REGION_NO"/>
 		<result property="stack" 	column="STACK"/>
-		<result property="stack"    column="SKILL"/>
+		<result property="skill"    column="SKILL"/>
 		<result property="slogan" 	column="SLOGAN"/>
 		<result property="introduce" 	column="INTRODUCE"/>
 		<result property="totalPrice" 	column="TOTAL_PRICE"/>
