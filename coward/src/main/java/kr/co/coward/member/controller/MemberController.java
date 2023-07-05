@@ -164,9 +164,28 @@ public class MemberController {
 	public String signUp(@ModelAttribute Member inputMember, RedirectAttributes ra) {
 
 		System.out.println(inputMember.toString());
-
+		
+		// Note: 닉네임 랜덤 생성
+		
+		String[] adjArr = {"예쁜", "화난", "귀여운", "배고픈", "철학적인", "현학적인", "슬픈", "푸른", "비싼", "밝은"};
+		String[] nArr = {"호랑이", "비버", "강아지", "부엉이", "여우", "치타", "문어", "고양이", "미어캣", "다람쥐"};
+		
+		int random1 = (int)Math.floor(Math.random() * adjArr.length);
+		System.out.println(random1);
+		int random2 = (int)Math.floor(Math.random() * nArr.length);
+		System.out.println(random2);
+		int random3 = (int)(Math.random()*100);
+		System.out.println(random3);
+		int random4 = (int)(Math.random()*100);
+		System.out.println(random4);
+		String randomNick = adjArr[random1] + nArr[random2] + random3 + random4;
+		
+		inputMember.setMemberNick(randomNick);
+		
+		// 회원 생성		
 		int insert = service.insertMember(inputMember);
-
+		
+		// 메세지 출력 및 path 설정
 		String message = null;
 		String path = null;
 
