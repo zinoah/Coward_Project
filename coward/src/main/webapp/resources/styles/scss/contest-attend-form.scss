@@ -1,5 +1,9 @@
 @import "./main.scss";
 
+.checked {
+  background-color: $yellow;
+  color: $white;
+}
 .banner {
   height: 250px;
   background-color: $background;
@@ -47,9 +51,14 @@
 }
 
 .contest-attend-form {
+  form {
+    @include flexbox;
+  }
+
   &-inner-box {
     @include column-flexbox;
-    height: 1000px;
+    width: 100%;
+    height: 700px;
     border: 1px solid $border;
     border-radius: 10px;
     padding: 20px;
@@ -115,11 +124,10 @@
             height: 100px;
 
             label {
-              margin: 0 5px 5px 0;
+              margin: 0 10px 10px 0;
               transition: 0.3s;
-
+              cursor: pointer;
               &:hover {
-                cursor: pointer;
                 background-color: $yellow;
                 color: $white;
               }
@@ -130,17 +138,15 @@
             }
           }
         }
-      }
-      &-story-board {
-        flex-basis: 50%;
-        width: 100%;
-        height: 100%;
 
-        & > div {
-          border: 1px solid $border;
-          border-radius: 5px;
-          height: 90%;
-          overflow: auto;
+        &-file {
+          width: 100%;
+
+          label {
+            @include text-style(12);
+            width: 100%;
+            height: 40px;
+          }
         }
       }
     }
@@ -149,14 +155,14 @@
       @include flexbox;
       flex-basis: 10%;
       width: 100%;
-      margin-top: 20px;
       button {
         width: 100px;
       }
     }
 
     @include responsive(T) {
-      height: 600px;
+      width: 60%;
+      height: 700px;
       padding: 40px;
 
       &-title {
@@ -164,12 +170,12 @@
       }
 
       &-main {
-        @include flexbox(between);
+        @include flexbox;
         flex-direction: row;
         flex-basis: 80%;
 
         &-info {
-          flex-basis: 48%;
+          flex-basis: 100%;
           & > div {
             &:not(:last-child) {
               margin-bottom: 16px;
@@ -177,12 +183,12 @@
           }
 
           &-skill {
-            height: 130px;
-          }
-        }
+            height: 80px;
 
-        &-story-board {
-          flex-basis: 48%;
+            .tag-box {
+              height: 60px;
+            }
+          }
         }
       }
     }

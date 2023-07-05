@@ -22,12 +22,6 @@ function filterListCallAjax(parameter) {
           const contestCard = document.createElement("div");
           contestCard.className = "contest-card";
 
-          const bookmark = document.createElement("div");
-          bookmark.className = "bookmark";
-          const bookmarkIcon = document.createElement("i");
-          bookmarkIcon.className = "ic-bookmark-filled";
-          bookmark.append(bookmarkIcon);
-
           const contestCardTitle = document.createElement("div");
           contestCardTitle.className = "contest-card-title";
           const contestTitleDiv = document.createElement("div");
@@ -110,7 +104,7 @@ function filterListCallAjax(parameter) {
           avatar24Hidden.className = "avatar-24";
 
           const profileImgHidden = document.createElement("img");
-          profileImgHidden.src = contextPath + "/" + contest.companyNick;
+          profileImgHidden.src = contextPath + "/" + contest.companyProfile;
 
           const profileNameHidden = document.createElement("div");
           const profileNameSpanHidden = document.createElement("span");
@@ -121,7 +115,6 @@ function filterListCallAjax(parameter) {
           smHiddenProfile.append(avatar24Hidden);
           smHiddenProfile.append(profileNameHidden);
 
-          contestCard.append(bookmark);
           contestCard.append(contestCardTitle);
           contestCard.append(contestCardInfo);
           contestCard.append(smHiddenProfile);

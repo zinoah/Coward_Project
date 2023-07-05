@@ -1,6 +1,7 @@
 package kr.co.coward.member.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.co.coward.member.model.vo.Member;
 
@@ -42,6 +43,10 @@ public interface MemberService {
 	
 	// 회원 탈퇴
 	int secession(Member loginMember);
+	
+	// 비밀번호 변경
+	int changePw(Map<String, Object> paramMap);
+	
 
 	   /**
     * 개발자 찾기 Service
@@ -49,6 +54,8 @@ public interface MemberService {
     * @return
     */
 	List<Member> getFindDevPage(int pageSize);
+
+
 
 	
 

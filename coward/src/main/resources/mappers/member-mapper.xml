@@ -71,7 +71,14 @@
 	<update id="secession">
 		UPDATE MEMBER SET
 		SECESSION_FL = 'Y'
-		WHERE MEMBER_NO = ${memberNo};
+		WHERE MEMBER_NO = ${memberNo}
+	</update>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="changePw">
+		UPDATE MEMBER SET
+		MEMBER_PW = #{newPw}
+		WHERE MEMBER_NO = #{memberNo}
 	</update>
 	 
 	
@@ -80,23 +87,17 @@
 	<select id="getPriceKingList" parameterType="_int" resultMap="member_rm">
 		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE
 		FROM MEMBER
+		WHERE TOTAL_PRICE IS NOT NULL
 		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
 	
 	<!-- 상금순 랭킹 조회 -->
 	<select id="getVictoryKingList" parameterType="_int" resultMap="member_rm">
-		SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
-		FROM MEMBER
-		JOIN (
-		    SELECT WINNER, COUNT(MEMBER_NO) AS VICTORY_COUNT
-		    FROM CONTEST
-		    GROUP BY WINNER
-		    HAVING WINNER IS NOT NULL
-		    ORDER BY VICTORY_COUNT DESC
-		) VICTORY_COUNTS
-		ON MEMBER_NO = VICTORY_COUNTS.WINNER
-		ORDER BY VICTORY_COUNT DESC
-		OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
+	SELECT MEMBER_NO, VICTORY_COUNT, PROFILE_IMG, MEMBER_NICK
+      FROM MEMBER
+      WHERE VICTORY_COUNT > 0
+      ORDER BY VICTORY_COUNT DESC
+      OFFSET 0 ROWS FETCH NEXT #{offset} ROWS ONLY
 	</select>
 	
 	 <!-- 좋아요순 랭킹 조회 -->

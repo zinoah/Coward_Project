@@ -31,13 +31,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="col-sm-4">
                 <div class="banner-item">
                   <div class="banner-info">
-                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <div class="tag-gray lg-only">내일배움코스</div>
                     <h1 class="title">
                       현업에서 사용하는 <br />
                       데이터 분석법 알고 싶어?
                     </h1>
                     <span class="subtitle lg-only"
-                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                      >파이썬 데이터분석 입문 강의는 수강 완료시 무료!</span
                     >
                   </div>
                   <div class="banner-image">
@@ -56,13 +56,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="col-sm-4">
                 <div class="banner-item">
                   <div class="banner-info">
-                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <div class="lg-only"></div>
                     <h1 class="title">
-                      현업에서 사용하는 <br />
-                      데이터 분석법 알고 싶어?
+                      어디서든 <br />
+                      원하는 인재가 되고 싶다면?
                     </h1>
                     <span class="subtitle lg-only"
-                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                      >Coward를 통해 퀄리티 높은 공모전 우승하고 몸값
+                      올려봐!</span
                     >
                   </div>
                   <div class="banner-image">
@@ -81,13 +82,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="col-sm-4">
                 <div class="banner-item">
                   <div class="banner-info">
-                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <div class="tag-gray lg-only">특강</div>
                     <h1 class="title">
-                      현업에서 사용하는 <br />
-                      데이터 분석법 알고 싶어?
+                      개발자는 <br />
+                      단단한 멘탈이 그렇게 중요하다던데?
                     </h1>
                     <span class="subtitle lg-only"
-                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                      >매주 금요일 열리는 개발자 특강 팔로 팔로미!</span
                     >
                   </div>
                   <div class="banner-image">
@@ -106,13 +107,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="col-sm-4">
                 <div class="banner-item">
                   <div class="banner-info">
-                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <div class="tag-gray lg-only">특강</div>
                     <h1 class="title">
-                      현업에서 사용하는 <br />
-                      데이터 분석법 알고 싶어?
+                      커뮤니케이션이 <br />
+                      중요하다는건 이제 모르는 사람 없지?
                     </h1>
                     <span class="subtitle lg-only"
-                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                      >매주 목요일 진행되는 Coward 커뮤니케이션 특강!</span
                     >
                   </div>
                   <div class="banner-image">
@@ -131,13 +132,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <div class="col-sm-4">
                 <div class="banner-item">
                   <div class="banner-info">
-                    <div class="tag-gray lg-only">내일배움코스111</div>
+                    <div class="lg-only"></div>
                     <h1 class="title">
-                      현업에서 사용하는 <br />
-                      데이터 분석법 알고 싶어?
+                      잘나가는 개발자는 <br />
+                      어떤 스택을 쌓고 있을까?
                     </h1>
                     <span class="subtitle lg-only"
-                      >파이썬 데이터분석 입분 강의는 수강 완료시 무료!</span
+                      >인기 개발언어 확인하고 무료 수강까지!</span
                     >
                   </div>
                   <div class="banner-image">
@@ -152,10 +153,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
 
-      <!-- FIXME: 위치 다시 잡기 -->
       <div class="banner-carousel-controlls lg-only">
-        <button><i class="ic-chevron is-prev"></i></button>
-        <button><i class="ic-chevron is-next"></i></button>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <button><i class="ic-chevron is-prev"></i></button>
+              <button><i class="ic-chevron is-next"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

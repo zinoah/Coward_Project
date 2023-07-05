@@ -60,7 +60,8 @@
 										<li><a href="#">크레딧 인출</a></li>
 										<li><a href="${contextPath}/mypage/companyProfile">프로필
 												수정</a></li>
-										<li><a href="#">회원 탈퇴</a></li>
+										<li><a href="${contextPath}/member/changePw">비밀번호 변경</a></li>
+										<li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>
 									</ul>
 								</div>
 							</div>

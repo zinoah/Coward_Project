@@ -9,6 +9,7 @@ import kr.co.coward.member.model.vo.Member;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 
@@ -219,7 +220,24 @@ public class MemberServiceImpl implements MemberService {
 		// 비밀번호 불일치
 		return 0;
 	}
+	
+	// 비밀번호 변경
+	@Override
+	public int changePw(Map<String, Object> paramMap) {
+		
+		String encPw = dao.selectEncPw( (int)paramMap.get("memberNo") );
+		
+		if( bcrypt.matches(  (String)paramMap.get("currentPw")   , encPw) ) {
+			
+			paramMap.put("newPw",  bcrypt.encode( (String)paramMap.get("newPw") )  );
 
+			return dao.changePw(paramMap);
+		}
+		
+		// 비교결과가 불일치 할 때 
+		return 0;
+	}
+	
 	 /**
     * 개발자 목록 조회 ServiceImpl
     */
@@ -227,6 +245,8 @@ public class MemberServiceImpl implements MemberService {
 	public List<Member> getFindDevPage(int pageSize) {
 	   return dao.getDevList(pageSize);
 	}
+
+	
 
 	
 	

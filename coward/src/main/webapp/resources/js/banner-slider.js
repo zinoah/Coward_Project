@@ -2,7 +2,8 @@
 const bannerSlider = tns({
   container: ".banner-carousel",
   constrols: true,
-  controlsContainer: ".banner-carousel-controlls",
+  controlsContainer:
+    ".banner-carousel-controlls > .container > .row > .col-sm-4",
   mode: "gallery",
   items: 1,
   nav: false,

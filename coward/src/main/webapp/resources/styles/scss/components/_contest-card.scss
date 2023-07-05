@@ -1,6 +1,6 @@
 .contest {
   &-card {
-    height: 150px;
+    height: 180px;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -40,6 +40,9 @@
         &:nth-child(1) {
           @include text-style(18);
           font-weight: 500;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
         margin-right: 10px;
@@ -77,6 +80,7 @@
         &-list {
           div {
             margin-right: 5px;
+            margin-bottom: 10px;
           }
         }
       }
@@ -89,6 +93,9 @@
         }
         span {
           @include text-style(12);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }
