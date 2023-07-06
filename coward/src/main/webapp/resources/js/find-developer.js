@@ -1,11 +1,9 @@
 // Note: 개발자 찾기 무한 스크롤 적용
-
 const target = document.querySelector(".target");
 const rowDiv = document.getElementById("devListRow");
 
 /** 무한스크롤 페이징 기법용 변수 */
 let page = 3;
-
 let filter = "";
 
 // Note: 개발자 찾기 필터링
@@ -126,12 +124,17 @@ const createDev = (dev) => {
   chatBtnA.innerText = "프로필 보기";
   const chatBtn = document.createElement("button");
   chatBtn.setAttribute("type", "submit");
-  chatBtn.setAttribute("class", "btn-primary btn-32");
+  chatBtn.setAttribute("class", "chat-button btn-primary btn-32");
   chatBtn.innerText = "채팅 하기";
 
   const likeButton = document.createElement("button");
   likeButton.setAttribute("id", "like-btn");
   likeButton.setAttribute("class", "like-btn");
+  likeButton.setAttribute("type", "button");
+  likeButton.setAttribute(
+    "onclick",
+    "clickLikeBtn(" + loginMemberNo + "," + dev.memberNo + ", this)"
+  );
 
   const likeButtonLable = document.createElement("label");
   likeButtonLable.setAttribute("for", "like-btn");
@@ -301,6 +304,35 @@ function showDevAfterTwoSecond(dev) {
     skeletons.forEach((sk) => (sk.style.display = "none"));
     newDev.forEach((nd) => (nd.style.display = "block"));
   }, 700);
+}
+
+// Note: 좋아요 버튼
+function clickLikeBtn(cMemberNo, pMemberNo, likeBtn) {
+  if (likeBtn.classList.contains("is-active")) {
+    // is-active가 있으면 == 좋아요가 되어 있으면
+    likeDevAjax(cMemberNo, pMemberNo, "dislike");
+    likeBtn.classList.remove("is-active");
+  } else {
+    likeDevAjax(cMemberNo, pMemberNo, "like");
+    likeBtn.classList.add("is-active");
+  }
+}
+
+function likeDevAjax(cMemberNo, pMemberNo, flag) {
+  $.ajax({
+    url: "likeDev",
+    type: "POST",
+    data: { cMemberNo: cMemberNo, pMemberNo: pMemberNo, flag: flag },
+    dataType: "json",
+    success: function (result) {
+      if (result > 0) {
+        console.log("clickLikeBtn 성공");
+      }
+    },
+    error: function () {
+      console.log("clickLikeBtn 실패");
+    },
+  });
 }
 
 observeIntersection(target, getDevAjax);

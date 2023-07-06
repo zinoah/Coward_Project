@@ -123,15 +123,58 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         프로필 보기
                       </a>
 
-                      <button type="submit" class="btn-primary btn-32">
+                      <button
+                        type="submit"
+                        class="chat-button btn-primary btn-32"
+                      >
                         채팅 하기
                       </button>
                     </div>
-                    <button id="like-btn" class="like-btn">
-                      <label for="like-btn"
-                        ><i class="ic-like-filled"></i
-                      ></label>
-                    </button>
+
+                    <c:choose>
+                      <c:when test="${empty sessionScope.loginMember}">
+                        <button
+                          id="like-btn"
+                          class="like-btn"
+                          type="button"
+                          onclick="clickLikeBtn(${sessionScope.loginMember.memberNo}, ${devList.memberNo}, this)"
+                        >
+                          <label for="like-btn"
+                            ><i class="ic-like-filled"></i
+                          ></label>
+                        </button>
+                      </c:when>
+
+                      <c:when test="${sessionScope.loginMember}">
+                        <c:choose>
+                          <c:when test="${likeList.contains(devList.memberNo)}">
+                            <button
+                              id="like-btn"
+                              class="like-btn is-active"
+                              type="button"
+                              onclick="clickLikeBtn(${sessionScope.loginMember.memberNo}, ${devList.memberNo}, this)"
+                            >
+                              <label for="like-btn"
+                                ><i class="ic-like-filled"></i
+                              ></label>
+                            </button>
+                          </c:when>
+
+                          <c:otherwise>
+                            <button
+                              id="like-btn"
+                              class="like-btn"
+                              type="button"
+                              onclick="clickLikeBtn(${sessionScope.loginMember.memberNo}, ${devList.memberNo}, this)"
+                            >
+                              <label for="like-btn"
+                                ><i class="ic-like-filled"></i
+                              ></label>
+                            </button>
+                          </c:otherwise>
+                        </c:choose>
+                      </c:when>
+                    </c:choose>
                   </div>
                 </div>
               </form>
@@ -153,6 +196,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <script>
       const contextPath = "${contextPath}";
+      const loginMemberNo = "${sessionScope.loginMember.memberNo}";
     </script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>

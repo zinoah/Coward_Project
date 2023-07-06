@@ -5,6 +5,10 @@ import java.util.Map;
 
 import kr.co.coward.member.model.vo.Member;
 
+/**
+ * @author user1
+ *
+ */
 public interface MemberService {
 
 	/**
@@ -49,5 +53,20 @@ public interface MemberService {
 	 * @return
 	 */
 	List<Member> getFindDevPage(int pageSize, int offset, String filter);
+
+	
+	/** 개발자 찾기 좋아요 버튼 클릭 Service
+	 * @param cMemberNo
+	 * @param pMemberNo
+	 * @return
+	 */
+	public abstract int likeDev(int cMemberNo, int pMemberNo, String flag);
+
+	
+	/** 현재 회원이 좋아요 한 회원 목록
+	 * @param memberNo
+	 * @return
+	 */
+	public abstract List<Integer> getLikeList(int loginMemberNo);
 
 }

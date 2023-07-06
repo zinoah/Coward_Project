@@ -121,4 +121,34 @@ public class MemberDAO {
 		return sqlSession.selectList("memberMapper.getDevList", params);
 	}
 
+	/** 개발자 찾기 좋아요 버튼 클릭 DAO
+	 * @param cMemberNo
+	 * @param pMemberNo
+	 * @return
+	 */
+	public int likeDev(int cMemberNo, int pMemberNo, String flag) {
+		Map<String, Integer> params = new HashMap<>();
+		params.put("cMemberNo", cMemberNo);
+		params.put("pMemberNo", pMemberNo);
+		
+		int result = -99;
+		
+		if(flag.equals("like")) {
+			result = sqlSession.insert("memberMapper.likeDev", params);			
+		} else if(flag.equals("dislike")) {
+			result = sqlSession.insert("memberMapper.disLikeDev", params);			
+		}
+		
+		return result;
+		
+	}
+
+	/** 현재 회원이 좋아요 한 회원 목록
+	 * @param loginMemberNo
+	 * @return
+	 */
+	public List<Integer> getLikeList(int loginMemberNo) {
+		return sqlSession.selectList("memberMapper.getLikeList", loginMemberNo);
+	}
+
 }

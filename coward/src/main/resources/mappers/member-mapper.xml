@@ -133,17 +133,31 @@
 	    </choose>
 		OFFSET ${offset} ROWS FETCH NEXT ${pageSize} ROWS ONLY
    </select>
-   
-   <!-- 기업 -> 개발자 좋아요 -->
-   <insert id="likeUser">
-   INSERT INTO LIKE_USER (LIKE_USER_NO, C_MEMBER_NO, P_MEMBER_NO)
-   VALUES (SEQ_LIKE_USER_NO.NEXTVAL, ${memberNo}, #{memberNo});
-   </insert>
 
 	<update id="attendCountUp">
 		UPDATE MEMBER SET ATTEND_COUNT = ${attendCount} + 1
 		WHERE MEMBER_NO = ${memberNo}
 	</update>
 
-
+	<!-- 기업 -> 개발자 좋아요 -->
+	<insert id="likeDev">
+		INSERT INTO LIKE_USER (LIKE_USER_NO, C_MEMBER_NO, P_MEMBER_NO)
+   		VALUES (SEQ_LIKE_USER_NO.NEXTVAL, ${cMemberNo}, ${pMemberNo})
+	</insert>
+	
+	<!-- 기업 -> 개발자 좋아요 취소 -->
+	<insert id="disLikeDev">
+		DELETE FROM LIKE_USER 
+   		WHERE C_MEMBER_NO = ${cMemberNo}
+   		AND P_MEMBER_NO = ${pMemberNo}
+	</insert>
+	
+	<!-- 좋아요 리스트 -->
+	<select id="getLikeList" resultType="list">
+		SELECT P_MEMBER_NO 
+		FROM LIKE_USER
+		WHERE C_MEMBER_NO = ${loginMemberNo}
+	</select>
+	
+	
 </mapper> 
