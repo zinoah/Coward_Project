@@ -187,16 +187,17 @@
   }
 }
 
-.btn-32 {
-  width: 49%;
-}
-
 .developer-chat-btn {
   @include flexbox(between);
 
   width: 100%;
   height: 50px;
   background-color: white;
+
+  .profile-btn,
+  .chat-button {
+    width: 49%;
+  }
 }
 
 .like-btn {
@@ -208,6 +209,11 @@
   transition: background-color 200ms ease-in-out;
   color: $secondary;
   transition: background-color 200ms ease-in-out;
+
+  &.is-active {
+    background: #3aacf8;
+    color: white;
+  }
 
   i {
     cursor: pointer;
