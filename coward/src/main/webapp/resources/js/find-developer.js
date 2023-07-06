@@ -1,44 +1,3 @@
-// // gallerycard hover시 이벤트
-// const sliderCard = document.querySelectorAll(".contest-slider-card");
-
-// const cardInfoTitle = document.querySelector(
-//   ".contest-slider-card-info-title > p"
-// );
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseenter", function () {
-//     this.classList.add("is-hover");
-//   })
-// );
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseleave", function () {
-//     this.classList.remove("is-hover");
-//   })
-// );
-
-// NOTE: 뭔지 모르겠다
-
-// const sliderInfo = document.querySelectorAll(".developer-card");
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseenter", function () {
-//     this.classList.add("is-hover");
-//   })
-// );
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseleave", function () {
-//     this.classList.remove("is-hover");
-//   })
-// );
-
-// sliderInfo.forEach((card) =>
-//   card.addEventListener("mouseenter", function () {
-//     this.classList.add("is-hover");
-//   })
-// );
-
 // Note: 개발자 찾기 무한 스크롤 적용
 
 const target = document.querySelector(".target");
@@ -59,7 +18,7 @@ stackButtons.forEach(function (button) {
     page = 0;
     rowDiv.innerHTML = "";
 
-    getDevAjax(filter);
+    // getDevAjax(filter);
   });
 });
 
