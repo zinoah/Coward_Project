@@ -107,7 +107,9 @@ public class ContestController {
 	 * @return
 	 */
 	@RequestMapping("/create")
-	public String contestCreate() {
+	public String contestCreate(@ModelAttribute("loginMember") Member loginMember, Model model) {
+
+		model.addAttribute("loginMember", loginMember);
 
 		return "contest/contest-create";
 	}
@@ -187,25 +189,20 @@ public class ContestController {
 	 */
 	@ResponseBody
 	@GetMapping("/bookmark")
-	public int bookmarkCount(@RequestParam Map<String, Object> map, @ModelAttribute("loginMember") Member loginMember) {
-
-		System.out.println(map);
-		int memberNo = loginMember.getMemberNo();
-		int bookmarkCount = Integer.parseInt(map.get("bookmarkCount").toString());
-		int contestNo = Integer.parseInt(map.get("contestNo").toString());
-
-		System.out.println("bookmark :" + bookmarkCount);
-		System.out.println("contestNo :" + contestNo);
-
+	public int bookmarkCount(@RequestParam int memberNo, @RequestParam int contestNo, @RequestParam int bookmarkCount,
+			@RequestParam int flag) {
 		Contest contest = new Contest();
-
-		contest.setBookmarkCount(bookmarkCount);
 		contest.setMemberNo(memberNo);
 		contest.setContestNo(contestNo);
+		contest.setBookmarkCount(bookmarkCount);
 
-		int bookmark = service.bookmarkCount(contest);
+		int bookmark = 0;
+		if (flag == 1) {
 
-		System.out.println(bookmark);
+			bookmark = service.bookmarkCountInsert(contest);
+		} else {
+			bookmark = service.bookmarkCountDelete(contest);
+		}
 
 		return bookmark;
 

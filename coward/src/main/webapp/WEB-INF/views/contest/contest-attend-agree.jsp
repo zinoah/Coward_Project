@@ -71,7 +71,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="row">
             <div class="col-sm-4">
               <div class="contest-attend-agree-check-wrapper">
-                <div class="contest-attend-agree-check-box">
+                <div class="contest-attend-agree-check-box" id="policy-agree">
                   <label id="policy-agree-check">
                     <i class="ic-check"></i>
                     <input
@@ -84,7 +84,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p>코워드 정책</p>
                   </div>
                 </div>
-                <div class="contest-attend-agree-check-box">
+                <div class="contest-attend-agree-check-box" id="terms-agree">
                   <label id="terms-agree-check">
                     <i class="ic-check"></i>
                     <input
@@ -97,7 +97,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p>공모전 이용약관</p>
                   </div>
                 </div>
-                <div class="contest-attend-agree-check-box">
+                <div class="contest-attend-agree-check-box" id="caution-agree">
                   <label id="caution-agree-check">
                     <i class="ic-check"></i>
                     <input
@@ -153,6 +153,147 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <!-- 모달 :: is-open -->
       <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
       <div id="overlay" class="overlay"></div>
+
+      <div id="policy-modal-container" class="modal-container">
+        <div id="policy-modal-background" class="modal-background"></div>
+        <div id="policy-modal-content" class="modal-content">
+          <div id="policy-modal-content-title" class="modal-content-title">
+            <h3>코워드 정책 🚀</h3>
+          </div>
+          <div id="policy-modal-content-info" class="modal-content-info">
+            <p style="font-size: 16px">부정 콘테스트의 상세 기준</p>
+            <br />
+            <p>
+              1. 어떠한 형식으로든지 의뢰자 및 해당 콘테스트 관계인(가족 및
+              지인, 내부 직원 등)은 본인의 콘테스트에 참여할 수 없습니다.
+            </p>
+            <br />
+            <p>
+              2. 아래에 해당하는 경우 라우드소싱 내부 검열 시스템에 따라 상세
+              검토가 진행됩니다.
+            </p>
+            ① 브리핑의 내용과 우승작의 내용이 크게 다른 경우 <br />② 다른
+            참여자의 신고가 접수된 경우<br />
+            ③ 5회 이하 참여자가 우승한 경우 <br />④ 다른 참여자의 아이디어 및
+            디자인을 차용하려는 의구심이 드는 경우<br />
+            ⑤ 기타 부정 콘테스트로 의심할만한 근거가 발견된 경우<br />
+            <br />
+            <p>3. 실제 부정 콘테스트로 인정되는 경우는 아래와 같습니다.</p>
+            ① 어떤 형식으로든지 의뢰자가 본인의 콘테스트에 참여하는 경우 <br />②
+            의뢰자의 참여작이 우승작이 된 경우<br />
+            ③ 본인이 개최한 콘테스트에 등록된 타작품이나 아이디어를 침해하여
+            참여한 경우
+          </div>
+          <div id="policy-modal-content-btn" class="modal-content-btn">
+            <button
+              class="btn-secondary modal-cancle-btn"
+              id="policy-modal-cancle-btn"
+            >
+              취소
+            </button>
+            <button
+              class="btn-primary modal-agree-btn"
+              id="policy-modal-agree-btn"
+            >
+              동의
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="terms-modal-container" class="modal-container">
+        <div id="terms-modal-background" class="modal-background"></div>
+        <div id="terms-modal-content" class="modal-content">
+          <div id="terms-modal-content-title" class="modal-content-title">
+            <h3>공모전 이용약관 🔥</h3>
+          </div>
+          <div id="terms-modal-content-info" class="modal-content-info">
+            <p style="font-size: 16px">부정 콘테스트의 상세 기준</p>
+            <br />
+            <p>
+              1. 어떠한 형식으로든지 의뢰자 및 해당 콘테스트 관계인(가족 및
+              지인, 내부 직원 등)은 본인의 콘테스트에 참여할 수 없습니다.
+            </p>
+            <br />
+            <p>
+              2. 아래에 해당하는 경우 라우드소싱 내부 검열 시스템에 따라 상세
+              검토가 진행됩니다.
+            </p>
+            ① 브리핑의 내용과 우승작의 내용이 크게 다른 경우 <br />② 다른
+            참여자의 신고가 접수된 경우<br />
+            ③ 5회 이하 참여자가 우승한 경우 <br />④ 다른 참여자의 아이디어 및
+            디자인을 차용하려는 의구심이 드는 경우<br />
+            ⑤ 기타 부정 콘테스트로 의심할만한 근거가 발견된 경우<br />
+            <br />
+            <p>3. 실제 부정 콘테스트로 인정되는 경우는 아래와 같습니다.</p>
+            ① 어떤 형식으로든지 의뢰자가 본인의 콘테스트에 참여하는 경우 <br />②
+            의뢰자의 참여작이 우승작이 된 경우<br />
+            ③ 본인이 개최한 콘테스트에 등록된 타작품이나 아이디어를 침해하여
+            참여한 경우
+          </div>
+          <div id="terms-modal-content-btn" class="modal-content-btn">
+            <button
+              class="btn-secondary modal-cancle-btn"
+              id="terms-modal-cancle-btn"
+            >
+              취소
+            </button>
+            <button
+              class="btn-primary modal-agree-btn"
+              id="terms-modal-agree-btn"
+            >
+              동의
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="caution-modal-container" class="modal-container">
+        <div id="caution-modal-background" class="modal-background"></div>
+        <div id="caution-modal-content" class="modal-content">
+          <div id="caution-modal-content-title" class="modal-content-title">
+            <h3>공모전 참여 주의사항 🚨</h3>
+          </div>
+          <div id="caution-modal-content-info" class="modal-content-info">
+            <p style="font-size: 16px">부정 콘테스트의 상세 기준</p>
+            <br />
+            <p>
+              1. 어떠한 형식으로든지 의뢰자 및 해당 콘테스트 관계인(가족 및
+              지인, 내부 직원 등)은 본인의 콘테스트에 참여할 수 없습니다.
+            </p>
+            <br />
+            <p>
+              2. 아래에 해당하는 경우 라우드소싱 내부 검열 시스템에 따라 상세
+              검토가 진행됩니다.
+            </p>
+            ① 브리핑의 내용과 우승작의 내용이 크게 다른 경우 <br />② 다른
+            참여자의 신고가 접수된 경우<br />
+            ③ 5회 이하 참여자가 우승한 경우 <br />④ 다른 참여자의 아이디어 및
+            디자인을 차용하려는 의구심이 드는 경우<br />
+            ⑤ 기타 부정 콘테스트로 의심할만한 근거가 발견된 경우<br />
+            <br />
+            <p>3. 실제 부정 콘테스트로 인정되는 경우는 아래와 같습니다.</p>
+            ① 어떤 형식으로든지 의뢰자가 본인의 콘테스트에 참여하는 경우 <br />②
+            의뢰자의 참여작이 우승작이 된 경우<br />
+            ③ 본인이 개최한 콘테스트에 등록된 타작품이나 아이디어를 침해하여
+            참여한 경우
+          </div>
+          <div id="caution-modal-content-btn" class="modal-content-btn">
+            <button
+              class="btn-secondary modal-cancle-btn"
+              id="caution-modal-cancle-btn"
+            >
+              취소
+            </button>
+            <button
+              class="btn-primary modal-agree-btn"
+              id="caution-modal-agree-btn"
+            >
+              동의
+            </button>
+          </div>
+        </div>
+      </div>
 
       <script src="${contextPath}/resources/js/header.js"></script>
       <script src="${contextPath}/resources/js/contest-attend-agree.js"></script>
