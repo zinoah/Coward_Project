@@ -1,266 +1,124 @@
-// var btnAll = document.getElementById("all");
-// var btnRecruiting = document.getElementById("recruiting");
-// var btnCasting = document.getElementById("casting");
-// var btnEnd = document.getElementById("end");
+// Note: contestList 요청 Ajax
+function getContestListAjax(conStatus) {
+  $.ajax({
+    url: "companyManagement",
+    type: "POST",
+    data: { conStatus: conStatus },
+    dataType: "json",
+    success: function (contestList) {
+      contestSlider2.innerHTML = "";
+      contestSlider2.style.width = 265 * contestList.length + "px";
 
-// var conStatus = document.getElementById("conStatus");
-// const result = document.getElementById("contest-slider");
+      contestList.forEach((contest) => {
+        createContestList(contest);
+        index++;
+      });
 
-// // document.addEventListener("DOMContentLoaded", function () {
-// //   btnAll.click();
-// // });
+      index = 0;
+    },
+    error: function () {
+      console.log("getContestListAjax 실패");
+    },
+  });
+}
 
-// btnAll.addEventListener("click", function () {
-//   conStatus.value = "전체";
-//   console.log("전체 Clicked"); // 로그 메시지 추가
-//   console.log(conStatus.value);
+// Note: 공모전 필터링 적용
+const filterBtnList = document.querySelectorAll(".filterBtn");
 
-//   $.ajax({
-//     url: "companyManagement",
-//     data: { conStatus: conStatus.value },
-//     type: "POST",
-//     dataType: "json",
-//     success: function (getContestList) {
-//       if (getContestList.length > 0) {
-//         displayContestList(getContestList);
-//       } else {
-//         displayNoContestMessage();
-//       }
-//     },
-//     error: function (xhr, status, error) {
-//       console.log("AJAX Error: " + error);
-//     },
-//   });
+filterBtnList.forEach((filterBtn) => {
+  filterBtn.addEventListener("click", function () {
+    const conStatus = this.getAttribute("data-parameter");
 
-//   // 공모전 목록을 결과 창에 표시하는 함수
-//   function displayContestList(getContestList) {
-//     var html = ""; // 빈 문자열로 초기화
+    console.log(conStatus);
 
-//     getContestList.forEach((contest) => {
-//       html += `<div>
-//               <div class="contest-slider-card">
-//                 <div class="contest-slider-card-img">
-//                   <img src="../assets/images/contest-gallery-card-img.svg" alt="" />
-//                 </div>
-//                 <div class="contest-slider-card-info">
-//                   <div class="contest-slider-card-info-title">
-//                     <p>${contest.contestTitle}</p>
-//                   </div>
+    getContestListAjax(conStatus);
+  });
+});
 
-//                   <div class="contest-slider-card-info-detail">
-//                     <p>상금</p>
-//                     <p>${contest.price} 만원</p>
-//                   </div>
+// Note: contest 동적 생성 구문
+// 공모전 목록을 결과 창에 표시하는 함수
+const contestSlider2 = document.getElementById("contest-slider");
+let index = 0;
 
-//                   <div class="contest-slider-card-info-detail">
-//                   <p>남은기간</p>
-//                   <p>${contest.dueDate} 일</p>
-//                 </div>
-//                   <div class="contest-slider-card-info-button">
-//                     <button class="btn-outlined btn-32">참여하러가기</button>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>`;
-//     });
+function createContestList(contest) {
+  const tnsDiv = document.createElement("div");
+  if (index < 3) {
+    tnsDiv.setAttribute("class", "tns-item tns-slide-active");
+  } else {
+    tnsDiv.setAttribute("class", "tns-item");
+  }
+  tnsDiv.setAttribute("id", "contest-slider-item" + index);
 
-//     result.innerHTML = html;
-//   }
+  // 1
+  const parentDiv = document.createElement("div");
 
-//   // 일치하는 콘테스트가 없을 때 메시지를 표시하는 함수
-//   function displayNoContestMessage() {
-//     result.innerHTML = "일치하는 콘테스트가 없습니다";
-//   }
-// });
+  // 2
+  const sliderCard = document.createElement("div");
+  sliderCard.setAttribute("class", "contest-slider-card");
 
-// //모집중 공모전 조회Ajax
-// btnRecruiting.addEventListener("click", function () {
-//   conStatus.value = "모집중";
-//   console.log("모집중 Clicked"); // 로그 메시지 추가
-//   console.log(conStatus.value);
+  // 3
+  const sliderCardImage = document.createElement("div");
+  sliderCardImage.setAttribute("class", "contest-slider-card-img");
 
-//   $.ajax({
-//     url: "companyManagement",
-//     data: { conStatus: conStatus.value },
-//     type: "POST",
-//     dataType: "json",
-//     success: function (getContestList) {
-//       if (getContestList.length > 0) {
-//         displayContestList(getContestList);
-//       } else {
-//         displayNoContestMessage();
-//       }
-//     },
-//     error: function (xhr, status, error) {
-//       console.log("AJAX Error: " + error);
-//     },
-//   });
+  const sliderCardInfo = document.createElement("div");
+  sliderCardInfo.setAttribute("class", "contest-slider-card-info");
 
-//   // 공모전 목록을 결과 창에 표시하는 함수
-//   function displayContestList(getContestList) {
-//     var html = ""; // 빈 문자열로 초기화
+  // 4
+  const sliderCardImgTag = document.createElement("img");
+  sliderCardImgTag.setAttribute("src", contextPath + "/" + contest.thumbnail);
 
-//     getContestList.forEach((contest) => {
-//       html += `<div>
-//               <div class="contest-slider-card">
-//                 <div class="contest-slider-card-img">
-//                   <img src="../assets/images/contest-gallery-card-img.svg" alt="" />
-//                 </div>
-//                 <div class="contest-slider-card-info">
-//                   <div class="contest-slider-card-info-title">
-//                     <p>${contest.contestTitle}</p>
-//                   </div>
+  const title = document.createElement("div");
+  title.setAttribute("class", "contest-slider-card-info-title");
+  const titleP = document.createElement("p");
+  titleP.innerText = contest.contestTitle;
 
-//                   <div class="contest-slider-card-info-detail">
-//                     <p>상금</p>
-//                     <p>${contest.price} 만원</p>
-//                   </div>
+  const detailPrice = document.createElement("div");
+  detailPrice.setAttribute("class", "contest-slider-card-info-detail");
+  const detailPriceP1 = document.createElement("p");
+  detailPriceP1.innerText = "상금";
+  const detailPriceP2 = document.createElement("p");
+  detailPriceP2.innerText = contest.price + "만원";
 
-//                   <div class="contest-slider-card-info-detail">
-//                   <p>남은기간</p>
-//                   <p>${contest.dueDate} 일</p>
-//                 </div>
-//                   <div class="contest-slider-card-info-button">
-//                     <button class="btn-outlined btn-32">참여하러가기</button>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>`;
-//     });
+  const detailDate = document.createElement("div");
+  detailDate.setAttribute("class", "contest-slider-card-info-detail");
+  const detailDateP1 = document.createElement("p");
+  detailDateP1.innerText = "남은기간";
+  const detailDateP2 = document.createElement("p");
+  detailDateP2.innerText = contest.dueDate + "일";
 
-//     result.innerHTML = html;
-//   }
+  // 5
+  const Button = document.createElement("div");
+  Button.setAttribute("class", "contest-slider-card-info-button");
+  const ButtonA = document.createElement("a");
+  ButtonA.setAttribute("class", "btn-outlined btn-32");
+  ButtonA.setAttribute("href", "detail/" + contest.contestNo);
+  ButtonA.innerText = " 참여하러가기";
 
-//   // 일치하는 콘테스트가 없을 때 메시지를 표시하는 함수
-//   function displayNoContestMessage() {
-//     result.innerHTML = "일치하는 콘테스트가 없습니다";
-//   }
-// });
+  Button.appendChild(ButtonA);
 
-// //심사중 공모전 조회Ajax
-// btnCasting.addEventListener("click", function () {
-//   conStatus.value = "심사중";
-//   console.log("심사중 Clicked"); // 로그 메시지 추가
-//   console.log(conStatus.value);
+  detailDate.appendChild(detailDateP1);
+  detailDate.appendChild(detailDateP2);
 
-//   $.ajax({
-//     url: "companyManagement",
-//     data: { conStatus: conStatus.value },
-//     type: "POST",
-//     dataType: "json",
-//     success: function (getContestList) {
-//       if (getContestList.length > 0) {
-//         displayContestList(getContestList);
-//       } else {
-//         displayNoContestMessage();
-//       }
-//     },
-//     error: function (xhr, status, error) {
-//       console.log("AJAX Error: " + error);
-//     },
-//   });
+  detailPrice.appendChild(detailPriceP1);
+  detailPrice.appendChild(detailPriceP2);
 
-//   // 공모전 목록을 결과 창에 표시하는 함수
-//   function displayContestList(getContestList) {
-//     var html = ""; // 빈 문자열로 초기화
+  title.appendChild(titleP);
 
-//     getContestList.forEach((contest) => {
-//       html += `<div>
-//               <div class="contest-slider-card">
-//                 <div class="contest-slider-card-img">
-//                   <img src="../assets/images/contest-gallery-card-img.svg" alt="" />
-//                 </div>
-//                 <div class="contest-slider-card-info">
-//                   <div class="contest-slider-card-info-title">
-//                     <p>${contest.contestTitle}</p>
-//                   </div>
+  sliderCardInfo.appendChild(title);
+  sliderCardInfo.appendChild(detailPrice);
+  sliderCardInfo.appendChild(detailDate);
+  sliderCardInfo.appendChild(Button);
 
-//                   <div class="contest-slider-card-info-detail">
-//                     <p>상금</p>
-//                     <p>${contest.price} 만원</p>
-//                   </div>
+  sliderCardImage.appendChild(sliderCardImgTag);
 
-//                   <div class="contest-slider-card-info-detail">
-//                   <p>남은기간</p>
-//                   <p>${contest.dueDate} 일</p>
-//                 </div>
-//                   <div class="contest-slider-card-info-button">
-//                     <button class="btn-outlined btn-32">참여하러가기</button>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>`;
-//     });
+  sliderCard.appendChild(sliderCardImage);
+  sliderCard.appendChild(sliderCardInfo);
 
-//     result.innerHTML = html;
-//   }
+  parentDiv.appendChild(sliderCard);
 
-//   // 일치하는 콘테스트가 없을 때 메시지를 표시하는 함수
-//   function displayNoContestMessage() {
-//     result.innerHTML = "일치하는 콘테스트가 없습니다";
-//   }
-// });
+  tnsDiv.appendChild(parentDiv);
 
-// //완료된 공모전 조회Ajax
-// btnEnd.addEventListener("click", function () {
-//   conStatus.value = "완료";
-//   console.log("완료 Clicked"); // 로그 메시지 추가
-//   console.log(conStatus.value);
+  contestSlider2.appendChild(tnsDiv);
+}
 
-//   $.ajax({
-//     url: "companyManagement",
-//     data: { conStatus: conStatus.value },
-//     type: "POST",
-//     dataType: "json",
-//     success: function (getContestList) {
-//       if (getContestList.length > 0) {
-//         displayContestList(getContestList);
-//       } else {
-//         displayNoContestMessage();
-//       }
-//     },
-//     error: function (xhr, status, error) {
-//       console.log("AJAX Error: " + error);
-//     },
-//   });
-
-//   // 공모전 목록을 결과 창에 표시하는 함수
-//   function displayContestList(getContestList) {
-//     var html = ""; // 빈 문자열로 초기화
-
-//     getContestList.forEach((contest) => {
-//       html += `<div>
-//               <div class="contest-slider-card">
-//                 <div class="contest-slider-card-img">
-//                   <img src="../assets/images/contest-gallery-card-img.svg" alt="" />
-//                 </div>
-//                 <div class="contest-slider-card-info">
-//                   <div class="contest-slider-card-info-title">
-//                     <p>${contest.contestTitle}</p>
-//                   </div>
-
-//                   <div class="contest-slider-card-info-detail">
-//                     <p>상금</p>
-//                     <p>${contest.price} 만원</p>
-//                   </div>
-
-//                   <div class="contest-slider-card-info-detail">
-//                   <p>남은기간</p>
-//                   <p>${contest.dueDate} 일</p>
-//                 </div>
-//                   <div class="contest-slider-card-info-button">
-//                     <button class="btn-outlined btn-32">참여하러가기</button>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>`;
-//     });
-
-//     result.innerHTML = html;
-//   }
-
-//   // 일치하는 콘테스트가 없을 때 메시지를 표시하는 함수
-//   function displayNoContestMessage() {
-//     result.innerHTML = "일치하는 콘테스트가 없습니다";
-//   }
-// });
+console.log(filterBtnList);
