@@ -69,14 +69,19 @@ public class MyPageDAO<Contest> {
 
 	/**
 	 * 마이페이지 - 정보조회 DAO
+	 * 
 	 * @param memberNo
 	 * @return
 	 */
 	public Member mypageInfo(int memberNo) {
 
-		return sqlSession.selectOne("mypageMapper.mypageInfo", memberNo);
+		return sqlSession.selectOne("myPageMapper.mypageInfo", memberNo);
 	}
 
-	
+	// 우승자 선정 페이지
+	public List<Member> winnerSelect(int contestNo) {
+
+		return sqlSession.selectList("myPageMapper.winnerSelect", contestNo);
+	}
 
 }

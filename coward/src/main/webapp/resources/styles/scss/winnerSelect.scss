@@ -61,9 +61,6 @@
 }
 
 .contest {
-  #all-col {
-    @include flexbox;
-  }
   .card {
     width: 100%;
     height: 160px;
@@ -169,6 +166,10 @@
       }
     }
   }
+}
+
+.modal {
+  display: none;
 }
 
 .footer {

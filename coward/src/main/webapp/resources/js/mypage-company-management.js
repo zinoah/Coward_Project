@@ -52,6 +52,10 @@ function createContestList(contest) {
   // 1
   const parentDiv = document.createElement("div");
 
+  const a = document.createElement("a");
+  //To do : 경로설정 다시
+  a.href = contextPath + "/contest/contestWinnerSelect";
+
   // 2
   const sliderCard = document.createElement("div");
   sliderCard.setAttribute("class", "contest-slider-card");

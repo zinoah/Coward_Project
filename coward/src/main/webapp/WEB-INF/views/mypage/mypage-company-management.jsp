@@ -19,8 +19,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+      href="${contextPath}/resources/styles/css/slider.css"
     />
+
     <title>Coward | 마이페이지</title>
   </head>
 
@@ -142,68 +143,34 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
 
                     <div class="row">
-                      <div class="col-sm-4">
-                        <div class="slider-wrapper">
-                          <div class="contest-slider" id="contest-slider">
-                            <c:forEach var="contest" items="${contestList}">
-                              <div>
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="${contextPath}/${contest.thumbnail}"
-                                    />
+                      <c:forEach var="contest" items="${contestList}">
+                        <div class="col-sm-4 col-md-4 col-lg-2">
+                          <div>
+                            <a
+                              href="${contextPath}/mypage/winnerSelect/${contest.contestNo}"
+                            >
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>${contest.contestNo}</p>
                                   </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                    
-                                      <p>${contest.contestTitle}</p>
-             
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                               
-                                      <p>${contest.price}만원</p>
-                                   
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-
-                                      <p>${contest.dueDate}일</p>
-                      
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-button"
-                                    >
-                                      <a
-                                        class="btn-outlined btn-32"
-                                        href="detail/${contest.contestNo}"
-                                      >
-                                        참여하러가기
-                                      </a>
-                                    </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>${contest.price}만원</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>${contest.dueDate}일</p>
                                   </div>
                                 </div>
                               </div>
-                            </c:forEach>
-                          </div>
-                          <div class="slider-controls">
-                            <button
-                              class="control-button is-prev"
-                              type="button"
-                            >
-                              <i class="ic-chevron"></i>
-                            </button>
-                            <button
-                              class="control-button is-next"
-                              type="button"
-                            >
-                              <i class="ic-chevron"></i>
-                            </button>
+                            </a>
                           </div>
                         </div>
-                      </div>
+                      </c:forEach>
                     </div>
 
                     <!-- 본문 끝 -->
@@ -219,8 +186,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="${contextPath}/resources/js/mypage-slider.js"></script>
+
     <script>
       const contextPath = "${contextPath}";
     </script>
