@@ -146,14 +146,14 @@
 	</insert>
 	
 	<!-- 기업 -> 개발자 좋아요 취소 -->
-	<insert id="disLikeDev">
+	<delete id="disLikeDev">
 		DELETE FROM LIKE_USER 
    		WHERE C_MEMBER_NO = ${cMemberNo}
    		AND P_MEMBER_NO = ${pMemberNo}
-	</insert>
+	</delete>
 	
 	<!-- 좋아요 리스트 -->
-	<select id="getLikeList" resultType="list">
+	<select id="getLikeList" resultType="integer">
 		SELECT P_MEMBER_NO 
 		FROM LIKE_USER
 		WHERE C_MEMBER_NO = ${loginMemberNo}

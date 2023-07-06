@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 
 <html lang="ko">
@@ -43,6 +44,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
+
+    ${likedList} ${likedList.contains(dev.memberNo) ? 'is-active' : 'no'}
 
     <main class="find-developer">
       <div class="container">
@@ -131,50 +134,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       </button>
                     </div>
 
-                    <c:choose>
-                      <c:when test="${empty sessionScope.loginMember}">
-                        <button
-                          id="like-btn"
-                          class="like-btn"
-                          type="button"
-                          onclick="clickLikeBtn(${sessionScope.loginMember.memberNo}, ${devList.memberNo}, this)"
-                        >
-                          <label for="like-btn"
-                            ><i class="ic-like-filled"></i
-                          ></label>
-                        </button>
-                      </c:when>
-
-                      <c:when test="${sessionScope.loginMember}">
-                        <c:choose>
-                          <c:when test="${likeList.contains(devList.memberNo)}">
-                            <button
-                              id="like-btn"
-                              class="like-btn is-active"
-                              type="button"
-                              onclick="clickLikeBtn(${sessionScope.loginMember.memberNo}, ${devList.memberNo}, this)"
-                            >
-                              <label for="like-btn"
-                                ><i class="ic-like-filled"></i
-                              ></label>
-                            </button>
-                          </c:when>
-
-                          <c:otherwise>
-                            <button
-                              id="like-btn"
-                              class="like-btn"
-                              type="button"
-                              onclick="clickLikeBtn(${sessionScope.loginMember.memberNo}, ${devList.memberNo}, this)"
-                            >
-                              <label for="like-btn"
-                                ><i class="ic-like-filled"></i
-                              ></label>
-                            </button>
-                          </c:otherwise>
-                        </c:choose>
-                      </c:when>
-                    </c:choose>
+                    <button
+                      id="like-btn"
+                      class="like-btn ${likedList.contains(devList.memberNo) ? 'is-active' : ''}"
+                      type="button"
+                      onclick="clickLikeBtn('${empty sessionScope.loginMember ? null : sessionScope.loginMember.memberNo}', ${devList.memberNo}, this)"
+                    >
+                      <label for="like-btn"
+                        ><i class="ic-like-filled"></i>
+                      </label>
+                    </button>
                   </div>
                 </div>
               </form>

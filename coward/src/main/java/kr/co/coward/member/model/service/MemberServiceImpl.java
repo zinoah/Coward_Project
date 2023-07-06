@@ -233,7 +233,6 @@ public class MemberServiceImpl implements MemberService {
 		return dao.getDevList(pageSize, offset, filter);
 	}
 
-	
 	// 개발자 찾기 좋아요 버튼 클릭 Service
 	@Override
 	public int likeDev(int cMemberNo, int pMemberNo, String flag) {
@@ -243,10 +242,8 @@ public class MemberServiceImpl implements MemberService {
 	// 현재 회원이 좋아요 한 회원 목록
 	@Override
 	public List<Integer> getLikeList(int loginMemberNo) {
-		
+
 		return dao.getLikeList(loginMemberNo);
 	}
-	
-	
 
 }

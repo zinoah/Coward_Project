@@ -54,16 +54,18 @@ public interface MemberService {
 	 */
 	List<Member> getFindDevPage(int pageSize, int offset, String filter);
 
-	
-	/** 개발자 찾기 좋아요 버튼 클릭 Service
+	/**
+	 * 개발자 찾기 좋아요 버튼 클릭 Service
+	 * 
 	 * @param cMemberNo
 	 * @param pMemberNo
 	 * @return
 	 */
 	public abstract int likeDev(int cMemberNo, int pMemberNo, String flag);
 
-	
-	/** 현재 회원이 좋아요 한 회원 목록
+	/**
+	 * 현재 회원이 좋아요 한 회원 목록
+	 * 
 	 * @param memberNo
 	 * @return
 	 */

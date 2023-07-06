@@ -1,6 +1,5 @@
 package kr.co.coward.member.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
@@ -232,54 +231,6 @@ public class MemberController {
 		ra.addFlashAttribute("message", message);
 
 		return "redirect:" + path;
-	}
-	
-	// Note: 개발자 찾기 좋아요 버튼
-	@ResponseBody
-	@PostMapping("/likeDev")
-	public int likeDev(@RequestParam int cMemberNo, @RequestParam int pMemberNo, @RequestParam String flag) {
-		
-		int result = service.likeDev(cMemberNo, pMemberNo, flag);
-		
-		return result; 
-	}
-	
-
-	// Note: 개발자 찾기 진입 시 GET 요청
-	@GetMapping("/findDev")
-	public String findDev(Model model, @ModelAttribute("loginMember") Member loginMember) {
-
-		int pageSize = 12; // 한 페이지당 가져올 데이터 개수
-		int offset = 0;
-
-		// 개발자 리스트 조회
-		List<Member> devList = service.getFindDevPage(pageSize, offset, "all");
-		
-		// 로그인 회원이 좋아요 한 회원 목록 조회
-		List<Integer> likeList = service.getLikeList(loginMember.getMemberNo());
-
-		// 개발자 리스트 적재
-		model.addAttribute("devList", devList);
-		model.addAttribute("likeList", likeList);
-
-		return "find-developer";
-	}
-
-	@ResponseBody
-	@PostMapping("/findDev")
-	public List<Member> findDevAjax(Model model, @RequestParam int page, @RequestParam String filter) {
-
-		int pageSize = 6; // 한 페이지당 가져올 데이터 개수
-		int offset = page * pageSize; // OFFSET 계산
-
-		// 개발자 리스트 조회
-		List<Member> devList = service.getFindDevPage(pageSize, offset, filter);
-
-		for (Member m : devList) {
-			System.out.println(m);
-		}
-
-		return devList;
 	}
 
 	@GetMapping("/terms")
