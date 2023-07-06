@@ -115,9 +115,22 @@
 	</select>
 
 	   <!-- 개발자 찾기[ALL] (상금 순 정렬) -->
-   <select id="getDevList" parameterType="_int"  resultMap="member_rm">
+   <select id="getDevList"  resultMap="member_rm">
 		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, MEMBER_NO, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE, STACK, SLOGAN, ATTEND_COUNT, VICTORY_COUNT 
 		FROM MEMBER
+		<choose>
+	      <when test="filter == 'all'">
+	      </when>
+	      <when test="filter == 'front'">
+	      	WHERE STACK = #{filter}
+	      </when>
+	       <when test="filter == 'back'">
+	      	WHERE STACK = #{filter}
+	      </when>
+	       <when test="filter == 'full'">
+	      	WHERE STACK = #{filter}
+	      </when>
+	    </choose>
 		OFFSET ${offset} ROWS FETCH NEXT ${pageSize} ROWS ONLY
    </select>
    

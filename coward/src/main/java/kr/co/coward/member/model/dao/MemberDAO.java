@@ -97,26 +97,26 @@ public class MemberDAO {
 	public int secession(int memberNo) {
 		return sqlSession.update("memberMapper.secession", memberNo);
 	}
-	
-	/** 비밀번호 변경 DAO
-	 * @param 
-	 * @return 
+
+	/**
+	 * 비밀번호 변경 DAO
+	 * 
+	 * @param
+	 * @return
 	 */
 	public int changePw(Map<String, Object> paramMap) {
 		return sqlSession.update("memberMapper.changePw", paramMap);
 	}
-	
-	
-	
 
 	/**
 	 * 개발자 찾기 DAO
 	 * 
 	 */
-	public List<Member> getDevList(int pageSize, int offset) {
+	public List<Member> getDevList(int pageSize, int offset, String filter) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("offset", offset);
 		params.put("pageSize", pageSize);
+		params.put("filter", filter);
 
 		return sqlSession.selectList("memberMapper.getDevList", params);
 	}

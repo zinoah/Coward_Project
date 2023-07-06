@@ -86,10 +86,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               >
                 <div class="developer-card">
                   <div class="developer-profile">
-                    <div class="developer-img">
-                      <div class="profile-img avatar">
-                        <img src="${contextPath}/${devList.profileImg}" />
-                      </div>
+                    <div class="profile-img avatar">
+                      <img src="${contextPath}/${devList.profileImg}" />
                     </div>
 
                     <div class="developer-info">
