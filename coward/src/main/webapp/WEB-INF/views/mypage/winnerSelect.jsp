@@ -18,8 +18,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/contest-form-modal.css"
     />
-    <!-- 
-    <link rel="stylesheet" href="${contextPath}/resources/styles/css/" /> -->
   </head>
 
   <body>
@@ -36,30 +34,32 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <main class="contest-top">
       <div class="container">
         <div class="row">
-          <div class="col-sm-4 sm-only">
-            <h3>식품 쇼핑몰 웹사이트 콘테스트</h3>
-          </div>
-
-          <div class="col-md-6 col-lg-4 sm-hidden">
-            <h2 class>식품 쇼핑몰 웹사이트 콘테스트</h2>
-          </div>
-
-          <div class="col-md-6 col-lg-8 sm-hidden">
-            <div class="status">
-              <p>심사중</p>
+          <c:forEach var="contest" items="${contest}">
+            <div class="col-sm-4 sm-only">
+              <h3>${contest.contestTitle}</h3>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <h6>남은기간 &nbsp; 참가인원 &nbsp;</h6>
-            <pre>17일   15명   </pre>
-          </div>
-
-          <div class="col-sm-1 sm-only">
-            <div class="status">
-              <p>심사중</p>
+            <div class="col-md-6 col-lg-4 sm-hidden">
+              <h2>${contest.contestTitle}</h2>
             </div>
-          </div>
+
+            <div class="col-md-6 col-lg-8 sm-hidden">
+              <div class="status">
+                <p>${contest.conStatus}</p>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <h6>남은기간 &nbsp; 참가인원 &nbsp;</h6>
+              <pre>${contest.dueDate}     ${contest.attendCount}   </pre>
+            </div>
+
+            <div class="col-sm-1 sm-only">
+              <div class="status">
+                <p>${contest.conStatus}</p>
+              </div>
+            </div>
+          </c:forEach>
         </div>
       </div>
     </main>
@@ -86,13 +86,18 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </div>
 
                   <div class="profile-button-wrapper">
+                    <input
+                      type="hidden"
+                      id="memberNo"
+                      name="memberNo"
+                      value=""
+                    />
                     <button
                       type="button"
-                      class="btn-40 btn-outlined"
+                      class="btn-40 btn-outlined checkFormBtn"
                       onclick="getMemberNo('${member.memberNo}')"
                     >
                       제출품 보기
-                      <p>${member.memberNo}</p>
                     </button>
                     <button class="btn-40 btn-primary">채팅하기</button>
                   </div>
@@ -118,12 +123,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="background">
         <div class="window">
           <div class="popup">
-            <div class="profile-section">
-              <img src="../assets/images/default-user-img.png" />
-              <h4>닉네임</h4>
-              <div class="coding-type">${member.stack}</div>
-            </div>
-
             <div class="intro">
               <div>
                 <h5 class="simple-intro-title">
@@ -134,21 +133,33 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 ${contestAttend.description}</textarea
                   >
                 </div>
+
+                <div class="fileBtn">
+                  <a href="${contestAttend.pptFile}" download="contest">
+                    <button type="button" class="btn-primary btn-32">
+                      File Download
+                    </button>
+                  </a>
+                </div>
+
                 <h5>github 주소</h5>
                 <div class="github-input">${contestAttend.githubAddress}</div>
 
+                <!--
                 <h5>사용 기술</h5>
                 <div class="skill-box">
                   <div class="my-skill">Java Script</div>
                   <div class="my-skill">CSS</div>
                   <div class="my-skill">Java</div>
                   <div class="my-skill">Spring</div>
-                </div>
+                </div>-->
               </div>
             </div>
 
             <div class="button-wrapper">
-              <button class="btn-32 btn-primary">확인</button>
+              <button class="btn-32 btn-primary" id="deleteFormBtn">
+                확인
+              </button>
             </div>
           </div>
         </div>
@@ -161,8 +172,11 @@ ${contestAttend.description}</textarea
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       const contextPath = "${contextPath}";
-      console.log("?????");
     </script>
+    <script>
+      const contestNo = "${contestNo}";
+    </script>
+
     <script src="${contextPath}/resources/js/winnerSelect.js"></script>
   </body>
 </html>

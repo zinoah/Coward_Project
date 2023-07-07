@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import kr.co.coward.common.Util;
 import kr.co.coward.contest.model.dao.ContestDAO;
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 import kr.co.coward.member.model.dao.MyPageDAO;
 import kr.co.coward.member.model.vo.Member;
 
@@ -141,11 +142,25 @@ public class MyPageServiceImpl implements MyPageService {
 
 	// 우승자 선정페이지
 	@Override
-	public List<Member> winnerSelect(int contestNo) {
+	public List<Member> winnerSelect(int contestNo, String stack) {
 
 		logger.info("불러온 contestNo : " + contestNo);
 
-		return dao.winnerSelect(contestNo);
+		return dao.winnerSelect(contestNo, stack);
+	}
+
+	// 우승자 선정페이지 - 콘테스트 정보
+	@Override
+	public List<Contest> winnerSelectContest(int contestNo) {
+
+		return dao.winnerSelectContest(contestNo);
+	}
+
+	// 우승자 선정 페이지 - 모달창 참가자 정보 조회
+	@Override
+	public List<ContestAttend> contestAttendInfo(Map<String, Object> paramMap) {
+
+		return dao.contestAttendInfo(paramMap);
 	}
 
 }

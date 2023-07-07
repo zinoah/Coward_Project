@@ -24,6 +24,7 @@
 		<!-- Note: 기획 정리 되면 사용 여부 결정 -->
 		<result property="conStatus" column="CON_STATUS" />
 		<result property="bookmarkCount" column="BOOKMARK_COUNT" />
+		<result property="attendCount" column="ATTEND_COUNT" />
 	</resultMap>
 
 	<resultMap type="member" id="member_rm">
@@ -36,7 +37,7 @@
 		<result property="phone" column="PHONE" />
 		<result property="regionNo" column="REGION_NO" />
 		<result property="stack" column="STACK" />
-		<result property="stack" column="SKILL" />
+		<result property="skill" column="SKILL" />
 		<result property="slogan" column="SLOGAN" />
 		<result property="introduce" column="INTRODUCE" />
 		<result property="totalPrice" column="TOTAL_PRICE" />
@@ -49,17 +50,17 @@
 		<result property="likeCount" column="LIKE_COUNT" />
 		<result property="victoryCount" column="VICTORY_COUNT" />
 	</resultMap>
-	
-		<resultMap type="contestAttend" id="contestAttend_rm">
-		<id property="attendNo" 		column="ATTEND_NO"/>
-		<result property="memberNo" 		column="MEMBER_NO"/>
-		<result property="contestNo" 	column="CONTEST_NO"/>
-		<result property="description" 	column="DESCRIPTION"/>
-		<result property="githubAddress" 	column="GITHUB"/>
-		<result property="pptFile"  column="PPT_FILE"/>
-		<result property="skill"  column="SKILL"/>
+
+	<resultMap type="contestAttend" id="contestAttend_rm">
+		<id property="attendNo" column="ATTEND_NO" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="contestNo" column="CONTEST_NO" />
+		<result property="description" column="DESCRIPTION" />
+		<result property="githubAddress" column="GITHUB" />
+		<result property="pptFile" column="PPT_FILE" />
+		<result property="skill" column="SKILL" />
 	</resultMap>
-	
+
 
 
 	<!-- 회원 정보 수정 -->
@@ -86,7 +87,7 @@
 		WHERE ca.CONTEST_NO = c.CONTEST_NO
 		AND c.MEMBER_NO =
 		m.MEMBER_NO
-		AND ca.MEMBER_NO = ${memberNo};
+		AND ca.MEMBER_NO = ${memberNo}
 	</select>
 
 
@@ -183,8 +184,31 @@
 		SELECT m.MEMBER_NICK,
 		m.PROFILE_IMG, m.SLOGAN, m.STACK, m.MEMBER_NO
 		FROM MEMBER m
-		INNER JOIN CONTEST_ATTEND c ON m.MEMBER_NO = c.MEMBER_NO
-		WHERE c.CONTEST_NO = #{contestNo}
+		INNER JOIN
+		CONTEST_ATTEND c ON m.MEMBER_NO = c.MEMBER_NO
+		WHERE c.CONTEST_NO =
+		#{contestNo}
+	</select>
+
+	<!-- 우승자 선정페이지 - 콘테스트 조회 -->
+	<select id="winnerSelectContest" resultMap="contest_rm">
+		SELECT
+		c.CONTEST_TITLE, c.CON_STATUS, TRUNC(c.END_DATE - c.CREATE_DATE) AS
+		DUE_DATE, COUNT(a.CONTEST_NO) AS ATTEND_COUNT
+		FROM CONTEST c
+		LEFT JOIN
+		CONTEST_ATTEND a ON c.CONTEST_NO = a.CONTEST_NO
+		WHERE c.CONTEST_NO =
+		#{contestNo}
+		GROUP BY c.CONTEST_TITLE, c.CON_STATUS, c.END_DATE,
+		c.CREATE_DATE
+	</select>
+
+	<!-- 우승자 선정페이지 - 모달창 참가자 정보 조회 -->
+	<select id="contestAttendInfo" resultMap="contestAttend_rm">
+		SELECT DESCRIPTION, GITHUB, PPT_FILE, PPT_FILE, MEMBER_NO, SKILL
+		FROM CONTEST_ATTEND
+		WHERE MEMBER_NO = #{memberNo} AND CONTEST_NO = #{contestNo}
 	</select>
 
 

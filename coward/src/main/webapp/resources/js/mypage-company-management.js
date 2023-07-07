@@ -41,88 +41,74 @@ const contestSlider2 = document.getElementById("contest-slider");
 let index = 0;
 
 function createContestList(contest) {
-  const tnsDiv = document.createElement("div");
-  if (index < 3) {
-    tnsDiv.setAttribute("class", "tns-item tns-slide-active");
-  } else {
-    tnsDiv.setAttribute("class", "tns-item");
-  }
-  tnsDiv.setAttribute("id", "contest-slider-item" + index);
+  //const tnsDiv = document.createElement("div");
+
+  //if (index < 3) {
+  //  tnsDiv.setAttribute("class", "tns-item tns-slide-active");
+  //} else {
+  //  tnsDiv.setAttribute("class", "tns-item");
+  // }
+  //tnsDiv.setAttribute("id", "contest-slider-item" + index);
 
   // 1
-  const parentDiv = document.createElement("div");
+  const outerDivElement = document.createElement("div");
+  outerDivElement.className = "col-sm-4 col-md-4";
 
-  const a = document.createElement("a");
-  //To do : 경로설정 다시
-  a.href = contextPath + "/contest/contestWinnerSelect";
+  const anchorElement = document.createElement("a");
+  anchorElement.href = `${contextPath}/mypage/winnerSelect/${contest.contestNo}`;
 
-  // 2
-  const sliderCard = document.createElement("div");
-  sliderCard.setAttribute("class", "contest-slider-card");
+  const cardDivElement = document.createElement("div");
+  cardDivElement.className = "contest-slider-card";
 
-  // 3
-  const sliderCardImage = document.createElement("div");
-  sliderCardImage.setAttribute("class", "contest-slider-card-img");
+  const imgDivElement = document.createElement("div");
+  imgDivElement.className = "contest-slider-card-img";
 
-  const sliderCardInfo = document.createElement("div");
-  sliderCardInfo.setAttribute("class", "contest-slider-card-info");
+  const imgElement = document.createElement("img");
+  imgElement.src = `${contextPath}/${contest.thumbnail}`;
 
-  // 4
-  const sliderCardImgTag = document.createElement("img");
-  sliderCardImgTag.setAttribute("src", contextPath + "/" + contest.thumbnail);
+  imgDivElement.appendChild(imgElement);
 
-  const title = document.createElement("div");
-  title.setAttribute("class", "contest-slider-card-info-title");
-  const titleP = document.createElement("p");
-  titleP.innerText = contest.contestTitle;
+  const infoDivElement = document.createElement("div");
+  infoDivElement.className = "contest-slider-card-info";
 
-  const detailPrice = document.createElement("div");
-  detailPrice.setAttribute("class", "contest-slider-card-info-detail");
-  const detailPriceP1 = document.createElement("p");
-  detailPriceP1.innerText = "상금";
-  const detailPriceP2 = document.createElement("p");
-  detailPriceP2.innerText = contest.price + "만원";
+  const titleDivElement = document.createElement("div");
+  titleDivElement.className = "contest-slider-card-info-title";
 
-  const detailDate = document.createElement("div");
-  detailDate.setAttribute("class", "contest-slider-card-info-detail");
-  const detailDateP1 = document.createElement("p");
-  detailDateP1.innerText = "남은기간";
-  const detailDateP2 = document.createElement("p");
-  detailDateP2.innerText = contest.dueDate + "일";
+  const contestNoElement = document.createElement("p");
+  contestNoElement.textContent = contest.contestNo;
 
-  // 5
-  const Button = document.createElement("div");
-  Button.setAttribute("class", "contest-slider-card-info-button");
-  const ButtonA = document.createElement("a");
-  ButtonA.setAttribute("class", "btn-outlined btn-32");
-  ButtonA.setAttribute("href", "detail/" + contest.contestNo);
-  ButtonA.innerText = " 참여하러가기";
+  titleDivElement.appendChild(contestNoElement);
 
-  Button.appendChild(ButtonA);
+  const detail1DivElement = document.createElement("div");
+  detail1DivElement.className = "contest-slider-card-info-detail";
 
-  detailDate.appendChild(detailDateP1);
-  detailDate.appendChild(detailDateP2);
+  const priceElement = document.createElement("p");
+  priceElement.textContent = contest.dueDate + "일 남음";
 
-  detailPrice.appendChild(detailPriceP1);
-  detailPrice.appendChild(detailPriceP2);
+  detail1DivElement.appendChild(priceElement);
 
-  title.appendChild(titleP);
+  const detail2DivElement = document.createElement("div");
+  detail2DivElement.className = "contest-slider-card-info-detail";
 
-  sliderCardInfo.appendChild(title);
-  sliderCardInfo.appendChild(detailPrice);
-  sliderCardInfo.appendChild(detailDate);
-  sliderCardInfo.appendChild(Button);
+  const dueDateElement = document.createElement("p");
+  dueDateElement.textContent = contest.dueDate + "일";
 
-  sliderCardImage.appendChild(sliderCardImgTag);
+  detail2DivElement.appendChild(dueDateElement);
 
-  sliderCard.appendChild(sliderCardImage);
-  sliderCard.appendChild(sliderCardInfo);
+  infoDivElement.appendChild(titleDivElement);
+  infoDivElement.appendChild(detail1DivElement);
+  infoDivElement.appendChild(detail2DivElement);
 
-  parentDiv.appendChild(sliderCard);
+  cardDivElement.appendChild(imgDivElement);
+  cardDivElement.appendChild(infoDivElement);
 
-  tnsDiv.appendChild(parentDiv);
+  // Append the cardDivElement to the anchorElement
+  anchorElement.appendChild(cardDivElement);
 
-  contestSlider2.appendChild(tnsDiv);
+  // Append the anchorElement to the outerDivElement
+  outerDivElement.appendChild(anchorElement);
+
+  contestSlider2.appendChild(outerDivElement);
 }
 
 console.log(filterBtnList);

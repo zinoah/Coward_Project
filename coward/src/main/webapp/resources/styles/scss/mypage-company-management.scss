@@ -45,6 +45,7 @@
   overflow: hidden;
   cursor: pointer;
   box-shadow: $card-shadow;
+  margin: 0 10px 30px 0;
   position: relative;
 
   &.is-hover {
@@ -95,4 +96,11 @@
       }
     }
   }
+}
+
+.scroll {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  max-height: 520px;
 }

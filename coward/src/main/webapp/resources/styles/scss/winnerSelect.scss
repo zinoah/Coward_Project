@@ -169,7 +169,8 @@
 }
 
 .modal {
-  display: none;
+  display: none; /* 초기에 숨겨진 상태 */
+  /* 기타 스타일 속성들 */
 }
 
 .footer {
