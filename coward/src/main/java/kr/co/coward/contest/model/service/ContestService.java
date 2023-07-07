@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 
 public interface ContestService {
 
@@ -52,12 +53,12 @@ public interface ContestService {
 	public abstract List<Contest> getRecommendList(int typeNo);
 
 	/**
-	 * 북마크 서비스
+	 * 북마크 UP 서비스
 	 * 
 	 * @param contest
 	 * @return
 	 */
-	int bookmarkCount(Contest contest);
+	int bookmarkCountInsert(Contest contest);
 
 	/**
 	 * 공모전 참가 서비스
@@ -67,5 +68,21 @@ public interface ContestService {
 	 * @throws IOException
 	 */
 	int contestAttendForm(Map<String, Object> paramMap) throws IOException;
+
+	/**
+	 * 북마크 Down 서비스
+	 * 
+	 * @param contest
+	 * @return
+	 */
+	int bookmarkCountDelete(Contest contest);
+
+	/**
+	 * 참가여부 체크 서비스
+	 * 
+	 * @param attend
+	 * @return
+	 */
+	int contestAttendCheck(ContestAttend attend);
 
 }

@@ -106,15 +106,14 @@
 	
 	<!-- Note: 전체 공모전 -->
 	<select id="getAllContestList" resultMap="contest_rm">
-    SELECT CONTEST_NO,
-           CONTEST_TITLE,
-           TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
-           PRICE,
-           THUMBNAIL
-    FROM CONTEST
-    WHERE (CON_STATUS = '모집중' OR CON_STATUS = '심사중' OR CON_STATUS = '완료')
-      AND MEMBER_NO = #{memberNo}
-</select>
+	    SELECT CONTEST_NO,
+	           CONTEST_TITLE,
+	           TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
+	           PRICE,
+	           THUMBNAIL
+	    FROM CONTEST
+	    WHERE MEMBER_NO = #{memberNo}
+	</select>
 	
 	<!-- Note: 모집중 공모전 -->
 	<select id="getRecruitingContestList" resultMap="contest_rm">

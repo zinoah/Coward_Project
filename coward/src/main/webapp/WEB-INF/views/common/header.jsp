@@ -50,14 +50,18 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </c:when>
          
                 </c:choose>
-                <a href="${contextPath}/member/logout">
-                  <i class="ic-logout"></i>
-                </a>
+
                 <button class="header-user-image">
                   <i class="ic-bell"></i>
                 </button>
-                <a class="header-user-image" href="#">
+                <a class="header-user-image" href="${contextPath}/chat">
                   <i class="ic-message"></i>
+                </a>
+                <a
+                  href="${contextPath}/member/logout"
+                  class="header-user-image"
+                >
+                  <i class="ic-logout"></i>
                 </a>
                 <a
                   href="${contextPath}/mypage/memberTypeInfo"

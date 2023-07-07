@@ -22,6 +22,7 @@ public class MyPageServiceImpl implements MyPageService {
 
 	@Autowired
 	private MyPageDAO dao;
+	
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
 	// 일반 회원 정보 수정 서비스 구현

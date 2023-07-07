@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 
 <html lang="ko">
@@ -86,10 +87,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               >
                 <div class="developer-card">
                   <div class="developer-profile">
-                    <div class="developer-img">
-                      <div class="profile-img avatar">
-                        <img src="${contextPath}/${devList.profileImg}" />
-                      </div>
+                    <div class="profile-img avatar">
+                      <img src="${contextPath}/${devList.profileImg}" />
                     </div>
 
                     <div class="developer-info">
@@ -125,14 +124,23 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         프로필 보기
                       </a>
 
-                      <button type="submit" class="btn-primary btn-32">
+                      <button
+                        type="submit"
+                        class="chat-button btn-primary btn-32"
+                      >
                         채팅 하기
                       </button>
                     </div>
-                    <button id="like-btn" class="like-btn">
+
+                    <button
+                      id="like-btn"
+                      class="like-btn ${likedList.contains(devList.memberNo) ? 'is-active' : ''}"
+                      type="button"
+                      onclick="clickLikeBtn('${empty sessionScope.loginMember ? null : sessionScope.loginMember.memberNo}', ${devList.memberNo}, this)"
+                    >
                       <label for="like-btn"
-                        ><i class="ic-like-filled"></i
-                      ></label>
+                        ><i class="ic-like-filled"></i>
+                      </label>
                     </button>
                   </div>
                 </div>
@@ -155,6 +163,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <script>
       const contextPath = "${contextPath}";
+
+      let loginMemberNo = null;
+      if (${sessionScope.loginMember.memberNo}) {
+        loginMemberNo = ${sessionScope.loginMember.memberNo};
+      }
     </script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>

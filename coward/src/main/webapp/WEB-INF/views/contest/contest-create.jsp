@@ -466,6 +466,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <button
                           class="btn-primary btn-40 submit-btn"
                           type="submit"
+                          style="display: none"
                         >
                           확인
                         </button>
@@ -473,7 +474,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           class="btn-primary btn-40 payment-btn"
                           type="button"
                           onclick="requestPay()"
-                          style="display: none"
                         >
                           결제하기
                         </button>
@@ -533,13 +533,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         >
                           <button
                             class="btn-primary btn-40 submit-btn"
+                            id="submit-btn"
                             type="submit"
                             style="display: none"
                           >
                             확인
                           </button>
                           <button
-                            class="btn-primary btn-40 payment-btn"
+                            class="btn-primary btn-40"
                             type="button"
                             onclick="requestPay()"
                           >
@@ -560,10 +561,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 결제 정보 넘겨줄 parameter -->
     <span id="user-num" style="display: none">${loginMember.memberNo}</span>
     <span id="user-id" style="display: none">${loginMember.memberId}</span>
-    <span id="user-name" style="display: none">
-      ${loginMember.memberNick}
-    </span>
-    <span id="user-phone" style="display: none">${loginMember.phone}</span>
+    <span id="user-name" style="display: none">${loginMember.memberNick}</span>
+    <span id="user-phone" style="display: none">010-1234-5678</span>
 
     <!-- footer include -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
@@ -585,5 +584,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <script src="${contextPath}/resources/js/contest-create.js"></script>
     <script src="${contextPath}/resources/js/header.js"></script>
+
+    <script>
+      const contextPath = "${contextPath}";
+    </script>
   </body>
 </html>

@@ -196,7 +196,9 @@ public class MemberServiceImpl implements MemberService {
 	// 회원 탈퇴
 	@Override
 	public int secession(Member loginMember) {
+
 		System.out.println(loginMember.getMemberPw());
+
 
 		String encPw = dao.selectEncPw(loginMember.getMemberNo());
 
@@ -226,18 +228,34 @@ public class MemberServiceImpl implements MemberService {
 		return 0;
 	}
 
+
 //	// 비밀번호 찾기
 //		@Override
 //		public int findPw() {
 //			
 //		}
 
+
 	/**
 	 * 개발자 목록 조회 ServiceImpl
 	 */
 	@Override
-	public List<Member> getFindDevPage(int pageSize, int offset) {
-		return dao.getDevList(pageSize, offset);
+	public List<Member> getFindDevPage(int pageSize, int offset, String filter) {
+		return dao.getDevList(pageSize, offset, filter);
 	}
+
+	// 개발자 찾기 좋아요 버튼 클릭 Service
+	@Override
+	public int likeDev(int cMemberNo, int pMemberNo, String flag) {
+		return dao.likeDev(cMemberNo, pMemberNo, flag);
+	}
+
+	// 현재 회원이 좋아요 한 회원 목록
+	@Override
+	public List<Integer> getLikeList(int loginMemberNo) {
+
+		return dao.getLikeList(loginMemberNo);
+	}
+
 
 }

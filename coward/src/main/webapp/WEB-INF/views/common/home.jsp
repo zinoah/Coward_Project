@@ -516,7 +516,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
 
                     <div class="contest-info">
-                      <span class="user-nick"></span>
+                      <span class="user-nick">${contest.companyNick}</span>
                       <h3 class="contest-title">${contest.contestTitle}</h3>
                       <div class="contest-price">
                         <span
