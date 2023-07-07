@@ -24,31 +24,43 @@
 		<!-- Note: 기획 정리 되면 사용 여부 결정 -->
 		<result property="conStatus" column="CON_STATUS" />
 		<result property="bookmarkCount" column="BOOKMARK_COUNT" />
+		<result property="attendCount" column="ATTEND_COUNT" />
 	</resultMap>
-	
-	  <resultMap type="member" id="member_rm">
-		<id property="memberNo" 		column="MEMBER_NO"/>
-		<result property="memberType" 		column="MEMBER_TYPE"/>
-		<result property="memberId" 	column="MEMBER_ID"/>
-		<result property="memberPw" 		column="MEMBER_PW"/>
-		<result property="memberNick" 	column="MEMBER_NICK"/>
-		<result property="profileImg" 	column="PROFILE_IMG"/>
-		<result property="phone" 		column="PHONE"/>
-		<result property="regionNo" 	column="REGION_NO"/>
-		<result property="stack" 	column="STACK"/>
-		<result property="stack"    column="SKILL"/>
-		<result property="slogan" 	column="SLOGAN"/>
-		<result property="introduce" 	column="INTRODUCE"/>
-		<result property="totalPrice" 	column="TOTAL_PRICE"/>
-		<result property="currPrice" 	column="CURR_PRICE"/>
-		<result property="enrollDate" 	column="ENROLL_DATE"/>
-		<result property="secessionFlag" 	column="SECESSION_FL"/>
-		<result property="termsFlag" 	column="TERMS_FL"/>
-		<result property="snsFlag" 	column="SNS_FL"/>
-		
-		<result property="likeCount" 	column="LIKE_COUNT"/>
-		<result property="victoryCount" 	column="VICTORY_COUNT"/>
-	 </resultMap>
+
+	<resultMap type="member" id="member_rm">
+		<id property="memberNo" column="MEMBER_NO" />
+		<result property="memberType" column="MEMBER_TYPE" />
+		<result property="memberId" column="MEMBER_ID" />
+		<result property="memberPw" column="MEMBER_PW" />
+		<result property="memberNick" column="MEMBER_NICK" />
+		<result property="profileImg" column="PROFILE_IMG" />
+		<result property="phone" column="PHONE" />
+		<result property="regionNo" column="REGION_NO" />
+		<result property="stack" column="STACK" />
+		<result property="skill" column="SKILL" />
+		<result property="slogan" column="SLOGAN" />
+		<result property="introduce" column="INTRODUCE" />
+		<result property="totalPrice" column="TOTAL_PRICE" />
+		<result property="currPrice" column="CURR_PRICE" />
+		<result property="enrollDate" column="ENROLL_DATE" />
+		<result property="secessionFlag" column="SECESSION_FL" />
+		<result property="termsFlag" column="TERMS_FL" />
+		<result property="snsFlag" column="SNS_FL" />
+
+		<result property="likeCount" column="LIKE_COUNT" />
+		<result property="victoryCount" column="VICTORY_COUNT" />
+	</resultMap>
+
+	<resultMap type="contestAttend" id="contestAttend_rm">
+		<id property="attendNo" column="ATTEND_NO" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="contestNo" column="CONTEST_NO" />
+		<result property="description" column="DESCRIPTION" />
+		<result property="githubAddress" column="GITHUB" />
+		<result property="pptFile" column="PPT_FILE" />
+		<result property="skill" column="SKILL" />
+	</resultMap>
+
 
 
 	<!-- 회원 정보 수정 -->
@@ -64,7 +76,7 @@
 		WHERE MEMBER_NO = ${memberNo}
 	</update>
 
-	
+
 
 	<!-- 마이페이지 - 공모전 관리 -->
 	<select id="contestList">
@@ -73,21 +85,19 @@
 		FROM CONTEST_ATTEND ca , CONTEST c
 		, "MEMBER" m
 		WHERE ca.CONTEST_NO = c.CONTEST_NO
-		AND c.MEMBER_NO = m.MEMBER_NO
-		AND ca.MEMBER_NO = ${memberNo};
+		AND c.MEMBER_NO =
+		m.MEMBER_NO
+		AND ca.MEMBER_NO = ${memberNo}
 	</select>
 
-	
+
 	<!-- 마이페이지(메인) - 관심 공모전 -->
-	<!--  <select id="likeConList">
-		SELECT CONTEST_NO
-	FROM LIKE_CON
-	WHERE MEMBER_NO = ${memberNo};
-	</select>
--->
+	<!-- <select id="likeConList"> SELECT CONTEST_NO FROM LIKE_CON WHERE MEMBER_NO 
+		= ${memberNo}; </select> -->
 
 	<select id="mypageInfo">
-		SELECT MEMBER_NO, MEMBER_NICK, STACK, PROFILE_IMG, INTRODUCE, SKILL, CURR_PRICE
+		SELECT MEMBER_NO, MEMBER_NICK, STACK, PROFILE_IMG,
+		INTRODUCE, SKILL, CURR_PRICE
 		FROM MEMBER
 		WHERE MEMBER_NO = ${memberNo}
 	</select>
@@ -99,65 +109,146 @@
 		PROFILE_IMG = #{profileImg},
 		MEMBER_NICK =#{memberNick},
 		INTRODUCE = #{introduce},
-		REGION_NO = #{regionNo}
+		REGION_NO =
+		#{regionNo}
 		WHERE MEMBER_NO =
 		${memberNo}
 	</update>
-	
+
 	<!-- Note: 전체 공모전 -->
 	<select id="getAllContestList" resultMap="contest_rm">
-    SELECT CONTEST_NO,
-           CONTEST_TITLE,
-           TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
-           PRICE,
-           THUMBNAIL
-    FROM CONTEST
-    WHERE (CON_STATUS = '모집중' OR CON_STATUS = '심사중' OR CON_STATUS = '완료')
-      AND MEMBER_NO = #{memberNo}
-</select>
-	
+		SELECT CONTEST_NO,
+		MEMBER_NO,
+		CONTEST_TITLE,
+		TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
+		PRICE,
+		THUMBNAIL
+		FROM CONTEST
+		WHERE MEMBER_NO = #{memberNo}
+	</select>
+
 	<!-- Note: 모집중 공모전 -->
 	<select id="getRecruitingContestList" resultMap="contest_rm">
-		SELECT CONTEST_NO,
-		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		SELECT
+		CONTEST_NO,MEMBER_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS
+		DUE_DATE, PRICE,
 		THUMBNAIL
 		FROM CONTEST
-		WHERE CON_STATUS = '모집중' AND MEMBER_NO = #{memberNo}
+		WHERE CON_STATUS = '모집중' AND
+		MEMBER_NO = #{memberNo}
 	</select>
-	
+
 	<!-- Note: 심사중 공모전 -->
 	<select id="getCastingContestList" resultMap="contest_rm">
-		SELECT CONTEST_NO,
-		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		SELECT
+		CONTEST_NO,MEMBER_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS
+		DUE_DATE, PRICE,
 		THUMBNAIL
 		FROM CONTEST
-		WHERE CON_STATUS = '심사중'  AND MEMBER_NO = #{memberNo}
+		WHERE CON_STATUS = '심사중' AND
+		MEMBER_NO = #{memberNo}
 	</select>
-	
+
 	<!-- Note: 완료 공모전 -->
 	<select id="getEndContestList" resultMap="contest_rm">
-		SELECT CONTEST_NO,
-		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE, PRICE,
+		SELECT
+		CONTEST_NO,MEMBER_NO,
+		CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS
+		DUE_DATE, PRICE,
 		THUMBNAIL
 		FROM CONTEST
-		WHERE CON_STATUS = '완료'  AND MEMBER_NO =  #{memberNo}
+		WHERE CON_STATUS = '완료' AND
+		MEMBER_NO = #{memberNo}
 	</select>
-	
-	
+
+
 	<!-- 관심있는 개발자 목록 조회 -->
-	<select id = "developerLikeList" resultMap="member_rm">
-	SELECT
-    m.MEMBER_NICK,
-    m.SLOGAN,
-    m.STACK,
-    m.PROFILE_IMG
-	FROM MEMBER m
-	JOIN
-    LIKE_USER l ON m.MEMBER_NO = l.P_MEMBER_NO
-	WHERE
-    l.C_MEMBER_NO = #{memberNo}
+	<select id="developerLikeList" resultMap="member_rm">
+		SELECT
+		m.MEMBER_NICK,
+		m.SLOGAN,
+		m.STACK,
+		m.PROFILE_IMG
+		FROM MEMBER m
+		JOIN
+		LIKE_USER l ON
+		m.MEMBER_NO = l.P_MEMBER_NO
+		WHERE
+		l.C_MEMBER_NO = #{memberNo}
+	</select>
+
+	<!-- 공모전 관리 이동 -->
+	<select id = "conProgress" resultMap = "contest_rm">
+	SELECT MEMBER_NO, CONTEST_NO 
+	FROM "MEMBER"
+	JOIN CONTEST_ATTEND USING(MEMBER_NO)
+	WHERE MEMBER_NO = ${loginMember}
 	</select>
 	
+	<!-- 마이페이지 - 공모전 관리(모집중) -->
+	<select id = "getRecruitingAttend" resultMap = "contest_rm">
+	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
+	FROM "MEMBER"
+	JOIN CONTEST USING(MEMBER_NO)
+	WHERE MEMBER_TYPE = 'C'
+	AND TRUNC(END_DATE - CREATE_DATE) &gt;= 0
+	</select>
 	
+	<!-- 마이페이지 - 공모전 관리(심사중) -->
+	<select id = "getUnderReviewAttend" resultMap = "contest_rm">
+	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
+	FROM "MEMBER"
+	JOIN CONTEST USING(MEMBER_NO)
+	WHERE MEMBER_TYPE = 'C'
+	AND TRUNC(END_DATE - CREATE_DATE) &lt; 0
+	</select>	
+	
+	<!-- 마이페이지 - 공모전 관리(완료) -->
+	<select id = "getComplete" resultMap = "contest_rm">
+	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
+	FROM "MEMBER"
+	JOIN CONTEST USING(MEMBER_NO)
+	WHERE MEMBER_TYPE = 'C'
+	AND WINNER IS NOT NULL
+	
+	</select>
+	
+
+
+	<!-- 우승자 선정 -->
+	<select id="winnerSelect" resultMap="member_rm">
+		SELECT m.MEMBER_NICK,
+		m.PROFILE_IMG, m.SLOGAN, m.STACK, m.MEMBER_NO
+		FROM MEMBER m
+		INNER JOIN
+		CONTEST_ATTEND c ON m.MEMBER_NO = c.MEMBER_NO
+		WHERE c.CONTEST_NO =
+		#{contestNo}
+	</select>
+
+	<!-- 우승자 선정페이지 - 콘테스트 조회 -->
+	<select id="winnerSelectContest" resultMap="contest_rm">
+		SELECT
+		c.CONTEST_TITLE, c.CON_STATUS, TRUNC(c.END_DATE - c.CREATE_DATE) AS
+		DUE_DATE, COUNT(a.CONTEST_NO) AS ATTEND_COUNT
+		FROM CONTEST c
+		LEFT JOIN
+		CONTEST_ATTEND a ON c.CONTEST_NO = a.CONTEST_NO
+		WHERE c.CONTEST_NO =
+		#{contestNo}
+		GROUP BY c.CONTEST_TITLE, c.CON_STATUS, c.END_DATE,
+		c.CREATE_DATE
+	</select>
+
+	<!-- 우승자 선정페이지 - 모달창 참가자 정보 조회 -->
+	<select id="contestAttendInfo" resultMap="contestAttend_rm">
+		SELECT DESCRIPTION, GITHUB, PPT_FILE, PPT_FILE, MEMBER_NO, SKILL
+		FROM CONTEST_ATTEND
+		WHERE MEMBER_NO = #{memberNo} AND CONTEST_NO = #{contestNo}
+	</select>
+
+
 
 </mapper>

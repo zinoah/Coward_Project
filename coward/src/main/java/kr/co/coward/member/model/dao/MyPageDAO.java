@@ -7,10 +7,12 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 import kr.co.coward.member.model.vo.Member;
 
 @Repository
-public class MyPageDAO<Contest> {
+public class MyPageDAO {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
@@ -38,11 +40,11 @@ public class MyPageDAO<Contest> {
 	}
 
 	// 공모전 상태별 조회 DAO
-	public List<Contest> getContestList(String type, int memberNo) {
+	public List<Contest> getContestList(String conStatus, int memberNo) {
 
 		String mapperPath = null;
 
-		switch (type) {
+		switch (conStatus) {
 		case "전체":
 			mapperPath = "myPageMapper.getAllContestList";
 			break;
@@ -52,7 +54,6 @@ public class MyPageDAO<Contest> {
 		case "심사중":
 			mapperPath = "myPageMapper.getCastingContestList";
 			break;
-
 		case "완료":
 			mapperPath = "myPageMapper.getEndContestList";
 			break;
@@ -70,14 +71,42 @@ public class MyPageDAO<Contest> {
 
 	/**
 	 * 마이페이지 - 정보조회 DAO
+	 * 
 	 * @param memberNo
 	 * @return
 	 */
 	public Member mypageInfo(int memberNo) {
 
-		return sqlSession.selectOne("mypageMapper.mypageInfo", memberNo);
+		return sqlSession.selectOne("myPageMapper.mypageInfo", memberNo);
 	}
 
-	
+	/**
+	 * 마이페이지 - 공모전 관리 DAO
+	 * 
+	 * @param memberNo
+	 * @return
+	 */
+//	public List<ContestAttend> conProgress(String attendStatus, int memberNo) {
+//
+//		return sqlSession.conProgress("myPageMapper.conProgress", memberNo);
+//	}
+
+	// 우승자 선정 페이지
+	public List<Member> winnerSelect(int contestNo, String stack) {
+
+		return sqlSession.selectList("myPageMapper.winnerSelect", contestNo);
+	}
+
+	// 우승자 선정페이지 - 콘테스트 조회
+	public List<Contest> winnerSelectContest(int contestNo) {
+
+		return sqlSession.selectList("myPageMapper.winnerSelectContest", contestNo);
+	}
+
+	// 우승자 선정페이지 - 모달창 참가자 정보 조회
+	public List<ContestAttend> contestAttendInfo(Map<String, Object> paramMap) {
+
+		return sqlSession.selectList("myPageMapper.contestAttendInfo", paramMap);
+	}
 
 }

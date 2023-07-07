@@ -40,6 +40,7 @@
 .terms-box {
   margin-bottom: 100px;
   h3 {
+    padding-top: 30px;
     margin-bottom: 20px;
   }
 
@@ -58,9 +59,13 @@
     border-radius: 10px;
   }
 
+  a {
+    transition: 200ms ease-in-out;
+  }
+
   // 이용약관이 늘어날때마다 조정
   .list-section {
-    height: 3120px;
+    height: 4400px;
   }
 
   .full {

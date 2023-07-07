@@ -24,6 +24,7 @@
 		<typeAlias type="kr.co.coward.chat.model.vo.ChatRoom" alias="chatRoom"/>		
 		<typeAlias type="kr.co.coward.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>	
 		<typeAlias type="kr.co.coward.chat.model.vo.ChatMessage" alias="chatMessage"/>	
+		<typeAlias type="kr.co.coward.order.model.vo.Order" alias="order"/>
 	</typeAliases>
 	
 	<!-- SQL이 작성되는 mapper 파일 위치를 등록 -->
@@ -38,6 +39,7 @@
 		<mapper resource="/mappers/myPage-mapper.xml"/>
 		<mapper resource="/mappers/event-mapper.xml"/>
 		<mapper resource="/mappers/chatting-mapper.xml"/>
+		<mapper resource="/mappers/order-mapper.xml"/>
 		
 	</mappers>
 </configuration>

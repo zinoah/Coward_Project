@@ -61,9 +61,6 @@
 }
 
 .contest {
-  #all-col {
-    @include flexbox;
-  }
   .card {
     width: 100%;
     height: 160px;
@@ -169,6 +166,11 @@
       }
     }
   }
+}
+
+.modal {
+  display: none; /* 초기에 숨겨진 상태 */
+  /* 기타 스타일 속성들 */
 }
 
 .footer {
