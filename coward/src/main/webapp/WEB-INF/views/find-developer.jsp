@@ -165,9 +165,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       const contextPath = "${contextPath}";
 
       let loginMemberNo = null;
-      if (${sessionScope.loginMember.memberNo}) {
+
+      <c:if test="${not empty sessionScope.loginMember and not empty sessionScope.loginMember.memberNo}">
         loginMemberNo = ${sessionScope.loginMember.memberNo};
-      }
+      </c:if>;
+
+      console.log("loginMemberNo :: " + loginMemberNo);
     </script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
