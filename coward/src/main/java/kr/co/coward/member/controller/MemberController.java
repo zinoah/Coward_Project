@@ -35,39 +35,6 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 
-//	@GetMapping("/testLogin")
-//	public String login(/* @ModelAttribute */ Member inputMember, Model model, RedirectAttributes ra,
-//			HttpServletRequest request) {
-//
-//		logger.info("로그인 기능 수행됨");
-//
-//		String id = "test01";
-//		String pw = "pass01!";
-//
-//		String referer = request.getHeader("Referer");
-//
-//		Member testLoginMember = new Member();
-//
-//		testLoginMember.setMemberId(id);
-//		testLoginMember.setMemberPw(pw);
-//
-//		Member loginMember = service.login(testLoginMember);
-//
-//		if (loginMember != null) { // login 성공 시
-//			model.addAttribute("loginMember", loginMember); // -> req.setAttribute("loginMember", loginMember);
-//
-//		} else {
-//
-//			ra.addFlashAttribute("message", "로그인에 실패하였습니다.");
-//		}
-//
-//		if (referer != null && !referer.isEmpty()) {
-//			return "redirect:" + referer;
-//		} else {
-//			return "redirect:/"; // 기본적인 홈페이지로 이동하도록 설정
-//		}
-//	}
-
 	// 여기서부터 작업!
 	@PostMapping("/login")
 	public String login(@ModelAttribute Member inputMember, Model model, RedirectAttributes ra,
@@ -77,6 +44,8 @@ public class MemberController {
 		logger.info("로그인 기능 수행됨");
 		System.out.println(inputMember.toString());
 
+		// String referer = req.getHeader("Referer");
+    
 		Member loginMember = service.login(inputMember);
 
 		if (loginMember != null) {
@@ -99,8 +68,13 @@ public class MemberController {
 			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
 
-		return "redirect:/";
+//		if (referer != null && !referer.isEmpty()) {
+//			return "redirect:" + referer;
+//		} else {
+//			return "redirect:/"; // 기본적인 홈페이지로 이동하도록 설정
+//		}
 
+		return "redirect:/";
 	}
 
 	// 이메일 중복 검사
@@ -148,9 +122,9 @@ public class MemberController {
 	}
 
 	// 비밀번호 찾기 이동
-	@GetMapping("/pwFind")
-	public String pwFind() {
-		return "member/pwFind";
+	@GetMapping("/findPw")
+	public String findPw() {
+		return "member/findPw";
 	}
 
 	// 회원가입
@@ -185,11 +159,11 @@ public class MemberController {
 
 		if (insert > 0) {
 			message = "회원 가입 성공";
-			path = "redirect:/";
+			path = "member/joinModal";
 
 		} else {
 			message = "회원 가입 실패";
-			path = "redirect:/member/join"; // 회원 가입 페이지
+			path = "/member/join"; // 회원 가입 페이지
 		}
 		ra.addFlashAttribute("message", message);
 
@@ -206,6 +180,8 @@ public class MemberController {
 	@PostMapping("/secession")
 	public String secession(@ModelAttribute("loginMember") Member loginMember, SessionStatus status,
 			HttpServletRequest req, HttpServletResponse resp, RedirectAttributes ra) {
+
+		System.out.println(loginMember.getMemberPw());
 
 		int result = service.secession(loginMember);
 
@@ -262,13 +238,13 @@ public class MemberController {
 			@ModelAttribute("loginMember") Member loginMember, HttpSession session, RedirectAttributes ra) {
 
 		loginMember = (Member) session.getAttribute("loginMember");
+
 		if (loginMember == null) {
 			// 로그인되지 않은 상태로 비밀번호 변경 페이지에 접근한 경우 처리
 			// 적절한 경로로 리다이렉트 또는 오류 메시지를 설정하여 처리할 수 있습니다.
 			return "redirect:/login"; // 로그인 페이지로 리다이렉트
 		}
 
-		paramMap.put("memberNo", loginMember.getMemberNo());
 
 		paramMap.put("memberNo", loginMember.getMemberNo());
 
@@ -279,11 +255,13 @@ public class MemberController {
 
 		if (result > 0) {
 			message = "비밀번호가 변경되었습니다.";
-			path = "common/main";
+
+			path = "/";
+
 
 		} else {
 			message = "현재 비밀번호가 일치하지 않습니다.";
-			path = "changePw";
+			path = "/member/changePw";
 		}
 
 		ra.addFlashAttribute("message", message);

@@ -41,7 +41,37 @@
   left: 50%;
 }
 
-.agree-btn {
+.agree-btn1 {
+  width: 106px;
+  height: 36px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: $blue;
+  color: $white;
+  font-weight: 700;
+  position: relative;
+  left: 91px;
+  right: 91px;
+  bottom: 1px;
+}
+
+.agree-btn2 {
+  width: 106px;
+  height: 36px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: $blue;
+  color: $white;
+  font-weight: 700;
+  position: relative;
+  left: 91px;
+  right: 91px;
+  bottom: 1px;
+}
+
+.agree-btn3 {
   width: 106px;
   height: 36px;
   border: none;

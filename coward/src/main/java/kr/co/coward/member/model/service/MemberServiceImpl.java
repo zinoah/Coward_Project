@@ -197,6 +197,9 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int secession(Member loginMember) {
 
+		System.out.println(loginMember.getMemberPw());
+
+
 		String encPw = dao.selectEncPw(loginMember.getMemberNo());
 
 		if (bcrypt.matches(loginMember.getMemberPw(), encPw)) {
@@ -225,6 +228,14 @@ public class MemberServiceImpl implements MemberService {
 		return 0;
 	}
 
+
+//	// 비밀번호 찾기
+//		@Override
+//		public int findPw() {
+//			
+//		}
+
+
 	/**
 	 * 개발자 목록 조회 ServiceImpl
 	 */
@@ -245,5 +256,6 @@ public class MemberServiceImpl implements MemberService {
 
 		return dao.getLikeList(loginMemberNo);
 	}
+
 
 }

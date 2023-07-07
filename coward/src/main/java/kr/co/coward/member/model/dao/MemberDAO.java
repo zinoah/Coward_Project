@@ -95,6 +95,7 @@ public class MemberDAO {
 	 * @return
 	 */
 	public int secession(int memberNo) {
+
 		return sqlSession.update("memberMapper.secession", memberNo);
 	}
 

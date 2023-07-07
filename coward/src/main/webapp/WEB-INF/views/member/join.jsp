@@ -22,10 +22,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     />
     <link
       rel="stylesheet"
-      href="${contextPath}/resources/styles/css/join-modal.css"
-    />
-    <link
-      rel="stylesheet"
       href="${contextPath}/resources/styles/css/join-first.css"
     />
     <title>Coward | 회원가입 - 타입선택 및 약관동의</title>
@@ -43,7 +39,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="join-first-box">
                 <div class="logo-p-box">
-                  <a href="#">
+                  <a href="${contextPath}/home"">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
@@ -299,11 +295,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       placeholder="8자리 이상, 대소문자 포함"
                       type="password"
                     />
-                    <div class="eye-img">
-                      <img
-                        src="${contextPath}/resources/assets/images/eye.svg"
-                      />
-                    </div>
+                    <i class="ic-eye-close eye"></i>
                   </div>
                 </div>
                 <div class="pw-box">
@@ -316,11 +308,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       placeholder="비밀번호를 한번 더 입력해주세요!"
                       type="password"
                     />
-                    <div class="eye-img">
-                      <img
-                        src="${contextPath}/resources/assets/images/eye.svg"
-                      />
-                    </div>
+                    <i class="ic-eye-close eye"></i>
                   </div>
                 </div>
                 <button type="button" class="complete-btn" onclick="onSubmit">
@@ -436,7 +424,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </pre>
         </div>
         <br /><br />
-        <button class="agree-btn">동의</button>
+        <button class="agree-btn1">동의</button>
       </div>
     </div>
     <div class="agree-all-wrapper">
@@ -523,7 +511,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </pre>
         </div>
         <br /><br />
-        <button class="agree-btn">동의</button>
+        <button class="agree-btn2">동의</button>
       </div>
     </div>
 
@@ -555,28 +543,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </pre>
         </div>
         <br /><br />
-        <button class="agree-btn">동의</button>
+        <button class="agree-btn3">동의</button>
       </div>
     </div>
 
-    <!-- 회원가입 축하 모달 -->
-    <div class="join-all-wrapper">
-      <div class="join-box">
-        <img
-          src="${contextPath}/resources/assets/images/check-circle.svg"
-          class="check"
-        />
-        <br /><br />
-        <pre class="pre-first">가입을 완료했어요 👏</pre>
-        <button class="add-information-btn">추가 정보 입력하기</button>
-
-        <br /><br />
-
-        <button type="button" class="reject" onclick="location.href='home.jsp'">
-          아니요. 다음에 입력할게요!
-        </button>
-      </div>
-    </div>
     <div id="overlay" class="overlay"></div>
 
     <!-- jQuery 라이브러리 추가(CDN) -->
