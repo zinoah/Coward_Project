@@ -45,8 +45,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
 
-    ${likedList} ${likedList.contains(dev.memberNo) ? 'is-active' : 'no'}
-
     <main class="find-developer">
       <div class="container">
         <div class="row">
@@ -165,7 +163,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <script>
       const contextPath = "${contextPath}";
-      const loginMemberNo = "${sessionScope.loginMember.memberNo}";
+
+      let loginMemberNo = null;
+      if (${sessionScope.loginMember.memberNo}) {
+        loginMemberNo = ${sessionScope.loginMember.memberNo};
+      }
     </script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
