@@ -562,7 +562,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <span id="user-num" style="display: none">${loginMember.memberNo}</span>
     <span id="user-id" style="display: none">${loginMember.memberId}</span>
     <span id="user-name" style="display: none">${loginMember.memberNick}</span>
-    <span id="user-phone" style="display: none">010-4147-0126</span>
+    <span id="user-phone" style="display: none">010-1234-5678</span>
 
     <!-- footer include -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 
 @Repository
 public class ContestDAO {
@@ -184,6 +185,17 @@ public class ContestDAO {
 
 		return result;
 
+	}
+
+	/**
+	 * 참가여부 체크 DAO
+	 * 
+	 * @param attend
+	 * @return
+	 */
+	public int contestAttendCheck(ContestAttend attend) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("contestAttendMapper.contestAttendCheck", attend);
 	}
 
 }

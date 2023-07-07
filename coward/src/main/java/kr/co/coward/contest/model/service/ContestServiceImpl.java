@@ -161,4 +161,11 @@ public class ContestServiceImpl implements ContestService {
 		return result;
 	}
 
+	// 참가여부 체크 서비스
+	@Override
+	public int contestAttendCheck(ContestAttend attend) {
+		// TODO Auto-generated method stub
+		return dao.contestAttendCheck(attend);
+	}
+
 }

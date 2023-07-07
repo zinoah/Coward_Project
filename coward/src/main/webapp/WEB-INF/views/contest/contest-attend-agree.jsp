@@ -50,7 +50,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                 </div>
                 <div class="banner-button-box sm-only">
-                  <a href="#" class="btn-outlined btn-40">브리핑 보러가기</a>
+                  <a
+                    href="../detail/${contest.contestNo}"
+                    class="btn-outlined btn-40"
+                    >브리핑 보러가기</a
+                  >
                 </div>
               </div>
             </div>
@@ -136,11 +140,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </p>
                 </div>
                 <div>
-                  <a
-                    href="../attendForm/${contest.contestNo}"
-                    class="btn-secondary btn-32"
-                    >동의함</a
-                  >
+                  <a class="btn-secondary btn-32" id="agree-btn">동의함</a>
                 </div>
               </div>
             </div>
@@ -294,7 +294,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
         </div>
       </div>
-
+      <script>
+        let contestNo = "${contest.contestNo}";
+      </script>
       <script src="${contextPath}/resources/js/header.js"></script>
       <script src="${contextPath}/resources/js/contest-attend-agree.js"></script>
     </body>

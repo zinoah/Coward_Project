@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 
 public interface ContestService {
 
@@ -75,5 +76,13 @@ public interface ContestService {
 	 * @return
 	 */
 	int bookmarkCountDelete(Contest contest);
+
+	/**
+	 * 참가여부 체크 서비스
+	 * 
+	 * @param attend
+	 * @return
+	 */
+	int contestAttendCheck(ContestAttend attend);
 
 }
