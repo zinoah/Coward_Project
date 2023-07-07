@@ -29,7 +29,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             />
             <div class="login-box">
               <div class="logo-p-box">
-                <a href="${contextPath}/home">
+                <a href="#">
                   <img
                     src="${contextPath}/resources/assets/images/home_logo.svg"
                     class="logo-img"
@@ -60,8 +60,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="pw-input-box">
                   <p class="p-pw">비밀번호</p>
                   <fieldset>
-                    <input type="password" class="input-pw" name="memberPw" />
-                    <i class="ic-eye-close eye"></i>
+                    <input
+                      placeholder="example@gmail.com"
+                      type="password"
+                      class="input-pw"
+                      name="memberPw"
+                    />
+                    <i class="ic-eye-close"></i>
                   </fieldset>
 
                   <button class="login-btn">로그인</button>
@@ -81,7 +86,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       아이디 저장
                     </label>
                   </div>
-                  <a href="${contextPath}/member/findPw" class="pw-find"
+                  <a href="${contextPath}/member/pwFind" class="pw-find"
                     >비밀번호 찾기</a
                   >
                 </div>
@@ -96,19 +101,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   src="${contextPath}/resources/assets/images/kakao-logo.png"
                   class="kakao-logo"
                 />
-                <img src="${contextPath}/resources/assets/images/naver.png" class="naver-logo"/>
-                <!-- 네이버 로그인 화면으로 이동 시키는 URL --/>
-                <!-- 네이버 로그인 화면에서 ID, PW를 올바르게 입력하면 callback 메소드 실행 요청 -->
-                
-                  <a href="${url}">
-                    <div class="naver-btn">
-                      <span class="naver">Naver로 계속</span>
-                    </div>
-                  </a>
-                </div>
-                <button class="kakao-btn" onclick="loginWithKakao()">
-                  Kakao로 계속
-                </button>
+                <a href="${url}">
+                  <img
+                    width="150"
+                    src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"
+                  />
+                </a>
+                <button class="kakao-btn">Kakao로 계속</button>
               </div>
               <br />
               <span class="span-second">혹시 아직 회원이 아니신가요?</span>
@@ -124,7 +123,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-
     <!-- 카카오 로그인 -->
     <script
       type="text/javascript"
@@ -143,6 +141,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         }); // 등록한 리다이렉트uri 입력
       }
     </script>
+
     <script src="${contextPath}/resources/js/login.js"></script>
   </body>
 </html>

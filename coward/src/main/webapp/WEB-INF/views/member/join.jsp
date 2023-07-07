@@ -39,7 +39,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="join-first-box">
                 <div class="logo-p-box">
-                  <a href="${contextPath}/home"">
+                  <a href="${contextPath}/home">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
