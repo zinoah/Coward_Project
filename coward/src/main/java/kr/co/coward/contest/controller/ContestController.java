@@ -28,6 +28,7 @@ import com.google.gson.Gson;
 
 import kr.co.coward.contest.model.service.ContestService;
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 import kr.co.coward.member.model.vo.Member;
 
 @Controller
@@ -107,7 +108,9 @@ public class ContestController {
 	 * @return
 	 */
 	@RequestMapping("/create")
-	public String contestCreate() {
+	public String contestCreate(@ModelAttribute("loginMember") Member loginMember, Model model) {
+
+		model.addAttribute("loginMember", loginMember);
 
 		return "contest/contest-create";
 	}
@@ -187,25 +190,19 @@ public class ContestController {
 	 */
 	@ResponseBody
 	@GetMapping("/bookmark")
-	public int bookmarkCount(@RequestParam Map<String, Object> map, @ModelAttribute("loginMember") Member loginMember) {
-
-		System.out.println(map);
-		int memberNo = loginMember.getMemberNo();
-		int bookmarkCount = Integer.parseInt(map.get("bookmarkCount").toString());
-		int contestNo = Integer.parseInt(map.get("contestNo").toString());
-
-		System.out.println("bookmark :" + bookmarkCount);
-		System.out.println("contestNo :" + contestNo);
-
+	public int bookmarkCount(@RequestParam int memberNo, @RequestParam int contestNo, @RequestParam int bookmarkCount,
+			@RequestParam int flag) {
 		Contest contest = new Contest();
-
-		contest.setBookmarkCount(bookmarkCount);
 		contest.setMemberNo(memberNo);
 		contest.setContestNo(contestNo);
+		contest.setBookmarkCount(bookmarkCount);
 
-		int bookmark = service.bookmarkCount(contest);
-
-		System.out.println(bookmark);
+		int bookmark = 0;
+		if (flag == 1) {
+			bookmark = service.bookmarkCountInsert(contest);
+		} else {
+			bookmark = service.bookmarkCountDelete(contest);
+		}
 
 		return bookmark;
 
@@ -257,13 +254,36 @@ public class ContestController {
 	 * @return
 	 */
 	@RequestMapping("/attendAgree/{contestNo}")
-	public String contestAttendAgree(@PathVariable("contestNo") int contestNo, Model model) {
+	public String contestAttendAgree(@PathVariable("contestNo") int contestNo,
+			@ModelAttribute("loginMember") Member loginMember, Model model, RedirectAttributes ra,
+			HttpServletRequest request) {
 
 		Contest contest = service.contestDetail(contestNo);
 
-		model.addAttribute("contest", contest);
+		ContestAttend attend = new ContestAttend();
 
-		return "contest/contest-attend-agree";
+		attend.setMemberNo(loginMember.getMemberNo());
+		attend.setContestNo(contestNo);
+
+		// 참가여부 체크
+		int result = service.contestAttendCheck(attend);
+
+		String message = null;
+		String path = null;
+		String referer = request.getHeader("Referer");
+		if (result > 0) {
+
+			message = "이미 참가한 공모전 입니다.";
+			path = "redirect:" + referer;
+		} else {
+
+			path = "contest/contest-attend-agree";
+			model.addAttribute("contest", contest);
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return path;
 	}
 
 	/**

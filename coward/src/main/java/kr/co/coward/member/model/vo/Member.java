@@ -28,7 +28,6 @@ public class Member {
 	private String secessionFlag;
 	private String termsFlag;
 	private String snsFlag;
-
 	private int victoryCount;
 	private int likeCount;
 	private int attendCount;
