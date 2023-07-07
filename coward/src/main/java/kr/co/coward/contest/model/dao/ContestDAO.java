@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 
 @Repository
 public class ContestDAO {
@@ -120,22 +121,43 @@ public class ContestDAO {
 	}
 
 	/**
-	 * 북마크 카운트 DAO
+	 * 북마크 카운트 UP DAO
 	 * 
 	 * @param contest
 	 * @return
 	 */
-	public int bookmarkCount(Contest contest) {
+	public int bookmarkCountInsert(Contest contest) {
 
-		int result = sqlSession.insert("contestMapper.bookmarkCount", contest);
+		int bookmark = 0;
+		int result = sqlSession.insert("contestMapper.bookmarkCountInsert", contest);
 
-		if (result > 0)
-			result = contest.getBookmarkCount();
+		if (result > 0) {
+			result = sqlSession.update("contestMapper.bookmarkCountUp", contest);
+			if (result > 0) {
+				bookmark = contest.getBookmarkCount();
+			}
+		}
+		return bookmark;
 
-		System.out.println(result);
+	}
 
-		return result;
+	/**
+	 * 북마크 카운트 Down DAO
+	 * 
+	 * @param contest2
+	 * @return
+	 */
+	public int bookmarkCountDelete(Contest contest) {
+		int bookmark = 0;
+		int result = sqlSession.delete("contestMapper.bookmarkCountDelete", contest);
 
+		if (result > 0) {
+			result = sqlSession.update("contestMapper.bookmarkCountDown", contest);
+			if (result > 0) {
+				bookmark = contest.getBookmarkCount();
+			}
+		}
+		return bookmark;
 	}
 
 	/**
@@ -154,6 +176,17 @@ public class ContestDAO {
 
 		return result;
 
+	}
+
+	/**
+	 * 참가여부 체크 DAO
+	 * 
+	 * @param attend
+	 * @return
+	 */
+	public int contestAttendCheck(ContestAttend attend) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("contestAttendMapper.contestAttendCheck", attend);
 	}
 
 }

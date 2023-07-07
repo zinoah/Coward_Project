@@ -1,7 +1,6 @@
 package kr.co.coward.member.controller;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -92,6 +90,13 @@ public class MyPageController {
 
 		return "mypage/mypage-company-editProfile";
 
+	}
+
+	// 마이페이지(메인)
+	// 회원 정보 조회
+	@GetMapping("/info")
+	public String info() {
+		return "mypage/person-main";
 	}
 
 	// 공모전 관리

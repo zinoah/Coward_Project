@@ -85,6 +85,9 @@
 		
 	</websocket:handlers>
 	
+	<!-- NaverLoginBO Class에 대한 Bean설정 추가 -->
+	<beans:bean id="naverLoginBO" class="kr.co.coward.naver.login.NaverLoginBO" />
+	
 
 	
 	

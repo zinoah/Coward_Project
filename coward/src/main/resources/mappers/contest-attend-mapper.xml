@@ -19,4 +19,10 @@
 	</insert>
 
 
+	<select id="contestAttendCheck" resultType="_int">
+		SELECT COUNT(*)
+		FROM CONTEST_ATTEND
+		WHERE MEMBER_NO = ${memberNo}
+		AND CONTEST_NO = ${contestNo}
+	</select>
 </mapper>

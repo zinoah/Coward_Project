@@ -164,9 +164,18 @@
   }
 }
 
-.eye-img {
+.ic-eye-close {
   padding-right: 10px;
   cursor: pointer;
+  font-size: 20px;
+  color: $tertiary;
+}
+
+.ic-eye-open {
+  padding-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: $tertiary;
 }
 
 .complete-btn {

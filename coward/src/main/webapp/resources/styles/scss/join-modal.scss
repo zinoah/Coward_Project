@@ -3,6 +3,7 @@
 .join-all-wrapper {
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .join-box {
@@ -40,6 +41,12 @@
   left: 55px;
 }
 
+.add-information {
+  position: relative;
+  top: 17px;
+  left: 30px;
+}
+
 .pre-first {
   font-size: 18px;
   font-weight: 700;
@@ -52,8 +59,17 @@
   font-size: 12px;
   position: relative;
   top: 180px;
-  left: 72px;
+  left: 80px;
   color: $primary;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $tertiary;
 }
 
 @include responsive(D) {
@@ -82,9 +98,9 @@
     left: 180px;
   }
 
-  .pre-second {
+  .reject {
     font-size: 14px;
     top: 100px;
-    left: 190px;
+    left: 195px;
   }
 }

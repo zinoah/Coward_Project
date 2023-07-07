@@ -1,5 +1,4 @@
 @import "./main";
-// 수정 - 현재 비밀번호 확인
 .pw {
   &-change {
     @include text-style(18, $primary);
@@ -60,6 +59,17 @@
   margin-bottom: 30px;
 }
 
+.changePwBtn {
+  @include text-style(14, $white);
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: $tertiary;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .validation {
   @include text-style(12, $secondary);
 }
@@ -80,6 +90,7 @@
       @include column-flexbox(center, start);
       width: 370px;
       height: 500px;
+      display: none;
     }
 
     &-input-title {
