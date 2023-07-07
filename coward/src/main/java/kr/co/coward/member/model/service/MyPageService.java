@@ -18,17 +18,15 @@ public interface MyPageService {
 	 */
 	int updateInfo(Map<String, Object> paramMap) throws IOException;
 
-	/**
-	 * 마이페이지 - 공모전 목록 조회 서비스
-	 * 
-	 * @return
-	 */
+//	/**
+//	 * 마이페이지 - 공모전 목록 조회 서비스
+//	 * 
+//	 * @return
+//	 */
+//
+//	List<ContestAttend> getConProgress(String attendStatus, int memberNo);
 
-	List<ContestAttend> getConProgress(String attendStatus, int memberNo);
-	
-  
-	List<Contest> contestList();
-
+//	List<Contest> contestList();
 
 	/**
 	 * 마이페이지 메인 - 정보 조회 서비스
@@ -59,8 +57,5 @@ public interface MyPageService {
 
 	// 우승자 선정 페이지 - 모달창 참여자 정보 조회
 	List<ContestAttend> contestAttendInfo(Map<String, Object> paramMap);
-
-	
-
 
 }
