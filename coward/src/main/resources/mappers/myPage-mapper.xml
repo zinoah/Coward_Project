@@ -158,5 +158,41 @@
 	</select>
 	
 	
+	<!-- 공모전 관리 이동 -->
+	<select id = "conProgress" resultMap = "contest_rm">
+	SELECT MEMBER_NO, CONTEST_NO 
+	FROM "MEMBER"
+	JOIN CONTEST_ATTEND USING(MEMBER_NO)
+	WHERE MEMBER_NO = ${loginMember}
+	</select>
+	
+	<!-- 마이페이지 - 공모전 관리(모집중) -->
+	<select id = "getRecruitingAttend" resultMap = "contest_rm">
+	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
+	FROM "MEMBER"
+	JOIN CONTEST USING(MEMBER_NO)
+	WHERE MEMBER_TYPE = 'C'
+	AND TRUNC(END_DATE - CREATE_DATE) &gt;= 0
+	</select>
+	
+	<!-- 마이페이지 - 공모전 관리(심사중) -->
+	<select id = "getUnderReviewAttend" resultMap = "contest_rm">
+	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
+	FROM "MEMBER"
+	JOIN CONTEST USING(MEMBER_NO)
+	WHERE MEMBER_TYPE = 'C'
+	AND TRUNC(END_DATE - CREATE_DATE) &lt; 0
+	</select>	
+	
+	<!-- 마이페이지 - 공모전 관리(완료) -->
+	<select id = "getComplete" resultMap = "contest_rm">
+	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
+	FROM "MEMBER"
+	JOIN CONTEST USING(MEMBER_NO)
+	WHERE MEMBER_TYPE = 'C'
+	AND WINNER IS NOT NULL
+	
+	</select>
+	
 
 </mapper>

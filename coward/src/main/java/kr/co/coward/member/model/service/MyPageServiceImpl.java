@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import kr.co.coward.common.Util;
 import kr.co.coward.contest.model.dao.ContestDAO;
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 import kr.co.coward.member.model.dao.MyPageDAO;
 import kr.co.coward.member.model.vo.Member;
 
@@ -59,12 +60,22 @@ public class MyPageServiceImpl implements MyPageService {
 		return result;
 
 	}
+//
+//	@Override
+//	public List<Contest> contestList() {
+//
+//		return null;
+//	}
+	
+	/**
+	 * 
+	 */
+//	@Override
+//	public List<ContestAttend> getConProgress(String attendStatus, int memberNo) {
+//
+//		return dao.conProgress(attendStatus, memberNo);
+//	}
 
-	@Override
-	public List<Contest> contestList() {
-
-		return null;
-	}
 
 	/**
 	 * 마이페이지 메인 - 정보 조회 서비스
@@ -143,5 +154,9 @@ public class MyPageServiceImpl implements MyPageService {
 		return dao.developerLikeList(memberNo);
 
 	}
+
+
+
+	
 
 }

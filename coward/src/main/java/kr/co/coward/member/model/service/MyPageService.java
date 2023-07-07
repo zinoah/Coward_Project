@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.co.coward.contest.model.vo.Contest;
+import kr.co.coward.contest.model.vo.ContestAttend;
 import kr.co.coward.member.model.vo.Member;
 
 public interface MyPageService {
@@ -22,8 +23,7 @@ public interface MyPageService {
 	 * 
 	 * @return
 	 */
-	List<Contest> contestList();
-
+	List<ContestAttend> getConProgress(String attendStatus, int memberNo);
 	
 	/**
 	 * 마이페이지 메인 - 정보 조회 서비스
@@ -46,6 +46,9 @@ public interface MyPageService {
 
 	// 관심있는 개발자 목록 조회 서비스
 	List<Member> developerLikeList(int memberNo);
+
+
+	
 
 
 }

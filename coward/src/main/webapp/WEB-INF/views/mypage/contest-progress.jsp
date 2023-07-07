@@ -75,14 +75,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p class="introduce-title">공모전 관리</p>
 
                     <div class="progress-box-group">
+                            <c:forEach var="conProgress" items="${conProgress}">
                       <div class="progress-box col-sm-4">
                         <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
                           <div class="company-profile">
                             <div class="company-img avatar">
-                              <img
-                                src="${contextPath}/resources/assets/images/default-user-img.png"
-                              />
+                              <img src="${contextPath}/${conProgress.profileImg}" />
                             </div>
                           </div>
 
@@ -90,15 +89,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="contest-mid">
                             <div class="contest-title">
                             
-                            <!-- foreach로 for문 돌려서 -> 메인페이지 참고 -->
-                              <p>스마트스토어 웹사이트 제작 공모전</p>
+                              <p>${conProgress.contestTitle}</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
-                                주최 : 스마트스토어 공단
+                                주최 : ${conProgress.memberNick}
                               </p>
-                              <p class="deadline">D-15</p>
+                              <p class="deadline">${conProgress.dueDate}일 남음</p>
                             </div>
                           </div>
                         </div>
@@ -107,7 +105,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="progress-color recruiting"></div>
                           <p class="progress-text">모집중</p>
                         </div>
-                      </div>                        
+                      </div> 
+                      </c:forEach>                       
                     </div>
                   </div>
                 </div>

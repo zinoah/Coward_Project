@@ -17,4 +17,5 @@ public class ContestAttend {
 	private String githubAddress;
 	private String pptFile;
 	private String skill;
+	private int dueDate;
 }

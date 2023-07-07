@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.co.coward.contest.model.vo.ContestAttend;
 import kr.co.coward.member.model.vo.Member;
 
 @Repository
@@ -74,8 +75,21 @@ public class MyPageDAO<Contest> {
 	 */
 	public Member mypageInfo(int memberNo) {
 
-		return sqlSession.selectOne("mypageMapper.mypageInfo", memberNo);
+		return sqlSession.selectOne("myPageMapper.mypageInfo", memberNo);
 	}
+
+
+	
+	/** 
+	 * 마이페이지 - 공모전 관리 DAO
+	 * @param memberNo
+	 * @return
+	 */
+//	public List<ContestAttend> conProgress(String attendStatus, int memberNo) {
+//
+//		return sqlSession.conProgress("myPageMapper.conProgress", memberNo);
+//	}
+
 
 	
 
