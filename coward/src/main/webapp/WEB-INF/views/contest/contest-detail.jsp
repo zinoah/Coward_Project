@@ -71,14 +71,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   </div>
                   <div>
                     <p>북마크 수</p>
-                    <c:choose>
-                      <c:when test="${empty contest.bookmarkCount}">
-                        <p id="bookmarkCount">0 명</p>
-                      </c:when>
-                      <c:otherwise>
-                        <p id="bookmarkCount">${contest.bookmarkCount}명</p>
-                      </c:otherwise>
-                    </c:choose>
+                    <p id="bookmarkCount">${contest.bookmarkCount}명</p>
                   </div>
                   <div>
                     <p>진행상태</p>
@@ -124,18 +117,18 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           >
                             공모전 참가하기
                           </a>
+                          <button
+                            class="btn-outlined contest-briefing-content-box-button-bookmark"
+                            type="button"
+                            onclick="bookmark('${contest.bookmarkCount}', '${contest.contestNo}', '${sessionScope.loginMember.memberNo}')"
+                          >
+                            <i class="ic-bookmark-filled"></i>
+                          </button>
                         </c:otherwise>
                       </c:choose>
                     </c:otherwise>
                   </c:choose>
 
-                  <button
-                    class="btn-outlined contest-briefing-content-box-button-bookmark"
-                    type="button"
-                    onclick="bookmarkCount(${contest.bookmarkCount}, ${contest.contestNo})"
-                  >
-                    <i class="ic-bookmark-filled"></i>
-                  </button>
                   <button
                     class="btn-outlined contest-briefing-content-box-button-link"
                     onclick="clip()"
@@ -228,16 +221,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p>남은 기간</p>
                     <p>${contest.dueDate}</p>
                   </div>
-                  <div>
+                  <div id="bookmark-area">
                     <p>북마크 수</p>
-                    <c:choose>
-                      <c:when test="${empty contest.bookmarkCount}">
-                        <p id="bookmarkCount">0 명</p>
-                      </c:when>
-                      <c:otherwise>
-                        <p id="bookmarkCount">${contest.bookmarkCount}명</p>
-                      </c:otherwise>
-                    </c:choose>
+                    <p id="bookmarkCount">${contest.bookmarkCount}명</p>
                   </div>
                   <div>
                     <p>진행상태</p>
@@ -273,18 +259,18 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           >
                             공모전 참가하기
                           </a>
+                          <button
+                            class="btn-outlined contest-briefing-sticky-box-button-bookmark"
+                            type="button"
+                            onclick="bookmark('${contest.bookmarkCount}', '${contest.contestNo}', '${sessionScope.loginMember.memberNo}')"
+                          >
+                            <i class="ic-bookmark-filled"></i>
+                          </button>
                         </c:otherwise>
                       </c:choose>
                     </c:otherwise>
                   </c:choose>
 
-                  <button
-                    class="btn-outlined contest-briefing-sticky-box-button-bookmark"
-                    type="button"
-                    onclick="bookmarkCount(${contest.bookmarkCount}, ${contest.contestNo})"
-                  >
-                    <i class="ic-bookmark-filled"></i>
-                  </button>
                   <button
                     class="btn-outlined contest-briefing-sticky-box-button-link"
                     onclick="clip()"

@@ -27,7 +27,7 @@
 		<result property="attendCount" column="ATTEND_COUNT"/>
 	</resultMap>
 	
-		  <resultMap type="member" id="member_rm">
+	<resultMap type="member" id="member_rm">
 		<id property="memberNo" 		column="MEMBER_NO"/>
 		<result property="memberType" 		column="MEMBER_TYPE"/>
 		<result property="memberId" 	column="MEMBER_ID"/>
@@ -145,10 +145,7 @@
 	<select id="contestDetail" parameterType="_int" resultMap="contest_rm">
 		SELECT CONTEST_NO, CONTEST_TITLE, m.MEMBER_NICK AS COMPANY_NICK ,m.PROFILE_IMG AS COMPANY_PROFILE ,
 		TYPE_NO, SUBJECT ,QUALIFICATION ,ADD_INFOMATION , TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE, TO_CHAR (END_DATE,'YYYY-MM-DD') AS END_DATE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE,
-		c.SKILL, PRICE, THUMBNAIL, c.AD_NO, ad.AD_TYPE AS AD_TYPE, CON_STATUS,
-		(SELECT COUNT(*)
-		FROM LIKE_CON lc
-		WHERE CONTEST_NO = ${contestNo}) AS BOOKMARK_COUNT,
+		c.SKILL, PRICE, THUMBNAIL, c.AD_NO, ad.AD_TYPE AS AD_TYPE, CON_STATUS, BOOKMARK_COUNT,
 		(SELECT COUNT(*)
 		FROM CONTEST_ATTEND 
 		WHERE CONTEST_NO = ${contestNo}) AS ATTEND_COUNT
@@ -160,27 +157,53 @@
 	</select>
 
 
-	<!-- 북마크 카운트  -->
-	<insert id="bookmarkCount" parameterType="contest">
-		<selectKey keyProperty="bookmarkCount" resultType="_int" order="BEFORE">
-			SELECT COUNT(*) AS BOOKMARK_COUNT
-			FROM LIKE_CON 
-			WHERE CONTEST_NO = ${contestNo}
-		</selectKey>
+	<!-- 북마크테이블 insert  -->
+	<insert id="bookmarkCountInsert" >
 		INSERT INTO LIKE_CON (LIKE_CON_NO, MEMBER_NO, CONTEST_NO)
 		VALUES(SEQ_LIKE_CON_NO.NEXTVAL , ${memberNo}, ${contestNo})
 	</insert>
+	<!-- 북마크 UP -->
+	<update id="bookmarkCountUp">
+		<selectKey keyProperty="bookmarkCount" resultType="_int"
+			order="AFTER">
+			SELECT BOOKMARK_COUNT	
+			FROM CONTEST
+			WHERE CONTEST_NO = ${contestNo}
+		</selectKey>
+		UPDATE CONTEST SET BOOKMARK_COUNT = ${bookmarkCount} + 1
+		WHERE CONTEST_NO = ${contestNo}
+	</update>
+	
+	<!-- 북마크테이블 delete -->
+	<delete id="bookmarkCountDelete">
+		DELETE FROM LIKE_CON
+		WHERE CONTEST_NO = ${contestNo}
+		AND MEMBER_NO = ${memberNo}
+	</delete>
+	
+	<!-- 북마크 DOWN -->
 
-<select id="getRecommendList" parameterType="int" resultMap="contest_rm">
-	SELECT CONTEST_NO, CONTEST_TITLE, PRICE
-	FROM CONTEST
-	WHERE TYPE_NO = #{typeNo}
-</select>
+	<update id="bookmarkCountDown">
+		<selectKey keyProperty="bookmarkCount" resultType="_int"
+			order="AFTER">
+			SELECT BOOKMARK_COUNT	
+			FROM CONTEST
+			WHERE CONTEST_NO = ${contestNo}
+		</selectKey>
+		UPDATE CONTEST SET BOOKMARK_COUNT = ${bookmarkCount} - 1
+		WHERE CONTEST_NO = ${contestNo}
+	</update>
 
- <!-- 우승자 선정 페이지에서 참가자 리스트 불러오기 -->
- <select id = "selectWinnerList" resultMap="member_rm">
- 
- </select>
+	<select id="getRecommendList" parameterType="int" resultMap="contest_rm">
+		SELECT CONTEST_NO, CONTEST_TITLE, PRICE
+		FROM CONTEST
+		WHERE TYPE_NO = #{typeNo}
+	</select>
+
+	 <!-- 우승자 선정 페이지에서 참가자 리스트 불러오기 -->
+	 <select id = "selectWinnerList" resultMap="member_rm">
+	 
+	 </select>
  
  
 </mapper>

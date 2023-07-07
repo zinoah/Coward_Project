@@ -104,11 +104,18 @@ public class ContestServiceImpl implements ContestService {
 		return dao.getRecommendList(typeNo);
 	}
 
-	// 북마크 카운트 서비스
+	// 북마크 UP 카운트 서비스
 	@Override
-	public int bookmarkCount(Contest contest) {
+	public int bookmarkCountInsert(Contest contest) {
 
-		return dao.bookmarkCount(contest);
+		return dao.bookmarkCountInsert(contest);
+	}
+
+	// 북마크 DOWN 카운트 서비스
+	@Override
+	public int bookmarkCountDelete(Contest contest) {
+		// TODO Auto-generated method stub
+		return dao.bookmarkCountDelete(contest);
 	}
 
 	// 공모전 참가 서비스
@@ -152,6 +159,13 @@ public class ContestServiceImpl implements ContestService {
 			uploadFile.transferTo(new File(paramMap.get("folderPath") + renameFile));
 		}
 		return result;
+	}
+
+	// 참가여부 체크 서비스
+	@Override
+	public int contestAttendCheck(ContestAttend attend) {
+		// TODO Auto-generated method stub
+		return dao.contestAttendCheck(attend);
 	}
 
 }
