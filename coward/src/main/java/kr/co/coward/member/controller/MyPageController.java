@@ -1,7 +1,6 @@
 package kr.co.coward.member.controller;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,36 +60,30 @@ public class MyPageController {
 
 	// 기업 마이페이지
 
-	// 기업 마이페이지 메인페이지 이동
-	@GetMapping("/companyMain")
-	public String companyMain(@ModelAttribute("loginMember") Member loginMember, Model model) {
+	// 마이페이지(메인)
+	// 회원 정보 조회
+	@GetMapping("/info/${memberNo}")
+	public String info(@PathVariable("contestNo") int memberNo, Model model) {
 
-		int memberNo = loginMember.getMemberNo();
-		// 관심있는 개발자 목록 조회하기
+		Member member = service.mypageInfo(memberNo);
 
-		logger.info("컨트롤러 수행");
-		logger.info("loginMember :" + loginMember);
+		String[] temp = member.getSkill().split(",");
 
-		List<Member> developerLikeList = service.developerLikeList(memberNo);
+		List<String> skillList = Arrays.asList(temp);
 
-		model.addAttribute("developerLikeList", developerLikeList);
+		model.addAttribute("member", member);
+		model.addAttribute("skillList", skillList);
 
-		logger.info("developerLikeList() 메서드 실행 결과: " + developerLikeList);
-
-		return "mypage/mypage-company-main";
-
+		return "mypage/person-main";
 	}
 
+	// 마이페이지(메인)
+	// 회원 정보 조회
+	@GetMapping("/info")
+	public String info() {
+		return "mypage/person-main";
+	}
 
-
-
-	   // 마이페이지(메인)
-	   // 회원 정보 조회
-	   @GetMapping("/info")
-	   public String info() {
-	      return "mypage/person-main";
-	   }
-	
 	// 기업 마이페이지 프로필수정 이동
 	@GetMapping("/companyProfile")
 	public String companyProfile() {
@@ -100,6 +92,12 @@ public class MyPageController {
 
 	}
 
+	// 마이페이지(메인)
+	// 회원 정보 조회
+	@GetMapping("/info")
+	public String info() {
+		return "mypage/person-main";
+	}
 
 	// 공모전 관리
 	 @GetMapping("/progress")
@@ -161,8 +159,6 @@ public class MyPageController {
 		return "redirect:info";
 	}
 
-	
-	
 	// 마이페이지 - 공모전 목록 조회
 	@GetMapping("/conProgress")
 	public String conProgress() {
@@ -240,64 +236,170 @@ public class MyPageController {
 
 	}
 
-
-
 	// 기업 마이페이지 메인(공모전 관리 조회)
+	/*
+	 * @ResponseBody
+	 * 
+	 * @PostMapping("/companyMain") public List<Contest>
+	 * mainContestList(@ModelAttribute("loginMember") Member loginMember,
+	 * 
+	 * @RequestParam String conStatus) {
+	 * 
+	 * logger.info("컨트롤러 수행"); logger.info("Received conStatus: " + conStatus);
+	 * 
+	 * int memberNo = loginMember.getMemberNo();
+	 * 
+	 * List<Contest> contestList = service.getContestList(conStatus, memberNo);
+	 * 
+	 * for (Contest c : contestList) { System.out.println(c); }
+	 * 
+	 * return contestList;
+	 * 
+	 * // logger.info("mainContestList() 메서드 실행 결과: " + mainContestList);
+	 * 
+	 * // return new Gson().toJson(mainContestList); }
+	 */
+
+	// 기업 마이페이지 공모전관리 이동
+	@GetMapping("/companyManagement")
+	public String companyManagement(@ModelAttribute("loginMember") Member loginMember, Model model) {
+
+		int memberNo = loginMember.getMemberNo();
+
+		// 참가자 리스트
+		List<Contest> contestList = service.getContestList("전체", memberNo);
+
+		model.addAttribute("contestList", contestList);
+
+		return "mypage/mypage-company-management";
+	}
+
+	// 기업 마이페이지 내 공모전 관리
 	@ResponseBody
-	@PostMapping("/companyMain")
-	public String mainContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
+	@PostMapping("/companyManagement")
+	public List<Contest> getContestList(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam String conStatus) {
 
 		logger.info("컨트롤러 수행");
 		logger.info("Received conStatus: " + conStatus);
 
 		int memberNo = loginMember.getMemberNo();
 
-		List<Contest> mainContestList = service.getContestList(conStatus, memberNo);
+		List<Contest> contestList = service.getContestList(conStatus, memberNo);
 
-		logger.info("mainContestList() 메서드 실행 결과: " + mainContestList);
+		for (Contest c : contestList) {
+			System.out.println(c);
+		}
 
-		return new Gson().toJson(mainContestList);
+		return contestList;
 	}
 
-	
-	
-	
-	
-	
-	// Note: 기업 마이페이지 슬라이더  
+	// 기업 마이페이지 메인페이지 이동
+	@GetMapping("/companyMain")
+	public String companyMain(@ModelAttribute("loginMember") Member loginMember, Model model) {
 
-	// 기업 마이페이지 공모전관리 이동
-	@GetMapping("/companyManagement")
-	public String companyManagement(@ModelAttribute("loginMember") Member loginMember, Model model) {
-		
 		int memberNo = loginMember.getMemberNo();
-		
-		List<Contest> contestList = service.getContestList("전체", memberNo);
-		
-		model.addAttribute("contestList", contestList);
-		
-		return "mypage/mypage-company-management";
+		// 관심있는 개발자 목록 조회하기
+
+		logger.info("컨트롤러 수행");
+		logger.info("loginMember :" + loginMember);
+
+		List<Member> developerLikeList = service.developerLikeList(memberNo);
+
+		model.addAttribute("developerLikeList", developerLikeList);
+
+		logger.info("developerLikeList() 메서드 실행 결과: " + developerLikeList);
+
+		return "mypage/mypage-company-main";
+
 	}
 
-	
 	// 기업 마이페이지 내 공모전 관리
-//	@ResponseBody
-//	@PostMapping("/companyManagement")
-//	public List<Contest> getContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
-//
-//		logger.info("컨트롤러 수행");
-//		logger.info("Received conStatus: " + conStatus);
-//
-//		int memberNo = loginMember.getMemberNo();
-//
-//		List<Contest> contestList = service.getContestList(conStatus, memberNo);
-//
-//		for(Contest c : contestList) {
-//			System.out.println(c);
-//		}
-//
-//		return contestList;
-//	}
+
+@ResponseBody
+@PostMapping("/companyManagement")
+public List<Contest> getContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
+
+		logger.info("컨트롤러 수행");
+		logger.info("Received conStatus: " + conStatus);
+
+		int memberNo = loginMember.getMemberNo();
+
+		List<Contest> contestList = service.getContestList(conStatus, memberNo);
+
+		for(Contest c : contestList) {
+			System.out.println(c);
+		}
+
+		return contestList;
+}
 	
-	
+
+	@ResponseBody
+	@PostMapping("/companyMain")
+	public List<Contest> getContestListTwo(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam String conStatus) {
+
+		logger.info("컨트롤러 수행");
+		logger.info("Received conStatus: " + conStatus);
+
+		int memberNo = loginMember.getMemberNo();
+
+		List<Contest> contestList = service.getContestList(conStatus, memberNo);
+
+		for (Contest c : contestList) {
+			System.out.println(c);
+		}
+
+		return contestList;
+	}
+
+	// 동적 카드를 클린한 후 우승자 선정페이지 이동
+	@GetMapping("winnerSelect/{contestNo}")
+	public String winnerSelect(@PathVariable("contestNo") int contestNo, String stack, Model model,
+			@RequestParam Map<String, Object> paramMap) {
+
+		// 참가자 리스트
+		List<Member> member = service.winnerSelect(contestNo, stack);
+		model.addAttribute("member", member);
+
+		// 콘테스트 정보 불러오기
+		List<Contest> contest = service.winnerSelectContest(contestNo);
+		model.addAttribute("contest", contest);
+
+		// 모달창 정보 불러오기
+
+		/*
+		 * logger.info("콘테스트 넘버 : " + contestNo); // logger.info("멤버 넘버 : " + memberNo);
+		 * 
+		 * // paramMap.put("memberNo", memberNo); paramMap.put("contestNo", contestNo);
+		 * 
+		 * List<ContestAttend> contestAttend = service.contestAttendInfo(paramMap);
+		 * 
+		 * logger.info("참가자 리스트: " + contestAttend);
+		 */
+		return "mypage/winnerSelect";
+
+	}
+
+	// 동적으로 모달창 정보 불러오기
+	@ResponseBody
+	@PostMapping("winnerSelect/{contestNo}")
+	public String contestAttendModal(@RequestParam int memberNo, @PathVariable int contestNo,
+			@RequestParam Map<String, Object> paramMap, Model model) {
+
+		logger.info("받아온 memberNo : " + memberNo);
+		logger.info("받아온 contestNo : " + contestNo);
+
+		paramMap.put("memberNo", memberNo);
+		paramMap.put("contestNo", contestNo);
+
+		List<ContestAttend> contestAttend = service.contestAttendInfo(paramMap);
+
+		logger.info("불러온 리스트 멤버" + contestAttend);
+
+		return new Gson().toJson(contestAttend);
+
+	}
+
 }

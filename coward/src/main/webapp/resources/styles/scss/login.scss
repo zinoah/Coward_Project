@@ -45,6 +45,7 @@
   &-box {
     width: 320px;
     height: 560px;
+    border: 1px solid black;
   }
 }
 
@@ -83,6 +84,15 @@
 }
 
 .ic-eye-close {
+  color: $tertiary;
+  position: relative;
+  left: 80px;
+  top: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.ic-eye-open {
   color: $tertiary;
   position: relative;
   left: 80px;
@@ -141,15 +151,11 @@
   z-index: 1;
 }
 
-.google-btn {
-  width: 150px;
-  height: 40px;
-  border: 1px solid $border;
-  border-radius: 10px;
-  font-size: 14px;
-  padding-left: 30px;
+.naver-logo {
+  width: 30px;
+  height: 23px;
   position: relative;
-  right: 60px;
+  z-index: 1;
 }
 
 .kakao-btn {
@@ -162,6 +168,22 @@
   position: relative;
   left: 166px;
   bottom: 40px;
+}
+
+.naver-btn {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: greenyellow;
+  font-size: 14px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.naver {
+  position: relative;
+  top: 13px;
+  left: 25px;
 }
 
 .email-input-box {
@@ -231,5 +253,6 @@ input[type="checkbox"] {
     display: inline-block;
     width: 320px;
     height: 560px;
+    border: 1px solid black;
   }
 }

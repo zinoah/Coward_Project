@@ -43,11 +43,13 @@ const stickyBoxProduct = document.getElementById("sticky-box-product"); // 상�
 const stickyBoxTotalPrice = document.getElementById("sticky-box-total-price"); // 상품 총 가격
 
 const submitBtn = document.getElementById("submit-btn"); // submit버튼
-const paymentBtn = document.getElementById("payment-btn"); // 결제버튼
+const paymentBtn = document.querySelectorAll(".payment-btn"); // 결제버튼
 
 /*****************************************************************************************/
 /**************************************** 함수 *******************************************/
 /*****************************************************************************************/
+
+console.log(submitBtn);
 
 /** 가격 * 인원수 결과값 나타내는 함수  */
 function result() {
@@ -223,7 +225,8 @@ function createOrderNum() {
 
 function requestPay() {
   // IMP.request_pay(param, callback) 결제창 호출
-  var uid = "";
+  let uid = "";
+  const IMP = window.IMP; // 생략 가능
   IMP.init("imp12530646");
   IMP.request_pay(
     {
@@ -232,61 +235,57 @@ function requestPay() {
       pay_method: "card",
       merchant_uid: createOrderNum(),
       name: "공모전 개최비용",
-      amount: stickyBoxTotalPrice.textContent,
-      buyer_email: userId.textContent,
-      buyer_name: userName.textContent,
-      num: userNum.textContent, // 회원번호
-      buyer_tel: userPhone.textContent, //필수 파라미터 입니다.
+      amount: stickyBoxTotalPrice.innerText,
+      buyer_email: userId.innerText,
+      buyer_name: userName.innerText,
+      num: userNum.innerText, // 회원번호
+      buyer_tel: userPhone.innerText, //필수 파라미터 입니다.
     },
     function (rsp) {
-      // callback
       console.log(rsp);
+      // callback
       if (rsp.success) {
-        // 결제 성공시 결제버튼 비활성화 및 submit 버튼 활성화
-        // submitBtn.style.display = "block";
-        // paymentBtn.style.display = "none";
-
         // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
         uid = rsp.imp_uid;
         // 결제검증
         $.ajax({
-          url: "/order/verify_iamport/" + rsp.imp_uid,
+          url: contextPath + "/order/verify_iamport/" + rsp.imp_uid,
           type: "post",
-        }).done(function (data) {
-          // 결제를 요청했던 금액과 실제 결제된 금액이 같으면 해당 주문건의 결제가 정상적으로 완료된 것으로 간주한다.
-          if (stickyBoxTotalPrice.textContent == data.response.amount) {
-            // jQuery로 HTTP 요청
-            // 주문정보 생성 및 테이블에 저장
-
-            // 데이터를 json으로 보내기 위해 바꿔준다.
-            data = JSON.stringify({
-              orderNum: rsp.merchant_uid,
-              num: userNum.value, // 회원번호
-              productName: rsp.name,
-              orderDate: new Date().getTime(),
-              totalPrice: rsp.paid_amount,
-              imp_uid: rsp.imp_uid,
-            });
-
-            jQuery
-              .ajax({
-                url: "/order/complete",
+          success: function (data) {
+            console.log(data);
+            // 결제를 요청했던 금액과 실제 결제된 금액이 같으면 해당 주문건의 결제가 정상적으로 완료된 것으로 간주한다.
+            if (stickyBoxTotalPrice.innerText == data.response.amount) {
+              // jQuery로 HTTP 요청
+              // 주문정보 생성 및 테이블에 저장
+              // 데이터를 json으로 보내기 위해 바꿔준다.
+              data = JSON.stringify({
+                orderNo: rsp.merchant_uid, // 주문번호
+                memberNo: rsp.num, // 회원번호
+                memberNick: rsp.buyer_name, // 회원이름
+                memberTel: rsp.buyer_tel, // 회원 번호
+                productName: rsp.name, // 상품이름
+                orderDate: new Date().getTime(), // 주문 날짜
+                totalPrice: stickyBoxTotalPrice.innerText, // 총금액
+                impUid: rsp.imp_uid, // 거래 고유번호
+                escrow: true,
+              });
+              $.ajax({
+                url: contextPath + "/order/complete",
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
                 data: data,
-              })
-              .done(function (res) {
+              }).done(function (res) {
                 if (res > 0) {
-                  swal("주문정보 저장 성공");
-                  createPayInfo(uid);
+                  submitBtn.click();
                 } else {
                   swal("주문정보 저장 실패");
                 }
               });
-          } else {
-            alert("결제 실패");
-          }
+            } else {
+              alert("결제 실패");
+            }
+          },
         });
       } else {
         swal("결제에 실패하였습니다.", "에러 내용: " + rsp.error_msg, "error");

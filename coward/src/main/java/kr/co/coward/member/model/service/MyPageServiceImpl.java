@@ -23,7 +23,7 @@ public class MyPageServiceImpl implements MyPageService {
 
 	@Autowired
 	private MyPageDAO dao;
-	
+
 	private Logger logger = LoggerFactory.getLogger(ContestDAO.class);
 
 	// 일반 회원 정보 수정 서비스 구현
@@ -80,21 +80,16 @@ public class MyPageServiceImpl implements MyPageService {
 	/**
 	 * 마이페이지 메인 - 정보 조회 서비스
 	 */
-	
+
 	@Override
 	public Member mypageInfo(int memberNo) {
-		
+
 		return dao.mypageInfo(memberNo);
 	}
 
-	
-	
-	
-	
 	/**********************************
 	 * 기업 마이페이지 ServiceImpl
 	 **********************************/
-
 	// 기업 회원 정보 수정 서비스 구현
 	@Override
 	public int updateCompanyInfo(Map<String, Object> paramMap) throws IOException {
@@ -156,7 +151,28 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 
+	// 우승자 선정페이지
+	@Override
+	public List<Member> winnerSelect(int contestNo, String stack) {
 
-	
+		logger.info("불러온 contestNo : " + contestNo);
+
+		return dao.winnerSelect(contestNo, stack);
+	}
+
+	// 우승자 선정페이지 - 콘테스트 정보
+	@Override
+	public List<Contest> winnerSelectContest(int contestNo) {
+
+		return dao.winnerSelectContest(contestNo);
+	}
+
+	// 우승자 선정 페이지 - 모달창 참가자 정보 조회
+	@Override
+	public List<ContestAttend> contestAttendInfo(Map<String, Object> paramMap) {
+
+		return dao.contestAttendInfo(paramMap);
+	}
+
 
 }

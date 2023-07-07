@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="orderMapper">
+  <resultMap type="order" id="order-rm">
+	<id property="orderNo" 		column="ORDER_NO"/>
+	<result property="memberNo" 		column="MEMBER_NO"/>
+	<result property="memberNick" 	column="MEMBER_NICK"/>
+	<result property="memberTel" 	column="MEMBER_TEL"/>
+	<result property="productName"  column="PRODUCT_NAME"/>
+	<result property="orderDate" 		column="ORDER_DATE"/>
+	<result property="totalPrice" 	column="TOTAL_PRICE"/>
+	<result property="impUid" 	column="IMP_UID"/>	
+  </resultMap>
+  <insert id="insertOrder">
+	INSERT INTO PAY (ORDER_NO ,MEMBER_NO ,MEMBER_NICK ,MEMBER_TEL ,PRODUCT_NAME ,ORDER_DATE, TOTAL_PRICE, IMP_UID)
+	VALUES( #{orderNo}, #{memberNo}, #{memberNick}, #{memberTel}, #{productName}, #{orderDate}, #{totalPrice}, #{impUid})
+  </insert>
+  
+</mapper>

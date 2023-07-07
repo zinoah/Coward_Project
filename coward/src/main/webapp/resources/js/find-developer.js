@@ -1,85 +1,34 @@
-// // gallerycard hover시 이벤트
-// const sliderCard = document.querySelectorAll(".contest-slider-card");
-
-// const cardInfoTitle = document.querySelector(
-//   ".contest-slider-card-info-title > p"
-// );
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseenter", function () {
-//     this.classList.add("is-hover");
-//   })
-// );
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseleave", function () {
-//     this.classList.remove("is-hover");
-//   })
-// );
-
-// NOTE: 뭔지 모르겠다
-
-// const sliderInfo = document.querySelectorAll(".developer-card");
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseenter", function () {
-//     this.classList.add("is-hover");
-//   })
-// );
-
-// sliderCard.forEach((card) =>
-//   card.addEventListener("mouseleave", function () {
-//     this.classList.remove("is-hover");
-//   })
-// );
-
-// sliderInfo.forEach((card) =>
-//   card.addEventListener("mouseenter", function () {
-//     this.classList.add("is-hover");
-//   })
-// );
-
-// Note: 개발자 찾기 무한 스크롤 적용
-
+// ******************Variables*************************
 const target = document.querySelector(".target");
 const rowDiv = document.getElementById("devListRow");
 
+const stackButtons = document.querySelectorAll(".stack-btn");
+
 /** 무한스크롤 페이징 기법용 변수 */
 let page = 3;
+/** 필터링용 변수 */
+let filter = "";
 
-// Note: developer 요청 Ajax
-function getDevAjax() {
-  $.ajax({
-    url: "findDev",
-    type: "POST",
-    data: { page: page },
-    dataType: "json",
-    success: function (devList) {
-      devList.forEach((dev) => {
-        showDevAfterTwoSecond(dev);
-      });
-      page++;
-    },
-    error: function () {
-      console.log("getDevCardAjax 실패");
-    },
-  });
-}
+/** 저장된 좋아요한 회원 목록 저장용 변수 */
+let likedList = [];
 
+// ****************Infinity Scroll*******************
 // Note: 무한 스크롤용 인터섹션 옵저버 API
 const observeIntersection = (target, callback) => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        callback();
+        callback(filter);
       }
     });
   });
   observer.observe(target);
 };
 
+observeIntersection(target, getDevAjax);
+
 // Note: col- > cr-form > developer-card 동적 생성
-const createDev = (dev) => {
+const createDev = (dev, likedList) => {
   const colDiv = document.createElement("div");
   colDiv.setAttribute("class", "col-sm-4 col-md-6 col-lg-4 is-new");
 
@@ -140,7 +89,7 @@ const createDev = (dev) => {
   const recordSpan3 = document.createElement("span");
   recordSpan3.innerText = "총 참가";
   const recordP3 = document.createElement("p");
-  recordP3.innerText = dev.attendCound + "건";
+  recordP3.innerText = dev.attendCount + "건";
 
   const devChatBtnWrapper = document.createElement("div");
   const devleoperChatBtn = document.createElement("div");
@@ -151,12 +100,23 @@ const createDev = (dev) => {
   chatBtnA.innerText = "프로필 보기";
   const chatBtn = document.createElement("button");
   chatBtn.setAttribute("type", "submit");
-  chatBtn.setAttribute("class", "btn-primary btn-32");
+  chatBtn.setAttribute("class", "chat-button btn-primary btn-32");
   chatBtn.innerText = "채팅 하기";
 
   const likeButton = document.createElement("button");
   likeButton.setAttribute("id", "like-btn");
-  likeButton.setAttribute("class", "like-btn");
+
+  if (likedList.includes(dev.memberNo)) {
+    likeButton.setAttribute("class", "like-btn is-active");
+  } else {
+    likeButton.setAttribute("class", "like-btn");
+  }
+
+  likeButton.setAttribute("type", "button");
+  likeButton.setAttribute(
+    "onclick",
+    "clickLikeBtn(" + loginMemberNo + "," + dev.memberNo + ", this)"
+  );
 
   const likeButtonLable = document.createElement("label");
   likeButtonLable.setAttribute("for", "like-btn");
@@ -314,9 +274,9 @@ const createDevSkeleton = () => {
 };
 
 /** 스켈레톤 UI에서 dev로 전환 */
-function showDevAfterTwoSecond(dev) {
+function showDevAfterTwoSecond(dev, likedList) {
   createDevSkeleton();
-  createDev(dev);
+  createDev(dev, likedList);
 
   const skeletons = document.querySelectorAll(".is-skeleton");
   const newDev = document.querySelectorAll(".is-new");
@@ -325,7 +285,89 @@ function showDevAfterTwoSecond(dev) {
   setTimeout(() => {
     skeletons.forEach((sk) => (sk.style.display = "none"));
     newDev.forEach((nd) => (nd.style.display = "block"));
-  }, 1000);
+  }, 700);
 }
 
-observeIntersection(target, getDevAjax);
+// Note: developer 요청 Ajax
+function getDevAjax(filter) {
+  getLikedList();
+
+  $.ajax({
+    url: "findDev",
+    type: "POST",
+    data: { page: page, filter: filter },
+    dataType: "json",
+    success: function (devList) {
+      devList.forEach((dev) => {
+        showDevAfterTwoSecond(dev, likedList);
+      });
+      page++;
+    },
+    error: function () {
+      console.log("getDevCardAjax 실패");
+    },
+  });
+}
+
+// *******************Filter********************
+// Note: 개발자 찾기 필터링
+stackButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    filter = this.querySelector('input[name="userStack"]').value;
+
+    page = 0;
+    rowDiv.innerHTML = "";
+
+    // getDevAjax(filter);
+  });
+});
+
+// *******************LikeDev*******************
+// Note: 좋아요 기능
+function clickLikeBtn(cMemberNo, pMemberNo, likeBtn) {
+  // 비회원이 클릭할 경우 콘솔에 출력
+  if (!cMemberNo) {
+    return alert("로그인 후 이용해주세요!");
+  }
+
+  if (likeBtn.classList.contains("is-active")) {
+    // is-active가 있으면 == 좋아요가 되어 있으면
+    likeDevAjax(cMemberNo, pMemberNo, "dislike");
+    likeBtn.classList.remove("is-active");
+  } else {
+    likeDevAjax(cMemberNo, pMemberNo, "like");
+    likeBtn.classList.add("is-active");
+  }
+}
+
+function likeDevAjax(cMemberNo, pMemberNo, flag) {
+  $.ajax({
+    url: "likeDev",
+    type: "POST",
+    data: { cMemberNo: cMemberNo, pMemberNo: pMemberNo, flag: flag },
+    dataType: "json",
+    success: function (result) {
+      if (result > 0) {
+        console.log(`clickLikeBtn 성공 :: ${cMemberNo} to ${pMemberNo}`);
+      }
+    },
+    error: function () {
+      console.log("clickLikeBtn 실패");
+    },
+  });
+}
+
+// Note: developer 요청 Ajax
+function getLikedList() {
+  $.ajax({
+    url: "likedList",
+    type: "POST",
+    dataType: "json",
+    success: function (likedListResult) {
+      likedList = likedListResult;
+    },
+    error: function () {
+      console.log("getLikedList 실패");
+    },
+  });
+}
