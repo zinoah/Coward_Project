@@ -23,7 +23,12 @@ public interface MyPageService {
 	 * 
 	 * @return
 	 */
+
+	List<ContestAttend> getConProgress(String attendStatus, int memberNo);
+	
+  
 	List<Contest> contestList();
+
 
 	/**
 	 * 마이페이지 메인 - 정보 조회 서비스
@@ -54,5 +59,8 @@ public interface MyPageService {
 
 	// 우승자 선정 페이지 - 모달창 참여자 정보 조회
 	List<ContestAttend> contestAttendInfo(Map<String, Object> paramMap);
+
+	
+
 
 }

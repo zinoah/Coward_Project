@@ -100,10 +100,10 @@ public class MyPageController {
 	}
 
 	// 공모전 관리
-	// @GetMapping("/progress")
-	// public String progress() {
-	// return "mypage/contest-progress";
-	// }
+	 @GetMapping("/progress")
+	 public String progress() {
+	 return "mypage/contest-progress";
+	 }
 
 	// 내 정보 수정으로 이동(일반 회원)
 	@GetMapping("/editP")
@@ -160,13 +160,23 @@ public class MyPageController {
 	}
 
 	// 마이페이지 - 공모전 목록 조회
-	/*
-	 * @GetMapping("/progress") public String contestList(Model model) {
-	 * List<Contest> progress = ((Object) service).progress("");
-	 * model.addAttribute("progress", progress);
-	 * 
-	 * return "mypage/contest-progress"; }
-	 */
+	@GetMapping("/conProgress")
+	public String conProgress() {
+		return "mypage/contest-progress";
+	}
+	
+//	@ResponseBody
+//	@PostMapping("/conProgress")
+//	public List<ContestAttend> getConProgress(@ModelAttribute("loginMember") Member loginMember, @RequestParam String attendStatus) {
+//		
+//		int memberNo = loginMember.getMemberNo();
+//		
+//		List<ContestAttend> conProgress = service.getConProgress(attendStatus, memberNo);
+//		
+//		return conProgress;
+//	}
+
+	
 
 	/**********************************
 	 * 기업 마이페이지 controller
@@ -305,6 +315,26 @@ public class MyPageController {
 	}
 
 	// 기업 마이페이지 내 공모전 관리
+
+@ResponseBody
+@PostMapping("/companyManagement")
+public List<Contest> getContestList(@ModelAttribute("loginMember") Member loginMember, @RequestParam String conStatus) {
+
+		logger.info("컨트롤러 수행");
+		logger.info("Received conStatus: " + conStatus);
+
+		int memberNo = loginMember.getMemberNo();
+
+		List<Contest> contestList = service.getContestList(conStatus, memberNo);
+
+		for(Contest c : contestList) {
+			System.out.println(c);
+		}
+
+		return contestList;
+}
+	
+
 	@ResponseBody
 	@PostMapping("/companyMain")
 	public List<Contest> getContestListTwo(@ModelAttribute("loginMember") Member loginMember,

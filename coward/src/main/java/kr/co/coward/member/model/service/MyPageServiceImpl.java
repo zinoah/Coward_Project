@@ -60,12 +60,22 @@ public class MyPageServiceImpl implements MyPageService {
 		return result;
 
 	}
+//
+//	@Override
+//	public List<Contest> contestList() {
+//
+//		return null;
+//	}
+	
+	/**
+	 * 
+	 */
+//	@Override
+//	public List<ContestAttend> getConProgress(String attendStatus, int memberNo) {
+//
+//		return dao.conProgress(attendStatus, memberNo);
+//	}
 
-	@Override
-	public List<Contest> contestList() {
-
-		return null;
-	}
 
 	/**
 	 * 마이페이지 메인 - 정보 조회 서비스
@@ -140,6 +150,7 @@ public class MyPageServiceImpl implements MyPageService {
 
 	}
 
+
 	// 우승자 선정페이지
 	@Override
 	public List<Member> winnerSelect(int contestNo, String stack) {
@@ -162,5 +173,6 @@ public class MyPageServiceImpl implements MyPageService {
 
 		return dao.contestAttendInfo(paramMap);
 	}
+
 
 }
