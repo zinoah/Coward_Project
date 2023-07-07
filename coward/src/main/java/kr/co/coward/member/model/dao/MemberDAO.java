@@ -97,28 +97,62 @@ public class MemberDAO {
 	public int secession(int memberNo) {
 		return sqlSession.update("memberMapper.secession", memberNo);
 	}
-	
-	/** 비밀번호 변경 DAO
-	 * @param 
-	 * @return 
+
+	/**
+	 * 비밀번호 변경 DAO
+	 * 
+	 * @param
+	 * @return
 	 */
 	public int changePw(Map<String, Object> paramMap) {
 		return sqlSession.update("memberMapper.changePw", paramMap);
 	}
-	
-	
-	
 
 	/**
 	 * 개발자 찾기 DAO
 	 * 
 	 */
-	public List<Member> getDevList(int pageSize, int offset) {
+	public List<Member> getDevList(int pageSize, int offset, String filter) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("offset", offset);
 		params.put("pageSize", pageSize);
+		params.put("filter", filter);
 
 		return sqlSession.selectList("memberMapper.getDevList", params);
+	}
+
+	/**
+	 * 개발자 찾기 좋아요 버튼 클릭 DAO
+	 * 
+	 * @param cMemberNo
+	 * @param pMemberNo
+	 * @return
+	 */
+	public int likeDev(int cMemberNo, int pMemberNo, String flag) {
+		Map<String, Integer> params = new HashMap<>();
+		params.put("cMemberNo", cMemberNo);
+		params.put("pMemberNo", pMemberNo);
+
+		int result = -99;
+
+		if (flag.equals("like")) {
+			result = sqlSession.insert("memberMapper.likeDev", params);
+		} else if (flag.equals("dislike")) {
+			result = sqlSession.delete("memberMapper.disLikeDev", params);
+		}
+
+		return result;
+
+	}
+
+	/**
+	 * 현재 회원이 좋아요 한 회원 목록
+	 * 
+	 * @param loginMemberNo
+	 * @return
+	 */
+	public List<Integer> getLikeList(int loginMemberNo) {
+		return sqlSession.selectList("memberMapper.getLikeList", loginMemberNo);
 	}
 
 }

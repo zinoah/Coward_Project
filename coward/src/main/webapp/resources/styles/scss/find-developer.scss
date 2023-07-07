@@ -119,12 +119,6 @@
     box-shadow: $card-shadow;
   }
 
-  &-img {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-  }
-
   /* 타입과 이름 가로 배치 */
   &-title {
     @include flexbox;
@@ -137,6 +131,12 @@
   &-profile {
     @include flexbox(start);
     margin-bottom: 15px;
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+    }
   }
   &-type {
     @include flexbox;
@@ -157,7 +157,7 @@
   }
   &-oneline {
     @include text-style(12);
-    width: 167px;
+    width: 240px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -187,16 +187,17 @@
   }
 }
 
-.btn-32 {
-  width: 49%;
-}
-
 .developer-chat-btn {
   @include flexbox(between);
 
   width: 100%;
   height: 50px;
   background-color: white;
+
+  .profile-btn,
+  .chat-button {
+    width: 49%;
+  }
 }
 
 .like-btn {
@@ -208,6 +209,11 @@
   transition: background-color 200ms ease-in-out;
   color: $secondary;
   transition: background-color 200ms ease-in-out;
+
+  &.is-active {
+    background: #3aacf8;
+    color: white;
+  }
 
   i {
     cursor: pointer;
