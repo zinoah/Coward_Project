@@ -112,15 +112,6 @@ public class ContestDAO {
 	 * @param contestNo
 	 * @return
 	 */
-	/*
-	 * public List<Contest> recommendContest(int typeNo) {
-	 * 
-	 * logger.info("typeNo 확인: " + typeNo);
-	 * 
-	 * return sqlSession.selectList("contestMapper.recommendContest", typeNo);
-	 * 
-	 * }
-	 */
 
 	public List<Contest> getRecommendList(int typeNo) {
 

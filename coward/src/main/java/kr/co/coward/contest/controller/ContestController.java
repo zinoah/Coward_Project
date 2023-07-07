@@ -240,14 +240,6 @@ public class ContestController {
 
 	}
 
-	// 공모전 우승자 선정 페이지로 이동
-
-	@GetMapping("/contestWinnerSelect")
-	public String contestManagement(@ModelAttribute("loginMember") Member loginMember, Model model) {
-
-		return "contest/contest-winnerSelect";
-	}
-
 	/**
 	 * 공모전 참가 동의페이지 이동
 	 * 

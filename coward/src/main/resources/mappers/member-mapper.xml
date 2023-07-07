@@ -121,6 +121,7 @@
 	</select>
 
 	   <!-- 개발자 찾기[ALL] (상금 순 정렬) -->
+
    <select id="getDevList"  resultMap="member_rm">
 		SELECT RANK() OVER (ORDER BY TOTAL_PRICE DESC) AS RANK, MEMBER_NO, PROFILE_IMG, MEMBER_NICK, TOTAL_PRICE, STACK, SLOGAN, ATTEND_COUNT, VICTORY_COUNT 
 		FROM MEMBER

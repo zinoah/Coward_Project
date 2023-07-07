@@ -1,5 +1,7 @@
 package kr.co.coward.contest.model.vo;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,4 +19,5 @@ public class ContestAttend {
 	private String githubAddress;
 	private String pptFile;
 	private String skill;
+	private List<String> skillList;
 }
