@@ -127,33 +127,27 @@ close3.addEventListener("click", function () {
 });
 
 // 축하 모달
-const joinModal = document.querySelector(".join-box");
 const completeBtn = document.querySelector(".complete-btn");
-const reject = document.querySelector(".pre-second");
 
 // 완료 버튼 클릭
 completeBtn.addEventListener("click", function () {
-  //  overlay.classList.add("is-active");
-  //  joinModal.style.display = "block";
-
   // 이메일 인증을 안하고 완료버튼을 눌렀을경우
   if (isCertOK == false) {
     alert("이메일 인증 먼저 완료해주세요!");
     return;
   }
 
+  // 유효성검사 안맞으면 못넘어감
+  if (
+    (pwMessage1.innerText = "비밀번호 형식이 유효하지 않습니다.") ||
+    (pwMessage2.innerText = "비밀번호가 일치하지 않습니다.")
+  ) {
+    alert("비밀번호 형식이 유효하지 않거나 일치하지 않습니다!");
+    return;
+  }
+
   const signUpForm = document.getElementById("signUp-form");
   signUpForm.submit();
-});
-
-// reject.addEventListener("click", function () {
-// overlay.classList.remove("is-active");
-// joinModal.style.display = "none";
-// });
-
-overlay.addEventListener("click", () => {
-  overlay.classList.remove("is-active");
-  joinModal.style.display = "none";
 });
 
 // 이메일 유효성 + 중복 검사
@@ -328,6 +322,8 @@ const pwMessage2 = document.querySelector(".pw-explanation2");
 
 memberPw.addEventListener("input", function () {
   if (memberPw.value.length == 0) {
+    pwMessage1.innerText = "사용할 비밀번호를 입력해주세요.";
+    pwMessage1.style.color = "gray";
     return;
   }
 
@@ -367,6 +363,11 @@ const agree1 = document.getElementById("agree-1");
 const agree2 = document.getElementById("agree-2");
 const agree3 = document.getElementById("agree-3");
 const checkboxes = document.querySelectorAll('[id^="agree-"]');
+agree1.addEventListener("change", updateNextBtnColor);
+agree2.addEventListener("change", updateNextBtnColor);
+agree1.addEventListener("change", essentialAgree_updateNextBtnColor);
+agree2.addEventListener("change", essentialAgree_updateNextBtnColor);
+agree3.addEventListener("change", essentialAgree_updateNextBtnColor);
 
 allAgree.addEventListener("click", function () {
   const checkboxes = document.querySelectorAll('[id^="agree-"]');
@@ -386,8 +387,6 @@ allAgree.addEventListener("change", function () {
   }
 });
 
-//
-
 // 회원 타입선택 + 모두동의하기 버튼눌렀거나 + 필수항목 눌렀으면 다음 버튼에 불들어오게 하기
 // updateNextBtnColor(); 이 함수를 개인, 기업 불들어오게 하기, 모두동의버튼 클릭에 추가
 function updateNextBtnColor() {
@@ -405,8 +404,6 @@ function updateNextBtnColor() {
     nextBtn.style.backgroundColor = ""; // 기본 버튼 색상으로 복원
   }
 }
-agree1.addEventListener("change", updateNextBtnColor);
-agree2.addEventListener("change", updateNextBtnColor);
 
 // 타입선택 + 필수 항목2개 누르면 다음에 불들어오기
 function essentialAgree_updateNextBtnColor() {
@@ -430,6 +427,58 @@ function essentialAgree_updateNextBtnColor() {
   }
 }
 
-agree1.addEventListener("change", essentialAgree_updateNextBtnColor);
-agree2.addEventListener("change", essentialAgree_updateNextBtnColor);
-agree3.addEventListener("change", essentialAgree_updateNextBtnColor);
+// 약관창 동의버튼 누르면 해당 약관에 불들어오게하기
+const agreeBtn1 = document.querySelector(".agree-btn1");
+const agreeBtn2 = document.querySelector(".agree-btn2");
+const agreeBtn3 = document.querySelector(".agree-btn3");
+
+agreeBtn1.addEventListener("click", function () {
+  agree1.checked = true;
+});
+
+agreeBtn2.addEventListener("click", function () {
+  agree2.checked = true;
+});
+
+agreeBtn3.addEventListener("click", function () {
+  agree3.checked = true;
+});
+
+// 비밀번호 보기, 숨기기
+$(document).ready(function () {
+  $(".eye").on("click", function () {
+    var inputPw = $(this).prev(".pw-input");
+    inputPw.toggleClass("active");
+
+    if (inputPw.hasClass("active")) {
+      $(this)
+        .attr("class", "ic-eye-open eye")
+        .siblings(".pw-input")
+        .attr("type", "text");
+    } else {
+      $(this)
+        .attr("class", "ic-eye-close eye")
+        .siblings(".pw-input")
+        .attr("type", "password");
+    }
+  });
+});
+
+$(document).ready(function () {
+  $(".eye").on("click", function () {
+    var inputPw = $(this).prev(".pw-input-chk");
+    inputPw.toggleClass("active");
+
+    if (inputPw.hasClass("active")) {
+      $(this)
+        .attr("class", "ic-eye-open eye")
+        .siblings(".pw-input-chk")
+        .attr("type", "text");
+    } else {
+      $(this)
+        .attr("class", "ic-eye-close eye")
+        .siblings(".pw-input-chk")
+        .attr("type", "password");
+    }
+  });
+});

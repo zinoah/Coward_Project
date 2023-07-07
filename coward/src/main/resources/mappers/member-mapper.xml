@@ -80,6 +80,12 @@
 		MEMBER_PW = #{newPw}
 		WHERE MEMBER_NO = #{memberNo}
 	</update>
+	
+	<!-- 카카오 -->
+	<insert id="kakaoInsert">
+    INSERT INTO TBL_MEMBER (MEMBER_ID, MEMBER_PW, SNSID) VALUES
+    (#{memberId}, #{memberPw}, #{snsId})
+</insert>
 	 
 	
 

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
-
 <header class="header">
   <div class="container">
     <div class="row">
@@ -29,9 +28,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
           <div class="header-right sm-hidden">
             <c:choose>
-              <c:when test="${ empty sessionScope.loginMember }">
+              <c:when test="${ empty sessionScope.loginMember and empty sessionScope.sessionId}">
                 <button class="header-button-text" type="button">
-                  <a href="${contextPath}/member/login">로그인</a>
+                  <a href="${contextPath}/login">로그인</a>
                 </button>
                 <button class="header-button-text" type="button">
                   <a href="${contextPath}/member/join">회원가입</a>
@@ -39,6 +38,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </c:when>
               <c:otherwise>
                 <c:choose>
+          
                   <c:when test="${loginMember.memberType == 'C'}">
                     <a
                       href="${contextPath}/contest/create"
@@ -48,6 +48,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       공모전 개최하기</a
                     >
                   </c:when>
+         
                 </c:choose>
                 <a href="${contextPath}/member/logout">
                   <i class="ic-logout"></i>

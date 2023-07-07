@@ -18,8 +18,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <c:when test="${ empty sessionScope.loginMember }">
         <!-- Note: 로그인을 하지 않은 경우 -->
         <div class="menubar-auth">
-          <a class="btn-secondary btn-32" href="member/testLogin">로그인</a>
-          <a class="btn-primary btn-32" href="/">회원가입</a>
+          <a class="btn-secondary btn-32" href="login">로그인</a>
+          <a class="btn-primary btn-32" href="member/join">회원가입</a>
         </div>
       </c:when>
 
