@@ -51,6 +51,8 @@ policyModalCancleBtn.addEventListener("click", function () {
   policyModalContainer.style.display = "none";
   policyAgreeCheckbox.checked = false;
   policyAgreeCheck.style.backgroundColor = "#B2B3B9";
+  allAgreeCheckbox.checked = false;
+  allAgreeCheck.style.backgroundColor = "#B2B3B9";
 });
 
 // 코워드 정책 모달창 닫기 (배경)
@@ -76,6 +78,8 @@ termsModalCancleBtn.addEventListener("click", function () {
   termsModalContainer.style.display = "none";
   termsAgreeCheckbox.checked = false;
   termsAgreeCheck.style.backgroundColor = "#B2B3B9";
+  allAgreeCheckbox.checked = false;
+  allAgreeCheck.style.backgroundColor = "#B2B3B9";
 });
 
 // 공모전 이용약관 모달창 닫기 (배경)
@@ -102,6 +106,8 @@ cautionModalCancleBtn.addEventListener("click", function () {
   cautionModalContainer.style.display = "none";
   cautionAgreeCheckbox.checked = false;
   cautionAgreeCheck.style.backgroundColor = "#B2B3B9";
+  allAgreeCheckbox.checked = false;
+  allAgreeCheck.style.backgroundColor = "#B2B3B9";
 });
 
 // 공모전 참여 주의사항 모달창 닫기 (배경)
@@ -138,7 +144,6 @@ allAgreeCheck.addEventListener("click", function () {
     policyAgreeCheck.style.backgroundColor = "#B2B3B9";
     termsAgreeCheck.style.backgroundColor = "#B2B3B9";
     cautionAgreeCheck.style.backgroundColor = "#B2B3B9";
-    allAgreeCheck.style.backgroundColor = "#B2B3B9";
   }
 
   console.log(allAgreeCheckbox.checked);
