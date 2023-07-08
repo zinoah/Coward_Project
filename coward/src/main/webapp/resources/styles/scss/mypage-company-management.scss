@@ -101,6 +101,10 @@
 .scroll {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  overflow: scroll;
   max-height: 520px;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
 }

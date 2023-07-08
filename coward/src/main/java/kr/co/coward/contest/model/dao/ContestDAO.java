@@ -113,11 +113,11 @@ public class ContestDAO {
 	 * @return
 	 */
 
-	public List<Contest> getRecommendList(int typeNo) {
+	public List<Contest> getRecommendList(Map<String, Object> paramMap) {
 
-		logger.info("typeNo DAO 확인: " + typeNo);
+		logger.info("typeNo DAO 확인: " + paramMap);
 
-		return sqlSession.selectList("contestMapper.getRecommendList", typeNo);
+		return sqlSession.selectList("contestMapper.getRecommendList", paramMap);
 	}
 
 	/**

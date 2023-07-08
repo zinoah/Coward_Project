@@ -70,7 +70,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <c:if test="${not empty member}">
             <c:forEach var="member" items="${member}">
               <div class="col-sm-4 col-md-6 col-lg-4">
-                <div class="card">
+                <div
+                  class="card"
+                  onclick="winnerCardClick('${member.memberNo}')"
+                >
                   <div class="profile-section">
                     <img
                       src="${contextPath}/${member.profileImg}"
@@ -86,12 +89,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </div>
 
                   <div class="profile-button-wrapper">
-                    <input
-                      type="hidden"
-                      id="memberNo"
-                      name="memberNo"
-                      value=""
-                    />
                     <button
                       type="button"
                       class="btn-40 btn-outlined checkFormBtn"
@@ -134,14 +131,6 @@ ${contestAttend.description}</textarea
                   >
                 </div>
 
-                <div class="fileBtn">
-                  <a href="${contestAttend.pptFile}" download="contest">
-                    <button type="button" class="btn-primary btn-32">
-                      File Download
-                    </button>
-                  </a>
-                </div>
-
                 <h5>github 주소</h5>
                 <div class="github-input">${contestAttend.githubAddress}</div>
 
@@ -153,6 +142,14 @@ ${contestAttend.description}</textarea
                   <div class="my-skill">Java</div>
                   <div class="my-skill">Spring</div>
                 </div>-->
+
+                <div class="fileBtn">
+                  <a href="${contestAttend.pptFile}" download="contest">
+                    <button type="button" class="btn-primary btn-32">
+                      File Download
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
 

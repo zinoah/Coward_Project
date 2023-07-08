@@ -140,45 +140,74 @@ function nodeClick() {
 
 // 상금 값 input 창에 넣기
 
-var slider = document.getElementById("recommend-reward-slide");
-var priceSpan = document.getElementById("priceSpan");
-var price = document.getElementById("price");
+let slider = document.querySelector(".recommend-reward-slide");
+let priceSpan = document.getElementById("priceSpan");
+
 priceSpan.innerHTML = slider.value;
 
 slider.oninput = function () {
   priceSpan.innerHTML = this.value;
-  price.value = priceSpan.innerHTML;
 
   console.log(price.value);
 };
 
 // 맞춤 콘테스트 정보 조회(AJAX)
 nextBtn3.addEventListener("click", function () {
-  const typeNo = document.getElementById("typeNo");
-  const div = document.querySelector(".contest-slider");
+  step3.style.display = "none";
+  step4.style.display = "block";
+  backBtn3.style.display = "none";
+  nextBtn3.style.display = "none";
+
+  const resutl = document.querySelector(".contest-slider");
+  let form = $("#recommendForm");
+  let formData = new FormData(form[0]); // FormData 객체 생성
+
+  const selectedTypeNo = document.querySelector(
+    'input[name="typeNo"]:checked'
+  ).value;
+
+  const selectedPrice = document.getElementById("price").value;
+
+  const selectedSkills = [];
+  const checkboxes = document.querySelectorAll('input[name="skill"]:checked');
+  checkboxes.forEach(function (checkbox) {
+    selectedSkills.push(checkbox.value);
+  });
+
+  // skill 파라미터를 배열 형태로 추가
+  selectedSkills.forEach(function (skill) {
+    formData.append("skill", skill);
+  });
+
+  formData.append("typeNo", selectedTypeNo);
+  formData.append("price", selectedPrice);
 
   $.ajax({
     url: "recommend",
-    data: { typeNo: typeNo.value },
+    data: formData,
     type: "POST",
     dataType: "json",
+    contentType: false, // FormData를 사용할 경우 필요한 옵션
+    processData: false, // FormData를 사용할 경우 필요한 옵션
 
     success: function (response) {
       const recommendList = response; // 이미 JavaScript 객체로 해석된 상태
 
-      div.innerHTML = "";
+      resutl.innerHTML = "";
 
       if (recommendList.length > 0) {
-        for (let i = 0; i < recommendList.length; i++) {
-          const contest = recommendList[i];
+        recommendList.forEach((contest) => {
+          const divCol = document.createElement("div");
+          divCol.className = "col-sm-4 col-md-3";
 
-          const divContest = document.createElement("div");
-          divContest.className = "contest-slider-card";
+          const divContestCard = document.createElement("div");
+          divContestCard.className = "contest-slider-card";
 
           const divImg = document.createElement("div");
           divImg.className = "contest-slider-card-img";
           const img = document.createElement("img");
-          img.src = contest.thumbnail;
+          img.src = `${contextPath}/${contest.thumbnail}`;
+
           divImg.appendChild(img);
 
           const divInfo = document.createElement("div");
@@ -187,49 +216,43 @@ nextBtn3.addEventListener("click", function () {
           const divTitle = document.createElement("div");
           divTitle.className = "contest-slider-card-info-title";
           const pTitle = document.createElement("p");
-          pTitle.innerText = "콘테스트 제목: " + contest.contestTitle;
+          pTitle.innerText = "식품 쇼핑몰 웹사이트 제작";
           divTitle.appendChild(pTitle);
 
           const divDetail1 = document.createElement("div");
           divDetail1.className = "contest-slider-card-info-detail";
           const pDetail1_1 = document.createElement("p");
           pDetail1_1.innerText = "상금";
-          const pDetail1_2 = document.createElement("p");
-          pDetail1_2.innerText = contest.price + "만원";
+          const pDetail1_1_2 = document.createElement("p");
+          pDetail1_1_2.innerText = "100만원";
           divDetail1.appendChild(pDetail1_1);
-          divDetail1.appendChild(pDetail1_2);
+          divDetail1.appendChild(pDetail1_1_2);
 
           const divDetail2 = document.createElement("div");
           divDetail2.className = "contest-slider-card-info-detail";
           const pDetail2_1 = document.createElement("p");
           pDetail2_1.innerText = "남은기간";
           const pDetail2_2 = document.createElement("p");
-          pDetail2_2.innerText = contest.remainingDays + "일";
+          pDetail2_2.innerText = contest.dueDate + "일";
           divDetail2.appendChild(pDetail2_1);
           divDetail2.appendChild(pDetail2_2);
-
-          const divButton = document.createElement("div");
-          divButton.className = "contest-slider-card-info-button";
-          const button = document.createElement("button");
-          button.className = "btn-outlined btn-32";
-          button.innerText = "참여하러가기";
-          divButton.appendChild(button);
 
           divInfo.appendChild(divTitle);
           divInfo.appendChild(divDetail1);
           divInfo.appendChild(divDetail2);
-          divInfo.appendChild(divButton);
 
-          divContest.appendChild(divImg);
-          divContest.appendChild(divInfo);
+          divContestCard.appendChild(divImg);
+          divContestCard.appendChild(divInfo);
 
-          div.appendChild(divContest);
-        }
+          divCol.appendChild(divContestCard);
+
+          resutl.appendChild(divCol);
+        });
       } else {
         const h4 = document.createElement("h4");
         h4.innerText = "일치하는 콘테스트가 없습니다";
 
-        div.append(h4);
+        resutl.append(h4);
       }
     },
     error: function (request, status, error) {

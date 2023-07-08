@@ -49,8 +49,7 @@ public interface ContestService {
 	 * @param contestNo
 	 * @return
 	 */
-	// public abstract Contest getRecommendContest(int typeNo);
-	public abstract List<Contest> getRecommendList(int typeNo);
+	public abstract List<Contest> getRecommendList(Map<String, Object> paramMap);
 
 	/**
 	 * 북마크 UP 서비스

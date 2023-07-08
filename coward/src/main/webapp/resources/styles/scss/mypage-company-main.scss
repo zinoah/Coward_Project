@@ -186,11 +186,15 @@
 .scroll {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  overflow: scroll;
   max-height: 270px;
   padding-top: 15px;
 }
 
 #colDiv {
   margin-left: -10px;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
 }

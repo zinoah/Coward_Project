@@ -315,34 +315,31 @@
                 <div class="col-sm-4">
                   <div class="slider-wrapper">
                     <div class="contest-slider">
-                      <div>
-                        <div class="contest-slider-card">
-                          <div class="contest-slider-card-img">
-                            <img
-                              src="../assets/images/contest-gallery-card-img.svg"
-                              alt=""
-                            />
-                          </div>
-                          <div class="contest-slider-card-info">
-                            <div class="contest-slider-card-info-title">
-                              <p>식품 쇼핑몰 웹사이트 제작</p>
+                      <c:forEach var="contest" items="${recommendList}">
+                        <div class="col-sm-4 col-md-4">
+                          <div class="contest-slider-card">
+                            <div class="contest-slider-card-img">
+                              <img
+                                src="../assets/images/contest-gallery-card-img.svg"
+                                alt=""
+                              />
                             </div>
-                            <div class="contest-slider-card-info-detail">
-                              <p>상금</p>
-                              <p>100만원</p>
-                            </div>
-                            <div class="contest-slider-card-info-detail">
-                              <p>남은기간</p>
-                              <p>1일</p>
-                            </div>
-                            <div class="contest-slider-card-info-button">
-                              <button class="btn-outlined btn-32">
-                                참여하러가기
-                              </button>
+                            <div class="contest-slider-card-info">
+                              <div class="contest-slider-card-info-title">
+                                <p>식품 쇼핑몰 웹사이트 제작</p>
+                              </div>
+                              <div class="contest-slider-card-info-detail">
+                                <p>상금</p>
+                                <p>100만원</p>
+                              </div>
+                              <div class="contest-slider-card-info-detail">
+                                <p>남은기간</p>
+                                <p>1일</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </c:forEach>
                     </div>
                     <div class="slider-controls">
                       <button class="control-button is-prev" type="button">
