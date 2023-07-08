@@ -35,6 +35,8 @@ nextBtn.addEventListener("click", function () {
   }
 
   // 필수항목 다 체크 안했을 경우 경고표시 + 페이지 이동 금지
+  // 두개 묶지 말고 분리하기
+
   nextBtn.addEventListener("click", function () {
     if (!allAgree.checked || (!agree1.checked && !agree2.checked)) {
       alert("약관 필수 항목에 동의해주세요!");

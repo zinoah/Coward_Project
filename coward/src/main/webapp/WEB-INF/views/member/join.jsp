@@ -94,7 +94,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="join-second-box">
                 <div class="logo-info-box">
-                  <a href="#">
+                  <a href="${contextPath}/home">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
@@ -206,7 +206,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="join-final-box">
                 <div class="logo-final-box">
-                  <a href="#">
+                  <a href="${contextPath}/home">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"

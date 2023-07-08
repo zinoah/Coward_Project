@@ -61,7 +61,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <p class="p-pw">비밀번호</p>
                   <fieldset>
                     <input
-                      placeholder="example@gmail.com"
                       type="password"
                       class="input-pw"
                       name="memberPw"
@@ -97,17 +96,17 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <p class="p-or">또는</p>
               </div>
               <div class="simple-login-box">
-                <img
-                  src="${contextPath}/resources/assets/images/kakao-logo.png"
-                  class="kakao-logo"
-                />
+                
+                <div class="naver-box">
+                </div>
                 <a href="${url}">
-                  <img
-                    width="150"
-                    src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"
+                <div class="naver-logo">
+                	<img
+                    src="${contextPath}/resources/assets/images/naver-logo.png"
                   />
+                </div>
+                  <div class="naver-login"><span class="naver">네이버로 계속하기</span></div>
                 </a>
-                <button class="kakao-btn">Kakao로 계속</button>
               </div>
               <br />
               <span class="span-second">혹시 아직 회원이 아니신가요?</span>
@@ -123,25 +122,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <!-- 카카오 로그인 -->
-    <script
-      type="text/javascript"
-      src="https://developers.kakao.com/sdk/js/kakao.min.js"
-      charset="utf-8"
-    ></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        Kakao.init("440111c11e62241cddf00f69dfcc2c14");
-        Kakao.isInitialized();
-      });
-
-      function loginWithKakao() {
-        Kakao.Auth.authorize({
-          redirectUri: "http://localhost:8080/coward/home",
-        }); // 등록한 리다이렉트uri 입력
-      }
-    </script>
-
     <script src="${contextPath}/resources/js/login.js"></script>
   </body>
 </html>

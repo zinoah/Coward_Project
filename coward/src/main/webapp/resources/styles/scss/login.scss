@@ -133,57 +133,6 @@
   padding-top: 10px;
   padding-bottom: 15px;
 }
-.google-logo {
-  width: 23px;
-  height: 23px;
-  position: relative;
-  top: 7px;
-  left: 15px;
-}
-
-.kakao-logo {
-  width: 30px;
-  height: 23px;
-  position: relative;
-  left: 148px;
-  top: 7px;
-  z-index: 1;
-}
-
-.naver-logo {
-  width: 30px;
-  height: 23px;
-  position: relative;
-  z-index: 1;
-}
-
-.kakao-btn {
-  width: 150px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: #fee500;
-  font-size: 14px;
-  padding-left: 30px;
-  position: relative;
-  left: 166px;
-  bottom: 40px;
-}
-
-.naver-btn {
-  width: 150px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: greenyellow;
-  font-size: 14px;
-  padding-left: 30px;
-  position: relative;
-}
-
-.naver {
-  position: relative;
-  top: 13px;
-  left: 25px;
-}
 
 .email-input-box {
   padding-top: 7px;
@@ -228,7 +177,29 @@ input[type="checkbox"] {
   bottom: 30px;
 }
 
-.join:hover {
+.naver {
+  @include text-style(16, $white);
+  font-weight: 400;
+  position: relative;
+  left: 100px;
+
+  &-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  &-login {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #2db400;
+    font-size: 14px;
+    padding-left: 30px;
+    position: relative;
+  }
+}
+
+.join {
   color: $blue;
 }
 
@@ -252,6 +223,5 @@ input[type="checkbox"] {
     display: inline-block;
     width: 320px;
     height: 560px;
-    border: 1px solid black;
   }
 }
