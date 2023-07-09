@@ -20,11 +20,17 @@ public class ChatServiceImpl implements ChatService {
 	public List<ChatRoom> selectChatRoomList() {
 		return dao.selectChatRoomList();
 	}
-	
+
 	// 채팅방 만들기
 	@Override
 	public int openChatRoom(ChatRoom room) {
 		return dao.openChatRoom(room);
+	}
+
+	@Override
+	public int insertMessage(ChatMessage chatMessage) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
