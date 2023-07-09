@@ -229,6 +229,13 @@
 
   .category {
     margin-top: 0;
+
+    &-bar a {
+      &:hover {
+        border-bottom: 1.5px solid $blue-dark;
+        font-weight: 600;
+      }
+    }
   }
 
   /* body에 relative 줄 경우 배치가 이상해져서 div 하나 생성 */
@@ -281,7 +288,7 @@
     border-bottom: 1px solid $border;
 
     &-wrapper {
-      padding: 25px;
+      padding: 25px 25px 15px;
       width: 905px;
       height: 695px;
       border: 1px solid $border;
@@ -316,11 +323,12 @@
   }
   /* 한줄 소개 */
   .one-liner {
+    width: 840px;
     margin-bottom: 10px;
     textarea {
       @include text-style(12);
-      width: 520px;
-      height: 140px;
+      width: 840px;
+      height: 120px;
       background-color: white;
       resize: none;
     }
@@ -328,8 +336,8 @@
 
   /* 어워드 */
   .award {
-    width: 220px;
-    height: 323px;
+    // width: 220px;
+    // height: 323px;
 
     &-box {
       @include column-flexbox;
@@ -337,10 +345,8 @@
       justify-content: space-around;
       align-items: center;
       margin: 0;
-    }
-
-    &-table {
-      height: 120px;
+      width: 250px;
+      height: 100px;
     }
   }
 
@@ -411,13 +417,13 @@
   .credit-skill {
     @include flexbox(between);
 
-    width: 520px;
+    width: 850px;
   }
 
   /* 소개와 creadit-skill 세로 정렬 위해 */
   .one-credit-skill {
     @include column-flexbox;
-    width: 550px;
+    width: 850px;
     margin-right: 12px;
   }
 
@@ -429,18 +435,18 @@
 
   .contest-card {
     cursor: pointer;
-    margin-top: 0;
+    margin-bottom: 0;
     // position: relative;
   }
 
   .contest-slider {
     @include flexbox(start, center);
-    height: 250px;
+    height: 280px;
     position: relative;
   }
 
   .slider-wrapper {
-    height: 250px;
+    height: 280px;
   }
 
   .tns-visually-hidden {
@@ -455,5 +461,9 @@
   .category-web {
     height: 613px;
     margin: 0;
+  }
+
+  .won {
+    @include text-style(14);
   }
 }

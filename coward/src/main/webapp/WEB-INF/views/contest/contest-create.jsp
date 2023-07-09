@@ -93,10 +93,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <div>
                           <select name="typeNo" id="contest-type" required>
                             <option value="">선택하세요</option>
-                            <option value="1">웹</option>
-                            <option value="2">앱</option>
-                            <option value="3">모바일</option>
-                            <option value="4">게임</option>
+                            <option value="1">모바일</option>
+                            <option value="2">웹</option>
+                            <option value="3">게임</option>
+                            <option value="4">보안</option>
                           </select>
                         </div>
                       </div>

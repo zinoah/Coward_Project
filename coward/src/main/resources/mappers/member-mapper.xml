@@ -81,12 +81,13 @@
 		WHERE MEMBER_NO = #{memberNo}
 	</update>
 	
-	<!-- 카카오 -->
-	<insert id="kakaoInsert">
-    INSERT INTO TBL_MEMBER (MEMBER_ID, MEMBER_PW, SNSID) VALUES
-    (#{memberId}, #{memberPw}, #{snsId})
-</insert>
-	 
+	
+	<!-- 비밀번호 찾기 -->
+	<update id="pwFind">
+		UPDATE MEMBER SET
+		MEMBER_PW = #{memberPw}
+		WHERE MEMBER_ID= #{memberId}
+	</update>
 	
 
 	<!-- 상금순 랭킹 조회 -->

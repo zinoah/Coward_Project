@@ -1,5 +1,9 @@
 @import "./main.scss";
 
+body {
+  @include scrollbar;
+}
+
 // Note: Skeleton Overriding
 .ph-item {
   border-radius: 10px;

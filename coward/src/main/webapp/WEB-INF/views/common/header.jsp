@@ -28,7 +28,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
           <div class="header-right sm-hidden">
             <c:choose>
-              <c:when test="${ empty sessionScope.loginMember and empty sessionScope.sessionId}">
+              <c:when
+                test="${ empty sessionScope.loginMember and empty sessionScope.sessionId}"
+              >
                 <button class="header-button-text" type="button">
                   <a href="${contextPath}/login">로그인</a>
                 </button>
@@ -38,7 +40,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </c:when>
               <c:otherwise>
                 <c:choose>
-          
                   <c:when test="${loginMember.memberType == 'C'}">
                     <a
                       href="${contextPath}/contest/create"
@@ -48,15 +49,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       공모전 개최하기</a
                     >
                   </c:when>
-         
                 </c:choose>
 
-                <button class="header-user-image">
+                <!-- <button class="header-user-image">
                   <i class="ic-bell"></i>
-                </button>
-
-                <a class="header-user-image" href="${contextPath}/chat">
-
+                </button> -->
+                <a class="header-user-image" href="${contextPath}/chat/roomList">
                   <i class="ic-message"></i>
                 </a>
                 <a

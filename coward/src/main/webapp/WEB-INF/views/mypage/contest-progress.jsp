@@ -54,12 +54,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
 
                     <ul class="category-bar">
-                      <li><a href="#">내 정보</a></li>
-                      <li><a href="${contextPath}/mypage/myPage/progress">공모전 관리</a></li>
-                      <li><a href="#">크레딧 인출</a></li>
-                       <li><a href="${contextPath}/mypage/myPage/edit-profile">프로필 수정</a></li>
-                      <li><a href="#">회원 탈퇴</a></li>
-                    </ul>
+                    <li><a href="${contextPath}/mypage/Info">내 정보</a></li>
+                      <li><a href="${contextPath}/mypage/progress">공모전 관리</a></li>
+                      <li><a href="${contextPath}/mypage/exchange">크레딧 인출</a></li>
+                       <li><a href="${contextPath}/mypage/editP">프로필 수정</a></li>
+                       <li><a href="${contextPath}/member/changePw">비밀번호 변경</a></li>
+                      <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>                    </ul>
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p class="introduce-title">공모전 관리</p>
 
                     <div class="progress-box-group">
-                            <c:forEach var="conProgress" items="${conProgress}">
+                           
                       <div class="progress-box col-sm-4">
                         <!-- 기업 사진과 공모전 제목 -->
                         <div class="profile-left">
@@ -89,14 +89,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="contest-mid">
                             <div class="contest-title">
                             
-                              <p>${conProgress.contestTitle}</p>
+                              <p>주식회사 휴크로스 웹 홈페이지 개발</p>
                             </div>
 
                             <div class="contest-content">
                               <p class="contest-company">
-                                주최 : ${conProgress.memberNick}
+                                주최 : 휴크로스
                               </p>
-                              <p class="deadline">${conProgress.dueDate}일 남음</p>
+                              <p class="deadline">D-7</p>
                             </div>
                           </div>
                         </div>
@@ -106,7 +106,167 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <p class="progress-text">모집중</p>
                         </div>
                       </div> 
-                      </c:forEach>                       
+                             
+                             
+                      <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
+                        <div class="profile-left">
+                          <div class="company-profile">
+                            <div class="company-img avatar">
+                              <img src="${contextPath}/${conProgress.profileImg}" />
+                            </div>
+                          </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
+                          <div class="contest-mid">
+                            <div class="contest-title">
+                            
+                              <p>스크린골프 프로그램 개발</p>
+                            </div>
+
+                            <div class="contest-content">
+                              <p class="contest-company">
+                                주최 : 골프당
+                              </p>
+                              <p class="deadline">D-24</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
+                        </div>
+                      </div> 
+                      
+                      
+                      <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
+                        <div class="profile-left">
+                          <div class="company-profile">
+                            <div class="company-img avatar">
+                              <img src="${contextPath}/${conProgress.profileImg}" />
+                            </div>
+                          </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
+                          <div class="contest-mid">
+                            <div class="contest-title">
+                            
+                              <p>비즈메시지 발송 웹사이트</p>
+                            </div>
+
+                            <div class="contest-content">
+                              <p class="contest-company">
+                                주최 : 주식회사 핑크코브라
+                              </p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color complete"></div>
+                          <p class="progress-text">👑 완료</p>
+                        </div>
+                      </div> 
+                      
+                      
+                      <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
+                        <div class="profile-left">
+                          <div class="company-profile">
+                            <div class="company-img avatar">
+                              <img src="${contextPath}/${conProgress.profileImg}" />
+                            </div>
+                          </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
+                          <div class="contest-mid">
+                            <div class="contest-title">
+                            
+                              <p>전북현대 웹사이트 리뉴얼</p>
+                            </div>
+
+                            <div class="contest-content">
+                              <p class="contest-company">
+                                주최 : 더스포츠커뮤니케이션
+                              </p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color under-review"></div>
+                          <p class="progress-text">심사중</p>
+                        </div>
+                      </div> 
+                      
+                      
+                      
+                      <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
+                        <div class="profile-left">
+                          <div class="company-profile">
+                            <div class="company-img avatar">
+                              <img src="${contextPath}/${conProgress.profileImg}" />
+                            </div>
+                          </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
+                          <div class="contest-mid">
+                            <div class="contest-title">
+                            
+                              <p>여행 종합 플랫폼 웹 개발</p>
+                            </div>
+
+                            <div class="contest-content">
+                              <p class="contest-company">
+                                주최 : 이런여행
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color complete"></div>
+                          <p class="progress-text">완료</p>
+                        </div>
+                      </div> 
+                      
+                      
+                      
+                      <div class="progress-box col-sm-4">
+                        <!-- 기업 사진과 공모전 제목 -->
+                        <div class="profile-left">
+                          <div class="company-profile">
+                            <div class="company-img avatar">
+                              <img src="${contextPath}/${conProgress.profileImg}" />
+                            </div>
+                          </div>
+
+                          <!-- 공모전 제목과 주최, 남은 기간 -->
+                          <div class="contest-mid">
+                            <div class="contest-title">
+                            
+                              <p>급여명세서 서비스 app 개발</p>
+                            </div>
+
+                            <div class="contest-content">
+                              <p class="contest-company">
+                                주최 : 위솔
+                              </p>
+                              <p class="deadline">D-41</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <!-- 상태에 따라 클래스 다르게 줌 -->
+                          <div class="progress-color recruiting"></div>
+                          <p class="progress-text">모집중</p>
+                        </div>
+                      </div>               
                     </div>
                   </div>
                 </div>

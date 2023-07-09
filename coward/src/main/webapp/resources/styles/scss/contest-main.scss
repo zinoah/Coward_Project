@@ -7,7 +7,7 @@
 
 .banner {
   &-top {
-    background-color: #5f5e5e; // 배너 배경 색
+    background-color: $yellow; // 배너 배경 색
     color: $white;
     &-wrapper {
       .banner-info {

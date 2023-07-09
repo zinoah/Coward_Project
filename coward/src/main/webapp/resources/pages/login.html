@@ -17,51 +17,64 @@
         <div class="col-sm-4">
           <div class="login-wrapper">
             <img
-              src="../assets/images/login-bg.svg"
+              src="${contextPath}/resources/assets/images/login-bg.svg"
               class="login-bg-img lg-only"
             />
             <div class="login-box">
               <div class="logo-p-box">
                 <a href="#">
-                  <img src="../assets/images/home_logo.svg" class="logo-img" />
+                  <img
+                    src="${contextPath}/resources/assets/images/home_logo.svg"
+                    class="logo-img"
+                  />
                 </a>
                 <p class="p-first">Coward에 오신 것을 환영합니다!</p>
               </div>
               <br /><br />
-              <form action="#">
+
+              <form
+                action="${contextPath}/member/login"
+                method="POST"
+                name="login-form"
+                onsubmit="return loginValidate()"
+              >
                 <p class="p-email">이메일</p>
                 <div class="email-input-box">
                   <input
                     placeholder="example@gmail.com"
                     type="email"
                     class="input-email"
+                    name="memberId"
+                    autocomplete="off"
+                    value="${cookie.saveId.value}"
                   />
                 </div>
+
                 <br />
                 <div class="pw-input-box">
                   <p class="p-pw">비밀번호</p>
-                  <form action="#" name="pw-form">
-                    <fieldset>
-                      <input
-                        placeholder="example@gmail.com"
-                        type="password"
-                        class="input-pw"
-                      />
-                      <i class="ic-eye-close"></i>
-                    </fieldset>
-                    <button class="login-btn">로그인</button>
-                  </form>
+                  <fieldset>
+                    <input type="password" class="input-pw" name="memberPw" />
+                    <i class="ic-eye-close"></i>
+                  </fieldset>
+
+                  <button class="login-btn">로그인</button>
                   <br />
                 </div>
+
                 <br /><br />
                 <div class="saveid-findpw-wrapper">
                   <div class="save-id-wrapper">
+                    <c:if test="${ !empty cookie.saveId.value}">
+                      <c:set var="chk" value="checked" />
+                    </c:if>
+
                     <label class="save-id">
                       <input type="checkbox" name="saveId" ${chk} id="saveId" />
                       아이디 저장
                     </label>
                   </div>
-                  <a href="../pages/pw-find.html" class="pw-find"
+                  <a href="${contextPath}/member/pwFind" class="pw-find"
                     >비밀번호 찾기</a
                   >
                 </div>
@@ -72,23 +85,32 @@
                 <p class="p-or">또는</p>
               </div>
               <div class="simple-login-box">
-                <img
-                  src="../assets/images/goolge-logo.png"
-                  class="google-logo"
-                />
-                <img src="../assets/images/kakao-logo.png" class="kakao-logo" />
-                <button class="google-btn">Google로 계속</button>
-                <button class="kakao-btn">Kakao로 계속</button>
+                <a href="${url}">
+                  <div class="naver-logo">
+                    <img
+                      class="naver-img"
+                      src="${contextPath}/resources/assets/images/naver-logo.png"
+                    />
+                  </div>
+                  <button type="button" class="naver-login">
+                    네이버로 계속하기
+                  </button>
+                </a>
               </div>
               <br />
               <span class="span-second">혹시 아직 회원이 아니신가요?</span>
-              <button class="join" onclick="location.href='join.html'">
-                회원가입
-              </button>
+              <a href="${contextPath}/member/join" class="join">회원가입</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- jQuery 라이브러리 추가(CDN) -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/login.js"></script>
   </body>
 </html>

@@ -12,11 +12,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/mypage-main-mem.css"
     />
-    <link rel="stylesheet" href="${contextPath}/resources/styles/css/pw-change.css" />
+    <link
+      rel="stylesheet"
+      href="${contextPath}/resources/styles/css/pw-change.css"
+    />
     <title>Coward | 비밀번호 변경</title>
   </head>
   <body>
-     <!-- 헤더와 공통 네비 -->
+    <!-- 헤더와 공통 네비 -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     <jsp:include page="/WEB-INF/views/common/nav.jsp" />
     <!-- 배너 -->
@@ -53,11 +56,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                     <ul class="category-bar">
                       <li><a href="#">내 정보</a></li>
-                      <li><a href="#">공모전 관리</a></li>
-                      <li><a href="#">크레딧 인출</a></li>
-                      <li><a href="#">프로필 수정</a></li>
-                      <li><a href="${contextPath}/member/changePw">비밀번호 변경</a></li>
-					  <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>
+                      <li>
+                        <a href="${contextPath}/mypage/progress">공모전 관리</a>
+                      </li>
+                      <li>
+                        <a href="${contextPath}/mypage/edit-profile-mem"
+                          >프로필 수정</a
+                        >
+                      </li>
+                      <li>
+                        <a href="${contextPath}/member/changePw"
+                          >비밀번호 변경</a
+                        >
+                      </li>
+                      <li>
+                        <a href="${contextPath}/member/secession">회원 탈퇴</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -77,7 +91,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <span class="pw-change">비밀번호 변경</span>
                       <hr class="line" />
                     </div>
-                    <form action="changePw" method="POST" name="myPage-form" onsubmit="return changePwValidate()">
+                    <form
+                      action="changePw"
+                      method="POST"
+                      name="myPage-form"
+                      onsubmit="return changePwValidate()"
+                    >
                       <div class="pw-change-wrapper">
                         <div class="pw-change-box">
                           <span class="pw-input-title">현재 비밀번호</span>
@@ -98,8 +117,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <div class="pw-change-wrapper">
                         <div class="pw-change-box2">
                           <div>
-                            <span class="pw-input-title">비밀번호</span>
-                            <span class="validation"></span>
+                            <span class="pw-input-title">새 비밀번호</span>
+                            <span class="validation1"></span>
                           </div>
                           <div class="input-bundle">
                             <input
@@ -107,12 +126,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                               id="change-pw"
                               type="password"
                               name="newPw"
-                              placeholder="8자리 이상, 대소문자 포함"
+                              placeholder="8자리~16자리, 대소문자 포함"
                             />
                             <i class="ic-eye-close"></i>
                           </div>
                           <span class="pw-input-title">비밀번호 확인</span>
-                          <span class="validation"></span>
+                          <span class="validation2"></span>
                           <div class="input-bundle">
                             <input
                               class="pw-input"
@@ -123,7 +142,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             />
                             <i class="ic-eye-close"></i>
                           </div>
-                          <button class="next-btn">다음</button>
+                          <button class="change-pw-btn">다음</button>
                         </div>
                       </div>
                     </form>
@@ -137,7 +156,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
     <!-- 푸터 -->
-	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/mypage-slider.js"></script>

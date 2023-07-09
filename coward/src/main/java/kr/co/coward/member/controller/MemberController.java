@@ -44,8 +44,8 @@ public class MemberController {
 		logger.info("로그인 기능 수행됨");
 		System.out.println(inputMember.toString());
 
-		// String referer = req.getHeader("Referer");
-    
+		String referer = req.getHeader("Referer");
+
 		Member loginMember = service.login(inputMember);
 
 		if (loginMember != null) {
@@ -122,9 +122,9 @@ public class MemberController {
 	}
 
 	// 비밀번호 찾기 이동
-	@GetMapping("/findPw")
+	@GetMapping("/pwFind")
 	public String findPw() {
-		return "member/findPw";
+		return "member/pwFind";
 	}
 
 	// 회원가입
@@ -135,8 +135,10 @@ public class MemberController {
 
 		// Note: 닉네임 랜덤 생성
 
-		String[] adjArr = { "예쁜", "화난", "귀여운", "배고픈", "철학적인", "현학적인", "슬픈", "푸른", "비싼", "밝은" };
-		String[] nArr = { "호랑이", "비버", "강아지", "부엉이", "여우", "치타", "문어", "고양이", "미어캣", "다람쥐" };
+		String[] adjArr = { "예쁜", "화난", "귀여운", "배고픈", "철학적인", "현학적인", "슬픈", "푸른", "비싼", "밝은", "똑똑한", "맑은", "짜증난", "졸린",
+				"느린", "빠른", "게으른", "멋진", "배부른", "귀여운", "귀찮은" };
+		String[] nArr = { "호랑이", "비버", "강아지", "부엉이", "여우", "치타", "문어", "고양이", "미어캣", "다람쥐", "햄스터", "거북이", "늑대", "수달",
+				"판다", "곰", "올빼미", "사막여우", "너구리", "랫서판다", "펭귄", "토끼" };
 
 		int random1 = (int) Math.floor(Math.random() * adjArr.length);
 		System.out.println(random1);
@@ -182,6 +184,7 @@ public class MemberController {
 			HttpServletRequest req, HttpServletResponse resp, RedirectAttributes ra) {
 
 		System.out.println(loginMember.getMemberPw());
+		System.out.println(loginMember.getMemberId());
 
 		int result = service.secession(loginMember);
 
@@ -245,7 +248,6 @@ public class MemberController {
 			return "redirect:/login"; // 로그인 페이지로 리다이렉트
 		}
 
-
 		paramMap.put("memberNo", loginMember.getMemberNo());
 
 		int result = service.changePw(paramMap);
@@ -257,7 +259,6 @@ public class MemberController {
 			message = "비밀번호가 변경되었습니다.";
 
 			path = "/";
-
 
 		} else {
 			message = "현재 비밀번호가 일치하지 않습니다.";

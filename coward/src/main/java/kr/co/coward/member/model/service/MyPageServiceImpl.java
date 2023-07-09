@@ -86,6 +86,7 @@ public class MyPageServiceImpl implements MyPageService {
 		return dao.mypageInfo(memberNo);
 	}
 
+	
 	/**********************************
 	 * 기업 마이페이지 ServiceImpl
 	 **********************************/
@@ -172,4 +173,9 @@ public class MyPageServiceImpl implements MyPageService {
 		return dao.contestAttendInfo(paramMap);
 	}
 
+	@Override
+	public List<Contest> getLikeCon(int memberNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

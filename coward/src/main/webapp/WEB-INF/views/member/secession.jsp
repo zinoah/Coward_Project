@@ -56,9 +56,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                     <ul class="category-bar">
                       <li><a href="#">내 정보</a></li>
-                      <li><a href="#">공모전 관리</a></li>
-                      <li><a href="#">크레딧 인출</a></li>
-                      <li><a href="#">프로필 수정</a></li>
+                      <li>
+                        <a href="${contextPath}/mypage/progress">공모전 관리</a>
+                      </li>
+                      <li>
+                        <a href="${contextPath}/mypage/edit-profile-mem"
+                          >프로필 수정</a
+                        >
+                      </li>
                       <li>
                         <a href="${contextPath}/member/changePw"
                           >비밀번호 변경</a
@@ -87,24 +92,28 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <span class="secession">회원 탈퇴</span>
                       <hr class="line" />
                     </div>
-                     <form action="secession" method="POST" name="myPage-form" onsubmit="return secessionValidate()" >
-                     	<div class="secession-wrapper">
-                      	<div class="secession-box">
-                        <span class="pw-input-title">현재 비밀번호</span>
-                        <div class="input-bundle">
-                          <input
-                            class="pw-input"
-                            id="current-pw"
-                            type="password"
-                            placeholder="현재 비밀번호를 입력해주세요!"
-                          />
-                          <i class="ic-eye-close"></i>
+                    <form
+                      action="secession"
+                      method="POST"
+                      name="myPage-form"
+                      onsubmit="return secessionValidate()"
+                    >
+                      <div class="secession-wrapper">
+                        <div class="secession-box">
+                          <span class="pw-input-title">현재 비밀번호</span>
+                          <div class="input-bundle">
+                            <input
+                              class="pw-input"
+                              id="current-pw"
+                              type="password"
+                              placeholder="현재 비밀번호를 입력해주세요!"
+                            />
+                            <i class="ic-eye-close"></i>
+                          </div>
+                          <button class="next-btn">다음</button>
                         </div>
-                        <button class="next-btn">다음</button>
                       </div>
-                    </div>
-                     
-                     </form>
+                    </form>
                     <!-- 본문 끝 -->
                   </div>
                 </div>
@@ -115,7 +124,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
     <!-- 푸터 -->
-	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/mypage-slider.js"></script>

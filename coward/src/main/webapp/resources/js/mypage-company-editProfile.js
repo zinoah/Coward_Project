@@ -42,3 +42,4 @@ if (inputImg != null) {
     }
   });
 }
+console.log(inputImg.value);

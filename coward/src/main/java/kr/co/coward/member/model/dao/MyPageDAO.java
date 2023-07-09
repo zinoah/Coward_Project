@@ -98,4 +98,6 @@ public class MyPageDAO {
 		return sqlSession.selectList("myPageMapper.contestAttendInfo", paramMap);
 	}
 
+
+
 }

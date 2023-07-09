@@ -67,6 +67,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               /></a>
               <a
                 class="icon-link-item"
+                target="_blank"
                 href="https://noaharea.notion.site/Coward-dcfa13756a424b4c988a6790d3d93e53?pvs=4"
               >
                 <img
@@ -95,7 +96,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <li class="text-link-item">
                   <a href="#">개인정보처리방침</a>
                 </li>
-                <li class="text-link-item"><a href="${contextPath}/member/terms">이용약관</a></li>
+                <li class="text-link-item">
+                  <a href="${contextPath}/member/terms">이용약관</a>
+                </li>
               </ul>
             </div>
           </div>

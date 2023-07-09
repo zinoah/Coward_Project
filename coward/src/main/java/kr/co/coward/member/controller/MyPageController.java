@@ -61,20 +61,20 @@ public class MyPageController {
 	}
 
 	// 회원 정보 조회
-	@GetMapping("/info/${memberNo}")
-	public String info(@PathVariable("contestNo") int memberNo, Model model) {
-
-		Member member = service.mypageInfo(memberNo);
-
-		String[] temp = member.getSkill().split(",");
-
-		List<String> skillList = Arrays.asList(temp);
-
-		model.addAttribute("member", member);
-		model.addAttribute("skillList", skillList);
-
-		return "mypage/person-main";
-	}
+//	@GetMapping("/info/${memberNo}")
+//	public String info(@PathVariable("contestNo") int memberNo, Model model) {
+//
+//		Member member = service.mypageInfo(memberNo);
+//
+//		String[] temp = member.getSkill().split(",");
+//
+//		List<String> skillList = Arrays.asList(temp);
+//
+//		model.addAttribute("member", member);
+//		model.addAttribute("skillList", skillList);
+//
+//		return "mypage/person-main";
+//	}
 
 	// 마이페이지(메인)
 	// 회원 정보 조회
@@ -89,6 +89,13 @@ public class MyPageController {
 		return "mypage/contest-progress";
 	}
 
+
+	// 공모전 관리
+	@GetMapping("/exchange")
+	public String exchange() {
+		return "mypage/credit-exchange";
+	}
+	
 	// 내 정보 수정으로 이동(일반 회원)
 	@GetMapping("/editP")
 	public String editP() {

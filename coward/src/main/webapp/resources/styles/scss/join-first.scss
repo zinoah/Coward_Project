@@ -89,6 +89,19 @@
     padding-bottom: 35px;
   }
 }
+
+.naver-login {
+  @include text-style(16, $white);
+  width: 100%;
+  height: 50px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: #2db400;
+  font-size: 14px;
+  position: relative;
+  top: 30px;
+}
+
 .google-logo {
   width: 30px;
   height: 30px;
@@ -109,6 +122,7 @@
   font-size: 13px;
   position: relative;
   left: 60px;
+  top: 50px;
 }
 
 .login {
@@ -116,6 +130,7 @@
   font-size: 13px;
   position: relative;
   left: 65px;
+  top: 50px;
 }
 
 .login:hover {

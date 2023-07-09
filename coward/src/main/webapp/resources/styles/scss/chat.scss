@@ -110,10 +110,12 @@
             }
             .message {
               @include column-flexbox;
-              padding: 5px;
+              @include text-style(12);
+              padding: 5px 10px;
               background-color: $blue;
+              color: white;
+              font-weight: 500;
               height: auto;
-              width: 200px;
               border-radius: 10px;
             }
           }

@@ -169,6 +169,7 @@ public class ContestController {
 	@GetMapping("/detail/{contestNo}")
 	public String contestDetail(@PathVariable("contestNo") int contestNo, Model model) {
 
+		// 공모전 상세 조회
 		Contest contest = service.contestDetail(contestNo);
 
 		String[] temp = contest.getSkill().split(",");
@@ -305,10 +306,23 @@ public class ContestController {
 		return "contest/contest-attend-form";
 	}
 
-	@PostMapping("/attendForm")
+	/**
+	 * 공모전 참가 insert
+	 * 
+	 * @param loginMember
+	 * @param paramMap
+	 * @param skill
+	 * @param ra
+	 * @param uploadFile
+	 * @param req
+	 * @return
+	 * @throws IOException
+	 */
+	@PostMapping("/attendForm/{contestNo}")
 	public String contestAttendForm(@ModelAttribute("loginMember") Member loginMember,
-			@RequestParam Map<String, Object> paramMap, String[] skill, RedirectAttributes ra,
-			@RequestParam("pptFile") MultipartFile uploadFile, HttpServletRequest req) throws IOException {
+			@PathVariable("contestNo") int contestNo, @RequestParam Map<String, Object> paramMap, String[] skill,
+			RedirectAttributes ra, @RequestParam("pptFile") MultipartFile uploadFile, HttpServletRequest req)
+			throws IOException {
 
 		String skillList = String.join(",", skill);
 
@@ -333,7 +347,7 @@ public class ContestController {
 		if (result > 0) {
 			message = "참가신청 완료!!";
 
-			path = "../contest/detail/" + result;
+			path = "../detail/" + contestNo;
 
 		} else {
 			message = "참가신청 실패하였습니다.";

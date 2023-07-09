@@ -183,6 +183,7 @@ if (thumbnailInput != null) {
     }
   });
 }
+
 // 오늘 날짜 불러오기
 let today = new Date();
 let month = today.getMonth() + 1;

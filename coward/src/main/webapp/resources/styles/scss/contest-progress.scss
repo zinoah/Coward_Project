@@ -40,7 +40,7 @@
 
 .progress {
   @include flexbox(start);
-  width: 55px;
+  width: 65px;
 
   &-box {
     @include flexbox(between);
@@ -93,6 +93,7 @@
   &-content {
     @include flexbox;
     @include text-style(12);
+    width: 250px;
   }
 
   /* 공모전 이름, content 세로 정렬 */
@@ -158,7 +159,6 @@
     &-title {
       @include text-style(12);
       font-weight: 600;
-      width: 100%;
     }
 
     &-company {
