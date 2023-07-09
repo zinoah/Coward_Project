@@ -34,9 +34,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <p class="sub-title sm-hidden">
                   이달의 상금 왕, 우승왕, 인기왕을 살펴보세요 !
                 </p>
-                <a href="#" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
               </div>
               <div class="banner-image">
                 <img
@@ -72,7 +69,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
 
         <div class="row">
-          <!-- TODO: li 내부 우측 데이터 영역 손봐야 함 -->
           <div class="col-sm-4 col-lg-4">
             <div id="priceKing" class="ranking-body is-active">
               <h5 class="ranking-title lg-only">이달의 상금왕 💎</h5>
@@ -88,13 +84,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <li class="ranking-item">
                     <div class="ranking-item-left">
                       <span class="rank">${vs.count}</span>
-                      <div class="user-profile avatar-24">
-                        <img
-                          src="${contextPath}/${member.profileImg}"
-                          alt="${vs.count}위 프로필"
-                        />
+                      <div class="user-info">
+                        <div class="user-profile avatar-24">
+                          <img
+                            src="${contextPath}/${member.profileImg}"
+                            alt="${vs.count}위 프로필"
+                          />
+                        </div>
+                        <span class="user-name">${member.memberNick}</span>
                       </div>
-                      <span class="user-name">${member.memberNick}</span>
                     </div>
 
                     <div class="ranking-item-right">
@@ -107,7 +105,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </div>
           </div>
 
-          <!-- TODO: li 내부 우측 데이터 영역 손봐야 함 -->
           <div class="col-sm-4 col-lg-4">
             <div id="victoryKing" class="ranking-body">
               <h5 class="ranking-title lg-only">이달의 우승왕 🏆</h5>
@@ -127,13 +124,17 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <li class="ranking-item">
                     <div class="ranking-item-left">
                       <span class="rank">${vs.count}</span>
-                      <div class="user-profile avatar-24">
-                        <img
-                          src="${contextPath}/${member.profileImg}"
-                          alt="${vs.count}위 프로필"
-                        />
+
+                      <!-- FIXME: 요청 주소 결정되면 수정! -->
+                      <div class="user-info">
+                        <div class="user-profile avatar-24">
+                          <img
+                            src="${contextPath}/${member.profileImg}"
+                            alt="${vs.count}위 프로필"
+                          />
+                        </div>
+                        <span class="user-name">${member.memberNick}</span>
                       </div>
-                      <span class="user-name">${member.memberNick}</span>
                     </div>
 
                     <div class="ranking-item-right">
@@ -146,7 +147,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </div>
           </div>
 
-          <!-- TODO: li 내부 우측 데이터 영역 손봐야 함 -->
           <div class="col-sm-4 col-lg-4">
             <div id="likeKing" class="ranking-body">
               <h5 class="ranking-title lg-only">이달의 인기왕 💗</h5>
@@ -162,13 +162,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <li class="ranking-item">
                     <div class="ranking-item-left">
                       <span class="rank">${vs.count}</span>
-                      <div class="user-profile avatar-24">
-                        <img
-                          src="${contextPath}/${member.profileImg}"
-                          alt="${vs.count}위 프로필"
-                        />
+
+                      <div class="user-info">
+                        <div class="user-profile avatar-24">
+                          <img
+                            src="${contextPath}/${member.profileImg}"
+                            alt="${vs.count}위 프로필"
+                          />
+                        </div>
+                        <span class="user-name">${member.memberNick}</span>
                       </div>
-                      <span class="user-name">${member.memberNick}</span>
                     </div>
 
                     <div class="ranking-item-right">
@@ -186,6 +189,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
+    <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
+
+    <div id="overlay" class="overlay"></div>
+
     <!-- 모달 :: is-open -->
     <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
 
@@ -196,6 +203,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       crossorigin="anonymous"
     ></script>
 
+    <script>
+      const contextPath = "${contextPath}";
+    </script>
+
+    <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/ranking.js"></script>
   </body>
 </html>

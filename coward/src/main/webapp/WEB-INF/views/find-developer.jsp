@@ -132,16 +132,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       </button>
                     </div>
 
-                    <button
-                      id="like-btn"
-                      class="like-btn ${likedList.contains(devList.memberNo) ? 'is-active' : ''}"
-                      type="button"
-                      onclick="clickLikeBtn('${empty sessionScope.loginMember ? null : sessionScope.loginMember.memberNo}', ${devList.memberNo}, this)"
-                    >
-                      <label for="like-btn"
-                        ><i class="ic-like-filled"></i>
-                      </label>
-                    </button>
+                    <c:choose>
+                      <c:when
+                        test="${ sessionScope.loginMember.memberType == 'C' }"
+                      >
+                        <button
+                          id="like-btn"
+                          class="like-btn ${likedList.contains(devList.memberNo) ? 'is-active' : ''}"
+                          type="button"
+                          onclick="clickLikeBtn('${empty sessionScope.loginMember ? null : sessionScope.loginMember.memberNo}', ${devList.memberNo}, this)"
+                        >
+                          <label for="like-btn"
+                            ><i class="ic-like-filled"></i>
+                          </label>
+                        </button>
+                      </c:when>
+                    </c:choose>
                   </div>
                 </div>
               </form>
@@ -154,6 +160,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 푸터 -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
+    <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
+
+    <div id="overlay" class="overlay"></div>
+
     <!-- jQuery 라이브러리 추가 -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -165,10 +175,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       const contextPath = "${contextPath}";
 
       let loginMemberNo = null;
-      if (${sessionScope.loginMember.memberNo}) {
+
+      <c:if test="${not empty sessionScope.loginMember and not empty sessionScope.loginMember.memberNo}">
         loginMemberNo = ${sessionScope.loginMember.memberNo};
-      }
+      </c:if>;
+
+      console.log("loginMemberNo :: " + loginMemberNo);
     </script>
+    <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
 </html>
