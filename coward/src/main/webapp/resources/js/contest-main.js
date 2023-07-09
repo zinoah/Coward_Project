@@ -28,12 +28,18 @@ function filterListCallAjax(parameter) {
           const contestTitleSpan = document.createElement("span");
           contestTitleSpan.innerText = contest.contestTitle;
           contestTitleDiv.append(contestTitleSpan);
-          const tagYellow = document.createElement("div");
-          tagYellow.className = "tag-yellow";
-          tagYellow.innerText = "new"; // TODO: new표시될 기준 정해야함
 
-          contestCardTitle.append(contestTitleDiv);
-          contestCardTitle.append(tagYellow);
+          if (contest.createDate > 1) {
+            const tagYellow = document.createElement("div");
+            contestCardTitle.append(contestTitleDiv);
+            contestCardTitle.append(tagYellow);
+          } else {
+            const tagYellow = document.createElement("div");
+            tagYellow.className = "tag-yellow";
+            tagYellow.innerText = "new"; // TODO: new표시될 기준 정해야함
+            contestCardTitle.append(contestTitleDiv);
+            contestCardTitle.append(tagYellow);
+          }
 
           const contestCardInfo = document.createElement("div");
           contestCardInfo.className = "contest-card-info";
@@ -134,7 +140,7 @@ function filterListCallAjax(parameter) {
   });
 }
 
-// 각 버튼에 클릭 이벤트를 추가한다
+// 필터 버튼 클릭 이벤트
 filterBtnList.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function () {
     // 파라미터 값을 가져온다
@@ -152,7 +158,7 @@ filterBtnList.forEach((filterBtn) => {
     } else {
       filterBtn.classList.remove("filter-btn-active");
     }
-
+    // ajax 호출
     filterListCallAjax(parameter);
   });
 });
