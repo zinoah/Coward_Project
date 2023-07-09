@@ -201,7 +201,7 @@ nextBtn3.addEventListener("click", function () {
           divCol.className = "col-sm-4 col-md-4";
 
           const a = document.createElement("a");
-          a.href = `${contextPath}/mypage/winnerSelect/${contest.contestNo}`;
+          a.href = `${contextPath}/contest/detail/${contest.contestNo}`;
 
           const divContestCard = document.createElement("div");
           divContestCard.className = "contest-slider-card";
