@@ -130,15 +130,19 @@
 		FROM MEMBER
 		<choose>
 	      <when test="filter == 'all'">
+	        WHERE MEMBER_TYPE = 'P'
 	      </when>
 	      <when test="filter == 'front'">
 	      	WHERE STACK = #{filter}
+	 
 	      </when>
 	       <when test="filter == 'back'">
 	      	WHERE STACK = #{filter}
+	   
 	      </when>
 	       <when test="filter == 'full'">
 	      	WHERE STACK = #{filter}
+	      
 	      </when>
 	    </choose>
 		OFFSET ${offset} ROWS FETCH NEXT ${pageSize} ROWS ONLY
