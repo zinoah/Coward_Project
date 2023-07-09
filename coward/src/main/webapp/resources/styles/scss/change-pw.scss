@@ -71,6 +71,27 @@
   margin-bottom: 30px;
 }
 
+.pw-change-btn {
+  @include text-style(14, $white);
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: $tertiary;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.validation1 {
+  @include text-style(12, $secondary);
+  margin-left: 5px;
+}
+
+.validation12 {
+  @include text-style(12, $secondary);
+  margin-left: 5px;
+}
+
 @include responsive(T) {
   .secession-wrapper {
     @include flexbox;

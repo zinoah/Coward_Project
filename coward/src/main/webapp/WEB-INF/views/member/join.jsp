@@ -39,7 +39,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="join-first-box">
                 <div class="logo-p-box">
-                  <a href="${contextPath}/home"">
+                  <a href="${contextPath}/home">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
@@ -54,24 +54,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <hr class="line1" />
                   <hr class="line2" />
                   <p class="p-or">또는</p>
-                  <img
-                    src="${contextPath}/resources/assets/images/goolge-logo.png"
-                    class="google-logo"
-                  />
-                  <img
-                    src="${contextPath}/resources/assets/images/kakao-logo.png"
-                    class="kakao-logo"
-                  />
-                  <div class="join-google-box">
-                    <button type="button" class="join-google">
-                      Google로 간편가입
+                  <a href="${url}">
+                    <button type="button" class="naver-login">
+                      네이버로 가입하기
                     </button>
-                  </div>
-                  <div class="join-kakao-box">
-                    <button type="button" class="join-kakao">
-                      Kakao로 간편가입
-                    </button>
-                  </div>
+                  </a>
                   <span class="question">이미 계정이 있으신가요?</span>
                   <a href="${contextPath}/member/login" class="login"
                     >로그인 하기</a
@@ -94,7 +81,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="join-second-box">
                 <div class="logo-info-box">
-                  <a href="#">
+                  <a href="${contextPath}/home">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
@@ -206,7 +193,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               />
               <div class="join-final-box">
                 <div class="logo-final-box">
-                  <a href="#">
+                  <a href="${contextPath}/home">
                     <img
                       src="${contextPath}/resources/assets/images/home_logo.svg"
                       class="logo-img"
@@ -292,7 +279,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       class="pw-input"
                       id="memberPw"
                       name="memberPw"
-                      placeholder="8자리 이상, 대소문자 포함"
+                      placeholder="8~16자리, 대소문자 포함"
                       type="password"
                     />
                     <i class="ic-eye-close eye"></i>

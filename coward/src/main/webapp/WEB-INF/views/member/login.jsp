@@ -29,7 +29,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             />
             <div class="login-box">
               <div class="logo-p-box">
-                <a href="${contextPath}/home">
+                <a href="#">
                   <img
                     src="${contextPath}/resources/assets/images/home_logo.svg"
                     class="logo-img"
@@ -52,6 +52,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     type="email"
                     class="input-email"
                     name="memberId"
+                    autocomplete="off"
                     value="${cookie.saveId.value}"
                   />
                 </div>
@@ -61,7 +62,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <p class="p-pw">비밀번호</p>
                   <fieldset>
                     <input type="password" class="input-pw" name="memberPw" />
-                    <i class="ic-eye-close eye"></i>
+                    <i class="ic-eye-close"></i>
                   </fieldset>
 
                   <button class="login-btn">로그인</button>
@@ -81,7 +82,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       아이디 저장
                     </label>
                   </div>
-                  <a href="${contextPath}/member/findPw" class="pw-find"
+                  <a href="${contextPath}/member/pwFind" class="pw-find"
                     >비밀번호 찾기</a
                   >
                 </div>
@@ -92,23 +93,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <p class="p-or">또는</p>
               </div>
               <div class="simple-login-box">
-                <img
-                  src="${contextPath}/resources/assets/images/kakao-logo.png"
-                  class="kakao-logo"
-                />
-                <img src="${contextPath}/resources/assets/images/naver.png" class="naver-logo"/>
-                <!-- 네이버 로그인 화면으로 이동 시키는 URL --/>
-                <!-- 네이버 로그인 화면에서 ID, PW를 올바르게 입력하면 callback 메소드 실행 요청 -->
-                
-                  <a href="${url}">
-                    <div class="naver-btn">
-                      <span class="naver">Naver로 계속</span>
-                    </div>
-                  </a>
-                </div>
-                <button class="kakao-btn" onclick="loginWithKakao()">
-                  Kakao로 계속
-                </button>
+                <a href="${url}">
+                  <button type="button" class="naver-login">
+                    네이버로 계속하기
+                  </button>
+                </a>
               </div>
               <br />
               <span class="span-second">혹시 아직 회원이 아니신가요?</span>
@@ -124,25 +113,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-
-    <!-- 카카오 로그인 -->
-    <script
-      type="text/javascript"
-      src="https://developers.kakao.com/sdk/js/kakao.min.js"
-      charset="utf-8"
-    ></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        Kakao.init("440111c11e62241cddf00f69dfcc2c14");
-        Kakao.isInitialized();
-      });
-
-      function loginWithKakao() {
-        Kakao.Auth.authorize({
-          redirectUri: "http://localhost:8080/coward/home",
-        }); // 등록한 리다이렉트uri 입력
-      }
-    </script>
     <script src="${contextPath}/resources/js/login.js"></script>
   </body>
 </html>
