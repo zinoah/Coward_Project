@@ -60,9 +60,6 @@ public class MyPageController {
 		return "redirect:" + redirectUrl;
 	}
 
-	// 기업 마이페이지
-
-	// 마이페이지(메인)
 	// 회원 정보 조회
 	@GetMapping("/info/${memberNo}")
 	public String info(@PathVariable("contestNo") int memberNo, Model model) {
@@ -84,14 +81,6 @@ public class MyPageController {
 	@GetMapping("/info")
 	public String info() {
 		return "mypage/person-main";
-	}
-
-	// 기업 마이페이지 프로필수정 이동
-	@GetMapping("/companyProfile")
-	public String companyProfile() {
-
-		return "mypage/mypage-company-editProfile";
-
 	}
 
 	// 공모전 관리
@@ -175,9 +164,29 @@ public class MyPageController {
 	 * 기업 마이페이지 controller
 	 **********************************/
 
-	// 기업이 관심있는 개발자 조회
+	/**
+	 * 기업 프로필수정 이동
+	 * 
+	 * @return
+	 */
+	@GetMapping("/companyProfile")
+	public String companyProfile() {
 
-	// 기업 회원정보 변경
+		return "mypage/mypage-company-editProfile";
+
+	}
+
+	/**
+	 * 기업 회원정보 변경
+	 * 
+	 * @param loginMember
+	 * @param uploadImage
+	 * @param paramMap
+	 * @param req
+	 * @param ra
+	 * @return
+	 * @throws IOException
+	 */
 	@PostMapping("/companyProfile")
 	public String updateCompanyInfo(@ModelAttribute("loginMember") Member loginMember,
 			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam Map<String, Object> paramMap,
@@ -229,31 +238,7 @@ public class MyPageController {
 
 	}
 
-	// 기업 마이페이지 메인(공모전 관리 조회)
-	/*
-	 * @ResponseBody
-	 * 
-	 * @PostMapping("/companyMain") public List<Contest>
-	 * mainContestList(@ModelAttribute("loginMember") Member loginMember,
-	 * 
-	 * @RequestParam String conStatus) {
-	 * 
-	 * logger.info("컨트롤러 수행"); logger.info("Received conStatus: " + conStatus);
-	 * 
-	 * int memberNo = loginMember.getMemberNo();
-	 * 
-	 * List<Contest> contestList = service.getContestList(conStatus, memberNo);
-	 * 
-	 * for (Contest c : contestList) { System.out.println(c); }
-	 * 
-	 * return contestList;
-	 * 
-	 * // logger.info("mainContestList() 메서드 실행 결과: " + mainContestList);
-	 * 
-	 * // return new Gson().toJson(mainContestList); }
-	 */
-
-	// 기업 마이페이지 공모전관리 이동
+	// 기업 공모전관리 이동
 	@GetMapping("/companyManagement")
 	public String companyManagement(@ModelAttribute("loginMember") Member loginMember, Model model) {
 
@@ -267,7 +252,7 @@ public class MyPageController {
 		return "mypage/mypage-company-management";
 	}
 
-	// 기업 마이페이지 내 공모전 관리
+	// 기업 공모전 관리 조회
 	@ResponseBody
 	@PostMapping("/companyManagement")
 	public List<Contest> getContestList(@ModelAttribute("loginMember") Member loginMember,
@@ -303,13 +288,24 @@ public class MyPageController {
 
 		logger.info("developerLikeList() 메서드 실행 결과: " + developerLikeList);
 
+		List<Contest> contestList = service.getContestList("전체", memberNo);
+
+		model.addAttribute("contestList", contestList);
+
 		return "mypage/mypage-company-main";
 
 	}
 
+	/**
+	 * 기업 마이페이지 (메인 - 상태별 공모전 조회)
+	 * 
+	 * @param loginMember
+	 * @param conStatus
+	 * @return
+	 */
 	@ResponseBody
 	@PostMapping("/companyMain")
-	public List<Contest> getContestListTwo(@ModelAttribute("loginMember") Member loginMember,
+	public List<Contest> getContestListMain(@ModelAttribute("loginMember") Member loginMember,
 			@RequestParam String conStatus) {
 
 		logger.info("컨트롤러 수행");
@@ -326,7 +322,11 @@ public class MyPageController {
 		return contestList;
 	}
 
-	// 동적 카드를 클린한 후 우승자 선정페이지 이동
+	/*
+	 * 동적 카드를 클릭한 후 우승자 선정페이지 이동
+	 * 
+	 * @return
+	 */
 	@GetMapping("winnerSelect/{contestNo}")
 	public String winnerSelect(@PathVariable("contestNo") int contestNo, String stack, Model model,
 			@RequestParam Map<String, Object> paramMap) {
@@ -339,22 +339,19 @@ public class MyPageController {
 		List<Contest> contest = service.winnerSelectContest(contestNo);
 		model.addAttribute("contest", contest);
 
-		// 모달창 정보 불러오기
-
-		/*
-		 * logger.info("콘테스트 넘버 : " + contestNo); // logger.info("멤버 넘버 : " + memberNo);
-		 * 
-		 * // paramMap.put("memberNo", memberNo); paramMap.put("contestNo", contestNo);
-		 * 
-		 * List<ContestAttend> contestAttend = service.contestAttendInfo(paramMap);
-		 * 
-		 * logger.info("참가자 리스트: " + contestAttend);
-		 */
 		return "mypage/winnerSelect";
 
 	}
 
-	// 동적으로 모달창 정보 불러오기
+	/**
+	 * 동적으로 모달창 정보 불러오기 + 우승자 심사하기
+	 * 
+	 * @param memberNo
+	 * @param contestNo
+	 * @param paramMap
+	 * @param model
+	 * @return
+	 */
 	@ResponseBody
 	@PostMapping("winnerSelect/{contestNo}")
 	public String contestAttendModal(@RequestParam int memberNo, @PathVariable int contestNo,
@@ -363,6 +360,7 @@ public class MyPageController {
 		logger.info("받아온 memberNo : " + memberNo);
 		logger.info("받아온 contestNo : " + contestNo);
 
+		// 동적으로 모달창 정보
 		paramMap.put("memberNo", memberNo);
 		paramMap.put("contestNo", contestNo);
 
@@ -371,7 +369,6 @@ public class MyPageController {
 		logger.info("불러온 리스트 멤버" + contestAttend);
 
 		return new Gson().toJson(contestAttend);
-
 	}
 
 }

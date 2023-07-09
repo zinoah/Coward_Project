@@ -317,27 +317,31 @@
                     <div class="contest-slider">
                       <c:forEach var="contest" items="${recommendList}">
                         <div class="col-sm-4 col-md-4">
-                          <div class="contest-slider-card">
-                            <div class="contest-slider-card-img">
-                              <img
-                                src="../assets/images/contest-gallery-card-img.svg"
-                                alt=""
-                              />
-                            </div>
-                            <div class="contest-slider-card-info">
-                              <div class="contest-slider-card-info-title">
-                                <p>식품 쇼핑몰 웹사이트 제작</p>
+                          <a
+                            href="/coward/src/main/webapp/WEB-INF/views/contest/contest-detail.jsp"
+                          >
+                            <div class="contest-slider-card">
+                              <div class="contest-slider-card-img">
+                                <img
+                                  src="../assets/images/contest-gallery-card-img.svg"
+                                  alt=""
+                                />
                               </div>
-                              <div class="contest-slider-card-info-detail">
-                                <p>상금</p>
-                                <p>100만원</p>
+                              <div class="contest-slider-card-info">
+                                <div class="contest-slider-card-info-title">
+                                  <p>식품 쇼핑몰 웹사이트 제작</p>
+                                </div>
+                                <div class="contest-slider-card-info-detail">
+                                  <p>상금</p>
+                                  <p>100만원</p>
+                                </div>
+                                <div class="contest-slider-card-info-detail">
+                                  <p>남은기간</p>
+                                  <p>1일</p>
+                                </div>
                               </div>
-                              <div class="contest-slider-card-info-detail">
-                                <p>남은기간</p>
-                                <p>1일</p>
-                              </div>
-                            </div>
-                          </div>
+                            </div></a
+                          >
                         </div>
                       </c:forEach>
                     </div>

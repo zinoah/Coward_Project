@@ -158,7 +158,7 @@ nextBtn3.addEventListener("click", function () {
   backBtn3.style.display = "none";
   nextBtn3.style.display = "none";
 
-  const resutl = document.querySelector(".contest-slider");
+  const result = document.querySelector(".contest-slider");
   let form = $("#recommendForm");
   let formData = new FormData(form[0]); // FormData 객체 생성
 
@@ -193,12 +193,15 @@ nextBtn3.addEventListener("click", function () {
     success: function (response) {
       const recommendList = response; // 이미 JavaScript 객체로 해석된 상태
 
-      resutl.innerHTML = "";
+      result.innerHTML = "";
 
       if (recommendList.length > 0) {
         recommendList.forEach((contest) => {
           const divCol = document.createElement("div");
-          divCol.className = "col-sm-4 col-md-3";
+          divCol.className = "col-sm-4 col-md-4";
+
+          const a = document.createElement("a");
+          a.href = `${contextPath}/mypage/winnerSelect/${contest.contestNo}`;
 
           const divContestCard = document.createElement("div");
           divContestCard.className = "contest-slider-card";
@@ -207,7 +210,7 @@ nextBtn3.addEventListener("click", function () {
           divImg.className = "contest-slider-card-img";
           const img = document.createElement("img");
           img.src = `${contextPath}/${contest.thumbnail}`;
-
+          img.alt = "";
           divImg.appendChild(img);
 
           const divInfo = document.createElement("div");
@@ -216,7 +219,7 @@ nextBtn3.addEventListener("click", function () {
           const divTitle = document.createElement("div");
           divTitle.className = "contest-slider-card-info-title";
           const pTitle = document.createElement("p");
-          pTitle.innerText = "식품 쇼핑몰 웹사이트 제작";
+          pTitle.innerText = contest.contestTitle;
           divTitle.appendChild(pTitle);
 
           const divDetail1 = document.createElement("div");
@@ -224,7 +227,7 @@ nextBtn3.addEventListener("click", function () {
           const pDetail1_1 = document.createElement("p");
           pDetail1_1.innerText = "상금";
           const pDetail1_1_2 = document.createElement("p");
-          pDetail1_1_2.innerText = "100만원";
+          pDetail1_1_2.innerText = contest.price + "만원";
           divDetail1.appendChild(pDetail1_1);
           divDetail1.appendChild(pDetail1_1_2);
 
@@ -244,9 +247,9 @@ nextBtn3.addEventListener("click", function () {
           divContestCard.appendChild(divImg);
           divContestCard.appendChild(divInfo);
 
-          divCol.appendChild(divContestCard);
-
-          resutl.appendChild(divCol);
+          a.appendChild(divContestCard);
+          divCol.appendChild(a);
+          result.appendChild(divCol);
         });
       } else {
         const h4 = document.createElement("h4");

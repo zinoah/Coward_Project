@@ -180,41 +180,53 @@
 	</select>
 
 	<!-- 공모전 관리 이동 -->
-	<select id = "conProgress" resultMap = "contest_rm">
-	SELECT MEMBER_NO, CONTEST_NO 
-	FROM "MEMBER"
-	JOIN CONTEST_ATTEND USING(MEMBER_NO)
-	WHERE MEMBER_NO = ${loginMember}
+	<select id="conProgress" resultMap="contest_rm">
+		SELECT MEMBER_NO, CONTEST_NO
+		FROM "MEMBER"
+		JOIN CONTEST_ATTEND USING(MEMBER_NO)
+		WHERE MEMBER_NO =
+		${loginMember}
 	</select>
-	
+
 	<!-- 마이페이지 - 공모전 관리(모집중) -->
-	<select id = "getRecruitingAttend" resultMap = "contest_rm">
-	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
-	FROM "MEMBER"
-	JOIN CONTEST USING(MEMBER_NO)
-	WHERE MEMBER_TYPE = 'C'
-	AND TRUNC(END_DATE - CREATE_DATE) &gt;= 0
+	<select id="getRecruitingAttend" resultMap="contest_rm">
+		SELECT MEMBER_NO,
+		MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE -
+		CREATE_DATE)
+		AS DUE_DATE
+		FROM "MEMBER"
+		JOIN CONTEST USING(MEMBER_NO)
+		WHERE MEMBER_TYPE
+		= 'C'
+		AND TRUNC(END_DATE - CREATE_DATE)
 	</select>
-	
+
 	<!-- 마이페이지 - 공모전 관리(심사중) -->
-	<select id = "getUnderReviewAttend" resultMap = "contest_rm">
-	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
-	FROM "MEMBER"
-	JOIN CONTEST USING(MEMBER_NO)
-	WHERE MEMBER_TYPE = 'C'
-	AND TRUNC(END_DATE - CREATE_DATE) &lt; 0
-	</select>	
-	
-	<!-- 마이페이지 - 공모전 관리(완료) -->
-	<select id = "getComplete" resultMap = "contest_rm">
-	SELECT MEMBER_NO, MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE - CREATE_DATE) AS DUE_DATE
-	FROM "MEMBER"
-	JOIN CONTEST USING(MEMBER_NO)
-	WHERE MEMBER_TYPE = 'C'
-	AND WINNER IS NOT NULL
-	
+	<select id="getUnderReviewAttend" resultMap="contest_rm">
+		SELECT MEMBER_NO,
+		MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE -
+		CREATE_DATE)
+		AS DUE_DATE
+		FROM "MEMBER"
+		JOIN CONTEST USING(MEMBER_NO)
+		WHERE MEMBER_TYPE
+		= 'C'
+		AND TRUNC(END_DATE - CREATE_DATE)
 	</select>
-	
+
+	<!-- 마이페이지 - 공모전 관리(완료) -->
+	<select id="getComplete" resultMap="contest_rm">
+		SELECT MEMBER_NO,
+		MEMBER_NICK, PROFILE_IMG, CONTEST_TITLE, TRUNC(END_DATE -
+		CREATE_DATE)
+		AS DUE_DATE
+		FROM "MEMBER"
+		JOIN CONTEST USING(MEMBER_NO)
+		WHERE MEMBER_TYPE
+		= 'C'
+		AND WINNER IS NOT NULL
+
+	</select>
 
 
 	<!-- 우승자 선정 -->
@@ -244,10 +256,22 @@
 
 	<!-- 우승자 선정페이지 - 모달창 참가자 정보 조회 -->
 	<select id="contestAttendInfo" resultMap="contestAttend_rm">
-		SELECT DESCRIPTION, GITHUB, PPT_FILE, PPT_FILE, MEMBER_NO, SKILL
+		SELECT DESCRIPTION,
+		GITHUB, PPT_FILE, MEMBER_NO, SKILL
 		FROM CONTEST_ATTEND
-		WHERE MEMBER_NO = #{memberNo} AND CONTEST_NO = #{contestNo}
+		WHERE
+		MEMBER_NO =
+		#{memberNo} AND CONTEST_NO = #{contestNo}
 	</select>
+
+	<!-- 우승자 심사확인 (빅토리카운트+1) -->
+	<update id="victory" >
+		UPDATE MEMBER
+		SET VICTORY_COUNT = VICTORY_COUNT + 1
+		WHERE MEMBER_NO = #{memberNo};
+	</update>
+
+
 
 
 

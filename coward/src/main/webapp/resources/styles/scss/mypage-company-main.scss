@@ -35,19 +35,6 @@
     }
   }
 
-  &-input {
-    &-box {
-      textarea {
-        @include text-style(14);
-        width: 100%;
-        border: 1px solid $border;
-        border-radius: 5px;
-        padding: 10px;
-        margin-bottom: $section-title-bottom-md;
-      }
-    }
-  }
-
   &-developer {
     &-card {
       &-scroll {
@@ -186,9 +173,11 @@
 .scroll {
   display: flex;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow: auto;
   max-height: 270px;
   padding-top: 15px;
+  width: 100%;
+  justify-content: center;
 }
 
 #colDiv {
@@ -197,4 +186,14 @@
 
 .scroll::-webkit-scrollbar {
   display: none;
+}
+
+.mypage-introduce {
+  border: 1px solid $border;
+  border-radius: 5px;
+  padding: 20px;
+  height: 200px;
+}
+.mypage-input-box-wrapper {
+  margin-bottom: 20px;
 }

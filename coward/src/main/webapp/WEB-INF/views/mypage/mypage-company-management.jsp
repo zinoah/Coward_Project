@@ -158,7 +158,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                   </div>
                                   <div class="contest-slider-card-info">
                                     <div class="contest-slider-card-info-title">
-                                      <p>${contest.contestNo}</p>
+                                      <p>${contest.contestTitle}</p>
                                     </div>
                                     <div
                                       class="contest-slider-card-info-detail"
@@ -192,7 +192,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script>
       const contextPath = "${contextPath}";
     </script>

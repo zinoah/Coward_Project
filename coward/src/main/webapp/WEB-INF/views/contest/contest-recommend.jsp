@@ -441,7 +441,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <button class="btn-primary btn-40" id="next2" onclick="next2()">
                 다음
               </button>
-              <button class="btn-primary btn-40" id="back3" onclick="back()">
+              <button class="btn-primary btn-40" id="back3" onclick="back3()">
                 이전
               </button>
               <button class="btn-primary btn-40" id="next3">완료</button>

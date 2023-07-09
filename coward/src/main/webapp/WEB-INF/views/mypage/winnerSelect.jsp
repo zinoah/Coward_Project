@@ -70,10 +70,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <c:if test="${not empty member}">
             <c:forEach var="member" items="${member}">
               <div class="col-sm-4 col-md-6 col-lg-4">
-                <div
-                  class="card"
-                  onclick="winnerCardClick('${member.memberNo}')"
-                >
+                <div class="card">
                   <div class="profile-section">
                     <img
                       src="${contextPath}/${member.profileImg}"
@@ -145,7 +142,7 @@ ${contestAttend.description}</textarea
 
                 <div class="fileBtn">
                   <a href="${contestAttend.pptFile}" download="contest">
-                    <button type="button" class="btn-primary btn-32">
+                    <button type="button" class="btn-yellow btn-32 btn-32">
                       File Download
                     </button>
                   </a>

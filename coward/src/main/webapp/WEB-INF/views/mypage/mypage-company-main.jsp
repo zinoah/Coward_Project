@@ -116,13 +116,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="mypage-input-box-wrapper">
                         <div class="mypage-input-box">
                           <p>소개</p>
-                          <textarea
-                            cols="50"
-                            rows="5"
-                            placeholder="기업에 대해서 소개해 주세요!"
-                          >
-                             ${loginMember.introduce}
-                          </textarea>
+                          <div class="mypage-introduce col-lg-4">
+                            ${loginMember.introduce}
+                          </div>
                         </div>
                         <div class="mypage-input-box">
                           <p>관심있는 개발자</p>
@@ -198,34 +194,31 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="scroll" id="contest-slider">
                         <c:forEach var="contest" items="${contestList}">
                           <div class="col-sm-4 col-md-4">
-                            <div>
-                              <a
-                                href="${contextPath}/mypage/winnerSelect/${contest.contestNo}"
-                              >
-                                <div class="contest-slider-card">
-                                  <div class="contest-slider-card-img">
-                                    <img
-                                      src="${contextPath}/${contest.thumbnail}"
-                                    />
+                            <a
+                              href="${contextPath}/mypage/winnerSelect/${contest.contestNo}"
+                            >
+                              <div class="contest-slider-card">
+                                <div class="contest-slider-card-img">
+                                  <img
+                                    src="${contextPath}/${contest.thumbnail}"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="contest-slider-card-info">
+                                  <div class="contest-slider-card-info-title">
+                                    <p>${contest.contestTitle}</p>
                                   </div>
-                                  <div class="contest-slider-card-info">
-                                    <div class="contest-slider-card-info-title">
-                                      <p>${contest.contestNo}</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>${contest.dueDate}일 남음</p>
-                                    </div>
-                                    <div
-                                      class="contest-slider-card-info-detail"
-                                    >
-                                      <p>${contest.dueDate}일</p>
-                                    </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>상금</p>
+                                    <p>${contest.dueDate}일 남음</p>
+                                  </div>
+                                  <div class="contest-slider-card-info-detail">
+                                    <p>남은기간</p>
+                                    <p>${contest.dueDate}일</p>
                                   </div>
                                 </div>
-                              </a>
-                            </div>
+                              </div>
+                            </a>
                           </div>
                         </c:forEach>
                       </div>
