@@ -362,3 +362,12 @@
     }
   }
 }
+
+.tag-gray:hover {
+  background-color: #fcd869;
+}
+
+.recommend-card:hover {
+  border: 3px solid $blue;
+  box-shadow: none;
+}
