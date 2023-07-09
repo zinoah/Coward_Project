@@ -2,7 +2,6 @@
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -20,12 +19,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 헤더와 공통 네비 -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     <jsp:include page="/WEB-INF/views/common/nav.jsp" />
-    
+
     <!-- 배너 -->
     <!-- web-box 중앙 배치 위해 -->
     <div class="full">
       <div class="banner-top sm-hidden">
-        <img src="${contextPath}/resources/assets/images/mypage-banner.png"/>
+        <img src="${contextPath}/resources/assets/images/mypage-banner.png" />
       </div>
 
       <!-- 웹 페이지 -->
@@ -44,20 +43,20 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="profile lg-only">
                       <div class="profile-img-box">
                         <div class="profile-img avatar">
-                         <c:if test="${empty loginMember.profileImg}">
-                  <img
-                    src="${contextPath}/resources/assets/images/default-user-img.png"
-                    alt="변경 프로필 사진"
-                    id="profile-image"
-                  />
-                </c:if>
-           <c:if test="${!empty loginMember.profileImg}">
-                  <img
-                    src="${contextPath}/${loginMember.profileImg}"
-                    alt="변경 프로필 사진"
-                    id="profile-image"
-                  />
-                </c:if>
+                          <c:if test="${empty loginMember.profileImg}">
+                            <img
+                              src="${contextPath}/resources/assets/images/default-user-img.png"
+                              alt="변경 프로필 사진"
+                              id="profile-image"
+                            />
+                          </c:if>
+                          <c:if test="${!empty loginMember.profileImg}">
+                            <img
+                              src="${contextPath}/${loginMember.profileImg}"
+                              alt="변경 프로필 사진"
+                              id="profile-image"
+                            />
+                          </c:if>
                         </div>
                       </div>
 
@@ -68,13 +67,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
 
                     <ul class="category-bar">
-                      <li><a href="#">내 정보</a></li>
-                       <a href="${contextPath}/mypage/progress"><li>공모전 관리</li></a>
-                      <li>크레딧 인출</li>
-                      <a href="${contextPath}/mypage/editP"><li>프로필 수정</li></a>
-                      <li><a href="${contextPath}/member/changePw">비밀번호 변경</a></li>
-					  <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>
-                    </ul>
+					 <li><a href="${contextPath}/mypage/Info">내 정보</a></li>
+                      <li><a href="${contextPath}/mypage/progress">공모전 관리</a></li>
+                      <li><a href="${contextPath}/mypage/exchange">크레딧 인출</a></li>
+                       <li><a href="${contextPath}/mypage/editP">프로필 수정</a></li>
+                       <li><a href="${contextPath}/member/changePw">비밀전호 변경</a></li>
+                      <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>                    </ul>
                   </div>
                 </div>
               </div>
@@ -91,22 +89,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                     <div class="profile lg-hidden">
                       <div class="profile-img avatar">
-                       <c:if test="${empty loginMember.profileImg}">
-                  <img
-                    src="${contextPath}/resources/assets/images/default-user-img.png"
-                    alt="변경 프로필 사진"
-                    id="profile-image"
-                  />
-                </c:if>
-           <c:if test="${!empty loginMember.profileImg}">
-                  <img
-                    src="${contextPath}/${loginMember.profileImg}"
-                    alt="변경 프로필 사진"
-                    id="profile-image"
-                  />
-                </c:if>
+                        <c:if test="${empty loginMember.profileImg}">
+                          <img
+                            src="${contextPath}/resources/assets/images/default-user-img.png"
+                            alt="변경 프로필 사진"
+                            id="profile-image"
+                          />
+                        </c:if>
+                        <c:if test="${!empty loginMember.profileImg}">
+                          <img
+                            src="${contextPath}/${loginMember.profileImg}"
+                            alt="변경 프로필 사진"
+                            id="profile-image"
+                          />
+                        </c:if>
                       </div>
-                      
+
                       <div class="profile-info">
                         <div class="profile-type">${loginMember.stack}</div>
                         <p class="profile-nick">${loginMember.memberNick}</p>
@@ -128,7 +126,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                             <div class="credit-box">
                               <div class="credit-c">C</div>
-                              <p class="credit-amount">${loginMember.currPrice}</p>
+                              <p class="credit-amount">
+                                ${loginMember.currPrice} <p class="won">만원
+                             </p>
                             </div>
                           </div>
 
@@ -136,39 +136,38 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="skill">
                             <p class="introduce-title">나의 기술</p>
                             <div class="skill-box">
-                              <div class="my-skill">Java Script</div>
+                              <div class="my-skill">JavaScript</div>
                               <div class="my-skill">CSS</div>
                               <div class="my-skill">Java</div>
+                              <div class="my-skill">Oracle</div>
                               <div class="my-skill">Spring</div>
-                              <div class="my-skill">Java Script</div>
-                              <div class="my-skill">CSS</div>
                             </div>
                           </div>
-                        </div>
-                      </div>
- 			
-                      <!-- 수상 이력 -->
-                      <div class="award">
+                        <div class="award">
                         <p class="introduce-title">어워드</p>
 
                         <div class="award-box">
-                          <div class="progress" data-percent="${rate}">
-                            <span class="progress-result"></span>
-                          </div>
+                         
                           <table class="award-table">
                             <tr class="award-table-num">
-                              <td>10</td>
+                              <td>${loginMember.attendCount}</td>
                               <td>${loginMember.victoryCount}</td>
-                              <td class="lg-hidden">50%</td>
+                             
                             </tr>
                             <tr class="award-table-title">
                               <td>참여 횟수</td>
                               <td>우승 횟수</td>
-                              <td class="lg-hidden">당선률</td>
+                              
                             </tr>
                           </table>
                         </div>
                       </div>
+                        </div>
+                        
+                      </div>
+
+                      <!-- 수상 이력 -->
+                      
                     </div>
 
                     <!-- 관심 목록 -->
@@ -180,63 +179,112 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <div class="watchlist-box-group col-sm-4 col-md-12">
                           <div class="col-sm-4 col-md-6 col-lg-3">
                             <div class="contest-card">
-                              <div class="bookmark">
-                                <i class="ic-bookmark-filled"></i>
-                              </div>
+                             
                               <div class="contest-card-title">
-                                <div><span>금융상품 공모전</span></div>
+                                <div><span>exercowork 모바일 앱 콘테스트</span></div>
                                 <div class="tag-yellow">new</div>
                               </div>
                               <div class="contest-card-info">
                                 <div class="contest-card-info-detail">
                                   <div>
                                     <span>남은기간</span>
-                                    <span>17일</span>
+                                    <span>43일</span>
                                   </div>
                                   <div>
                                     <span>상금</span>
-                                    <span>400만원</span>
+                                    <span>200만원</span>
                                   </div>
                                 </div>
                                 <div class="contest-card-info-tag">
                                   <div class="contest-card-info-tag-list">
                                     <div class="tag-purple">프리미엄</div>
-                                    <div class="tag-pink">css</div>
-                                    <div class="tag-pink">html</div>
+                                    <div class="tag-pink">Java</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">Oracle</div>
                                   </div>
                                   <div
                                     class="sm-only contest-card-info-profile"
                                   >
                                     <div class="avatar-24">
-                                      <img
-                                        src="../assets/images/default-user-img.png"
-                                        alt=""
-                                      />
+                                     <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
                                     </div>
-                                    <div><span>신한은행</span></div>
+                                    <div><span>exercowork</span></div>
                                   </div>
                                 </div>
                               </div>
                               <div class="contest-card-profile sm-hidden">
                                 <div class="avatar-24">
                                   <img
-                                    src="../assets/images/default-user-img.png"
-                                    alt=""
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
                                   />
                                 </div>
-                                <div><span>신한은행</span></div>
+                                <div><span>exercowork</span></div>
                               </div>
                             </div>
                           </div>
-
+                          
+                          
                           <div class="col-sm-4 col-md-6 col-lg-3">
                             <div class="contest-card">
-                              <div class="bookmark">
-                                <i class="ic-bookmark-filled"></i>
-                              </div>
+                             
                               <div class="contest-card-title">
-                                <div><span>금융상품 공모전</span></div>
-                                <div class="tag-yellow">new</div>
+                                <div><span>대전 굿모닝보청기 웹 개발</span></div>
+                                
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>24일</span>
+                                  </div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>120만원</span>
+                                  </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">일반형</div>
+                                    <div class="tag-pink">Java</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">CSS</div>
+                                    <div class="tag-pink">jQuery</div>
+                                  </div>
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
+                                    <div class="avatar-24">
+                                     <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                    </div>
+                                    <div><span>굿모닝보청기</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                 <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                </div>
+                                <div><span>굿모닝보청기</span></div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="col-sm-4 col-md-6 col-lg-3">
+                            <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>외국어 단어 학습 앱개발</span></div>
+                               
                               </div>
                               <div class="contest-card-info">
                                 <div class="contest-card-info-detail">
@@ -252,19 +300,73 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <div class="contest-card-info-tag">
                                   <div class="contest-card-info-tag-list">
                                     <div class="tag-purple">프리미엄</div>
-                                    <div class="tag-pink">css</div>
-                                    <div class="tag-pink">html</div>
+                                    <div class="tag-pink">Spring Boot</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">Oracle</div>
+                                    <div class="tag-pink">jQuery</div>
+                                    <div class="tag-pink">React</div>
                                   </div>
                                   <div
                                     class="sm-only contest-card-info-profile"
                                   >
                                     <div class="avatar-24">
-                                      <img
-                                        src="../assets/images/default-user-img.png"
-                                        alt=""
-                                      />
+                                     <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                    <div><span>주식회사 호두</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                 <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                </div>
+                                <div><span>주식회사 호두</span></div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="col-sm-4 col-md-6 col-lg-3">
+                            <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>피치트리 웹 홈페이지 개발</span></div>
+                                <div class="tag-yellow">new</div>
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>33일</span>
+                                  </div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>250만원</span>
+                                  </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">고급형</div>
+                                    <div class="tag-pink">Java</div>
+                                    <div class="tag-pink">CSS</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">React</div>
+                                    
+                                  </div>
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
+                                    <div class="avatar-24">
+                                     <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
                                     </div>
-                                    <div><span>신한은행</span></div>
+                                    <div><span>주식회사 피치트리</span></div>
                                   </div>
                                 </div>
                               </div>
@@ -275,10 +377,63 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                     alt=""
                                   />
                                 </div>
-                                <div><span>신한은행</span></div>
+                                <div><span>주식회사 피치트리</span></div>
                               </div>
                             </div>
                           </div>
+                          
+                          <div class="col-sm-4 col-md-6 col-lg-3">
+                            <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>숙취해소제 깨온 상세페이지 앱개발</span></div>
+                                <div class="tag-yellow">new</div>
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>20일</span>
+                                  </div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>100만원</span>
+                                  </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">일반형</div>
+                                    <div class="tag-pink">HTML</div>
+                                    <div class="tag-pink">CSS</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                  </div>
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
+                                    <div class="avatar-24">
+                                      <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                    </div>
+                                    <div><span>(주)239바이오</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                 <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                <div><span>(주)239바이오</span></div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                        
+
+                         
                         </div>
                       </div>
 
@@ -289,211 +444,262 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <div class="slider-wrapper">
                             <div class="contest-slider">
                               <div>
-                                <div class="contest-card">
-                                  <div class="bookmark">
-                                    <i class="ic-bookmark-filled"></i>
+                               <div class="col-sm-4 col-md-6 col-lg-3">
+                            <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>exercowork 모바일 앱 개발</span></div>
+                                <div class="tag-yellow">new</div>
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>43일</span>
                                   </div>
-                                  <div class="contest-card-title">
-                                    <div><span>금융상품 공모전</span></div>
-                                    <div class="tag-yellow">new</div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>200만원</span>
                                   </div>
-                                  <div class="contest-card-info">
-                                    <div class="contest-card-info-detail">
-                                      <div>
-                                        <span>남은기간</span>
-                                        <span>17일</span>
-                                      </div>
-                                      <div>
-                                        <span>상금</span>
-                                        <span>400만원</span>
-                                      </div>
-                                    </div>
-                                    <div class="contest-card-info-tag">
-                                      <div class="contest-card-info-tag-list">
-                                        <div class="tag-purple">프리미엄</div>
-                                        <div class="tag-pink">css</div>
-                                        <div class="tag-pink">html</div>
-                                      </div>
-                                      <div
-                                        class="sm-only contest-card-info-profile"
-                                      >
-                                        <div class="avatar-24">
-                                          <img
-                                            src="../assets/images/default-user-img.png"
-                                            alt=""
-                                          />
-                                        </div>
-                                        <div><span>신한은행</span></div>
-                                      </div>
-                                    </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">프리미엄</div>
+                                    <div class="tag-pink">Java</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">Oracle</div>
                                   </div>
-                                  <div class="contest-card-profile sm-hidden">
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
                                     <div class="avatar-24">
-                                      <img
-                                        src="../assets/images/default-user-img.png"
-                                        alt=""
-                                      />
+                                     <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
                                     </div>
-                                    <div><span>신한은행</span></div>
+                                    <div><span>exercowork</span></div>
                                   </div>
                                 </div>
                               </div>
-
-  								<div>
-                                <div class="contest-card">
-                                  <div class="bookmark">
-                                    <i class="ic-bookmark-filled"></i>
-                                  </div>
-                                  <div class="contest-card-title">
-                                    <div><span>금융상품 공모전</span></div>
-                                    <div class="tag-yellow">new</div>
-                                  </div>
-                                  <div class="contest-card-info">
-                                    <div class="contest-card-info-detail">
-                                      <div>
-                                        <span>남은기간</span>
-                                        <span>17일</span>
-                                      </div>
-                                      <div>
-                                        <span>상금</span>
-                                        <span>400만원</span>
-                                      </div>
-                                    </div>
-                                    <div class="contest-card-info-tag">
-                                      <div class="contest-card-info-tag-list">
-                                        <div class="tag-purple">프리미엄</div>
-                                        <div class="tag-pink">css</div>
-                                        <div class="tag-pink">html</div>
-                                      </div>
-                                      <div
-                                        class="sm-only contest-card-info-profile"
-                                      >
-                                        <div class="avatar-24">
-                                          <img
-                                            src="../assets/images/default-user-img.png"
-                                            alt=""
-                                          />
-                                        </div>
-                                        <div><span>신한은행</span></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="contest-card-profile sm-hidden">
-                                    <div class="avatar-24">
-                                      <img
-                                        src="../assets/images/default-user-img.png"
-                                        alt=""
-                                      />
-                                    </div>
-                                    <div><span>신한은행</span></div>
-                                  </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                  <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
                                 </div>
+                                <div><span>exercowork</span></div>
                               </div>
-                              
-                                <div>
-                                <div class="contest-card">
-                                  <div class="bookmark">
-                                    <i class="ic-bookmark-filled"></i>
-                                  </div>
-                                  <div class="contest-card-title">
-                                    <div><span>금융상품 공모전</span></div>
-                                    <div class="tag-yellow">new</div>
-                                  </div>
-                                  <div class="contest-card-info">
-                                    <div class="contest-card-info-detail">
-                                      <div>
-                                        <span>남은기간</span>
-                                        <span>17일</span>
-                                      </div>
-                                      <div>
-                                        <span>상금</span>
-                                        <span>400만원</span>
-                                      </div>
-                                    </div>
-                                    <div class="contest-card-info-tag">
-                                      <div class="contest-card-info-tag-list">
-                                        <div class="tag-purple">프리미엄</div>
-                                        <div class="tag-pink">css</div>
-                                        <div class="tag-pink">html</div>
-                                      </div>
-                                      <div
-                                        class="sm-only contest-card-info-profile"
-                                      >
-                                        <div class="avatar-24">
-                                          <img
-                                            src="../assets/images/default-user-img.png"
-                                            alt=""
-                                          />
-                                        </div>
-                                        <div><span>신한은행</span></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="contest-card-profile sm-hidden">
-                                    <div class="avatar-24">
-                                      <img
-                                        src="../assets/images/default-user-img.png"
-                                        alt=""
-                                      />
-                                    </div>
-                                    <div><span>신한은행</span></div>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                                <div>
-                                <div class="contest-card">
-                                  <div class="bookmark">
-                                    <i class="ic-bookmark-filled"></i>
-                                  </div>
-                                  <div class="contest-card-title">
-                                    <div><span>금융상품 공모전</span></div>
-                                    <div class="tag-yellow">new</div>
-                                  </div>
-                                  <div class="contest-card-info">
-                                    <div class="contest-card-info-detail">
-                                      <div>
-                                        <span>남은기간</span>
-                                        <span>17일</span>
-                                      </div>
-                                      <div>
-                                        <span>상금</span>
-                                        <span>400만원</span>
-                                      </div>
-                                    </div>
-                                    <div class="contest-card-info-tag">
-                                      <div class="contest-card-info-tag-list">
-                                        <div class="tag-purple">프리미엄</div>
-                                        <div class="tag-pink">css</div>
-                                        <div class="tag-pink">html</div>
-                                      </div>
-                                      <div
-                                        class="sm-only contest-card-info-profile"
-                                      >
-                                        <div class="avatar-24">
-                                          <img
-                                            src="../assets/images/default-user-img.png"
-                                            alt=""
-                                          />
-                                        </div>
-                                        <div><span>신한은행</span></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="contest-card-profile sm-hidden">
-                                    <div class="avatar-24">
-                                      <img
-                                        src="../assets/images/default-user-img.png"
-                                        alt=""
-                                      />
-                                    </div>
-                                    <div><span>신한은행</span></div>
-                                  </div>
-                                </div>
-                              </div>
-                           
-
+                            </div>
                           </div>
+                              </div>
+
+                              
+
+                              <div>
+                                <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>대전 굿모닝보청기 웹 개발</span></div>
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>24일</span>
+                                  </div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>120만원</span>
+                                  </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">일반형</div>
+                                    <div class="tag-pink">Java</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">CSS</div>
+                                    <div class="tag-pink">jQuery</div>
+                                  </div>
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
+                                    <div class="avatar-24">
+                                     <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                    <div><span>굿모닝보청기</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                 <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                <div><span>굿모닝보청기</span></div>
+                              </div>
+                            </div>
+                              </div>
+                              
+                              <div>
+                                   <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>외국어 단어 학습 앱개발</span></div>
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>17일</span>
+                                  </div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>400만원</span>
+                                  </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">프리미엄</div>
+                                    <div class="tag-pink">Spring Boot</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">Oracle</div>
+                                    <div class="tag-pink">jQuery</div>
+                                    <div class="tag-pink">React</div>
+                                  </div>
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
+                                    <div class="avatar-24">
+                                      <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                    </div>
+                                    <div><span>주식회사 호두</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                 <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                </div>
+                                <div><span>주식회사 호두</span></div>
+                              </div>
+                            </div>
+                              </div>
+                              
+                              <div>
+                               <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>피치트리 웹 홈페이지 개발</span></div>
+                                <div class="tag-yellow">new</div>
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>33일</span>
+                                  </div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>250만원</span>
+                                  </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">고급형</div>
+                                    <div class="tag-pink">Java</div>
+                                    <div class="tag-pink">CSS</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                    <div class="tag-pink">React</div>
+                                    
+                                  </div>
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
+                                    <div class="avatar-24">
+                                     <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                    </div>
+                                    <div><span>주식회사 피치트리</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                 <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                </div>
+                                <div><span>주식회사 피치트리</span></div>
+                              </div>
+                            </div>
+                              </div>
+                              
+                              <div>
+                                  <div class="contest-card">
+                             
+                              <div class="contest-card-title">
+                                <div><span>숙취해소제 깨온 상세페이지 앱개발</span></div>
+                                <div class="tag-yellow">new</div>
+                              </div>
+                              <div class="contest-card-info">
+                                <div class="contest-card-info-detail">
+                                  <div>
+                                    <span>남은기간</span>
+                                    <span>20일</span>
+                                  </div>
+                                  <div>
+                                    <span>상금</span>
+                                    <span>100만원</span>
+                                  </div>
+                                </div>
+                                <div class="contest-card-info-tag">
+                                  <div class="contest-card-info-tag-list">
+                                    <div class="tag-purple">일반형</div>
+                                    <div class="tag-pink">HTML</div>
+                                    <div class="tag-pink">CSS</div>
+                                    <div class="tag-pink">JavaScript</div>
+                                  </div>
+                                  <div
+                                    class="sm-only contest-card-info-profile"
+                                  >
+                                    <div class="avatar-24">
+                                      <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                    </div>
+                                    <div><span>(주)239바이오</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="contest-card-profile sm-hidden">
+                                <div class="avatar-24">
+                                  <img
+                                    src="${contextPath}/resources/assets/images/dummy/profile-img/default-user-img.png"
+                                    id="profileImg"
+                                  />
+                                </div>
+                                <div><span>(주)239바이오</span></div>
+                              </div>
+                            </div>
+                              </div>
+                              
+                              
+                            </div>
                             <div class="slider-controls">
                               <button
                                 class="control-button is-prev"
@@ -508,115 +714,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 <i class="ic-chevron"></i>
                               </button>
                             </div>
+                          </div>
                         </div>
-                      </div>
 
-                      <!-- 본문 끝 -->
+                        <!-- 본문 끝 -->
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </main>
         </div>
       </div>
     </div>
     <!-- 푸터 -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4 col-md-2 col-lg-3">
-            <h1 class="logo">
-              <a href="#">
-                <img
-                  src="${contextPath}/resources/assets/images/home_logo.svg"
-                  alt="Coward"
-                />
-              </a>
-            </h1>
-          </div>
-
-          <div class="col-sm-4 col-md-5 col-lg-3">
-            <div class="service-center">
-              <a href="#">
-                <h3>고객센터</h3>
-                <i class="ic-chevron"></i>
-              </a>
-            </div>
-            <div class="service-info">
-              <div class="row">
-                <div class="service-info-wrapper">
-                  <div class="service-info-time">
-                    <div class="service-info-title">상담시간</div>
-                    <p>
-                      평일 11:00 ~ 17:00 <br />
-                      점심 12:30 ~ 13:30 <br />
-                      (주말, 공휴일 제외)
-                    </p>
-                  </div>
-
-                  <div class="service-info-tel">
-                    <div class="service-info-title">연락처</div>
-                    <a class="footer-tel" href="tel:02-1234-5678"
-                      >02-1234-5678</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <address class="footer-info sm-hidden">
-            <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
-            <p>Copyright © 2023 Coawrd All Right Reserved</p>
-          </address>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="footer-links">
-            <div class="row">
-              <div class="footer-links-wrapper">
-                <div class="icon-link">
-                  <a class="icon-link-item" href="#"
-                    ><img
-                      src="${contextPath}/resources/assets/images/github.png"
-                      alt="Github 바로가기"
-                  /></a>
-                  <a class="icon-link-item" href="#">
-                    <img
-                      src="${contextPath}/resources/assets/images/notion.png"
-                      alt="Notion 바로가기"
-                    />
-                  </a>
-                  <a class="icon-link-item" href="#"
-                    ><img
-                      src="${contextPath}/resources/assets/images/figma.png"
-                      alt="Figma 바로가기"
-                  /></a>
-                </div>
-
-                <div class="text-link">
-                  <ul class="text-link-list">
-                    <li class="text-link-item"><a href="#">이용가이드</a></li>
-                    <li class="text-link-item">
-                      <a href="#">개인정보처리방침</a>
-                    </li>
-                    <li class="text-link-item"><a href="#">이용약관</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <address class="footer-info sm-only">
-          <p>서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F</p>
-          <p>Copyright © 2023 Coawrd All Right Reserved</p>
-        </address>
-      </div>
-    </footer>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="${contextPath}/resources/js/mypage-slider.js"></script>

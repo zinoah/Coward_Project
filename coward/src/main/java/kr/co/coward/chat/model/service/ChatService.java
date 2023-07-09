@@ -1,15 +1,22 @@
 package kr.co.coward.chat.model.service;
 
+import java.util.List;
+
 import kr.co.coward.chat.model.vo.ChatMessage;
+import kr.co.coward.chat.model.vo.ChatRoom;
 
 public interface ChatService {
 
-	/**
-	 * 메세지 추가 서비스
-	 * 
-	 * @param chatMessage
-	 * @return
+	/** 채팅 목록 조회
+	 * @return chatRoomList
 	 */
-	int insertMessage(ChatMessage chatMessage);
+	List<ChatRoom> selectChatRoomList();
+
+	/** 채팅방 만들기
+	 * @param room
+	 * @return chatRoomNo
+	 */
+	int openChatRoom(ChatRoom room);
+
 
 }

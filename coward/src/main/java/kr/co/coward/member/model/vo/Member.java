@@ -1,5 +1,7 @@
 package kr.co.coward.member.model.vo;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,4 +33,5 @@ public class Member {
 	private int victoryCount;
 	private int likeCount;
 	private int attendCount;
+	private List<String> skillList;
 }

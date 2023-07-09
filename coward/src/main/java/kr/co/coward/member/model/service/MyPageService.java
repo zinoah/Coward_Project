@@ -36,6 +36,14 @@ public interface MyPageService {
 	 */
 	Member mypageInfo(int memberNo);
 
+	/**
+	 * 마이페이지 메인 - 관심 공모전
+	 * @return
+	 */
+	List<Contest> getLikeCon(int memberNo);
+
+
+	
 	/**********************************
 	 * 기업 마이페이지 Service
 	 **********************************/
@@ -57,5 +65,9 @@ public interface MyPageService {
 
 	// 우승자 선정 페이지 - 모달창 참여자 정보 조회
 	List<ContestAttend> contestAttendInfo(Map<String, Object> paramMap);
+
+	
+
+	
 
 }
