@@ -69,7 +69,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <p>남은 기간</p>
                     <p>${contest.dueDate}</p>
                   </div>
-                  <div>
+                  <div id="bookmark-area-mobile">
                     <p>북마크 수</p>
                     <p id="bookmarkCount">${contest.bookmarkCount}명</p>
                   </div>

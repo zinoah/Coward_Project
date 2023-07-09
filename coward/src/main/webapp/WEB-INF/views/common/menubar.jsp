@@ -31,7 +31,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               src="${contextPath}/resources/assets/images/default-user-img.png"
             />
           </div>
-          <strong class="username">빡과장</strong>
+          <strong class="username"
+            >${sessionScope.loginMember.memberNick}</strong
+          >
         </a>
       </c:otherwise>
     </c:choose>
@@ -55,7 +57,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   </header>
 
   <footer class="menubar-footer">
-    <a href="#">
+    <a href="${contextPath}/member/logout">
       <div class="logout-icon">
         <img src="${contextPath}/resources/assets/images/logout.svg" />
       </div>

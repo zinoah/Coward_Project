@@ -279,11 +279,11 @@ $input-box-margin: 24px;
 
         & > div {
           &:nth-child(2) {
+            @include scrollbar;
             display: flex;
             flex-wrap: wrap;
             margin-top: 16px;
             height: 150px;
-            overflow: auto;
 
             label {
               margin: 0px 10px 10px 0;

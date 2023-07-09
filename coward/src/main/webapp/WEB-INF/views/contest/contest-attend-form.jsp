@@ -67,7 +67,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="row">
           <div class="col-sm-4">
             <form
-              action="${contextPath}/contest/attendForm"
+              action="${contextPath}/contest/attendForm/${contest.contestNo}"
               method="post"
               enctype="multipart/form-data"
             >
@@ -104,7 +104,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
                     <div class="contest-attend-form-inner-box-main-info-file">
                       <p class="sub-title">PPT 첨부</p>
-                      <label class="btn-secondary">
+                      <label class="btn-secondary" id="file-label">
                         파일 첨부 (zip, ppt)
                         <input
                           type="file"
@@ -219,7 +219,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
     <div id="overlay" class="overlay"></div>
 
-    <script src="${contextPath}/resources/js/dropzone.js"></script>
     <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/contest-attend-form.js"></script>
     <!-- jQuery -->

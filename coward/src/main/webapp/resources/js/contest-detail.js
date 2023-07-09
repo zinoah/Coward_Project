@@ -21,14 +21,20 @@ function bookmark(bookmarkCount, contestNo, memberNo) {
     ".contest-briefing-sticky-box-button-bookmark"
   );
 
+  const bookmarkBtnM = document.querySelector(
+    ".contest-briefing-content-box-button-bookmark"
+  );
+
   if (!clicked) {
     clicked = true;
     bookmarkBtn.style.color = "#3aacf8";
+    bookmarkBtnM.style.color = "#3aacf8";
     const flag = 1;
     bookmarkAjax(bookmarkCount, contestNo, memberNo, flag);
   } else {
     clicked = false;
     bookmarkBtn.style.color = "#8c8d96";
+    bookmarkBtnM.style.color = "#8c8d96";
     const flag = -1;
     bookmarkAjax(bookmarkCount, contestNo, memberNo, flag);
   }
@@ -48,16 +54,28 @@ function bookmarkAjax(bookmarkCount, contestNo, memberNo, flag) {
     success: function (result) {
       console.log(result);
       const bookmarkArea = document.getElementById("bookmark-area");
+      const bookmarkAreaMobile = document.getElementById(
+        "bookmark-area-mobile"
+      );
       bookmarkArea.innerHTML = "";
-
+      bookmarkAreaMobile.innerHTML = "";
       const bookmarkAreaTitle = document.createElement("p");
       bookmarkAreaTitle.innerText = "북마크 수";
       const bookmarkAreaResult = document.createElement("p");
       bookmarkAreaResult.id = "bookmarkCount";
       bookmarkAreaResult.innerText = result + "명";
 
+      const bookmarkAreaTitleM = document.createElement("p");
+      bookmarkAreaTitleM.innerText = "북마크 수";
+      const bookmarkAreaResultM = document.createElement("p");
+      bookmarkAreaResultM.id = "bookmarkCountM";
+      bookmarkAreaResultM.innerText = result + "명";
+
       bookmarkArea.append(bookmarkAreaTitle);
       bookmarkArea.append(bookmarkAreaResult);
+
+      bookmarkAreaMobile.append(bookmarkAreaTitleM);
+      bookmarkAreaMobile.append(bookmarkAreaResultM);
     },
     error: function () {
       // 비동기 통신(ajax) 중 오류가 발생한 경우

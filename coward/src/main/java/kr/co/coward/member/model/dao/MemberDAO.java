@@ -110,6 +110,13 @@ public class MemberDAO {
 	}
 
 	/**
+	 * 비밀번호 찾기 DAO
+	 * 
+	 * @param
+	 * @return
+	 */
+
+	/**
 	 * 개발자 찾기 DAO
 	 * 
 	 */

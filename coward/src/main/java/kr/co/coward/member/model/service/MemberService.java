@@ -71,4 +71,6 @@ public interface MemberService {
 	 */
 	public abstract List<Integer> getLikeList(int loginMemberNo);
 
+	public abstract String pwFind(Member member);
+
 }

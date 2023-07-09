@@ -290,7 +290,9 @@ function showDevAfterTwoSecond(dev, likedList) {
 
 // Note: developer 요청 Ajax
 function getDevAjax(filter) {
-  getLikedList();
+  if (loginMemberNo) {
+    getLikedList();
+  }
 
   $.ajax({
     url: "findDev",

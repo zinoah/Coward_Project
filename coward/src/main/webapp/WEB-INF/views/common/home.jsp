@@ -481,7 +481,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </c:forEach>
 
                 <!-- Note: 카드형 공모전 보기 중 광고인 경우 -->
-                <a class="new-contest-item is-ad" href="#">
+                <a class="new-contest-item is-ad" href="https://toss.im/">
                   <div class="contest-thumbnail">
                     <img
                       src="${contextPath}/resources/assets/images/dummy/toss-ad.png"

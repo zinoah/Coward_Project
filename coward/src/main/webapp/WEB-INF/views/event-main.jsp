@@ -119,6 +119,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 모달 :: is-open -->
     <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
 
+    <div id="overlay" class="overlay"></div>
+
     <!-- jQuery 라이브러리 추가 -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -128,6 +130,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script>
       const contextPath = "${contextPath}";
     </script>
+    <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/event.js"></script>
   </body>
 </html>

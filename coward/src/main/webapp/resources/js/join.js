@@ -35,8 +35,9 @@ nextBtn.addEventListener("click", function () {
   }
 
   // 필수항목 다 체크 안했을 경우 경고표시 + 페이지 이동 금지
+  // 두개 묶지 말고 분리하기
   nextBtn.addEventListener("click", function () {
-    if (!allAgree.checked || (!agree1.checked && !agree2.checked)) {
+    if (!agree1.checked && !agree2.checked) {
       alert("약관 필수 항목에 동의해주세요!");
       return false;
     }
@@ -216,6 +217,11 @@ function sendEmail() {
   const emailBox = document.querySelector(".email-box");
   const emailDisplay = document.querySelector(".email-cert-display");
 
+  if (memberEmail.value.length == 0) {
+    alert("인증번호를 받을 이메일을 입력해주세요!");
+    return;
+  }
+
   if (emailMessage.innerText == "이메일 형식이 유효하지 않습니다.") {
     alert("사용할 수 없는 이메일입니다. 이메일을 확인해주세요!");
     return;
@@ -301,6 +307,7 @@ function emailCertChk() {
         isCertOK = true;
       } else if (result == 2) {
         alert("만료된 인증번호입니다.");
+        isCertOK = false;
       } else {
         alert("인증에 실패하였습니다.");
         isCertOK = false;
@@ -327,7 +334,7 @@ memberPw.addEventListener("input", function () {
     return;
   }
 
-  const regExp = /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  const regExp = /^(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
 
   if (regExp.test(memberPw.value)) {
     if (memberPwConfirm.value.length == 0) {
