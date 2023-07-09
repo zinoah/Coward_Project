@@ -143,7 +143,7 @@
 		INSERT INTO CONTEST
 		(CONTEST_NO,MEMBER_NO,CONTEST_TITLE,TYPE_NO,SUBJECT,QUALIFICATION,ADD_INFOMATION,CREATE_DATE,END_DATE,SKILL,PRICE,THUMBNAIL,AD_NO)
 		VALUES( #{contestNo}, #{memberNo} ,#{contestTitle}, #{typeNo},
-		#{subject}, #{qualification}, #{addInfo}, SYSDATE, #{endDate},
+		#{subject}, #{qualification}, #{addInfo}, SYSDATE, TO_DATE(#{endDate}, 'YYYY-MM-DD'),
 		#{skill}, #{price}, #{thumbnail} , #{adNo})
 	</insert>
 

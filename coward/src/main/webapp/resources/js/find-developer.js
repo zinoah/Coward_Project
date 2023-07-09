@@ -132,7 +132,10 @@ const createDev = (dev, likedList) => {
   likeButton.appendChild(likeButtonLable);
 
   devChatBtnWrapper.appendChild(devleoperChatBtn);
-  devChatBtnWrapper.appendChild(likeButton);
+
+  if (loginMemberType == "C") {
+    devChatBtnWrapper.appendChild(likeButton);
+  }
 
   developerTitle.appendChild(developerNick);
   developerTitle.appendChild(developerType);
