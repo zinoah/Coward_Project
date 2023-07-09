@@ -16,6 +16,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       rel="stylesheet"
       href="${contextPath}/resources/styles/css/contest-main.css"
     />
+
     <title>Coward | 콘테스트를 둘러보세요</title>
   </head>
   <body>
@@ -29,19 +30,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="banner-top-wrapper">
               <div class="banner-info">
                 <h3 class="main-title">
-                  Coward를 사랑해주시는 <br class="sm-only" />
-                  여러분들을 위한 이벤트
+                  Coward에서 제공하는 공모전에 <br class="sm-only" />
+                  지금바로 참여하세요!!
                 </h3>
                 <p class="sub-title sm-hidden">
-                  쿠폰, 참여 혜택 등 각종 기회를 놓치지 마세요!
+                  우승자가 될 기회를 놓치지 마세요!
                 </p>
-                <a href="create" class="banner-button btn-32 btn-primary"
-                  >더 알아보기</a
-                >
               </div>
               <div class="banner-image">
                 <img
-                  src="${contextPath}/resources/assets/images/contest-main-banner-img.png"
+                  src="${contextPath}/resources/assets/images/contest-main-banner-img.jpg"
                   aria-hidden
                 />
               </div>
@@ -106,18 +104,20 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </section>
 
         <section class="middle-banner-section">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="banner-middle">
-                <div class="banner-middle-title">
-                  <span>Coward 회원이 되어</span>
-                </div>
-                <div class="banner-middle-title">
-                  <span>다양한 개발자의 도움을 받아보세요.</span>
+          <a href="${contextPath}/member/join">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="banner-middle">
+                  <div class="banner-middle-title">
+                    <span>Coward 회원이 되어</span>
+                  </div>
+                  <div class="banner-middle-title">
+                    <span>다양한 개발자의 도움을 받아보세요.</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </section>
 
         <section class="contest-card-section">
@@ -174,13 +174,28 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <div class="contest-card">
                     <div class="contest-card-title">
                       <div><span>${contest.contestTitle}</span></div>
-                      <div class="tag-yellow">new</div>
+
+                      <c:choose>
+                        <c:when test="${contest.createDate > 1}">
+                          <div></div>
+                        </c:when>
+                        <c:otherwise>
+                          <div class="tag-yellow">new</div>
+                        </c:otherwise>
+                      </c:choose>
                     </div>
                     <div class="contest-card-info">
                       <div class="contest-card-info-detail">
                         <div>
                           <span>남은기간</span>
-                          <span>${contest.dueDate}</span>
+                          <c:choose>
+                            <c:when test="${contest.dueDate > 0}">
+                              <span>${contest.dueDate}</span>
+                            </c:when>
+                            <c:otherwise>
+                              <span>마감</span>
+                            </c:otherwise>
+                          </c:choose>
                         </div>
                         <div>
                           <span>상금</span>

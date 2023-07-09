@@ -162,7 +162,7 @@
   @include pos-center;
   @include column-flexbox(center, start);
   position: absolute;
-  width: 400px;
+  width: 300px;
   height: 500px;
   background-color: white;
   border-radius: 10px;
@@ -174,9 +174,9 @@
   }
 
   &-info {
+    @include scrollbar;
     width: 100%;
     flex-basis: 75%;
-    overflow: scroll;
     font-size: 12px;
     border: 1px solid $border;
     border-radius: 10px;
@@ -201,5 +201,8 @@
       height: 30px;
       font-size: 16px;
     }
+  }
+  @include responsive(T) {
+    width: 400px;
   }
 }
