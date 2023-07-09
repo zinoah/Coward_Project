@@ -161,7 +161,7 @@ public class MemberController {
 
 		if (insert > 0) {
 			message = "회원 가입 성공";
-			path = "member/joinModal";
+			path = "common/home";
 
 		} else {
 			message = "회원 가입 실패";
