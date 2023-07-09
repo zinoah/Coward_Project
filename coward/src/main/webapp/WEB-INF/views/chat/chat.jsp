@@ -39,61 +39,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         <span>스펀지밥</span>
                       </div>
                     </div>
-                    <div class="chat-user">
-                      <div class="avatar-32 chat-user-profile">
-                        <img
-                          src="${contextPath}/resources/assets/images/dummy/profile-img/20230630195140_64483.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="chat-user-nick">
-                        <span>스펀지밥</span>
-                      </div>
-                    </div>
-                    <div class="chat-user">
-                      <div class="avatar-32 chat-user-profile">
-                        <img
-                          src="${contextPath}/resources/assets/images/dummy/profile-img/20230630195140_64483.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="chat-user-nick">
-                        <span>스펀지밥</span>
-                      </div>
-                    </div>
-                    <div class="chat-user">
-                      <div class="avatar-32 chat-user-profile">
-                        <img
-                          src="${contextPath}/resources/assets/images/dummy/profile-img/20230630195140_64483.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="chat-user-nick">
-                        <span>스펀지밥</span>
-                      </div>
-                    </div>
-                    <div class="chat-user">
-                      <div class="avatar-32 chat-user-profile">
-                        <img
-                          src="${contextPath}/resources/assets/images/dummy/profile-img/20230630195140_64483.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="chat-user-nick">
-                        <span>스펀지밥</span>
-                      </div>
-                    </div>
-                    <div class="chat-user">
-                      <div class="avatar-32 chat-user-profile">
-                        <img
-                          src="${contextPath}/resources/assets/images/dummy/profile-img/20230630195140_64483.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="chat-user-nick">
-                        <span>스펀지밥</span>
-                      </div>
-                    </div>
+                    
+                    
                   </div>
                 </div>
               </div>
@@ -113,7 +60,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         </div>
                         <div class="message">
                           <span>안녕</span>
-                          <span>반가워</span>
+
                         </div>
                       </div>
                     </div>

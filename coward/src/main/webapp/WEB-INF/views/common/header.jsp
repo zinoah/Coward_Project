@@ -55,7 +55,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <i class="ic-bell"></i>
                 </button>
 
-                <a class="header-user-image" href="${contextPath}/chat">
+                <a class="header-user-image" href="${contextPath}/chat/roomList">
 
                   <i class="ic-message"></i>
                 </a>
