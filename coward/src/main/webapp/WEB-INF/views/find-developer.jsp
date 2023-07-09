@@ -176,11 +176,19 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
       let loginMemberNo = null;
 
+      const loginMemberType = "${sessionScope.loginMember.memberType}";
+
       <c:if test="${not empty sessionScope.loginMember and not empty sessionScope.loginMember.memberNo}">
         loginMemberNo = ${sessionScope.loginMember.memberNo};
       </c:if>;
 
       console.log("loginMemberNo :: " + loginMemberNo);
+      console.log(
+        "loginMemberNo :: " +
+          loginMemberType +
+          " and typeof :: " +
+          typeof loginMemberType
+      );
     </script>
     <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
