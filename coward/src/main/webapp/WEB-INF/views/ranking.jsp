@@ -189,6 +189,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
+    <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
+
+    <div id="overlay" class="overlay"></div>
+
     <!-- 모달 :: is-open -->
     <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
 
@@ -203,6 +207,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       const contextPath = "${contextPath}";
     </script>
 
+    <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/ranking.js"></script>
   </body>
 </html>

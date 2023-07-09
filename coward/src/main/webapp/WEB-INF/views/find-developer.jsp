@@ -160,6 +160,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 푸터 -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
+    <jsp:include page="/WEB-INF/views/common/menubar.jsp" />
+
+    <div id="overlay" class="overlay"></div>
+
     <!-- jQuery 라이브러리 추가 -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -178,6 +182,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
       console.log("loginMemberNo :: " + loginMemberNo);
     </script>
+    <script src="${contextPath}/resources/js/header.js"></script>
     <script src="${contextPath}/resources/js/find-developer.js"></script>
   </body>
 </html>
