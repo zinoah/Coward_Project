@@ -52,6 +52,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     type="email"
                     class="input-email"
                     name="memberId"
+                    autocomplete="off"
                     value="${cookie.saveId.value}"
                   />
                 </div>
@@ -60,11 +61,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="pw-input-box">
                   <p class="p-pw">비밀번호</p>
                   <fieldset>
-                    <input
-                      type="password"
-                      class="input-pw"
-                      name="memberPw"
-                    />
+                    <input type="password" class="input-pw" name="memberPw" />
                     <i class="ic-eye-close"></i>
                   </fieldset>
 
@@ -96,16 +93,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <p class="p-or">또는</p>
               </div>
               <div class="simple-login-box">
-                
-                <div class="naver-box">
-                </div>
                 <a href="${url}">
-                <div class="naver-logo">
-                	<img
-                    src="${contextPath}/resources/assets/images/naver-logo.png"
-                  />
-                </div>
-                  <div class="naver-login"><span class="naver">네이버로 계속하기</span></div>
+                  <button type="button" class="naver-login">
+                    네이버로 계속하기
+                  </button>
                 </a>
               </div>
               <br />

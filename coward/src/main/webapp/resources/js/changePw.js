@@ -1,6 +1,9 @@
 const nextBtn = document.querySelector(".next-btn");
 const changePwBox = document.querySelector(".pw-change-box2");
 const currentPwBox = document.querySelector(".pw-change-box");
+const validation1 = document.querySelector(".validation1");
+const validation2 = document.querySelector(".validation2");
+const changePwBtn = document.querySelector(".change-pw-btn");
 
 const currentPw = document.getElementsByName("currentPw")[0];
 const newPw = document.getElementsByName("newPw")[0];
@@ -19,11 +22,7 @@ nextBtn.addEventListener("click", function () {
 
 function changePwValidate() {
   // 비밀번호 정규표현식
-  const regEx = /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-
-  const currentPw = document.getElementsByName("currentPw")[0];
-  const newPw = document.getElementsByName("newPw")[0];
-  const newPwConfirm = document.getElementsByName("newPwConfirm")[0];
+  const regEx = /^(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
 
   nextBtn.addEventListener("click", function () {
     if (currentPw.value.trim().length == 0) {
@@ -62,5 +61,6 @@ function changePwValidate() {
     return false;
   }
 
+  changePwBtn.style.color = "$blue";
   return true; // 위 조건을 모두 수행하지 않은 경우 true 반환
 }

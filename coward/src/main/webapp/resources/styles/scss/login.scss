@@ -36,21 +36,16 @@
     height: 45px;
     border-radius: 10px;
     color: white;
-    background-color: $tertiary;
+    background-color: $blue;
     font-weight: 700;
     position: relative;
-    top: 40px;
+    top: 30px;
     cursor: pointer;
   }
   &-box {
     width: 320px;
     height: 560px;
   }
-}
-
-.login-btn:hover {
-  background-color: $blue;
-  color: $white;
 }
 
 .input {
@@ -130,7 +125,7 @@
 }
 
 .line-box {
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 15px;
 }
 
@@ -160,7 +155,7 @@ input[type="checkbox"] {
 .span-second {
   font-size: 13px;
   position: relative;
-  bottom: 30px;
+  bottom: 5px;
   left: 50px;
 }
 
@@ -174,21 +169,33 @@ input[type="checkbox"] {
   font-size: 13px;
   position: relative;
   left: 50px;
-  bottom: 30px;
+  bottom: 5px;
+}
+
+.join:hover {
+  color: $blue;
 }
 
 .naver {
-  @include text-style(16, $white);
-  font-weight: 400;
-  position: relative;
-  left: 100px;
-
   &-logo {
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+    left: 85px;
+    top: 4px;
+  }
+
+  &-img {
+    position: relative;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
   }
 
   &-login {
+    @include text-style(16, $white);
+    font-weight: 500;
     width: 100%;
     height: 40px;
     border-radius: 10px;
