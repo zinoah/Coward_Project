@@ -7,16 +7,21 @@ import kr.co.coward.chat.model.vo.ChatRoom;
 
 public interface ChatService {
 
-	/** 채팅 목록 조회
+	/**
+	 * 채팅 목록 조회
+	 * 
 	 * @return chatRoomList
 	 */
 	List<ChatRoom> selectChatRoomList();
 
-	/** 채팅방 만들기
+	/**
+	 * 채팅방 만들기
+	 * 
 	 * @param room
 	 * @return chatRoomNo
 	 */
 	int openChatRoom(ChatRoom room);
 
+	int insertMessage(ChatMessage chatMessage);
 
 }

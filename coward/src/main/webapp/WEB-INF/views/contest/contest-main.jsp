@@ -59,33 +59,34 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </div>
               <div class="slider-wrapper">
                 <div class="contest-slider">
-                  <c:forEach var="contest" items="${contestList}">
-                    <div class="col-sm-4 col-md-4">
-                      <a
-                        href="${contextPath}/mypage/winnerSelect/${contest.contestNo}"
-                      >
-                        <div class="contest-slider-card">
-                          <div class="contest-slider-card-img">
-                            <img
-                              src="${contextPath}/${contest.thumbnail}"
-                              alt=""
-                            />
+                  <c:forEach var="contest" items="${contestPopularList}">
+                    <div>
+                      <div class="contest-slider-card">
+                        <div class="contest-slider-card-img">
+                          <img src="${contextPath}/${contest.thumbnail}" />
+                        </div>
+                        <div class="contest-slider-card-info">
+                          <div class="contest-slider-card-info-title">
+                            <p>${contest.contestTitle}</p>
                           </div>
-                          <div class="contest-slider-card-info">
-                            <div class="contest-slider-card-info-title">
-                              <p>${contest.contestNo}</p>
-                            </div>
-                            <div class="contest-slider-card-info-detail">
-                              <p>상금</p>
-                              <p>${contest.dueDate}일 남음</p>
-                            </div>
-                            <div class="contest-slider-card-info-detail">
-                              <p>남은기간</p>
-                              <p>${contest.dueDate}일</p>
-                            </div>
+                          <div class="contest-slider-card-info-detail">
+                            <p>상금</p>
+                            <p>${contest.price}만원</p>
+                          </div>
+                          <div class="contest-slider-card-info-detail">
+                            <p>남은기간</p>
+                            <p>${contest.dueDate}일</p>
+                          </div>
+                          <div class="contest-slider-card-info-button">
+                            <a
+                              class="btn-outlined btn-32"
+                              href="detail/${contest.contestNo}"
+                            >
+                              참여하러가기
+                            </a>
                           </div>
                         </div>
-                      </a>
+                      </div>
                     </div>
                   </c:forEach>
                 </div>
