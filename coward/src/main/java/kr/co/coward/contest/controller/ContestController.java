@@ -209,8 +209,11 @@ public class ContestController {
 
 	}
 
-	// 맞춤 공모전 페이지로 이동
-
+	/**
+	 * 공모전 페이지로 이동
+	 * 
+	 * @return
+	 */
 	@GetMapping("/recommend")
 	public String contestRecommend() {
 
@@ -220,20 +223,28 @@ public class ContestController {
 	/**
 	 * 맞춤 공모전
 	 * 
-	 * @param contestNo
-	 * @param model
 	 * @return
 	 * 
 	 */
 
 	@ResponseBody
 	@PostMapping("/recommend")
-	public String getRecommendContest(@RequestParam int typeNo) {
+	public String getRecommendContest(@ModelAttribute("loginMember") Member loginMember,
+			@RequestParam Map<String, Object> paramMap, @RequestParam int typeNo, int price,
+			@RequestParam("skill") String[] skill, HttpServletRequest req) {
+
+		String skillList = String.join(",", skill);
 
 		logger.info("컨트롤러 수행");
 		logger.info("Received typeNo: " + typeNo);
+		logger.info("Received skill: " + skillList);
+		logger.info("Received price: " + price);
 
-		List<Contest> recommendList = service.getRecommendList(typeNo);
+		paramMap.put("skill", skillList);
+		paramMap.put("price", price);
+		paramMap.put("typeNo", typeNo);
+
+		List<Contest> recommendList = service.getRecommendList(paramMap);
 
 		logger.info("recommendContest() 메서드 실행 결과: " + recommendList);
 

@@ -93,15 +93,16 @@ public class ContestServiceImpl implements ContestService {
 		return dao.contestDetail(contestNo);
 	}
 
-	// 맞춤 공모전
+	/**
+	 * 맞춤공모전
+	 * 
+	 * @param typeNo
+	 * @return
+	 */
 	@Override
-	public List<Contest> getRecommendList(int typeNo) {
+	public List<Contest> getRecommendList(Map<String, Object> paramMap) {
 
-		logger.info("Received typeNo Serviceimpl: " + typeNo);
-
-		logger.info("recommendContest() 메서드 실행 결과: " + dao.getRecommendList(typeNo));
-
-		return dao.getRecommendList(typeNo);
+		return dao.getRecommendList(paramMap);
 	}
 
 	// 북마크 UP 카운트 서비스

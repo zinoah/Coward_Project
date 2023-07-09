@@ -75,7 +75,7 @@ function createContestList(contest) {
   titleDivElement.className = "contest-slider-card-info-title";
 
   const contestNoElement = document.createElement("p");
-  contestNoElement.textContent = contest.contestNo;
+  contestNoElement.textContent = contest.contestTitle;
 
   titleDivElement.appendChild(contestNoElement);
 

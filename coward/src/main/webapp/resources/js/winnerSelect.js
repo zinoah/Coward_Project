@@ -1,7 +1,6 @@
 const checkFormBtn = document.querySelectorAll(".checkFormBtn");
 const deleteFormBtn = document.getElementById("deleteFormBtn");
 const modal = document.querySelector(".modal");
-const memberNo = document.getElementById("memberNo");
 
 //클릭시 모달창 나오게 하기
 checkFormBtn.forEach((button) => {
@@ -17,17 +16,19 @@ function getMemberNo(selectedNo) {
 
   modal.style.display = "block";
   console.log(selectedNo);
-  memberNo.value = selectedNo;
-  console.log("멤버넘버 : " + memberNo.value);
+  //memberNo.value = selectedNo;
+  memberNo = selectedNo;
+  console.log("멤버넘버 : " + memberNo);
 
   $.ajax({
     url: contextPath + "/mypage/winnerSelect/" + contestNo,
-    data: { memberNo: memberNo.value },
+    data: { memberNo: memberNo },
     type: "POST",
     dataType: "json",
 
     success: function (response) {
       const contestAttend = response;
+
       result.innerHTML = "";
 
       if (contestAttend != null) {
@@ -51,30 +52,35 @@ function getMemberNo(selectedNo) {
           textarea.innerText = contestAttend.description;
           introDiv.appendChild(textarea);
 
-          const fileBtnDiv = document.createElement("div");
-          fileBtnDiv.className = "fileBtn";
-          const a = document.createElement("a");
-          a.href = contextPath + "/" + contestAttend.pptFile;
-          a.download = "contest";
-          const button = document.createElement("button");
-          button.type = "button";
-          button.className = "btn-yellow btn-32";
-          button.innerText = "File Download";
-          a.appendChild(button);
-          fileBtnDiv.appendChild(a);
+          div.appendChild(h5Intro);
+          div.appendChild(introDiv);
 
           const h5Github = document.createElement("h5");
           h5Github.innerText = "github 주소";
+          div.appendChild(h5Github);
 
           const githubDiv = document.createElement("div");
           githubDiv.className = "github-input";
           githubDiv.innerText = contestAttend.githubAddress;
-
-          div.appendChild(h5Intro);
-          div.appendChild(introDiv);
-          div.appendChild(fileBtnDiv);
-          div.appendChild(h5Github);
           div.appendChild(githubDiv);
+
+          if (contestAttend.pptFile) {
+            const fileBtnDiv = document.createElement("div");
+            fileBtnDiv.className = "fileBtn";
+
+            const a = document.createElement("a");
+            a.href = contestAttend.pptFile;
+            a.download = "contest";
+
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "btn-yellow btn-32 downloadBtn";
+            button.innerText = "File Download";
+
+            a.appendChild(button);
+            fileBtnDiv.appendChild(a);
+            div.appendChild(fileBtnDiv);
+          }
 
           result.appendChild(div);
         });

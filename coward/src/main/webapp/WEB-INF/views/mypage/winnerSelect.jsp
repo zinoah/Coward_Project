@@ -86,12 +86,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </div>
 
                   <div class="profile-button-wrapper">
-                    <input
-                      type="hidden"
-                      id="memberNo"
-                      name="memberNo"
-                      value=""
-                    />
                     <button
                       type="button"
                       class="btn-40 btn-outlined checkFormBtn"
@@ -134,14 +128,6 @@ ${contestAttend.description}</textarea
                   >
                 </div>
 
-                <div class="fileBtn">
-                  <a href="${contestAttend.pptFile}" download="contest">
-                    <button type="button" class="btn-primary btn-32">
-                      File Download
-                    </button>
-                  </a>
-                </div>
-
                 <h5>github 주소</h5>
                 <div class="github-input">${contestAttend.githubAddress}</div>
 
@@ -153,6 +139,14 @@ ${contestAttend.description}</textarea
                   <div class="my-skill">Java</div>
                   <div class="my-skill">Spring</div>
                 </div>-->
+
+                <div class="fileBtn">
+                  <a href="${contestAttend.pptFile}" download="contest">
+                    <button type="button" class="btn-yellow btn-32 btn-32">
+                      File Download
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
 

@@ -80,17 +80,6 @@ public class MyPageDAO {
 		return sqlSession.selectOne("myPageMapper.mypageInfo", memberNo);
 	}
 
-	/**
-	 * 마이페이지 - 공모전 관리 DAO
-	 * 
-	 * @param memberNo
-	 * @return
-	 */
-//	public List<ContestAttend> conProgress(String attendStatus, int memberNo) {
-//
-//		return sqlSession.conProgress("myPageMapper.conProgress", memberNo);
-//	}
-
 	// 우승자 선정 페이지
 	public List<Member> winnerSelect(int contestNo, String stack) {
 

@@ -66,7 +66,7 @@ public class MyPageServiceImpl implements MyPageService {
 //
 //		return null;
 //	}
-	
+
 	/**
 	 * 
 	 */
@@ -75,7 +75,6 @@ public class MyPageServiceImpl implements MyPageService {
 //
 //		return dao.conProgress(attendStatus, memberNo);
 //	}
-
 
 	/**
 	 * 마이페이지 메인 - 정보 조회 서비스
@@ -151,7 +150,6 @@ public class MyPageServiceImpl implements MyPageService {
 
 	}
 
-
 	// 우승자 선정페이지
 	@Override
 	public List<Member> winnerSelect(int contestNo, String stack) {
@@ -180,9 +178,4 @@ public class MyPageServiceImpl implements MyPageService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-
-
-
 }

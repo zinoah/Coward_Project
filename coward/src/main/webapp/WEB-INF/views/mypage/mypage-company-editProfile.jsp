@@ -107,6 +107,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                         <div class="mypage-img-wrapper">
                           <div class="ic-camera-relative">
                             <div class="avatar">
+                              
                               <c:choose>
                                 <c:when test="${empty loginMember.profileImg}">
                                   <img
@@ -122,6 +123,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                   />
                                 </c:otherwise>
                               </c:choose>
+                             
                               <label for="inputImg">
                                 <div class="ic-camera-wrapper">
                                   <input
@@ -132,7 +134,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                                   />
                                   <i class="ic-camera"></i>
                                 </div>
+                                
                               </label>
+                             
                             </div>
                           </div>
                         </div>
@@ -200,8 +204,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               placeholder="기업에 대해서 소개해주세요!"
                               name="introduce"
                             >
-${loginMember.introduce}</textarea
-                            >
+${loginMember.introduce}</textarea>
                           </div>
                         </div>
 
@@ -228,7 +231,7 @@ ${loginMember.introduce}</textarea
     <!-- tiny-slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   </body>
-=======
+
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -403,14 +406,12 @@ ${loginMember.introduce}</textarea
 			</div>
 		</div>
 	</div>
+
 	<!-- 푸터 -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
-
 	<script src="${contextPath}/resources/js/mypage-company-editProfile.js"></script>
-
 	<!-- tiny-slider -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 	
 </body>
 
