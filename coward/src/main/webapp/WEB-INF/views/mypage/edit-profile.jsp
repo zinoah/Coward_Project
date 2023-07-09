@@ -61,12 +61,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
 
                     <ul class="category-bar">
-                     <li><a href="${contextPath}/mypage/Info">내 정보</a></li>
+                   <li><a href="${contextPath}/mypage/memberTypeInfo"">내 정보</a></li>
                       <li><a href="${contextPath}/mypage/progress">공모전 관리</a></li>
-                      <li><a href="${contextPath}/mypage/exchange">크레딧 인출</a></li>
-                       <li><a href="${contextPath}/mypage/edit-profile">프로필 수정</a></li>
-                       <li><a href="${contextPath}/member/changePw">비밀전호 변경</a></li>
-                      <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>
+                       <li><a href="${contextPath}/mypage/editP">프로필 수정</a></li>
+                       <li><a href="${contextPath}/member/changePw">비밀번호 변경</a></li>
+                      <li><a href="${contextPath}/member/secession">회원 탈퇴</a></li>       
                     </ul>
                   </div>
                 </div>
