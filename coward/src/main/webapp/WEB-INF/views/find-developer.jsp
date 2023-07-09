@@ -132,16 +132,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       </button>
                     </div>
 
-                    <button
-                      id="like-btn"
-                      class="like-btn ${likedList.contains(devList.memberNo) ? 'is-active' : ''}"
-                      type="button"
-                      onclick="clickLikeBtn('${empty sessionScope.loginMember ? null : sessionScope.loginMember.memberNo}', ${devList.memberNo}, this)"
-                    >
-                      <label for="like-btn"
-                        ><i class="ic-like-filled"></i>
-                      </label>
-                    </button>
+                    <c:choose>
+                      <c:when
+                        test="${ sessionScope.loginMember.memberType == 'C' }"
+                      >
+                        <button
+                          id="like-btn"
+                          class="like-btn ${likedList.contains(devList.memberNo) ? 'is-active' : ''}"
+                          type="button"
+                          onclick="clickLikeBtn('${empty sessionScope.loginMember ? null : sessionScope.loginMember.memberNo}', ${devList.memberNo}, this)"
+                        >
+                          <label for="like-btn"
+                            ><i class="ic-like-filled"></i>
+                          </label>
+                        </button>
+                      </c:when>
+                    </c:choose>
                   </div>
                 </div>
               </form>
