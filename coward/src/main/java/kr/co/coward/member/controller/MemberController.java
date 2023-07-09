@@ -184,8 +184,6 @@ public class MemberController {
 			HttpServletRequest req, HttpServletResponse resp, RedirectAttributes ra) {
 
 		System.out.println(loginMember.getMemberPw());
-		System.out.println(loginMember.getMemberId());
-
 		int result = service.secession(loginMember);
 
 		String message = null;

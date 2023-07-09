@@ -87,10 +87,11 @@
 }
 
 .agree-content-box {
+  @include scrollbar;
+  overflow-x: hidden;
   width: 90%;
   height: 60%;
   border: 1px solid none;
-  overflow-y: scroll;
   font-size: 14pt;
 }
 

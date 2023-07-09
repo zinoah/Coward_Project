@@ -36,49 +36,137 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="web-box">
           <!-- 네비게이션 바 -->
 
-          <aside>
-            <nav class="category">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-4 category-web">
-                    <p class="profile-mypage lg-only">마이페이지</p>
-                    <div class="profile lg-only">
-                      <div class="profile-img avatar">
-                        <img
-                          src="${contextPath}/resources/assets/images/default-user-img.png"
-                        />
-                      </div>
-                      <div class="profile-info">
-                        <div class="profile-type">Back</div>
-                        <p class="profile-nick">빡과장</p>
+          <c:choose>
+            <c:when test="${ sessionScope.loginMember.memberType == 'C' }">
+              <aside>
+                <nav class="category">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4 category-web">
+                        <p class="profile-mypage lg-only">마이페이지</p>
+                        <div class="profile lg-only">
+                          <div class="profile-img-box">
+                            <div class="profile-img avatar">
+                              <img
+                                src="${contextPath}/${loginMember.profileImg}"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="profile-info">
+                            <!-- <div class="profile-type">Back</div>-->
+                            <p class="profile-nick">
+                              ${loginMember.memberNick}
+                            </p>
+                          </div>
+                        </div>
+
+                        <ul class="category-bar">
+                          <li>
+                            <a href="${contextPath}/mypage/companyMain"
+                              >내 정보</a
+                            >
+                          </li>
+                          <li>
+                            <a href="${contextPath}/mypage/companyManagement"
+                              >공모전 관리</a
+                            >
+                          </li>
+
+                          <li>
+                            <a href="${contextPath}/mypage/companyProfile"
+                              >프로필 수정</a
+                            >
+                          </li>
+                          <li>
+                            <a href="${contextPath}/member/changePw"
+                              >비밀번호 변경</a
+                            >
+                          </li>
+                          <li>
+                            <a href="${contextPath}/member/secession"
+                              >회원 탈퇴</a
+                            >
+                          </li>
+                        </ul>
                       </div>
                     </div>
-
-                    <ul class="category-bar">
-                      <li><a href="#">내 정보</a></li>
-                      <li>
-                        <a href="${contextPath}/mypage/progress">공모전 관리</a>
-                      </li>
-                      <li>
-                        <a href="${contextPath}/mypage/edit-profile-mem"
-                          >프로필 수정</a
-                        >
-                      </li>
-                      <li>
-                        <a href="${contextPath}/member/changePw"
-                          >비밀번호 변경</a
-                        >
-                      </li>
-                      <li>
-                        <a href="${contextPath}/member/secession">회원 탈퇴</a>
-                      </li>
-                    </ul>
                   </div>
-                </div>
-              </div>
-            </nav>
-          </aside>
+                </nav>
+              </aside>
+            </c:when>
+            <c:when test="${ sessionScope.loginMember.memberType == 'P' }">
+              <aside>
+                <nav class="category">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4 category-web">
+                        <p class="profile-mypage lg-only">마이페이지</p>
+                        <div class="profile lg-only">
+                          <div class="profile-img-box">
+                            <div class="profile-img avatar">
+                              <c:if test="${empty loginMember.profileImg}">
+                                <img
+                                  src="${contextPath}/resources/assets/images/default-user-img.png"
+                                  alt="변경 프로필 사진"
+                                  id="profile-image"
+                                />
+                              </c:if>
+                              <c:if test="${!empty loginMember.profileImg}">
+                                <img
+                                  src="${contextPath}/${loginMember.profileImg}"
+                                  alt="변경 프로필 사진"
+                                  id="profile-image"
+                                />
+                              </c:if>
+                            </div>
+                          </div>
 
+                          <div class="profile-info">
+                            <div class="profile-type">${loginMember.stack}</div>
+                            <p class="profile-nick">
+                              ${loginMember.memberNick}
+                            </p>
+                          </div>
+                        </div>
+
+                        <ul class="category-bar">
+                          <li>
+                            <a href="${contextPath}/mypage/memberTypeInfo">내 정보</a>
+                          </li>
+                          <li>
+                            <a href="${contextPath}/mypage/progress"
+                              >공모전 관리</a
+                            >
+                          </li>
+                          <li>
+                            <a href="${contextPath}/mypage/exchange"
+                              >크레딧 인출</a
+                            >
+                          </li>
+                          <li>
+                            <a href="${contextPath}/mypage/editP"
+                              >프로필 수정</a
+                            >
+                          </li>
+                          <li>
+                            <a href="${contextPath}/member/changePw"
+                              >비밀전호 변경</a
+                            >
+                          </li>
+                          <li>
+                            <a href="${contextPath}/member/secession"
+                              >회원 탈퇴</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </aside>
+            </c:when>
+          </c:choose>
           <!-- 본문 시작 -->
           <main class="profile-mem">
             <div class="container">
