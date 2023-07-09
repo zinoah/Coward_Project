@@ -139,11 +139,13 @@ completeBtn.addEventListener("click", function () {
   }
 
   // 유효성검사 안맞으면 못넘어감
-  if (
-    (pwMessage1.innerText = "비밀번호 형식이 유효하지 않습니다.") ||
-    (pwMessage2.innerText = "비밀번호가 일치하지 않습니다.")
-  ) {
-    alert("비밀번호 형식이 유효하지 않거나 일치하지 않습니다!");
+  if (pwMessage1.innerText === "비밀번호 형식이 유효하지 않습니다.") {
+    alert("비밀번호 형식이 유효하지 않습니다!");
+    return;
+  }
+
+  if (pwMessage2.innerText === "비밀번호가 일치하지 않습니다.") {
+    alert("비밀번호가 일치하지 않습니다!");
     return;
   }
 
@@ -329,7 +331,7 @@ const pwMessage2 = document.querySelector(".pw-explanation2");
 
 memberPw.addEventListener("input", function () {
   if (memberPw.value.length == 0) {
-    pwMessage1.innerText = "사용할 비밀번호를 입력해주세요.";
+    pwMessage1 = "사용할 비밀번호를 입력해주세요.";
     pwMessage1.style.color = "gray";
     return;
   }

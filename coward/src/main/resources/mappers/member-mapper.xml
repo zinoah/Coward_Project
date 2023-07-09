@@ -47,7 +47,7 @@
   	
   	<!-- 이메일 인증번호 db에 넣기 -->
   	<insert id="insertRanNum" parameterType="hashmap">
-  		insert into certification (CLIST_NO, c_number, c_email) values (CERTIFICATION_c_list_seq.nextval, #{randomNum}, #{email})
+  		insert into certification (CLIST_NO, c_number, c_email) values (SEQ_CLIST_NO.NEXTVAL, #{randomNum}, #{email})
   	</insert>
   	
  

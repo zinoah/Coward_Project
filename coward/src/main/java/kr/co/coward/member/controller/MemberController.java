@@ -161,7 +161,7 @@ public class MemberController {
 
 		if (insert > 0) {
 			message = "회원 가입 성공";
-			path = "member/joinModal";
+			path = "common/home";
 
 		} else {
 			message = "회원 가입 실패";
@@ -184,8 +184,6 @@ public class MemberController {
 			HttpServletRequest req, HttpServletResponse resp, RedirectAttributes ra) {
 
 		System.out.println(loginMember.getMemberPw());
-		System.out.println(loginMember.getMemberId());
-
 		int result = service.secession(loginMember);
 
 		String message = null;
